@@ -1,0 +1,2174 @@
+{
+  "video_id": "zQ3zgFypzX4",
+  "title": "G-12. Detect a Cycle in an Undirected Graph using DFS ｜ C++ ｜ Java",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1149.28,
+  "segments": [
+    {
+      "start": 2.96,
+      "end": 6.28,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.62,
+      "end": 12.56,
+      "text": "So in this video, we're going to solve something like cycle detection in an undirected graph using DFS."
+    },
+    {
+      "start": 12.96,
+      "end": 16.0,
+      "text": "So if you have not seen the previous video, go back and watch it."
+    },
+    {
+      "start": 16.42,
+      "end": 20.78,
+      "text": "We have solved how to detect a cycle using BFS."
+    },
+    {
+      "start": 21.1,
+      "end": 25.34,
+      "text": "But over here, we will be using the depth first search algorithm."
+    },
+    {
+      "start": 25.86,
+      "end": 28.52,
+      "text": "So you know what is a cycle? It's very simple."
+    },
+    {
+      "start": 28.52,
+      "end": 36.82,
+      "text": "If you start from a node and you come back to that node via any path without breaking any edge,"
+    },
+    {
+      "start": 37.18,
+      "end": 41.3,
+      "text": "that is what you call as a cycle. So this graph definitely has a cycle."
+    },
+    {
+      "start": 41.74,
+      "end": 45.24,
+      "text": "So for this graph, this will be the corresponding adjacency list."
+    },
+    {
+      "start": 45.4,
+      "end": 48.32,
+      "text": "If you don't know how to draw or how to write an adjacency list,"
+    },
+    {
+      "start": 48.9,
+      "end": 52.16,
+      "text": "lecture 2 or lecture 3 is what you need to go back and watch."
+    },
+    {
+      "start": 52.54,
+      "end": 55.84,
+      "text": "So how do you detect a cycle using DFS?"
+    },
+    {
+      "start": 56.42,
+      "end": 58.28,
+      "text": "What is the concept of DFS?"
+    },
+    {
+      "start": 58.28,
+      "end": 63.34,
+      "text": "The concept of DFS is it starts from a source, then tries to go here,"
+    },
+    {
+      "start": 63.54,
+      "end": 68.74,
+      "text": "then tries to go here, then tries to go here, then tries to go here,"
+    },
+    {
+      "start": 68.88,
+      "end": 75.3,
+      "text": "then tries to go here, then probably tries to go here, then has no way, goes back and tries to go one."
+    },
+    {
+      "start": 75.82,
+      "end": 82.7,
+      "text": "And if it reaches back to somewhere which is previously visited,"
+    },
+    {
+      "start": 82.82,
+      "end": 86.32,
+      "text": "because you need to understand you started from one in this direction."
+    },
+    {
+      "start": 86.86,
+      "end": 88.26,
+      "text": "And if you're again coming back to one, you're going to have to go back to one."
+    },
+    {
+      "start": 88.36,
+      "end": 92.26,
+      "text": "So if you start from one via DFS, it means you definitely have a cycle."
+    },
+    {
+      "start": 92.56,
+      "end": 94.2,
+      "text": "That is for sure. Right."
+    },
+    {
+      "start": 94.56,
+      "end": 96.8,
+      "text": "So this is the algorithm."
+    },
+    {
+      "start": 97.26,
+      "end": 98.72,
+      "text": "This is the intuition that we are going to follow."
+    },
+    {
+      "start": 99.18,
+      "end": 100.26,
+      "text": "We start from somewhere."
+    },
+    {
+      "start": 100.68,
+      "end": 104.76,
+      "text": "And if you reach any node that has been previously visited in the path,"
+    },
+    {
+      "start": 105.06,
+      "end": 106.14,
+      "text": "we call it as a cycle."
+    },
+    {
+      "start": 106.48,
+      "end": 110.24,
+      "text": "Okay. So let's, we know how DFS works."
+    },
+    {
+      "start": 110.46,
+      "end": 112.88,
+      "text": "We take a source node so we can easily take a source node."
+    },
+    {
+      "start": 112.92,
+      "end": 116.56,
+      "text": "So before that, please make sure you take this particular visited array."
+    },
+    {
+      "start": 117.26,
+      "end": 118.1,
+      "text": "So in the visited array,"
+    },
+    {
+      "start": 118.1,
+      "end": 121.52,
+      "text": "make sure everything is marked as zero apart from the source node,"
+    },
+    {
+      "start": 121.76,
+      "end": 126.2,
+      "text": "or you can probably keep the source node as whatever like that is your choice."
+    },
+    {
+      "start": 126.68,
+      "end": 128.42,
+      "text": "I will try to keep it as zero."
+    },
+    {
+      "start": 129.26,
+      "end": 130.6,
+      "text": "And in the DFS, we can mark."
+    },
+    {
+      "start": 131.04,
+      "end": 136.4,
+      "text": "So the fourth, for the first time, the DFS is called something like DFS of one comma."
+    },
+    {
+      "start": 136.94,
+      "end": 138.42,
+      "text": "Make sure you carry the parent."
+    },
+    {
+      "start": 138.86,
+      "end": 140.06,
+      "text": "Make sure you carry the parent."
+    },
+    {
+      "start": 140.1,
+      "end": 141.72,
+      "text": "It came from one minus one."
+    },
+    {
+      "start": 141.96,
+      "end": 143.6,
+      "text": "I'll tell you why do you need to carry the parent."
+    },
+    {
+      "start": 143.9,
+      "end": 145.36,
+      "text": "But this is basically the node."
+    },
+    {
+      "start": 145.86,
+      "end": 147.62,
+      "text": "And this is nothing but the parent."
+    },
+    {
+      "start": 147.62,
+      "end": 149.5,
+      "text": "Why do we need to carry the parent?"
+    },
+    {
+      "start": 149.54,
+      "end": 150.32,
+      "text": "I will tell you that."
+    },
+    {
+      "start": 150.74,
+      "end": 152.36,
+      "text": "So you are at one."
+    },
+    {
+      "start": 152.7,
+      "end": 157.22,
+      "text": "So one has an adjacent node of two and has an adjacent node of three."
+    },
+    {
+      "start": 157.76,
+      "end": 162.68,
+      "text": "So first the call will be made for two and then it will come back."
+    },
+    {
+      "start": 163.16,
+      "end": 166.28,
+      "text": "Then the call will be made for three and then it will come back."
+    },
+    {
+      "start": 167.04,
+      "end": 172.1,
+      "text": "So let's start the algorithm by having the DFS as one."
+    },
+    {
+      "start": 172.32,
+      "end": 174.32,
+      "text": "And we can see it as minus one."
+    },
+    {
+      "start": 174.68,
+      "end": 176.84,
+      "text": "Remember, this is the parent node."
+    },
+    {
+      "start": 176.84,
+      "end": 179.06,
+      "text": "And this is the normal node."
+    },
+    {
+      "start": 179.42,
+      "end": 179.92,
+      "text": "Right."
+    },
+    {
+      "start": 180.1,
+      "end": 185.0,
+      "text": "So what we do is we go back and see who are the adjacents of one."
+    },
+    {
+      "start": 185.36,
+      "end": 186.22,
+      "text": "But before that."
+    },
+    {
+      "start": 187.6,
+      "end": 188.98,
+      "text": "Whatever DFS is called."
+    },
+    {
+      "start": 190.94,
+      "end": 191.9,
+      "text": "Market has visited."
+    },
+    {
+      "start": 192.2,
+      "end": 193.02,
+      "text": "Market has visited."
+    },
+    {
+      "start": 193.34,
+      "end": 198.12,
+      "text": "Now we go back and see for one, who are its adjacent nodes or the neighbor nodes."
+    },
+    {
+      "start": 198.34,
+      "end": 199.9,
+      "text": "And how do you know who are the neighbor nodes?"
+    },
+    {
+      "start": 200.16,
+      "end": 200.82,
+      "text": "Very simple."
+    },
+    {
+      "start": 201.18,
+      "end": 206.54,
+      "text": "You go to the adjacency list and you get this list and we see that two is one of the."
+    },
+    {
+      "start": 206.84,
+      "end": 209.42,
+      "text": "Neighbor nodes and three is one of the neighbor nodes."
+    },
+    {
+      "start": 209.84,
+      "end": 217.18,
+      "text": "So apparently there will be a call for two at first saying that the parent is one saying that it came from one."
+    },
+    {
+      "start": 217.46,
+      "end": 218.66,
+      "text": "Basically, it came from one."
+    },
+    {
+      "start": 218.7,
+      "end": 220.36,
+      "text": "That is what it what you need to carry."
+    },
+    {
+      "start": 220.76,
+      "end": 224.52,
+      "text": "First, the call for two will be made once the DFS is done."
+    },
+    {
+      "start": 224.88,
+      "end": 226.28,
+      "text": "Then we will go for three."
+    },
+    {
+      "start": 226.58,
+      "end": 226.88,
+      "text": "Right."
+    },
+    {
+      "start": 226.92,
+      "end": 228.08,
+      "text": "That is how the DFS works."
+    },
+    {
+      "start": 228.32,
+      "end": 229.64,
+      "text": "So we can keep it as dotted."
+    },
+    {
+      "start": 229.94,
+      "end": 235.76,
+      "text": "Now, remember, over here, dotted means we will do this call after this particular call is over."
+    },
+    {
+      "start": 235.96,
+      "end": 236.3,
+      "text": "OK."
+    },
+    {
+      "start": 236.3,
+      "end": 237.98,
+      "text": "So we have DFS of two."
+    },
+    {
+      "start": 238.28,
+      "end": 242.84,
+      "text": "So if we have a DFS of two, this is where you'll understand the concept of parent."
+    },
+    {
+      "start": 243.26,
+      "end": 248.36,
+      "text": "For two, the moment you reach two, obviously, first and foremost, done."
+    },
+    {
+      "start": 249.02,
+      "end": 250.8,
+      "text": "Next, neighbor nodes of two."
+    },
+    {
+      "start": 251.36,
+      "end": 251.8,
+      "text": "Who is it?"
+    },
+    {
+      "start": 252.06,
+      "end": 252.54,
+      "text": "One."
+    },
+    {
+      "start": 253.34,
+      "end": 255.98,
+      "text": "And you see, hey, it's already visited."
+    },
+    {
+      "start": 257.42,
+      "end": 260.68,
+      "text": "You touched someone, but I'm like, hey, let's stop."
+    },
+    {
+      "start": 260.72,
+      "end": 261.2,
+      "text": "Wait, wait."
+    },
+    {
+      "start": 261.56,
+      "end": 262.22,
+      "text": "You came back."
+    },
+    {
+      "start": 262.46,
+      "end": 263.24,
+      "text": "You came from one."
+    },
+    {
+      "start": 263.66,
+      "end": 265.24,
+      "text": "If you came from one, it's not a cycle."
+    },
+    {
+      "start": 265.5,
+      "end": 266.2,
+      "text": "You can't call it."
+    },
+    {
+      "start": 266.3,
+      "end": 267.5,
+      "text": "You can't call something like this as a cycle."
+    },
+    {
+      "start": 267.68,
+      "end": 268.46,
+      "text": "This is not a cycle."
+    },
+    {
+      "start": 268.88,
+      "end": 269.54,
+      "text": "This is not a cycle."
+    },
+    {
+      "start": 270.5,
+      "end": 277.86,
+      "text": "So since you came from one and it is visited, I will not say that you came back to a node who was previously in the path."
+    },
+    {
+      "start": 278.24,
+      "end": 278.6,
+      "text": "Got it."
+    },
+    {
+      "start": 279.28,
+      "end": 279.54,
+      "text": "OK."
+    },
+    {
+      "start": 279.78,
+      "end": 280.2,
+      "text": "I repeat."
+    },
+    {
+      "start": 280.76,
+      "end": 287.66,
+      "text": "I cannot say I came back to a node who was previously in the path because I just came back to the parent."
+    },
+    {
+      "start": 288.08,
+      "end": 290.88,
+      "text": "That's why we will not make a DFS call for this."
+    },
+    {
+      "start": 291.36,
+      "end": 293.16,
+      "text": "But we will make a DFS call for five."
+    },
+    {
+      "start": 295.98,
+      "end": 296.96,
+      "text": "And we will say five."
+    },
+    {
+      "start": 297.36,
+      "end": 298.18,
+      "text": "You came from two."
+    },
+    {
+      "start": 298.38,
+      "end": 300.72,
+      "text": "And the moment it reaches five, five will be one."
+    },
+    {
+      "start": 301.32,
+      "end": 302.7,
+      "text": "So for five, who are the adjacent nodes?"
+    },
+    {
+      "start": 303.06,
+      "end": 303.54,
+      "text": "Again, two."
+    },
+    {
+      "start": 304.1,
+      "end": 305.04,
+      "text": "Two is marked as visited."
+    },
+    {
+      "start": 305.36,
+      "end": 307.54,
+      "text": "But wait, two is the parent."
+    },
+    {
+      "start": 308.66,
+      "end": 309.9,
+      "text": "Next, seven."
+    },
+    {
+      "start": 310.42,
+      "end": 310.74,
+      "text": "Yes."
+    },
+    {
+      "start": 311.5,
+      "end": 312.38,
+      "text": "Seven is unvisited."
+    },
+    {
+      "start": 312.84,
+      "end": 314.74,
+      "text": "So you call for seven."
+    },
+    {
+      "start": 315.22,
+      "end": 316.02,
+      "text": "And what do you say?"
+    },
+    {
+      "start": 316.54,
+      "end": 317.02,
+      "text": "Hey, listen."
+    },
+    {
+      "start": 317.46,
+      "end": 321.04,
+      "text": "For seven, if you are saying, the parent is five."
+    },
+    {
+      "start": 321.26,
+      "end": 321.42,
+      "text": "Done."
+    },
+    {
+      "start": 322.06,
+      "end": 324.06,
+      "text": "The moment you reach seven, mark it as visited."
+    },
+    {
+      "start": 324.52,
+      "end": 326.22,
+      "text": "Now for seven, who are the adjacent nodes?"
+    },
+    {
+      "start": 326.22,
+      "end": 326.5,
+      "text": "Five."
+    },
+    {
+      "start": 326.5,
+      "end": 327.36,
+      "text": "Five."
+    },
+    {
+      "start": 327.36,
+      "end": 327.92,
+      "text": "Five."
+    },
+    {
+      "start": 327.92,
+      "end": 328.02,
+      "text": "Five."
+    },
+    {
+      "start": 328.38,
+      "end": 329.38,
+      "text": "Five."
+    },
+    {
+      "start": 329.38,
+      "end": 330.38,
+      "text": "That's the parent."
+    },
+    {
+      "start": 330.38,
+      "end": 331.38,
+      "text": "That's already visited."
+    },
+    {
+      "start": 331.38,
+      "end": 335.66,
+      "text": "Now we will go to six now."
+    },
+    {
+      "start": 335.66,
+      "end": 336.66,
+      "text": "DFS off."
+    },
+    {
+      "start": 336.66,
+      "end": 337.66,
+      "text": "Six."
+    },
+    {
+      "start": 337.66,
+      "end": 339.66,
+      "text": "And the parent is seven."
+    },
+    {
+      "start": 339.66,
+      "end": 341.66,
+      "text": "Mark it as visited now."
+    },
+    {
+      "start": 341.66,
+      "end": 344.66,
+      "text": "For six, who are the neighbors?"
+    },
+    {
+      "start": 344.66,
+      "end": 345.66,
+      "text": "Three."
+    },
+    {
+      "start": 345.66,
+      "end": 347.66,
+      "text": "For six, there is a three."
+    },
+    {
+      "start": 347.66,
+      "end": 348.66,
+      "text": "There is a seven."
+    },
+    {
+      "start": 348.66,
+      "end": 350.66,
+      "text": "For seven, there will be no call because it's the parent."
+    },
+    {
+      "start": 350.66,
+      "end": 352.66,
+      "text": "But for three, there will be a call."
+    },
+    {
+      "start": 352.66,
+      "end": 353.66,
+      "text": "Do the call for three."
+    },
+    {
+      "start": 353.66,
+      "end": 359.38,
+      "text": "Do the call for three saying that the parent is six."
+    },
+    {
+      "start": 359.38,
+      "end": 360.38,
+      "text": "Mark it as visited."
+    },
+    {
+      "start": 360.38,
+      "end": 361.38,
+      "text": "Let's go to three."
+    },
+    {
+      "start": 361.38,
+      "end": 362.38,
+      "text": "Let's go to three."
+    },
+    {
+      "start": 362.38,
+      "end": 364.38,
+      "text": "So this is one, four, six."
+    },
+    {
+      "start": 364.38,
+      "end": 369.38,
+      "text": "Just in order to ease out understanding, I'll do it four, one, six."
+    },
+    {
+      "start": 370.38,
+      "end": 371.38,
+      "text": "It's okay."
+    },
+    {
+      "start": 371.38,
+      "end": 378.38,
+      "text": "That can be written as one, four, six, but I'll write it as four, one, six to be able to explain you in a better way."
+    },
+    {
+      "start": 378.38,
+      "end": 380.38,
+      "text": "So as of now, we have DFS of three, six."
+    },
+    {
+      "start": 380.38,
+      "end": 382.38,
+      "text": "And three is marked as visited."
+    },
+    {
+      "start": 382.38,
+      "end": 385.38,
+      "text": "Three says one of my neighbor nodes is four."
+    },
+    {
+      "start": 385.38,
+      "end": 386.38,
+      "text": "I'm like, fine, fine."
+    },
+    {
+      "start": 386.38,
+      "end": 387.38,
+      "text": "Go and call it."
+    },
+    {
+      "start": 387.38,
+      "end": 391.38,
+      "text": "So we will go and call the DFS for four with the parent as three."
+    },
+    {
+      "start": 391.38,
+      "end": 393.38,
+      "text": "Four is marked as visited."
+    },
+    {
+      "start": 393.38,
+      "end": 399.38,
+      "text": "So four apparently has just one node, three, who's the parent, who's already visited."
+    },
+    {
+      "start": 399.38,
+      "end": 400.38,
+      "text": "No one else."
+    },
+    {
+      "start": 400.38,
+      "end": 405.38,
+      "text": "So he says, I did not get a, so I'll return a false."
+    },
+    {
+      "start": 405.38,
+      "end": 406.38,
+      "text": "I did not get a cycle."
+    },
+    {
+      "start": 406.38,
+      "end": 413.38,
+      "text": "If I end up DFS calls and I don't get a cycle, I'll always return false."
+    },
+    {
+      "start": 413.38,
+      "end": 418.38,
+      "text": "But this three called for four, it will call for one now."
+    },
+    {
+      "start": 418.38,
+      "end": 419.38,
+      "text": "This was left."
+    },
+    {
+      "start": 419.38,
+      "end": 420.38,
+      "text": "The DFS of four is left."
+    },
+    {
+      "start": 420.38,
+      "end": 423.38,
+      "text": "The DFS of one comma three was left."
+    },
+    {
+      "start": 423.38,
+      "end": 425.38,
+      "text": "But will it call for DFS of one three?"
+    },
+    {
+      "start": 425.38,
+      "end": 427.38,
+      "text": "Will it call for DFS of one three?"
+    },
+    {
+      "start": 427.38,
+      "end": 428.38,
+      "text": "No."
+    },
+    {
+      "start": 428.38,
+      "end": 429.38,
+      "text": "Why?"
+    },
+    {
+      "start": 429.38,
+      "end": 436.38,
+      "text": "Because this one, if you see, is visited over here and it's not the parent."
+    },
+    {
+      "start": 436.38,
+      "end": 440.38,
+      "text": "How did it, how did it mark itself?"
+    },
+    {
+      "start": 440.38,
+      "end": 443.38,
+      "text": "Because it was previously in the path."
+    },
+    {
+      "start": 443.38,
+      "end": 445.38,
+      "text": "It was previously in the path here."
+    },
+    {
+      "start": 445.38,
+      "end": 448.38,
+      "text": "That is why it was marked in the visited."
+    },
+    {
+      "start": 448.38,
+      "end": 452.38,
+      "text": "Oh, for the slightest for this one."
+    },
+    {
+      "start": 452.38,
+      "end": 453.38,
+      "text": "Don't call it."
+    },
+    {
+      "start": 453.38,
+      "end": 454.38,
+      "text": "Do not call it."
+    },
+    {
+      "start": 454.38,
+      "end": 463.38,
+      "text": "Instead of that, since you've got someone returned a true, this guy who called this function sees this function is returning him a true."
+    },
+    {
+      "start": 463.38,
+      "end": 466.38,
+      "text": "He says, you are returning me a true, I'll also return a true."
+    },
+    {
+      "start": 466.38,
+      "end": 467.38,
+      "text": "Because you've got a cycle."
+    },
+    {
+      "start": 467.38,
+      "end": 468.38,
+      "text": "So I also have a cycle."
+    },
+    {
+      "start": 468.38,
+      "end": 471.38,
+      "text": "This guy says, you're returning a true, I'll also return a true."
+    },
+    {
+      "start": 471.38,
+      "end": 476.38,
+      "text": "This guy says, you are returning me a true, I'll also return a true."
+    },
+    {
+      "start": 476.38,
+      "end": 477.36,
+      "text": "You're returning me a true."
+    },
+    {
+      "start": 477.56,
+      "end": 478.32,
+      "text": "I'll also return a true."
+    },
+    {
+      "start": 478.62,
+      "end": 481.12,
+      "text": "Now this guy says, I got a true."
+    },
+    {
+      "start": 481.9,
+      "end": 485.26,
+      "text": "Should I go and have my brains on 3-1?"
+    },
+    {
+      "start": 485.56,
+      "end": 487.26,
+      "text": "I don't need to do any further calls."
+    },
+    {
+      "start": 487.4,
+      "end": 488.12,
+      "text": "I got a true."
+    },
+    {
+      "start": 488.48,
+      "end": 491.8,
+      "text": "If I'm getting a true, there's no need to do DFS for further calls."
+    },
+    {
+      "start": 492.18,
+      "end": 493.68,
+      "text": "And I say, true."
+    },
+    {
+      "start": 494.34,
+      "end": 499.5,
+      "text": "For the source node starting with 1, I got someone as true."
+    },
+    {
+      "start": 499.6,
+      "end": 500.7,
+      "text": "Which means I have a cycle."
+    },
+    {
+      "start": 501.14,
+      "end": 502.22,
+      "text": "Which means I have a cycle."
+    },
+    {
+      "start": 502.36,
+      "end": 503.36,
+      "text": "Does that make sense?"
+    },
+    {
+      "start": 503.48,
+      "end": 503.84,
+      "text": "That's true."
+    },
+    {
+      "start": 503.84,
+      "end": 509.98,
+      "text": "So if you remember the DFS algorithm, the DFS algorithm was something like node."
+    },
+    {
+      "start": 510.3,
+      "end": 511.4,
+      "text": "And now you can carry the parent."
+    },
+    {
+      "start": 512.0,
+      "end": 514.64,
+      "text": "I'm not writing visited and all."
+    },
+    {
+      "start": 514.78,
+      "end": 515.6,
+      "text": "I'll show that in the code."
+    },
+    {
+      "start": 515.78,
+      "end": 517.14,
+      "text": "I'm trying to explain in the pseudo code."
+    },
+    {
+      "start": 517.58,
+      "end": 520.46,
+      "text": "So the moment you enter, you always mark."
+    },
+    {
+      "start": 520.54,
+      "end": 520.88,
+      "text": "It does mark."
+    },
+    {
+      "start": 521.52,
+      "end": 523.9,
+      "text": "And then you go across all its neighbor nodes."
+    },
+    {
+      "start": 524.7,
+      "end": 524.88,
+      "text": "Right?"
+    },
+    {
+      "start": 526.74,
+      "end": 528.58,
+      "text": "You go across all its neighbor nodes."
+    },
+    {
+      "start": 529.0,
+      "end": 531.7,
+      "text": "Now, under this, there will be some algorithm."
+    },
+    {
+      "start": 533.14,
+      "end": 533.82,
+      "text": "What will it be?"
+    },
+    {
+      "start": 533.98,
+      "end": 534.26,
+      "text": "The algorithm."
+    },
+    {
+      "start": 534.64,
+      "end": 536.32,
+      "text": "One of the algorithms is very short."
+    },
+    {
+      "start": 536.48,
+      "end": 538.3,
+      "text": "If it is unvisited."
+    },
+    {
+      "start": 538.78,
+      "end": 543.52,
+      "text": "If the adjacent node is unvisited, we go and call the DFS."
+    },
+    {
+      "start": 543.96,
+      "end": 545.54,
+      "text": "For this adjacent node."
+    },
+    {
+      "start": 545.92,
+      "end": 547.26,
+      "text": "And the parent will be node."
+    },
+    {
+      "start": 547.56,
+      "end": 549.72,
+      "text": "Because for this node, this is the adjacent."
+    },
+    {
+      "start": 550.0,
+      "end": 551.1,
+      "text": "It's something like node."
+    },
+    {
+      "start": 552.04,
+      "end": 552.86,
+      "text": "Join to IT."
+    },
+    {
+      "start": 552.98,
+      "end": 554.8,
+      "text": "So if you're calling for IT, this will be the parent."
+    },
+    {
+      "start": 555.24,
+      "end": 556.2,
+      "text": "So you'll call for it."
+    },
+    {
+      "start": 556.72,
+      "end": 560.54,
+      "text": "But if you remember this, this call was made DFS of 4, 3."
+    },
+    {
+      "start": 560.6,
+      "end": 561.74,
+      "text": "And it returned a false."
+    },
+    {
+      "start": 562.3,
+      "end": 563.18,
+      "text": "It did not do anything."
+    },
+    {
+      "start": 563.84,
+      "end": 565.94,
+      "text": "But when you made a call for 3, 6."
+    },
+    {
+      "start": 567.79,
+      "end": 569.23,
+      "text": "When you made a call for 3, 6."
+    },
+    {
+      "start": 569.49,
+      "end": 572.81,
+      "text": "It found out 1 was already visited."
+    },
+    {
+      "start": 572.81,
+      "end": 574.01,
+      "text": "So it returned a true."
+    },
+    {
+      "start": 574.37,
+      "end": 578.05,
+      "text": "So if any of the DFS calls is returning a true, you keep on returning true."
+    },
+    {
+      "start": 578.33,
+      "end": 580.37,
+      "text": "So this is a DFS call that you're making."
+    },
+    {
+      "start": 580.87,
+      "end": 583.23,
+      "text": "So if it by chance returns a true."
+    },
+    {
+      "start": 583.59,
+      "end": 584.09,
+      "text": "Remember this."
+    },
+    {
+      "start": 584.45,
+      "end": 586.15,
+      "text": "If it by chance returns a true."
+    },
+    {
+      "start": 586.61,
+      "end": 587.09,
+      "text": "Not a false."
+    },
+    {
+      "start": 587.09,
+      "end": 590.55,
+      "text": "If it's false, we keep on checking for adjacent neighbors."
+    },
+    {
+      "start": 590.93,
+      "end": 594.83,
+      "text": "But if this guy says, I went to node."
+    },
+    {
+      "start": 594.83,
+      "end": 597.11,
+      "text": "To IT and to so on, so on."
+    },
+    {
+      "start": 597.33,
+      "end": 599.31,
+      "text": "And somewhere I got a cycle."
+    },
+    {
+      "start": 599.43,
+      "end": 600.27,
+      "text": "Somewhere I got a cycle."
+    },
+    {
+      "start": 600.79,
+      "end": 602.45,
+      "text": "And I returned true, true, true."
+    },
+    {
+      "start": 602.83,
+      "end": 604.11,
+      "text": "So this IT returned a true."
+    },
+    {
+      "start": 604.35,
+      "end": 605.49,
+      "text": "So I'm saying this guy got a true."
+    },
+    {
+      "start": 605.91,
+      "end": 609.97,
+      "text": "So if you got a true, you say, okay, in overall I got a true."
+    },
+    {
+      "start": 610.81,
+      "end": 614.01,
+      "text": "This is for any DFS call that gives you a true."
+    },
+    {
+      "start": 614.37,
+      "end": 615.93,
+      "text": "But what if it's not visited?"
+    },
+    {
+      "start": 616.31,
+      "end": 617.51,
+      "text": "What if it's not visited?"
+    },
+    {
+      "start": 618.01,
+      "end": 619.25,
+      "text": "Again, interesting thing."
+    },
+    {
+      "start": 619.39,
+      "end": 619.83,
+      "text": "Let's come back."
+    },
+    {
+      "start": 621.05,
+      "end": 623.83,
+      "text": "Over here, when you started with 2."
+    },
+    {
+      "start": 624.83,
+      "end": 626.91,
+      "text": "You did not go to 1."
+    },
+    {
+      "start": 627.25,
+      "end": 628.45,
+      "text": "Because 1 was visited."
+    },
+    {
+      "start": 629.09,
+      "end": 630.13,
+      "text": "And 1 was the parent."
+    },
+    {
+      "start": 631.13,
+      "end": 632.19,
+      "text": "So if it is parent."
+    },
+    {
+      "start": 632.91,
+      "end": 634.27,
+      "text": "Then it's not a cycle."
+    },
+    {
+      "start": 634.45,
+      "end": 637.37,
+      "text": "It has to be a non-parent."
+    },
+    {
+      "start": 637.81,
+      "end": 640.07,
+      "text": "It has to be non-parent."
+    },
+    {
+      "start": 640.81,
+      "end": 642.45,
+      "text": "Then only I can call it as a cycle."
+    },
+    {
+      "start": 642.85,
+      "end": 645.03,
+      "text": "So I'll be like, if this guy is visited."
+    },
+    {
+      "start": 645.03,
+      "end": 648.11,
+      "text": "If it comes to else, means visited."
+    },
+    {
+      "start": 648.73,
+      "end": 651.25,
+      "text": "And if it is not a parent."
+    },
+    {
+      "start": 651.77,
+      "end": 652.73,
+      "text": "If it is not a parent."
+    },
+    {
+      "start": 653.07,
+      "end": 654.79,
+      "text": "Dude, how did it visit?"
+    },
+    {
+      "start": 654.95,
+      "end": 656.51,
+      "text": "That means it is a cycle."
+    },
+    {
+      "start": 656.81,
+      "end": 659.51,
+      "text": "That means this is the point where I encounter a cycle."
+    },
+    {
+      "start": 660.21,
+      "end": 661.15,
+      "text": "Something like this."
+    },
+    {
+      "start": 661.59,
+      "end": 664.31,
+      "text": "When I was trying for 3, I got 1."
+    },
+    {
+      "start": 664.77,
+      "end": 666.23,
+      "text": "How did you get 1?"
+    },
+    {
+      "start": 666.83,
+      "end": 668.79,
+      "text": "1 was visited, but it was not a parent."
+    },
+    {
+      "start": 668.83,
+      "end": 669.61,
+      "text": "It's a cycle."
+    },
+    {
+      "start": 669.73,
+      "end": 670.49,
+      "text": "You returned a true."
+    },
+    {
+      "start": 670.73,
+      "end": 672.45,
+      "text": "You returned a true saying it got a true."
+    },
+    {
+      "start": 672.77,
+      "end": 677.15,
+      "text": "But that's why, that's why over here you return a true."
+    },
+    {
+      "start": 678.11,
+      "end": 678.43,
+      "text": "Perfect."
+    },
+    {
+      "start": 679.09,
+      "end": 680.29,
+      "text": "And this is how this will end."
+    },
+    {
+      "start": 682.17,
+      "end": 684.41,
+      "text": "And if after all the DFS calls."
+    },
+    {
+      "start": 684.41,
+      "end": 686.59,
+      "text": "After traveling for all the adjacent nodes."
+    },
+    {
+      "start": 686.83,
+      "end": 687.85,
+      "text": "You never got a cycle."
+    },
+    {
+      "start": 688.13,
+      "end": 688.81,
+      "text": "What did you do?"
+    },
+    {
+      "start": 689.27,
+      "end": 689.53,
+      "text": "Yeah."
+    },
+    {
+      "start": 689.85,
+      "end": 691.39,
+      "text": "And then just go and return a false."
+    },
+    {
+      "start": 691.93,
+      "end": 693.03,
+      "text": "If you never got a cycle."
+    },
+    {
+      "start": 693.59,
+      "end": 698.69,
+      "text": "This is how the pseudo code will look like for the DFS."
+    },
+    {
+      "start": 698.69,
+      "end": 701.23,
+      "text": "You can pause it over here and check it out."
+    },
+    {
+      "start": 701.45,
+      "end": 702.73,
+      "text": "If you're not understanding."
+    },
+    {
+      "start": 703.43,
+      "end": 705.07,
+      "text": "If you're not understanding it properly."
+    },
+    {
+      "start": 705.35,
+      "end": 708.89,
+      "text": "My suggestion to you will be draw multiple graphs."
+    },
+    {
+      "start": 709.31,
+      "end": 710.79,
+      "text": "Draw some multiple graphs."
+    },
+    {
+      "start": 711.09,
+      "end": 712.21,
+      "text": "Do the DFS calls."
+    },
+    {
+      "start": 712.53,
+      "end": 713.97,
+      "text": "Do a dry run of this code."
+    },
+    {
+      "start": 713.97,
+      "end": 716.97,
+      "text": "And then you can see that eventually it will get into your head."
+    },
+    {
+      "start": 717.27,
+      "end": 721.29,
+      "text": "I'm sure that it definitely did get into your head, but just in case I'm saying,"
+    },
+    {
+      "start": 721.29,
+      "end": 722.67,
+      "text": "just in case, okay."
+    },
+    {
+      "start": 723.33,
+      "end": 725.19,
+      "text": "Again, your recursion should be strong."
+    },
+    {
+      "start": 725.19,
+      "end": 727.21,
+      "text": "You can watch the recursion playlist for that."
+    },
+    {
+      "start": 727.53,
+      "end": 729.39,
+      "text": "So guys, I hope you have understood the algorithm."
+    },
+    {
+      "start": 729.39,
+      "end": 730.47,
+      "text": "Now it's time to code it out."
+    },
+    {
+      "start": 730.47,
+      "end": 734.19,
+      "text": "So as usual, I'll be writing the code on right, which is the C++ code."
+    },
+    {
+      "start": 734.49,
+      "end": 737.61,
+      "text": "And then on left, you can easily find the Java code."
+    },
+    {
+      "start": 737.61,
+      "end": 737.91,
+      "text": "Okay."
+    },
+    {
+      "start": 738.33,
+      "end": 739.35,
+      "text": "So private."
+    },
+    {
+      "start": 741.35,
+      "end": 742.59,
+      "text": "And I see, Hey, listen."
+    },
+    {
+      "start": 742.89,
+      "end": 743.43,
+      "text": "I need."
+    },
+    {
+      "start": 743.43,
+      "end": 745.47,
+      "text": "I need the node."
+    },
+    {
+      "start": 746.61,
+      "end": 747.31,
+      "text": "I need the parent."
+    },
+    {
+      "start": 749.11,
+      "end": 750.51,
+      "text": "And then I need the visitor."
+    },
+    {
+      "start": 751.11,
+      "end": 751.83,
+      "text": "That's for sure."
+    },
+    {
+      "start": 752.19,
+      "end": 754.29,
+      "text": "And I need the adjacent as well."
+    },
+    {
+      "start": 754.53,
+      "end": 755.47,
+      "text": "Do I need anything else?"
+    },
+    {
+      "start": 755.49,
+      "end": 756.57,
+      "text": "I don't think so."
+    },
+    {
+      "start": 756.57,
+      "end": 757.11,
+      "text": "What do you do?"
+    },
+    {
+      "start": 757.11,
+      "end": 759.51,
+      "text": "Always the moment you reach there, this is something that you do."
+    },
+    {
+      "start": 759.85,
+      "end": 762.57,
+      "text": "Then you say, these are the adjacent nodes, right?"
+    },
+    {
+      "start": 762.69,
+      "end": 763.83,
+      "text": "And you say, okay, go on."
+    },
+    {
+      "start": 768.07,
+      "end": 771.79,
+      "text": "Then you're like, okay, if this guy is not visited, which is this"
+    },
+    {
+      "start": 771.85,
+      "end": 773.39,
+      "text": "adjacent node is not visited."
+    },
+    {
+      "start": 773.95,
+      "end": 776.65,
+      "text": "Then you can just roughly go on and call the DFS for adjacent."
+    },
+    {
+      "start": 776.65,
+      "end": 776.89,
+      "text": "No."
+    },
+    {
+      "start": 776.89,
+      "end": 780.55,
+      "text": "The node will be the parent, the visitor and the adjacency."
+    },
+    {
+      "start": 780.91,
+      "end": 786.03,
+      "text": "But if by chance, this returns a true, if by chance, this returns a true, it can"
+    },
+    {
+      "start": 786.03,
+      "end": 788.23,
+      "text": "return a false, then I'll call for the next guys."
+    },
+    {
+      "start": 788.57,
+      "end": 790.95,
+      "text": "But if this returns a true, you say it has a cycle."
+    },
+    {
+      "start": 791.77,
+      "end": 792.15,
+      "text": "Yes."
+    },
+    {
+      "start": 792.21,
+      "end": 793.09,
+      "text": "You say it has a site."
+    },
+    {
+      "start": 793.71,
+      "end": 796.27,
+      "text": "So this is how, if it returns a false, it's fine."
+    },
+    {
+      "start": 796.55,
+      "end": 799.97,
+      "text": "Otherwise, because if it returns a fall, you're going to do a DFS"
+    },
+    {
+      "start": 799.97,
+      "end": 801.63,
+      "text": "for all the other things."
+    },
+    {
+      "start": 801.67,
+      "end": 802.03,
+      "text": "Okay."
+    },
+    {
+      "start": 802.49,
+      "end": 806.57,
+      "text": "Next, if it is unvisited, like if it has been previously visited."
+    },
+    {
+      "start": 806.57,
+      "end": 814.37,
+      "text": "And it's not apparent, if it is not apparent, then I'll be like, how did it visit?"
+    },
+    {
+      "start": 814.37,
+      "end": 820.03,
+      "text": "That means it's a repeated node in the path cycle, or else you say return false."
+    },
+    {
+      "start": 820.45,
+      "end": 820.75,
+      "text": "Perfect."
+    },
+    {
+      "start": 821.07,
+      "end": 823.89,
+      "text": "This is how you can easily get this across."
+    },
+    {
+      "start": 824.19,
+      "end": 825.53,
+      "text": "Now over here, what will you write?"
+    },
+    {
+      "start": 825.57,
+      "end": 832.49,
+      "text": "Will you just call something like return DFS source, not one minus one visited"
+    },
+    {
+      "start": 832.49,
+      "end": 833.25,
+      "text": "and adjacency."
+    },
+    {
+      "start": 833.57,
+      "end": 834.41,
+      "text": "Well, this work."
+    },
+    {
+      "start": 834.77,
+      "end": 836.53,
+      "text": "This should have worked."
+    },
+    {
+      "start": 836.57,
+      "end": 842.19,
+      "text": "If the graph was something like, uh, this minute, let me do this."
+    },
+    {
+      "start": 842.81,
+      "end": 847.29,
+      "text": "If it should have worked with the graph or something like a single component graph, but"
+    },
+    {
+      "start": 847.29,
+      "end": 849.01,
+      "text": "over here, the graph can have multiple."
+    },
+    {
+      "start": 849.69,
+      "end": 850.09,
+      "text": "Yes."
+    },
+    {
+      "start": 850.41,
+      "end": 853.41,
+      "text": "So in case of multiple components, let's take an example."
+    },
+    {
+      "start": 853.83,
+      "end": 859.71,
+      "text": "So assume this is like one, two, three, and four."
+    },
+    {
+      "start": 859.75,
+      "end": 860.47,
+      "text": "This is the first one."
+    },
+    {
+      "start": 861.09,
+      "end": 866.57,
+      "text": "Five, six, seven, eight, nine, by the way, components in a sense."
+    },
+    {
+      "start": 866.57,
+      "end": 869.55,
+      "text": "If you don't know lecture four, okay."
+    },
+    {
+      "start": 869.55,
+      "end": 870.95,
+      "text": "Lecture four connected components."
+    },
+    {
+      "start": 871.31,
+      "end": 872.21,
+      "text": "So this is it."
+    },
+    {
+      "start": 872.33,
+      "end": 872.51,
+      "text": "Yeah."
+    },
+    {
+      "start": 872.81,
+      "end": 878.75,
+      "text": "So if you just call for DFS of one, it will go and it'll visit these guys and"
+    },
+    {
+      "start": 878.75,
+      "end": 883.55,
+      "text": "it will never find a cycle in order to find a cycle, you have to actually call DFS of seven."
+    },
+    {
+      "start": 884.83,
+      "end": 885.29,
+      "text": "Right?"
+    },
+    {
+      "start": 885.65,
+      "end": 886.55,
+      "text": "So how would you do this?"
+    },
+    {
+      "start": 886.91,
+      "end": 893.15,
+      "text": "This is where, what do you do is you always call something like I equal to one till nine."
+    },
+    {
+      "start": 893.83,
+      "end": 896.57,
+      "text": "And you see if these guys are not."
+    },
+    {
+      "start": 896.57,
+      "end": 900.11,
+      "text": "Visited, then call the DFS for the source."
+    },
+    {
+      "start": 901.43,
+      "end": 905.57,
+      "text": "And then if this DFS call comes out as true, you can say there is a cycle."
+    },
+    {
+      "start": 906.53,
+      "end": 908.27,
+      "text": "What does this mean for the first time?"
+    },
+    {
+      "start": 908.27,
+      "end": 908.93,
+      "text": "I will be one."
+    },
+    {
+      "start": 909.39,
+      "end": 911.27,
+      "text": "So you find it not visited."
+    },
+    {
+      "start": 911.51,
+      "end": 913.73,
+      "text": "If I did not visit it, you call the DFS for one."
+    },
+    {
+      "start": 914.27,
+      "end": 921.35,
+      "text": "So it goes, though it goes for the call of one marks, all of them and says, I did not find a site next."
+    },
+    {
+      "start": 921.37,
+      "end": 924.27,
+      "text": "I will become two, but it'll find two as visited."
+    },
+    {
+      "start": 924.53,
+      "end": 926.03,
+      "text": "No DFS calls next."
+    },
+    {
+      "start": 926.03,
+      "end": 926.51,
+      "text": "It'll be."
+    },
+    {
+      "start": 926.51,
+      "end": 926.93,
+      "text": "Three."
+    },
+    {
+      "start": 927.63,
+      "end": 928.61,
+      "text": "Again, find visited."
+    },
+    {
+      "start": 928.73,
+      "end": 929.45,
+      "text": "No DFS calls."
+    },
+    {
+      "start": 929.87,
+      "end": 930.79,
+      "text": "Next it'll be four."
+    },
+    {
+      "start": 931.25,
+      "end": 933.13,
+      "text": "I'll find already visited."
+    },
+    {
+      "start": 933.55,
+      "end": 934.27,
+      "text": "No DFS calls."
+    },
+    {
+      "start": 934.71,
+      "end": 937.03,
+      "text": "Next will be five non-visited."
+    },
+    {
+      "start": 937.31,
+      "end": 939.35,
+      "text": "So goes and calls the DFS of five now."
+    },
+    {
+      "start": 939.77,
+      "end": 942.47,
+      "text": "So first a DFS call for one was made."
+    },
+    {
+      "start": 942.75,
+      "end": 944.29,
+      "text": "Next, the DFS call of five was made."
+    },
+    {
+      "start": 944.63,
+      "end": 946.47,
+      "text": "Five will make sure five is visited."
+    },
+    {
+      "start": 946.81,
+      "end": 947.73,
+      "text": "Six is visited."
+    },
+    {
+      "start": 948.11,
+      "end": 948.47,
+      "text": "Right?"
+    },
+    {
+      "start": 949.03,
+      "end": 953.47,
+      "text": "So now the DFS of five will be called and five will go and mark these guys."
+    },
+    {
+      "start": 953.57,
+      "end": 954.89,
+      "text": "And again, it will not get a cycle."
+    },
+    {
+      "start": 955.25,
+      "end": 955.73,
+      "text": "Come back."
+    },
+    {
+      "start": 956.03,
+      "end": 956.37,
+      "text": "Then it'll be."
+    },
+    {
+      "start": 956.37,
+      "end": 956.73,
+      "text": "Six."
+    },
+    {
+      "start": 956.73,
+      "end": 957.33,
+      "text": "Then it'll be seven."
+    },
+    {
+      "start": 957.81,
+      "end": 962.81,
+      "text": "This time in DFS of seven is called seven goals and finds a cycle."
+    },
+    {
+      "start": 962.99,
+      "end": 963.93,
+      "text": "It says true."
+    },
+    {
+      "start": 964.19,
+      "end": 965.03,
+      "text": "So you got it through."
+    },
+    {
+      "start": 965.07,
+      "end": 965.85,
+      "text": "As is true."
+    },
+    {
+      "start": 965.93,
+      "end": 966.63,
+      "text": "You got a cycle."
+    },
+    {
+      "start": 967.19,
+      "end": 972.45,
+      "text": "This is the new addition that you have to do, but make sure you declare the visited"
+    },
+    {
+      "start": 972.45,
+      "end": 975.21,
+      "text": "array so that you don't call like DFS one."
+    },
+    {
+      "start": 975.21,
+      "end": 977.55,
+      "text": "Then don't call like DFS two, then DFS three."
+    },
+    {
+      "start": 977.97,
+      "end": 983.61,
+      "text": "Only two visit again and again in total, just make sure you visit like four notes,"
+    },
+    {
+      "start": 983.69,
+      "end": 985.83,
+      "text": "six notes, nine notes in total."
+    },
+    {
+      "start": 985.83,
+      "end": 988.77,
+      "text": "You just need to make sure you visit nine notes."
+    },
+    {
+      "start": 989.01,
+      "end": 994.23,
+      "text": "So what you will do is instead of this, you will say, okay, by the way, zero based indexing,"
+    },
+    {
+      "start": 994.51,
+      "end": 996.45,
+      "text": "this is zero based indexing to take care of this."
+    },
+    {
+      "start": 997.47,
+      "end": 1007.71,
+      "text": "So if not visited, I, then I will say if DFS of I parent will be always minus one visited"
+    },
+    {
+      "start": 1007.71,
+      "end": 1009.77,
+      "text": "adjacent is coming out to be true."
+    },
+    {
+      "start": 1010.09,
+      "end": 1015.37,
+      "text": "You return a true or else at the end of the day, if you, none of them gave a cycle, you"
+    },
+    {
+      "start": 1015.37,
+      "end": 1016.27,
+      "text": "return a false."
+    },
+    {
+      "start": 1016.57,
+      "end": 1018.61,
+      "text": "So you can just compile that and check it out."
+    },
+    {
+      "start": 1019.51,
+      "end": 1020.91,
+      "text": "It is running absolutely fine."
+    },
+    {
+      "start": 1021.25,
+      "end": 1023.87,
+      "text": "So excited to discuss the space complexity."
+    },
+    {
+      "start": 1024.55,
+      "end": 1026.11,
+      "text": "Are we using the space complexity?"
+    },
+    {
+      "start": 1026.25,
+      "end": 1030.19,
+      "text": "We are using something like recursion stack space, which can be B go off."
+    },
+    {
+      "start": 1030.81,
+      "end": 1035.19,
+      "text": "And at the worst case, as you model the notes are connected, it will be a recursion."
+    },
+    {
+      "start": 1035.19,
+      "end": 1040.63,
+      "text": "So like, as you get a graph, something like this, then the recursion will go here, then"
+    },
+    {
+      "start": 1040.63,
+      "end": 1041.99,
+      "text": "here, then here, then here."
+    },
+    {
+      "start": 1041.99,
+      "end": 1044.19,
+      "text": "So complete recursion stack space."
+    },
+    {
+      "start": 1044.19,
+      "end": 1046.25,
+      "text": "We're using something like a visited array."
+    },
+    {
+      "start": 1046.95,
+      "end": 1048.77,
+      "text": "So you can just sum it up to be go off."
+    },
+    {
+      "start": 1048.77,
+      "end": 1052.67,
+      "text": "And I'm not using, like, I'm not adding the adjacency list into a home."
+    },
+    {
+      "start": 1053.09,
+      "end": 1054.41,
+      "text": "What about the time complexity?"
+    },
+    {
+      "start": 1054.73,
+      "end": 1055.93,
+      "text": "Are you using a DFS Travis?"
+    },
+    {
+      "start": 1056.27,
+      "end": 1061.63,
+      "text": "And we know the DFS Travis sellers and plus two E because for every node you visit all"
+    },
+    {
+      "start": 1061.63,
+      "end": 1063.61,
+      "text": "the degrees or all that just in notes."
+    },
+    {
+      "start": 1063.87,
+      "end": 1070.75,
+      "text": "And the summation of adjacent notes is two E so N plus two E plus B go off N because"
+    },
+    {
+      "start": 1071.09,
+      "end": 1072.25,
+      "text": "you're running a fall loop."
+    },
+    {
+      "start": 1072.89,
+      "end": 1073.89,
+      "text": "You're running a fall loop."
+    },
+    {
+      "start": 1074.19,
+      "end": 1079.29,
+      "text": "But the fall loop does not calls like DFS one, two, three, four."
+    },
+    {
+      "start": 1079.35,
+      "end": 1079.59,
+      "text": "No."
+    },
+    {
+      "start": 1079.95,
+      "end": 1081.95,
+      "text": "In total, it will call this."
+    },
+    {
+      "start": 1082.89,
+      "end": 1088.29,
+      "text": "Like once this, which will make sure the DFS is four times, the DFS is two times."
+    },
+    {
+      "start": 1088.29,
+      "end": 1090.39,
+      "text": "The DFS is three times in total."
+    },
+    {
+      "start": 1090.39,
+      "end": 1091.71,
+      "text": "It will be called three times."
+    },
+    {
+      "start": 1092.07,
+      "end": 1094.89,
+      "text": "And that three times will make sure it visits them nine times."
+    },
+    {
+      "start": 1095.41,
+      "end": 1098.19,
+      "text": "It won't be like every time it's getting called."
+    },
+    {
+      "start": 1098.19,
+      "end": 1104.15,
+      "text": "So it's not something like into overall, it will visit all the nodes and it'll be."
+    },
+    {
+      "start": 1104.19,
+      "end": 1106.65,
+      "text": "Time that it will take to visit all the nodes."
+    },
+    {
+      "start": 1106.97,
+      "end": 1111.29,
+      "text": "And there is this loop that is running for loop this fall loop, which is going to take"
+    },
+    {
+      "start": 1111.29,
+      "end": 1112.09,
+      "text": "N times."
+    },
+    {
+      "start": 1112.35,
+      "end": 1115.19,
+      "text": "That's why this is the overall time complexity."
+    },
+    {
+      "start": 1115.19,
+      "end": 1116.79,
+      "text": "This is the overall space complex."
+    },
+    {
+      "start": 1117.35,
+      "end": 1121.53,
+      "text": "So guys, I hope I was able to explain you this particular algorithm, just in case I"
+    },
+    {
+      "start": 1121.53,
+      "end": 1123.69,
+      "text": "was, please make sure you like this video."
+    },
+    {
+      "start": 1123.69,
+      "end": 1126.21,
+      "text": "And if you're new to our channel, what are you waiting for?"
+    },
+    {
+      "start": 1126.25,
+      "end": 1127.89,
+      "text": "Hit that subscribe button right away."
+    },
+    {
+      "start": 1128.07,
+      "end": 1132.45,
+      "text": "And if you haven't checked out our dynamic programming playlist and the SDC, you're"
+    },
+    {
+      "start": 1132.45,
+      "end": 1133.71,
+      "text": "missing out on a lot."
+    },
+    {
+      "start": 1133.71,
+      "end": 1135.69,
+      "text": "The links are in the description, check them out."
+    },
+    {
+      "start": 1135.93,
+      "end": 1137.55,
+      "text": "And here with this, I'll be wrapping up this video."
+    },
+    {
+      "start": 1137.85,
+      "end": 1139.21,
+      "text": "Let's meet in some other video till then."
+    },
+    {
+      "start": 1139.21,
+      "end": 1139.53,
+      "text": "Bye bye."
+    },
+    {
+      "start": 1139.53,
+      "end": 1140.01,
+      "text": "Take care."
+    }
+  ]
+}

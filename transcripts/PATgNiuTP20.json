@@ -1,0 +1,664 @@
+{
+  "video_id": "PATgNiuTP20",
+  "title": "G-33. Dijkstra's Algorithm - Using Set - Part 2",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 748.5,
+  "segments": [
+    {
+      "start": 2.94,
+      "end": 6.06,
+      "text": "hey everyone welcome back to the channel i hope you guys are doing extremely well"
+    },
+    {
+      "start": 6.06,
+      "end": 9.82,
+      "text": "in the previous video we have learned about dexter's algorithm using priority queue"
+    },
+    {
+      "start": 9.82,
+      "end": 14.94,
+      "text": "if you haven't seen that video please please go back and watch it because you won't understand"
+    },
+    {
+      "start": 14.94,
+      "end": 20.78,
+      "text": "anything in this video because it's an extension it's just an extension of the previous video okay"
+    },
+    {
+      "start": 20.78,
+      "end": 25.74,
+      "text": "so in the previous video we did uh implement dexter's algorithm using the priority queue right"
+    },
+    {
+      "start": 25.74,
+      "end": 31.9,
+      "text": "but in this video what i'll do is i'll try to implement our dexter's algorithm using the set"
+    },
+    {
+      "start": 31.9,
+      "end": 39.5,
+      "text": "data structure so if you remember what did we do in the previous video we just took a priority queue"
+    },
+    {
+      "start": 39.5,
+      "end": 46.06,
+      "text": "right and we stored everything in terms of distance and node why did we take priority queue"
+    },
+    {
+      "start": 46.06,
+      "end": 52.46,
+      "text": "because we always wanted the minimum distance at first that is the reason we took priority queue"
+    },
+    {
+      "start": 52.46,
+      "end": 61.02,
+      "text": "okay now set what is the definition of a set set stores unique values and"
+    },
+    {
+      "start": 61.9,
+      "end": 70.14,
+      "text": "the smallest at the top smallest at the top and then it stores everything in the ascending order"
+    },
+    {
+      "start": 70.14,
+      "end": 77.26,
+      "text": "if you know set data structure it stores everything in the ascending order right so that is what"
+    },
+    {
+      "start": 77.98,
+      "end": 82.86,
+      "text": "we were doing in priority queue as well in priority queue we were looking for the minimum distance"
+    },
+    {
+      "start": 83.74,
+      "end": 89.82,
+      "text": "if we take set it's going to do the same if you look at the top most element it will always be"
+    },
+    {
+      "start": 92.22,
+      "end": 100.7,
+      "text": "everything in ascending fashion however there is one other reason why i am going to use"
+    },
+    {
+      "start": 100.7,
+      "end": 105.98,
+      "text": "this particular set data structure and i'll explain you well again doing a dry run on the"
+    },
+    {
+      "start": 105.98,
+      "end": 114.14,
+      "text": "same example okay so we'll take a same set data structure a distance a node a source node and"
+    },
+    {
+      "start": 114.14,
+      "end": 121.58,
+      "text": "initially as usual put zero and everything else to be infinite that's what i'll start off with and"
+    },
+    {
+      "start": 121.9,
+      "end": 129.42,
+      "text": "i'll just put off distance 0 and the source 0 in the set data structure so let's take it out"
+    },
+    {
+      "start": 129.42,
+      "end": 138.22,
+      "text": "and erase it so distance 0 with a node 0 okay let's quickly uh move it uh to its adjacent"
+    },
+    {
+      "start": 138.22,
+      "end": 142.7,
+      "text": "nodes i'll just go quick because you already know about it this is going to take plus 4 so the"
+    },
+    {
+      "start": 142.7,
+      "end": 148.62,
+      "text": "updated distance will be 4 i can reach at an updated distance of 4 thereby i'll go and see"
+    },
+    {
+      "start": 148.62,
+      "end": 150.78,
+      "text": "updated distance of 4 and a node 1."
+    },
+    {
+      "start": 150.78,
+      "end": 159.44,
+      "text": "in the set data structure i can also reach the node 2 by taking a distance of 4 so another"
+    },
+    {
+      "start": 159.44,
+      "end": 166.64,
+      "text": "updated distance of 4 so 4 comma 2 will come here right and this is how we can wrap up the first"
+    },
+    {
+      "start": 166.64,
+      "end": 173.26,
+      "text": "node so right after the right after the first iteration 4 comma 1 will appear at the top because"
+    },
+    {
+      "start": 173.26,
+      "end": 179.62,
+      "text": "these two are same so it is differentiated by the node number so 4 comma 1 will tend to appear at"
+    },
+    {
+      "start": 179.62,
+      "end": 185.54,
+      "text": "the top so what i'll do is i'll take the 4 comma 1 this time so the distance is 4 and the node is"
+    },
+    {
+      "start": 185.54,
+      "end": 193.16,
+      "text": "1 yes the distance is 4 and the node is 1 so if i have node 1 yes if i have node 1 where can i go"
+    },
+    {
+      "start": 193.2,
+      "end": 200.72,
+      "text": "from 1 i can go to 0 and 2 so i'll try to go to 0 which is node 0 which will end up taking me 4"
+    },
+    {
+      "start": 200.72,
+      "end": 206.24,
+      "text": "which will make the distance 8 which will which i'll not consider i'll try to go to node 2 by"
+    },
+    {
+      "start": 206.24,
+      "end": 209.6,
+      "text": "taking a distance of 2 which will make the distance of 6 which will again not be"
+    },
+    {
+      "start": 209.6,
+      "end": 215.6,
+      "text": "considered so this is done all right i'm going quick because you already know this next i'll"
+    },
+    {
+      "start": 215.6,
+      "end": 221.84,
+      "text": "take forward two so four node two from node two where can you go you can go to node zero that"
+    },
+    {
+      "start": 221.84,
+      "end": 227.44,
+      "text": "will cost you four which will make it a distance of uh eight which will not be considered you can"
+    },
+    {
+      "start": 227.44,
+      "end": 232.64,
+      "text": "go to node uh one as well which will take your distance of two make it six which will not be"
+    },
+    {
+      "start": 232.64,
+      "end": 237.76,
+      "text": "considered these two things will not be considered if you're standard two there are other things like"
+    },
+    {
+      "start": 237.76,
+      "end": 244.16,
+      "text": "three four and five where you can go so let's try to go to node three so if i try to go to"
+    },
+    {
+      "start": 244.16,
+      "end": 248.24,
+      "text": "three it will take my distance of three which will make me a distance of seven"
+    },
+    {
+      "start": 248.8,
+      "end": 253.44,
+      "text": "will be considered so seven comma three will be considered so you can put that into the set data"
+    },
+    {
+      "start": 253.44,
+      "end": 259.84,
+      "text": "structure right you can so once three is done we will go to the next node which is node four"
+    },
+    {
+      "start": 259.84,
+      "end": 263.68,
+      "text": "and how much will we take we'll take one which will make the distances five"
+    },
+    {
+      "start": 263.68,
+      "end": 267.36,
+      "text": "so five comma four is now the shortest one it will go at the top"
+    },
+    {
+      "start": 267.36,
+      "end": 267.74,
+      "text": "a la"
+    },
+    {
+      "start": 267.76,
+      "end": 272.68,
+      "text": "the distance here which is the next node the next node is 5 I'll take a distance"
+    },
+    {
+      "start": 272.68,
+      "end": 278.38,
+      "text": "of 6 which will make it a 10 so 10 comma 5 is what goes into the set and we'll"
+    },
+    {
+      "start": 278.38,
+      "end": 282.82,
+      "text": "update and over here so I can say this iteration is over so we can just go and"
+    },
+    {
+      "start": 282.82,
+      "end": 290.0,
+      "text": "omit this portion of okay done now is where you understand let's go on the set"
+    },
+    {
+      "start": 290.0,
+      "end": 294.34,
+      "text": "and get the smallest one which is 5 comma 4 distance of 5 which is the node"
+    },
+    {
+      "start": 294.34,
+      "end": 299.96,
+      "text": "4 okay where can 4 go 4 can go to 2 if you carefully see in the graph which"
+    },
+    {
+      "start": 299.96,
+      "end": 303.5,
+      "text": "will take it a distance of 1 it will make it a 6 which is not to be"
+    },
+    {
+      "start": 303.5,
+      "end": 310.9,
+      "text": "considered but from 4 you can go to 5 which is going to take 3 plus 3 is what"
+    },
+    {
+      "start": 310.9,
+      "end": 316.3,
+      "text": "it will take to go to 5 which will make it 8 and this is where you see"
+    },
+    {
+      "start": 316.3,
+      "end": 322.42,
+      "text": "previously 5 was reachable at 10 not infinite if it would have been"
+    },
+    {
+      "start": 322.42,
+      "end": 324.34,
+      "text": "infinite please hear my words"
+    },
+    {
+      "start": 324.34,
+      "end": 330.76,
+      "text": "properly if it would have been infinite it means no one reached it ever but"
+    },
+    {
+      "start": 330.76,
+      "end": 338.02,
+      "text": "since it is 10 it means someone reached and someone reached then previously"
+    },
+    {
+      "start": 338.02,
+      "end": 344.32,
+      "text": "please hear me out properly at 5 we do not have an infinite we have a 10 had it"
+    },
+    {
+      "start": 344.32,
+      "end": 349.48,
+      "text": "been infinity it means the first time someone is reaching 5 but since it is 10"
+    },
+    {
+      "start": 349.48,
+      "end": 354.26,
+      "text": "it means someone has reached 5 which took"
+    },
+    {
+      "start": 354.26,
+      "end": 360.8,
+      "text": "him a distance of 10 so I'm sure there would be a 10 comma 5 in the set I'm"
+    },
+    {
+      "start": 360.8,
+      "end": 365.96,
+      "text": "sure there will be a 10 comma 5 in the set because someone reached 5 at a"
+    },
+    {
+      "start": 365.96,
+      "end": 371.18,
+      "text": "distance of 10 I'm sure right so if I'm sure I'm getting a better one and I'm"
+    },
+    {
+      "start": 371.18,
+      "end": 376.34,
+      "text": "putting that into the set data structure something like an 8 comma 5 will go here"
+    },
+    {
+      "start": 376.34,
+      "end": 382.1,
+      "text": "like if I go and erase this portion something like an 8 comma 5 will go here"
+    },
+    {
+      "start": 382.1,
+      "end": 384.1,
+      "text": "if an 8 comma 5 goes then it is infinite."
+    },
+    {
+      "start": 384.26,
+      "end": 391.64,
+      "text": "is there a point in keeping 10 comma 5 no this is where you say I know the set"
+    },
+    {
+      "start": 391.64,
+      "end": 395.54,
+      "text": "will have a 10 comma 5 set please erase it"
+    },
+    {
+      "start": 395.54,
+      "end": 401.42,
+      "text": "priority queue cannot erase, priority queue will do the iteration but set will say I have a"
+    },
+    {
+      "start": 401.42,
+      "end": 406.76,
+      "text": "liberty I can do this erase operation I'll go and erase it the moment I see"
+    },
+    {
+      "start": 406.76,
+      "end": 411.0,
+      "text": "there's a better alternative I will definitely put in 8 comma 5 but before"
+    },
+    {
+      "start": 411.0,
+      "end": 414.16,
+      "text": "putting in I'll say there's no need of 10 comma 5 I can"
+    },
+    {
+      "start": 414.16,
+      "end": 418.4,
+      "text": "reach 5 in a much much better distance and if I can reach 5 in a much much"
+    },
+    {
+      "start": 418.4,
+      "end": 422.32,
+      "text": "better distance why don't I use that better distance why will I end up using"
+    },
+    {
+      "start": 422.32,
+      "end": 427.36,
+      "text": "10 I don't need extra iterations I don't want I don't want in the future that"
+    },
+    {
+      "start": 427.36,
+      "end": 432.76,
+      "text": "this happens like just a minute I don't want in the future that in the next step"
+    },
+    {
+      "start": 432.76,
+      "end": 438.76,
+      "text": "probably I'll get 8 and I'll do for 5 and then again I'll take 5 and do with"
+    },
+    {
+      "start": 438.76,
+      "end": 444.08,
+      "text": "10 that won't be of any use because if 8 was taken prior to 10"
+    },
+    {
+      "start": 444.16,
+      "end": 447.7,
+      "text": "it would have given me the shortest distance there's no point in taking 10"
+    },
+    {
+      "start": 447.7,
+      "end": 455.1,
+      "text": "this is why I'll use set I'll use set to erase very important I'll use to erase"
+    },
+    {
+      "start": 455.1,
+      "end": 463.16,
+      "text": "already existing paths already existing paths does it improve the time complexity"
+    },
+    {
+      "start": 463.16,
+      "end": 471.46,
+      "text": "very very minor not much very very like depends on the graphs but it's better"
+    },
+    {
+      "start": 471.46,
+      "end": 474.16,
+      "text": "that you use set because even set will go"
+    },
+    {
+      "start": 474.16,
+      "end": 480.66,
+      "text": "as even if you do an erase set dot erase is a logarithmic operation so now can I"
+    },
+    {
+      "start": 480.66,
+      "end": 485.66,
+      "text": "see that if I use set it will be a better complexity than practically no"
+    },
+    {
+      "start": 485.66,
+      "end": 492.46,
+      "text": "right because set dot erase ends up taking a logarithmic time so you are"
+    },
+    {
+      "start": 492.46,
+      "end": 498.14,
+      "text": "probably saving up on iterations in the future which might not be but you are"
+    },
+    {
+      "start": 498.14,
+      "end": 504.02,
+      "text": "erasing it so erase takes login so you are"
+    },
+    {
+      "start": 504.02,
+      "end": 508.5,
+      "text": "investing a login and in the future you are saving some iteration so depending on"
+    },
+    {
+      "start": 508.5,
+      "end": 512.78,
+      "text": "the size of the graph a lot of things will depend so you cannot explicitly"
+    },
+    {
+      "start": 512.78,
+      "end": 515.96,
+      "text": "tell me that set is better than practically or practically is better"
+    },
+    {
+      "start": 515.96,
+      "end": 520.7,
+      "text": "than set both of them can be used because it'll be hardly a minor"
+    },
+    {
+      "start": 520.7,
+      "end": 523.94,
+      "text": "difference this is how you tell to the interviewer that these are the cases"
+    },
+    {
+      "start": 523.94,
+      "end": 528.68,
+      "text": "where I can use these are the cases I cannot use if you tell the interview"
+    },
+    {
+      "start": 528.68,
+      "end": 534.02,
+      "text": "with such concept clarity that you know like almost every bits and pieces you"
+    },
+    {
+      "start": 534.02,
+      "end": 539.64,
+      "text": "will be impressed and tell him you learn from take you forward cool I hope you"
+    },
+    {
+      "start": 539.64,
+      "end": 542.14,
+      "text": "have understood the algorithmic implementation now it's time to code it"
+    },
+    {
+      "start": 542.14,
+      "end": 548.32,
+      "text": "up I'll be coding the C++ on the right and exact similar Java code is on the left"
+    },
+    {
+      "start": 548.32,
+      "end": 555.38,
+      "text": "so we are given the vertex the adjacency list and the source so set of pair go and"
+    },
+    {
+      "start": 555.38,
+      "end": 559.74,
+      "text": "declare a set of pair because gonna store set of pairs and please make sure"
+    },
+    {
+      "start": 559.74,
+      "end": 563.98,
+      "text": "you declare a distance array of V comma and infinity"
+    },
+    {
+      "start": 564.02,
+      "end": 569.16,
+      "text": "which is women I in our case effect initial configuration set always stores"
+    },
+    {
+      "start": 569.16,
+      "end": 578.48,
+      "text": "what do you come S yes and distance of s equal to zero same thing while just keep"
+    },
+    {
+      "start": 578.48,
+      "end": 583.5,
+      "text": "on A trading in the set it's exact similar yes is the exact similar to this"
+    },
+    {
+      "start": 583.5,
+      "end": 589.3,
+      "text": "thing and now you see order of ID and just point like if you do an eyetreater"
+    },
+    {
+      "start": 589.3,
+      "end": 593.24,
+      "text": "this I trigger points to the big another set and if you do a star you get the"
+    },
+    {
+      "start": 593.24,
+      "end": 593.68,
+      "text": "value at different times"
+    },
+    {
+      "start": 594.02,
+      "end": 601.3,
+      "text": "that address so st dot begin will be an iterator pointing to the address where the sets first"
+    },
+    {
+      "start": 601.3,
+      "end": 607.78,
+      "text": "element is and the star will give you the value so i can say the node is nothing but it dot second"
+    },
+    {
+      "start": 608.82,
+      "end": 616.26,
+      "text": "and i can say the distance is id dot first cool other thing i can say now you need to remove it"
+    },
+    {
+      "start": 616.26,
+      "end": 621.06,
+      "text": "from the set as well that's the thing please make sure you just call the remove function"
+    },
+    {
+      "start": 621.06,
+      "end": 627.46,
+      "text": "that's erase after this you go across and travel in the set simple same thing that you did in"
+    },
+    {
+      "start": 627.46,
+      "end": 633.38,
+      "text": "priority queue and you say okay this is my adjacency you know id of zero because it's a list"
+    },
+    {
+      "start": 633.38,
+      "end": 639.62,
+      "text": "that is given to you right and what do you do for edge weight very simple you say edge weight will"
+    },
+    {
+      "start": 639.62,
+      "end": 647.7,
+      "text": "be nothing but id of one simple next you say okay currently i've taken distance to reach this node"
+    },
+    {
+      "start": 647.7,
+      "end": 650.98,
+      "text": "and i'll take another edge weight to reach adjacent"
+    },
+    {
+      "start": 651.06,
+      "end": 657.78,
+      "text": "node if this is smaller than adjacent node that means i can update it but before that wait"
+    },
+    {
+      "start": 658.5,
+      "end": 668.1,
+      "text": "we need to erase if it existed which means if distance of adjacent node is not equal to 1 e9"
+    },
+    {
+      "start": 668.1,
+      "end": 675.14,
+      "text": "it means someone reached someone reached and if someone reached can i go across and probably say"
+    },
+    {
+      "start": 675.14,
+      "end": 680.98,
+      "text": "set dot erase what that someone would have taken distance of adjacent"
+    },
+    {
+      "start": 681.06,
+      "end": 686.42,
+      "text": "you know and adjacency node in the set erase once you've erased you just go ahead and say"
+    },
+    {
+      "start": 687.38,
+      "end": 695.3,
+      "text": "the new distance is this i care about this now and the same thing i can go and tell to the set"
+    },
+    {
+      "start": 695.3,
+      "end": 704.02,
+      "text": "this is the new distance please insert that into yourself cool uh adjacency no once you've done"
+    },
+    {
+      "start": 704.02,
+      "end": 710.98,
+      "text": "this the same thing just go across and say return of distance so on submitting we see that all the"
+    },
+    {
+      "start": 711.06,
+      "end": 716.18,
+      "text": "test cases are running fine so so guys i hope you've understood this uh just in case your"
+    },
+    {
+      "start": 716.18,
+      "end": 722.58,
+      "text": "interviewer does ask you how do you have so much of clarity tell him that you read from striver and"
+    },
+    {
+      "start": 722.58,
+      "end": 726.74,
+      "text": "yeah just in case you understood everything please please please make sure you like this video and if"
+    },
+    {
+      "start": 726.74,
+      "end": 730.82,
+      "text": "you're new to our channel what are you waiting for hit that subscribe button right away and if you"
+    },
+    {
+      "start": 730.82,
+      "end": 735.14,
+      "text": "haven't checked out our dp series and the hd sheet the links are in the description make sure you"
+    },
+    {
+      "start": 735.14,
+      "end": 738.5,
+      "text": "check them out with this i'll be wrapping up this video let's meet in some other video till then bye"
+    },
+    {
+      "start": 742.86,
+      "end": 744.94,
+      "text": "bye"
+    }
+  ]
+}

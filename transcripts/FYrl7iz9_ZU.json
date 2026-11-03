@@ -1,0 +1,2439 @@
+{
+  "video_id": "FYrl7iz9_ZU",
+  "title": "G-49. Number of Operations to Make Network Connected - DSU",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 887.95,
+  "segments": [
+    {
+      "start": 2.9,
+      "end": 6.02,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.42,
+      "end": 9.48,
+      "text": "So today we will be solving the problem connecting the graph."
+    },
+    {
+      "start": 9.92,
+      "end": 12.88,
+      "text": "It states here given a graph with n vertices and m edges,"
+    },
+    {
+      "start": 13.44,
+      "end": 20.92,
+      "text": "you can remove one edge from anywhere and add that edge between any two vertices in one operation."
+    },
+    {
+      "start": 21.18,
+      "end": 25.16,
+      "text": "Okay, that is what the question states and you have to find the minimum number of operations"
+    },
+    {
+      "start": 25.16,
+      "end": 28.32,
+      "text": "that will be required to make the graph connected."
+    },
+    {
+      "start": 28.32,
+      "end": 33.96,
+      "text": "So let's understand the question. Imagine currently your graph looks something like this"
+    },
+    {
+      "start": 33.96,
+      "end": 39.0,
+      "text": "and it is in three parts. It is in three parts, three different components."
+    },
+    {
+      "start": 39.48,
+      "end": 41.64,
+      "text": "Here's a component, here's a component, here's a component."
+    },
+    {
+      "start": 42.18,
+      "end": 45.6,
+      "text": "What they want is you have to make the entire graph connect."
+    },
+    {
+      "start": 46.08,
+      "end": 51.7,
+      "text": "But wait, how will that happen? Maybe if I join 3, 4, maybe if I join 6, 7."
+    },
+    {
+      "start": 52.18,
+      "end": 56.78,
+      "text": "Can I say now the graph is a single component? I can, but wait."
+    },
+    {
+      "start": 57.12,
+      "end": 58.3,
+      "text": "They have clearly stated."
+    },
+    {
+      "start": 59.0,
+      "end": 65.3,
+      "text": "You cannot draw imaginary edges like you cannot just draw random edges to make the graph connected."
+    },
+    {
+      "start": 65.92,
+      "end": 68.48,
+      "text": "You need edges which already exist."
+    },
+    {
+      "start": 69.04,
+      "end": 71.4,
+      "text": "For an example, if you see this particular component,"
+    },
+    {
+      "start": 72.1,
+      "end": 77.06,
+      "text": "if I remove this edge for an example, I remove this edge."
+    },
+    {
+      "start": 77.2,
+      "end": 77.6,
+      "text": "Let's do it."
+    },
+    {
+      "start": 78.18,
+      "end": 82.64,
+      "text": "So I'll just quickly remove this edge and I'll take this edge and I'll connect 3 and 4."
+    },
+    {
+      "start": 82.98,
+      "end": 86.84,
+      "text": "You can connect 2 and 6, 2 and 5. You can connect it anywhere."
+    },
+    {
+      "start": 87.06,
+      "end": 88.22,
+      "text": "It can be used anywhere."
+    },
+    {
+      "start": 88.74,
+      "end": 92.08,
+      "text": "But in order to use an edge, you have to take it out from somewhere."
+    },
+    {
+      "start": 92.58,
+      "end": 93.26,
+      "text": "Okay, I took it out."
+    },
+    {
+      "start": 94.04,
+      "end": 95.88,
+      "text": "Now you see, I took it out."
+    },
+    {
+      "start": 96.4,
+      "end": 101.54,
+      "text": "It's still a component and it helped me to get connected to this particular component."
+    },
+    {
+      "start": 102.12,
+      "end": 103.62,
+      "text": "Now I'm like, okay, fine."
+    },
+    {
+      "start": 104.12,
+      "end": 107.0,
+      "text": "What if I go ahead and take out one more edge?"
+    },
+    {
+      "start": 107.58,
+      "end": 108.78,
+      "text": "I'll take out one more edge."
+    },
+    {
+      "start": 109.22,
+      "end": 112.38,
+      "text": "I'll take that edge and maybe connect 6 and 8."
+    },
+    {
+      "start": 112.64,
+      "end": 115.5,
+      "text": "Maybe connect 6 and 8. I could have connected 5, 7. That is okay."
+    },
+    {
+      "start": 115.72,
+      "end": 117.92,
+      "text": "Now can I say even if I remove this,"
+    },
+    {
+      "start": 118.32,
+      "end": 119.52,
+      "text": "it is still connected."
+    },
+    {
+      "start": 119.82,
+      "end": 120.98,
+      "text": "It is still connected."
+    },
+    {
+      "start": 121.62,
+      "end": 125.46,
+      "text": "And it ended up connecting all the three components."
+    },
+    {
+      "start": 126.18,
+      "end": 126.68,
+      "text": "It did."
+    },
+    {
+      "start": 127.08,
+      "end": 138.62,
+      "text": "So thereby I can say I needed two edges, which I had to remove and plant somewhere so that the entire graph was connected."
+    },
+    {
+      "start": 138.94,
+      "end": 139.92,
+      "text": "This is the question."
+    },
+    {
+      "start": 140.22,
+      "end": 146.62,
+      "text": "And you need to find the minimum edges that you need to remove and plant it so that all the graphs, like all the components,"
+    },
+    {
+      "start": 146.62,
+      "end": 147.24,
+      "text": "can be connected."
+    },
+    {
+      "start": 147.24,
+      "end": 147.82,
+      "text": "So that all the graphs, like all the components, can be connected."
+    },
+    {
+      "start": 147.82,
+      "end": 148.4,
+      "text": "So that all the graphs, like all the components,"
+    },
+    {
+      "start": 148.4,
+      "end": 151.42,
+      "text": "gets connected into a single component."
+    },
+    {
+      "start": 151.82,
+      "end": 153.92,
+      "text": "Now before solving this problem,"
+    },
+    {
+      "start": 153.92,
+      "end": 158.82,
+      "text": "we have to analyze what are components and how can we connect component?"
+    },
+    {
+      "start": 159.72,
+      "end": 164.02,
+      "text": "Can I say if I have this component and if I have this component,"
+    },
+    {
+      "start": 164.02,
+      "end": 169.62,
+      "text": "they can be connected by connecting any of the two nodes in both the components."
+    },
+    {
+      "start": 169.62,
+      "end": 172.72,
+      "text": "If I pick up any node and connected to any node,"
+    },
+    {
+      "start": 172.72,
+      "end": 175.62,
+      "text": "the two components will get connected."
+    },
+    {
+      "start": 175.62,
+      "end": 176.84,
+      "text": "So can I say if there are,"
+    },
+    {
+      "start": 176.84,
+      "end": 177.34,
+      "text": "let's say,"
+    },
+    {
+      "start": 177.34,
+      "end": 177.82,
+      "text": "let's say,"
+    },
+    {
+      "start": 177.82,
+      "end": 186.66,
+      "text": "say one two three four five components if there are five components i am asking you a very simple"
+    },
+    {
+      "start": 186.66,
+      "end": 194.74,
+      "text": "question how many edges do you actually require to connect five components into single component"
+    },
+    {
+      "start": 194.74,
+      "end": 200.06,
+      "text": "graph you'll be like it's very simple i'll connect this component and this component that means"
+    },
+    {
+      "start": 200.06,
+      "end": 205.68,
+      "text": "connect any node of this component to any node of this component and then i'll connect here then"
+    },
+    {
+      "start": 205.68,
+      "end": 212.62,
+      "text": "i'll connect here then i'll connect here so can i say i required one two three four can i say for"
+    },
+    {
+      "start": 212.62,
+      "end": 221.76,
+      "text": "n components for n components i required n minus one edges to make it a single graph"
+    },
+    {
+      "start": 221.76,
+      "end": 229.38,
+      "text": "which is very sensible if i just have a single component graph which means one component will"
+    },
+    {
+      "start": 229.38,
+      "end": 235.34,
+      "text": "require zero edges to make it connect does it make sense it does"
+    },
+    {
+      "start": 235.34,
+      "end": 235.66,
+      "text": "you"
+    },
+    {
+      "start": 235.68,
+      "end": 245.66,
+      "text": "it is completely connected so can i say okay if i can somehow figure the number of connected"
+    },
+    {
+      "start": 245.66,
+      "end": 251.34,
+      "text": "components which is very simple if i can somehow figure the number of connected components"
+    },
+    {
+      "start": 251.34,
+      "end": 261.4,
+      "text": "the answer will be n like assume this to be n the answer will be or nc the answer will be nc minus one"
+    },
+    {
+      "start": 261.4,
+      "end": 265.3,
+      "text": "that's very simple and that is always going to be minimum"
+    },
+    {
+      "start": 265.68,
+      "end": 272.16,
+      "text": "you can do more than it but we want minimum right this is what we have been asked so this will be"
+    },
+    {
+      "start": 272.16,
+      "end": 280.4,
+      "text": "the answer so how do you approach this problem it's very easy just imagine these two components"
+    },
+    {
+      "start": 280.4,
+      "end": 287.36,
+      "text": "and i ask you connect them can i pick up any node from this yes i can pick up let's say zero and i"
+    },
+    {
+      "start": 287.36,
+      "end": 292.8,
+      "text": "can pick up five or maybe i can pick up one and i can pick up five maybe i can pick up three i can"
+    },
+    {
+      "start": 292.8,
+      "end": 295.02,
+      "text": "pick up four i can pick up any node"
+    },
+    {
+      "start": 295.68,
+      "end": 301.6,
+      "text": "any node connected to any other node will make these two components connected in each other"
+    },
+    {
+      "start": 302.16,
+      "end": 309.2,
+      "text": "okay that's the first observation next thing what if i have let's say one component these square"
+    },
+    {
+      "start": 309.2,
+      "end": 316.16,
+      "text": "boxes are component okay what if i have five components like this and inside this we have"
+    },
+    {
+      "start": 316.16,
+      "end": 323.28,
+      "text": "graphs okay so how many edges do we require to connect this i did tell you right now for two"
+    },
+    {
+      "start": 323.28,
+      "end": 325.52,
+      "text": "components you can pick up any node and you can pick up any node and you can pick up any node and"
+    },
+    {
+      "start": 325.52,
+      "end": 331.28,
+      "text": "and any node and connect it right for two components you can pick up any node and connect"
+    },
+    {
+      "start": 331.28,
+      "end": 336.46,
+      "text": "again for two components you can pick up any node and connect it and similarly again any node and"
+    },
+    {
+      "start": 336.46,
+      "end": 345.46,
+      "text": "connect can i see if there are five components i will be requiring one two three four so for five"
+    },
+    {
+      "start": 345.46,
+      "end": 356.0,
+      "text": "components i required four edges can i do in any lesser than this i don't can i do it in any more"
+    },
+    {
+      "start": 356.0,
+      "end": 362.38,
+      "text": "than this yes but do i need more no why because the question clearly states minimum so can i say"
+    },
+    {
+      "start": 362.38,
+      "end": 368.78,
+      "text": "if i can figure out the number of connected components my answer will be very simple number"
+    },
+    {
+      "start": 368.78,
+      "end": 375.44,
+      "text": "of connected components minus one but wait we still have a problem to solve it's"
+    },
+    {
+      "start": 375.46,
+      "end": 387.24,
+      "text": "states we have to take out an edge take out an edge and reuse it like we cannot just build an"
+    },
+    {
+      "start": 387.24,
+      "end": 392.1,
+      "text": "edge we have to take it out from somewhere and we have to reuse it now question comes"
+    },
+    {
+      "start": 392.1,
+      "end": 399.22,
+      "text": "which edges can be taken out now why was i able to take out this edge if i ask you a very simple"
+    },
+    {
+      "start": 399.22,
+      "end": 405.04,
+      "text": "question why was i able to take out because the moment i took out this edge"
+    },
+    {
+      "start": 405.04,
+      "end": 405.42,
+      "text": "you"
+    },
+    {
+      "start": 405.42,
+      "end": 407.0,
+      "text": "The graph was still connected."
+    },
+    {
+      "start": 407.2,
+      "end": 409.06,
+      "text": "Rather the component was still connected."
+    },
+    {
+      "start": 409.78,
+      "end": 410.52,
+      "text": "Even if I."
+    },
+    {
+      "start": 411.08,
+      "end": 411.98,
+      "text": "Took out this edge."
+    },
+    {
+      "start": 412.36,
+      "end": 414.1,
+      "text": "The component still stays connected."
+    },
+    {
+      "start": 414.82,
+      "end": 415.04,
+      "text": "So."
+    },
+    {
+      "start": 415.82,
+      "end": 416.98,
+      "text": "Any extra edges."
+    },
+    {
+      "start": 417.86,
+      "end": 419.1,
+      "text": "In the component."
+    },
+    {
+      "start": 419.64,
+      "end": 420.62,
+      "text": "Can be used."
+    },
+    {
+      "start": 420.98,
+      "end": 422.0,
+      "text": "Somewhere else."
+    },
+    {
+      "start": 422.38,
+      "end": 422.86,
+      "text": "So I will be like."
+    },
+    {
+      "start": 423.88,
+      "end": 426.08,
+      "text": "Count the extra edges."
+    },
+    {
+      "start": 426.52,
+      "end": 427.56,
+      "text": "How will I do this?"
+    },
+    {
+      "start": 428.06,
+      "end": 428.82,
+      "text": "It's pretty simple."
+    },
+    {
+      "start": 428.94,
+      "end": 429.54,
+      "text": "I will tell you."
+    },
+    {
+      "start": 430.0,
+      "end": 431.16,
+      "text": "Count the extra edges."
+    },
+    {
+      "start": 431.72,
+      "end": 432.86,
+      "text": "And once you have done this."
+    },
+    {
+      "start": 435.23,
+      "end": 436.43,
+      "text": "Once you have done this."
+    },
+    {
+      "start": 436.43,
+      "end": 437.53,
+      "text": "Since you know."
+    },
+    {
+      "start": 437.77,
+      "end": 438.63,
+      "text": "Your answer is."
+    },
+    {
+      "start": 438.75,
+      "end": 441.53,
+      "text": "Number of connected components minus 1."
+    },
+    {
+      "start": 442.09,
+      "end": 442.77,
+      "text": "If."
+    },
+    {
+      "start": 443.21,
+      "end": 445.21,
+      "text": "These extra edges."
+    },
+    {
+      "start": 445.89,
+      "end": 448.57,
+      "text": "Somehow are greater than answer."
+    },
+    {
+      "start": 449.19,
+      "end": 449.45,
+      "text": "Then."
+    },
+    {
+      "start": 450.01,
+      "end": 451.77,
+      "text": "We can always do it."
+    },
+    {
+      "start": 452.25,
+      "end": 454.31,
+      "text": "And our answer will be answer."
+    },
+    {
+      "start": 454.93,
+      "end": 455.71,
+      "text": "Or else."
+    },
+    {
+      "start": 456.25,
+      "end": 457.43,
+      "text": "The answer will be minus 1."
+    },
+    {
+      "start": 457.69,
+      "end": 458.21,
+      "text": "Pretty simple."
+    },
+    {
+      "start": 458.83,
+      "end": 459.41,
+      "text": "This is the."
+    },
+    {
+      "start": 459.65,
+      "end": 461.37,
+      "text": "This is the required amount."
+    },
+    {
+      "start": 461.79,
+      "end": 463.59,
+      "text": "If the extra edges is."
+    },
+    {
+      "start": 463.75,
+      "end": 464.79,
+      "text": "Greater than equal to that."
+    },
+    {
+      "start": 464.79,
+      "end": 466.19,
+      "text": "Then that will be the answer."
+    },
+    {
+      "start": 466.43,
+      "end": 466.93,
+      "text": "Or."
+    },
+    {
+      "start": 467.39,
+      "end": 467.89,
+      "text": "I will say."
+    },
+    {
+      "start": 468.13,
+      "end": 468.63,
+      "text": "It's."
+    },
+    {
+      "start": 468.85,
+      "end": 469.35,
+      "text": "Not."
+    },
+    {
+      "start": 469.77,
+      "end": 470.27,
+      "text": "Possible."
+    },
+    {
+      "start": 470.53,
+      "end": 471.03,
+      "text": "Make sense?"
+    },
+    {
+      "start": 471.39,
+      "end": 471.89,
+      "text": "It does."
+    },
+    {
+      "start": 471.89,
+      "end": 472.39,
+      "text": "Right?"
+    },
+    {
+      "start": 472.39,
+      "end": 472.89,
+      "text": "So."
+    },
+    {
+      "start": 473.11,
+      "end": 473.61,
+      "text": "Now."
+    },
+    {
+      "start": 473.61,
+      "end": 474.11,
+      "text": "Question comes."
+    },
+    {
+      "start": 474.55,
+      "end": 477.51,
+      "text": "How do I count the extra edges?"
+    },
+    {
+      "start": 478.05,
+      "end": 478.55,
+      "text": "And then."
+    },
+    {
+      "start": 478.91,
+      "end": 480.87,
+      "text": "We have to also figure out the number of."
+    },
+    {
+      "start": 481.27,
+      "end": 481.77,
+      "text": "Components."
+    },
+    {
+      "start": 481.77,
+      "end": 482.27,
+      "text": "Which is."
+    },
+    {
+      "start": 482.41,
+      "end": 483.05,
+      "text": "Very simple."
+    },
+    {
+      "start": 483.67,
+      "end": 484.73,
+      "text": "So in order to count the."
+    },
+    {
+      "start": 484.99,
+      "end": 485.81,
+      "text": "Extra edges."
+    },
+    {
+      "start": 486.03,
+      "end": 486.99,
+      "text": "What we will do is."
+    },
+    {
+      "start": 487.25,
+      "end": 488.89,
+      "text": "We will write down all the edges."
+    },
+    {
+      "start": 489.07,
+      "end": 490.27,
+      "text": "So let's write down all the edges."
+    },
+    {
+      "start": 490.51,
+      "end": 491.27,
+      "text": "We have 0, 1."
+    },
+    {
+      "start": 491.37,
+      "end": 491.87,
+      "text": "Right?"
+    },
+    {
+      "start": 491.95,
+      "end": 493.45,
+      "text": "We have 0, 3."
+    },
+    {
+      "start": 493.71,
+      "end": 494.83,
+      "text": "We have 0, 2."
+    },
+    {
+      "start": 495.09,
+      "end": 496.19,
+      "text": "We have 1, 2."
+    },
+    {
+      "start": 496.43,
+      "end": 497.07,
+      "text": "We have."
+    },
+    {
+      "start": 497.37,
+      "end": 497.87,
+      "text": "2, 3."
+    },
+    {
+      "start": 498.09,
+      "end": 500.13,
+      "text": "So if you see there's 1, 2, 3, 4, 5."
+    },
+    {
+      "start": 500.39,
+      "end": 501.83,
+      "text": "I've written all the edges."
+    },
+    {
+      "start": 502.07,
+      "end": 502.37,
+      "text": "Right?"
+    },
+    {
+      "start": 502.51,
+      "end": 503.51,
+      "text": "And over here, let's write it."
+    },
+    {
+      "start": 503.87,
+      "end": 505.07,
+      "text": "It's like 4, 5."
+    },
+    {
+      "start": 505.49,
+      "end": 506.45,
+      "text": "And 5, 6."
+    },
+    {
+      "start": 506.63,
+      "end": 507.67,
+      "text": "And we have a 7, 8."
+    },
+    {
+      "start": 508.11,
+      "end": 509.39,
+      "text": "Let's quickly start connecting."
+    },
+    {
+      "start": 509.77,
+      "end": 510.27,
+      "text": "So."
+    },
+    {
+      "start": 510.95,
+      "end": 511.55,
+      "text": "Which."
+    },
+    {
+      "start": 511.97,
+      "end": 512.99,
+      "text": "Data structure to use."
+    },
+    {
+      "start": 513.33,
+      "end": 513.99,
+      "text": "I'm going to ask you."
+    },
+    {
+      "start": 514.09,
+      "end": 515.19,
+      "text": "And you're going to tell me this."
+    },
+    {
+      "start": 516.49,
+      "end": 518.39,
+      "text": "The data structure, which helps us in connecting."
+    },
+    {
+      "start": 519.19,
+      "end": 520.43,
+      "text": "Dynamically at every step."
+    },
+    {
+      "start": 520.61,
+      "end": 521.21,
+      "text": "Yes."
+    },
+    {
+      "start": 521.67,
+      "end": 524.75,
+      "text": "This joins a data structure is what we will be using."
+    },
+    {
+      "start": 525.11,
+      "end": 525.67,
+      "text": "Anytime."
+    },
+    {
+      "start": 525.67,
+      "end": 526.01,
+      "text": "You see."
+    },
+    {
+      "start": 526.01,
+      "end": 526.41,
+      "text": "Dynamically."
+    },
+    {
+      "start": 526.45,
+      "end": 527.45,
+      "text": "With connections happening."
+    },
+    {
+      "start": 527.75,
+      "end": 529.85,
+      "text": "That's the only data structure which can be used."
+    },
+    {
+      "start": 530.13,
+      "end": 531.47,
+      "text": "We don't know about this data structure."
+    },
+    {
+      "start": 531.73,
+      "end": 533.49,
+      "text": "I made a very detailed video on this."
+    },
+    {
+      "start": 533.55,
+      "end": 534.35,
+      "text": "Go back and watch it."
+    },
+    {
+      "start": 534.67,
+      "end": 537.67,
+      "text": "Because the code snippet that I've taught in that video will be used."
+    },
+    {
+      "start": 538.01,
+      "end": 538.99,
+      "text": "In every problem."
+    },
+    {
+      "start": 539.19,
+      "end": 540.15,
+      "text": "In every problem."
+    },
+    {
+      "start": 540.31,
+      "end": 541.79,
+      "text": "Without a shuttle change."
+    },
+    {
+      "start": 542.11,
+      "end": 542.37,
+      "text": "Okay."
+    },
+    {
+      "start": 542.63,
+      "end": 542.99,
+      "text": "So."
+    },
+    {
+      "start": 544.15,
+      "end": 544.65,
+      "text": "0, 1."
+    },
+    {
+      "start": 544.95,
+      "end": 545.19,
+      "text": "Now."
+    },
+    {
+      "start": 545.27,
+      "end": 545.71,
+      "text": "How."
+    },
+    {
+      "start": 545.81,
+      "end": 546.09,
+      "text": "Like."
+    },
+    {
+      "start": 546.67,
+      "end": 549.23,
+      "text": "What is the initial configuration of this joint set?"
+    },
+    {
+      "start": 549.87,
+      "end": 550.47,
+      "text": "Everyone."
+    },
+    {
+      "start": 550.91,
+      "end": 551.33,
+      "text": "Alone."
+    },
+    {
+      "start": 552.09,
+      "end": 553.27,
+      "text": "Everyone alone till 8."
+    },
+    {
+      "start": 553.51,
+      "end": 555.37,
+      "text": "So let's quickly write down everyone alone."
+    },
+    {
+      "start": 556.43,
+      "end": 557.75,
+      "text": "So initially."
+    },
+    {
+      "start": 558.11,
+      "end": 560.61,
+      "text": "This is how the disjoint set configuration will look like."
+    },
+    {
+      "start": 561.03,
+      "end": 562.81,
+      "text": "Now let's quickly perform the first connection."
+    },
+    {
+      "start": 563.05,
+      "end": 563.73,
+      "text": "0 and 1."
+    },
+    {
+      "start": 564.29,
+      "end": 564.81,
+      "text": "Are they connected?"
+    },
+    {
+      "start": 565.09,
+      "end": 565.33,
+      "text": "No."
+    },
+    {
+      "start": 565.61,
+      "end": 566.61,
+      "text": "So go ahead and connect."
+    },
+    {
+      "start": 567.81,
+      "end": 568.71,
+      "text": "So I'll go ahead and connect."
+    },
+    {
+      "start": 569.61,
+      "end": 569.87,
+      "text": "Perfect."
+    },
+    {
+      "start": 571.88,
+      "end": 572.42,
+      "text": "Next."
+    },
+    {
+      "start": 572.64,
+      "end": 573.2,
+      "text": "0 and 3."
+    },
+    {
+      "start": 573.2,
+      "end": 573.82,
+      "text": "Are they connected?"
+    },
+    {
+      "start": 573.88,
+      "end": 574.12,
+      "text": "No."
+    },
+    {
+      "start": 574.3,
+      "end": 575.32,
+      "text": "So go ahead and connect it."
+    },
+    {
+      "start": 576.32,
+      "end": 576.76,
+      "text": "Amazing."
+    },
+    {
+      "start": 578.38,
+      "end": 578.88,
+      "text": "Next."
+    },
+    {
+      "start": 579.16,
+      "end": 579.82,
+      "text": "0 and 2."
+    },
+    {
+      "start": 580.4,
+      "end": 580.78,
+      "text": "Oh sorry."
+    },
+    {
+      "start": 580.78,
+      "end": 581.82,
+      "text": "My bad pencil."
+    },
+    {
+      "start": 582.08,
+      "end": 582.5,
+      "text": "0 and 2."
+    },
+    {
+      "start": 582.5,
+      "end": 583.02,
+      "text": "Are they connected?"
+    },
+    {
+      "start": 583.02,
+      "end": 583.22,
+      "text": "No."
+    },
+    {
+      "start": 583.32,
+      "end": 584.44,
+      "text": "So go ahead and connect it."
+    },
+    {
+      "start": 584.54,
+      "end": 585.3,
+      "text": "What are you waiting for?"
+    },
+    {
+      "start": 586.02,
+      "end": 586.4,
+      "text": "So connect."
+    },
+    {
+      "start": 586.62,
+      "end": 586.82,
+      "text": "Gone."
+    },
+    {
+      "start": 587.2,
+      "end": 587.68,
+      "text": "Next."
+    },
+    {
+      "start": 587.8,
+      "end": 588.52,
+      "text": "1 and 2."
+    },
+    {
+      "start": 589.06,
+      "end": 589.44,
+      "text": "But wait."
+    },
+    {
+      "start": 590.24,
+      "end": 590.68,
+      "text": "1."
+    },
+    {
+      "start": 591.62,
+      "end": 592.1,
+      "text": "Is."
+    },
+    {
+      "start": 592.34,
+      "end": 593.88,
+      "text": "Having an ultimate parent of 0."
+    },
+    {
+      "start": 594.72,
+      "end": 595.2,
+      "text": "2."
+    },
+    {
+      "start": 595.36,
+      "end": 596.86,
+      "text": "Is having an ultimate parent of 0."
+    },
+    {
+      "start": 597.18,
+      "end": 598.02,
+      "text": "So I am like."
+    },
+    {
+      "start": 598.16,
+      "end": 598.34,
+      "text": "Hey."
+    },
+    {
+      "start": 598.9,
+      "end": 599.72,
+      "text": "It's already connected."
+    },
+    {
+      "start": 600.34,
+      "end": 600.94,
+      "text": "So can I say."
+    },
+    {
+      "start": 601.5,
+      "end": 602.52,
+      "text": "I have an extra."
+    },
+    {
+      "start": 603.44,
+      "end": 604.18,
+      "text": "I have an extra."
+    },
+    {
+      "start": 604.58,
+      "end": 605.52,
+      "text": "So this guy."
+    },
+    {
+      "start": 605.68,
+      "end": 606.2,
+      "text": "1, 2."
+    },
+    {
+      "start": 606.36,
+      "end": 607.56,
+      "text": "Can be treated as an extra."
+    },
+    {
+      "start": 608.14,
+      "end": 608.46,
+      "text": "Fine."
+    },
+    {
+      "start": 608.92,
+      "end": 609.26,
+      "text": "Next."
+    },
+    {
+      "start": 609.66,
+      "end": 610.04,
+      "text": "2, 3."
+    },
+    {
+      "start": 610.7,
+      "end": 611.4,
+      "text": "I see 2."
+    },
+    {
+      "start": 612.4,
+      "end": 613.24,
+      "text": "I see 3."
+    },
+    {
+      "start": 613.76,
+      "end": 614.44,
+      "text": "Already connected."
+    },
+    {
+      "start": 614.74,
+      "end": 615.7,
+      "text": "Same ultimate parent."
+    },
+    {
+      "start": 616.24,
+      "end": 616.94,
+      "text": "So can I say."
+    },
+    {
+      "start": 616.94,
+      "end": 618.94,
+      "text": "It's another extra."
+    },
+    {
+      "start": 620.12,
+      "end": 620.38,
+      "text": "Perfect."
+    },
+    {
+      "start": 620.6,
+      "end": 621.0,
+      "text": "Next."
+    },
+    {
+      "start": 621.5,
+      "end": 622.0,
+      "text": "4, 5."
+    },
+    {
+      "start": 622.74,
+      "end": 623.44,
+      "text": "4 and 5."
+    },
+    {
+      "start": 623.74,
+      "end": 624.54,
+      "text": "Can be added."
+    },
+    {
+      "start": 626.54,
+      "end": 627.04,
+      "text": "Next."
+    },
+    {
+      "start": 627.4,
+      "end": 628.14,
+      "text": "5 and 6."
+    },
+    {
+      "start": 628.62,
+      "end": 630.5,
+      "text": "So you can go ahead and say 5 and 6."
+    },
+    {
+      "start": 631.02,
+      "end": 632.18,
+      "text": "So you'll add it like this."
+    },
+    {
+      "start": 633.18,
+      "end": 634.18,
+      "text": "This joins it makes."
+    },
+    {
+      "start": 634.44,
+      "end": 636.32,
+      "text": "Sure that you connected to the ultimate."
+    },
+    {
+      "start": 636.62,
+      "end": 636.92,
+      "text": "Perfect."
+    },
+    {
+      "start": 636.98,
+      "end": 637.22,
+      "text": "Right."
+    },
+    {
+      "start": 637.26,
+      "end": 637.62,
+      "text": "Next."
+    },
+    {
+      "start": 637.84,
+      "end": 638.3,
+      "text": "7 and 8."
+    },
+    {
+      "start": 638.68,
+      "end": 640.52,
+      "text": "So go and connect it to the 7 and 8."
+    },
+    {
+      "start": 641.0,
+      "end": 641.32,
+      "text": "Done."
+    },
+    {
+      "start": 641.9,
+      "end": 642.5,
+      "text": "At the end of the day."
+    },
+    {
+      "start": 642.5,
+      "end": 643.38,
+      "text": "Can I say I got."
+    },
+    {
+      "start": 643.72,
+      "end": 644.94,
+      "text": "2 extra edges."
+    },
+    {
+      "start": 645.26,
+      "end": 645.5,
+      "text": "Okay."
+    },
+    {
+      "start": 645.9,
+      "end": 646.92,
+      "text": "Now the question comes."
+    },
+    {
+      "start": 646.94,
+      "end": 647.44,
+      "text": "Up."
+    },
+    {
+      "start": 647.44,
+      "end": 648.82,
+      "text": "How many components."
+    },
+    {
+      "start": 649.16,
+      "end": 649.66,
+      "text": "Very simple."
+    },
+    {
+      "start": 650.06,
+      "end": 651.04,
+      "text": "Very very simple."
+    },
+    {
+      "start": 651.76,
+      "end": 652.26,
+      "text": "Can I say."
+    },
+    {
+      "start": 653.4,
+      "end": 654.18,
+      "text": "We will have."
+    },
+    {
+      "start": 654.98,
+      "end": 656.26,
+      "text": "Only 3 parents."
+    },
+    {
+      "start": 656.52,
+      "end": 657.94,
+      "text": "Who will be pointing to themselves."
+    },
+    {
+      "start": 658.62,
+      "end": 660.58,
+      "text": "We will only be having 3 parents."
+    },
+    {
+      "start": 660.88,
+      "end": 662.68,
+      "text": "Who will be pointing to themselves."
+    },
+    {
+      "start": 663.18,
+      "end": 664.22,
+      "text": "So in the parent array."
+    },
+    {
+      "start": 664.32,
+      "end": 665.3,
+      "text": "You can just check."
+    },
+    {
+      "start": 665.36,
+      "end": 666.4,
+      "text": "0 is pointing to 0."
+    },
+    {
+      "start": 666.4,
+      "end": 667.42,
+      "text": "4 is pointing to 4."
+    },
+    {
+      "start": 667.74,
+      "end": 669.02,
+      "text": "7 is pointing to 7."
+    },
+    {
+      "start": 669.4,
+      "end": 671.0,
+      "text": "So anyone who points to himself."
+    },
+    {
+      "start": 671.7,
+      "end": 672.62,
+      "text": "Is an ultimate parent."
+    },
+    {
+      "start": 672.88,
+      "end": 674.66,
+      "text": "Or is a component boss."
+    },
+    {
+      "start": 675.06,
+      "end": 676.94,
+      "text": "Or it can be counted as a component."
+    },
+    {
+      "start": 677.44,
+      "end": 678.18,
+      "text": "So 0 for 1."
+    },
+    {
+      "start": 678.5,
+      "end": 679.0,
+      "text": "2."
+    },
+    {
+      "start": 679.0,
+      "end": 679.5,
+      "text": "3."
+    },
+    {
+      "start": 679.5,
+      "end": 680.44,
+      "text": "So 3 components."
+    },
+    {
+      "start": 680.94,
+      "end": 682.06,
+      "text": "So the required answer."
+    },
+    {
+      "start": 682.26,
+      "end": 682.76,
+      "text": "Will be."
+    },
+    {
+      "start": 683.1,
+      "end": 683.6,
+      "text": "2."
+    },
+    {
+      "start": 683.6,
+      "end": 684.1,
+      "text": "Do we have."
+    },
+    {
+      "start": 684.48,
+      "end": 685.3,
+      "text": "2 extra edges."
+    },
+    {
+      "start": 685.62,
+      "end": 686.12,
+      "text": "Yes."
+    },
+    {
+      "start": 686.26,
+      "end": 686.76,
+      "text": "Because."
+    },
+    {
+      "start": 687.06,
+      "end": 687.56,
+      "text": "Connected."
+    },
+    {
+      "start": 687.86,
+      "end": 688.36,
+      "text": "Connected."
+    },
+    {
+      "start": 688.9,
+      "end": 690.02,
+      "text": "2 extra edges are there."
+    },
+    {
+      "start": 690.46,
+      "end": 691.42,
+      "text": "And the answer is yes."
+    },
+    {
+      "start": 691.7,
+      "end": 692.3,
+      "text": "Very simple."
+    },
+    {
+      "start": 692.82,
+      "end": 694.86,
+      "text": "So I hope you understood the entire explanation."
+    },
+    {
+      "start": 694.86,
+      "end": 695.82,
+      "text": "So as usual."
+    },
+    {
+      "start": 695.82,
+      "end": 698.14,
+      "text": "I'll be coding the C++ solution on the right."
+    },
+    {
+      "start": 698.42,
+      "end": 700.5,
+      "text": "And you can figure out the exact similar Java code."
+    },
+    {
+      "start": 700.74,
+      "end": 701.32,
+      "text": "On the left."
+    },
+    {
+      "start": 701.68,
+      "end": 702.18,
+      "text": "So."
+    },
+    {
+      "start": 702.82,
+      "end": 704.16,
+      "text": "The snippet of the disjoint set."
+    },
+    {
+      "start": 704.24,
+      "end": 705.26,
+      "text": "Which I have been teaching."
+    },
+    {
+      "start": 705.26,
+      "end": 707.08,
+      "text": "Throughout this course."
+    },
+    {
+      "start": 708.12,
+      "end": 708.48,
+      "text": "So."
+    },
+    {
+      "start": 708.7,
+      "end": 709.04,
+      "text": "You see."
+    },
+    {
+      "start": 709.14,
+      "end": 710.38,
+      "text": "Like I'm not making any changes."
+    },
+    {
+      "start": 710.78,
+      "end": 711.4,
+      "text": "And this is solving."
+    },
+    {
+      "start": 711.6,
+      "end": 712.56,
+      "text": "Almost all the problems."
+    },
+    {
+      "start": 713.18,
+      "end": 713.42,
+      "text": "So."
+    },
+    {
+      "start": 714.38,
+      "end": 715.04,
+      "text": "By the way."
+    },
+    {
+      "start": 715.14,
+      "end": 715.68,
+      "text": "Edges are given."
+    },
+    {
+      "start": 716.26,
+      "end": 717.2,
+      "text": "Like we don't need to."
+    },
+    {
+      "start": 717.94,
+      "end": 718.66,
+      "text": "Distort the graph."
+    },
+    {
+      "start": 718.76,
+      "end": 719.86,
+      "text": "The edges are already given to us."
+    },
+    {
+      "start": 720.28,
+      "end": 720.54,
+      "text": "So."
+    },
+    {
+      "start": 720.84,
+      "end": 722.02,
+      "text": "Let's create the disjoint set."
+    },
+    {
+      "start": 722.12,
+      "end": 722.44,
+      "text": "We know."
+    },
+    {
+      "start": 722.64,
+      "end": 723.74,
+      "text": "For all the nodes we have to create."
+    },
+    {
+      "start": 723.86,
+      "end": 723.96,
+      "text": "So."
+    },
+    {
+      "start": 724.18,
+      "end": 724.32,
+      "text": "And."
+    },
+    {
+      "start": 724.9,
+      "end": 726.8,
+      "text": "We have already written a disjoint set."
+    },
+    {
+      "start": 726.86,
+      "end": 727.36,
+      "text": "Which makes."
+    },
+    {
+      "start": 727.64,
+      "end": 729.52,
+      "text": "Sure that 1 based or 0 based graphs."
+    },
+    {
+      "start": 730.08,
+      "end": 730.34,
+      "text": "Or."
+    },
+    {
+      "start": 730.34,
+      "end": 731.34,
+      "text": "All the real structures."
+    },
+    {
+      "start": 731.66,
+      "end": 732.5,
+      "text": "Will be taken care."
+    },
+    {
+      "start": 732.86,
+      "end": 733.68,
+      "text": "In this constructor."
+    },
+    {
+      "start": 734.3,
+      "end": 734.4,
+      "text": "Okay."
+    },
+    {
+      "start": 734.48,
+      "end": 734.62,
+      "text": "Cool."
+    },
+    {
+      "start": 734.82,
+      "end": 735.22,
+      "text": "What's the next."
+    },
+    {
+      "start": 735.26,
+      "end": 735.5,
+      "text": "Step."
+    },
+    {
+      "start": 735.98,
+      "end": 736.84,
+      "text": "We have to count the extras."
+    },
+    {
+      "start": 737.04,
+      "end": 737.14,
+      "text": "So."
+    },
+    {
+      "start": 737.26,
+      "end": 737.96,
+      "text": "Let's count the extras."
+    },
+    {
+      "start": 738.28,
+      "end": 738.9,
+      "text": "Which is very simple."
+    },
+    {
+      "start": 740.0,
+      "end": 741.0,
+      "text": "I go across."
+    },
+    {
+      "start": 741.38,
+      "end": 742.08,
+      "text": "To all the edges."
+    },
+    {
+      "start": 742.88,
+      "end": 743.36,
+      "text": "I know."
+    },
+    {
+      "start": 743.48,
+      "end": 744.36,
+      "text": "I have an edge u."
+    },
+    {
+      "start": 744.5,
+      "end": 745.56,
+      "text": "Which is at id 0."
+    },
+    {
+      "start": 746.1,
+      "end": 746.74,
+      "text": "And I know."
+    },
+    {
+      "start": 746.84,
+      "end": 747.76,
+      "text": "I have an int v."
+    },
+    {
+      "start": 747.86,
+      "end": 748.96,
+      "text": "Which is id 1."
+    },
+    {
+      "start": 749.68,
+      "end": 750.3,
+      "text": "This is something."
+    },
+    {
+      "start": 750.4,
+      "end": 750.84,
+      "text": "Which I know."
+    },
+    {
+      "start": 751.28,
+      "end": 752.42,
+      "text": "I have to connect u and v."
+    },
+    {
+      "start": 752.72,
+      "end": 753.08,
+      "text": "It's a."
+    },
+    {
+      "start": 753.3,
+      "end": 753.74,
+      "text": "Two nodes."
+    },
+    {
+      "start": 754.12,
+      "end": 754.5,
+      "text": "But wait."
+    },
+    {
+      "start": 755.22,
+      "end": 756.32,
+      "text": "If the ds says."
+    },
+    {
+      "start": 756.86,
+      "end": 758.26,
+      "text": "My ultimate parent."
+    },
+    {
+      "start": 758.72,
+      "end": 759.32,
+      "text": "Of u."
+    },
+    {
+      "start": 759.64,
+      "end": 760.5,
+      "text": "Is equal to."
+    },
+    {
+      "start": 760.5,
+      "end": 761.04,
+      "text": "ds."
+    },
+    {
+      "start": 761.22,
+      "end": 762.2,
+      "text": "Ultimate parent of v."
+    },
+    {
+      "start": 762.3,
+      "end": 763.2,
+      "text": "They are already connected."
+    },
+    {
+      "start": 763.78,
+      "end": 764.02,
+      "text": "If they."
+    },
+    {
+      "start": 764.2,
+      "end": 764.52,
+      "text": "Already."
+    },
+    {
+      "start": 764.68,
+      "end": 765.16,
+      "text": "Are having."
+    },
+    {
+      "start": 765.26,
+      "end": 765.78,
+      "text": "The same parent."
+    },
+    {
+      "start": 765.88,
+      "end": 766.26,
+      "text": "They are connected."
+    },
+    {
+      "start": 766.72,
+      "end": 766.84,
+      "text": "So."
+    },
+    {
+      "start": 766.88,
+      "end": 767.28,
+      "text": "Can I say."
+    },
+    {
+      "start": 767.5,
+      "end": 768.18,
+      "text": "They will go."
+    },
+    {
+      "start": 768.42,
+      "end": 769.42,
+      "text": "Under the count."
+    },
+    {
+      "start": 770.24,
+      "end": 770.6,
+      "text": "Extra."
+    },
+    {
+      "start": 771.78,
+      "end": 772.76,
+      "text": "And if they do not."
+    },
+    {
+      "start": 773.36,
+      "end": 773.9,
+      "text": "Then I go."
+    },
+    {
+      "start": 774.2,
+      "end": 774.8,
+      "text": "And say."
+    },
+    {
+      "start": 775.28,
+      "end": 775.86,
+      "text": "Can you do."
+    },
+    {
+      "start": 775.94,
+      "end": 776.76,
+      "text": "An union by size."
+    },
+    {
+      "start": 776.82,
+      "end": 777.3,
+      "text": "Of u and v."
+    },
+    {
+      "start": 778.02,
+      "end": 778.26,
+      "text": "Perfect."
+    },
+    {
+      "start": 779.3,
+      "end": 779.54,
+      "text": "Done."
+    },
+    {
+      "start": 780.14,
+      "end": 781.0,
+      "text": "Once you have done this."
+    },
+    {
+      "start": 781.12,
+      "end": 781.74,
+      "text": "You need to find the."
+    },
+    {
+      "start": 781.82,
+      "end": 782.86,
+      "text": "Number of connected components."
+    },
+    {
+      "start": 783.4,
+      "end": 783.64,
+      "text": "So."
+    },
+    {
+      "start": 783.8,
+      "end": 784.44,
+      "text": "Maybe you can just."
+    },
+    {
+      "start": 784.8,
+      "end": 785.62,
+      "text": "Expose this."
+    },
+    {
+      "start": 787.34,
+      "end": 788.04,
+      "text": "To public."
+    },
+    {
+      "start": 788.18,
+      "end": 788.54,
+      "text": "So that."
+    },
+    {
+      "start": 788.54,
+      "end": 789.18,
+      "text": "It can be used."
+    },
+    {
+      "start": 789.46,
+      "end": 789.82,
+      "text": "Outside."
+    },
+    {
+      "start": 790.46,
+      "end": 790.82,
+      "text": "And."
+    },
+    {
+      "start": 790.98,
+      "end": 791.38,
+      "text": "Going ahead."
+    },
+    {
+      "start": 791.46,
+      "end": 792.04,
+      "text": "What you can do is."
+    },
+    {
+      "start": 792.2,
+      "end": 792.94,
+      "text": "Let's count the."
+    },
+    {
+      "start": 793.24,
+      "end": 794.14,
+      "text": "Connected components."
+    },
+    {
+      "start": 794.68,
+      "end": 795.2,
+      "text": "And what you can do."
+    },
+    {
+      "start": 795.26,
+      "end": 795.84,
+      "text": "Is you can go ahead."
+    },
+    {
+      "start": 795.94,
+      "end": 796.32,
+      "text": "From zero."
+    },
+    {
+      "start": 797.5,
+      "end": 798.18,
+      "text": "To n."
+    },
+    {
+      "start": 798.3,
+      "end": 799.04,
+      "text": "Because it is."
+    },
+    {
+      "start": 799.16,
+      "end": 799.7,
+      "text": "Zero based."
+    },
+    {
+      "start": 800.22,
+      "end": 800.94,
+      "text": "Indexing graph."
+    },
+    {
+      "start": 801.4,
+      "end": 801.98,
+      "text": "And you can say."
+    },
+    {
+      "start": 802.2,
+      "end": 802.32,
+      "text": "Hey."
+    },
+    {
+      "start": 803.84,
+      "end": 804.2,
+      "text": "ds."
+    },
+    {
+      "start": 804.32,
+      "end": 804.68,
+      "text": "Parent."
+    },
+    {
+      "start": 804.82,
+      "end": 805.22,
+      "text": "Of i."
+    },
+    {
+      "start": 805.62,
+      "end": 806.26,
+      "text": "If that's."
+    },
+    {
+      "start": 806.38,
+      "end": 806.84,
+      "text": "He himself."
+    },
+    {
+      "start": 807.36,
+      "end": 808.08,
+      "text": "So count c++."
+    },
+    {
+      "start": 809.18,
+      "end": 809.7,
+      "text": "Be amazing."
+    },
+    {
+      "start": 810.16,
+      "end": 810.76,
+      "text": "What's the next step."
+    },
+    {
+      "start": 811.16,
+      "end": 811.4,
+      "text": "If."
+    },
+    {
+      "start": 812.7,
+      "end": 813.6,
+      "text": "Count extras."
+    },
+    {
+      "start": 814.16,
+      "end": 814.98,
+      "text": "Remember the answer."
+    },
+    {
+      "start": 815.24,
+      "end": 815.68,
+      "text": "Is."
+    },
+    {
+      "start": 816.6,
+      "end": 818.0,
+      "text": "Count c-1."
+    },
+    {
+      "start": 818.28,
+      "end": 818.92,
+      "text": "Number of connected."
+    },
+    {
+      "start": 819.04,
+      "end": 819.44,
+      "text": "Components."
+    },
+    {
+      "start": 819.56,
+      "end": 820.02,
+      "text": "Minus one."
+    },
+    {
+      "start": 820.42,
+      "end": 821.34,
+      "text": "So if this is."
+    },
+    {
+      "start": 821.72,
+      "end": 822.72,
+      "text": "Greater than the answer."
+    },
+    {
+      "start": 823.1,
+      "end": 824.06,
+      "text": "I say this is."
+    },
+    {
+      "start": 824.18,
+      "end": 824.64,
+      "text": "My answer."
+    },
+    {
+      "start": 824.64,
+      "end": 825.0,
+      "text": "Is."
+    },
+    {
+      "start": 825.12,
+      "end": 825.22,
+      "text": "Possible."
+    },
+    {
+      "start": 825.22,
+      "end": 825.52,
+      "text": "Or else."
+    },
+    {
+      "start": 825.52,
+      "end": 825.74,
+      "text": "I say."
+    },
+    {
+      "start": 825.82,
+      "end": 826.62,
+      "text": "It is not possible."
+    },
+    {
+      "start": 827.1,
+      "end": 827.5,
+      "text": "And I say."
+    },
+    {
+      "start": 828.08,
+      "end": 828.68,
+      "text": "Minus one."
+    },
+    {
+      "start": 828.94,
+      "end": 829.52,
+      "text": "So let's quickly."
+    },
+    {
+      "start": 829.64,
+      "end": 829.96,
+      "text": "Compile."
+    },
+    {
+      "start": 830.06,
+      "end": 830.7,
+      "text": "And see if it is running."
+    },
+    {
+      "start": 830.84,
+      "end": 831.0,
+      "text": "Fine."
+    },
+    {
+      "start": 834.73,
+      "end": 834.91,
+      "text": "Okay."
+    },
+    {
+      "start": 834.99,
+      "end": 835.67,
+      "text": "It's edge."
+    },
+    {
+      "start": 836.09,
+      "end": 836.21,
+      "text": "So."
+    },
+    {
+      "start": 837.35,
+      "end": 837.71,
+      "text": "Slater."
+    },
+    {
+      "start": 839.55,
+      "end": 839.89,
+      "text": "Okay."
+    },
+    {
+      "start": 840.09,
+      "end": 840.53,
+      "text": "Does run."
+    },
+    {
+      "start": 840.63,
+      "end": 840.97,
+      "text": "Let's quickly."
+    },
+    {
+      "start": 841.05,
+      "end": 841.45,
+      "text": "Summit this."
+    },
+    {
+      "start": 841.53,
+      "end": 841.79,
+      "text": "And see."
+    },
+    {
+      "start": 842.17,
+      "end": 843.01,
+      "text": "If it is giving us."
+    },
+    {
+      "start": 843.13,
+      "end": 843.67,
+      "text": "Correct answers."
+    },
+    {
+      "start": 844.49,
+      "end": 844.97,
+      "text": "It is."
+    },
+    {
+      "start": 845.07,
+      "end": 845.71,
+      "text": "It is giving us."
+    },
+    {
+      "start": 845.79,
+      "end": 846.25,
+      "text": "Correct answers."
+    },
+    {
+      "start": 846.83,
+      "end": 847.31,
+      "text": "Looks like."
+    },
+    {
+      "start": 847.37,
+      "end": 848.03,
+      "text": "They haven't mentioned."
+    },
+    {
+      "start": 848.13,
+      "end": 848.97,
+      "text": "The case of minus one."
+    },
+    {
+      "start": 848.97,
+      "end": 849.25,
+      "text": "Alas."
+    },
+    {
+      "start": 849.31,
+      "end": 849.67,
+      "text": "The problem."
+    },
+    {
+      "start": 849.75,
+      "end": 850.79,
+      "text": "Started to add it up."
+    },
+    {
+      "start": 851.39,
+      "end": 852.09,
+      "text": "So if you have understood."
+    },
+    {
+      "start": 852.19,
+      "end": 852.55,
+      "text": "Everything."
+    },
+    {
+      "start": 852.71,
+      "end": 853.43,
+      "text": "Please do consider."
+    },
+    {
+      "start": 853.55,
+      "end": 854.75,
+      "text": "Hitting that subscribe button."
+    },
+    {
+      "start": 854.83,
+      "end": 855.19,
+      "text": "Because."
+    },
+    {
+      "start": 855.35,
+      "end": 855.99,
+      "text": "I was checking out."
+    },
+    {
+      "start": 856.11,
+      "end": 856.89,
+      "text": "Our channel statistics."
+    },
+    {
+      "start": 856.89,
+      "end": 858.21,
+      "text": "And nearly 50%."
+    },
+    {
+      "start": 858.21,
+      "end": 858.75,
+      "text": "Of the users."
+    },
+    {
+      "start": 858.93,
+      "end": 859.53,
+      "text": "Who watch our video."
+    },
+    {
+      "start": 859.71,
+      "end": 860.99,
+      "text": "Do not hit that subscribe button."
+    },
+    {
+      "start": 861.31,
+      "end": 861.77,
+      "text": "So please."
+    },
+    {
+      "start": 861.91,
+      "end": 862.09,
+      "text": "Please."
+    },
+    {
+      "start": 862.19,
+      "end": 863.21,
+      "text": "It's an honest request."
+    },
+    {
+      "start": 863.85,
+      "end": 865.29,
+      "text": "Do consider subscribing to us."
+    },
+    {
+      "start": 865.37,
+      "end": 865.99,
+      "text": "And if you have understood."
+    },
+    {
+      "start": 866.09,
+      "end": 866.41,
+      "text": "Everything."
+    },
+    {
+      "start": 866.57,
+      "end": 866.87,
+      "text": "And if you."
+    },
+    {
+      "start": 867.19,
+      "end": 867.83,
+      "text": "Have watched."
+    },
+    {
+      "start": 868.09,
+      "end": 868.47,
+      "text": "Till here."
+    },
+    {
+      "start": 868.71,
+      "end": 869.65,
+      "text": "Consider hitting the like button."
+    },
+    {
+      "start": 869.73,
+      "end": 870.23,
+      "text": "As well."
+    },
+    {
+      "start": 870.71,
+      "end": 871.73,
+      "text": "And if you have not."
+    },
+    {
+      "start": 871.87,
+      "end": 872.99,
+      "text": "Checked out our DP series."
+    },
+    {
+      "start": 873.19,
+      "end": 873.81,
+      "text": "And the HDC."
+    },
+    {
+      "start": 874.19,
+      "end": 875.37,
+      "text": "Links are in the description."
+    },
+    {
+      "start": 875.81,
+      "end": 876.15,
+      "text": "With this."
+    },
+    {
+      "start": 876.19,
+      "end": 877.21,
+      "text": "I'll be wrapping up this video."
+    },
+    {
+      "start": 877.31,
+      "end": 878.17,
+      "text": "Let's meet in some other video."
+    },
+    {
+      "start": 878.29,
+      "end": 878.53,
+      "text": "Till then."
+    },
+    {
+      "start": 878.55,
+      "end": 878.83,
+      "text": "Bye bye."
+    },
+    {
+      "start": 878.87,
+      "end": 879.23,
+      "text": "Take care."
+    }
+  ]
+}

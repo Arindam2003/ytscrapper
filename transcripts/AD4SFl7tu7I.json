@@ -1,0 +1,2589 @@
+{
+  "video_id": "AD4SFl7tu7I",
+  "title": "G-31. Word Ladder - 2 ｜ Optimised Approach for Leetcode",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1419.03,
+  "segments": [
+    {
+      "start": 2.8,
+      "end": 6.02,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.32,
+      "end": 12.72,
+      "text": "In the previous videos, we solved the word ladder problem 1 and the word ladder problem 2."
+    },
+    {
+      "start": 13.4,
+      "end": 18.26,
+      "text": "But you would have seen this. The solution that we wrote in the word ladder 2,"
+    },
+    {
+      "start": 18.66,
+      "end": 24.5,
+      "text": "when you tried to submit it on lead code, it was giving you TLE."
+    },
+    {
+      "start": 25.44,
+      "end": 26.84,
+      "text": "Why did that happen?"
+    },
+    {
+      "start": 27.2,
+      "end": 31.5,
+      "text": "So first of all, if you're just preparing for interviews, you can skip this video."
+    },
+    {
+      "start": 31.5,
+      "end": 36.5,
+      "text": "Do not watch this particular video. If you're preparing for interviews, it's of no use."
+    },
+    {
+      "start": 36.84,
+      "end": 41.26,
+      "text": "Because for interviews, the approach that I have taught in the previous video for the word ladder 2,"
+    },
+    {
+      "start": 41.64,
+      "end": 43.16,
+      "text": "that is what you need to tell in the interview."
+    },
+    {
+      "start": 43.58,
+      "end": 49.4,
+      "text": "Do not try this. I'm just teaching you this so that you have some extra sense of observation"
+    },
+    {
+      "start": 49.4,
+      "end": 52.6,
+      "text": "and sense of way like problem solving gets..."
+    },
+    {
+      "start": 52.6,
+      "end": 55.94,
+      "text": "I'm just teaching you because I want your problem solving to get improved."
+    },
+    {
+      "start": 55.94,
+      "end": 60.94,
+      "text": "So first of all, lead code, the solution that I taught was accepted till..."
+    },
+    {
+      "start": 61.5,
+      "end": 62.82,
+      "text": "a certain interval."
+    },
+    {
+      "start": 62.82,
+      "end": 65.54,
+      "text": "After that, they changed the test cases..."
+    },
+    {
+      "start": 66.82,
+      "end": 69.08,
+      "text": "And the time limit was strict."
+    },
+    {
+      "start": 69.08,
+      "end": 74.64,
+      "text": "So apparently the solutions... most of the solutions on the discussion forum are giving you TLE."
+    },
+    {
+      "start": 74.94,
+      "end": 75.7,
+      "text": "Okay."
+    },
+    {
+      "start": 75.7,
+      "end": 82.16,
+      "text": "And the only way to solve this is, I went through a lot of discussion forums, a lot of threats,"
+    },
+    {
+      "start": 82.16,
+      "end": 87.96,
+      "text": "and the only way to solve this is, break the problem and solve it by using a hack,"
+    },
+    {
+      "start": 87.96,
+      "end": 90.26,
+      "text": "which you usually don't do in interviews."
+    },
+    {
+      "start": 90.26,
+      "end": 90.94,
+      "text": "So you're going to follow these tips."
+    },
+    {
+      "start": 90.94,
+      "end": 91.44,
+      "text": "Right?"
+    },
+    {
+      "start": 91.44,
+      "end": 93.04,
+      "text": "the CP way of solving this."
+    },
+    {
+      "start": 93.1,
+      "end": 93.32,
+      "text": "Okay."
+    },
+    {
+      "start": 94.06,
+      "end": 96.44,
+      "text": "So we're going to solve this the CP way."
+    },
+    {
+      "start": 96.72,
+      "end": 100.18,
+      "text": "So if you're just preparing for interviews, please, please drop off, please."
+    },
+    {
+      "start": 100.32,
+      "end": 103.12,
+      "text": "That is my earnest request because at the end of the video, you'll be like,"
+    },
+    {
+      "start": 103.12,
+      "end": 107.2,
+      "text": "I'm going to teach something related to like CP way."
+    },
+    {
+      "start": 107.44,
+      "end": 110.24,
+      "text": "So the explanation might be faster, something like that."
+    },
+    {
+      "start": 110.92,
+      "end": 112.6,
+      "text": "So how do we solve this problem?"
+    },
+    {
+      "start": 112.92,
+      "end": 113.5,
+      "text": "It's very simple."
+    },
+    {
+      "start": 113.84,
+      "end": 115.94,
+      "text": "We're going to break this problem into two steps."
+    },
+    {
+      "start": 116.42,
+      "end": 117.34,
+      "text": "So what is the problem?"
+    },
+    {
+      "start": 117.34,
+      "end": 124.86,
+      "text": "You have to hit to cog and print out all the ways in which you can convert from hit to cog."
+    },
+    {
+      "start": 124.96,
+      "end": 127.92,
+      "text": "You have to print out all the ways that in which you can do it."
+    },
+    {
+      "start": 128.26,
+      "end": 130.56,
+      "text": "So the step one is follow ladder."
+    },
+    {
+      "start": 132.78,
+      "end": 135.88,
+      "text": "Follow what ladder one and find the minimum steps."
+    },
+    {
+      "start": 136.04,
+      "end": 137.76,
+      "text": "That is the step one."
+    },
+    {
+      "start": 139.2,
+      "end": 147.68,
+      "text": "And the steps for every string, like store where every string occurred on the left."
+    },
+    {
+      "start": 147.68,
+      "end": 148.54,
+      "text": "I'll tell you."
+    },
+    {
+      "start": 148.66,
+      "end": 148.76,
+      "text": "Okay."
+    },
+    {
+      "start": 148.88,
+      "end": 149.96,
+      "text": "That's the step one."
+    },
+    {
+      "start": 150.3,
+      "end": 153.88,
+      "text": "So let's quickly do the step one for this particular game."
+    },
+    {
+      "start": 154.6,
+      "end": 156.42,
+      "text": "I'm assuming you have seen the previous two videos."
+    },
+    {
+      "start": 156.54,
+      "end": 157.46,
+      "text": "I'll be going super fast."
+    },
+    {
+      "start": 157.86,
+      "end": 160.44,
+      "text": "So we know this is the BFS queue."
+    },
+    {
+      "start": 160.8,
+      "end": 161.82,
+      "text": "So where do we start?"
+    },
+    {
+      "start": 161.92,
+      "end": 163.22,
+      "text": "We start from hit, right?"
+    },
+    {
+      "start": 163.72,
+      "end": 168.92,
+      "text": "So this time what you'll do is instead of storing comma one, instead of that,"
+    },
+    {
+      "start": 169.22,
+      "end": 173.54,
+      "text": "what you'll do is you will probably store some map data structure."
+    },
+    {
+      "start": 173.78,
+      "end": 178.3,
+      "text": "In that you can have it something like, okay, hit is initially,"
+    },
+    {
+      "start": 178.3,
+      "end": 179.22,
+      "text": "zero."
+    },
+    {
+      "start": 179.42,
+      "end": 180.3,
+      "text": "That is what you will do."
+    },
+    {
+      "start": 180.5,
+      "end": 180.8,
+      "text": "Okay."
+    },
+    {
+      "start": 180.8,
+      "end": 181.12,
+      "text": "Done."
+    },
+    {
+      "start": 181.72,
+      "end": 182.62,
+      "text": "So take out hit."
+    },
+    {
+      "start": 183.2,
+      "end": 183.94,
+      "text": "So you'll take out hit."
+    },
+    {
+      "start": 184.54,
+      "end": 186.94,
+      "text": "What can hit be converted to try to convert it."
+    },
+    {
+      "start": 187.18,
+      "end": 189.18,
+      "text": "So hit will be converted to hot."
+    },
+    {
+      "start": 190.12,
+      "end": 191.3,
+      "text": "Uh, is that possible?"
+    },
+    {
+      "start": 191.58,
+      "end": 193.84,
+      "text": "Is it possible to convert it to anything else?"
+    },
+    {
+      "start": 194.08,
+      "end": 196.46,
+      "text": "Have a quick check and we see that it is not possible."
+    },
+    {
+      "start": 196.76,
+      "end": 198.0,
+      "text": "So it will be converted to hot."
+    },
+    {
+      "start": 198.36,
+      "end": 200.7,
+      "text": "So what you'll do is you'll put hot into the queue."
+    },
+    {
+      "start": 201.08,
+      "end": 206.64,
+      "text": "At the same time, you will store it into the map as one moon because at step one, you got it."
+    },
+    {
+      "start": 206.64,
+      "end": 206.9,
+      "text": "Right?"
+    },
+    {
+      "start": 207.48,
+      "end": 208.26,
+      "text": "So done."
+    },
+    {
+      "start": 208.64,
+      "end": 210.12,
+      "text": "Next you get hot."
+    },
+    {
+      "start": 210.42,
+      "end": 213.34,
+      "text": "So what do you do is you'll take hot and you'll be like, okay, we have hot."
+    },
+    {
+      "start": 213.8,
+      "end": 215.96,
+      "text": "So let's try to convert hot into something."
+    },
+    {
+      "start": 216.32,
+      "end": 221.2,
+      "text": "So when you try to convert hot into something, it'll actually get dot and you'll get lot."
+    },
+    {
+      "start": 221.68,
+      "end": 224.5,
+      "text": "So you'll get dot and you'll get lot."
+    },
+    {
+      "start": 224.78,
+      "end": 228.04,
+      "text": "By the way, make sure you remove hot and dot and lot."
+    },
+    {
+      "start": 228.82,
+      "end": 230.08,
+      "text": "So you got dot and lot."
+    },
+    {
+      "start": 230.5,
+      "end": 235.4,
+      "text": "So dot you got at the second level and the lot you got at the second level."
+    },
+    {
+      "start": 235.64,
+      "end": 235.94,
+      "text": "Perfect."
+    },
+    {
+      "start": 237.06,
+      "end": 237.34,
+      "text": "Done."
+    },
+    {
+      "start": 237.94,
+      "end": 238.3,
+      "text": "Next time."
+    },
+    {
+      "start": 238.46,
+      "end": 239.14,
+      "text": "Please take the next one out."
+    },
+    {
+      "start": 239.22,
+      "end": 239.48,
+      "text": "Dot."
+    },
+    {
+      "start": 241.24,
+      "end": 245.62,
+      "text": "So when you take dot out, you try to convert it and you can actually convert it into dog."
+    },
+    {
+      "start": 247.02,
+      "end": 248.48,
+      "text": "Can you convert it to something else?"
+    },
+    {
+      "start": 248.76,
+      "end": 249.58,
+      "text": "I don't think so."
+    },
+    {
+      "start": 249.9,
+      "end": 252.18,
+      "text": "So you'll take the dog and you'll put it into the queue."
+    },
+    {
+      "start": 252.54,
+      "end": 255.46,
+      "text": "At the same time, you'll say dog to have a three in the map."
+    },
+    {
+      "start": 255.94,
+      "end": 256.84,
+      "text": "So dot is done."
+    },
+    {
+      "start": 257.3,
+      "end": 258.4,
+      "text": "Next time, please take out lot."
+    },
+    {
+      "start": 259.06,
+      "end": 262.1,
+      "text": "So when you take out lot, what do you do is you'll say, okay, fine."
+    },
+    {
+      "start": 262.46,
+      "end": 265.42,
+      "text": "Lot will be nothing but can be converted by the dog is done."
+    },
+    {
+      "start": 265.88,
+      "end": 267.8,
+      "text": "Lot can be converted to log."
+    },
+    {
+      "start": 268.06,
+      "end": 268.3,
+      "text": "Right?"
+    },
+    {
+      "start": 268.6,
+      "end": 270.34,
+      "text": "So you'll be like, okay, log."
+    },
+    {
+      "start": 270.86,
+      "end": 276.26,
+      "text": "And this log is that how many steps lot was that if you see lot was a two."
+    },
+    {
+      "start": 276.26,
+      "end": 277.8,
+      "text": "So this will be also at three."
+    },
+    {
+      "start": 278.14,
+      "end": 278.48,
+      "text": "Perfect."
+    },
+    {
+      "start": 278.8,
+      "end": 279.98,
+      "text": "So this is also done."
+    },
+    {
+      "start": 280.78,
+      "end": 281.56,
+      "text": "Log is also done."
+    },
+    {
+      "start": 281.8,
+      "end": 283.42,
+      "text": "Next, take the dog out."
+    },
+    {
+      "start": 284.42,
+      "end": 289.54,
+      "text": "And how does dog three, the dog can be converted into dog can be converted into"
+    },
+    {
+      "start": 289.54,
+      "end": 294.82,
+      "text": "cock, converted to cock and it'll be level four and he'll put that into over here and he'll"
+    },
+    {
+      "start": 294.92,
+      "end": 295.34,
+      "text": "ease it."
+    },
+    {
+      "start": 295.9,
+      "end": 298.12,
+      "text": "Next you get the log again."
+    },
+    {
+      "start": 298.3,
+      "end": 300.16,
+      "text": "And this time, log cannot be converted."
+    },
+    {
+      "start": 300.46,
+      "end": 301.36,
+      "text": "So done."
+    },
+    {
+      "start": 301.74,
+      "end": 303.94,
+      "text": "Next time you'll get cock cannot be."
+    },
+    {
+      "start": 303.94,
+      "end": 305.9,
+      "text": "So the queue is ultimately empty."
+    },
+    {
+      "start": 306.28,
+      "end": 311.38,
+      "text": "And this is the, you can store it in any data structure that you wish to."
+    },
+    {
+      "start": 311.72,
+      "end": 313.3,
+      "text": "I'll really store it in a map data structure."
+    },
+    {
+      "start": 313.9,
+      "end": 314.14,
+      "text": "Done."
+    },
+    {
+      "start": 314.86,
+      "end": 315.16,
+      "text": "Right?"
+    },
+    {
+      "start": 315.58,
+      "end": 317.54,
+      "text": "So step one is done."
+    },
+    {
+      "start": 318.04,
+      "end": 318.92,
+      "text": "Step one is very simple."
+    },
+    {
+      "start": 319.24,
+      "end": 325.12,
+      "text": "And if you could out that the minimum number of steps that we required was four or the sequence length was five."
+    },
+    {
+      "start": 325.64,
+      "end": 326.8,
+      "text": "So let's ease this now."
+    },
+    {
+      "start": 328.3,
+      "end": 329.2,
+      "text": "That's it is everything."
+    },
+    {
+      "start": 330.3,
+      "end": 331.84,
+      "text": "So that was step one."
+    },
+    {
+      "start": 332.26,
+      "end": 334.84,
+      "text": "Step one stated, give me the minimum steps."
+    },
+    {
+      "start": 335.2,
+      "end": 338.94,
+      "text": "And we saw that the minimum step was nothing but four in this case."
+    },
+    {
+      "start": 339.22,
+      "end": 340.66,
+      "text": "So just go ahead and store it."
+    },
+    {
+      "start": 341.68,
+      "end": 342.94,
+      "text": "So the minimum step was four."
+    },
+    {
+      "start": 343.18,
+      "end": 344.54,
+      "text": "That means four transformations."
+    },
+    {
+      "start": 344.74,
+      "end": 345.8,
+      "text": "Step one is completed."
+    },
+    {
+      "start": 346.06,
+      "end": 350.32,
+      "text": "Now the step two backtrack."
+    },
+    {
+      "start": 351.38,
+      "end": 355.54,
+      "text": "I repeat backtrack in the map."
+    },
+    {
+      "start": 357.08,
+      "end": 358.72,
+      "text": "Backtrack in the map."
+    },
+    {
+      "start": 359.54,
+      "end": 360.14,
+      "text": "Yes."
+    },
+    {
+      "start": 360.14,
+      "end": 366.1,
+      "text": "From end to begin to get the answer."
+    },
+    {
+      "start": 368.44,
+      "end": 371.12,
+      "text": "Now you might be thinking, but Srimo, why from end to begin?"
+    },
+    {
+      "start": 371.52,
+      "end": 372.58,
+      "text": "I'll give you that explanation."
+    },
+    {
+      "start": 372.86,
+      "end": 374.4,
+      "text": "But you first need to understand the algorithm."
+    },
+    {
+      "start": 374.68,
+      "end": 377.44,
+      "text": "I'll give you the reason why end to begin, but try it."
+    },
+    {
+      "start": 377.86,
+      "end": 380.74,
+      "text": "But before that, you need to understand the explanation in depth."
+    },
+    {
+      "start": 381.72,
+      "end": 385.96,
+      "text": "So you have seen, what is the step two from the end to the beginning."
+    },
+    {
+      "start": 386.22,
+      "end": 391.04,
+      "text": "So what I'll do is find I'll see, I'll do a simple enough."
+    },
+    {
+      "start": 391.38,
+      "end": 391.7,
+      "text": "DFS."
+    },
+    {
+      "start": 391.74,
+      "end": 395.78,
+      "text": "calls from the cog with saying the sequence contains cog."
+    },
+    {
+      "start": 395.78,
+      "end": 398.36,
+      "text": "We're going to travel in the backward directions."
+    },
+    {
+      "start": 398.36,
+      "end": 401.62,
+      "text": "So what can be cog converted to?"
+    },
+    {
+      "start": 401.62,
+      "end": 403.74,
+      "text": "Cog can be converted into a lot of things."
+    },
+    {
+      "start": 403.74,
+      "end": 404.74,
+      "text": "Right?"
+    },
+    {
+      "start": 404.74,
+      "end": 406.6,
+      "text": "So we try to convert cog."
+    },
+    {
+      "start": 406.6,
+      "end": 414.7,
+      "text": "The only valid things that are there in the world list or in the map are log or doc."
+    },
+    {
+      "start": 414.7,
+      "end": 418.94,
+      "text": "I can convert cog to log or doc."
+    },
+    {
+      "start": 418.94,
+      "end": 420.42,
+      "text": "Do you agree with this or not?"
+    },
+    {
+      "start": 420.42,
+      "end": 421.42,
+      "text": "You do, right?"
+    },
+    {
+      "start": 421.42,
+      "end": 424.0,
+      "text": "So log and doc."
+    },
+    {
+      "start": 424.0,
+      "end": 428.66,
+      "text": "Can we convert this cog into something else?"
+    },
+    {
+      "start": 428.66,
+      "end": 435.02,
+      "text": "We probably can, but we will only have two options, which is the log."
+    },
+    {
+      "start": 435.02,
+      "end": 440.68,
+      "text": "Now while converting, if you're trying to convert it into log, you know the cog was"
+    },
+    {
+      "start": 440.68,
+      "end": 442.64,
+      "text": "at the level four."
+    },
+    {
+      "start": 442.64,
+      "end": 445.56,
+      "text": "So the conversion that you're doing is a log."
+    },
+    {
+      "start": 445.56,
+      "end": 447.02,
+      "text": "It has to be at level three."
+    },
+    {
+      "start": 447.02,
+      "end": 448.6,
+      "text": "It has to be a level three."
+    },
+    {
+      "start": 448.6,
+      "end": 450.1,
+      "text": "Is log at level three?"
+    },
+    {
+      "start": 450.1,
+      "end": 451.1,
+      "text": "It is."
+    },
+    {
+      "start": 451.1,
+      "end": 452.1,
+      "text": "It is there at level three."
+    },
+    {
+      "start": 452.1,
+      "end": 453.1,
+      "text": "They'll say yes, possible."
+    },
+    {
+      "start": 453.1,
+      "end": 458.1,
+      "text": "Log and then the sequence will be cog and log."
+    },
+    {
+      "start": 458.1,
+      "end": 459.1,
+      "text": "Perfect."
+    },
+    {
+      "start": 459.1,
+      "end": 469.32,
+      "text": "Another DFS or another chain that you can do is DFS of, I said, dog as well."
+    },
+    {
+      "start": 469.32,
+      "end": 473.28,
+      "text": "Dog and this will become cog and dog."
+    },
+    {
+      "start": 473.28,
+      "end": 476.02,
+      "text": "Now is dog possible?"
+    },
+    {
+      "start": 476.02,
+      "end": 477.02,
+      "text": "Let's see."
+    },
+    {
+      "start": 477.02,
+      "end": 478.02,
+      "text": "This was four."
+    },
+    {
+      "start": 478.02,
+      "end": 479.02,
+      "text": "Dog is three."
+    },
+    {
+      "start": 479.02,
+      "end": 480.02,
+      "text": "Possible."
+    },
+    {
+      "start": 480.02,
+      "end": 481.02,
+      "text": "Right before the level."
+    },
+    {
+      "start": 481.02,
+      "end": 482.02,
+      "text": "Right before the level, we actually encountered it."
+    },
+    {
+      "start": 482.02,
+      "end": 483.02,
+      "text": "So this is possible."
+    },
+    {
+      "start": 483.02,
+      "end": 484.02,
+      "text": "So a couple of DFS calls that you can do."
+    },
+    {
+      "start": 484.02,
+      "end": 485.02,
+      "text": "You can try out changing cog as you did, and then you can call these two DFS calls."
+    },
+    {
+      "start": 485.02,
+      "end": 486.02,
+      "text": "First, this will be executed according to recursion."
+    },
+    {
+      "start": 486.02,
+      "end": 487.02,
+      "text": "Then this will be executed."
+    },
+    {
+      "start": 487.02,
+      "end": 488.02,
+      "text": "If your recursion is weak, please, please go back and use the recursion series."
+    },
+    {
+      "start": 488.02,
+      "end": 489.02,
+      "text": "So this is something which you have to get out."
+    },
+    {
+      "start": 489.02,
+      "end": 490.02,
+      "text": "Next, we have a log, right?"
+    },
+    {
+      "start": 490.02,
+      "end": 491.02,
+      "text": "What can be log converted to?"
+    },
+    {
+      "start": 491.02,
+      "end": 492.02,
+      "text": "Log can be converted into a lot of things like lot, log, log, log, log, log, log, log, log,"
+    },
+    {
+      "start": 492.02,
+      "end": 504.02,
+      "text": "and can be converted into a lot of other things as well."
+    },
+    {
+      "start": 504.02,
+      "end": 519.02,
+      "text": "Now log can be converted into doc."
+    },
+    {
+      "start": 519.02,
+      "end": 520.02,
+      "text": "But what is the value of log?"
+    },
+    {
+      "start": 520.02,
+      "end": 521.02,
+      "text": "The log is the value of log."
+    },
+    {
+      "start": 521.02,
+      "end": 522.02,
+      "text": "The log's value is three."
+    },
+    {
+      "start": 522.02,
+      "end": 523.02,
+      "text": "The dog's value has to be two."
+    },
+    {
+      "start": 523.02,
+      "end": 528.02,
+      "text": "But we see that the dog's value is three and the log's value is three as well."
+    },
+    {
+      "start": 528.02,
+      "end": 532.02,
+      "text": "So it cannot be converted back to dog."
+    },
+    {
+      "start": 532.02,
+      "end": 538.02,
+      "text": "This is how we stop extra conversions or unnecessary."
+    },
+    {
+      "start": 538.02,
+      "end": 542.02,
+      "text": "We just follow the right path because we just want to move where the conversion is."
+    },
+    {
+      "start": 542.02,
+      "end": 543.02,
+      "text": "So that's not possible."
+    },
+    {
+      "start": 543.02,
+      "end": 546.02,
+      "text": "So log will be like, okay, can I be converted into lot?"
+    },
+    {
+      "start": 546.02,
+      "end": 548.02,
+      "text": "I'll be like, yes."
+    },
+    {
+      "start": 548.02,
+      "end": 549.02,
+      "text": "Why?"
+    },
+    {
+      "start": 549.02,
+      "end": 550.02,
+      "text": "Because if you convert the G to log, you're going to convert the G to log."
+    },
+    {
+      "start": 550.02,
+      "end": 551.02,
+      "text": "Why?"
+    },
+    {
+      "start": 551.02,
+      "end": 554.02,
+      "text": "Because if you convert the G to T, log can be converted into lot."
+    },
+    {
+      "start": 554.02,
+      "end": 555.02,
+      "text": "Why?"
+    },
+    {
+      "start": 555.02,
+      "end": 558.02,
+      "text": "Because this was three and lot was two."
+    },
+    {
+      "start": 558.02,
+      "end": 560.02,
+      "text": "So this is right before this conversion."
+    },
+    {
+      "start": 560.02,
+      "end": 564.02,
+      "text": "So log can be converted or traced back to lot."
+    },
+    {
+      "start": 564.02,
+      "end": 566.02,
+      "text": "This is nothing but simple backtracking."
+    },
+    {
+      "start": 566.02,
+      "end": 571.84,
+      "text": "So this is like cog, log, and a lot."
+    },
+    {
+      "start": 571.84,
+      "end": 572.84,
+      "text": "Perfect."
+    },
+    {
+      "start": 572.84,
+      "end": 573.84,
+      "text": "Right?"
+    },
+    {
+      "start": 573.84,
+      "end": 576.84,
+      "text": "Next, what can be lot converted to?"
+    },
+    {
+      "start": 576.84,
+      "end": 579.84,
+      "text": "Lot can be again converted into a lot of things."
+    },
+    {
+      "start": 579.84,
+      "end": 581.84,
+      "text": "But what's the value of lot?"
+    },
+    {
+      "start": 581.84,
+      "end": 582.84,
+      "text": "Two."
+    },
+    {
+      "start": 582.84,
+      "end": 588.84,
+      "text": "So when we try to convert it into something like, let's say, lot trying to, let's say,"
+    },
+    {
+      "start": 588.84,
+      "end": 591.84,
+      "text": "we try lot to dot."
+    },
+    {
+      "start": 591.84,
+      "end": 592.84,
+      "text": "Is this possible?"
+    },
+    {
+      "start": 592.84,
+      "end": 593.84,
+      "text": "Yes."
+    },
+    {
+      "start": 593.84,
+      "end": 596.84,
+      "text": "L can be done to D. But what's the value of lot?"
+    },
+    {
+      "start": 596.84,
+      "end": 597.84,
+      "text": "Two."
+    },
+    {
+      "start": 597.84,
+      "end": 599.84,
+      "text": "And what's the value of dot?"
+    },
+    {
+      "start": 599.84,
+      "end": 600.84,
+      "text": "Two."
+    },
+    {
+      "start": 600.84,
+      "end": 604.84,
+      "text": "So lot cannot be converted into dot because they're of the same level."
+    },
+    {
+      "start": 604.84,
+      "end": 605.84,
+      "text": "You're backtracking."
+    },
+    {
+      "start": 605.84,
+      "end": 606.84,
+      "text": "You're backtracking."
+    },
+    {
+      "start": 606.84,
+      "end": 608.84,
+      "text": "So lot was two."
+    },
+    {
+      "start": 608.84,
+      "end": 610.84,
+      "text": "It'll try to convert it into hot."
+    },
+    {
+      "start": 610.84,
+      "end": 611.84,
+      "text": "Hot."
+    },
+    {
+      "start": 611.84,
+      "end": 612.84,
+      "text": "Yes."
+    },
+    {
+      "start": 612.84,
+      "end": 619.84,
+      "text": "DFS of hot, which is cog, log, lot, and hot."
+    },
+    {
+      "start": 619.84,
+      "end": 620.84,
+      "text": "Perfect."
+    },
+    {
+      "start": 620.84,
+      "end": 621.84,
+      "text": "So we are at hot."
+    },
+    {
+      "start": 621.84,
+      "end": 628.84,
+      "text": "At the moment the call comes to hot, the moment the call comes to hot, hot will not try to"
+    },
+    {
+      "start": 628.84,
+      "end": 629.84,
+      "text": "convert itself."
+    },
+    {
+      "start": 629.84,
+      "end": 630.84,
+      "text": "Hot will not try to convert itself."
+    },
+    {
+      "start": 630.84,
+      "end": 633.84,
+      "text": "And it'll try to convert itself to a lot of things."
+    },
+    {
+      "start": 633.84,
+      "end": 636.84,
+      "text": "But the only possibility will be DFS of hit."
+    },
+    {
+      "start": 636.84,
+      "end": 637.84,
+      "text": "Why?"
+    },
+    {
+      "start": 637.84,
+      "end": 639.84,
+      "text": "Because the hit is at zero."
+    },
+    {
+      "start": 639.84,
+      "end": 641.84,
+      "text": "And hot is at one."
+    },
+    {
+      "start": 641.84,
+      "end": 642.84,
+      "text": "One before that."
+    },
+    {
+      "start": 642.84,
+      "end": 643.84,
+      "text": "So that is possible."
+    },
+    {
+      "start": 643.84,
+      "end": 650.84,
+      "text": "So we see the new one will have cog, log, lot, hot, and hit."
+    },
+    {
+      "start": 650.84,
+      "end": 656.84,
+      "text": "Now the moment this DFS call is made, the moment this DFS call is made, we get a hit,"
+    },
+    {
+      "start": 656.84,
+      "end": 658.84,
+      "text": "which is nothing but the beginning word."
+    },
+    {
+      "start": 658.84,
+      "end": 662.84,
+      "text": "The moment you're getting the beginning word, the moment you're getting the beginning word,"
+    },
+    {
+      "start": 662.84,
+      "end": 664.84,
+      "text": "you're like, we have got our answer."
+    },
+    {
+      "start": 664.84,
+      "end": 667.84,
+      "text": "And if we have got our answer, we say, fine."
+    },
+    {
+      "start": 667.84,
+      "end": 669.84,
+      "text": "This is a particular answer."
+    },
+    {
+      "start": 669.84,
+      "end": 672.84,
+      "text": "So we're like, we can store this in our answer."
+    },
+    {
+      "start": 672.84,
+      "end": 673.84,
+      "text": "One of them."
+    },
+    {
+      "start": 673.84,
+      "end": 674.84,
+      "text": "So go back."
+    },
+    {
+      "start": 674.84,
+      "end": 675.84,
+      "text": "Go back."
+    },
+    {
+      "start": 675.84,
+      "end": 676.84,
+      "text": "Go back."
+    },
+    {
+      "start": 676.84,
+      "end": 677.84,
+      "text": "Go back."
+    },
+    {
+      "start": 677.84,
+      "end": 678.84,
+      "text": "Go back."
+    },
+    {
+      "start": 678.84,
+      "end": 679.84,
+      "text": "Because there were no further things."
+    },
+    {
+      "start": 679.84,
+      "end": 680.84,
+      "text": "Execute this."
+    },
+    {
+      "start": 680.84,
+      "end": 683.84,
+      "text": "And again, go and execute, execute, execute."
+    },
+    {
+      "start": 683.84,
+      "end": 688.84,
+      "text": "And you'll again get another sequence, which you can actually put it into the answer."
+    },
+    {
+      "start": 688.84,
+      "end": 690.84,
+      "text": "Which you can actually put into the answer."
+    },
+    {
+      "start": 690.84,
+      "end": 692.84,
+      "text": "Now, why did this run?"
+    },
+    {
+      "start": 692.84,
+      "end": 696.84,
+      "text": "The first reason is, while we did the previous solution, we did the previous solution."
+    },
+    {
+      "start": 696.84,
+      "end": 701.84,
+      "text": "We were actually storing sequences, which ended up resulting in DLL."
+    },
+    {
+      "start": 701.84,
+      "end": 708.84,
+      "text": "Because imagine, imagine you want to go from a point to another point."
+    },
+    {
+      "start": 708.84,
+      "end": 712.84,
+      "text": "And you're trying a lot of possibilities."
+    },
+    {
+      "start": 712.84,
+      "end": 715.84,
+      "text": "And then you figured out that there's only two possibilities to reach there."
+    },
+    {
+      "start": 715.84,
+      "end": 718.84,
+      "text": "You tried out a lot of possibilities, a lot of them."
+    },
+    {
+      "start": 718.84,
+      "end": 723.84,
+      "text": "But you figured out that there were two correct possibilities to reach there."
+    },
+    {
+      "start": 723.84,
+      "end": 725.84,
+      "text": "So what did you do in the step one?"
+    },
+    {
+      "start": 725.84,
+      "end": 726.84,
+      "text": "Step two."
+    },
+    {
+      "start": 726.84,
+      "end": 729.84,
+      "text": "At first, you figured out the shortest path."
+    },
+    {
+      "start": 729.84,
+      "end": 733.84,
+      "text": "So when you figured out the shortest path, you don't need to store the sequence, which"
+    },
+    {
+      "start": 733.84,
+      "end": 735.84,
+      "text": "was consuming a lot of time."
+    },
+    {
+      "start": 735.84,
+      "end": 740.84,
+      "text": "Just did a simple DFS on the queue, according to step one, as you did over here."
+    },
+    {
+      "start": 740.84,
+      "end": 746.84,
+      "text": "And you easily, yes, you easily were able to store this thing."
+    },
+    {
+      "start": 746.84,
+      "end": 748.84,
+      "text": "Who were at which level?"
+    },
+    {
+      "start": 748.84,
+      "end": 749.84,
+      "text": "Level zero was this guy's."
+    },
+    {
+      "start": 749.84,
+      "end": 751.84,
+      "text": "Level one is this guy."
+    },
+    {
+      "start": 751.84,
+      "end": 752.84,
+      "text": "Level two were these guys."
+    },
+    {
+      "start": 752.84,
+      "end": 754.84,
+      "text": "Level three was these guys."
+    },
+    {
+      "start": 754.84,
+      "end": 755.84,
+      "text": "Level four was this guy's."
+    },
+    {
+      "start": 755.84,
+      "end": 757.84,
+      "text": "And you were easily able to store that."
+    },
+    {
+      "start": 757.84,
+      "end": 758.84,
+      "text": "Right?"
+    },
+    {
+      "start": 758.84,
+      "end": 763.84,
+      "text": "So we know one thing that we have stored that and we did not regret to store the sequence."
+    },
+    {
+      "start": 763.84,
+      "end": 768.84,
+      "text": "Now, if you try to figure out the sequence starting from the start, you'll actually explore a lot of parts."
+    },
+    {
+      "start": 768.84,
+      "end": 774.84,
+      "text": "But if you try from the end, then you know that only two parts to explore."
+    },
+    {
+      "start": 774.84,
+      "end": 782.84,
+      "text": "So the exploration of parts will be minimal when you start from the back, because on the back, there's only some answers."
+    },
+    {
+      "start": 782.84,
+      "end": 784.84,
+      "text": "For an example, you're having a four."
+    },
+    {
+      "start": 784.84,
+      "end": 788.84,
+      "text": "When you start from back, you know, there will be lesser amount of answers."
+    },
+    {
+      "start": 788.84,
+      "end": 790.84,
+      "text": "There'll be lesser amount of answers."
+    },
+    {
+      "start": 790.84,
+      "end": 797.84,
+      "text": "I hope that makes sense because over here, you see a lot of things like it goes to hot."
+    },
+    {
+      "start": 797.84,
+      "end": 804.84,
+      "text": "In a lot of examples, there might be a lot of other words in the level, which will not lead anywhere, which will not lead anywhere."
+    },
+    {
+      "start": 804.84,
+      "end": 808.84,
+      "text": "Like you might convert it to hot."
+    },
+    {
+      "start": 808.84,
+      "end": 812.84,
+      "text": "It to let's say him, him to dim."
+    },
+    {
+      "start": 812.84,
+      "end": 813.84,
+      "text": "And then hot goes on and gets it."
+    },
+    {
+      "start": 813.84,
+      "end": 818.84,
+      "text": "And so, and this dim did not go anywhere, but this will still be in the map."
+    },
+    {
+      "start": 818.84,
+      "end": 820.84,
+      "text": "This will stay in the map."
+    },
+    {
+      "start": 820.84,
+      "end": 823.84,
+      "text": "So you don't want to explore these parts unnecessarily."
+    },
+    {
+      "start": 823.84,
+      "end": 834.84,
+      "text": "That is why step two sees that is why the intuition of step two is starts in the end to the begin so that you unnecessarily stop."
+    },
+    {
+      "start": 834.84,
+      "end": 840.84,
+      "text": "Exploring the extra parts, you know, there are two parts, you know, there are two parts, you'll only explore two parts."
+    },
+    {
+      "start": 840.84,
+      "end": 841.84,
+      "text": "So you only carry two sequence."
+    },
+    {
+      "start": 841.84,
+      "end": 842.84,
+      "text": "You'll only carry two parts."
+    },
+    {
+      "start": 843.84,
+      "end": 846.84,
+      "text": "You'll only do two sequence throughout the, throughout the journey."
+    },
+    {
+      "start": 846.84,
+      "end": 855.84,
+      "text": "So unnecessarily carrying of sequences will be reduced, which indirectly saves a lot of pain, which indirectly saves a lot of pain."
+    },
+    {
+      "start": 855.84,
+      "end": 858.84,
+      "text": "Again, this is Lord CP stuff."
+    },
+    {
+      "start": 858.84,
+      "end": 861.84,
+      "text": "If you are into competitive programming, this will be cakewalk for you."
+    },
+    {
+      "start": 861.84,
+      "end": 863.84,
+      "text": "You're just into interview preparation."
+    },
+    {
+      "start": 863.84,
+      "end": 866.84,
+      "text": "You might find this stuff."
+    },
+    {
+      "start": 866.84,
+      "end": 871.84,
+      "text": "So guys, I hope you understood the explanation because that is where the gist of the solution lies."
+    },
+    {
+      "start": 871.84,
+      "end": 872.84,
+      "text": "Understanding."
+    },
+    {
+      "start": 872.84,
+      "end": 874.84,
+      "text": "And step two in depth."
+    },
+    {
+      "start": 874.84,
+      "end": 883.84,
+      "text": "So since we are dealing with TLA issues and not following the interview standards of not declaring anything global and all these things, I'll not be following that."
+    },
+    {
+      "start": 883.84,
+      "end": 884.84,
+      "text": "Okay."
+    },
+    {
+      "start": 884.84,
+      "end": 887.84,
+      "text": "So Q string of Q."
+    },
+    {
+      "start": 887.84,
+      "end": 888.84,
+      "text": "That's the first thing."
+    },
+    {
+      "start": 888.84,
+      "end": 889.84,
+      "text": "We need a map."
+    },
+    {
+      "start": 889.84,
+      "end": 891.84,
+      "text": "So clearly I'll declare it over here."
+    },
+    {
+      "start": 891.84,
+      "end": 895.84,
+      "text": "Unaudited map of string int."
+    },
+    {
+      "start": 895.84,
+      "end": 897.84,
+      "text": "This will be storing the distance."
+    },
+    {
+      "start": 897.84,
+      "end": 900.84,
+      "text": "So I can probably say Q dot push of Q."
+    },
+    {
+      "start": 900.84,
+      "end": 903.84,
+      "text": "And then I'll say Q dot push of the begin word."
+    },
+    {
+      "start": 903.84,
+      "end": 905.84,
+      "text": "That's something which I'll do."
+    },
+    {
+      "start": 905.84,
+      "end": 907.84,
+      "text": "Once I've done this, what's the next thing that I'll do?"
+    },
+    {
+      "start": 907.84,
+      "end": 911.84,
+      "text": "I'll say begin word can be set to have a zero thing."
+    },
+    {
+      "start": 911.84,
+      "end": 912.84,
+      "text": "I can see that."
+    },
+    {
+      "start": 912.84,
+      "end": 915.84,
+      "text": "Now all I can mark it as one."
+    },
+    {
+      "start": 915.84,
+      "end": 916.84,
+      "text": "That is your choice."
+    },
+    {
+      "start": 916.84,
+      "end": 918.84,
+      "text": "You can keep it as zero or one, whichever you wish to."
+    },
+    {
+      "start": 918.84,
+      "end": 921.84,
+      "text": "Next I'll say, okay, let's start off the queue."
+    },
+    {
+      "start": 921.84,
+      "end": 924.76,
+      "text": "What do you do in the queue?"
+    },
+    {
+      "start": 924.76,
+      "end": 925.76,
+      "text": "As very simple."
+    },
+    {
+      "start": 925.76,
+      "end": 926.76,
+      "text": "The same thing."
+    },
+    {
+      "start": 926.76,
+      "end": 927.76,
+      "text": "Q dot front."
+    },
+    {
+      "start": 927.76,
+      "end": 928.76,
+      "text": "Q dot pop."
+    },
+    {
+      "start": 928.76,
+      "end": 930.76,
+      "text": "And now what you can say is, okay, fine."
+    },
+    {
+      "start": 930.76,
+      "end": 931.76,
+      "text": "Okay."
+    },
+    {
+      "start": 931.76,
+      "end": 933.76,
+      "text": "This is what we have got."
+    },
+    {
+      "start": 933.76,
+      "end": 936.76,
+      "text": "Now we need to traverse and change every character."
+    },
+    {
+      "start": 936.76,
+      "end": 938.76,
+      "text": "So let's traverse in the word."
+    },
+    {
+      "start": 938.76,
+      "end": 939.76,
+      "text": "So I go to zero."
+    },
+    {
+      "start": 939.76,
+      "end": 943.76,
+      "text": "Again, please make sure that we don't write this."
+    },
+    {
+      "start": 943.76,
+      "end": 947.76,
+      "text": "Usually in C++, it does store it."
+    },
+    {
+      "start": 947.76,
+      "end": 950.76,
+      "text": "Like it just computes it once, but still I'll not take a risk."
+    },
+    {
+      "start": 950.76,
+      "end": 956.76,
+      "text": "I'll probably compute the size over here because I want to be absolutely sure that it doesn't give me TLE."
+    },
+    {
+      "start": 956.76,
+      "end": 959.76,
+      "text": "I'll do all the optimizations that are possible from my end."
+    },
+    {
+      "start": 959.76,
+      "end": 960.76,
+      "text": "This is something which I'll do."
+    },
+    {
+      "start": 960.76,
+      "end": 961.76,
+      "text": "No, I'm not."
+    },
+    {
+      "start": 961.76,
+      "end": 964.76,
+      "text": "There's no more repetitive calculations of dot size again and again."
+    },
+    {
+      "start": 964.76,
+      "end": 968.76,
+      "text": "So char of orational, I'm going to do what of I."
+    },
+    {
+      "start": 968.76,
+      "end": 972.76,
+      "text": "And when we come back, what of I equal to orational."
+    },
+    {
+      "start": 972.76,
+      "end": 974.76,
+      "text": "So that all the changes are reverted."
+    },
+    {
+      "start": 974.76,
+      "end": 977.76,
+      "text": "Next, I'll do a character CH equal to A."
+    },
+    {
+      "start": 977.76,
+      "end": 980.76,
+      "text": "Character less than, equal to Z."
+    },
+    {
+      "start": 980.76,
+      "end": 981.76,
+      "text": "Character plus plus."
+    },
+    {
+      "start": 981.76,
+      "end": 983.76,
+      "text": "That's the first thing we'll do."
+    },
+    {
+      "start": 983.76,
+      "end": 984.76,
+      "text": "Right."
+    },
+    {
+      "start": 984.76,
+      "end": 986.76,
+      "text": "Next, I know one thing."
+    },
+    {
+      "start": 986.76,
+      "end": 987.76,
+      "text": "What if I will be CH?"
+    },
+    {
+      "start": 987.76,
+      "end": 988.76,
+      "text": "Perfect."
+    },
+    {
+      "start": 988.76,
+      "end": 990.76,
+      "text": "I'll try to see, okay, fine."
+    },
+    {
+      "start": 990.76,
+      "end": 996.68,
+      "text": "list i need to quickly check how do i click check here i know it's set so quickly do an unordered"
+    },
+    {
+      "start": 996.68,
+      "end": 1008.41,
+      "text": "set so what let's do our begin like this dot word less dot it that's the first thing you'll do next"
+    },
+    {
+      "start": 1008.41,
+      "end": 1013.93,
+      "text": "let's have a quick check if it does exist or not so i'll be like okay fine set do you have this"
+    },
+    {
+      "start": 1013.93,
+      "end": 1019.45,
+      "text": "word whatever it says yes i do have which means it will be a greater than zero value i said you"
+    },
+    {
+      "start": 1019.45,
+      "end": 1026.33,
+      "text": "i have this word can you please take it as a map word what we answer i'm like this is the new word"
+    },
+    {
+      "start": 1026.97,
+      "end": 1032.41,
+      "text": "right and the previous word had some value currently i can keep the steps equal to mpp"
+    },
+    {
+      "start": 1032.41,
+      "end": 1037.69,
+      "text": "of word because that is where i'm storing it but i can say mpp of sorry i can rather say steps plus"
+    },
+    {
+      "start": 1037.69,
+      "end": 1043.53,
+      "text": "one so i store the steps over here perfect this is how i can easily store the steps once i've"
+    },
+    {
+      "start": 1043.53,
+      "end": 1049.37,
+      "text": "stored the steps i know everything is stored in this map i just need to back"
+    },
+    {
+      "start": 1049.45,
+      "end": 1054.25,
+      "text": "to our so i need a vector of vector string as an answer so let's store it here only"
+    },
+    {
+      "start": 1055.61,
+      "end": 1060.01,
+      "text": "and i can return the answer here again declaring everything globally so what you will do is okay"
+    },
+    {
+      "start": 1061.05,
+      "end": 1065.13,
+      "text": "remember one thing you need to find the answer right you need to find the answer"
+    },
+    {
+      "start": 1065.13,
+      "end": 1072.89,
+      "text": "so if in case just make sure also please make sure you erase it from the set it's very important"
+    },
+    {
+      "start": 1072.89,
+      "end": 1078.97,
+      "text": "that you re is the value otherwise you will re-iterate on it okay good what's the next thing"
+    },
+    {
+      "start": 1078.97,
+      "end": 1079.21,
+      "text": "then once you have strikes the instructor will take your angry 2 in 2 Interior Texts from your"
+    },
+    {
+      "start": 1079.21,
+      "end": 1079.37,
+      "text": "set to show that it's not used here all right for now let's hang on it and quickly go back here"
+    },
+    {
+      "start": 1079.37,
+      "end": 1081.37,
+      "text": "Once you've done everything, what is the next thing that you'll do?"
+    },
+    {
+      "start": 1081.37,
+      "end": 1084.91,
+      "text": "You'll just quickly check if you actually reached there."
+    },
+    {
+      "start": 1084.91,
+      "end": 1090.89,
+      "text": "So just in case you reached the last guy, which is end word, it's fine."
+    },
+    {
+      "start": 1090.89,
+      "end": 1092.61,
+      "text": "It should not be equal to end."
+    },
+    {
+      "start": 1092.61,
+      "end": 1095.83,
+      "text": "That means you reached it and the map is storing a value."
+    },
+    {
+      "start": 1095.83,
+      "end": 1097.83,
+      "text": "If you reached it, it's perfect."
+    },
+    {
+      "start": 1097.83,
+      "end": 1100.87,
+      "text": "Call the DFS from the end word and have the answer."
+    },
+    {
+      "start": 1100.87,
+      "end": 1105.13,
+      "text": "And if it doesn't get called, then you return an empty list as the answer."
+    },
+    {
+      "start": 1105.13,
+      "end": 1108.21,
+      "text": "Now let's go back and write the DFS."
+    },
+    {
+      "start": 1108.21,
+      "end": 1110.81,
+      "text": "I'll quickly do a private function for DFS."
+    },
+    {
+      "start": 1110.81,
+      "end": 1114.63,
+      "text": "Now string word, I can carry a sequence over here."
+    },
+    {
+      "start": 1114.63,
+      "end": 1119.59,
+      "text": "So I'm not sure if this will tle, but let's give it a try."
+    },
+    {
+      "start": 1119.59,
+      "end": 1123.17,
+      "text": "String sequence and again the sequence dot pushback."
+    },
+    {
+      "start": 1123.17,
+      "end": 1127.27,
+      "text": "If it gives tle, what we'll do is, yes, very simple."
+    },
+    {
+      "start": 1127.27,
+      "end": 1131.09,
+      "text": "We will just go across and do it at a global variable."
+    },
+    {
+      "start": 1131.09,
+      "end": 1133.71,
+      "text": "So sequence has been passed over here."
+    },
+    {
+      "start": 1133.71,
+      "end": 1138.21,
+      "text": "So please make sure you always carry these things in."
+    },
+    {
+      "start": 1138.21,
+      "end": 1142.33,
+      "text": "Then reference as a sequence."
+    },
+    {
+      "start": 1142.33,
+      "end": 1143.33,
+      "text": "Perfect."
+    },
+    {
+      "start": 1143.33,
+      "end": 1146.49,
+      "text": "Now, if this word is equal to begin word."
+    },
+    {
+      "start": 1146.49,
+      "end": 1150.57,
+      "text": "So again, I don't want to do a lot of these things."
+    },
+    {
+      "start": 1150.57,
+      "end": 1154.29,
+      "text": "So I'll just go across and say begin word."
+    },
+    {
+      "start": 1154.29,
+      "end": 1159.45,
+      "text": "So if this is B, which is the begin word, I say we've got our answer."
+    },
+    {
+      "start": 1159.45,
+      "end": 1162.83,
+      "text": "And this can be a part of our answer, which is the sequence."
+    },
+    {
+      "start": 1162.83,
+      "end": 1163.97,
+      "text": "And I can return."
+    },
+    {
+      "start": 1163.97,
+      "end": 1165.81,
+      "text": "This is where the recursion ends."
+    },
+    {
+      "start": 1165.81,
+      "end": 1167.85,
+      "text": "Otherwise, I go across."
+    },
+    {
+      "start": 1167.85,
+      "end": 1170.01,
+      "text": "And do the same thing, which is character change."
+    },
+    {
+      "start": 1170.01,
+      "end": 1174.85,
+      "text": "I go across and do the same thing, which is character change."
+    },
+    {
+      "start": 1174.85,
+      "end": 1177.37,
+      "text": "And coming back to this."
+    },
+    {
+      "start": 1177.37,
+      "end": 1178.37,
+      "text": "Same thing again."
+    },
+    {
+      "start": 1178.37,
+      "end": 1180.33,
+      "text": "But over here, we are trying to backtrack."
+    },
+    {
+      "start": 1180.33,
+      "end": 1181.33,
+      "text": "You need to understand."
+    },
+    {
+      "start": 1181.33,
+      "end": 1182.33,
+      "text": "We need to backtrack."
+    },
+    {
+      "start": 1182.33,
+      "end": 1185.73,
+      "text": "And in order to backtrack, we have to check."
+    },
+    {
+      "start": 1185.73,
+      "end": 1188.31,
+      "text": "We're going back to a word."
+    },
+    {
+      "start": 1188.31,
+      "end": 1190.69,
+      "text": "We're going back to a word, which is word of I equal to CH."
+    },
+    {
+      "start": 1190.69,
+      "end": 1192.13,
+      "text": "So the word has changed."
+    },
+    {
+      "start": 1192.13,
+      "end": 1194.97,
+      "text": "I need to check."
+    },
+    {
+      "start": 1194.97,
+      "end": 1195.97,
+      "text": "Is this word in the dictionary?"
+    },
+    {
+      "start": 1195.97,
+      "end": 1196.97,
+      "text": "That's the first thing that I need to check."
+    },
+    {
+      "start": 1196.97,
+      "end": 1197.73,
+      "text": "Okay."
+    },
+    {
+      "start": 1197.85,
+      "end": 1200.19,
+      "text": "So let's quickly have a check."
+    },
+    {
+      "start": 1200.19,
+      "end": 1205.09,
+      "text": "Is this word in the dictionary, which is nothing but your map data structure?"
+    },
+    {
+      "start": 1205.09,
+      "end": 1207.43,
+      "text": "By the way, what's map declared as MPP?"
+    },
+    {
+      "start": 1207.43,
+      "end": 1208.43,
+      "text": "Yeah."
+    },
+    {
+      "start": 1208.43,
+      "end": 1211.66,
+      "text": "So I'll be like, okay, cool."
+    },
+    {
+      "start": 1211.66,
+      "end": 1215.76,
+      "text": "I'll go like MPP.find of the word."
+    },
+    {
+      "start": 1215.76,
+      "end": 1219.7,
+      "text": "If this is in the dictionary, that's the first thing."
+    },
+    {
+      "start": 1219.7,
+      "end": 1223.92,
+      "text": "If this is in the dictionary, the next thing that I need to check is, okay, you guys, you"
+    },
+    {
+      "start": 1223.92,
+      "end": 1224.92,
+      "text": "are in the dictionary."
+    },
+    {
+      "start": 1224.92,
+      "end": 1225.92,
+      "text": "Now, do you have a value?"
+    },
+    {
+      "start": 1225.92,
+      "end": 1228.38,
+      "text": "Do you have a value?"
+    },
+    {
+      "start": 1228.38,
+      "end": 1229.38,
+      "text": "I do."
+    },
+    {
+      "start": 1229.38,
+      "end": 1230.38,
+      "text": "I have a value."
+    },
+    {
+      "start": 1230.38,
+      "end": 1231.38,
+      "text": "I have a value of MPP."
+    },
+    {
+      "start": 1231.38,
+      "end": 1232.38,
+      "text": "I have a value of MPP."
+    },
+    {
+      "start": 1232.38,
+      "end": 1233.38,
+      "text": "I have a value of MPP."
+    },
+    {
+      "start": 1233.38,
+      "end": 1234.38,
+      "text": "I have a value of MPP."
+    },
+    {
+      "start": 1234.38,
+      "end": 1235.38,
+      "text": "I have a value of MPP."
+    },
+    {
+      "start": 1235.38,
+      "end": 1236.38,
+      "text": "I have a value of MPP."
+    },
+    {
+      "start": 1236.38,
+      "end": 1237.38,
+      "text": "I need to check it."
+    },
+    {
+      "start": 1237.38,
+      "end": 1238.38,
+      "text": "How do you check it?"
+    },
+    {
+      "start": 1238.38,
+      "end": 1239.38,
+      "text": "Firstly, probably you can store the steps in some variable like this."
+    },
+    {
+      "start": 1239.38,
+      "end": 1240.38,
+      "text": "Now let's have a quick check."
+    },
+    {
+      "start": 1240.38,
+      "end": 1244.38,
+      "text": "If this plus one is equal to equal to the steps that I'm looking for, because this is a word"
+    },
+    {
+      "start": 1244.38,
+      "end": 1247.38,
+      "text": "that I, I'm to go back one step back."
+    },
+    {
+      "start": 1247.38,
+      "end": 1253.88,
+      "text": "So plus one should be equal to steps."
+    },
+    {
+      "start": 1253.88,
+      "end": 1255.38,
+      "text": "If that is the case, you are fine."
+    },
+    {
+      "start": 1255.38,
+      "end": 1256.54,
+      "text": "You can go and do the DFS with a new word."
+    },
+    {
+      "start": 1256.54,
+      "end": 1257.54,
+      "text": "That's fine."
+    },
+    {
+      "start": 1257.54,
+      "end": 1258.0,
+      "text": "Okay."
+    },
+    {
+      "start": 1258.38,
+      "end": 1259.68,
+      "text": "and with the new sequence."
+    },
+    {
+      "start": 1260.0,
+      "end": 1260.88,
+      "text": "Okay, new sequence."
+    },
+    {
+      "start": 1261.2,
+      "end": 1261.92,
+      "text": "What does that mean?"
+    },
+    {
+      "start": 1262.62,
+      "end": 1265.06,
+      "text": "This word will be a part of your sequence, isn't it?"
+    },
+    {
+      "start": 1265.94,
+      "end": 1267.12,
+      "text": "So you'll say, okay, this word will be."
+    },
+    {
+      "start": 1267.18,
+      "end": 1269.16,
+      "text": "But when you come back, you need to take it back"
+    },
+    {
+      "start": 1269.16,
+      "end": 1272.22,
+      "text": "because the next step, you don't want the word to be added."
+    },
+    {
+      "start": 1272.62,
+      "end": 1274.48,
+      "text": "Simple, basic, backtracking."
+    },
+    {
+      "start": 1275.22,
+      "end": 1275.98,
+      "text": "This is what you do."
+    },
+    {
+      "start": 1276.36,
+      "end": 1277.62,
+      "text": "And whenever you push back the answer,"
+    },
+    {
+      "start": 1278.32,
+      "end": 1279.64,
+      "text": "make sure you reverse"
+    },
+    {
+      "start": 1279.64,
+      "end": 1284.64,
+      "text": "because as of now, the answer is stored from end to begin."
+    },
+    {
+      "start": 1284.64,
+      "end": 1288.38,
+      "text": "And you need to store the answer from the opposite direction."
+    },
+    {
+      "start": 1289.02,
+      "end": 1292.62,
+      "text": "This is how you will compute the step two."
+    },
+    {
+      "start": 1293.16,
+      "end": 1294.74,
+      "text": "So before compiling this code,"
+    },
+    {
+      "start": 1295.12,
+      "end": 1296.56,
+      "text": "do you think that there is an error?"
+    },
+    {
+      "start": 1296.76,
+      "end": 1297.46,
+      "text": "There is an error."
+    },
+    {
+      "start": 1297.88,
+      "end": 1299.46,
+      "text": "Now you're reversing the sequence over here."
+    },
+    {
+      "start": 1299.6,
+      "end": 1300.82,
+      "text": "You're storing it into the answer."
+    },
+    {
+      "start": 1301.2,
+      "end": 1304.92,
+      "text": "But the recursion doesn't want that the sequence is disturbed"
+    },
+    {
+      "start": 1304.92,
+      "end": 1306.46,
+      "text": "because you have to go back."
+    },
+    {
+      "start": 1306.8,
+      "end": 1309.18,
+      "text": "And when you go back, you have to do a pop back."
+    },
+    {
+      "start": 1309.28,
+      "end": 1310.9,
+      "text": "So the wrong guy will be popped back."
+    },
+    {
+      "start": 1311.04,
+      "end": 1314.34,
+      "text": "So make sure you're reversing it to put it into the answer."
+    },
+    {
+      "start": 1314.64,
+      "end": 1317.56,
+      "text": "But you re-reverse it before returning."
+    },
+    {
+      "start": 1318.1,
+      "end": 1320.02,
+      "text": "Simple, basic, recur."
+    },
+    {
+      "start": 1320.36,
+      "end": 1321.64,
+      "text": "So before submitting this code,"
+    },
+    {
+      "start": 1321.72,
+      "end": 1323.98,
+      "text": "there are some minor mistakes that I have done."
+    },
+    {
+      "start": 1324.38,
+      "end": 1326.16,
+      "text": "So first of all, when you're using the begin,"
+    },
+    {
+      "start": 1326.32,
+      "end": 1326.64,
+      "text": "you need to..."
+    },
+    {
+      "start": 1327.56,
+      "end": 1329.58,
+      "text": "Yes, this is a mistake."
+    },
+    {
+      "start": 1330.12,
+      "end": 1332.84,
+      "text": "And the other thing is once you reach the word,"
+    },
+    {
+      "start": 1333.3,
+      "end": 1334.24,
+      "text": "just to optimize,"
+    },
+    {
+      "start": 1334.84,
+      "end": 1336.28,
+      "text": "once you've reached the end word,"
+    },
+    {
+      "start": 1336.34,
+      "end": 1337.28,
+      "text": "there's no need to do anything"
+    },
+    {
+      "start": 1337.28,
+      "end": 1339.04,
+      "text": "because you've marked all the levels"
+    },
+    {
+      "start": 1339.04,
+      "end": 1340.2,
+      "text": "and your job is done."
+    },
+    {
+      "start": 1340.52,
+      "end": 1342.94,
+      "text": "So these are the two things that you need to add it."
+    },
+    {
+      "start": 1342.94,
+      "end": 1344.02,
+      "text": "And once you've done this,"
+    },
+    {
+      "start": 1344.02,
+      "end": 1344.58,
+      "text": "try it."
+    },
+    {
+      "start": 1344.64,
+      "end": 1345.44,
+      "text": "You're compiling this."
+    },
+    {
+      "start": 1346.04,
+      "end": 1347.76,
+      "text": "And it should give us a correct answer."
+    },
+    {
+      "start": 1347.84,
+      "end": 1348.4,
+      "text": "Yes, it does."
+    },
+    {
+      "start": 1348.74,
+      "end": 1350.16,
+      "text": "And let's quickly try to submit it."
+    },
+    {
+      "start": 1350.26,
+      "end": 1351.56,
+      "text": "Now, you must see that."
+    },
+    {
+      "start": 1351.76,
+      "end": 1352.84,
+      "text": "Okay, I've tried it a little more."
+    },
+    {
+      "start": 1353.26,
+      "end": 1354.0,
+      "text": "And I figured out, okay,"
+    },
+    {
+      "start": 1354.34,
+      "end": 1356.12,
+      "text": "faster than 99.96."
+    },
+    {
+      "start": 1356.48,
+      "end": 1357.78,
+      "text": "Though I do not believe in late code,"
+    },
+    {
+      "start": 1357.88,
+      "end": 1358.4,
+      "text": "these things."
+    },
+    {
+      "start": 1359.06,
+      "end": 1362.64,
+      "text": "So this is how you can actually use some trick."
+    },
+    {
+      "start": 1363.32,
+      "end": 1364.68,
+      "text": "Like this is a hack"
+    },
+    {
+      "start": 1364.68,
+      "end": 1367.22,
+      "text": "because the standard way is the one"
+    },
+    {
+      "start": 1367.22,
+      "end": 1368.46,
+      "text": "that I have taught in the previous video."
+    },
+    {
+      "start": 1368.54,
+      "end": 1370.18,
+      "text": "That is what you have to tell in the interview."
+    },
+    {
+      "start": 1370.56,
+      "end": 1372.3,
+      "text": "Don't be over smart and don't tell this one."
+    },
+    {
+      "start": 1372.3,
+      "end": 1374.18,
+      "text": "This is just for late code purpose."
+    },
+    {
+      "start": 1374.64,
+      "end": 1375.94,
+      "text": "A lot of people do solve late code."
+    },
+    {
+      "start": 1376.3,
+      "end": 1378.96,
+      "text": "They want their problem solving skills to be right up there."
+    },
+    {
+      "start": 1378.96,
+      "end": 1382.66,
+      "text": "So this is a problem where it'll on various methods of problem solving."
+    },
+    {
+      "start": 1382.66,
+      "end": 1385.62,
+      "text": "And I absolutely loved this problem."
+    },
+    {
+      "start": 1385.88,
+      "end": 1388.6,
+      "text": "So I hope I was able to explain you this tough problem."
+    },
+    {
+      "start": 1388.6,
+      "end": 1392.28,
+      "text": "So just in case I was, please, please, please make sure you like this video."
+    },
+    {
+      "start": 1392.28,
+      "end": 1393.3,
+      "text": "And if you need to our channel,"
+    },
+    {
+      "start": 1393.88,
+      "end": 1397.62,
+      "text": "I think you should definitely subscribe to us because I do put up a lot of"
+    },
+    {
+      "start": 1397.62,
+      "end": 1400.74,
+      "text": "content, which is related to DSL go and lead code as well."
+    },
+    {
+      "start": 1401.26,
+      "end": 1404.4,
+      "text": "So if you haven't checked out our DPCS and these DC, I think you're missing out"
+    },
+    {
+      "start": 1404.4,
+      "end": 1405.12,
+      "text": "on a lot of stuff."
+    },
+    {
+      "start": 1405.36,
+      "end": 1406.62,
+      "text": "The links are in the description."
+    },
+    {
+      "start": 1406.98,
+      "end": 1408.18,
+      "text": "With this, I'll be wrapping up this video."
+    },
+    {
+      "start": 1408.18,
+      "end": 1409.5,
+      "text": "Let's meet in some other video till then."
+    },
+    {
+      "start": 1409.5,
+      "end": 1409.8,
+      "text": "Bye. Bye."
+    },
+    {
+      "start": 1409.8,
+      "end": 1410.28,
+      "text": "Take care."
+    }
+  ]
+}

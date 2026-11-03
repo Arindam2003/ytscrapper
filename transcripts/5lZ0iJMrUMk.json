@@ -1,0 +1,1009 @@
+{
+  "video_id": "5lZ0iJMrUMk",
+  "title": "G-21. Topological Sort Algorithm ｜ DFS",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 809.45,
+  "segments": [
+    {
+      "start": 2.96,
+      "end": 6.18,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.64,
+      "end": 10.46,
+      "text": "So in this video, we are going to learn about topological sorting"
+    },
+    {
+      "start": 10.46,
+      "end": 15.46,
+      "text": "and we are going to solve this using the DFS algorithm, which is the depth first search."
+    },
+    {
+      "start": 15.94,
+      "end": 19.76,
+      "text": "Now what is topological sorting? In order to define it, I can say"
+    },
+    {
+      "start": 19.76,
+      "end": 24.4,
+      "text": "it only exists on DAG, which is directed"
+    },
+    {
+      "start": 24.4,
+      "end": 30.32,
+      "text": "acyclic graph. That means any directed graph which does not have a cycle."
+    },
+    {
+      "start": 30.32,
+      "end": 35.16,
+      "text": "Why? I will tell you that. So basically the definition states any linear ordering"
+    },
+    {
+      "start": 35.16,
+      "end": 40.44,
+      "text": "of vertices, means these nodes, any of the linear ordering such that if there"
+    },
+    {
+      "start": 40.44,
+      "end": 45.3,
+      "text": "is an edge between u and v, such that there is an edge between u and v, u always"
+    },
+    {
+      "start": 45.3,
+      "end": 50.5,
+      "text": "appears v in that ordering. U always appears"
+    },
+    {
+      "start": 50.5,
+      "end": 55.3,
+      "text": "before v in that ordering. So this is the particular DAG. So let me write down the"
+    },
+    {
+      "start": 55.3,
+      "end": 60.3,
+      "text": "edges that we have. I think we have an edge from 5 to 0. We have an edge from 4 to 0."
+    },
+    {
+      "start": 60.32,
+      "end": 65.08,
+      "text": "We have an edge from 5 to 2. We have an edge from 2 to 3. We have an edge from 3 to 1."
+    },
+    {
+      "start": 65.4,
+      "end": 70.46,
+      "text": "And we have an edge from 4 to 1. So 1, 2, 3, 4, 5, 6. We have all the 6"
+    },
+    {
+      "start": 70.46,
+      "end": 75.0,
+      "text": "edges. So this can be a possible linear ordering. Why? Let me tell you that."
+    },
+    {
+      "start": 75.42,
+      "end": 80.34,
+      "text": "5 to 0. 5 appears before 0. 4 to 0."
+    },
+    {
+      "start": 80.8,
+      "end": 85.04,
+      "text": "4 appears before 0. 5 to 2. 5 appears"
+    },
+    {
+      "start": 85.04,
+      "end": 90.08,
+      "text": "before 2. 2 to 3. 2 appears before 3. 3 to 1."
+    },
+    {
+      "start": 90.32,
+      "end": 95.62,
+      "text": "3 appears before 1. 4 to 1. 4 appears before 1. So thereby,"
+    },
+    {
+      "start": 96.22,
+      "end": 101.32,
+      "text": "this is a valid linear ordering. Similarly, this can also be a valid"
+    },
+    {
+      "start": 101.32,
+      "end": 106.64,
+      "text": "linear ordering. So if you see, 5 appears before 0. 5 appears before 0."
+    },
+    {
+      "start": 107.0,
+      "end": 113.14,
+      "text": "4 appears before 0. Yes. 5 appears before 2. Yes. 2 appears before 3. Yes."
+    },
+    {
+      "start": 113.14,
+      "end": 120.3,
+      "text": "3 appears before 1. Yes. 4 appears before 1. Yes. So this is also a valid"
+    },
+    {
+      "start": 120.3,
+      "end": 125.34,
+      "text": "ordering. There can be multiple valid orderings. But we just need to figure out"
+    },
+    {
+      "start": 125.34,
+      "end": 129.88,
+      "text": "one of the topological sortings. And that should be good enough."
+    },
+    {
+      "start": 130.48,
+      "end": 135.26,
+      "text": "Now coming across, we will understand how to find it. But why"
+    },
+    {
+      "start": 135.26,
+      "end": 140.52,
+      "text": "only in directed acyclic graph? Why? So first, let's understand"
+    },
+    {
+      "start": 140.52,
+      "end": 144.42,
+      "text": "why in directed graph. So what does the definition state?"
+    },
+    {
+      "start": 145.18,
+      "end": 150.26,
+      "text": "If there is an edge between u and v, u appears before v. So if you take undirected"
+    },
+    {
+      "start": 150.3,
+      "end": 156.3,
+      "text": "graph and you see that there is an edge between 1 to 2, it actually means there is an edge between"
+    },
+    {
+      "start": 156.3,
+      "end": 163.18,
+      "text": "1 to 2 and there is an edge between 2 to 1. So how can you write an ordering such that 1 is before 2"
+    },
+    {
+      "start": 163.18,
+      "end": 170.8,
+      "text": "and 2 is also before 1? That is not practically possible. Thereby, the line, thereby the directed"
+    },
+    {
+      "start": 170.8,
+      "end": 179.98,
+      "text": "graphs are only possible. Now why acyclic means no cycle means no cycle? Why is that? Now imagine if"
+    },
+    {
+      "start": 180.3,
+      "end": 187.98,
+      "text": "you write a cycle in a directed graph 1 to 2, 2 to 3, 3 to 1. Okay. So what I'm stating is"
+    },
+    {
+      "start": 187.98,
+      "end": 196.42,
+      "text": "1 is having an edge to 2, which means 1 should be before 2 in that ordering. 2 to 3 is an edge,"
+    },
+    {
+      "start": 196.42,
+      "end": 203.9,
+      "text": "which means 2 should be before 3 in that ordering. 3 to 1 has an edge, which means 3 should be"
+    },
+    {
+      "start": 203.9,
+      "end": 209.82,
+      "text": "before 1 in that ordering. That is not possible. Why? Because there is a cyclic dependency"
+    },
+    {
+      "start": 210.3,
+      "end": 216.18,
+      "text": "happening. Because there is a cyclic dependency happening. Thereby, if there is a cycle, you cannot"
+    },
+    {
+      "start": 216.18,
+      "end": 222.48,
+      "text": "have an ordering such that everyone follows that. So thereby acyclic and graph, yes. So I hope you"
+    },
+    {
+      "start": 222.48,
+      "end": 228.66,
+      "text": "got the reason why is topological sorting valid or why can you just write a linear ordering for"
+    },
+    {
+      "start": 228.66,
+      "end": 235.2,
+      "text": "a directed acyclic graph, which is nothing but a DAG. Okay. So the reason is clear. Now let's"
+    },
+    {
+      "start": 235.2,
+      "end": 240.12,
+      "text": "quickly jump up to the algorithm. So we have this particular DAG and we have the corresponding"
+    },
+    {
+      "start": 240.12,
+      "end": 240.28,
+      "text": "action. So we have this particular DAG and we have the corresponding action. So we have this particular"
+    },
+    {
+      "start": 240.28,
+      "end": 246.52,
+      "text": "adjacency list for this particular DAG. So what does this particular topological sort algorithm"
+    },
+    {
+      "start": 246.52,
+      "end": 252.58,
+      "text": "in DFS states? Now what we will always do is, you know that, right? We always have this particular"
+    },
+    {
+      "start": 252.58,
+      "end": 259.12,
+      "text": "stuff for components and that is the same thing we will be following over here as well. So over"
+    },
+    {
+      "start": 259.12,
+      "end": 265.18,
+      "text": "here, how many nodes do we have? We have five nodes. So run till five and we will say if not"
+    },
+    {
+      "start": 265.18,
+      "end": 270.1,
+      "text": "visited, yes, very, very important. If not visited of I, then we will"
+    },
+    {
+      "start": 270.1,
+      "end": 276.58,
+      "text": "call the DFS for I. Yes, that is how we will do it. I'll explain you slowly. So this is what we"
+    },
+    {
+      "start": 276.58,
+      "end": 281.8,
+      "text": "will take and we will always declare a visited array. So let's quickly declare the visited array."
+    },
+    {
+      "start": 281.8,
+      "end": 287.68,
+      "text": "So probably we can do that over here. So we have declared the visited array and make sure everything"
+    },
+    {
+      "start": 287.68,
+      "end": 294.9,
+      "text": "is marked as zero initially. Marked as zero initially. Now let's quickly start off. What is"
+    },
+    {
+      "start": 294.9,
+      "end": 301.2,
+      "text": "the value of I? The value of I is zero initially. Is that visited? No. So what do you do is you start the DFS call for I."
+    },
+    {
+      "start": 301.2,
+      "end": 308.7,
+      "text": "Call from zero. Remember this. You start the DFS call from zero. At the same time, just declare a stack."
+    },
+    {
+      "start": 308.7,
+      "end": 316.08,
+      "text": "Yes, declare a stack. Now what is a stack? It is a last in first out operation data structure. Last in"
+    },
+    {
+      "start": 316.08,
+      "end": 320.46,
+      "text": "first out operation data structure. If you don't know, please read about stack. So DFS of zero is"
+    },
+    {
+      "start": 320.46,
+      "end": 326.28,
+      "text": "there. So what do you do is you say, okay, this guy is visited. Does zero have any adjacent nodes? No."
+    },
+    {
+      "start": 326.28,
+      "end": 331.08,
+      "text": "So the DFS will not call any for the DFS and it will go back."
+    },
+    {
+      "start": 331.2,
+      "end": 335.52,
+      "text": "But remember, before going back, take this zero and put it into the stack."
+    },
+    {
+      "start": 335.66,
+      "end": 338.6,
+      "text": "Before going back, take the zero and put it into the stack."
+    },
+    {
+      "start": 339.0,
+      "end": 339.2,
+      "text": "Done."
+    },
+    {
+      "start": 339.6,
+      "end": 341.12,
+      "text": "So the DFS for zero is completed."
+    },
+    {
+      "start": 342.28,
+      "end": 344.66,
+      "text": "Next, I'll tell you the intuition going forward."
+    },
+    {
+      "start": 344.72,
+      "end": 345.08,
+      "text": "Don't worry."
+    },
+    {
+      "start": 345.7,
+      "end": 346.82,
+      "text": "Next is one."
+    },
+    {
+      "start": 347.3,
+      "end": 349.74,
+      "text": "So again, you write the same thing, DFS of one."
+    },
+    {
+      "start": 349.74,
+      "end": 352.56,
+      "text": "The first thing you do is you mark it as visited."
+    },
+    {
+      "start": 352.94,
+      "end": 354.32,
+      "text": "Does one have any adjacent nodes?"
+    },
+    {
+      "start": 354.64,
+      "end": 354.9,
+      "text": "No."
+    },
+    {
+      "start": 355.18,
+      "end": 357.24,
+      "text": "So there will be no further DFS calls."
+    },
+    {
+      "start": 357.42,
+      "end": 358.38,
+      "text": "No further DFS calls."
+    },
+    {
+      "start": 358.68,
+      "end": 360.84,
+      "text": "So before going back, put this into the stack."
+    },
+    {
+      "start": 361.2,
+      "end": 363.58,
+      "text": "So you put this into the stack and now you'll go back."
+    },
+    {
+      "start": 363.72,
+      "end": 364.9,
+      "text": "So the DFS is completed."
+    },
+    {
+      "start": 365.52,
+      "end": 367.68,
+      "text": "Next, it comes for two."
+    },
+    {
+      "start": 368.02,
+      "end": 372.1,
+      "text": "So what happens is you call the DFS for two, you mark it as visited."
+    },
+    {
+      "start": 372.54,
+      "end": 373.86,
+      "text": "Now two has an adjacent node."
+    },
+    {
+      "start": 374.14,
+      "end": 376.14,
+      "text": "So you go and call it for three."
+    },
+    {
+      "start": 376.14,
+      "end": 379.56,
+      "text": "Now what you do is you mark for three as visited as well."
+    },
+    {
+      "start": 379.9,
+      "end": 381.22,
+      "text": "Now does three have an adjacent node?"
+    },
+    {
+      "start": 381.58,
+      "end": 383.78,
+      "text": "It checks that three has an adjacent node one."
+    },
+    {
+      "start": 384.2,
+      "end": 388.22,
+      "text": "But if we carefully see, we cannot call for DFS of one."
+    },
+    {
+      "start": 388.52,
+      "end": 388.76,
+      "text": "Why?"
+    },
+    {
+      "start": 389.06,
+      "end": 390.86,
+      "text": "Because it is already visited."
+    },
+    {
+      "start": 391.02,
+      "end": 391.14,
+      "text": "Yes."
+    },
+    {
+      "start": 391.2,
+      "end": 392.88,
+      "text": "Because it is already visited."
+    },
+    {
+      "start": 393.18,
+      "end": 396.94,
+      "text": "So thereby what we will do is we will be like, okay, it has already visited."
+    },
+    {
+      "start": 397.26,
+      "end": 401.58,
+      "text": "So let's quickly just not call any further DFS calls and go back."
+    },
+    {
+      "start": 401.76,
+      "end": 404.02,
+      "text": "But if we're going back, take that three and put it in."
+    },
+    {
+      "start": 404.4,
+      "end": 405.44,
+      "text": "Now we go over here."
+    },
+    {
+      "start": 405.48,
+      "end": 406.62,
+      "text": "No further DFS calls."
+    },
+    {
+      "start": 406.62,
+      "end": 407.04,
+      "text": "Go back."
+    },
+    {
+      "start": 407.32,
+      "end": 409.26,
+      "text": "Before going back, put that into the stack."
+    },
+    {
+      "start": 409.64,
+      "end": 411.82,
+      "text": "So we have put that into the stack and we are now done."
+    },
+    {
+      "start": 412.68,
+      "end": 415.92,
+      "text": "Right now the value will be three."
+    },
+    {
+      "start": 416.14,
+      "end": 417.48,
+      "text": "Three is already visited."
+    },
+    {
+      "start": 417.72,
+      "end": 420.06,
+      "text": "Next value will be four and that is not visited."
+    },
+    {
+      "start": 420.32,
+      "end": 421.02,
+      "text": "So what we will do?"
+    },
+    {
+      "start": 421.02,
+      "end": 423.42,
+      "text": "Is we will go and check out for four."
+    },
+    {
+      "start": 423.7,
+      "end": 427.98,
+      "text": "Now for four, we will mark it as visited and we will check if there are adjacent nodes."
+    },
+    {
+      "start": 428.26,
+      "end": 429.24,
+      "text": "Zero is visited."
+    },
+    {
+      "start": 429.54,
+      "end": 430.38,
+      "text": "One is visited."
+    },
+    {
+      "start": 430.38,
+      "end": 432.36,
+      "text": "So both of the adjacent nodes are visited."
+    },
+    {
+      "start": 432.6,
+      "end": 434.28,
+      "text": "So there will be no further DFS calls."
+    },
+    {
+      "start": 434.5,
+      "end": 435.18,
+      "text": "So you go back."
+    },
+    {
+      "start": 435.24,
+      "end": 438.12,
+      "text": "Now what do you do is you take this four and you put it into the stack."
+    },
+    {
+      "start": 438.18,
+      "end": 440.28,
+      "text": "You take this four and you put it into the stack."
+    },
+    {
+      "start": 440.42,
+      "end": 440.76,
+      "text": "Right."
+    },
+    {
+      "start": 441.06,
+      "end": 443.58,
+      "text": "So next it will be five."
+    },
+    {
+      "start": 444.06,
+      "end": 446.5,
+      "text": "And now next the DFS call will be happening for five."
+    },
+    {
+      "start": 446.76,
+      "end": 448.2,
+      "text": "So you mark it as visited."
+    },
+    {
+      "start": 448.5,
+      "end": 450.02,
+      "text": "Does five have any adjacent nodes?"
+    },
+    {
+      "start": 450.06,
+      "end": 450.42,
+      "text": "Yes."
+    },
+    {
+      "start": 450.42,
+      "end": 452.22,
+      "text": "Zero already visited."
+    },
+    {
+      "start": 452.56,
+      "end": 453.92,
+      "text": "Two already visited."
+    },
+    {
+      "start": 454.18,
+      "end": 458.7,
+      "text": "So thereby no further DFS calls for five and you put five into the stack."
+    },
+    {
+      "start": 459.16,
+      "end": 459.66,
+      "text": "Done."
+    },
+    {
+      "start": 459.76,
+      "end": 461.88,
+      "text": "Now I can say that the DFS call is over."
+    },
+    {
+      "start": 462.16,
+      "end": 466.68,
+      "text": "Once the DFS call is over, whatever you stored in the stack, take it one by one."
+    },
+    {
+      "start": 466.96,
+      "end": 468.72,
+      "text": "The first thing that you take out is five."
+    },
+    {
+      "start": 468.96,
+      "end": 470.4,
+      "text": "Next thing you take out is four."
+    },
+    {
+      "start": 470.64,
+      "end": 471.54,
+      "text": "Next thing two."
+    },
+    {
+      "start": 471.66,
+      "end": 472.5,
+      "text": "Next thing three."
+    },
+    {
+      "start": 472.62,
+      "end": 473.34,
+      "text": "Next thing one."
+    },
+    {
+      "start": 473.38,
+      "end": 473.88,
+      "text": "Next thing zero."
+    },
+    {
+      "start": 474.3,
+      "end": 477.0,
+      "text": "This is one of the linear orderings."
+    },
+    {
+      "start": 477.0,
+      "end": 477.36,
+      "text": "Yes."
+    },
+    {
+      "start": 477.66,
+      "end": 480.36,
+      "text": "This is one of the linear orderings."
+    },
+    {
+      "start": 480.42,
+      "end": 482.96,
+      "text": "This is one of the linear orderings that you can get very, very important."
+    },
+    {
+      "start": 483.24,
+      "end": 487.6,
+      "text": "This is one of the linear orderings that you can get."
+    },
+    {
+      "start": 487.68,
+      "end": 494.18,
+      "text": "And this is what is known as topological sort of this particular graph."
+    },
+    {
+      "start": 494.4,
+      "end": 496.2,
+      "text": "I hope that does make sense."
+    },
+    {
+      "start": 497.22,
+      "end": 500.7,
+      "text": "Now you must be thinking about a stripper, but what is the intuition behind this algorithm?"
+    },
+    {
+      "start": 500.76,
+      "end": 503.46,
+      "text": "The algorithm looks pretty simple, but what is the intuition?"
+    },
+    {
+      "start": 503.56,
+      "end": 507.86,
+      "text": "I'll tell you the intuition, but let's first write the code, absorb the code, absorb the logic."
+    },
+    {
+      "start": 508.18,
+      "end": 509.28,
+      "text": "And then I'll tell you the intuition."
+    },
+    {
+      "start": 509.28,
+      "end": 510.32,
+      "text": "The intuition is very small."
+    },
+    {
+      "start": 510.32,
+      "end": 511.1,
+      "text": "Don't worry about that."
+    },
+    {
+      "start": 511.88,
+      "end": 516.5,
+      "text": "So guys, as usual, I'll write the C plus plus code on the right, and you can find the Java code on the left."
+    },
+    {
+      "start": 516.82,
+      "end": 518.68,
+      "text": "They're given the V and the adjacency matrix."
+    },
+    {
+      "start": 519.02,
+      "end": 521.18,
+      "text": "We will be declaring the visited guy."
+    },
+    {
+      "start": 521.54,
+      "end": 525.08,
+      "text": "So let's quickly declare the visitor guy and Mark everyone as you done."
+    },
+    {
+      "start": 525.98,
+      "end": 527.12,
+      "text": "Next we need a stack."
+    },
+    {
+      "start": 527.12,
+      "end": 528.5,
+      "text": "So please go and declare a stack."
+    },
+    {
+      "start": 529.76,
+      "end": 530.78,
+      "text": "What's the next thing that we do?"
+    },
+    {
+      "start": 530.96,
+      "end": 535.52,
+      "text": "We, I treat from zero till V next."
+    },
+    {
+      "start": 535.52,
+      "end": 538.1,
+      "text": "We say, Hey, listen, not visited of I."
+    },
+    {
+      "start": 538.52,
+      "end": 539.72,
+      "text": "Then we call the DFS."
+    },
+    {
+      "start": 539.72,
+      "end": 543.74,
+      "text": "With this particular node and the visited and the stack effect."
+    },
+    {
+      "start": 543.74,
+      "end": 546.8,
+      "text": "At the end of the day, we know that we have to store the answer in a vector."
+    },
+    {
+      "start": 546.8,
+      "end": 548.4,
+      "text": "So vector of an answer."
+    },
+    {
+      "start": 548.4,
+      "end": 552.14,
+      "text": "And we need to, uh, just do, uh, keep on doing to the stack is not empty."
+    },
+    {
+      "start": 552.62,
+      "end": 558.78,
+      "text": "So answer dot, push back stack.top."
+    },
+    {
+      "start": 559.66,
+      "end": 561.32,
+      "text": "And you can do a stack dot pop."
+    },
+    {
+      "start": 561.7,
+      "end": 562.12,
+      "text": "Perfect."
+    },
+    {
+      "start": 562.12,
+      "end": 563.96,
+      "text": "And at the end of the day, you can return the answer."
+    },
+    {
+      "start": 564.32,
+      "end": 567.72,
+      "text": "Now, what do you just need to write is the DFS function."
+    },
+    {
+      "start": 568.06,
+      "end": 569.34,
+      "text": "So you can go over here and say, Hey."
+    },
+    {
+      "start": 569.72,
+      "end": 579.62,
+      "text": "hey listen void dfs int node int visited and we also need the stack so stack by the way visited"
+    },
+    {
+      "start": 579.62,
+      "end": 587.32,
+      "text": "is an array we need the stack so stack of int stack and we need this particular adjacency matrix"
+    },
+    {
+      "start": 587.32,
+      "end": 593.28,
+      "text": "as well so adjacency matrix now what we will do is we will say visited node equal to one"
+    },
+    {
+      "start": 593.28,
+      "end": 599.12,
+      "text": "and over here we will say auto of id adjacency node and we will plain call the dfs nothing"
+    },
+    {
+      "start": 599.12,
+      "end": 605.06,
+      "text": "fancy call the dfs for this particular node with this visited stack and the adjacency"
+    },
+    {
+      "start": 605.06,
+      "end": 609.34,
+      "text": "so make sure you pass on the adjacency over here as well and right at the end of the day"
+    },
+    {
+      "start": 609.34,
+      "end": 614.78,
+      "text": "when the dfs is over you do not have any further dfs calls to make take on the stack and say hey"
+    },
+    {
+      "start": 614.78,
+      "end": 619.1,
+      "text": "can you please store the node so that's how you will do it and now let's quickly compile this and"
+    },
+    {
+      "start": 619.1,
+      "end": 623.62,
+      "text": "see if it is running fine it says there is some issue with it let's quickly check it out okay"
+    },
+    {
+      "start": 623.62,
+      "end": 632.19,
+      "text": "now if you read the question find any topological sorting you can find any topological sorting"
+    },
+    {
+      "start": 632.19,
+      "end": 632.27,
+      "text": "anything you want to do and then you can just click on the add to add to add to add to add to"
+    },
+    {
+      "start": 632.27,
+      "end": 637.09,
+      "text": "anything and it will work fine so it does run now if i discuss about the space complexity we are"
+    },
+    {
+      "start": 637.09,
+      "end": 643.31,
+      "text": "using a visited and a stack so b go of n plus b go of n about the time complexity similar to dfs"
+    },
+    {
+      "start": 643.31,
+      "end": 649.51,
+      "text": "algorithm which is v plus e for directed graph so the time complexity is v plus e for directed"
+    },
+    {
+      "start": 649.51,
+      "end": 658.85,
+      "text": "graphs at the worst case now coming back to the intuition what is the intuition of this particular"
+    },
+    {
+      "start": 658.85,
+      "end": 662.17,
+      "text": "stuff now if i give you a simple enough directed graph like"
+    },
+    {
+      "start": 662.17,
+      "end": 672.73,
+      "text": "one two three four five and six okay so what will you do you know if i ask you to write the linear"
+    },
+    {
+      "start": 672.73,
+      "end": 678.17,
+      "text": "ordering you'll be like the linear ordering is very simple one two three four you can either"
+    },
+    {
+      "start": 678.17,
+      "end": 683.61,
+      "text": "write five or you can either write six vice versa you can do either of them like you can write one"
+    },
+    {
+      "start": 683.61,
+      "end": 690.33,
+      "text": "two you can either write one two three four five sorry one two three four five six or you can write"
+    },
+    {
+      "start": 690.33,
+      "end": 696.89,
+      "text": "one two three four six five both of the linear ordering are two true so how did you get this very"
+    },
+    {
+      "start": 696.89,
+      "end": 701.69,
+      "text": "simple you call the dfs from here then you went here then you went here then you went here if you"
+    },
+    {
+      "start": 701.69,
+      "end": 708.33,
+      "text": "went here i was uh five was coming first if you went here six was coming first now when you come"
+    },
+    {
+      "start": 708.33,
+      "end": 714.09,
+      "text": "back what i did was i just stored the six in a stack and then from four when i went to five and"
+    },
+    {
+      "start": 714.09,
+      "end": 719.13,
+      "text": "when i came back from five i stored it here and i went from four i stood uh the four here then for"
+    },
+    {
+      "start": 719.13,
+      "end": 720.09,
+      "text": "three i stored it here"
+    },
+    {
+      "start": 720.33,
+      "end": 726.89,
+      "text": "then for two i stored it here then for one i stored it here so what i did was the people"
+    },
+    {
+      "start": 726.89,
+      "end": 736.09,
+      "text": "whose dfs was complete i just stored it i just stored it i just stored it i just told it now"
+    },
+    {
+      "start": 736.09,
+      "end": 741.21,
+      "text": "what happens is i know the dfs of three is completed which means this entire portion"
+    },
+    {
+      "start": 741.21,
+      "end": 746.41,
+      "text": "has been visited which means this entire portion has been visited so everything would have been"
+    },
+    {
+      "start": 746.41,
+      "end": 750.25,
+      "text": "here and the linear ordering will be followed t is before four four has been"
+    },
+    {
+      "start": 750.33,
+      "end": 756.65,
+      "text": "before six six is before five just because i know if i have done the dfs for three then everything"
+    },
+    {
+      "start": 756.65,
+      "end": 761.93,
+      "text": "would have been done everything would have been done thereby whenever i complete the dfs then only"
+    },
+    {
+      "start": 761.93,
+      "end": 765.53,
+      "text": "i put it because i know everything would have been done so if everything would have been done"
+    },
+    {
+      "start": 765.53,
+      "end": 769.29,
+      "text": "everything would have been stacked below if i get it back i'll get the linear ordering"
+    },
+    {
+      "start": 769.29,
+      "end": 773.85,
+      "text": "as a simple intuition nothing special whenever the dfs is completed everyone is"
+    },
+    {
+      "start": 773.85,
+      "end": 779.61,
+      "text": "touched they just pick it up and the next guy would have called it he will be now coming in so"
+    },
+    {
+      "start": 780.33,
+      "end": 785.23,
+      "text": "solution so guys i hope i was able to explain you this particular algorithm so just in case i was"
+    },
+    {
+      "start": 785.23,
+      "end": 789.81,
+      "text": "please make sure you like this video and if you're new to our channel what are you waiting for hit"
+    },
+    {
+      "start": 789.81,
+      "end": 793.87,
+      "text": "that subscribe button right away and if you haven't checked out our dpcds and the hd sheet"
+    },
+    {
+      "start": 793.87,
+      "end": 797.33,
+      "text": "the links are in the description please make sure you check it out with this i'll be wrapping up"
+    },
+    {
+      "start": 797.33,
+      "end": 799.79,
+      "text": "this video let's meet in the next one until then bye bye take care"
+    }
+  ]
+}

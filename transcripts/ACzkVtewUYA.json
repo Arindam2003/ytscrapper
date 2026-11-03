@@ -1,0 +1,779 @@
+{
+  "video_id": "ACzkVtewUYA",
+  "title": "G-7. Number of Provinces ｜ C++ ｜ Java ｜ Connected Components",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 928.58,
+  "segments": [
+    {
+      "start": 2.9,
+      "end": 6.0,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.24,
+      "end": 10.14,
+      "text": "So in this video, we are going to solve this particular problem, number of provinces."
+    },
+    {
+      "start": 10.82,
+      "end": 14.62,
+      "text": "What does the problem state? The problem states, you are given an undirected graph"
+    },
+    {
+      "start": 14.62,
+      "end": 19.62,
+      "text": "with v vertices. We say two vertices u and v belong to a single province."
+    },
+    {
+      "start": 20.14,
+      "end": 26.16,
+      "text": "If there is a path from u to v or from v to u, your task is to find the number of provinces."
+    },
+    {
+      "start": 26.66,
+      "end": 31.22,
+      "text": "So let me explain you the question. So imagine a graph is given which is"
+    },
+    {
+      "start": 31.22,
+      "end": 36.82,
+      "text": "something like this. Like this is a particular piece and then there is something like this."
+    },
+    {
+      "start": 37.3,
+      "end": 43.44,
+      "text": "Then imagine there is something like this. Okay, so what they're saying is, this is an entire"
+    },
+    {
+      "start": 43.44,
+      "end": 49.14,
+      "text": "graph that is given to you. Now what they're calling a province is, if you see, if you take"
+    },
+    {
+      "start": 49.14,
+      "end": 55.84,
+      "text": "this province, you can go from 1 to 2, you can go from 1 to 3 as well. From 3 to 2, you can go"
+    },
+    {
+      "start": 55.84,
+      "end": 61.14,
+      "text": "from 3 to 1, you can go. From 2, you can go to 1. From 2, you can go to 3. So from every"
+    },
+    {
+      "start": 61.14,
+      "end": 66.38,
+      "text": "other node in this province you can go to every other node thereby this is a"
+    },
+    {
+      "start": 66.38,
+      "end": 72.26,
+      "text": "province and if I take this this is also a province because four five six every"
+    },
+    {
+      "start": 72.26,
+      "end": 76.74,
+      "text": "one of them can go to each other similarly seven eight is a province"
+    },
+    {
+      "start": 76.74,
+      "end": 80.94,
+      "text": "because everyone like seven can go to eight and eight can go to seven now I"
+    },
+    {
+      "start": 80.94,
+      "end": 85.62,
+      "text": "cannot call this as a province because if you wish to go from two to four you"
+    },
+    {
+      "start": 85.62,
+      "end": 90.24,
+      "text": "will not be able to go because there is no connectivity so thereby this is first"
+    },
+    {
+      "start": 90.24,
+      "end": 96.14,
+      "text": "province this is second province this is third province right so you need to"
+    },
+    {
+      "start": 96.14,
+      "end": 100.94,
+      "text": "tell me the number of provinces so over here the answer to that will be three so"
+    },
+    {
+      "start": 100.94,
+      "end": 105.8,
+      "text": "how do you calculate this or how do you calculate the number it's very simple"
+    },
+    {
+      "start": 105.8,
+      "end": 111.72,
+      "text": "now you have read about the BFS traversal and the DFS traversal you've"
+    },
+    {
+      "start": 111.72,
+      "end": 115.84,
+      "text": "read about both the traversals in the previous lectures you can use any one of"
+    },
+    {
+      "start": 115.84,
+      "end": 120.2,
+      "text": "them because you know if you use any one of the traversals it visits"
+    },
+    {
+      "start": 120.2,
+      "end": 120.22,
+      "text": "you can use any one of them because you know if you use any one of the traversals it visits"
+    },
+    {
+      "start": 120.22,
+      "end": 127.42,
+      "text": "all the nodes in a graph the BFS will visit everyone level wise and the DFS and"
+    },
+    {
+      "start": 127.42,
+      "end": 131.76,
+      "text": "the DFS will visit everyone in the deep right that is something which you know"
+    },
+    {
+      "start": 131.76,
+      "end": 137.52,
+      "text": "now I can use any of that algorithm you can use BFS or you can use DFS so"
+    },
+    {
+      "start": 137.52,
+      "end": 143.5,
+      "text": "imagine if I say okay there is a starting node or the node that you start"
+    },
+    {
+      "start": 143.5,
+      "end": 150.02,
+      "text": "the DFS traversal is from one I'm talking about DFS so what will happen is you'll"
+    },
+    {
+      "start": 150.02,
+      "end": 154.92,
+      "text": "start from one you will go to two you will go to three so apparently you end"
+    },
+    {
+      "start": 154.92,
+      "end": 160.7,
+      "text": "up visiting one two and three but you'll not be able to visit this nor this so can"
+    },
+    {
+      "start": 160.7,
+      "end": 168.62,
+      "text": "I see if I call the yes can I say if I call the traversal three times once from"
+    },
+    {
+      "start": 168.62,
+      "end": 179.98,
+      "text": "one once from four once from seven can I say if I call the DFS traversal once from one that will make sure"
+    },
+    {
+      "start": 179.98,
+      "end": 188.98,
+      "text": "it goes like this right once if i call for four it will go from four go to five and then go to six"
+    },
+    {
+      "start": 188.98,
+      "end": 195.46,
+      "text": "and then once i if i call for seven it will go from seven then go to eight right this can be"
+    },
+    {
+      "start": 195.46,
+      "end": 201.46,
+      "text": "like i can call the dfs travessals starting from three different starting nodes and thereby i can"
+    },
+    {
+      "start": 201.46,
+      "end": 207.94,
+      "text": "get three provinces right we know how to do a dfs travessal we have learned about that but in that"
+    },
+    {
+      "start": 207.94,
+      "end": 213.34,
+      "text": "case there was a single starting node over here the starting node can be multiple so we can see"
+    },
+    {
+      "start": 213.34,
+      "end": 220.04,
+      "text": "if somehow we can figure out the starting points then we will be able to figure out three provinces"
+    },
+    {
+      "start": 220.04,
+      "end": 226.42,
+      "text": "but now you might have a question in your mind does the starting point needs to be one no any"
+    },
+    {
+      "start": 226.42,
+      "end": 233.74,
+      "text": "starting point like one two three it can be anyone it can be anyone it can be anyone if you start"
+    },
+    {
+      "start": 233.74,
+      "end": 237.92,
+      "text": "from any one of these given points it will make sure it visits everyone"
+    },
+    {
+      "start": 237.92,
+      "end": 244.16,
+      "text": "it will make sure it visits everyone right so somewhere down the line if i can figure out the"
+    },
+    {
+      "start": 244.16,
+      "end": 250.84,
+      "text": "starting points my job will be done this is where what we do is we use something as a visited array"
+    },
+    {
+      "start": 250.84,
+      "end": 258.12,
+      "text": "now we see there are eight nodes so we will create a nine size visited array one two three four five"
+    },
+    {
+      "start": 258.12,
+      "end": 265.8,
+      "text": "six seven eight so it's like zero one two three four five six seven eight perfect we have created"
+    },
+    {
+      "start": 265.8,
+      "end": 267.9,
+      "text": "a nine size visited array and we"
+    },
+    {
+      "start": 267.92,
+      "end": 275.48,
+      "text": "mark everyone as false and this is known as the visited array done now what we do is we say okay"
+    },
+    {
+      "start": 275.48,
+      "end": 283.32,
+      "text": "listen for int i equal to one because we know the numbering of nodes start from this to v or n"
+    },
+    {
+      "start": 283.32,
+      "end": 292.0,
+      "text": "and we say hey listen if visited of i is equal to equal to zero or that means it has not been visited"
+    },
+    {
+      "start": 292.0,
+      "end": 297.9,
+      "text": "can you call the dfs from this node this is what we write this can be done by doing this"
+    },
+    {
+      "start": 297.92,
+      "end": 303.68,
+      "text": "so this can be bfs as well yes this can be bfs of i as well you know both the algorithms you can"
+    },
+    {
+      "start": 303.68,
+      "end": 310.72,
+      "text": "write either of them so now what happens is for the first time i is one okay it goes and checks"
+    },
+    {
+      "start": 310.72,
+      "end": 317.18,
+      "text": "if it's visited and it finds that it's not visited thereby it says okay i'll consider one as a"
+    },
+    {
+      "start": 317.18,
+      "end": 322.72,
+      "text": "starting point and i'll call the dfs for one i'll call the dfs for one now i'm not going to teach"
+    },
+    {
+      "start": 322.72,
+      "end": 327.28,
+      "text": "you dfs because you know that if you don't know that go back to the previous video so if you do the"
+    },
+    {
+      "start": 327.92,
+      "end": 332.32,
+      "text": "same thing again what will happen is one will be visited two will be visited three will be visited"
+    },
+    {
+      "start": 332.32,
+      "end": 338.48,
+      "text": "in that dfs call because a dfs algorithm makes sure that you visit all the nodes in a graph so"
+    },
+    {
+      "start": 338.48,
+      "end": 344.88,
+      "text": "it will make sure that it visits right and then the call will be over the call came from dfs1"
+    },
+    {
+      "start": 344.88,
+      "end": 351.2,
+      "text": "it will go to dfs2 it will go to dfs3 and then it will come back then it will come back and then it"
+    },
+    {
+      "start": 351.2,
+      "end": 357.12,
+      "text": "will come back now in the process when it goes from one it marks one as visited if you remember"
+    },
+    {
+      "start": 357.92,
+      "end": 365.36,
+      "text": "two as visited then it marks three as visited and then it goes back ultimately so the dfs call makes"
+    },
+    {
+      "start": 365.36,
+      "end": 372.48,
+      "text": "sure that one is marked two is marked and three is marked in the visited array right the next time"
+    },
+    {
+      "start": 372.48,
+      "end": 379.76,
+      "text": "what happens the i becomes two and it goes and checks is that visited yes next time i becomes"
+    },
+    {
+      "start": 379.76,
+      "end": 387.84,
+      "text": "three is that visited yes next time i becomes four not visited so what happens is it again calls the"
+    },
+    {
+      "start": 387.92,
+      "end": 393.12,
+      "text": "dfs for four but this time the dfs is called for four so if you see the first time it is called for"
+    },
+    {
+      "start": 393.12,
+      "end": 399.12,
+      "text": "one now it is called for four now when it is called for four it marks four as visited then it goes to"
+    },
+    {
+      "start": 399.12,
+      "end": 406.88,
+      "text": "five then it goes to six and makes sure everyone is marked as visited in that call and then it"
+    },
+    {
+      "start": 406.88,
+      "end": 413.6,
+      "text": "comes back comes back comes back so apparently comes back now we make it five and you see that"
+    },
+    {
+      "start": 413.6,
+      "end": 417.68,
+      "text": "five is already visited then we make it six already visited"
+    },
+    {
+      "start": 417.92,
+      "end": 424.32,
+      "text": "then we make it seven not visited so this time the dfs call goes for seven now when the call goes for"
+    },
+    {
+      "start": 424.32,
+      "end": 430.0,
+      "text": "seven the starting node is again assumed to be seven marks seven is visited goes and does the"
+    },
+    {
+      "start": 430.0,
+      "end": 436.0,
+      "text": "call for eight marks it has visited goes back and goes back so this is how we can say the visited"
+    },
+    {
+      "start": 436.0,
+      "end": 442.56,
+      "text": "array performs and this after this term will be eight and it will not find it then it will be nine"
+    },
+    {
+      "start": 442.56,
+      "end": 447.84,
+      "text": "and the for loop will be over so can i say this particular if statement was executed"
+    },
+    {
+      "start": 447.92,
+      "end": 453.12,
+      "text": "thrice can i say this particular statement was executed thrice thereby can i just put a counter"
+    },
+    {
+      "start": 453.12,
+      "end": 459.84,
+      "text": "plus plus over here which will make sure make sure that the provinces are counted right separately"
+    },
+    {
+      "start": 460.56,
+      "end": 466.64,
+      "text": "this will be visited then this and then this so this is how you can easily do a modification into"
+    },
+    {
+      "start": 466.64,
+      "end": 472.72,
+      "text": "your dfs traversal and it will work fine okay so guys as usual i'll be writing the c plus plus code"
+    },
+    {
+      "start": 472.72,
+      "end": 477.84,
+      "text": "on the right and the java code will be on the left so the input is slightly tricky and it's slightly"
+    },
+    {
+      "start": 477.92,
+      "end": 485.12,
+      "text": "different so you're given an uh adjacency matrix very careful it's not a list it's an adjacency"
+    },
+    {
+      "start": 485.12,
+      "end": 493.68,
+      "text": "matrix okay so one of the ways is either you uh create your adjacency list and then just go"
+    },
+    {
+      "start": 493.68,
+      "end": 498.8,
+      "text": "across that is one of the ways that you can do it or what you can do is you can use this adjacency"
+    },
+    {
+      "start": 498.8,
+      "end": 506.0,
+      "text": "matrix and solve this particular problem now what i will do is since we have been doing everything"
+    },
+    {
+      "start": 506.0,
+      "end": 507.76,
+      "text": "in adjacency list what i'll do"
+    },
+    {
+      "start": 507.92,
+      "end": 515.1,
+      "text": "i'll just quickly uh create our adjacency list so it's very simple you just do it something like"
+    },
+    {
+      "start": 515.1,
+      "end": 522.42,
+      "text": "this and you know uh you're given the adjacency matrix so you can just run a couple of loops"
+    },
+    {
+      "start": 522.42,
+      "end": 533.39,
+      "text": "something like this and you can say hey listen if adjacency of i and j is equal to equal to"
+    },
+    {
+      "start": 533.39,
+      "end": 539.09,
+      "text": "one that means there is a node and please make sure you don't have self nodes like i should not"
+    },
+    {
+      "start": 539.09,
+      "end": 544.29,
+      "text": "be equal to j which is basically the self node so this is the adjacency list and what i can say is"
+    },
+    {
+      "start": 544.29,
+      "end": 555.07,
+      "text": "adjacency list of i can say of dot push back of j and similarly we can say adjacency list of"
+    },
+    {
+      "start": 555.07,
+      "end": 567.95,
+      "text": "j dot push back of i once you've done this your adjacency list is ready now we know that what do"
+    },
+    {
+      "start": 567.95,
+      "end": 572.39,
+      "text": "we need we need a visited matrix so we can just take a visited matrix"
+    },
+    {
+      "start": 572.39,
+      "end": 572.43,
+      "text": "you can see that we have a visited matrix and we can just take a visited matrix and we can just"
+    },
+    {
+      "start": 572.45,
+      "end": 577.09,
+      "text": "take a visited matrix and we can mark it as zero what is the next thing that you will do"
+    },
+    {
+      "start": 577.09,
+      "end": 586.53,
+      "text": "you will go from zero to v by the way not n i plus plus and you will say if it is not visited"
+    },
+    {
+      "start": 586.53,
+      "end": 595.71,
+      "text": "can you go and call the dfs with this particular starting node and this adjacency list"
+    },
+    {
+      "start": 595.71,
+      "end": 600.03,
+      "text": "and the visited array and at the end of the day you need to count the provinces so you can do"
+    },
+    {
+      "start": 600.03,
+      "end": 606.13,
+      "text": "is int count equal to zero and you can plug in a counter plus plus okay so this is a very general"
+    },
+    {
+      "start": 606.13,
+      "end": 615.13,
+      "text": "generic code to change adjacency matrix to list I have already taught you how to represent a graph"
+    },
+    {
+      "start": 615.13,
+      "end": 620.05,
+      "text": "in an adjacency matrix as well as a list so it's a very generic code that's time to write the DFS"
+    },
+    {
+      "start": 620.05,
+      "end": 630.56,
+      "text": "again it says super simple so you can write private void DFS and this will be the node"
+    },
+    {
+      "start": 632.54,
+      "end": 638.78,
+      "text": "and we can have the adjacency list carried across with us so yeah perfect we can have the adjacency"
+    },
+    {
+      "start": 638.78,
+      "end": 643.88,
+      "text": "list carried and we need the visited so just carry the visited as well which is something"
+    },
+    {
+      "start": 643.88,
+      "end": 651.8,
+      "text": "like this and you know whenever you reach you just mark it as one and then you go to something"
+    },
+    {
+      "start": 651.8,
+      "end": 659.96,
+      "text": "like auto of it adjacency list of node and you say hey listen if not visited it what I'll do is"
+    },
+    {
+      "start": 659.96,
+      "end": 666.44,
+      "text": "I'll go and call the DFS for it adjacency list and visited and this will be my DFS calls and at the"
+    },
+    {
+      "start": 666.44,
+      "end": 668.6,
+      "text": "end of the day since I've counted the number of provinces"
+    },
+    {
+      "start": 668.78,
+      "end": 675.08,
+      "text": "return it now let's super quickly compile this and check it out okay so okay so since the adjacency"
+    },
+    {
+      "start": 675.08,
+      "end": 681.95,
+      "text": "list was created like this uh this will be an array my bad perfect I think we should be fine"
+    },
+    {
+      "start": 681.95,
+      "end": 687.35,
+      "text": "so usually in all the problems you will not find the adjacency matrix just because if you see the"
+    },
+    {
+      "start": 687.35,
+      "end": 691.97,
+      "text": "constraints are very small thereby the adjacency matrix was here but usually you will not find it"
+    },
+    {
+      "start": 691.97,
+      "end": 696.35,
+      "text": "you will mostly find adjacency list given to you and then you can perform this particular algorithm"
+    },
+    {
+      "start": 696.35,
+      "end": 700.61,
+      "text": "and then this DFS score so let's discuss about the"
+    },
+    {
+      "start": 700.73,
+      "end": 705.77,
+      "text": "same complexity because that is something which is very important to understand because going"
+    },
+    {
+      "start": 705.77,
+      "end": 710.93,
+      "text": "forward we will be solving problems where we will be running this particular fall loop and then we"
+    },
+    {
+      "start": 710.93,
+      "end": 716.99,
+      "text": "will be calling these DFS or BFS calls so at first let's discuss the space complexity are we using"
+    },
+    {
+      "start": 716.99,
+      "end": 722.21,
+      "text": "something yes we created an adjacency list let's not take that into account because most of the"
+    },
+    {
+      "start": 722.21,
+      "end": 726.77,
+      "text": "problems adjacency list will be given to you so let's not discuss about the adjacency list apart"
+    },
+    {
+      "start": 726.77,
+      "end": 730.67,
+      "text": "from that we're using a visited array which takes we go often and we're using"
+    },
+    {
+      "start": 730.73,
+      "end": 735.95,
+      "text": "recursion stack space which are the worst case can go up to big often imagine you're given a graph"
+    },
+    {
+      "start": 735.95,
+      "end": 741.95,
+      "text": "a skewed graph something like this then the DFS call will go from here to here to here so it will"
+    },
+    {
+      "start": 741.95,
+      "end": 748.79,
+      "text": "go the entire way and thereby it will take a recursion stack space of bico of n okay so you"
+    },
+    {
+      "start": 748.79,
+      "end": 752.87,
+      "text": "want to choose the space complexity what about the time complexity how much time does it take"
+    },
+    {
+      "start": 752.87,
+      "end": 758.99,
+      "text": "so you can argue that striver there is a fall loop that runs and then there is a DFS call right so you"
+    },
+    {
+      "start": 760.73,
+      "end": 769.19,
+      "text": "can write it into the DFS we now takes v plus 2e so but this is wrong it's not this instead of that"
+    },
+    {
+      "start": 769.19,
+      "end": 779.99,
+      "text": "it is n plus v plus 2e why let's go back so how many times is this DFS executed three times for"
+    },
+    {
+      "start": 779.99,
+      "end": 788.87,
+      "text": "this particular graph once for here once for here once for here and whenever it's executed for one a"
+    },
+    {
+      "start": 788.87,
+      "end": 790.31,
+      "text": "DFS call for this is made"
+    },
+    {
+      "start": 790.73,
+      "end": 799.07,
+      "text": "so in total three DFS calls are made whenever it is executed for four in total three DFS calls is"
+    },
+    {
+      "start": 799.07,
+      "end": 804.83,
+      "text": "made whenever it is executed for seven in total two DFS calls is made so overall can I see I'm"
+    },
+    {
+      "start": 804.83,
+      "end": 812.03,
+      "text": "making a DFS call for all the end notes I'm making a DFS call for all the end notes can I see that I"
+    },
+    {
+      "start": 812.03,
+      "end": 820.07,
+      "text": "can so thereby I can say this is the outer loop and the inner loop overall throughout the loop"
+    },
+    {
+      "start": 820.07,
+      "end": 820.37,
+      "text": "journey"
+    },
+    {
+      "start": 820.73,
+      "end": 827.15,
+      "text": "journey runs for the DFS times for the entire graph it runs throughout because partially it"
+    },
+    {
+      "start": 827.15,
+      "end": 830.93,
+      "text": "will run for when the starting node is one then the starting node is four then the starting node"
+    },
+    {
+      "start": 830.93,
+      "end": 837.35,
+      "text": "is seven so partial DFS partial DFS partial DFS sums up to overall DFS of the graph and the overall"
+    },
+    {
+      "start": 837.35,
+      "end": 843.65,
+      "text": "DFS of the graph is having a complexity of near about v plus 2e near about v plus 2e and this can"
+    },
+    {
+      "start": 843.65,
+      "end": 850.49,
+      "text": "be like equivalently see it as near about a linear stuff near about again it's not exactly"
+    },
+    {
+      "start": 850.73,
+      "end": 855.59,
+      "text": "real a linear thing because we v plus 2e is there then depends on the number of neighbor notes as"
+    },
+    {
+      "start": 855.59,
+      "end": 862.97,
+      "text": "well imagine you get a graph as like one two three four all single notes then there will be"
+    },
+    {
+      "start": 862.97,
+      "end": 868.95,
+      "text": "no neighbor notes for any one of them so it will boil down to equal of n a single DFS which has no"
+    },
+    {
+      "start": 868.95,
+      "end": 874.57,
+      "text": "neighbor notes one"
+    },
+    {
+      "start": 874.57,
+      "end": 877.93,
+      "text": "single DFS we go off one single DFS we go of one and no neighbor notes so we go off n for the for loop and we go off five calls so we go on n again"
+    },
+    {
+      "start": 877.93,
+      "end": 878.79,
+      "text": "so we go off five calls so we go off an n again"
+    },
+    {
+      "start": 878.79,
+      "end": 884.47,
+      "text": "calls so we go off and n again so depending on the neighbor notes the time complexity will vary"
+    },
+    {
+      "start": 884.47,
+      "end": 890.83,
+      "text": "so overall we can write that as a beaker of n traversing so guys i hope i was able to explain"
+    },
+    {
+      "start": 890.83,
+      "end": 895.83,
+      "text": "you the time complexity and this particular method because trust me you're gonna see this"
+    },
+    {
+      "start": 895.83,
+      "end": 901.17,
+      "text": "a lot in the next set of the questions that we are going to do so i hope uh you understood it"
+    },
+    {
+      "start": 901.17,
+      "end": 906.07,
+      "text": "so just in case you did please please hit that like button and if you need to our channel what"
+    },
+    {
+      "start": 906.07,
+      "end": 910.73,
+      "text": "are you waiting for i mean you need to hit that subscribe button so hit that subscribe button"
+    },
+    {
+      "start": 910.73,
+      "end": 914.87,
+      "text": "right away and if you haven't checked out our dp series and the hd sheet the links are in the"
+    },
+    {
+      "start": 914.87,
+      "end": 918.73,
+      "text": "description make sure you check them out with this uh let's wrap up this video and meet in the next"
+    },
+    {
+      "start": 918.73,
+      "end": 920.01,
+      "text": "one till then bye bye take care"
+    }
+  ]
+}

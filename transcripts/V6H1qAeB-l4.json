@@ -1,0 +1,2319 @@
+{
+  "video_id": "V6H1qAeB-l4",
+  "title": "G-32. Dijkstra's Algorithm - Using Priority Queue - C++ and Java - Part 1",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1361.92,
+  "segments": [
+    {
+      "start": 3.06,
+      "end": 6.2,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.52,
+      "end": 11.76,
+      "text": "So we will be starting off with Dijkstra's algorithm in this video and this is one of"
+    },
+    {
+      "start": 11.76,
+      "end": 18.48,
+      "text": "the most important algorithms if you are solving problems related to shortest path."
+    },
+    {
+      "start": 19.38,
+      "end": 23.98,
+      "text": "Okay, now what does this algorithm state? The algorithm is very simple and straightforward."
+    },
+    {
+      "start": 24.46,
+      "end": 28.9,
+      "text": "It states that you'll be given a source node. Assume over here I'm saying that the source node"
+    },
+    {
+      "start": 28.9,
+      "end": 33.8,
+      "text": "is 0. What does the source node mean? The starting point. This is where you're going to start."
+    },
+    {
+      "start": 34.16,
+      "end": 40.44,
+      "text": "So I'll be like, okay, the source node is 0. In order to reach 0, what will be the distance that"
+    },
+    {
+      "start": 40.44,
+      "end": 47.1,
+      "text": "you'll take? You'll be like, 0. From 0 to 0, 0, right? But if I ask you, from 0 to 1,"
+    },
+    {
+      "start": 47.64,
+      "end": 54.5,
+      "text": "what will be the distance that you'll take? Now, what is distance? From 0 to 1, you can go via"
+    },
+    {
+      "start": 54.5,
+      "end": 58.48,
+      "text": "various paths. You can travel directly. And if you travel directly,"
+    },
+    {
+      "start": 58.9,
+      "end": 65.56,
+      "text": "this is the edge weight that lies on that path. And that is what the weight of the path is."
+    },
+    {
+      "start": 65.88,
+      "end": 70.72,
+      "text": "So I can say, if I travel directly from 0 to 1, the weight of the path will be 4."
+    },
+    {
+      "start": 71.34,
+      "end": 77.7,
+      "text": "There can be multiple paths. One of the paths can be this, which travels via 2. And if it travels"
+    },
+    {
+      "start": 77.7,
+      "end": 84.96,
+      "text": "via 2, there is a 4 and there's a 2 line. And that will give a total path weight of 6, right?"
+    },
+    {
+      "start": 85.34,
+      "end": 88.76,
+      "text": "There can be other paths as well, where you decide that you're going to take an entire"
+    },
+    {
+      "start": 88.9,
+      "end": 95.76,
+      "text": "journey of the graph and then come. There'll be more. 4 plus 3 plus 2 plus 3 plus 1 plus 2."
+    },
+    {
+      "start": 96.26,
+      "end": 101.88,
+      "text": "But what I'm concerned about is to find the shortest one. So can I say the shortest one is 4,"
+    },
+    {
+      "start": 102.64,
+      "end": 108.3,
+      "text": "right? And if this would have been something like 1, can I say the shortest would have been then"
+    },
+    {
+      "start": 108.3,
+      "end": 116.76,
+      "text": "this path, which is 1 plus 2, 3, right? So the task is very simple. Given a source node,"
+    },
+    {
+      "start": 116.98,
+      "end": 118.22,
+      "text": "given a source node,"
+    },
+    {
+      "start": 118.9,
+      "end": 126.72,
+      "text": "from that source node to every node, you have to find the distance. So till 2, you have to find"
+    },
+    {
+      "start": 126.72,
+      "end": 131.94,
+      "text": "the distance. That will be something like, again, 4. Till 3, you have to find the distance. So what"
+    },
+    {
+      "start": 131.94,
+      "end": 142.12,
+      "text": "you need to do is, you need to make sure from 0 to all the nodes, from 0 to 0, 1, 2, 3, 4, 5, 4,"
+    },
+    {
+      "start": 142.4,
+      "end": 148.84,
+      "text": "I should know what distance will I take as the shortest one, because I need the shortest one."
+    },
+    {
+      "start": 148.9,
+      "end": 155.02,
+      "text": "That is what you need to tell me. And that is what the Dijkstra's algorithm will help us to find."
+    },
+    {
+      "start": 155.58,
+      "end": 162.34,
+      "text": "Now, Dijkstra's algorithm can be implemented by two methods. One of them is actually three,"
+    },
+    {
+      "start": 162.62,
+      "end": 168.74,
+      "text": "like you can go across to three, but one is priority queue. The other one is the set. So"
+    },
+    {
+      "start": 168.74,
+      "end": 173.56,
+      "text": "you can use the data structure priority queue. You can use the data structure set as well."
+    },
+    {
+      "start": 173.56,
+      "end": 178.68,
+      "text": "You can also use the queue, which is the third one. But this will,"
+    },
+    {
+      "start": 178.9,
+      "end": 186.0,
+      "text": "it will take more time. Priority queue also takes a bit of time. Set is the fastest. So in this"
+    },
+    {
+      "start": 186.0,
+      "end": 192.8,
+      "text": "video, I'll be telling you the priority queue approach. Then in the next video, I'll be teaching"
+    },
+    {
+      "start": 192.8,
+      "end": 200.32,
+      "text": "you the set method and I'll also be covering the intuition. I'll also be covering why priority queue,"
+    },
+    {
+      "start": 200.32,
+      "end": 206.7,
+      "text": "why not queue. I'll be covering all the questions that you will have in your mind when you go"
+    },
+    {
+      "start": 206.7,
+      "end": 208.7,
+      "text": "through this particular algorithm."
+    },
+    {
+      "start": 208.7,
+      "end": 214.68,
+      "text": "to worry just make sure each of the videos watch till then i have seen a lot of people skipping a"
+    },
+    {
+      "start": 214.68,
+      "end": 221.66,
+      "text": "lot of portions but i do say a lot in between as well so do not skip make sure whatever videos i"
+    },
+    {
+      "start": 221.66,
+      "end": 228.06,
+      "text": "make on daxers algorithm watch them one by one it can be three or four but make sure watch each and"
+    },
+    {
+      "start": 228.06,
+      "end": 233.9,
+      "text": "every video to get the concept clear because once the concept is clear then we will move to solving"
+    },
+    {
+      "start": 233.9,
+      "end": 239.02,
+      "text": "problems yes we will be solving a bunch of problems and at the end of the day you can solve"
+    },
+    {
+      "start": 239.02,
+      "end": 244.44,
+      "text": "any problem of daxers algorithm that comes in your interviews we will be implementing the daxers"
+    },
+    {
+      "start": 244.44,
+      "end": 250.4,
+      "text": "algorithm using the priority queue so the graph can be represented in an adjacency list and this"
+    },
+    {
+      "start": 250.4,
+      "end": 256.06,
+      "text": "time we will be storing pairs okay so something like if zero zeros adjacents are one and two"
+    },
+    {
+      "start": 256.06,
+      "end": 262.0,
+      "text": "so i store something like one comma four which is basically the node and the weight the node"
+    },
+    {
+      "start": 262.0,
+      "end": 263.46,
+      "text": "and the weight of the edge"
+    },
+    {
+      "start": 263.9,
+      "end": 270.04,
+      "text": "something like two comma four the node and the weight node and weight will be stored so this is"
+    },
+    {
+      "start": 270.04,
+      "end": 276.82,
+      "text": "how you can store the adjacency list so if you're standing at four and if someone does ask you what"
+    },
+    {
+      "start": 276.82,
+      "end": 282.64,
+      "text": "are the adjacent nodes of four you'll be like two and five what is the weight till two one what is"
+    },
+    {
+      "start": 282.64,
+      "end": 288.54,
+      "text": "the weight till five three this is how you can figure out from the adjacency list so in order"
+    },
+    {
+      "start": 288.54,
+      "end": 292.64,
+      "text": "to implement this particular algorithm there is an initial configuration that we will start off"
+    },
+    {
+      "start": 292.64,
+      "end": 293.88,
+      "text": "with we will always"
+    },
+    {
+      "start": 293.88,
+      "end": 302.58,
+      "text": "have a mean heap data structure and the mean heap data structure will always store a pair a distance"
+    },
+    {
+      "start": 302.58,
+      "end": 308.66,
+      "text": "and a node remember this what is a minimum heap data structure so if you're storing anything in"
+    },
+    {
+      "start": 308.66,
+      "end": 315.22,
+      "text": "terms of distance and node the shorter distance i repeat the shorter distance will be at the top"
+    },
+    {
+      "start": 315.86,
+      "end": 322.5,
+      "text": "right and if there are equal shorter distance the earlier node or the shorter node will be"
+    },
+    {
+      "start": 322.5,
+      "end": 323.72,
+      "text": "at the top you'll understand as a result in the next video"
+    },
+    {
+      "start": 323.88,
+      "end": 331.0,
+      "text": "we move we will always have a distance array which will keep track of how much distance are we taking"
+    },
+    {
+      "start": 331.0,
+      "end": 337.16,
+      "text": "in a path okay and we will have the source node and source node can be 0 can be 1 can be 2 can be"
+    },
+    {
+      "start": 337.16,
+      "end": 344.6,
+      "text": "anything so as of now the source node is 0 so the initial the first step of the algorithm is very"
+    },
+    {
+      "start": 344.6,
+      "end": 351.8,
+      "text": "very simple what we do is we see we say rather that the source node is 0 so from 0 to 0 we are"
+    },
+    {
+      "start": 351.8,
+      "end": 359.08,
+      "text": "definitely sure that the distance will be 0 so we go and put a distance 0 in the distance array"
+    },
+    {
+      "start": 359.08,
+      "end": 366.92,
+      "text": "and we say 0 distance 0 node and we put that into the minimum priority cube that's the initial step"
+    },
+    {
+      "start": 366.92,
+      "end": 373.0,
+      "text": "one now we start the iteration in the priority queue and it's similar to bfs we start the"
+    },
+    {
+      "start": 373.0,
+      "end": 378.36,
+      "text": "iteration we take the topmost element in the priority queue as of now there's only one element"
+    },
+    {
+      "start": 378.36,
+      "end": 381.32,
+      "text": "so we just take it out because that will be the topmost element"
+    },
+    {
+      "start": 381.32,
+      "end": 381.72,
+      "text": "so we have"
+    },
+    {
+      "start": 381.8,
+      "end": 388.46,
+      "text": "saying we are taking a distance of zero in order to reach node zero we're taking that much of"
+    },
+    {
+      "start": 388.46,
+      "end": 396.3,
+      "text": "distance in order to reach node zero so zero says hey where can i go zero is like i can go to two"
+    },
+    {
+      "start": 396.3,
+      "end": 404.02,
+      "text": "and i can go to one there are two two ways in which you can proceed from zero right and how"
+    },
+    {
+      "start": 404.02,
+      "end": 409.54,
+      "text": "will you figure this one and two if you remember adjacency list will tell you about that right"
+    },
+    {
+      "start": 409.54,
+      "end": 415.04,
+      "text": "so just figure the one and two from there so i can actually move to something like node one"
+    },
+    {
+      "start": 415.04,
+      "end": 419.4,
+      "text": "and how much distance will i take if this is taking plus four this is going to take four"
+    },
+    {
+      "start": 419.4,
+      "end": 425.28,
+      "text": "why because previously i took zero i'll take another four which will make me a distance of"
+    },
+    {
+      "start": 425.28,
+      "end": 433.3,
+      "text": "four remember previously you will be marking all these distance as infinite a very big integer"
+    },
+    {
+      "start": 433.3,
+      "end": 439.52,
+      "text": "which will mean that you never reached those nodes so in order to reach node one"
+    },
+    {
+      "start": 439.52,
+      "end": 445.52,
+      "text": "you're taking a distance of four can i say it's better than previous it is it is so go and just"
+    },
+    {
+      "start": 445.52,
+      "end": 451.38,
+      "text": "replace it with a node with a distance four take the four and the node one put it into the priority"
+    },
+    {
+      "start": 451.38,
+      "end": 457.92,
+      "text": "queue so repeat i repeat every time you get a distance which is better than the previous distance"
+    },
+    {
+      "start": 457.92,
+      "end": 464.14,
+      "text": "that means you discovered a new path and you take that distance and put it into the priority queue"
+    },
+    {
+      "start": 464.14,
+      "end": 469.34,
+      "text": "always okay what is the next thing you can always go to the node two which is the next"
+    },
+    {
+      "start": 469.34,
+      "end": 469.5,
+      "text": "add and you can always go to the next add and you can always go to the next add and you can"
+    },
+    {
+      "start": 469.52,
+      "end": 469.54,
+      "text": "always go to the next add and you can always go to the next add and you can always go to the next add and you can"
+    },
+    {
+      "start": 469.54,
+      "end": 474.14,
+      "text": "adjacent if you carefully see node two is the new adjacent which you can go at a four"
+    },
+    {
+      "start": 474.14,
+      "end": 474.16,
+      "text": "adjacent if you carefully see node two is the new adjacent which you can go at a four"
+    },
+    {
+      "start": 474.16,
+      "end": 475.9,
+      "text": "adjacent if you carefully see node two is the new adjacent which you can go at a four so i can say another four so the new"
+    },
+    {
+      "start": 475.9,
+      "end": 475.92,
+      "text": "so i can say another four so the new"
+    },
+    {
+      "start": 475.92,
+      "end": 477.82,
+      "text": "so i can say another four so the new distance taken will be another four and two"
+    },
+    {
+      "start": 477.82,
+      "end": 477.84,
+      "text": "distance taken will be another four and two"
+    },
+    {
+      "start": 477.84,
+      "end": 481.02,
+      "text": "distance taken will be another four and two previously was infinite four so four comma two"
+    },
+    {
+      "start": 481.02,
+      "end": 481.04,
+      "text": "previously was infinite four so four comma two"
+    },
+    {
+      "start": 481.04,
+      "end": 483.34,
+      "text": "previously was infinite four so four comma two is what i'll put into the priority queue"
+    },
+    {
+      "start": 483.34,
+      "end": 483.36,
+      "text": "is what i'll put into the priority queue"
+    },
+    {
+      "start": 483.36,
+      "end": 486.94,
+      "text": "is what i'll put into the priority queue first iteration done similar to bfs"
+    },
+    {
+      "start": 486.94,
+      "end": 490.96,
+      "text": "Next, who will be at the top of the minimum heap?"
+    },
+    {
+      "start": 491.5,
+      "end": 494.76,
+      "text": "Can I say 4,1 will be at the top of the minimum heap?"
+    },
+    {
+      "start": 495.22,
+      "end": 495.34,
+      "text": "Why?"
+    },
+    {
+      "start": 495.92,
+      "end": 497.84,
+      "text": "4 is equal in both of them."
+    },
+    {
+      "start": 498.14,
+      "end": 498.96,
+      "text": "But 1 is smaller."
+    },
+    {
+      "start": 499.36,
+      "end": 499.9,
+      "text": "Minimum heap."
+    },
+    {
+      "start": 500.24,
+      "end": 501.54,
+      "text": "So, 4,1, yes."
+    },
+    {
+      "start": 502.08,
+      "end": 506.58,
+      "text": "So, I'm saying, I'm taking a distance of 1 in order to reach the node."
+    },
+    {
+      "start": 507.7,
+      "end": 510.78,
+      "text": "Sorry, distance of 4 in order to reach the node 1."
+    },
+    {
+      "start": 511.54,
+      "end": 512.36,
+      "text": "Very obvious."
+    },
+    {
+      "start": 512.86,
+      "end": 513.94,
+      "text": "From 1, where can you go?"
+    },
+    {
+      "start": 514.36,
+      "end": 516.06,
+      "text": "Again, you look at the adjacency list."
+    },
+    {
+      "start": 516.06,
+      "end": 519.18,
+      "text": "It will say you can go to 0 and you can go to 2."
+    },
+    {
+      "start": 519.72,
+      "end": 519.88,
+      "text": "Correct?"
+    },
+    {
+      "start": 520.22,
+      "end": 520.94,
+      "text": "So, go to 0."
+    },
+    {
+      "start": 521.86,
+      "end": 527.68,
+      "text": "So, you can go to 0 and that will take a distance of 4, which will make it a total distance of 8."
+    },
+    {
+      "start": 528.04,
+      "end": 528.98,
+      "text": "Will you consider this?"
+    },
+    {
+      "start": 529.4,
+      "end": 529.8,
+      "text": "No."
+    },
+    {
+      "start": 529.98,
+      "end": 530.22,
+      "text": "Why?"
+    },
+    {
+      "start": 530.74,
+      "end": 532.74,
+      "text": "0 is already reachable at 0 distance."
+    },
+    {
+      "start": 533.0,
+      "end": 533.88,
+      "text": "Not to be considered."
+    },
+    {
+      "start": 534.4,
+      "end": 535.04,
+      "text": "Where can you go?"
+    },
+    {
+      "start": 535.54,
+      "end": 541.46,
+      "text": "You can also go to the node 2 by taking a distance of 2."
+    },
+    {
+      "start": 541.56,
+      "end": 541.68,
+      "text": "Why?"
+    },
+    {
+      "start": 542.16,
+      "end": 545.44,
+      "text": "From 1, if you go to 2, you take a distance of 2."
+    },
+    {
+      "start": 545.74,
+      "end": 546.02,
+      "text": "8."
+    },
+    {
+      "start": 546.26,
+      "end": 547.62,
+      "text": "Easily figured by the adjacency list."
+    },
+    {
+      "start": 547.98,
+      "end": 549.56,
+      "text": "So, plus 2, plus 4."
+    },
+    {
+      "start": 549.96,
+      "end": 552.04,
+      "text": "Takes a total distance of 6."
+    },
+    {
+      "start": 553.68,
+      "end": 554.66,
+      "text": "Is it considerable?"
+    },
+    {
+      "start": 554.94,
+      "end": 555.22,
+      "text": "No."
+    },
+    {
+      "start": 555.46,
+      "end": 555.7,
+      "text": "Why?"
+    },
+    {
+      "start": 556.14,
+      "end": 557.36,
+      "text": "Already reachable at 4."
+    },
+    {
+      "start": 557.78,
+      "end": 562.32,
+      "text": "So, no 1 was taken into consideration."
+    },
+    {
+      "start": 563.02,
+      "end": 563.34,
+      "text": "Done."
+    },
+    {
+      "start": 563.7,
+      "end": 564.52,
+      "text": "Let's get the next one."
+    },
+    {
+      "start": 564.84,
+      "end": 565.78,
+      "text": "Only one guy out."
+    },
+    {
+      "start": 566.22,
+      "end": 567.38,
+      "text": "Takes a distance of 4."
+    },
+    {
+      "start": 568.42,
+      "end": 569.14,
+      "text": "Add a node 2."
+    },
+    {
+      "start": 570.68,
+      "end": 571.52,
+      "text": "Where can node 2 go?"
+    },
+    {
+      "start": 572.0,
+      "end": 572.8,
+      "text": "Again, look."
+    },
+    {
+      "start": 572.98,
+      "end": 575.3,
+      "text": "Stand at the adjacency list."
+    },
+    {
+      "start": 575.3,
+      "end": 581.42,
+      "text": "And you will see that 2 can go to 0, 2 can go to 3, 2 can go to 4, 2 can go to 5, 2 can go to 1."
+    },
+    {
+      "start": 581.42,
+      "end": 582.72,
+      "text": "It can go to everyone."
+    },
+    {
+      "start": 583.38,
+      "end": 589.1,
+      "text": "So, I'll try to go at first to node 0, which is going to take me 4."
+    },
+    {
+      "start": 589.1,
+      "end": 590.86,
+      "text": "Which will make me a total distance of 8."
+    },
+    {
+      "start": 590.86,
+      "end": 591.96,
+      "text": "Not to be considered."
+    },
+    {
+      "start": 591.96,
+      "end": 596.36,
+      "text": "I'll try to go to node 1, which will take me plus 2."
+    },
+    {
+      "start": 596.36,
+      "end": 597.94,
+      "text": "Which will make the total distance 6."
+    },
+    {
+      "start": 597.94,
+      "end": 600.86,
+      "text": "Not to be considered because we still have better alternatives."
+    },
+    {
+      "start": 600.86,
+      "end": 604.62,
+      "text": "Next, I'll try to go to node 3."
+    },
+    {
+      "start": 604.62,
+      "end": 605.1,
+      "text": "Which will take me to node 2."
+    },
+    {
+      "start": 605.1,
+      "end": 606.66,
+      "text": "Which will take me plus 3."
+    },
+    {
+      "start": 606.66,
+      "end": 608.66,
+      "text": "Which will make me the new distance 7."
+    },
+    {
+      "start": 608.66,
+      "end": 609.66,
+      "text": "Understood?"
+    },
+    {
+      "start": 609.66,
+      "end": 611.66,
+      "text": "Previously, it took 4."
+    },
+    {
+      "start": 611.66,
+      "end": 613.66,
+      "text": "From 2 to 3, 3."
+    },
+    {
+      "start": 613.66,
+      "end": 615.66,
+      "text": "4 plus 3, 7."
+    },
+    {
+      "start": 615.66,
+      "end": 616.66,
+      "text": "3 is infinite."
+    },
+    {
+      "start": 616.66,
+      "end": 617.66,
+      "text": "Someone better."
+    },
+    {
+      "start": 617.66,
+      "end": 619.66,
+      "text": "7 better."
+    },
+    {
+      "start": 619.66,
+      "end": 621.66,
+      "text": "So, 7 comma 3."
+    },
+    {
+      "start": 621.66,
+      "end": 623.66,
+      "text": "We got someone better."
+    },
+    {
+      "start": 623.66,
+      "end": 625.66,
+      "text": "Next, I'll also try to go to node 4."
+    },
+    {
+      "start": 625.66,
+      "end": 627.66,
+      "text": "By taking a distance of 1."
+    },
+    {
+      "start": 627.66,
+      "end": 629.66,
+      "text": "Which will make a total distance of 5."
+    },
+    {
+      "start": 629.66,
+      "end": 631.66,
+      "text": "Again, to be considered."
+    },
+    {
+      "start": 631.66,
+      "end": 633.66,
+      "text": "5 comma 4."
+    },
+    {
+      "start": 635.1,
+      "end": 639.1,
+      "text": "Next, I'll try to go to node 5."
+    },
+    {
+      "start": 639.1,
+      "end": 641.1,
+      "text": "By taking a distance of plus 6."
+    },
+    {
+      "start": 641.1,
+      "end": 643.1,
+      "text": "Which will make me a total distance of 8."
+    },
+    {
+      "start": 643.1,
+      "end": 645.1,
+      "text": "Again, 4, 6."
+    },
+    {
+      "start": 645.1,
+      "end": 647.1,
+      "text": "This 6."
+    },
+    {
+      "start": 647.1,
+      "end": 649.1,
+      "text": "Distance 10. Better than infinity."
+    },
+    {
+      "start": 649.1,
+      "end": 651.1,
+      "text": "To be considered."
+    },
+    {
+      "start": 651.1,
+      "end": 653.1,
+      "text": "So, I'll take 10 comma 5."
+    },
+    {
+      "start": 653.1,
+      "end": 655.1,
+      "text": "Put it into the priority queue."
+    },
+    {
+      "start": 655.1,
+      "end": 659.1,
+      "text": "So, you got 3 guys that went into the priority queue."
+    },
+    {
+      "start": 659.1,
+      "end": 661.1,
+      "text": "You got 2 guys that got discarded."
+    },
+    {
+      "start": 661.1,
+      "end": 663.1,
+      "text": "So, just omit this off."
+    },
+    {
+      "start": 663.1,
+      "end": 665.1,
+      "text": "What's the next step?"
+    },
+    {
+      "start": 665.1,
+      "end": 667.1,
+      "text": "Who is the topmost element in the priority queue?"
+    },
+    {
+      "start": 667.1,
+      "end": 669.1,
+      "text": "Or minimum heap?"
+    },
+    {
+      "start": 669.1,
+      "end": 671.1,
+      "text": "There's 5, there's 7, there's 10."
+    },
+    {
+      "start": 671.1,
+      "end": 673.1,
+      "text": "5 comma 4 will be at the top."
+    },
+    {
+      "start": 673.1,
+      "end": 675.1,
+      "text": "So, 5 of a node 4."
+    },
+    {
+      "start": 675.1,
+      "end": 677.1,
+      "text": "5 at a node 4."
+    },
+    {
+      "start": 677.1,
+      "end": 679.1,
+      "text": "Where can node 4 go?"
+    },
+    {
+      "start": 679.1,
+      "end": 681.1,
+      "text": "It can go to node 2."
+    },
+    {
+      "start": 681.1,
+      "end": 683.1,
+      "text": "And it can also go to node 5."
+    },
+    {
+      "start": 683.1,
+      "end": 685.1,
+      "text": "You can observe."
+    },
+    {
+      "start": 685.1,
+      "end": 687.1,
+      "text": "From 4, you can go to 2."
+    },
+    {
+      "start": 687.1,
+      "end": 689.1,
+      "text": "You can go to 5."
+    },
+    {
+      "start": 689.1,
+      "end": 691.1,
+      "text": "Easily figured out by the adjacency list."
+    },
+    {
+      "start": 691.1,
+      "end": 693.1,
+      "text": "So, from 4 to 2."
+    },
+    {
+      "start": 693.1,
+      "end": 695.1,
+      "text": "Distance of 1."
+    },
+    {
+      "start": 695.1,
+      "end": 697.1,
+      "text": "6. Not to be considered."
+    },
+    {
+      "start": 697.1,
+      "end": 699.1,
+      "text": "From 4 to 5."
+    },
+    {
+      "start": 699.1,
+      "end": 701.1,
+      "text": "3. Distance of 8."
+    },
+    {
+      "start": 701.1,
+      "end": 703.1,
+      "text": "Will you consider this?"
+    },
+    {
+      "start": 703.1,
+      "end": 705.1,
+      "text": "Yes."
+    },
+    {
+      "start": 705.1,
+      "end": 707.1,
+      "text": "Because you got a better one."
+    },
+    {
+      "start": 707.1,
+      "end": 709.1,
+      "text": "So, 8 comma 5 will be considered."
+    },
+    {
+      "start": 709.1,
+      "end": 711.1,
+      "text": "8 comma 5 will be considered."
+    },
+    {
+      "start": 711.1,
+      "end": 713.1,
+      "text": "8 comma 5 will be considered."
+    },
+    {
+      "start": 713.1,
+      "end": 715.1,
+      "text": "Okay?"
+    },
+    {
+      "start": 715.1,
+      "end": 717.1,
+      "text": "Done?"
+    },
+    {
+      "start": 717.1,
+      "end": 719.1,
+      "text": "Perfect. What's the next thing?"
+    },
+    {
+      "start": 719.1,
+      "end": 721.1,
+      "text": "Next thing is, who will be the next guy?"
+    },
+    {
+      "start": 721.1,
+      "end": 723.1,
+      "text": "So, we have 7."
+    },
+    {
+      "start": 723.1,
+      "end": 725.1,
+      "text": "We have 10. We have 8."
+    },
+    {
+      "start": 725.1,
+      "end": 727.1,
+      "text": "7 comma 3 will be the next guy."
+    },
+    {
+      "start": 727.1,
+      "end": 729.1,
+      "text": "So, distance of 7."
+    },
+    {
+      "start": 729.1,
+      "end": 731.1,
+      "text": "Node 3."
+    },
+    {
+      "start": 731.1,
+      "end": 733.1,
+      "text": "So, where can 3 go? Let's stand at 3 and see."
+    },
+    {
+      "start": 733.1,
+      "end": 735.1,
+      "text": "3 can go to 2."
+    },
+    {
+      "start": 735.1,
+      "end": 737.1,
+      "text": "I think 3 can go to 5. Two places."
+    },
+    {
+      "start": 737.1,
+      "end": 739.1,
+      "text": "2 and 5."
+    },
+    {
+      "start": 739.1,
+      "end": 741.1,
+      "text": "It will try to go to node 2."
+    },
+    {
+      "start": 741.1,
+      "end": 743.1,
+      "text": "Take a distance of 3."
+    },
+    {
+      "start": 743.1,
+      "end": 745.1,
+      "text": "Make a total distance of 10, which is not to be considered."
+    },
+    {
+      "start": 745.1,
+      "end": 747.1,
+      "text": "It can go to 5."
+    },
+    {
+      "start": 747.1,
+      "end": 749.1,
+      "text": "By taking a distance of 2."
+    },
+    {
+      "start": 749.1,
+      "end": 751.1,
+      "text": "It will make the total distance of 9."
+    },
+    {
+      "start": 751.1,
+      "end": 753.1,
+      "text": "So, it will be considered because we have 8."
+    },
+    {
+      "start": 753.1,
+      "end": 755.1,
+      "text": "We have 8. Got it?"
+    },
+    {
+      "start": 755.1,
+      "end": 757.1,
+      "text": "So, no new results."
+    },
+    {
+      "start": 757.1,
+      "end": 759.1,
+      "text": "Commit this."
+    },
+    {
+      "start": 759.1,
+      "end": 761.1,
+      "text": "Next."
+    },
+    {
+      "start": 761.1,
+      "end": 763.1,
+      "text": "We will take the next element out."
+    },
+    {
+      "start": 763.1,
+      "end": 765.1,
+      "text": "So, 8 comma 5 is done by the way."
+    },
+    {
+      "start": 765.1,
+      "end": 767.1,
+      "text": "Sorry. 7 comma 3 is done by the way."
+    },
+    {
+      "start": 767.1,
+      "end": 769.1,
+      "text": "Next."
+    },
+    {
+      "start": 769.1,
+      "end": 771.1,
+      "text": "We will take the next out which is 8 comma 5."
+    },
+    {
+      "start": 771.1,
+      "end": 773.1,
+      "text": "So, distance of 8 to node 5."
+    },
+    {
+      "start": 773.1,
+      "end": 775.1,
+      "text": "Where can 5 go?"
+    },
+    {
+      "start": 775.1,
+      "end": 777.1,
+      "text": "Where can 5 go?"
+    },
+    {
+      "start": 777.1,
+      "end": 779.1,
+      "text": "5 can go to 2. 5 can go to 3."
+    },
+    {
+      "start": 779.1,
+      "end": 781.1,
+      "text": "5 can go to 4."
+    },
+    {
+      "start": 781.1,
+      "end": 783.1,
+      "text": "We can also take the distance of 3."
+    },
+    {
+      "start": 783.1,
+      "end": 785.1,
+      "text": "If 5 is 6, then it will make a total distance of 14."
+    },
+    {
+      "start": 785.1,
+      "end": 787.1,
+      "text": "This is not to be considered."
+    },
+    {
+      "start": 787.1,
+      "end": 789.1,
+      "text": "We will try to go to 3."
+    },
+    {
+      "start": 789.1,
+      "end": 791.1,
+      "text": "We have our distance of 2."
+    },
+    {
+      "start": 791.1,
+      "end": 793.1,
+      "text": "This will make our distance of 10, not to be considered."
+    },
+    {
+      "start": 793.1,
+      "end": 795.1,
+      "text": "We will try to go to 4."
+    },
+    {
+      "start": 795.1,
+      "end": 797.1,
+      "text": "Yes, we will try to go to 4."
+    },
+    {
+      "start": 797.1,
+      "end": 799.1,
+      "text": "How much distance?"
+    },
+    {
+      "start": 799.1,
+      "end": 801.1,
+      "text": "We will try to go with 3."
+    },
+    {
+      "start": 801.1,
+      "end": 803.1,
+      "text": "Which will make it 11."
+    },
+    {
+      "start": 803.1,
+      "end": 805.1,
+      "text": "4 is better."
+    },
+    {
+      "start": 805.1,
+      "end": 808.7,
+      "text": "This is not to be considered."
+    },
+    {
+      "start": 808.7,
+      "end": 810.7,
+      "text": "Similarly, you will again take out 10 comma 5 this time."
+    },
+    {
+      "start": 810.7,
+      "end": 816.47,
+      "text": "Similarly, you will again take out 10 comma 5 this time."
+    },
+    {
+      "start": 816.47,
+      "end": 821.33,
+      "text": "And again, you'll try out 3, 4, 2 and none of them will be considered."
+    },
+    {
+      "start": 822.41,
+      "end": 824.25,
+      "text": "So, apparently, we're done."
+    },
+    {
+      "start": 824.93,
+      "end": 825.73,
+      "text": "Apparently, we're done."
+    },
+    {
+      "start": 826.25,
+      "end": 831.73,
+      "text": "And once you're done, you will see this distance array stores the minimum."
+    },
+    {
+      "start": 832.07,
+      "end": 836.27,
+      "text": "If you see till 5, it is saying 8, which is very much sensible."
+    },
+    {
+      "start": 836.79,
+      "end": 837.11,
+      "text": "Why?"
+    },
+    {
+      "start": 837.29,
+      "end": 844.49,
+      "text": "Because if you carefully observe, yes, if you carefully observe from 0, you can go to 2, which will take you a distance of 4."
+    },
+    {
+      "start": 844.49,
+      "end": 845.95,
+      "text": "Then you can go to 1."
+    },
+    {
+      "start": 846.35,
+      "end": 847.21,
+      "text": "Then you can go here."
+    },
+    {
+      "start": 847.71,
+      "end": 851.87,
+      "text": "So, in this way, you can actually take 4 plus 5 plus 3, which is 8."
+    },
+    {
+      "start": 852.27,
+      "end": 856.41,
+      "text": "All the other parts, even if you try to take this, it's going to cost you 9."
+    },
+    {
+      "start": 857.01,
+      "end": 858.83,
+      "text": "So, all the other parts will cost you more."
+    },
+    {
+      "start": 859.07,
+      "end": 862.85,
+      "text": "So, you got your minimum distance stored in your distance array."
+    },
+    {
+      "start": 863.15,
+      "end": 868.05,
+      "text": "If you return this distance array, this is what your particular answer will be."
+    },
+    {
+      "start": 868.85,
+      "end": 872.65,
+      "text": "So, guys, I hope you have understood the algorithmic explanation of Dijkstra's algorithm."
+    },
+    {
+      "start": 872.79,
+      "end": 873.75,
+      "text": "Now, it's time to code it up."
+    },
+    {
+      "start": 873.75,
+      "end": 874.41,
+      "text": "I'll be coding."
+    },
+    {
+      "start": 874.53,
+      "end": 879.95,
+      "text": "The C++ on the right, and you can figure out the exact similar Java code on the left if you have syntax issues."
+    },
+    {
+      "start": 880.41,
+      "end": 884.29,
+      "text": "So, it states the graph does not contain any negative weight cycle."
+    },
+    {
+      "start": 884.67,
+      "end": 888.49,
+      "text": "Remember, Dijkstra's is not applicable to graphs with negative weight cycle."
+    },
+    {
+      "start": 888.81,
+      "end": 891.55,
+      "text": "I'll be discussing that right after coding this up."
+    },
+    {
+      "start": 891.55,
+      "end": 891.91,
+      "text": "Okay."
+    },
+    {
+      "start": 892.15,
+      "end": 896.01,
+      "text": "So, if you carefully see, we are given the number of nodes."
+    },
+    {
+      "start": 896.47,
+      "end": 898.65,
+      "text": "We are also given the adjacency list and the source."
+    },
+    {
+      "start": 899.21,
+      "end": 902.03,
+      "text": "So, usually, it's a list of int."
+    },
+    {
+      "start": 902.41,
+      "end": 903.59,
+      "text": "So, we are given a vector of int."
+    },
+    {
+      "start": 903.67,
+      "end": 903.83,
+      "text": "Why?"
+    },
+    {
+      "start": 903.83,
+      "end": 907.71,
+      "text": "Because we are storing a node, the adjacent node, and the weight as well."
+    },
+    {
+      "start": 908.15,
+      "end": 912.29,
+      "text": "So, instead of a pair, we are storing it in terms of a list."
+    },
+    {
+      "start": 912.45,
+      "end": 912.57,
+      "text": "Okay."
+    },
+    {
+      "start": 913.21,
+      "end": 914.47,
+      "text": "So, what is the thing that we took?"
+    },
+    {
+      "start": 914.83,
+      "end": 916.11,
+      "text": "We took a minimum heap."
+    },
+    {
+      "start": 916.47,
+      "end": 919.19,
+      "text": "This is how in C++, you declare a minimum heap."
+    },
+    {
+      "start": 919.57,
+      "end": 920.49,
+      "text": "Then, what is the next thing we did?"
+    },
+    {
+      "start": 920.85,
+      "end": 924.35,
+      "text": "We always had a distance array of same size."
+    },
+    {
+      "start": 924.65,
+      "end": 924.81,
+      "text": "Done."
+    },
+    {
+      "start": 925.25,
+      "end": 928.37,
+      "text": "And everything is, if you remember, marked as infinite."
+    },
+    {
+      "start": 928.69,
+      "end": 931.37,
+      "text": "So, make sure you mark everything as infinite."
+    },
+    {
+      "start": 931.37,
+      "end": 933.51,
+      "text": "In our case, we can mark infinite."
+    },
+    {
+      "start": 933.83,
+      "end": 935.83,
+      "text": "So, we can mark infinite as a very, very big value."
+    },
+    {
+      "start": 935.83,
+      "end": 937.83,
+      "text": "Now, what is the initial configuration?"
+    },
+    {
+      "start": 937.83,
+      "end": 941.83,
+      "text": "We know that the source, from source to source, it is always zero."
+    },
+    {
+      "start": 941.83,
+      "end": 945.83,
+      "text": "So, we say, okay, from source to source, it is always zero."
+    },
+    {
+      "start": 945.83,
+      "end": 946.83,
+      "text": "So, we will do this."
+    },
+    {
+      "start": 946.83,
+      "end": 949.83,
+      "text": "I'll say distance, source is what the priority queue will have."
+    },
+    {
+      "start": 949.83,
+      "end": 951.83,
+      "text": "Now, we will iterate in the priority queue."
+    },
+    {
+      "start": 951.83,
+      "end": 952.83,
+      "text": "Pretty simple."
+    },
+    {
+      "start": 953.83,
+      "end": 956.83,
+      "text": "And we will be iterating in the priority queue."
+    },
+    {
+      "start": 956.83,
+      "end": 959.83,
+      "text": "And what I'll say is, I'll get the top element."
+    },
+    {
+      "start": 959.83,
+      "end": 962.83,
+      "text": "And in the top element, first, I'll get the distance."
+    },
+    {
+      "start": 962.83,
+      "end": 963.83,
+      "text": "Right?"
+    },
+    {
+      "start": 963.83,
+      "end": 965.83,
+      "text": "What it has taken till now."
+    },
+    {
+      "start": 965.83,
+      "end": 969.83,
+      "text": "And that will be stored at pq.top.first."
+    },
+    {
+      "start": 969.83,
+      "end": 974.83,
+      "text": "And then, I'll take the node, which will be pq.top.second."
+    },
+    {
+      "start": 974.83,
+      "end": 978.83,
+      "text": "Once I've taken everything, I'll erase that element from the priority queue."
+    },
+    {
+      "start": 978.83,
+      "end": 979.83,
+      "text": "Perfect."
+    },
+    {
+      "start": 979.83,
+      "end": 982.83,
+      "text": "Now, it's time to travel for the adjacent node."
+    },
+    {
+      "start": 982.83,
+      "end": 984.83,
+      "text": "So, this is how I'll travel."
+    },
+    {
+      "start": 984.83,
+      "end": 988.83,
+      "text": "Now, I know this auto of id this time is not an integer."
+    },
+    {
+      "start": 988.83,
+      "end": 991.83,
+      "text": "Because it is storing two elements in form of a vector or a list."
+    },
+    {
+      "start": 991.83,
+      "end": 992.83,
+      "text": "So, I'll be like, okay."
+    },
+    {
+      "start": 993.83,
+      "end": 996.83,
+      "text": "Let me get the new edge weight."
+    },
+    {
+      "start": 996.83,
+      "end": 998.83,
+      "text": "And it will be very simple."
+    },
+    {
+      "start": 998.83,
+      "end": 999.83,
+      "text": "It of one."
+    },
+    {
+      "start": 999.83,
+      "end": 1001.83,
+      "text": "Because it's stored at the second place."
+    },
+    {
+      "start": 1001.83,
+      "end": 1005.83,
+      "text": "And can I say the adjacent node will be it of zero."
+    },
+    {
+      "start": 1005.83,
+      "end": 1008.83,
+      "text": "Make sure in interviews, you name the variables like this."
+    },
+    {
+      "start": 1008.83,
+      "end": 1013.83,
+      "text": "Now, can I say if the current is this."
+    },
+    {
+      "start": 1013.83,
+      "end": 1015.83,
+      "text": "Like, till reach the node, you have taken this."
+    },
+    {
+      "start": 1015.83,
+      "end": 1018.83,
+      "text": "And now, you'll travel for the adjacent weight."
+    },
+    {
+      "start": 1018.83,
+      "end": 1021.83,
+      "text": "If that's lesser than what you will require."
+    },
+    {
+      "start": 1021.83,
+      "end": 1023.83,
+      "text": "What you will require."
+    },
+    {
+      "start": 1023.83,
+      "end": 1026.83,
+      "text": "What you have previously taken to reach adjacent node."
+    },
+    {
+      "start": 1026.83,
+      "end": 1028.83,
+      "text": "Can I say you got a better distance."
+    },
+    {
+      "start": 1028.83,
+      "end": 1033.83,
+      "text": "And if you got a better distance, can I go across and say, okay, I got a better distance."
+    },
+    {
+      "start": 1033.83,
+      "end": 1035.83,
+      "text": "Can you please update that for me?"
+    },
+    {
+      "start": 1035.83,
+      "end": 1036.83,
+      "text": "It'll be like, why not?"
+    },
+    {
+      "start": 1036.83,
+      "end": 1041.83,
+      "text": "And at the same time, can I say pq, hey, you got someone better."
+    },
+    {
+      "start": 1041.83,
+      "end": 1044.83,
+      "text": "Can you go across and store this distance?"
+    },
+    {
+      "start": 1044.83,
+      "end": 1045.83,
+      "text": "It'll be like, why not?"
+    },
+    {
+      "start": 1045.83,
+      "end": 1047.83,
+      "text": "Because you got someone better."
+    },
+    {
+      "start": 1047.83,
+      "end": 1050.83,
+      "text": "So, in this way, I can return this particular distance."
+    },
+    {
+      "start": 1050.83,
+      "end": 1053.83,
+      "text": "This is how easy it was."
+    },
+    {
+      "start": 1053.83,
+      "end": 1056.83,
+      "text": "So, if you see the compilation is successful."
+    },
+    {
+      "start": 1056.83,
+      "end": 1059.83,
+      "text": "Now, we will quickly submit it to check if it is working fine."
+    },
+    {
+      "start": 1059.83,
+      "end": 1065.53,
+      "text": "So, if you see all the test cases are running absolutely fine."
+    },
+    {
+      "start": 1065.53,
+      "end": 1068.53,
+      "text": "Now, you might have questions like, but, Sreivam, why priority queue?"
+    },
+    {
+      "start": 1068.53,
+      "end": 1069.53,
+      "text": "What is the intuition?"
+    },
+    {
+      "start": 1069.53,
+      "end": 1073.53,
+      "text": "We'll be talking about all of these things in the next video."
+    },
+    {
+      "start": 1073.53,
+      "end": 1078.53,
+      "text": "But in this video, I'll be telling you why a Dijkstra's algorithm will not work for negative weight cycle."
+    },
+    {
+      "start": 1078.53,
+      "end": 1080.53,
+      "text": "So, let's go and understand that."
+    },
+    {
+      "start": 1080.53,
+      "end": 1081.53,
+      "text": "So, Dijkstra doesn't work."
+    },
+    {
+      "start": 1081.53,
+      "end": 1088.53,
+      "text": "So, Dijkstra doesn't work in any of the graphs that has a single negative weight."
+    },
+    {
+      "start": 1088.53,
+      "end": 1093.53,
+      "text": "It also doesn't work if there's a cycle which ends up having a negative weight."
+    },
+    {
+      "start": 1093.53,
+      "end": 1095.53,
+      "text": "So, no negative cycles as well."
+    },
+    {
+      "start": 1095.53,
+      "end": 1100.53,
+      "text": "So, the whole reason lies around negative weight."
+    },
+    {
+      "start": 1100.53,
+      "end": 1102.53,
+      "text": "It's a very simple reason."
+    },
+    {
+      "start": 1102.53,
+      "end": 1107.53,
+      "text": "Just imagine I have a node 0 and I have a node 1."
+    },
+    {
+      "start": 1107.53,
+      "end": 1109.53,
+      "text": "And I'm saying that, hey, listen."
+    },
+    {
+      "start": 1109.53,
+      "end": 1112.53,
+      "text": "The distance, the edge weight is minus 2."
+    },
+    {
+      "start": 1112.53,
+      "end": 1114.53,
+      "text": "So, what do we initially do?"
+    },
+    {
+      "start": 1114.53,
+      "end": 1117.53,
+      "text": "We initially always take a priority queue, if you remember."
+    },
+    {
+      "start": 1117.53,
+      "end": 1118.53,
+      "text": "Right?"
+    },
+    {
+      "start": 1118.53,
+      "end": 1119.53,
+      "text": "That's what we do."
+    },
+    {
+      "start": 1119.53,
+      "end": 1121.53,
+      "text": "We always take a minimum heap."
+    },
+    {
+      "start": 1121.53,
+      "end": 1123.53,
+      "text": "And we always take a distance array."
+    },
+    {
+      "start": 1123.53,
+      "end": 1128.53,
+      "text": "In this case, the distance array will just be two people with 0 and 1."
+    },
+    {
+      "start": 1128.53,
+      "end": 1129.53,
+      "text": "And we'll have a source."
+    },
+    {
+      "start": 1129.53,
+      "end": 1131.53,
+      "text": "Assume the source to be 0."
+    },
+    {
+      "start": 1131.53,
+      "end": 1133.53,
+      "text": "And this will be infinity."
+    },
+    {
+      "start": 1133.53,
+      "end": 1134.53,
+      "text": "Right?"
+    },
+    {
+      "start": 1134.53,
+      "end": 1136.53,
+      "text": "And we'll put something like 0, 0."
+    },
+    {
+      "start": 1136.53,
+      "end": 1137.53,
+      "text": "Correct?"
+    },
+    {
+      "start": 1137.53,
+      "end": 1138.53,
+      "text": "And how do you solve this?"
+    },
+    {
+      "start": 1138.53,
+      "end": 1142.53,
+      "text": "You get this first guy and you say, okay, distance 0 to node 0."
+    },
+    {
+      "start": 1142.53,
+      "end": 1144.53,
+      "text": "And as 0 says, I can go to 1."
+    },
+    {
+      "start": 1144.53,
+      "end": 1146.53,
+      "text": "Which is very obvious."
+    },
+    {
+      "start": 1146.53,
+      "end": 1148.53,
+      "text": "You can go to 1 by taking a minus 2."
+    },
+    {
+      "start": 1148.53,
+      "end": 1151.53,
+      "text": "So, the updated distance will be minus 2."
+    },
+    {
+      "start": 1151.53,
+      "end": 1154.53,
+      "text": "So, apparently, this will be updated to minus 2."
+    },
+    {
+      "start": 1154.53,
+      "end": 1159.53,
+      "text": "Minus 2, comma, 1 is what goes into the priority queue."
+    },
+    {
+      "start": 1159.53,
+      "end": 1160.53,
+      "text": "Right?"
+    },
+    {
+      "start": 1160.53,
+      "end": 1162.53,
+      "text": "And then what I'll do is I'll omit this."
+    },
+    {
+      "start": 1162.53,
+      "end": 1163.53,
+      "text": "Right?"
+    },
+    {
+      "start": 1163.53,
+      "end": 1167.53,
+      "text": "And next, I'll get this next guy which says I'm going to take minus 2."
+    },
+    {
+      "start": 1167.53,
+      "end": 1170.53,
+      "text": "In order to reach node 1."
+    },
+    {
+      "start": 1170.53,
+      "end": 1173.53,
+      "text": "Now, node 1 says I can go to node 0."
+    },
+    {
+      "start": 1173.53,
+      "end": 1174.53,
+      "text": "Correct?"
+    },
+    {
+      "start": 1174.53,
+      "end": 1176.53,
+      "text": "And how much it will take?"
+    },
+    {
+      "start": 1176.53,
+      "end": 1177.53,
+      "text": "A minus 2 again."
+    },
+    {
+      "start": 1177.53,
+      "end": 1179.53,
+      "text": "So, what will be the net distance?"
+    },
+    {
+      "start": 1179.53,
+      "end": 1180.53,
+      "text": "Minus 4."
+    },
+    {
+      "start": 1180.53,
+      "end": 1181.53,
+      "text": "Which is better than 0."
+    },
+    {
+      "start": 1181.53,
+      "end": 1182.53,
+      "text": "So, minus 4."
+    },
+    {
+      "start": 1182.53,
+      "end": 1185.53,
+      "text": "So, minus 4, comma, node 0."
+    },
+    {
+      "start": 1185.53,
+      "end": 1186.53,
+      "text": "Okay. Perfect."
+    },
+    {
+      "start": 1186.53,
+      "end": 1188.53,
+      "text": "Done."
+    },
+    {
+      "start": 1188.53,
+      "end": 1190.53,
+      "text": "So, if I go again."
+    },
+    {
+      "start": 1190.53,
+      "end": 1192.53,
+      "text": "And I take the next guy again."
+    },
+    {
+      "start": 1192.53,
+      "end": 1195.53,
+      "text": "Minus 4, node 0."
+    },
+    {
+      "start": 1195.53,
+      "end": 1197.53,
+      "text": "If I try to go to node 1."
+    },
+    {
+      "start": 1197.53,
+      "end": 1199.53,
+      "text": "I'll again take minus 2."
+    },
+    {
+      "start": 1199.53,
+      "end": 1201.53,
+      "text": "Which will make the distance to be minus 6."
+    },
+    {
+      "start": 1201.53,
+      "end": 1206.53,
+      "text": "It keeps on going because on every traversal, on every traversal, the distance reduces."
+    },
+    {
+      "start": 1206.53,
+      "end": 1210.53,
+      "text": "The distance reduces because of negative weights."
+    },
+    {
+      "start": 1210.53,
+      "end": 1213.53,
+      "text": "So, you're not, it's not costing you anything."
+    },
+    {
+      "start": 1213.53,
+      "end": 1214.53,
+      "text": "It's just decreasing."
+    },
+    {
+      "start": 1214.53,
+      "end": 1216.53,
+      "text": "So, you can just keep on going forever."
+    },
+    {
+      "start": 1216.53,
+      "end": 1217.53,
+      "text": "Forever."
+    },
+    {
+      "start": 1217.53,
+      "end": 1223.53,
+      "text": "That's why any graph with negative weights cannot implement Dijkstra's algorithm."
+    },
+    {
+      "start": 1223.53,
+      "end": 1226.53,
+      "text": "Because it will fall in an infinite loop."
+    },
+    {
+      "start": 1226.53,
+      "end": 1227.53,
+      "text": "I repeat."
+    },
+    {
+      "start": 1227.53,
+      "end": 1231.53,
+      "text": "It will fall in an infinite loop."
+    },
+    {
+      "start": 1231.53,
+      "end": 1234.53,
+      "text": "For negative weights, it's practically impossible."
+    },
+    {
+      "start": 1234.53,
+      "end": 1236.53,
+      "text": "Because what do we mean by shortest path?"
+    },
+    {
+      "start": 1236.53,
+      "end": 1239.53,
+      "text": "I'm actually consuming something to go somewhere."
+    },
+    {
+      "start": 1239.53,
+      "end": 1240.53,
+      "text": "Okay."
+    },
+    {
+      "start": 1240.53,
+      "end": 1245.53,
+      "text": "If someone gives me something for going somewhere, I'm just gonna go every now and then."
+    },
+    {
+      "start": 1245.53,
+      "end": 1246.53,
+      "text": "Isn't it?"
+    },
+    {
+      "start": 1246.53,
+      "end": 1248.53,
+      "text": "I just keep on going infinitely because I'm gonna get it."
+    },
+    {
+      "start": 1248.53,
+      "end": 1249.53,
+      "text": "I'm gonna get it."
+    },
+    {
+      "start": 1249.53,
+      "end": 1251.53,
+      "text": "So, I have to give something."
+    },
+    {
+      "start": 1251.53,
+      "end": 1252.53,
+      "text": "I have to give a positive weight."
+    },
+    {
+      "start": 1252.53,
+      "end": 1254.53,
+      "text": "That's how the paths are computed."
+    },
+    {
+      "start": 1254.53,
+      "end": 1255.53,
+      "text": "Right?"
+    },
+    {
+      "start": 1255.53,
+      "end": 1263.53,
+      "text": "That's why the Dijkstra's algorithm is only applicable for graphs with positive weights."
+    },
+    {
+      "start": 1263.53,
+      "end": 1266.53,
+      "text": "So, what are the time complexity of this particular algorithm?"
+    },
+    {
+      "start": 1266.53,
+      "end": 1269.53,
+      "text": "It's nothing but E log V."
+    },
+    {
+      "start": 1269.53,
+      "end": 1274.53,
+      "text": "Where E is the total number of edges in the entire graph."
+    },
+    {
+      "start": 1274.53,
+      "end": 1276.53,
+      "text": "V is the number of nodes."
+    },
+    {
+      "start": 1276.53,
+      "end": 1282.53,
+      "text": "There is a very, very critical derivation of this, which I'll be doing in the next video."
+    },
+    {
+      "start": 1282.53,
+      "end": 1283.53,
+      "text": "I'll also be discussing."
+    },
+    {
+      "start": 1283.53,
+      "end": 1291.53,
+      "text": "Why a priority queue is used or why a data structure where you need the minimum at first"
+    },
+    {
+      "start": 1291.53,
+      "end": 1295.53,
+      "text": "is used because in the same code, try this out."
+    },
+    {
+      "start": 1295.53,
+      "end": 1299.53,
+      "text": "In the same code, replace priority queue with a queue data structure."
+    },
+    {
+      "start": 1299.53,
+      "end": 1301.53,
+      "text": "It will still give you correct answers."
+    },
+    {
+      "start": 1301.53,
+      "end": 1302.53,
+      "text": "Okay."
+    },
+    {
+      "start": 1302.53,
+      "end": 1303.53,
+      "text": "It'll still give you correct answer."
+    },
+    {
+      "start": 1303.53,
+      "end": 1304.53,
+      "text": "You can try that out."
+    },
+    {
+      "start": 1304.53,
+      "end": 1309.53,
+      "text": "So, but I'll be explicitly explaining these couple of things in the next video."
+    },
+    {
+      "start": 1309.53,
+      "end": 1312.53,
+      "text": "And in another video, we'll also be implementing the same algorithm."
+    },
+    {
+      "start": 1312.53,
+      "end": 1315.53,
+      "text": "But the same algorithm using the set data structure."
+    },
+    {
+      "start": 1315.53,
+      "end": 1318.53,
+      "text": "And why are we going to use set data structure?"
+    },
+    {
+      "start": 1318.53,
+      "end": 1321.53,
+      "text": "I'm also going to discuss about that in that particular video."
+    },
+    {
+      "start": 1321.53,
+      "end": 1324.53,
+      "text": "For this video, I think this is more than enough."
+    },
+    {
+      "start": 1324.53,
+      "end": 1329.53,
+      "text": "And I hope you've understood the entire algorithm and the priority queue implementation because"
+    },
+    {
+      "start": 1329.53,
+      "end": 1331.53,
+      "text": "this is where the base starts."
+    },
+    {
+      "start": 1331.53,
+      "end": 1334.53,
+      "text": "And the next videos will be elongating the other things."
+    },
+    {
+      "start": 1334.53,
+      "end": 1336.53,
+      "text": "So, guys, I hope you've enjoyed this particular video."
+    },
+    {
+      "start": 1336.53,
+      "end": 1340.53,
+      "text": "Just in case you did, please, please, please make sure you like this video."
+    },
+    {
+      "start": 1340.53,
+      "end": 1341.53,
+      "text": "And if you're new to our channel,"
+    },
+    {
+      "start": 1341.53,
+      "end": 1342.53,
+      "text": "what are you waiting for?"
+    },
+    {
+      "start": 1342.53,
+      "end": 1344.53,
+      "text": "I think you should definitely subscribe to us."
+    },
+    {
+      "start": 1344.53,
+      "end": 1349.53,
+      "text": "If you haven't checked out our DP series and the HDC, the links are in the description."
+    },
+    {
+      "start": 1349.53,
+      "end": 1350.53,
+      "text": "With this, I'll be wrapping up this video."
+    },
+    {
+      "start": 1350.53,
+      "end": 1351.53,
+      "text": "Let's meet in some other video."
+    },
+    {
+      "start": 1351.53,
+      "end": 1352.53,
+      "text": "Till then, bye-bye."
+    },
+    {
+      "start": 1352.53,
+      "end": 1353.53,
+      "text": "Take care."
+    },
+    {
+      "start": 1353.53,
+      "end": 1355.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1355.94,
+      "end": 1356.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1356.94,
+      "end": 1357.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1357.94,
+      "end": 1358.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1358.94,
+      "end": 1359.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1359.94,
+      "end": 1360.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1360.94,
+      "end": 1361.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1361.94,
+      "end": 1362.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1362.94,
+      "end": 1363.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1363.94,
+      "end": 1364.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1364.94,
+      "end": 1365.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1365.94,
+      "end": 1366.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1366.94,
+      "end": 1367.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1367.94,
+      "end": 1368.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1368.94,
+      "end": 1369.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1369.94,
+      "end": 1370.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1370.94,
+      "end": 1371.94,
+      "text": "Bye."
+    },
+    {
+      "start": 1371.94,
+      "end": 1372.94,
+      "text": "Bye."
+    }
+  ]
+}

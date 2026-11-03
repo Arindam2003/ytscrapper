@@ -1,0 +1,2954 @@
+{
+  "video_id": "ZUFQfFaU-8U",
+  "title": "G-27. Shortest Path in Directed Acyclic Graph - Topological Sort",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1595.58,
+  "segments": [
+    {
+      "start": 2.77,
+      "end": 5.97,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.37,
+      "end": 11.03,
+      "text": "So today we will be solving the problem shortest path in directed acyclic graph."
+    },
+    {
+      "start": 11.39,
+      "end": 15.11,
+      "text": "Given a directed acyclic graph, find the shortest path from the source."
+    },
+    {
+      "start": 15.47,
+      "end": 20.35,
+      "text": "They have clearly stated that the source will always be 0 to all the vertex."
+    },
+    {
+      "start": 20.93,
+      "end": 23.47,
+      "text": "So basically what does the problem state?"
+    },
+    {
+      "start": 24.29,
+      "end": 26.75,
+      "text": "Given a DAG, what is a DAG?"
+    },
+    {
+      "start": 26.75,
+      "end": 32.61,
+      "text": "If you remember, it's a directed graph with no cycles."
+    },
+    {
+      "start": 33.15,
+      "end": 38.59,
+      "text": "If I combine this, then you call it as a directed acyclic graph."
+    },
+    {
+      "start": 38.75,
+      "end": 39.95,
+      "text": "That is the definition of it."
+    },
+    {
+      "start": 40.35,
+      "end": 41.75,
+      "text": "So over here you are given a graph."
+    },
+    {
+      "start": 42.21,
+      "end": 46.21,
+      "text": "Now do you see a shuttle change from the graphs that we were doing till now?"
+    },
+    {
+      "start": 46.51,
+      "end": 47.01,
+      "text": "Yes, you do."
+    },
+    {
+      "start": 47.33,
+      "end": 49.71,
+      "text": "So if you see 0 and 1, there is an edge."
+    },
+    {
+      "start": 50.19,
+      "end": 53.39,
+      "text": "But we have added edge weights to it."
+    },
+    {
+      "start": 53.39,
+      "end": 55.87,
+      "text": "We are saying the edge weight is 2."
+    },
+    {
+      "start": 56.37,
+      "end": 59.89,
+      "text": "That means to go from 0 to 1, it will take you 2."
+    },
+    {
+      "start": 60.31,
+      "end": 62.75,
+      "text": "To go from 1 to 2, it will take you 3."
+    },
+    {
+      "start": 63.09,
+      "end": 68.63,
+      "text": "In short, if I ask you to go from 0 to 1, what is the shortest path?"
+    },
+    {
+      "start": 69.09,
+      "end": 69.65,
+      "text": "It takes 2."
+    },
+    {
+      "start": 70.03,
+      "end": 71.79,
+      "text": "Are there any other paths in the graph?"
+    },
+    {
+      "start": 72.01,
+      "end": 72.93,
+      "text": "The answer to that is no."
+    },
+    {
+      "start": 73.27,
+      "end": 76.99,
+      "text": "So I can say, if I say node 1, the distance is 2."
+    },
+    {
+      "start": 77.15,
+      "end": 78.41,
+      "text": "Because that is what it will take."
+    },
+    {
+      "start": 78.79,
+      "end": 81.01,
+      "text": "For node 0, the distance is 0."
+    },
+    {
+      "start": 81.09,
+      "end": 81.27,
+      "text": "Why?"
+    },
+    {
+      "start": 81.75,
+      "end": 82.85,
+      "text": "0 on itself."
+    },
+    {
+      "start": 82.85,
+      "end": 86.55,
+      "text": "Because the source node has been clearly stated as 0."
+    },
+    {
+      "start": 87.01,
+      "end": 89.29,
+      "text": "So 0 to itself will be 0."
+    },
+    {
+      "start": 89.89,
+      "end": 92.33,
+      "text": "If I ask you for the second node,"
+    },
+    {
+      "start": 92.33,
+      "end": 93.45,
+      "text": "it states 3."
+    },
+    {
+      "start": 94.09,
+      "end": 94.97,
+      "text": "Where is the second node?"
+    },
+    {
+      "start": 95.05,
+      "end": 95.19,
+      "text": "Here."
+    },
+    {
+      "start": 95.59,
+      "end": 96.51,
+      "text": "How many paths are there?"
+    },
+    {
+      "start": 96.87,
+      "end": 98.39,
+      "text": "1 is this, which takes 5."
+    },
+    {
+      "start": 98.73,
+      "end": 100.15,
+      "text": "1 is this, which takes 3."
+    },
+    {
+      "start": 100.55,
+      "end": 102.49,
+      "text": "So thereby, the shortest path is 3."
+    },
+    {
+      "start": 102.87,
+      "end": 105.27,
+      "text": "So the question is very straightforward and simple."
+    },
+    {
+      "start": 106.07,
+      "end": 108.59,
+      "text": "You are given a source, and it will always be 0."
+    },
+    {
+      "start": 108.91,
+      "end": 111.21,
+      "text": "From 0 to all other paths, like all other nodes,"
+    },
+    {
+      "start": 111.37,
+      "end": 114.43,
+      "text": "0, 1, 2, 3, and so on,"
+    },
+    {
+      "start": 114.91,
+      "end": 116.21,
+      "text": "till n-1 node,"
+    },
+    {
+      "start": 116.59,
+      "end": 120.43,
+      "text": "you have to find me the shortest distance to travel."
+    },
+    {
+      "start": 121.15,
+      "end": 122.31,
+      "text": "Shortest distance to travel."
+    },
+    {
+      "start": 122.47,
+      "end": 125.09,
+      "text": "That is what the question states."
+    },
+    {
+      "start": 125.73,
+      "end": 128.31,
+      "text": "So you have learned topo sort till now, right?"
+    },
+    {
+      "start": 128.65,
+      "end": 129.97,
+      "text": "So you'll be applying topo sort,"
+    },
+    {
+      "start": 130.09,
+      "end": 132.57,
+      "text": "but the algorithm will be slightly different this time."
+    },
+    {
+      "start": 132.73,
+      "end": 137.63,
+      "text": "I'll be combining topo sort with some relaxation of edges to solve this."
+    },
+    {
+      "start": 138.03,
+      "end": 139.07,
+      "text": "So I'll write the steps."
+    },
+    {
+      "start": 139.87,
+      "end": 142.37,
+      "text": "And the process that I'll follow is,"
+    },
+    {
+      "start": 142.83,
+      "end": 144.27,
+      "text": "first, I'll tell you the algorithm."
+    },
+    {
+      "start": 144.93,
+      "end": 146.83,
+      "text": "Then we'll go and code it."
+    },
+    {
+      "start": 146.83,
+      "end": 148.79,
+      "text": "So that after this process,"
+    },
+    {
+      "start": 149.03,
+      "end": 152.17,
+      "text": "you have a very strong hold of what we are doing."
+    },
+    {
+      "start": 152.53,
+      "end": 154.03,
+      "text": "Once you understand this,"
+    },
+    {
+      "start": 154.37,
+      "end": 155.83,
+      "text": "I will tell you the intuition."
+    },
+    {
+      "start": 156.33,
+      "end": 156.73,
+      "text": "Okay?"
+    },
+    {
+      "start": 156.83,
+      "end": 159.23,
+      "text": "You might think, why not intuition at the start?"
+    },
+    {
+      "start": 159.29,
+      "end": 160.83,
+      "text": "Because if I tell you the intuition,"
+    },
+    {
+      "start": 161.03,
+      "end": 164.13,
+      "text": "you might understand, but in a very blunt manner, you'll understand."
+    },
+    {
+      "start": 164.29,
+      "end": 165.93,
+      "text": "You won't understand in depth."
+    },
+    {
+      "start": 166.17,
+      "end": 169.19,
+      "text": "Once you have the algorithm and the code in the brain,"
+    },
+    {
+      "start": 169.49,
+      "end": 170.63,
+      "text": "and then I tell the intuition,"
+    },
+    {
+      "start": 170.89,
+      "end": 172.03,
+      "text": "you'll be able to connect it,"
+    },
+    {
+      "start": 172.13,
+      "end": 175.63,
+      "text": "and it'll be much like, it'll be easier for you to absorb it."
+    },
+    {
+      "start": 175.67,
+      "end": 176.07,
+      "text": "Okay?"
+    },
+    {
+      "start": 176.27,
+      "end": 177.57,
+      "text": "So this is the DAG,"
+    },
+    {
+      "start": 177.97,
+      "end": 180.77,
+      "text": "and this is the corresponding adjacency list."
+    },
+    {
+      "start": 181.13,
+      "end": 181.87,
+      "text": "This time,"
+    },
+    {
+      "start": 181.87,
+      "end": 182.87,
+      "text": "let's carefully see."
+    },
+    {
+      "start": 183.27,
+      "end": 186.17,
+      "text": "The 6 has an adjacency node of 4."
+    },
+    {
+      "start": 186.57,
+      "end": 190.37,
+      "text": "The 6 has an adjacency of node of 4 with a weight of 2."
+    },
+    {
+      "start": 190.67,
+      "end": 192.27,
+      "text": "So instead of storing an integer,"
+    },
+    {
+      "start": 192.97,
+      "end": 196.57,
+      "text": "previously it was like 6 has an adjacency node of 4 and 5,"
+    },
+    {
+      "start": 196.87,
+      "end": 197.47,
+      "text": "4 and 5."
+    },
+    {
+      "start": 197.47,
+      "end": 199.07,
+      "text": "This is what we were storing, right?"
+    },
+    {
+      "start": 199.37,
+      "end": 201.27,
+      "text": "This time we will store pairs,"
+    },
+    {
+      "start": 201.77,
+      "end": 205.27,
+      "text": "4, 2, 5, 3, because this is 5."
+    },
+    {
+      "start": 205.67,
+      "end": 207.77,
+      "text": "We'll store pairs this time."
+    },
+    {
+      "start": 208.07,
+      "end": 210.07,
+      "text": "This time it'll be list of pairs."
+    },
+    {
+      "start": 210.47,
+      "end": 211.77,
+      "text": "Either you are in C++,"
+    },
+    {
+      "start": 211.87,
+      "end": 213.57,
+      "text": "it'll be vector of pairs,"
+    },
+    {
+      "start": 214.17,
+      "end": 215.37,
+      "text": "what you'll store."
+    },
+    {
+      "start": 215.57,
+      "end": 216.77,
+      "text": "If you are doing a Java,"
+    },
+    {
+      "start": 216.77,
+      "end": 221.67,
+      "text": "it will be array list of pairs that you will store in this particular thing."
+    },
+    {
+      "start": 222.27,
+      "end": 225.07,
+      "text": "Remember the third lecture where I told you how to store graphs."
+    },
+    {
+      "start": 225.37,
+      "end": 226.97,
+      "text": "If they have edge weights,"
+    },
+    {
+      "start": 227.27,
+      "end": 229.27,
+      "text": "you always declare it as pairs,"
+    },
+    {
+      "start": 229.47,
+      "end": 232.57,
+      "text": "and you store pairs where the first guy will be the adjacent node."
+    },
+    {
+      "start": 232.77,
+      "end": 236.07,
+      "text": "The second guy will be the weight of that edge."
+    },
+    {
+      "start": 236.17,
+      "end": 236.57,
+      "text": "Remember?"
+    },
+    {
+      "start": 236.77,
+      "end": 238.07,
+      "text": "So that is what I have done over here."
+    },
+    {
+      "start": 238.37,
+      "end": 238.87,
+      "text": "So,"
+    },
+    {
+      "start": 240.17,
+      "end": 241.27,
+      "text": "the question stated,"
+    },
+    {
+      "start": 241.27,
+      "end": 243.07,
+      "text": "the source will always be 0."
+    },
+    {
+      "start": 243.37,
+      "end": 246.17,
+      "text": "But we will try to solve this problem for any given source."
+    },
+    {
+      "start": 246.47,
+      "end": 247.87,
+      "text": "So, source can be anything."
+    },
+    {
+      "start": 247.97,
+      "end": 249.07,
+      "text": "So, thereby what I'll do is,"
+    },
+    {
+      "start": 249.07,
+      "end": 250.27,
+      "text": "I'll say for this graph,"
+    },
+    {
+      "start": 250.67,
+      "end": 252.57,
+      "text": "assume the source to be 6."
+    },
+    {
+      "start": 252.97,
+      "end": 253.77,
+      "text": "For this graph,"
+    },
+    {
+      "start": 254.07,
+      "end": 255.47,
+      "text": "assume the source to be 6,"
+    },
+    {
+      "start": 255.47,
+      "end": 258.17,
+      "text": "because I don't want you to be sticking with 0,"
+    },
+    {
+      "start": 258.17,
+      "end": 260.97,
+      "text": "because that will not help you out."
+    },
+    {
+      "start": 260.97,
+      "end": 262.77,
+      "text": "So, we can have any source,"
+    },
+    {
+      "start": 262.77,
+      "end": 266.07,
+      "text": "because the interviewer might give you the question as stating as any source."
+    },
+    {
+      "start": 266.17,
+      "end": 266.87,
+      "text": "So, any source."
+    },
+    {
+      "start": 266.87,
+      "end": 267.17,
+      "text": "Okay."
+    },
+    {
+      "start": 267.37,
+      "end": 268.27,
+      "text": "So, what is the step 1?"
+    },
+    {
+      "start": 268.87,
+      "end": 271.17,
+      "text": "So, the step 1 of the algorithm is very simple."
+    },
+    {
+      "start": 271.27,
+      "end": 272.27,
+      "text": "Do a topo sort."
+    },
+    {
+      "start": 272.97,
+      "end": 274.97,
+      "text": "Do a topo sort on the graph, PS."
+    },
+    {
+      "start": 275.27,
+      "end": 277.77,
+      "text": "Do a topo sort on the graph."
+    },
+    {
+      "start": 277.87,
+      "end": 280.67,
+      "text": "Now, how many ways do you know to do a topo sort?"
+    },
+    {
+      "start": 280.67,
+      "end": 281.37,
+      "text": "There are two ways."
+    },
+    {
+      "start": 281.57,
+      "end": 282.77,
+      "text": "One is the DFS way."
+    },
+    {
+      "start": 282.87,
+      "end": 283.97,
+      "text": "One is the BFS way."
+    },
+    {
+      "start": 284.17,
+      "end": 285.47,
+      "text": "Do whichever you wish to."
+    },
+    {
+      "start": 285.57,
+      "end": 289.27,
+      "text": "I just want the topo sort for this particular DAG,"
+    },
+    {
+      "start": 289.37,
+      "end": 291.47,
+      "text": "which is the Directed Acyclic Graph."
+    },
+    {
+      "start": 291.57,
+      "end": 295.27,
+      "text": "So, let's quickly do the topo sort for this DAG."
+    },
+    {
+      "start": 295.47,
+      "end": 298.07,
+      "text": "So, I'll be using the DFS method to find the topo sort."
+    },
+    {
+      "start": 298.07,
+      "end": 300.07,
+      "text": "So, you know the DFS method is very simple."
+    },
+    {
+      "start": 300.27,
+      "end": 300.77,
+      "text": "We,"
+    },
+    {
+      "start": 300.77,
+      "end": 303.07,
+      "text": "always take a stack data structure,"
+    },
+    {
+      "start": 303.17,
+      "end": 304.37,
+      "text": "which stores the topo sort."
+    },
+    {
+      "start": 304.47,
+      "end": 307.17,
+      "text": "Whenever we complete the DFS for a given node,"
+    },
+    {
+      "start": 307.37,
+      "end": 308.47,
+      "text": "we put it into the stack."
+    },
+    {
+      "start": 308.77,
+      "end": 309.97,
+      "text": "We take a visited node."
+    },
+    {
+      "start": 310.07,
+      "end": 310.87,
+      "text": "That is what we take."
+    },
+    {
+      "start": 311.07,
+      "end": 313.37,
+      "text": "And we always run something like this."
+    },
+    {
+      "start": 313.67,
+      "end": 316.67,
+      "text": "For i equal to 0, and we go on till 6."
+    },
+    {
+      "start": 316.97,
+      "end": 320.27,
+      "text": "And we say if not visited of i,"
+    },
+    {
+      "start": 320.57,
+      "end": 322.67,
+      "text": "then please call the DFS for i."
+    },
+    {
+      "start": 322.87,
+      "end": 325.67,
+      "text": "If you remember, this is always done for the components."
+    },
+    {
+      "start": 325.87,
+      "end": 326.27,
+      "text": "Right?"
+    },
+    {
+      "start": 326.47,
+      "end": 328.77,
+      "text": "So, what is the first value of i?"
+    },
+    {
+      "start": 328.87,
+      "end": 329.67,
+      "text": "That's 0."
+    },
+    {
+      "start": 329.67,
+      "end": 331.87,
+      "text": "So, we'll go and call the DFS for 0."
+    },
+    {
+      "start": 332.07,
+      "end": 333.67,
+      "text": "The DFS of 0 is called."
+    },
+    {
+      "start": 333.87,
+      "end": 335.77,
+      "text": "Whenever the DFS of 0 is called,"
+    },
+    {
+      "start": 335.97,
+      "end": 338.47,
+      "text": "please make sure it is marked as visited."
+    },
+    {
+      "start": 338.67,
+      "end": 341.07,
+      "text": "Now, who are 0's adjacent nodes?"
+    },
+    {
+      "start": 341.27,
+      "end": 343.97,
+      "text": "It appears that 0's adjacent node is 1."
+    },
+    {
+      "start": 344.17,
+      "end": 346.07,
+      "text": "So, go and call the DFS for 1."
+    },
+    {
+      "start": 346.27,
+      "end": 346.87,
+      "text": "Perfect."
+    },
+    {
+      "start": 347.07,
+      "end": 348.47,
+      "text": "So, again mark it as visited."
+    },
+    {
+      "start": 348.67,
+      "end": 351.97,
+      "text": "Who are 1's adjacent node appears to be 3."
+    },
+    {
+      "start": 352.17,
+      "end": 354.17,
+      "text": "So, go and call for 3."
+    },
+    {
+      "start": 354.57,
+      "end": 355.67,
+      "text": "So, I called it for 3."
+    },
+    {
+      "start": 355.87,
+      "end": 358.97,
+      "text": "Who are for 3 appears that there is no 1 for 3."
+    },
+    {
+      "start": 358.97,
+      "end": 360.27,
+      "text": "Mark 3 as visited."
+    },
+    {
+      "start": 360.47,
+      "end": 362.97,
+      "text": "And it appears that for 3 there is no 1."
+    },
+    {
+      "start": 363.17,
+      "end": 367.17,
+      "text": "So, what I can say is for 3, the DFS call is over."
+    },
+    {
+      "start": 367.37,
+      "end": 369.97,
+      "text": "And whenever the DFS call is over, in toposort, if you remember,"
+    },
+    {
+      "start": 370.17,
+      "end": 372.37,
+      "text": "we just took that 3 and put it into the stack."
+    },
+    {
+      "start": 372.57,
+      "end": 373.17,
+      "text": "Go back."
+    },
+    {
+      "start": 373.37,
+      "end": 374.17,
+      "text": "1."
+    },
+    {
+      "start": 374.37,
+      "end": 375.97,
+      "text": "Do we have any further adjacent nodes?"
+    },
+    {
+      "start": 376.17,
+      "end": 376.57,
+      "text": "No."
+    },
+    {
+      "start": 376.77,
+      "end": 377.97,
+      "text": "Put it into the stack."
+    },
+    {
+      "start": 378.17,
+      "end": 378.37,
+      "text": "Go back."
+    },
+    {
+      "start": 378.57,
+      "end": 378.97,
+      "text": "0."
+    },
+    {
+      "start": 379.17,
+      "end": 380.37,
+      "text": "Do we have any further adjacent nodes?"
+    },
+    {
+      "start": 380.57,
+      "end": 380.97,
+      "text": "No."
+    },
+    {
+      "start": 381.17,
+      "end": 382.97,
+      "text": "Put it into the stack and go back."
+    },
+    {
+      "start": 383.17,
+      "end": 385.97,
+      "text": "So, what I can say is this particular DFS call is done."
+    },
+    {
+      "start": 386.17,
+      "end": 387.77,
+      "text": "Let's increase the value of i."
+    },
+    {
+      "start": 387.97,
+      "end": 388.87,
+      "text": "1."
+    },
+    {
+      "start": 389.07,
+      "end": 390.77,
+      "text": "It's already visited."
+    },
+    {
+      "start": 390.97,
+      "end": 391.37,
+      "text": "2."
+    },
+    {
+      "start": 391.57,
+      "end": 392.57,
+      "text": "Not visited."
+    },
+    {
+      "start": 392.77,
+      "end": 393.77,
+      "text": "Call it for 2."
+    },
+    {
+      "start": 393.97,
+      "end": 395.17,
+      "text": "Mark it as visited."
+    },
+    {
+      "start": 395.37,
+      "end": 397.57,
+      "text": "For 2, do we have any adjacent nodes?"
+    },
+    {
+      "start": 397.77,
+      "end": 397.97,
+      "text": "Yes."
+    },
+    {
+      "start": 398.17,
+      "end": 398.77,
+      "text": "What is it?"
+    },
+    {
+      "start": 398.97,
+      "end": 399.57,
+      "text": "3."
+    },
+    {
+      "start": 399.77,
+      "end": 400.97,
+      "text": "But it's already visited."
+    },
+    {
+      "start": 401.17,
+      "end": 402.57,
+      "text": "No further DFS calls."
+    },
+    {
+      "start": 402.77,
+      "end": 403.77,
+      "text": "So, 2 is also done."
+    },
+    {
+      "start": 403.97,
+      "end": 404.57,
+      "text": "Go back."
+    },
+    {
+      "start": 404.77,
+      "end": 406.17,
+      "text": "So, once you go back, this is done."
+    },
+    {
+      "start": 406.37,
+      "end": 407.57,
+      "text": "Increase the value of i."
+    },
+    {
+      "start": 407.77,
+      "end": 408.77,
+      "text": "So, this will be 3."
+    },
+    {
+      "start": 408.97,
+      "end": 410.77,
+      "text": "Will we do our DFS call for 3?"
+    },
+    {
+      "start": 410.97,
+      "end": 411.17,
+      "text": "No."
+    },
+    {
+      "start": 411.37,
+      "end": 412.17,
+      "text": "It's already visited."
+    },
+    {
+      "start": 412.37,
+      "end": 413.37,
+      "text": "Increase the value 4."
+    },
+    {
+      "start": 413.57,
+      "end": 414.97,
+      "text": "So, will we do it for 4?"
+    },
+    {
+      "start": 415.17,
+      "end": 416.17,
+      "text": "Yes, we will do it for 4."
+    },
+    {
+      "start": 416.37,
+      "end": 417.57,
+      "text": "Mark 4 as visited."
+    },
+    {
+      "start": 417.77,
+      "end": 418.77,
+      "text": "After that,"
+    },
+    {
+      "start": 418.97,
+      "end": 419.77,
+      "text": "look at 4."
+    },
+    {
+      "start": 419.97,
+      "end": 421.77,
+      "text": "It has 0, which is visited."
+    },
+    {
+      "start": 421.97,
+      "end": 423.17,
+      "text": "You see, 0 is visited."
+    },
+    {
+      "start": 423.37,
+      "end": 424.37,
+      "text": "It is."
+    },
+    {
+      "start": 424.57,
+      "end": 427.37,
+      "text": "And it has 2, which is also visited."
+    },
+    {
+      "start": 427.57,
+      "end": 428.77,
+      "text": "0 and 2 both are visited."
+    },
+    {
+      "start": 428.97,
+      "end": 430.37,
+      "text": "So, apparently, no further DFS calls."
+    },
+    {
+      "start": 430.57,
+      "end": 434.57,
+      "text": "So, it will go back and put it into the stack and go back."
+    },
+    {
+      "start": 434.77,
+      "end": 435.97,
+      "text": "Next, it's 5."
+    },
+    {
+      "start": 436.17,
+      "end": 438.57,
+      "text": "For 5, mark it as visited."
+    },
+    {
+      "start": 438.77,
+      "end": 443.17,
+      "text": "And 5 has adjacent node as 4, which is already visited."
+    },
+    {
+      "start": 443.37,
+      "end": 444.37,
+      "text": "So, no further DFS calls."
+    },
+    {
+      "start": 444.57,
+      "end": 448.07,
+      "text": "Please make sure put 5 into the adjacent nodes and go back."
+    },
+    {
+      "start": 448.97,
+      "end": 450.17,
+      "text": "Next, into the stack rather."
+    },
+    {
+      "start": 450.37,
+      "end": 451.17,
+      "text": "It will be 6."
+    },
+    {
+      "start": 451.37,
+      "end": 453.17,
+      "text": "Similarly, it will happen for 6."
+    },
+    {
+      "start": 453.37,
+      "end": 454.57,
+      "text": "Mark it as visited."
+    },
+    {
+      "start": 454.77,
+      "end": 459.17,
+      "text": "And you will find that for 6, we have 4 and 5 as the adjacent node."
+    },
+    {
+      "start": 459.37,
+      "end": 461.17,
+      "text": "4 and 5 both are visited."
+    },
+    {
+      "start": 461.37,
+      "end": 462.77,
+      "text": "So, no further DFS calls."
+    },
+    {
+      "start": 462.97,
+      "end": 464.97,
+      "text": "Put it into the stack and go back."
+    },
+    {
+      "start": 465.17,
+      "end": 469.57,
+      "text": "So, apparently, once this for loop has been completed,"
+    },
+    {
+      "start": 469.77,
+      "end": 471.57,
+      "text": "all the DFS calls have been completed,"
+    },
+    {
+      "start": 471.77,
+      "end": 474.57,
+      "text": "this stack will store the topo sort."
+    },
+    {
+      "start": 474.77,
+      "end": 476.37,
+      "text": "Now, if I quickly erase this off."
+    },
+    {
+      "start": 476.57,
+      "end": 477.77,
+      "text": "Let's quickly erase this off."
+    },
+    {
+      "start": 477.77,
+      "end": 480.37,
+      "text": "So, the step 1, I can say, has been completed."
+    },
+    {
+      "start": 480.57,
+      "end": 481.97,
+      "text": "And the topo sort is very simple."
+    },
+    {
+      "start": 482.17,
+      "end": 485.37,
+      "text": "It is 6, 5, 4, 2, 0, 1, 3."
+    },
+    {
+      "start": 485.57,
+      "end": 489.17,
+      "text": "And if you carefully see, there is an edge between 0 to 1."
+    },
+    {
+      "start": 489.37,
+      "end": 490.77,
+      "text": "So, 0 appears before 1."
+    },
+    {
+      "start": 490.97,
+      "end": 492.77,
+      "text": "There is an edge between 2 to 3."
+    },
+    {
+      "start": 492.97,
+      "end": 494.97,
+      "text": "So, 2 appears before 3."
+    },
+    {
+      "start": 495.17,
+      "end": 497.77,
+      "text": "So, this is indeed a valid topo sort."
+    },
+    {
+      "start": 497.97,
+      "end": 498.97,
+      "text": "I can easily say that."
+    },
+    {
+      "start": 499.17,
+      "end": 499.97,
+      "text": "Now, what is step 2?"
+    },
+    {
+      "start": 500.17,
+      "end": 501.97,
+      "text": "Step 2 is very, very simple."
+    },
+    {
+      "start": 502.17,
+      "end": 505.17,
+      "text": "You take out all the nodes from the stack 1 by 1."
+    },
+    {
+      "start": 505.37,
+      "end": 507.17,
+      "text": "Take the nodes out of the stack 1 by 1."
+    },
+    {
+      "start": 507.77,
+      "end": 510.17,
+      "text": "Nodes out of stack."
+    },
+    {
+      "start": 510.37,
+      "end": 512.37,
+      "text": "And relax the edges."
+    },
+    {
+      "start": 512.57,
+      "end": 514.97,
+      "text": "You'll hear this term a lot going forward."
+    },
+    {
+      "start": 515.17,
+      "end": 516.37,
+      "text": "And relax the edges."
+    },
+    {
+      "start": 516.57,
+      "end": 517.57,
+      "text": "Okay."
+    },
+    {
+      "start": 517.77,
+      "end": 519.37,
+      "text": "This is the step 2."
+    },
+    {
+      "start": 519.57,
+      "end": 521.37,
+      "text": "So, in order to relax the edges,"
+    },
+    {
+      "start": 521.57,
+      "end": 522.97,
+      "text": "we need to declare a distance array."
+    },
+    {
+      "start": 523.17,
+      "end": 524.97,
+      "text": "And that should be marked with infinity."
+    },
+    {
+      "start": 525.17,
+      "end": 525.77,
+      "text": "Let's do it."
+    },
+    {
+      "start": 525.97,
+      "end": 527.97,
+      "text": "The distance array has been declared."
+    },
+    {
+      "start": 528.17,
+      "end": 529.37,
+      "text": "And what you'll do initially is,"
+    },
+    {
+      "start": 529.57,
+      "end": 532.57,
+      "text": "just make sure everything is marked as infinity."
+    },
+    {
+      "start": 532.77,
+      "end": 535.17,
+      "text": "Now, let's start relaxation of the edges."
+    },
+    {
+      "start": 535.37,
+      "end": 536.97,
+      "text": "But before that, please make sure,"
+    },
+    {
+      "start": 536.97,
+      "end": 538.77,
+      "text": "whatever is your source node,"
+    },
+    {
+      "start": 538.97,
+      "end": 541.37,
+      "text": "just go to that source node and make it 0."
+    },
+    {
+      "start": 541.57,
+      "end": 544.17,
+      "text": "Just make sure that you go to that source node and say that,"
+    },
+    {
+      "start": 544.37,
+      "end": 545.17,
+      "text": "hey, I know one thing."
+    },
+    {
+      "start": 545.37,
+      "end": 547.57,
+      "text": "If you start from 6 and if you end at 6,"
+    },
+    {
+      "start": 547.77,
+      "end": 549.97,
+      "text": "the distance that you'll take will always be 0."
+    },
+    {
+      "start": 550.17,
+      "end": 550.97,
+      "text": "Then make sure you do that."
+    },
+    {
+      "start": 551.17,
+      "end": 551.37,
+      "text": "Okay."
+    },
+    {
+      "start": 551.57,
+      "end": 554.57,
+      "text": "Next, whatever is on the stack stop."
+    },
+    {
+      "start": 554.77,
+      "end": 555.77,
+      "text": "This is stack stop."
+    },
+    {
+      "start": 555.97,
+      "end": 558.97,
+      "text": "Stack is always last in first stop."
+    },
+    {
+      "start": 559.17,
+      "end": 560.37,
+      "text": "So, the last in was 6."
+    },
+    {
+      "start": 560.57,
+      "end": 561.57,
+      "text": "This is stack stop."
+    },
+    {
+      "start": 561.77,
+      "end": 562.97,
+      "text": "So, make sure you take it out."
+    },
+    {
+      "start": 563.17,
+      "end": 565.37,
+      "text": "So, node equal to 6 has been taken out."
+    },
+    {
+      "start": 565.57,
+      "end": 566.37,
+      "text": "Now,"
+    },
+    {
+      "start": 566.37,
+      "end": 567.57,
+      "text": "whenever you are at 6,"
+    },
+    {
+      "start": 567.77,
+      "end": 571.17,
+      "text": "you know the distance to 6 is 0."
+    },
+    {
+      "start": 571.37,
+      "end": 572.17,
+      "text": "How did you figure this out?"
+    },
+    {
+      "start": 572.37,
+      "end": 574.37,
+      "text": "Because that is what it was stored over here."
+    },
+    {
+      "start": 574.57,
+      "end": 574.97,
+      "text": "Right?"
+    },
+    {
+      "start": 575.17,
+      "end": 577.37,
+      "text": "Now, figure out the adjacent nodes of 6."
+    },
+    {
+      "start": 577.57,
+      "end": 580.77,
+      "text": "The adjacent nodes of 6 is 4 and 5."
+    },
+    {
+      "start": 580.97,
+      "end": 584.17,
+      "text": "The adjacent node of 6 is 4 and 5."
+    },
+    {
+      "start": 584.37,
+      "end": 585.77,
+      "text": "So, try to go there."
+    },
+    {
+      "start": 585.97,
+      "end": 589.77,
+      "text": "So, you'll be like, okay, I'll try to go to node 5."
+    },
+    {
+      "start": 589.97,
+      "end": 592.57,
+      "text": "I'll also try to go to node 4."
+    },
+    {
+      "start": 592.77,
+      "end": 593.17,
+      "text": "Okay."
+    },
+    {
+      "start": 593.37,
+      "end": 595.97,
+      "text": "These are the two nodes that I'll try to go to."
+    },
+    {
+      "start": 595.97,
+      "end": 597.97,
+      "text": "Now, have a careful observation."
+    },
+    {
+      "start": 598.17,
+      "end": 600.77,
+      "text": "Have a very careful observation on this graph."
+    },
+    {
+      "start": 600.97,
+      "end": 604.97,
+      "text": "In order to go from 6 to 5, which is this,"
+    },
+    {
+      "start": 605.17,
+      "end": 607.37,
+      "text": "what is the edge weight that is required?"
+    },
+    {
+      "start": 607.57,
+      "end": 608.17,
+      "text": "3."
+    },
+    {
+      "start": 608.37,
+      "end": 609.17,
+      "text": "Do you see?"
+    },
+    {
+      "start": 609.37,
+      "end": 609.97,
+      "text": "3."
+    },
+    {
+      "start": 610.17,
+      "end": 613.17,
+      "text": "So, you say, if I go, I'll require a 3."
+    },
+    {
+      "start": 613.37,
+      "end": 618.97,
+      "text": "So, can I say, if in order to reach 6, I required a distance of 0."
+    },
+    {
+      "start": 619.17,
+      "end": 622.57,
+      "text": "From 6 to 5, I require a distance of plus 3."
+    },
+    {
+      "start": 622.77,
+      "end": 625.77,
+      "text": "Can I say, if in order to reach 6, I require a distance of plus 3."
+    },
+    {
+      "start": 625.77,
+      "end": 629.97,
+      "text": "Can I say, the overall distance will be 3?"
+    },
+    {
+      "start": 630.17,
+      "end": 633.57,
+      "text": "Because from 6 to 6, it was 0."
+    },
+    {
+      "start": 633.77,
+      "end": 635.37,
+      "text": "And from 6 to 5, it is 3."
+    },
+    {
+      "start": 635.57,
+      "end": 637.17,
+      "text": "The overall distance will be 3."
+    },
+    {
+      "start": 637.37,
+      "end": 641.57,
+      "text": "And you see, to node 5, it was infinity."
+    },
+    {
+      "start": 641.77,
+      "end": 642.37,
+      "text": "Right?"
+    },
+    {
+      "start": 642.57,
+      "end": 645.97,
+      "text": "And if you see, we are reaching a distance 3, which is better."
+    },
+    {
+      "start": 646.17,
+      "end": 646.97,
+      "text": "3, obviously."
+    },
+    {
+      "start": 647.17,
+      "end": 649.17,
+      "text": "So, you go and update this to 3."
+    },
+    {
+      "start": 649.37,
+      "end": 650.77,
+      "text": "You go and update this to 3."
+    },
+    {
+      "start": 650.97,
+      "end": 651.57,
+      "text": "Don't do anything else."
+    },
+    {
+      "start": 651.77,
+      "end": 652.37,
+      "text": "Just go and update."
+    },
+    {
+      "start": 652.57,
+      "end": 654.57,
+      "text": "Similarly, see over here."
+    },
+    {
+      "start": 654.77,
+      "end": 655.57,
+      "text": "To node 4."
+    },
+    {
+      "start": 655.77,
+      "end": 656.77,
+      "text": "What will you require?"
+    },
+    {
+      "start": 656.97,
+      "end": 657.57,
+      "text": "2."
+    },
+    {
+      "start": 657.77,
+      "end": 659.57,
+      "text": "So, please do a plus 2."
+    },
+    {
+      "start": 659.77,
+      "end": 660.97,
+      "text": "The distance will be 2."
+    },
+    {
+      "start": 661.17,
+      "end": 663.17,
+      "text": "Similarly, go to node 4 and see."
+    },
+    {
+      "start": 663.37,
+      "end": 664.97,
+      "text": "You will require a distance of 2."
+    },
+    {
+      "start": 665.17,
+      "end": 667.17,
+      "text": "You will require a distance of 2."
+    },
+    {
+      "start": 667.37,
+      "end": 668.97,
+      "text": "Done."
+    },
+    {
+      "start": 669.17,
+      "end": 672.57,
+      "text": "Once you have checked out all the nodes, complete it."
+    },
+    {
+      "start": 672.77,
+      "end": 675.77,
+      "text": "Next, get the next node out, which is 5."
+    },
+    {
+      "start": 675.97,
+      "end": 678.17,
+      "text": "And let's see, what is the distance taken to 5?"
+    },
+    {
+      "start": 678.37,
+      "end": 681.37,
+      "text": "That states me that the distance has been taken as 3."
+    },
+    {
+      "start": 681.57,
+      "end": 683.37,
+      "text": "It's clearly states as 3."
+    },
+    {
+      "start": 683.57,
+      "end": 684.57,
+      "text": "The distance is 3."
+    },
+    {
+      "start": 684.77,
+      "end": 685.57,
+      "text": "What does it mean?"
+    },
+    {
+      "start": 685.77,
+      "end": 688.77,
+      "text": "Whatever was the source node in order to get to node 5,"
+    },
+    {
+      "start": 688.97,
+      "end": 690.57,
+      "text": "I required a distance of 3."
+    },
+    {
+      "start": 690.77,
+      "end": 691.97,
+      "text": "That is the meaning of it."
+    },
+    {
+      "start": 692.17,
+      "end": 695.17,
+      "text": "So, for node 5, look at the nodes."
+    },
+    {
+      "start": 695.37,
+      "end": 697.17,
+      "text": "The nearby node is 4."
+    },
+    {
+      "start": 697.37,
+      "end": 698.97,
+      "text": "The nearby node is 4."
+    },
+    {
+      "start": 699.17,
+      "end": 702.17,
+      "text": "How much will it take if it goes from 5 to 4?"
+    },
+    {
+      "start": 702.37,
+      "end": 702.97,
+      "text": "1."
+    },
+    {
+      "start": 703.17,
+      "end": 705.17,
+      "text": "Plus 1 is what it will take."
+    },
+    {
+      "start": 705.37,
+      "end": 707.17,
+      "text": "Let's take the distance."
+    },
+    {
+      "start": 707.37,
+      "end": 710.57,
+      "text": "Previously, it took 3 in order to reach from 6 to 5."
+    },
+    {
+      "start": 710.77,
+      "end": 711.97,
+      "text": "That's taking plus 1."
+    },
+    {
+      "start": 712.17,
+      "end": 714.57,
+      "text": "The total distance will be 4."
+    },
+    {
+      "start": 714.57,
+      "end": 715.97,
+      "text": "3 plus 1 is 4."
+    },
+    {
+      "start": 716.17,
+      "end": 718.77,
+      "text": "And if you carefully see, in order to reach node 4,"
+    },
+    {
+      "start": 718.97,
+      "end": 720.57,
+      "text": "I already have a better option."
+    },
+    {
+      "start": 720.77,
+      "end": 722.97,
+      "text": "I already have a better option of 2."
+    },
+    {
+      "start": 723.17,
+      "end": 724.57,
+      "text": "So, will I take this 4?"
+    },
+    {
+      "start": 724.77,
+      "end": 725.17,
+      "text": "No."
+    },
+    {
+      "start": 725.37,
+      "end": 725.97,
+      "text": "Why?"
+    },
+    {
+      "start": 726.17,
+      "end": 726.77,
+      "text": "Very simple."
+    },
+    {
+      "start": 726.97,
+      "end": 730.17,
+      "text": "Because from 6 to 5 and 5 to 4, it will be 4."
+    },
+    {
+      "start": 730.37,
+      "end": 733.77,
+      "text": "And from 6 to 4, it will just be 2, which we already have taken."
+    },
+    {
+      "start": 733.97,
+      "end": 734.97,
+      "text": "So, nothing to be done."
+    },
+    {
+      "start": 735.17,
+      "end": 736.57,
+      "text": "Omit this off."
+    },
+    {
+      "start": 736.77,
+      "end": 738.77,
+      "text": "Next, take the next guy, node 4."
+    },
+    {
+      "start": 738.97,
+      "end": 741.77,
+      "text": "At the moment you take node 4, what happens?"
+    },
+    {
+      "start": 741.97,
+      "end": 744.37,
+      "text": "You again check for the adjacent nodes."
+    },
+    {
+      "start": 744.57,
+      "end": 746.17,
+      "text": "That's 0 and 2."
+    },
+    {
+      "start": 746.37,
+      "end": 748.57,
+      "text": "So, 1 is node 0."
+    },
+    {
+      "start": 748.77,
+      "end": 752.17,
+      "text": "And the other one is node 2."
+    },
+    {
+      "start": 752.37,
+      "end": 753.97,
+      "text": "This takes a distance of plus 3."
+    },
+    {
+      "start": 754.17,
+      "end": 755.97,
+      "text": "This takes a distance of plus 1."
+    },
+    {
+      "start": 756.17,
+      "end": 757.57,
+      "text": "Very simple to figure out."
+    },
+    {
+      "start": 757.77,
+      "end": 758.57,
+      "text": "You have already stored it."
+    },
+    {
+      "start": 758.77,
+      "end": 760.17,
+      "text": "So, plus 3 and plus 1."
+    },
+    {
+      "start": 760.37,
+      "end": 762.77,
+      "text": "Previously, how much distance node 4 took?"
+    },
+    {
+      "start": 762.97,
+      "end": 763.77,
+      "text": "2."
+    },
+    {
+      "start": 763.97,
+      "end": 765.37,
+      "text": "Again, very simple to get from here."
+    },
+    {
+      "start": 765.57,
+      "end": 767.57,
+      "text": "6 to 4 took a 2."
+    },
+    {
+      "start": 767.77,
+      "end": 768.57,
+      "text": "Plus 3."
+    },
+    {
+      "start": 768.77,
+      "end": 770.77,
+      "text": "So, till node 0, what will be the distance?"
+    },
+    {
+      "start": 770.97,
+      "end": 774.37,
+      "text": "It will be nothing but very simple."
+    },
+    {
+      "start": 774.57,
+      "end": 775.57,
+      "text": "5."
+    },
+    {
+      "start": 775.77,
+      "end": 778.77,
+      "text": "And till here, it will be nothing but 3."
+    },
+    {
+      "start": 778.97,
+      "end": 779.77,
+      "text": "Why?"
+    },
+    {
+      "start": 779.97,
+      "end": 781.37,
+      "text": "2 plus 3 will be 5."
+    },
+    {
+      "start": 781.57,
+      "end": 782.97,
+      "text": "2 plus 1 will be 3."
+    },
+    {
+      "start": 783.17,
+      "end": 785.77,
+      "text": "So, node 0 states it's infinity."
+    },
+    {
+      "start": 785.97,
+      "end": 787.97,
+      "text": "So, you update it to distance 5."
+    },
+    {
+      "start": 788.17,
+      "end": 790.57,
+      "text": "And node 2 says it's infinity."
+    },
+    {
+      "start": 790.77,
+      "end": 792.17,
+      "text": "So, you update it to distance 3."
+    },
+    {
+      "start": 792.37,
+      "end": 793.37,
+      "text": "Done."
+    },
+    {
+      "start": 793.57,
+      "end": 795.97,
+      "text": "Once you've done this, omit this as well."
+    },
+    {
+      "start": 796.17,
+      "end": 797.97,
+      "text": "Simple."
+    },
+    {
+      "start": 798.17,
+      "end": 800.77,
+      "text": "Next, take the next node, which is 2."
+    },
+    {
+      "start": 800.97,
+      "end": 802.37,
+      "text": "So, node 2."
+    },
+    {
+      "start": 802.57,
+      "end": 804.17,
+      "text": "What is the distance taken?"
+    },
+    {
+      "start": 804.57,
+      "end": 806.57,
+      "text": "3 from the distance array."
+    },
+    {
+      "start": 806.77,
+      "end": 809.97,
+      "text": "From 6 to 2, you know the distance is 3."
+    },
+    {
+      "start": 810.17,
+      "end": 811.77,
+      "text": "You know the distance is 3."
+    },
+    {
+      "start": 811.97,
+      "end": 813.77,
+      "text": "From 6 to 2, you know the distance is 3."
+    },
+    {
+      "start": 813.97,
+      "end": 816.37,
+      "text": "And that's very obvious because it took this path."
+    },
+    {
+      "start": 816.57,
+      "end": 818.17,
+      "text": "It took this path."
+    },
+    {
+      "start": 818.37,
+      "end": 819.77,
+      "text": "So, from node 2, where can you go?"
+    },
+    {
+      "start": 819.97,
+      "end": 822.37,
+      "text": "Let's quickly check it out."
+    },
+    {
+      "start": 822.57,
+      "end": 823.97,
+      "text": "From node 2, you can go to 3."
+    },
+    {
+      "start": 824.17,
+      "end": 825.17,
+      "text": "So, let's write it."
+    },
+    {
+      "start": 825.37,
+      "end": 827.57,
+      "text": "You can go to 3."
+    },
+    {
+      "start": 827.77,
+      "end": 831.57,
+      "text": "And if I go to 3, I will require how much?"
+    },
+    {
+      "start": 831.77,
+      "end": 832.57,
+      "text": "3."
+    },
+    {
+      "start": 832.77,
+      "end": 833.77,
+      "text": "I'll require nothing but 3."
+    },
+    {
+      "start": 833.77,
+      "end": 835.97,
+      "text": "I'll just add a 3."
+    },
+    {
+      "start": 836.17,
+      "end": 839.57,
+      "text": "And that will give me nothing but distance of 6."
+    },
+    {
+      "start": 839.77,
+      "end": 844.17,
+      "text": "So, till node 3, I get a better option than infinity."
+    },
+    {
+      "start": 844.37,
+      "end": 844.97,
+      "text": "So, I take it."
+    },
+    {
+      "start": 845.17,
+      "end": 846.17,
+      "text": "Next, erase it."
+    },
+    {
+      "start": 846.37,
+      "end": 848.57,
+      "text": "Let's quickly take the next one, which is 0."
+    },
+    {
+      "start": 848.77,
+      "end": 850.57,
+      "text": "So, node is 0."
+    },
+    {
+      "start": 850.77,
+      "end": 852.97,
+      "text": "The distance taken is 5."
+    },
+    {
+      "start": 853.17,
+      "end": 854.97,
+      "text": "From 0, you can go to node 1."
+    },
+    {
+      "start": 855.17,
+      "end": 860.37,
+      "text": "And the distance will be plus 2 of it."
+    },
+    {
+      "start": 860.57,
+      "end": 861.57,
+      "text": "So, the distance will be 7."
+    },
+    {
+      "start": 861.77,
+      "end": 863.67,
+      "text": "What you can do is, you can say 1 to 5."
+    },
+    {
+      "start": 863.87,
+      "end": 864.37,
+      "text": "And it will be 7."
+    },
+    {
+      "start": 864.57,
+      "end": 868.57,
+      "text": "Very obvious because if this is taking 5 and this takes another 2,"
+    },
+    {
+      "start": 868.77,
+      "end": 871.37,
+      "text": "so 5 plus 2 will be 7, which is better than infinity."
+    },
+    {
+      "start": 871.57,
+      "end": 872.17,
+      "text": "So, done."
+    },
+    {
+      "start": 872.37,
+      "end": 873.37,
+      "text": "Omit this."
+    },
+    {
+      "start": 873.57,
+      "end": 875.97,
+      "text": "Let's take the next guy, who is 1."
+    },
+    {
+      "start": 876.17,
+      "end": 879.17,
+      "text": "So, from node 1, what is the distance?"
+    },
+    {
+      "start": 879.37,
+      "end": 880.37,
+      "text": "7."
+    },
+    {
+      "start": 880.57,
+      "end": 882.37,
+      "text": "You see, node 1 has distance 7."
+    },
+    {
+      "start": 882.57,
+      "end": 883.57,
+      "text": "Where can 1 go?"
+    },
+    {
+      "start": 883.77,
+      "end": 885.77,
+      "text": "1 can go to node 3."
+    },
+    {
+      "start": 885.97,
+      "end": 887.17,
+      "text": "How did you get this?"
+    },
+    {
+      "start": 887.37,
+      "end": 887.97,
+      "text": "From here."
+    },
+    {
+      "start": 888.17,
+      "end": 889.17,
+      "text": "What is the distance?"
+    },
+    {
+      "start": 889.37,
+      "end": 890.37,
+      "text": "Plus 1."
+    },
+    {
+      "start": 890.57,
+      "end": 892.97,
+      "text": "So, what will be the distance if I go to node 3?"
+    },
+    {
+      "start": 893.17,
+      "end": 893.77,
+      "text": "8."
+    },
+    {
+      "start": 893.97,
+      "end": 894.77,
+      "text": "Will I take this?"
+    },
+    {
+      "start": 894.97,
+      "end": 895.37,
+      "text": "No."
+    },
+    {
+      "start": 895.57,
+      "end": 895.77,
+      "text": "Why?"
+    },
+    {
+      "start": 895.97,
+      "end": 896.97,
+      "text": "Because we already have a 6."
+    },
+    {
+      "start": 897.17,
+      "end": 897.97,
+      "text": "So, omit this."
+    },
+    {
+      "start": 898.17,
+      "end": 899.77,
+      "text": "We will not take it."
+    },
+    {
+      "start": 899.97,
+      "end": 902.37,
+      "text": "Similarly, we will get the next guy, which is 3."
+    },
+    {
+      "start": 902.57,
+      "end": 904.77,
+      "text": "So, node is 3."
+    },
+    {
+      "start": 904.97,
+      "end": 906.17,
+      "text": "So, from 3, where can you go?"
+    },
+    {
+      "start": 906.37,
+      "end": 907.37,
+      "text": "You can go nowhere."
+    },
+    {
+      "start": 907.57,
+      "end": 908.57,
+      "text": "So, nothing to be done."
+    },
+    {
+      "start": 908.77,
+      "end": 909.57,
+      "text": "Omit this."
+    },
+    {
+      "start": 909.77,
+      "end": 910.77,
+      "text": "This is the step 2."
+    },
+    {
+      "start": 910.97,
+      "end": 912.77,
+      "text": "So, once you have done the step 2,"
+    },
+    {
+      "start": 912.97,
+      "end": 917.97,
+      "text": "you can see that the distance array actually stores all the shortest distance"
+    },
+    {
+      "start": 918.17,
+      "end": 920.37,
+      "text": "from the source 6."
+    },
+    {
+      "start": 920.57,
+      "end": 922.87,
+      "text": "And the toposort is empty."
+    },
+    {
+      "start": 923.07,
+      "end": 926.77,
+      "text": "So, you have figured out this is our answer."
+    },
+    {
+      "start": 926.97,
+      "end": 928.77,
+      "text": "Yes, this is what our answer is."
+    },
+    {
+      "start": 928.97,
+      "end": 931.57,
+      "text": "So, I hope you have understood the algorithm."
+    },
+    {
+      "start": 931.77,
+      "end": 933.57,
+      "text": "It's very straightforward and simple."
+    },
+    {
+      "start": 933.77,
+      "end": 935.37,
+      "text": "Figure out the toposort."
+    },
+    {
+      "start": 935.57,
+      "end": 940.77,
+      "text": "Once you have done that, take one node out and just keep on updating the distance array."
+    },
+    {
+      "start": 940.97,
+      "end": 942.97,
+      "text": "Keep on updating the distance array every time."
+    },
+    {
+      "start": 943.17,
+      "end": 946.17,
+      "text": "Once you are done with this, this is your particular answer."
+    },
+    {
+      "start": 946.37,
+      "end": 947.37,
+      "text": "What's the intuition?"
+    },
+    {
+      "start": 947.57,
+      "end": 948.97,
+      "text": "After the code, I will tell you."
+    },
+    {
+      "start": 949.17,
+      "end": 951.17,
+      "text": "So, I hope you have understood the entire algorithm."
+    },
+    {
+      "start": 951.37,
+      "end": 952.77,
+      "text": "Now, it's time to code it up."
+    },
+    {
+      "start": 952.97,
+      "end": 954.77,
+      "text": "So, let's go to the C++ solution on the right."
+    },
+    {
+      "start": 954.97,
+      "end": 958.77,
+      "text": "And you can figure out the exact similar Java code on the left."
+    },
+    {
+      "start": 958.97,
+      "end": 962.17,
+      "text": "So, as you can see, we are given the number of nodes, the number of edges,"
+    },
+    {
+      "start": 962.37,
+      "end": 965.37,
+      "text": "and all the edges data have been given over here."
+    },
+    {
+      "start": 965.57,
+      "end": 968.97,
+      "text": "The edges data is like u and v and the weight."
+    },
+    {
+      "start": 969.17,
+      "end": 972.17,
+      "text": "So, the first step is definitely to create a graph."
+    },
+    {
+      "start": 972.37,
+      "end": 975.57,
+      "text": "So, let's quickly create the graph, which will be something like vector of pair."
+    },
+    {
+      "start": 975.77,
+      "end": 976.77,
+      "text": "We need to store pairs this time."
+    },
+    {
+      "start": 976.97,
+      "end": 978.37,
+      "text": "So, adjacency of n."
+    },
+    {
+      "start": 978.57,
+      "end": 979.57,
+      "text": "Okay."
+    },
+    {
+      "start": 979.77,
+      "end": 981.77,
+      "text": "Next, we go across and say int i equal to 0,"
+    },
+    {
+      "start": 981.97,
+      "end": 982.77,
+      "text": "i less than n,"
+    },
+    {
+      "start": 983.07,
+      "end": 984.57,
+      "text": "this is something which we will do."
+    },
+    {
+      "start": 984.77,
+      "end": 985.87,
+      "text": "What's the next thing that I will do?"
+    },
+    {
+      "start": 986.07,
+      "end": 987.67,
+      "text": "We will say adjacency of u."
+    },
+    {
+      "start": 987.87,
+      "end": 990.57,
+      "text": "By the way, just to make your understanding better,"
+    },
+    {
+      "start": 990.77,
+      "end": 994.77,
+      "text": "edges of i is 0 because every index has a vector."
+    },
+    {
+      "start": 994.97,
+      "end": 996.87,
+      "text": "And the vector resembles three guys."
+    },
+    {
+      "start": 997.07,
+      "end": 998.77,
+      "text": "That is the meaning of this."
+    },
+    {
+      "start": 998.97,
+      "end": 1003.47,
+      "text": "So, u is this, v is edges of i of 1,"
+    },
+    {
+      "start": 1003.67,
+      "end": 1006.67,
+      "text": "and w is on the second index."
+    },
+    {
+      "start": 1006.87,
+      "end": 1007.87,
+      "text": "Simple as that."
+    },
+    {
+      "start": 1008.07,
+      "end": 1010.77,
+      "text": "Next, I say adjacency of u."
+    },
+    {
+      "start": 1010.97,
+      "end": 1012.77,
+      "text": "Can you please store the adjacency"
+    },
+    {
+      "start": 1012.97,
+      "end": 1020.45,
+      "text": "guy which is V and the weight is WT as a pair stored next you always find the"
+    },
+    {
+      "start": 1020.45,
+      "end": 1025.63,
+      "text": "topo so that's the first thing so what do I need I need a visited array I need"
+    },
+    {
+      "start": 1025.63,
+      "end": 1031.11,
+      "text": "a stack and when you need anything else no so let's quickly create the visited"
+    },
+    {
+      "start": 1031.11,
+      "end": 1035.77,
+      "text": "array so I create a visited array something like this now which is capital"
+    },
+    {
+      "start": 1035.77,
+      "end": 1041.01,
+      "text": "n equal to zero perfect I need a stack so let's quickly create a stack as well"
+    },
+    {
+      "start": 1041.01,
+      "end": 1046.63,
+      "text": "perfect next I need to figure out for all components so let's go for all"
+    },
+    {
+      "start": 1046.63,
+      "end": 1053.73,
+      "text": "components and we say if not visited of I we go across and say okay"
+    },
+    {
+      "start": 1053.73,
+      "end": 1058.51,
+      "text": "listen go for the toposort and in the toposort what do we need we need the node we"
+    },
+    {
+      "start": 1058.51,
+      "end": 1062.01,
+      "text": "need the adjacency we need the visited and we need the stack so this is what"
+    },
+    {
+      "start": 1062.01,
+      "end": 1065.81,
+      "text": "I'll do I'll get my toposort so now quickly write the toposort and that's"
+    },
+    {
+      "start": 1065.81,
+      "end": 1070.05,
+      "text": "for DFS you can always write whatever you wish you can do the BFS as well"
+    },
+    {
+      "start": 1070.05,
+      "end": 1070.99,
+      "text": "what DFS is?"
+    },
+    {
+      "start": 1070.99,
+      "end": 1080.59,
+      "text": "int node and I'll say vector of pair of int int int int adjacent this is how the"
+    },
+    {
+      "start": 1080.59,
+      "end": 1084.91,
+      "text": "graph will be perfect next I need the visited so let's see the visited and"
+    },
+    {
+      "start": 1084.91,
+      "end": 1090.05,
+      "text": "this is the stack which is int and please pass it using reference so that's"
+    },
+    {
+      "start": 1090.05,
+      "end": 1095.05,
+      "text": "what I will do what's the first step of DFS you say by the way this will not be"
+    },
+    {
+      "start": 1095.05,
+      "end": 1100.03,
+      "text": "DFS this will be toposort that's what we are naming it visited of node will be 1 and"
+    },
+    {
+      "start": 1100.03,
+      "end": 1105.79,
+      "text": "while going back just make sure you push on the node next I traverse for all"
+    },
+    {
+      "start": 1105.79,
+      "end": 1113.47,
+      "text": "the adjacent nodes which is adjacency of node now I know V is the node is right"
+    },
+    {
+      "start": 1113.47,
+      "end": 1119.59,
+      "text": "at the first because we are storing pairs so I say if not visited of V please go"
+    },
+    {
+      "start": 1119.59,
+      "end": 1123.37,
+      "text": "and call the toposort that's very simple because we will be calling the"
+    },
+    {
+      "start": 1123.37,
+      "end": 1129.67,
+      "text": "toposort for V adjacency visited and stack that so this is how I'll call the toposort"
+    },
+    {
+      "start": 1130.03,
+      "end": 1134.95,
+      "text": "so I can say once I've done this the stack is ready and it has all the toposort"
+    },
+    {
+      "start": 1134.95,
+      "end": 1141.61,
+      "text": "elements next step to do the distance thing do the distance thing and what do"
+    },
+    {
+      "start": 1141.61,
+      "end": 1146.05,
+      "text": "I need what do I need for doing the distance thing I need a vector which"
+    },
+    {
+      "start": 1146.05,
+      "end": 1152.11,
+      "text": "stores all the distance perfect please make sure everything is initially marked"
+    },
+    {
+      "start": 1152.11,
+      "end": 1158.27,
+      "text": "as infinity so I this and you can go on like I less than n I plus plus and you"
+    },
+    {
+      "start": 1158.27,
+      "end": 1159.79,
+      "text": "can go as distance of I"
+    },
+    {
+      "start": 1160.03,
+      "end": 1165.11,
+      "text": "equal to infinity you can call it as int max super simple next you know you have a"
+    },
+    {
+      "start": 1165.11,
+      "end": 1169.75,
+      "text": "source node and that's always 0 if the question does not mention your source"
+    },
+    {
+      "start": 1169.75,
+      "end": 1174.27,
+      "text": "node and it gives you you have to write distance of SRC equal to 0 next you"
+    },
+    {
+      "start": 1174.27,
+      "end": 1178.71,
+      "text": "start from while and you say stack not empty that's the first thing you do what"
+    },
+    {
+      "start": 1178.71,
+      "end": 1181.81,
+      "text": "what will you do over here you will say okay let's get the node which is stack.top"
+    },
+    {
+      "start": 1181.81,
+      "end": 1189.85,
+      "text": "and let's do a stack.pop perfect next you need all the adjacent nodes so please go across all the adjacent nodes"
+    },
+    {
+      "start": 1190.03,
+      "end": 1196.25,
+      "text": "and you know over here int V IT dot first stores the adjacent nodes and IT"
+    },
+    {
+      "start": 1196.25,
+      "end": 1202.51,
+      "text": "dot second stores the weight and I need to relax it so distance of node is what"
+    },
+    {
+      "start": 1202.51,
+      "end": 1208.61,
+      "text": "it takes to reach the node and from U V it takes weight and if it is lesser than"
+    },
+    {
+      "start": 1208.61,
+      "end": 1214.99,
+      "text": "the previous way of reaching V it can be infinite it can be anything if node"
+    },
+    {
+      "start": 1214.99,
+      "end": 1219.01,
+      "text": "plus V is lesser than the previous way of reaching it I do not do anything I"
+    },
+    {
+      "start": 1219.01,
+      "end": 1219.99,
+      "text": "just go across and everywhere is the adjacent node and here if you get this"
+    },
+    {
+      "start": 1220.03,
+      "end": 1226.03,
+      "text": "update it to the new node this is what i'll do i'll just update it to new node once i've done"
+    },
+    {
+      "start": 1226.03,
+      "end": 1232.55,
+      "text": "this i'll return the distance so this is how simple it is and after this i'll go across and"
+    },
+    {
+      "start": 1232.55,
+      "end": 1236.59,
+      "text": "run this and see if it is fine it gives me a compilation error because i think we"
+    },
+    {
+      "start": 1236.59,
+      "end": 1242.75,
+      "text": "my bad it'll be pushed back so let's quickly run this so i've done a slight typo over here it will"
+    },
+    {
+      "start": 1242.75,
+      "end": 1248.17,
+      "text": "be m because number of edges i'll quickly compile and see if it is giving us the correct answer"
+    },
+    {
+      "start": 1248.17,
+      "end": 1253.95,
+      "text": "then compilation we see that it is giving us the correct answer will we submit no let's wait"
+    },
+    {
+      "start": 1253.95,
+      "end": 1260.93,
+      "text": "let's read a couple of statements so it says find the shortest path but does it mentions about what"
+    },
+    {
+      "start": 1260.93,
+      "end": 1267.15,
+      "text": "if we do not reach so it doesn't mentions about it i'll ask the problem setter to add it up but"
+    },
+    {
+      "start": 1267.15,
+      "end": 1272.87,
+      "text": "as of now there's a trick i'll go over here and i say okay they're expecting if it is 1e9 to see"
+    },
+    {
+      "start": 1272.87,
+      "end": 1278.07,
+      "text": "out infinity not reachable so they're expecting 1e9 instead of intermax so i'll just"
+    },
+    {
+      "start": 1278.07,
+      "end": 1278.15,
+      "text": "you know i'll just go ahead and do that and see if it is 1e9 to see out infinity not reachable"
+    },
+    {
+      "start": 1278.15,
+      "end": 1278.17,
+      "text": "so i'll just go ahead and do that and see if it is 1e9 to see out infinity not reachable so i'll just"
+    },
+    {
+      "start": 1278.17,
+      "end": 1282.55,
+      "text": "assign 1e9 because what they're expecting is if it's not reachable it should be 1e9"
+    },
+    {
+      "start": 1282.55,
+      "end": 1287.95,
+      "text": "so i just did a slight hack i just checked in but i'll ask the problem setter to update the"
+    },
+    {
+      "start": 1287.95,
+      "end": 1293.29,
+      "text": "problem statement don't worry about that i'll now quickly uh run this off and see if it is"
+    },
+    {
+      "start": 1293.29,
+      "end": 1299.43,
+      "text": "running fine okay it is so all of these test cases do pass so we have understood the algorithm"
+    },
+    {
+      "start": 1299.43,
+      "end": 1303.87,
+      "text": "we have understood the code now let's discuss the time complexity then we will go across to"
+    },
+    {
+      "start": 1303.87,
+      "end": 1307.81,
+      "text": "the intuition what are the time complexity a toposol plain dfs"
+    },
+    {
+      "start": 1308.17,
+      "end": 1313.93,
+      "text": "whatever time the dfs takes what about this the number of nodes is what the stack will always"
+    },
+    {
+      "start": 1313.93,
+      "end": 1318.73,
+      "text": "give you that's for sure the number of nodes is what the stack will give you which is n"
+    },
+    {
+      "start": 1318.73,
+      "end": 1325.77,
+      "text": "into all the neighbors into all the news so if i ask you in total this for loop will run"
+    },
+    {
+      "start": 1325.77,
+      "end": 1333.63,
+      "text": "for how many times let's go back so can i say in the uh ipad runs for first from zero"
+    },
+    {
+      "start": 1333.63,
+      "end": 1338.15,
+      "text": "it will run for once twice price four times five times six times four times five times"
+    },
+    {
+      "start": 1338.15,
+      "end": 1343.99,
+      "text": "seven times eight times can i say the internal fall for loop for the adjacent nodes will run"
+    },
+    {
+      "start": 1343.99,
+      "end": 1350.47,
+      "text": "for one two three four five six seven eight times which is nothing but one two three four five six"
+    },
+    {
+      "start": 1350.47,
+      "end": 1357.29,
+      "text": "seven eight which is nothing but the images and i say overall it will run for images so n plus"
+    },
+    {
+      "start": 1357.29,
+      "end": 1367.39,
+      "text": "m is what the second loop will run this is a plain dfs this is plain dfs n plus e the number"
+    },
+    {
+      "start": 1368.15,
+      "end": 1373.91,
+      "text": "of nodes is m but this is very obvious right because the stack will give you n and in total"
+    },
+    {
+      "start": 1373.91,
+      "end": 1380.03,
+      "text": "the adjacent nodes is nothing but the number of edges only so we have understood the time"
+    },
+    {
+      "start": 1380.03,
+      "end": 1386.65,
+      "text": "complexity as well now it's the main thing about okay so you've understood everything"
+    },
+    {
+      "start": 1386.65,
+      "end": 1391.47,
+      "text": "i must be thinking about the intuition why to push on why not some standard algorithm"
+    },
+    {
+      "start": 1391.47,
+      "end": 1395.85,
+      "text": "like in the next half of the lecture like in the sorry in the next half of the series"
+    },
+    {
+      "start": 1395.85,
+      "end": 1398.15,
+      "text": "we'll learn algorithms like daxtra"
+    },
+    {
+      "start": 1398.15,
+      "end": 1402.75,
+      "text": "and a lot more which helps us to find the shortest path will those algorithms work those"
+    },
+    {
+      "start": 1402.75,
+      "end": 1409.01,
+      "text": "algorithms will definitely work but why did we do a toposort let's understand so what"
+    },
+    {
+      "start": 1409.01,
+      "end": 1416.77,
+      "text": "was the toposort for this if i write it it was six five four two zero one three something"
+    },
+    {
+      "start": 1416.77,
+      "end": 1422.51,
+      "text": "i know for sure is there is no one before six there's no one before six so something"
+    },
+    {
+      "start": 1422.51,
+      "end": 1427.99,
+      "text": "i know for sure is the initial guy is six so i took the initial guy to be six and six"
+    },
+    {
+      "start": 1428.15,
+      "end": 1434.97,
+      "text": "took me to four and five so apparently once i started from six which was the toposort then"
+    },
+    {
+      "start": 1434.97,
+      "end": 1441.23,
+      "text": "i could go to the next guys and that will always be in my toposort only this toposort"
+    },
+    {
+      "start": 1441.23,
+      "end": 1446.53,
+      "text": "starts with the first guy who has no one into it and then takes to the next guys who he"
+    },
+    {
+      "start": 1446.53,
+      "end": 1451.65,
+      "text": "was into who he was into just so it takes it to five because it was just to five in"
+    },
+    {
+      "start": 1451.65,
+      "end": 1457.15,
+      "text": "five says i'll take you to four all right so what toposort did was"
+    },
+    {
+      "start": 1457.15,
+      "end": 1458.15,
+      "text": "it stood to four anybody goes to four and then a certain number goes to non mikä so"
+    },
+    {
+      "start": 1458.15,
+      "end": 1463.35,
+      "text": "as the first scan. I don't have anything. I'll start off from myself and since I was the source"
+    },
+    {
+      "start": 1463.35,
+      "end": 1468.95,
+      "text": "node, I'll assign myself to be 0. I'll go to 5. I'll figure out the answer for 5. Then I'll go to"
+    },
+    {
+      "start": 1468.95,
+      "end": 1473.65,
+      "text": "4, figure out the answer for 4. Then I'll go to 0 and 2, figure out the answer for them. Then I'll"
+    },
+    {
+      "start": 1473.65,
+      "end": 1480.39,
+      "text": "go to 3. Then I'll go to 1 and I'll figure out. So what I did was, I moved sequentially the nodes"
+    },
+    {
+      "start": 1480.39,
+      "end": 1486.69,
+      "text": "which are reachable first. I moved them, then this, then this, then this, then this, then this,"
+    },
+    {
+      "start": 1486.69,
+      "end": 1493.03,
+      "text": "then this. I moved according to reachability. Moved according to reachability. So what happened"
+    },
+    {
+      "start": 1493.03,
+      "end": 1500.27,
+      "text": "was, I minimized the number of steps to be go of n plus m which is much much better than any"
+    },
+    {
+      "start": 1500.27,
+      "end": 1508.09,
+      "text": "standard algorithm because dexo takes more than this. The only reason it works is because we are"
+    },
+    {
+      "start": 1508.09,
+      "end": 1514.29,
+      "text": "making sure there was no 1 before 6 and we computed for 6, then we did for 5. So when we are doing for"
+    },
+    {
+      "start": 1514.29,
+      "end": 1516.67,
+      "text": "4, we know all the previous steps. So we know all the previous steps. So we know all the previous"
+    },
+    {
+      "start": 1516.67,
+      "end": 1523.47,
+      "text": "guys have been computed and I have… I can only reach 4 via 6 or 5 because it is a directed graph."
+    },
+    {
+      "start": 1523.47,
+      "end": 1530.75,
+      "text": "2, 0, 1, 3 cannot make me reach 4. The guys who can make me reach 4 are 6 and 5 and they have"
+    },
+    {
+      "start": 1530.75,
+      "end": 1537.79,
+      "text": "that their answers come computed. So I'll compute now 4. Now for 2, these 3 guys can make me reach"
+    },
+    {
+      "start": 1537.79,
+      "end": 1543.91,
+      "text": "2. So these answers are computed. So I started with a very small and then I expanded it to 2."
+    },
+    {
+      "start": 1543.91,
+      "end": 1546.01,
+      "text": "Then I expanded it to 3 and so on."
+    },
+    {
+      "start": 1546.67,
+      "end": 1547.63,
+      "text": "That is how we will do it."
+    },
+    {
+      "start": 1548.23,
+      "end": 1550.17,
+      "text": "So in short, the intuition is very straightforward."
+    },
+    {
+      "start": 1550.69,
+      "end": 1553.77,
+      "text": "If I'm reaching a node, I know all the previous nodes have their answers."
+    },
+    {
+      "start": 1554.45,
+      "end": 1554.63,
+      "text": "Right?"
+    },
+    {
+      "start": 1554.93,
+      "end": 1555.91,
+      "text": "So that was the simple intuition."
+    },
+    {
+      "start": 1556.19,
+      "end": 1557.11,
+      "text": "We still have a problem."
+    },
+    {
+      "start": 1557.51,
+      "end": 1560.01,
+      "text": "I'll leave a Stack Overflow link on the description."
+    },
+    {
+      "start": 1560.41,
+      "end": 1561.13,
+      "text": "You can check it out."
+    },
+    {
+      "start": 1561.21,
+      "end": 1562.77,
+      "text": "The answer is given over there."
+    },
+    {
+      "start": 1562.81,
+      "end": 1564.19,
+      "text": "You can read it again and again."
+    },
+    {
+      "start": 1564.53,
+      "end": 1566.71,
+      "text": "But I think it is more or less clear to you now."
+    },
+    {
+      "start": 1566.93,
+      "end": 1569.77,
+      "text": "So I hope you have understood the algorithm, the code, and the intuition."
+    },
+    {
+      "start": 1569.77,
+      "end": 1573.11,
+      "text": "So just in case you did, please, please, please make sure you like this video."
+    },
+    {
+      "start": 1573.43,
+      "end": 1576.45,
+      "text": "And if you're new to our channel, hit that subscribe button right away."
+    },
+    {
+      "start": 1576.45,
+      "end": 1578.83,
+      "text": "Please do consider subscribing to us."
+    },
+    {
+      "start": 1579.09,
+      "end": 1582.65,
+      "text": "If you haven't checked out our DP series and the HD sheet, the links will be in the description."
+    },
+    {
+      "start": 1582.83,
+      "end": 1584.27,
+      "text": "And yeah, with this, I'll be wrapping up this video."
+    },
+    {
+      "start": 1584.65,
+      "end": 1585.63,
+      "text": "Let's meet in some other video."
+    },
+    {
+      "start": 1585.73,
+      "end": 1586.25,
+      "text": "Till then, bye-bye."
+    },
+    {
+      "start": 1586.33,
+      "end": 1586.69,
+      "text": "Take care."
+    }
+  ]
+}

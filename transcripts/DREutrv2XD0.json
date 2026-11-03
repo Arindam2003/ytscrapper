@@ -1,0 +1,2169 @@
+{
+  "video_id": "DREutrv2XD0",
+  "title": "G-30. Word Ladder - 2 ｜ Shortest Paths",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1541.42,
+  "segments": [
+    {
+      "start": 2.83,
+      "end": 6.17,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.65,
+      "end": 10.91,
+      "text": "So in the previous video, we did learn about word ladder 1"
+    },
+    {
+      "start": 10.91,
+      "end": 14.77,
+      "text": "where we had to convert the starting word to the target word using"
+    },
+    {
+      "start": 14.77,
+      "end": 18.35,
+      "text": "the given word list and we have to do it in a minimum number of"
+    },
+    {
+      "start": 18.35,
+      "end": 22.67,
+      "text": "transformations. So word ladder 2 is an extension"
+    },
+    {
+      "start": 22.67,
+      "end": 26.45,
+      "text": "of the previous problem. So just in case you haven't checked out the previous problem,"
+    },
+    {
+      "start": 26.83,
+      "end": 30.57,
+      "text": "the link is in the description. Please make sure you check it out because there's a pattern"
+    },
+    {
+      "start": 30.57,
+      "end": 34.61,
+      "text": "in which I have taught this particular code and I'll be using that"
+    },
+    {
+      "start": 34.61,
+      "end": 37.73,
+      "text": "pattern only to solve this problem word ladder 2."
+    },
+    {
+      "start": 38.45,
+      "end": 42.45,
+      "text": "So before starting this, I just want to give you a disclaimer that this is one of the toughest"
+    },
+    {
+      "start": 42.45,
+      "end": 46.75,
+      "text": "problems of the BFS. So at the end of the video, just in case you have this vibe that"
+    },
+    {
+      "start": 46.75,
+      "end": 50.05,
+      "text": "how will I think about such solutions, do not worry."
+    },
+    {
+      "start": 50.93,
+      "end": 54.13,
+      "text": "These problems are something which you have to practice so that"
+    },
+    {
+      "start": 54.13,
+      "end": 58.67,
+      "text": "if something similar comes up in an interview, you can answer. This will never come by"
+    },
+    {
+      "start": 58.67,
+      "end": 60.21,
+      "text": "yourself. Anyways,"
+    },
+    {
+      "start": 60.57,
+      "end": 64.23,
+      "text": "so what is word ladder 2 all about? So it's the same problem."
+    },
+    {
+      "start": 64.85,
+      "end": 68.59,
+      "text": "You will be given a start word and you'll be given a target word and you need to convert the"
+    },
+    {
+      "start": 68.59,
+      "end": 72.49,
+      "text": "start word to the target word and the transformations are only allowed"
+    },
+    {
+      "start": 72.49,
+      "end": 76.35,
+      "text": "in this particular word list. But over here, instead of printing"
+    },
+    {
+      "start": 76.35,
+      "end": 80.05,
+      "text": "like in the word ladder 1, you have to print the sequence, the length of the sequence."
+    },
+    {
+      "start": 80.57,
+      "end": 83.85,
+      "text": "Over here, you have to print all the possible shortest"
+    },
+    {
+      "start": 83.85,
+      "end": 88.37,
+      "text": "sequences. So if I go back to the iPad, imagine the beginning word"
+    },
+    {
+      "start": 88.37,
+      "end": 90.53,
+      "text": "is bat and the end word is"
+    },
+    {
+      "start": 90.57,
+      "end": 93.79,
+      "text": "cause. Okay. So, and these are the word list."
+    },
+    {
+      "start": 93.79,
+      "end": 98.39,
+      "text": "So apparently, these are the couple of ways bat can be transformed to pat, pat to pot,"
+    },
+    {
+      "start": 98.39,
+      "end": 102.43,
+      "text": "pot to pause, and then to cause. And similarly, bat can be transferred to"
+    },
+    {
+      "start": 102.43,
+      "end": 106.61,
+      "text": "bot, bot to pot, pot to cause, pot to cause. This portion"
+    },
+    {
+      "start": 106.61,
+      "end": 110.69,
+      "text": "is similar. But if you see the first transformation is different. The first"
+    },
+    {
+      "start": 110.69,
+      "end": 114.71,
+      "text": "transformation is different. So this is also"
+    },
+    {
+      "start": 114.71,
+      "end": 118.51,
+      "text": "taking like 5 sequence length. This is also taking like"
+    },
+    {
+      "start": 118.51,
+      "end": 119.69,
+      "text": "5 sequence length."
+    },
+    {
+      "start": 120.57,
+      "end": 124.57,
+      "text": "So all of these are taking 5 sequence length, and that is the shortest we can do."
+    },
+    {
+      "start": 124.57,
+      "end": 129.57,
+      "text": "So you need to return me this, and then you need to return me this one as well."
+    },
+    {
+      "start": 129.57,
+      "end": 134.65,
+      "text": "And also you can return the list in any possible order. Like this can be at first, or this"
+    },
+    {
+      "start": 134.65,
+      "end": 140.27,
+      "text": "can be at first, doesn't matter. What matters is you need to return both of them. Any order"
+    },
+    {
+      "start": 140.27,
+      "end": 146.03,
+      "text": "doesn't matter. So how do you do this? Because if you go back to the previous word ladder"
+    },
+    {
+      "start": 146.03,
+      "end": 150.55,
+      "text": "1 problem, it was very straightforward. You started with the word, you kept this, you"
+    },
+    {
+      "start": 150.57,
+      "end": 156.43,
+      "text": "kept this one, length, and you kept on trying to change from a to z, for every alphabet,"
+    },
+    {
+      "start": 156.43,
+      "end": 162.45,
+      "text": "and you ended up at cork. Will that method work over here? No. That method is not going"
+    },
+    {
+      "start": 162.45,
+      "end": 168.65,
+      "text": "to work. Why? Because they need to tell me the sequence. So this time the algorithm will"
+    },
+    {
+      "start": 168.65,
+      "end": 173.87,
+      "text": "be slightly different. Yes. It won't be a straightforward BFS instead"
+    },
+    {
+      "start": 173.87,
+      "end": 178.45,
+      "text": "of a straight forward BFS, we have to do some observations. Yes, we have to do some observations."
+    },
+    {
+      "start": 178.45,
+      "end": 179.45,
+      "text": "And it's no longer the first step, and it's no longer the second step, however. We have"
+    },
+    {
+      "start": 179.45,
+      "end": 180.45,
+      "text": "to do some observations. Yes, we have to do some observations. And look at that, you see,"
+    },
+    {
+      "start": 180.45,
+      "end": 183.15,
+      "text": "And while doing the dry run, I'll be telling you about the observation."
+    },
+    {
+      "start": 183.71,
+      "end": 188.69,
+      "text": "So before doing the observation, first observation that I want you to have a look is"
+    },
+    {
+      "start": 188.69,
+      "end": 194.97,
+      "text": "first level, second level, third level, fourth level, fifth level."
+    },
+    {
+      "start": 195.43,
+      "end": 199.67,
+      "text": "So the level always increases in this order in the BFS Travis."
+    },
+    {
+      "start": 199.67,
+      "end": 204.45,
+      "text": "So if you know, if you're doing steps, you always go level one, then you go to level two,"
+    },
+    {
+      "start": 204.69,
+      "end": 208.31,
+      "text": "probably two level twos, then probably level threes, then level fours."
+    },
+    {
+      "start": 208.31,
+      "end": 210.59,
+      "text": "And that is what the BFS Travis is all about."
+    },
+    {
+      "start": 210.89,
+      "end": 214.01,
+      "text": "And that is where the gist of the solution lies."
+    },
+    {
+      "start": 214.83,
+      "end": 215.13,
+      "text": "Okay."
+    },
+    {
+      "start": 215.37,
+      "end": 216.15,
+      "text": "Let's get started."
+    },
+    {
+      "start": 216.15,
+      "end": 220.83,
+      "text": "So what did we usually do in order to run a BFS Travis?"
+    },
+    {
+      "start": 220.83,
+      "end": 224.07,
+      "text": "So the first thing we did was we always took a queue data structure."
+    },
+    {
+      "start": 224.07,
+      "end": 228.27,
+      "text": "So please, please take a queue data structure, but this time the queue data"
+    },
+    {
+      "start": 228.27,
+      "end": 229.85,
+      "text": "structure will not be this big."
+    },
+    {
+      "start": 230.21,
+      "end": 230.99,
+      "text": "It'll be a bigger one."
+    },
+    {
+      "start": 231.15,
+      "end": 231.53,
+      "text": "Yes."
+    },
+    {
+      "start": 231.89,
+      "end": 232.37,
+      "text": "Why?"
+    },
+    {
+      "start": 233.55,
+      "end": 236.03,
+      "text": "Because we're going to store the sequence."
+    },
+    {
+      "start": 236.31,
+      "end": 237.53,
+      "text": "I'm going to store the sequence."
+    },
+    {
+      "start": 237.85,
+      "end": 238.29,
+      "text": "So the sequence."
+    },
+    {
+      "start": 238.31,
+      "end": 240.41,
+      "text": "The sequence starts with bat for sure."
+    },
+    {
+      "start": 240.77,
+      "end": 243.03,
+      "text": "So do one thing, just store bat."
+    },
+    {
+      "start": 243.25,
+      "end": 244.19,
+      "text": "Do not do anything."
+    },
+    {
+      "start": 244.57,
+      "end": 249.43,
+      "text": "Just store bat in a list and put that into the queue."
+    },
+    {
+      "start": 249.77,
+      "end": 252.47,
+      "text": "So your queue will be storing list."
+    },
+    {
+      "start": 252.73,
+      "end": 252.95,
+      "text": "Okay."
+    },
+    {
+      "start": 253.37,
+      "end": 254.87,
+      "text": "So let's start the BFS call."
+    },
+    {
+      "start": 255.25,
+      "end": 258.87,
+      "text": "So when the BFS call starts, you get the list with bat."
+    },
+    {
+      "start": 260.15,
+      "end": 265.91,
+      "text": "So can I see if the sequence is back, can I say the word is bad itself?"
+    },
+    {
+      "start": 266.81,
+      "end": 267.37,
+      "text": "Because."
+    },
+    {
+      "start": 267.61,
+      "end": 267.99,
+      "text": "If you are."
+    },
+    {
+      "start": 267.99,
+      "end": 272.45,
+      "text": "Having a sequence, the last word of that sequence is the word that you want to"
+    },
+    {
+      "start": 273.27,
+      "end": 273.95,
+      "text": "convert into."
+    },
+    {
+      "start": 274.53,
+      "end": 277.49,
+      "text": "So from bat, where can you go from bat?"
+    },
+    {
+      "start": 277.89,
+      "end": 280.85,
+      "text": "You can change this B and you can make something as pat."
+    },
+    {
+      "start": 282.97,
+      "end": 287.03,
+      "text": "You can change this B and you can make something as pat for sure."
+    },
+    {
+      "start": 287.93,
+      "end": 288.93,
+      "text": "Do you erase pat?"
+    },
+    {
+      "start": 289.77,
+      "end": 292.19,
+      "text": "Now over here, very, very important."
+    },
+    {
+      "start": 292.83,
+      "end": 296.85,
+      "text": "You do not erase anything right now."
+    },
+    {
+      "start": 297.11,
+      "end": 299.21,
+      "text": "You do not erase anything right now."
+    },
+    {
+      "start": 299.43,
+      "end": 299.93,
+      "text": "Why?"
+    },
+    {
+      "start": 300.47,
+      "end": 302.09,
+      "text": "I'll tell you when we move forward."
+    },
+    {
+      "start": 302.49,
+      "end": 304.37,
+      "text": "Do not erase bat from here."
+    },
+    {
+      "start": 304.49,
+      "end": 304.85,
+      "text": "Keep it."
+    },
+    {
+      "start": 305.37,
+      "end": 305.87,
+      "text": "Next."
+    },
+    {
+      "start": 306.23,
+      "end": 307.61,
+      "text": "Can you change it to something else?"
+    },
+    {
+      "start": 307.97,
+      "end": 309.71,
+      "text": "I think I can change it to bot as well."
+    },
+    {
+      "start": 310.79,
+      "end": 314.63,
+      "text": "If I carefully see, if I change A to O, that will be bot."
+    },
+    {
+      "start": 315.11,
+      "end": 315.85,
+      "text": "Bot is here."
+    },
+    {
+      "start": 316.53,
+      "end": 317.11,
+      "text": "Pat is here."
+    },
+    {
+      "start": 317.53,
+      "end": 322.15,
+      "text": "So what I did was I took bat and I changed it to pat and bot."
+    },
+    {
+      "start": 322.93,
+      "end": 325.55,
+      "text": "So bat can be changed to bat."
+    },
+    {
+      "start": 326.11,
+      "end": 328.47,
+      "text": "So if a bat is changed to pat."
+    },
+    {
+      "start": 328.91,
+      "end": 329.27,
+      "text": "Can I see the BFS?"
+    },
+    {
+      "start": 329.27,
+      "end": 329.31,
+      "text": "Can I see the BFS?"
+    },
+    {
+      "start": 329.31,
+      "end": 329.41,
+      "text": "Can I see the BFS?"
+    },
+    {
+      "start": 329.41,
+      "end": 335.01,
+      "text": "So the new sequence will be bat, pat for this one."
+    },
+    {
+      "start": 335.45,
+      "end": 339.81,
+      "text": "And if I'm changing bat to bot, the new sequence will be bat, bot."
+    },
+    {
+      "start": 339.95,
+      "end": 340.57,
+      "text": "Can I see this?"
+    },
+    {
+      "start": 341.11,
+      "end": 343.45,
+      "text": "Because bat is transformed to pat."
+    },
+    {
+      "start": 343.81,
+      "end": 345.13,
+      "text": "So pat gets attached."
+    },
+    {
+      "start": 345.31,
+      "end": 346.85,
+      "text": "So you get bat and pat."
+    },
+    {
+      "start": 347.43,
+      "end": 348.85,
+      "text": "Bat gets transformed to bot."
+    },
+    {
+      "start": 349.19,
+      "end": 350.43,
+      "text": "So bot gets attached."
+    },
+    {
+      "start": 350.81,
+      "end": 352.39,
+      "text": "So you get bat and bot."
+    },
+    {
+      "start": 352.87,
+      "end": 353.05,
+      "text": "Clear?"
+    },
+    {
+      "start": 353.43,
+      "end": 356.89,
+      "text": "So the sequences are done of length two."
+    },
+    {
+      "start": 357.27,
+      "end": 358.37,
+      "text": "Now comes the trick."
+    },
+    {
+      "start": 358.57,
+      "end": 359.13,
+      "text": "So."
+    },
+    {
+      "start": 359.13,
+      "end": 361.13,
+      "text": "So you use something like a pat."
+    },
+    {
+      "start": 361.73,
+      "end": 363.73,
+      "text": "You used something like a bot."
+    },
+    {
+      "start": 364.03,
+      "end": 367.53,
+      "text": "Once you have done everything in that level."
+    },
+    {
+      "start": 368.07,
+      "end": 372.07,
+      "text": "Once you have taken all the possible transformations in that level."
+    },
+    {
+      "start": 372.57,
+      "end": 374.57,
+      "text": "Take the pat and bat and delete."
+    },
+    {
+      "start": 375.97,
+      "end": 376.97,
+      "text": "Then only delete."
+    },
+    {
+      "start": 377.47,
+      "end": 379.47,
+      "text": "Why not when you made?"
+    },
+    {
+      "start": 379.93,
+      "end": 380.43,
+      "text": "I'll tell you."
+    },
+    {
+      "start": 380.43,
+      "end": 381.43,
+      "text": "Do not worry about that."
+    },
+    {
+      "start": 382.29,
+      "end": 382.79,
+      "text": "Done."
+    },
+    {
+      "start": 386.53,
+      "end": 388.53,
+      "text": "So this is one of the level stuff."
+    },
+    {
+      "start": 389.25,
+      "end": 389.75,
+      "text": "Next."
+    },
+    {
+      "start": 391.03,
+      "end": 392.37,
+      "text": "Take bat, pat out."
+    },
+    {
+      "start": 394.89,
+      "end": 396.89,
+      "text": "Take bat, pat out."
+    },
+    {
+      "start": 397.33,
+      "end": 398.53,
+      "text": "Now remember one thing."
+    },
+    {
+      "start": 398.53,
+      "end": 399.53,
+      "text": "When I say level."
+    },
+    {
+      "start": 400.13,
+      "end": 402.13,
+      "text": "Level one only consisted of this."
+    },
+    {
+      "start": 402.13,
+      "end": 403.39,
+      "text": "When I say level two."
+    },
+    {
+      "start": 403.83,
+      "end": 405.83,
+      "text": "Level two consisted of these three."
+    },
+    {
+      "start": 405.83,
+      "end": 406.49,
+      "text": "Two things."
+    },
+    {
+      "start": 406.83,
+      "end": 409.83,
+      "text": "Level two consisted of these two things."
+    },
+    {
+      "start": 409.83,
+      "end": 411.83,
+      "text": "There are two guys at the level two."
+    },
+    {
+      "start": 411.83,
+      "end": 412.83,
+      "text": "There are two guys in the level two."
+    },
+    {
+      "start": 412.83,
+      "end": 415.83,
+      "text": "So you're gonna deal with both of these two guys."
+    },
+    {
+      "start": 415.83,
+      "end": 416.83,
+      "text": "And then you're going to delete."
+    },
+    {
+      "start": 416.83,
+      "end": 418.83,
+      "text": "And now you'll understand why."
+    },
+    {
+      "start": 418.83,
+      "end": 419.33,
+      "text": "So."
+    },
+    {
+      "start": 420.33,
+      "end": 420.83,
+      "text": "Can I see?"
+    },
+    {
+      "start": 420.83,
+      "end": 422.33,
+      "text": "If the sequence is this."
+    },
+    {
+      "start": 422.33,
+      "end": 424.33,
+      "text": "The last guy is pat for sure."
+    },
+    {
+      "start": 424.33,
+      "end": 426.33,
+      "text": "So I get the last guy."
+    },
+    {
+      "start": 426.33,
+      "end": 429.33,
+      "text": "And this is where we'll start the transformation from."
+    },
+    {
+      "start": 429.33,
+      "end": 432.33,
+      "text": "So pat can actually be converted to something like."
+    },
+    {
+      "start": 432.33,
+      "end": 433.33,
+      "text": "Pot."
+    },
+    {
+      "start": 433.33,
+      "end": 434.33,
+      "text": "Why?"
+    },
+    {
+      "start": 434.33,
+      "end": 436.33,
+      "text": "Because if you carefully see."
+    },
+    {
+      "start": 436.33,
+      "end": 440.33,
+      "text": "Pat can be converted to pot because pot is there."
+    },
+    {
+      "start": 440.33,
+      "end": 442.33,
+      "text": "Can I convert pat to something else?"
+    },
+    {
+      "start": 442.33,
+      "end": 443.33,
+      "text": "I don't think that."
+    },
+    {
+      "start": 443.33,
+      "end": 446.33,
+      "text": "You can try converting pat to something else."
+    },
+    {
+      "start": 446.33,
+      "end": 447.33,
+      "text": "Maybe something like."
+    },
+    {
+      "start": 447.33,
+      "end": 449.33,
+      "text": "Pat could have been converted to bat."
+    },
+    {
+      "start": 449.33,
+      "end": 451.33,
+      "text": "But it's actually going back."
+    },
+    {
+      "start": 451.33,
+      "end": 453.33,
+      "text": "It's actually going back to JVM."
+    },
+    {
+      "start": 453.33,
+      "end": 453.81,
+      "text": "So."
+    },
+    {
+      "start": 453.81,
+      "end": 454.81,
+      "text": "It's going back to JVM."
+    },
+    {
+      "start": 454.81,
+      "end": 456.81,
+      "text": "And it is not in the word list as well."
+    },
+    {
+      "start": 456.81,
+      "end": 459.81,
+      "text": "So pat can only be converted to pot."
+    },
+    {
+      "start": 459.81,
+      "end": 461.81,
+      "text": "Will you erase pot?"
+    },
+    {
+      "start": 461.81,
+      "end": 464.81,
+      "text": "You could have erased pot because this level is done."
+    },
+    {
+      "start": 464.81,
+      "end": 466.81,
+      "text": "This is level three."
+    },
+    {
+      "start": 466.81,
+      "end": 470.81,
+      "text": "Level three is done because you got bat, bat, pot."
+    },
+    {
+      "start": 470.81,
+      "end": 474.81,
+      "text": "You got bat, bat, pot."
+    },
+    {
+      "start": 474.81,
+      "end": 476.81,
+      "text": "You could erase it."
+    },
+    {
+      "start": 476.81,
+      "end": 479.81,
+      "text": "But I said the entire level has to be completed."
+    },
+    {
+      "start": 479.81,
+      "end": 482.81,
+      "text": "The entire level two has to be completed."
+    },
+    {
+      "start": 482.81,
+      "end": 484.81,
+      "text": "You just completed bat, bat."
+    },
+    {
+      "start": 484.81,
+      "end": 487.81,
+      "text": "There is someone else of level two already waiting."
+    },
+    {
+      "start": 487.81,
+      "end": 489.81,
+      "text": "So do not erase pot from here."
+    },
+    {
+      "start": 489.81,
+      "end": 490.81,
+      "text": "Do not erase pot from here."
+    },
+    {
+      "start": 490.81,
+      "end": 491.81,
+      "text": "Why?"
+    },
+    {
+      "start": 491.81,
+      "end": 492.81,
+      "text": "You'll understand now."
+    },
+    {
+      "start": 492.81,
+      "end": 494.81,
+      "text": "So bat, bat, pot is done."
+    },
+    {
+      "start": 494.81,
+      "end": 495.81,
+      "text": "Perfect."
+    },
+    {
+      "start": 495.81,
+      "end": 497.81,
+      "text": "Get the next guy."
+    },
+    {
+      "start": 497.81,
+      "end": 499.81,
+      "text": "Bat, bot."
+    },
+    {
+      "start": 499.81,
+      "end": 501.81,
+      "text": "Bat, bot."
+    },
+    {
+      "start": 501.81,
+      "end": 502.81,
+      "text": "So."
+    },
+    {
+      "start": 502.81,
+      "end": 503.81,
+      "text": "Which is the last word?"
+    },
+    {
+      "start": 503.81,
+      "end": 504.81,
+      "text": "Bot."
+    },
+    {
+      "start": 504.81,
+      "end": 505.81,
+      "text": "So take the bot."
+    },
+    {
+      "start": 505.81,
+      "end": 506.81,
+      "text": "Now in bot."
+    },
+    {
+      "start": 506.81,
+      "end": 508.81,
+      "text": "If you do a transformation."
+    },
+    {
+      "start": 508.81,
+      "end": 510.81,
+      "text": "You can actually get pot again."
+    },
+    {
+      "start": 510.81,
+      "end": 511.81,
+      "text": "You can actually get pot again."
+    },
+    {
+      "start": 511.81,
+      "end": 514.81,
+      "text": "And imagine while forming this."
+    },
+    {
+      "start": 514.81,
+      "end": 516.81,
+      "text": "If you would have deleted pot."
+    },
+    {
+      "start": 516.81,
+      "end": 518.81,
+      "text": "You'd have never got pot back again."
+    },
+    {
+      "start": 518.81,
+      "end": 520.81,
+      "text": "So the same level."
+    },
+    {
+      "start": 520.81,
+      "end": 522.81,
+      "text": "Pot can happen multiple times."
+    },
+    {
+      "start": 522.81,
+      "end": 524.81,
+      "text": "So if you look at the answer."
+    },
+    {
+      "start": 524.81,
+      "end": 525.81,
+      "text": "What happens here?"
+    },
+    {
+      "start": 525.81,
+      "end": 526.81,
+      "text": "What happens here?"
+    },
+    {
+      "start": 526.81,
+      "end": 528.81,
+      "text": "So once you form this, you get pot."
+    },
+    {
+      "start": 528.81,
+      "end": 531.81,
+      "text": "And similarly from bot also when you get, you get pot."
+    },
+    {
+      "start": 531.81,
+      "end": 533.81,
+      "text": "So do not delete."
+    },
+    {
+      "start": 533.81,
+      "end": 534.81,
+      "text": "Yes."
+    },
+    {
+      "start": 534.81,
+      "end": 536.81,
+      "text": "Beyond this, do not take pot."
+    },
+    {
+      "start": 536.81,
+      "end": 539.81,
+      "text": "Do not take because of the reason that the length will."
+    },
+    {
+      "start": 539.81,
+      "end": 540.81,
+      "text": "You need the shortest length."
+    },
+    {
+      "start": 540.81,
+      "end": 542.81,
+      "text": "So if you get a pot at a level."
+    },
+    {
+      "start": 542.81,
+      "end": 544.81,
+      "text": "Take it as many times as you are getting."
+    },
+    {
+      "start": 544.81,
+      "end": 548.81,
+      "text": "After this, do not take because the length will be not the shortest one then."
+    },
+    {
+      "start": 548.81,
+      "end": 550.81,
+      "text": "Thereby again, you get a pot."
+    },
+    {
+      "start": 550.81,
+      "end": 555.81,
+      "text": "This time what you do is you say bat, bot, pot."
+    },
+    {
+      "start": 555.81,
+      "end": 560.81,
+      "text": "And now since I can see all the level two guys are completed."
+    },
+    {
+      "start": 560.81,
+      "end": 562.81,
+      "text": "All the level two guys are completed."
+    },
+    {
+      "start": 562.81,
+      "end": 564.81,
+      "text": "Now I can clearly state that."
+    },
+    {
+      "start": 564.81,
+      "end": 565.81,
+      "text": "Hey listen."
+    },
+    {
+      "start": 565.81,
+      "end": 567.81,
+      "text": "All my level two guys are completed."
+    },
+    {
+      "start": 567.81,
+      "end": 568.81,
+      "text": "So what I can say is."
+    },
+    {
+      "start": 568.81,
+      "end": 570.81,
+      "text": "All my level two guys are completed."
+    },
+    {
+      "start": 570.81,
+      "end": 571.81,
+      "text": "So what I will do is."
+    },
+    {
+      "start": 571.81,
+      "end": 572.81,
+      "text": "I will simply."
+    },
+    {
+      "start": 572.81,
+      "end": 578.81,
+      "text": "Yes, I will simply now erase the pot because pot has been used in this particular level"
+    },
+    {
+      "start": 578.81,
+      "end": 580.81,
+      "text": "as many times as I wanted."
+    },
+    {
+      "start": 580.81,
+      "end": 581.81,
+      "text": "Perfect guys."
+    },
+    {
+      "start": 581.81,
+      "end": 582.81,
+      "text": "Next."
+    },
+    {
+      "start": 582.81,
+      "end": 584.81,
+      "text": "Next, this is level three."
+    },
+    {
+      "start": 584.81,
+      "end": 586.81,
+      "text": "So there are two guys in the queue."
+    },
+    {
+      "start": 586.81,
+      "end": 588.81,
+      "text": "So you can iterate for two times."
+    },
+    {
+      "start": 588.81,
+      "end": 589.81,
+      "text": "Pick one's this."
+    },
+    {
+      "start": 589.81,
+      "end": 590.81,
+      "text": "Pick one's this."
+    },
+    {
+      "start": 590.81,
+      "end": 592.81,
+      "text": "So iterate for two times."
+    },
+    {
+      "start": 592.81,
+      "end": 596.81,
+      "text": "Pick up the next two elements because you know the next two elements are level three"
+    },
+    {
+      "start": 596.81,
+      "end": 597.81,
+      "text": "because you know the next three elements are level three."
+    },
+    {
+      "start": 597.81,
+      "end": 600.81,
+      "text": "So just go ahead and do that."
+    },
+    {
+      "start": 600.81,
+      "end": 605.81,
+      "text": "First thing is bat, bat, pot."
+    },
+    {
+      "start": 605.81,
+      "end": 607.81,
+      "text": "So can I see your what is pot?"
+    },
+    {
+      "start": 607.81,
+      "end": 608.81,
+      "text": "I can."
+    },
+    {
+      "start": 608.81,
+      "end": 613.81,
+      "text": "You can again try transforming pot into all of these like AOT, BOT."
+    },
+    {
+      "start": 613.81,
+      "end": 617.81,
+      "text": "Then you can go for O like bat, PBT, PCT."
+    },
+    {
+      "start": 617.81,
+      "end": 618.81,
+      "text": "Then you can go for T."
+    },
+    {
+      "start": 618.81,
+      "end": 623.81,
+      "text": "Which will make it POA, POB, POC, and so on."
+    },
+    {
+      "start": 623.81,
+      "end": 625.81,
+      "text": "So if we try to convert pot,"
+    },
+    {
+      "start": 625.81,
+      "end": 627.81,
+      "text": "you'll actually get POC."
+    },
+    {
+      "start": 627.81,
+      "end": 634.01,
+      "text": "you'll actually get POS it because he can be converted to set and you get P"
+    },
+    {
+      "start": 634.01,
+      "end": 639.59,
+      "text": "you set the moment you get POS it you see POS at is here but do not delay it"
+    },
+    {
+      "start": 639.59,
+      "end": 646.23,
+      "text": "might be using some same level again do not delete just attach this POS a Z to"
+    },
+    {
+      "start": 646.23,
+      "end": 652.71,
+      "text": "here and say okay this is something which I'll take into the queue back back"
+    },
+    {
+      "start": 652.71,
+      "end": 664.63,
+      "text": "what that bad port and POS II so level 4 this is level 4 starting okay so now"
+    },
+    {
+      "start": 664.63,
+      "end": 669.65,
+      "text": "what I can say is cool this is done but do not delete do not delete level 3 is"
+    },
+    {
+      "start": 669.65,
+      "end": 677.77,
+      "text": "yet not completed because this is done the next guy is back bought and port so"
+    },
+    {
+      "start": 677.77,
+      "end": 682.69,
+      "text": "who's the last guy what again support can again be converted into POS II"
+    },
+    {
+      "start": 682.69,
+      "end": 692.51,
+      "text": "so you get back bought what and P use II so this time across you can see the"
+    },
+    {
+      "start": 692.51,
+      "end": 697.67,
+      "text": "level 3 has been completed the level 3 has been completed once that level has"
+    },
+    {
+      "start": 697.67,
+      "end": 703.47,
+      "text": "been completed I can go across and delete all the guys remember this I can"
+    },
+    {
+      "start": 703.47,
+      "end": 708.45,
+      "text": "go and delete all the guys who's were used so I can probably store which are"
+    },
+    {
+      "start": 708.45,
+      "end": 712.49,
+      "text": "the last guys used which is P you see and I can delete those P"
+    },
+    {
+      "start": 712.49,
+      "end": 712.69,
+      "text": "OZ"
+    },
+    {
+      "start": 712.69,
+      "end": 718.37,
+      "text": "from here got it perfect next these are level fools at two guys in the level for"
+    },
+    {
+      "start": 718.37,
+      "end": 728.44,
+      "text": "take those two guys again so bad bad what P O Z right which is the last guy"
+    },
+    {
+      "start": 728.44,
+      "end": 734.2,
+      "text": "you see what can P O Z be converted into P O Z can definitely be converted into"
+    },
+    {
+      "start": 734.2,
+      "end": 739.96,
+      "text": "something like C O Z if you change P to C and C O Z and C O Z is already there"
+    },
+    {
+      "start": 739.96,
+      "end": 743.9,
+      "text": "so you get something like bad bad"
+    },
+    {
+      "start": 743.9,
+      "end": 754.86,
+      "text": "or POC and C O Z as you know okay so one done place that the next level die which"
+    },
+    {
+      "start": 754.86,
+      "end": 762.54,
+      "text": "is back back what part what and beautiful so again the last guys POC which needs to"
+    },
+    {
+      "start": 762.54,
+      "end": 770.64,
+      "text": "be transformed this can be transformed to C O Z they will get again back back"
+    },
+    {
+      "start": 770.64,
+      "end": 775.88,
+      "text": "what POC and C O Z Camping P O Z this is what we're gonna get and the bании bar"
+    },
+    {
+      "start": 775.88,
+      "end": 782.6,
+      "text": "and COZ perfect so apparently once the entire level has been completed because"
+    },
+    {
+      "start": 782.6,
+      "end": 788.12,
+      "text": "level 3 now level 4 has been completed so once the level 4 has been completed"
+    },
+    {
+      "start": 788.12,
+      "end": 795.98,
+      "text": "look at the last guy COZ and delete it done next time take up the"
+    },
+    {
+      "start": 795.98,
+      "end": 804.86,
+      "text": "last sequence that you generated bat bot bot POZ COZ and you pick out the last"
+    },
+    {
+      "start": 804.86,
+      "end": 809.04,
+      "text": "word it is COZ so if you pick up the last word it is COZ and you see this"
+    },
+    {
+      "start": 809.04,
+      "end": 814.64,
+      "text": "particular word is your ending word which is COZ is your ending word which is"
+    },
+    {
+      "start": 814.64,
+      "end": 819.56,
+      "text": "COZ you can say okay I got my sequence and you know since the levels are"
+    },
+    {
+      "start": 819.56,
+      "end": 824.42,
+      "text": "increasing like this this is the shortest sequence so the sequence length"
+    },
+    {
+      "start": 824.42,
+      "end": 832.28,
+      "text": "is 5 store it in your answer store it in your answer of list of list so this is"
+    },
+    {
+      "start": 832.28,
+      "end": 834.76,
+      "text": "the answer array just put that"
+    },
+    {
+      "start": 834.86,
+      "end": 840.92,
+      "text": "into it next no need to do any transformations you get this the moment"
+    },
+    {
+      "start": 840.92,
+      "end": 845.84,
+      "text": "you get this you say okay this is also a length 5 let's put that in the list"
+    },
+    {
+      "start": 845.84,
+      "end": 851.18,
+      "text": "keep on taking from the queue all the length 5 guys the moment you get someone"
+    },
+    {
+      "start": 851.18,
+      "end": 855.5,
+      "text": "greater than length 5 you say I don't need to do any info let's break out"
+    },
+    {
+      "start": 855.5,
+      "end": 861.02,
+      "text": "let's break up just simply break out but this is what we will do the moment we"
+    },
+    {
+      "start": 861.02,
+      "end": 863.82,
+      "text": "get an answer we take all of these guys which are of"
+    },
+    {
+      "start": 863.82,
+      "end": 864.68,
+      "text": "equivalence"
+    },
+    {
+      "start": 864.86,
+      "end": 871.7,
+      "text": "and length and after that we can simply go out as how easy as it gets the only"
+    },
+    {
+      "start": 871.7,
+      "end": 876.32,
+      "text": "trick over here is do not delete the moment you are using it for a single guy"
+    },
+    {
+      "start": 876.32,
+      "end": 881.66,
+      "text": "do not delete because it might be used by the similar guys on the same level do"
+    },
+    {
+      "start": 881.66,
+      "end": 887.1,
+      "text": "you see it being used on the similar levels by the same guys so do not do not"
+    },
+    {
+      "start": 887.1,
+      "end": 890.74,
+      "text": "delete it the moment you caught it so you must have understood the dry run now"
+    },
+    {
+      "start": 890.74,
+      "end": 893.9,
+      "text": "you must be thinking how do we code this not an issue"
+    },
+    {
+      "start": 893.9,
+      "end": 894.84,
+      "text": "I'll go step by step"
+    },
+    {
+      "start": 894.86,
+      "end": 899.34,
+      "text": "I'll be writing the C++ code you can follow the exact similar Java code on the"
+    },
+    {
+      "start": 899.34,
+      "end": 904.28,
+      "text": "left in case you feel what will be the equivalent in Java okay so we have a"
+    },
+    {
+      "start": 904.28,
+      "end": 909.74,
+      "text": "begin word now the first thing I'll do is yes another step put these words into"
+    },
+    {
+      "start": 909.74,
+      "end": 922.8,
+      "text": "an unordered set so once you've done this what is the next thing you need a"
+    },
+    {
+      "start": 922.8,
+      "end": 927.52,
+      "text": "queue and the queue has to store a list of strings so that is something which"
+    },
+    {
+      "start": 927.52,
+      "end": 932.6,
+      "text": "you'll take and in that queue the first thing that you will insert is the first sequence"
+    },
+    {
+      "start": 932.6,
+      "end": 939.08,
+      "text": "which is this one okay what after that do we need anything else yes what you can"
+    },
+    {
+      "start": 939.08,
+      "end": 944.78,
+      "text": "do is you can say for every level is for every level I will keep how many"
+    },
+    {
+      "start": 944.78,
+      "end": 950.48,
+      "text": "streams are being used so used so when you start off if you remember well"
+    },
+    {
+      "start": 950.48,
+      "end": 954.64,
+      "text": "enough when you start you just have a bat that you've inserted into the queue"
+    },
+    {
+      "start": 954.64,
+      "end": 961.5,
+      "text": "data structure and this is the guy who was used so used on level you can call it so that we get Quemdata and C++ code"
+    },
+    {
+      "start": 962.6,
+      "end": 970.0,
+      "text": "understand the naming better used on level dot push back off what will you push back the begin"
+    },
+    {
+      "start": 970.0,
+      "end": 977.0,
+      "text": "word is the word that has been used it will keep the initial level is level zero i am considering"
+    },
+    {
+      "start": 977.0,
+      "end": 983.62,
+      "text": "this as the first zeroth like initially we are starting with nothing in the queue this is level"
+    },
+    {
+      "start": 983.62,
+      "end": 987.98,
+      "text": "one this is level two this is level three so initially before starting we are at level zero"
+    },
+    {
+      "start": 987.98,
+      "end": 994.66,
+      "text": "why i'll tell you this as well so we know one thing we need to learn the answers in a"
+    },
+    {
+      "start": 994.66,
+      "end": 1000.6,
+      "text": "list of list so this will be all so these are the initial things that we will declare"
+    },
+    {
+      "start": 1000.6,
+      "end": 1006.78,
+      "text": "okay next we will go across to the queue and iterate on it so let's go across and iterate"
+    },
+    {
+      "start": 1006.78,
+      "end": 1015.54,
+      "text": "till it has 90 right done let's take the vector out so vector equal to q dot front"
+    },
+    {
+      "start": 1015.54,
+      "end": 1017.58,
+      "text": "at the same time do a q dot pop"
+    },
+    {
+      "start": 1017.58,
+      "end": 1017.96,
+      "text": "you"
+    },
+    {
+      "start": 1017.98,
+      "end": 1023.9,
+      "text": "now you know these this is a sequence so remember one thing this is the level one sequence and"
+    },
+    {
+      "start": 1023.9,
+      "end": 1029.88,
+      "text": "before this you are at level zero right level zero so you are at level one so this is being"
+    },
+    {
+      "start": 1029.88,
+      "end": 1036.54,
+      "text": "used already has been used so what do you see is okay if i am on a newer level if i'm on a newer"
+    },
+    {
+      "start": 1036.54,
+      "end": 1041.72,
+      "text": "level which is very simple if the size exceeds level which is in this case initially the level"
+    },
+    {
+      "start": 1041.72,
+      "end": 1047.7,
+      "text": "was zero so the first time when you'll start off you'll get this guy which is increase in"
+    },
+    {
+      "start": 1047.98,
+      "end": 1051.52,
+      "text": "adjustments so this is because this is of size one right so what it will say is if it"
+    },
+    {
+      "start": 1051.52,
+      "end": 1056.78,
+      "text": "increases then i increase my level and i say whatever has been used yes whatever has been"
+    },
+    {
+      "start": 1056.78,
+      "end": 1064.52,
+      "text": "used i will simply tell the set hey can you please erase this so the first step yes at"
+    },
+    {
+      "start": 1064.52,
+      "end": 1074.33,
+      "text": "the first step this bat will be erased if it was on the word list this is very simple"
+    },
+    {
+      "start": 1074.33,
+      "end": 1079.41,
+      "text": "erase all words that has been used in the previous you know this is like it will show"
+    },
+    {
+      "start": 1079.45,
+      "end": 1085.45,
+      "text": "levels to transform simple done what is the next thing that you'll do you need the word do you know"
+    },
+    {
+      "start": 1085.45,
+      "end": 1091.77,
+      "text": "what is the word what is very simple you just see the last guy in that sequence will be your word"
+    },
+    {
+      "start": 1091.77,
+      "end": 1097.37,
+      "text": "done next what will you do you will say okay fine i know one thing i have to trap goes through the"
+    },
+    {
+      "start": 1097.37,
+      "end": 1103.77,
+      "text": "entire world and change every character so the first two for that every character will be changed"
+    },
+    {
+      "start": 1103.77,
+      "end": 1114.81,
+      "text": "from this to this which is a to z and can i see character original equal to word dot i"
+    },
+    {
+      "start": 1114.81,
+      "end": 1121.13,
+      "text": "can i say this yes and can i at the same time say okay word of i equal to original"
+    },
+    {
+      "start": 1122.09,
+      "end": 1127.53,
+      "text": "so that anything that i have taken i just replace it back why because every time we are going to"
+    },
+    {
+      "start": 1127.53,
+      "end": 1133.69,
+      "text": "replace the ith guy with the c now what do i need to check does this transform"
+    },
+    {
+      "start": 1133.77,
+      "end": 1139.29,
+      "text": "the word exists on the set or not so i can just give a count and i guess it do you exist and if"
+    },
+    {
+      "start": 1139.29,
+      "end": 1144.49,
+      "text": "you the count has to be greater than zero definitely not zero and if you do exist the"
+    },
+    {
+      "start": 1144.49,
+      "end": 1150.89,
+      "text": "first thing that i'll do is okay this is a sequence this is a sequence so i'll say hey sequence can"
+    },
+    {
+      "start": 1150.89,
+      "end": 1156.89,
+      "text": "you just take it you're like why not i'll just take it so let's take it into the sequence so you'll be"
+    },
+    {
+      "start": 1156.89,
+      "end": 1162.73,
+      "text": "like okay the word goes into the sequence and remember this you're trying every possible word"
+    },
+    {
+      "start": 1162.73,
+      "end": 1163.69,
+      "text": "every possible word"
+    },
+    {
+      "start": 1163.77,
+      "end": 1167.29,
+      "text": "so if i go back to the first time if you remember you had a bat"
+    },
+    {
+      "start": 1168.09,
+      "end": 1176.57,
+      "text": "and bat could be converted into bat and a bot as well so you got two sequence"
+    },
+    {
+      "start": 1177.85,
+      "end": 1184.01,
+      "text": "so first time you include bat you put that into the queue so the vector that you took out was bat"
+    },
+    {
+      "start": 1184.57,
+      "end": 1190.41,
+      "text": "you included pattern it you need to take it out as well because for the next occurrence"
+    },
+    {
+      "start": 1190.41,
+      "end": 1193.69,
+      "text": "you need it right so just take it out as well and in the meantime"
+    },
+    {
+      "start": 1193.77,
+      "end": 1198.09,
+      "text": "what you can do is you can say okay q can you take this new sequence"
+    },
+    {
+      "start": 1198.09,
+      "end": 1203.69,
+      "text": "because this is a new sequence which happened due to a transformation of a character"
+    },
+    {
+      "start": 1203.69,
+      "end": 1210.01,
+      "text": "so please take this new sequence at the same time tell the level tell the level that"
+    },
+    {
+      "start": 1210.01,
+      "end": 1216.25,
+      "text": "this guy was used this word was used in this level tell the guy so this is"
+    },
+    {
+      "start": 1216.25,
+      "end": 1223.53,
+      "text": "in terms of erasing from like mark as visited on the level and whenever you reach the new levels"
+    },
+    {
+      "start": 1223.77,
+      "end": 1225.77,
+      "text": "This will make sure it deletes it."
+    },
+    {
+      "start": 1225.77,
+      "end": 1228.77,
+      "text": "So, why pop that if you did not understand?"
+    },
+    {
+      "start": 1228.77,
+      "end": 1232.77,
+      "text": "Let me go back and again tell you because I'm sure you have a bit of confusion here."
+    },
+    {
+      "start": 1232.77,
+      "end": 1237.77,
+      "text": "So, when you started with bat, you converted into pat, right?"
+    },
+    {
+      "start": 1237.77,
+      "end": 1243.77,
+      "text": "So, the new sequence was formed bat, pat and you inserted that over here."
+    },
+    {
+      "start": 1243.77,
+      "end": 1251.77,
+      "text": "So, now the next time when you say, okay, let me replace something like bot."
+    },
+    {
+      "start": 1251.77,
+      "end": 1253.77,
+      "text": "So, bat is done to pat."
+    },
+    {
+      "start": 1253.77,
+      "end": 1256.77,
+      "text": "Here, you're saying replace OA and get bot."
+    },
+    {
+      "start": 1256.77,
+      "end": 1265.77,
+      "text": "So, if your sequence, since you included pat, if you do not remove it, now when you add bot, the sequence will be of three lengths."
+    },
+    {
+      "start": 1265.77,
+      "end": 1269.77,
+      "text": "That's why you add pat, but you add only to insert it into the queue."
+    },
+    {
+      "start": 1269.77,
+      "end": 1277.77,
+      "text": "Then you remove it because for the next time, when bat gets converted to bot, you again can have a two-length."
+    },
+    {
+      "start": 1277.77,
+      "end": 1281.77,
+      "text": "So, whenever you add something to the sequence, it's only for this particular transformation."
+    },
+    {
+      "start": 1281.77,
+      "end": 1283.77,
+      "text": "You need to take it out as well."
+    },
+    {
+      "start": 1283.77,
+      "end": 1287.77,
+      "text": "So, this is the minor change that you'll do and at the end, you can return the answer."
+    },
+    {
+      "start": 1287.77,
+      "end": 1289.77,
+      "text": "We haven't stored anything in the answer."
+    },
+    {
+      "start": 1289.77,
+      "end": 1291.77,
+      "text": "You may be thinking that is absolutely correct."
+    },
+    {
+      "start": 1291.77,
+      "end": 1295.77,
+      "text": "So, what I can say is, okay, as of now, we haven't stored anything to the answer."
+    },
+    {
+      "start": 1295.77,
+      "end": 1297.77,
+      "text": "So, I'll be like, okay, fine."
+    },
+    {
+      "start": 1297.77,
+      "end": 1302.77,
+      "text": "If answer dot size is equal to equal to zero, that means it's the first time."
+    },
+    {
+      "start": 1302.77,
+      "end": 1303.77,
+      "text": "That means it is the first time."
+    },
+    {
+      "start": 1303.77,
+      "end": 1305.77,
+      "text": "Or what you can say is, okay, let me do one thing."
+    },
+    {
+      "start": 1305.77,
+      "end": 1307.77,
+      "text": "I can keep it super simple."
+    },
+    {
+      "start": 1307.77,
+      "end": 1309.77,
+      "text": "Like this might get complicated."
+    },
+    {
+      "start": 1309.77,
+      "end": 1310.77,
+      "text": "Let's keep it super simple."
+    },
+    {
+      "start": 1310.77,
+      "end": 1314.77,
+      "text": "If the word that we get is equal to the last word, which is the end word, okay?"
+    },
+    {
+      "start": 1314.77,
+      "end": 1317.77,
+      "text": "If that is equal to the end word, what I say, hey, listen."
+    },
+    {
+      "start": 1317.77,
+      "end": 1319.77,
+      "text": "This is equal to the end word."
+    },
+    {
+      "start": 1319.77,
+      "end": 1321.77,
+      "text": "I'm like, okay, fine."
+    },
+    {
+      "start": 1321.77,
+      "end": 1332.77,
+      "text": "But if the answer dot size is equal to equal to zero, it means first sequence is the first sequence where we reach the end."
+    },
+    {
+      "start": 1332.77,
+      "end": 1335.77,
+      "text": "If it is the case, good enough."
+    },
+    {
+      "start": 1335.77,
+      "end": 1337.77,
+      "text": "We don't need to do anything."
+    },
+    {
+      "start": 1337.77,
+      "end": 1339.77,
+      "text": "We just take it and we say."
+    },
+    {
+      "start": 1340.77,
+      "end": 1341.77,
+      "text": "Fine."
+    },
+    {
+      "start": 1341.77,
+      "end": 1345.77,
+      "text": "We just take it in into vector."
+    },
+    {
+      "start": 1345.77,
+      "end": 1351.77,
+      "text": "And if it is not, if it's not the first time, then I say, okay, not an issue."
+    },
+    {
+      "start": 1351.77,
+      "end": 1355.77,
+      "text": "If it is not the first time, I have one of the sequence in the answer."
+    },
+    {
+      "start": 1355.77,
+      "end": 1360.77,
+      "text": "I get that sequence then and I say, is that equal to the sequence that I've got?"
+    },
+    {
+      "start": 1360.77,
+      "end": 1368.77,
+      "text": "If it is, my answer will be more than happy to store the same guy because we need multiple sequences."
+    },
+    {
+      "start": 1368.77,
+      "end": 1370.77,
+      "text": "And if it is not the case, we just keep on doing."
+    },
+    {
+      "start": 1370.77,
+      "end": 1371.77,
+      "text": "We just keep on doing."
+    },
+    {
+      "start": 1371.77,
+      "end": 1372.77,
+      "text": "We just keep on doing."
+    },
+    {
+      "start": 1372.77,
+      "end": 1375.77,
+      "text": "That's how you can easily store the answers."
+    },
+    {
+      "start": 1375.77,
+      "end": 1376.77,
+      "text": "That's how you."
+    },
+    {
+      "start": 1376.77,
+      "end": 1381.77,
+      "text": "So once you've written the entire code, we can just click on a submit button and see if it is working fine."
+    },
+    {
+      "start": 1381.77,
+      "end": 1383.77,
+      "text": "So you will see that all the test cases will be running."
+    },
+    {
+      "start": 1383.77,
+      "end": 1385.77,
+      "text": "And this is how easily you can do it."
+    },
+    {
+      "start": 1385.77,
+      "end": 1394.77,
+      "text": "You just need to make sure that instead of deleting on every level, you delete when you reach the next level."
+    },
+    {
+      "start": 1394.77,
+      "end": 1395.77,
+      "text": "Right."
+    },
+    {
+      "start": 1395.77,
+      "end": 1396.77,
+      "text": "You keep on doing it."
+    },
+    {
+      "start": 1396.77,
+      "end": 1398.77,
+      "text": "For an example, you're treating the second level guys."
+    },
+    {
+      "start": 1398.77,
+      "end": 1399.77,
+      "text": "Second level guys."
+    },
+    {
+      "start": 1399.77,
+      "end": 1402.77,
+      "text": "And when you reach the new level, you got a bigger level."
+    },
+    {
+      "start": 1402.77,
+      "end": 1409.77,
+      "text": "They delete whatever has been used previously and a slight change in order to increase the time complexity."
+    },
+    {
+      "start": 1409.77,
+      "end": 1414.77,
+      "text": "Once you deleted everything on the level, just make sure you clear it so that it can save a lot of time."
+    },
+    {
+      "start": 1414.77,
+      "end": 1418.77,
+      "text": "Otherwise, the next time again, you go through them and deleted and they do not exist."
+    },
+    {
+      "start": 1418.77,
+      "end": 1420.77,
+      "text": "So new level, new guys."
+    },
+    {
+      "start": 1420.77,
+      "end": 1422.77,
+      "text": "So this is what you can easily do."
+    },
+    {
+      "start": 1422.77,
+      "end": 1425.77,
+      "text": "So, guys, so let's analyze the time complexity."
+    },
+    {
+      "start": 1425.77,
+      "end": 1428.77,
+      "text": "Now, this is definitely a world in 326."
+    },
+    {
+      "start": 1428.77,
+      "end": 1434.77,
+      "text": "But you cannot predict the time complexity of this because depending on examples to examples, there might be multiple sequences."
+    },
+    {
+      "start": 1434.77,
+      "end": 1438.77,
+      "text": "So predicting a time complexity for this one is next to impossible."
+    },
+    {
+      "start": 1438.77,
+      "end": 1441.77,
+      "text": "It will vary from example to example."
+    },
+    {
+      "start": 1441.77,
+      "end": 1443.77,
+      "text": "So this is what you can always tell to the interviewer."
+    },
+    {
+      "start": 1443.77,
+      "end": 1444.77,
+      "text": "Okay."
+    },
+    {
+      "start": 1444.77,
+      "end": 1451.77,
+      "text": "So before ending up this video, I would like to mention one thing because if I do not, then my comment section will be filled up with that one."
+    },
+    {
+      "start": 1451.77,
+      "end": 1455.77,
+      "text": "So this particular solution will be giving you TLE if you try on leetcode."
+    },
+    {
+      "start": 1455.77,
+      "end": 1456.77,
+      "text": "Why?"
+    },
+    {
+      "start": 1456.77,
+      "end": 1457.77,
+      "text": "Because over the time limit, I'm not sure."
+    },
+    {
+      "start": 1457.77,
+      "end": 1458.77,
+      "text": "Why?"
+    },
+    {
+      "start": 1458.77,
+      "end": 1459.77,
+      "text": "Because I don't know what they have done."
+    },
+    {
+      "start": 1459.77,
+      "end": 1463.77,
+      "text": "But recently they have updated their test cases and the time limit is super strict."
+    },
+    {
+      "start": 1463.77,
+      "end": 1468.77,
+      "text": "If you go to the discussion forum, you'll find people discussing about it, that the previous solutions are not working."
+    },
+    {
+      "start": 1468.77,
+      "end": 1471.77,
+      "text": "And I checked out the solutions which are currently working."
+    },
+    {
+      "start": 1471.77,
+      "end": 1475.77,
+      "text": "Those are more CP oriented solutions, not interview oriented."
+    },
+    {
+      "start": 1475.77,
+      "end": 1480.77,
+      "text": "You have to optimize in a very, very large manner as you usually do in competitive programming."
+    },
+    {
+      "start": 1480.77,
+      "end": 1486.77,
+      "text": "And since we are talking about interviews, in interviews, this particular solution is going to work absolutely fine."
+    },
+    {
+      "start": 1486.77,
+      "end": 1487.77,
+      "text": "So I'll recommend you to submit this problem on Twitter."
+    },
+    {
+      "start": 1487.77,
+      "end": 1489.77,
+      "text": "So submit this problem on practice platform."
+    },
+    {
+      "start": 1489.77,
+      "end": 1491.77,
+      "text": "And if it is working fine, it is absolutely fine."
+    },
+    {
+      "start": 1491.77,
+      "end": 1494.77,
+      "text": "No need to panic if it doesn't work on leetcode."
+    },
+    {
+      "start": 1494.77,
+      "end": 1495.77,
+      "text": "Okay, guys."
+    },
+    {
+      "start": 1495.77,
+      "end": 1497.77,
+      "text": "So I think that should be it."
+    },
+    {
+      "start": 1497.77,
+      "end": 1503.77,
+      "text": "I hope you do not mess up my comment section that not working on leetcode, not working on leetcode because I've already stated why."
+    },
+    {
+      "start": 1503.77,
+      "end": 1509.77,
+      "text": "If you want to CP, you can try optimizing it and you can read the discussion forum and this will definitely work."
+    },
+    {
+      "start": 1509.77,
+      "end": 1513.77,
+      "text": "So guys, I hope you've understood the entire algorithm and the complex code."
+    },
+    {
+      "start": 1513.77,
+      "end": 1516.77,
+      "text": "So just in case you did, please, please make sure you like this video."
+    },
+    {
+      "start": 1516.77,
+      "end": 1520.77,
+      "text": "And if you're new to our channel, hit that subscribe button right away."
+    },
+    {
+      "start": 1520.77,
+      "end": 1524.77,
+      "text": "And if you haven't checked out our DP series and the HD sheet, the links are in the description."
+    },
+    {
+      "start": 1524.77,
+      "end": 1528.77,
+      "text": "Make sure you check them out because that is something you're missing out on."
+    },
+    {
+      "start": 1528.77,
+      "end": 1530.77,
+      "text": "With this, let's wrap up this video and meet in some other video."
+    },
+    {
+      "start": 1530.77,
+      "end": 1534.72,
+      "text": "Till then, bye-bye. Take care."
+    }
+  ]
+}

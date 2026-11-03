@@ -1,0 +1,1309 @@
+{
+  "video_id": "FMwpt_aQOGw",
+  "title": "G-50. Accounts Merge - DSU",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1320.55,
+  "segments": [
+    {
+      "start": 2.9,
+      "end": 5.9,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.32,
+      "end": 9.76,
+      "text": "So in this video, we are going to solve the problem merging details."
+    },
+    {
+      "start": 10.04,
+      "end": 12.48,
+      "text": "This also goes by the name account merge on LeetCode."
+    },
+    {
+      "start": 12.98,
+      "end": 16.44,
+      "text": "So if you look at the question, it's a massive one."
+    },
+    {
+      "start": 16.58,
+      "end": 21.62,
+      "text": "So I'll quickly jump over to the iPad in order to explain you the question accounts merge."
+    },
+    {
+      "start": 22.08,
+      "end": 24.54,
+      "text": "So you're basically given a lot of arrays."
+    },
+    {
+      "start": 24.9,
+      "end": 27.64,
+      "text": "Yes, a lot of arrays. What do they contain?"
+    },
+    {
+      "start": 27.64,
+      "end": 34.06,
+      "text": "They contain a name followed by the accounts, the email accounts of that name."
+    },
+    {
+      "start": 34.58,
+      "end": 37.7,
+      "text": "So John has these three email accounts."
+    },
+    {
+      "start": 38.26,
+      "end": 40.74,
+      "text": "Another John has this one email account."
+    },
+    {
+      "start": 41.1,
+      "end": 43.32,
+      "text": "Raj has these couple of accounts."
+    },
+    {
+      "start": 43.78,
+      "end": 47.9,
+      "text": "The question states, merge the similar accounts."
+    },
+    {
+      "start": 48.38,
+      "end": 51.6,
+      "text": "Merge the similar accounts. What does that mean?"
+    },
+    {
+      "start": 51.6,
+      "end": 57.1,
+      "text": "So if you see John, John has an email ID J1 at the RAIDCOM, J2 at the RAIDCOM."
+    },
+    {
+      "start": 57.48,
+      "end": 57.6,
+      "text": "J3 at the RAIDCOM."
+    },
+    {
+      "start": 57.64,
+      "end": 58.62,
+      "text": "J3 at the RAIDCOM."
+    },
+    {
+      "start": 59.1,
+      "end": 62.4,
+      "text": "Okay. Now if you see this John has J4 at the RAIDCOM."
+    },
+    {
+      "start": 63.04,
+      "end": 66.88,
+      "text": "Names are same of these two guys, but their accounts used are different."
+    },
+    {
+      "start": 67.22,
+      "end": 69.9,
+      "text": "So these two are two different Johns."
+    },
+    {
+      "start": 70.14,
+      "end": 71.04,
+      "text": "So you'll not merge them."
+    },
+    {
+      "start": 71.26,
+      "end": 81.24,
+      "text": "But if you carefully observe this John, this John has a J1 and this John also has a same mail ID of J1."
+    },
+    {
+      "start": 81.24,
+      "end": 85.5,
+      "text": "So what you'll do is you'll take this entire thing and merge it to this."
+    },
+    {
+      "start": 86.06,
+      "end": 87.48,
+      "text": "So apparently the J1 is..."
+    },
+    {
+      "start": 87.48,
+      "end": 89.48,
+      "text": "The J1 is common, so you'll not take this."
+    },
+    {
+      "start": 89.48,
+      "end": 92.48,
+      "text": "And the J5 is what you will take and merge."
+    },
+    {
+      "start": 92.78,
+      "end": 98.44,
+      "text": "So let's quickly take the J5 at the RAIDCOM and this array will be expanded."
+    },
+    {
+      "start": 98.44,
+      "end": 101.1,
+      "text": "Yes, the array will be expanded to J5."
+    },
+    {
+      "start": 101.72,
+      "end": 102.22,
+      "text": "Perfect."
+    },
+    {
+      "start": 102.22,
+      "end": 106.24,
+      "text": "Once you've expanded this, this John will be no longer in existence."
+    },
+    {
+      "start": 106.48,
+      "end": 108.48,
+      "text": "One was common, so you did not expand it."
+    },
+    {
+      "start": 108.66,
+      "end": 110.98,
+      "text": "The other one was an extra one, so you just added it."
+    },
+    {
+      "start": 111.18,
+      "end": 115.6,
+      "text": "But this is how John merged all his accounts into one."
+    },
+    {
+      "start": 115.9,
+      "end": 117.48,
+      "text": "And it's very critical."
+    },
+    {
+      "start": 117.82,
+      "end": 126.4,
+      "text": "And it's very important that the name will be there, but all the email IDs should be in the sorted order."
+    },
+    {
+      "start": 126.86,
+      "end": 130.82,
+      "text": "So if you see this is already J1, J2, J3 and J5."
+    },
+    {
+      "start": 131.14,
+      "end": 132.82,
+      "text": "All of them are in the sorted order."
+    },
+    {
+      "start": 133.06,
+      "end": 134.4,
+      "text": "Then there is John with J4."
+    },
+    {
+      "start": 134.72,
+      "end": 136.18,
+      "text": "He's alone, so let him be."
+    },
+    {
+      "start": 136.52,
+      "end": 137.48,
+      "text": "Then there is Raj."
+    },
+    {
+      "start": 137.82,
+      "end": 139.9,
+      "text": "Raj is like I have R1, R2."
+    },
+    {
+      "start": 140.28,
+      "end": 143.14,
+      "text": "And there is another Raj who has R2 and R3."
+    },
+    {
+      "start": 143.44,
+      "end": 145.02,
+      "text": "So I see an overlap."
+    },
+    {
+      "start": 145.4,
+      "end": 147.44,
+      "text": "I see a same account being used."
+    },
+    {
+      "start": 147.82,
+      "end": 151.82,
+      "text": "So if a same account is being used by both the Raj."
+    },
+    {
+      "start": 152.1,
+      "end": 154.24,
+      "text": "So that means they are same person."
+    },
+    {
+      "start": 154.44,
+      "end": 158.6,
+      "text": "If the same person, this R2, R2, no need to merge them."
+    },
+    {
+      "start": 159.14,
+      "end": 160.56,
+      "text": "This R3 will go here."
+    },
+    {
+      "start": 160.86,
+      "end": 166.86,
+      "text": "So go ahead and say, hey, can you just take R3 at the ratecom and merge it?"
+    },
+    {
+      "start": 167.1,
+      "end": 169.24,
+      "text": "If you're taking it, can you just omit this guy?"
+    },
+    {
+      "start": 169.48,
+      "end": 175.72,
+      "text": "So I took this and merged with Raj and again, R1, R2, R3 are in the sorted order."
+    },
+    {
+      "start": 175.94,
+      "end": 177.44,
+      "text": "Next, we have Mary."
+    },
+    {
+      "start": 177.82,
+      "end": 181.82,
+      "text": "Mary has M1 at the ratecom and there is no other Mary over there."
+    },
+    {
+      "start": 182.06,
+      "end": 184.52,
+      "text": "So if there is no other Mary over there, we're done."
+    },
+    {
+      "start": 184.72,
+      "end": 188.36,
+      "text": "So after merging, you have 1, 2, 3, 4."
+    },
+    {
+      "start": 188.6,
+      "end": 190.56,
+      "text": "So this is an array of strings."
+    },
+    {
+      "start": 191.06,
+      "end": 193.4,
+      "text": "Name followed by accounts merged."
+    },
+    {
+      "start": 194.06,
+      "end": 196.06,
+      "text": "In which order do you need to return it?"
+    },
+    {
+      "start": 196.36,
+      "end": 200.06,
+      "text": "You can return John at first, this John at first, Raj at first."
+    },
+    {
+      "start": 200.4,
+      "end": 202.02,
+      "text": "This ordering doesn't matter."
+    },
+    {
+      "start": 202.32,
+      "end": 203.78,
+      "text": "This ordering matters."
+    },
+    {
+      "start": 203.82,
+      "end": 205.18,
+      "text": "The mails matter."
+    },
+    {
+      "start": 205.48,
+      "end": 207.28,
+      "text": "Mails should be in sorted."
+    },
+    {
+      "start": 207.82,
+      "end": 210.86,
+      "text": "The accounts merge ordering do not matter."
+    },
+    {
+      "start": 211.1,
+      "end": 214.72,
+      "text": "Mary can be at first, Raj can be at first, they can be at last, doesn't matter."
+    },
+    {
+      "start": 214.98,
+      "end": 221.98,
+      "text": "As long as you are returning these four merged accounts, that is what matters to us."
+    },
+    {
+      "start": 222.24,
+      "end": 223.1,
+      "text": "This is the question."
+    },
+    {
+      "start": 223.24,
+      "end": 224.4,
+      "text": "Okay, you need to solve this."
+    },
+    {
+      "start": 224.6,
+      "end": 228.06,
+      "text": "So you must be thinking, how do I approach such a problem?"
+    },
+    {
+      "start": 228.1,
+      "end": 231.18,
+      "text": "Because at first looks daunting."
+    },
+    {
+      "start": 231.56,
+      "end": 235.36,
+      "text": "It's tagged as medium, but I definitely think it's wrong tag."
+    },
+    {
+      "start": 235.36,
+      "end": 238.74,
+      "text": "It should be tagged as hard instead of medium."
+    },
+    {
+      "start": 238.98,
+      "end": 239.98,
+      "text": "Not an issue."
+    },
+    {
+      "start": 240.16,
+      "end": 243.16,
+      "text": "So how do we approach this?"
+    },
+    {
+      "start": 243.66,
+      "end": 245.4,
+      "text": "Let's break the problem."
+    },
+    {
+      "start": 245.7,
+      "end": 247.36,
+      "text": "What is the problem demanding?"
+    },
+    {
+      "start": 247.86,
+      "end": 251.82,
+      "text": "Problem is saying if there is a J1, first of all, we know one thing."
+    },
+    {
+      "start": 252.32,
+      "end": 253.98,
+      "text": "This is kind of connected to this."
+    },
+    {
+      "start": 254.36,
+      "end": 255.82,
+      "text": "This is kind of connected to this."
+    },
+    {
+      "start": 256.2,
+      "end": 259.4,
+      "text": "And if there is a J1, it kind of gets connected to this."
+    },
+    {
+      "start": 259.74,
+      "end": 262.66,
+      "text": "And if it gets connected, this also gets connected."
+    },
+    {
+      "start": 263.02,
+      "end": 263.66,
+      "text": "So it's kind of."
+    },
+    {
+      "start": 263.82,
+      "end": 264.2,
+      "text": "Okay."
+    },
+    {
+      "start": 264.2,
+      "end": 264.48,
+      "text": "Okay."
+    },
+    {
+      "start": 264.48,
+      "end": 264.52,
+      "text": "Okay."
+    },
+    {
+      "start": 264.78,
+      "end": 264.82,
+      "text": "Okay."
+    },
+    {
+      "start": 264.82,
+      "end": 264.9,
+      "text": "Okay."
+    },
+    {
+      "start": 264.9,
+      "end": 265.02,
+      "text": "Okay."
+    },
+    {
+      "start": 265.02,
+      "end": 265.2,
+      "text": "Okay."
+    },
+    {
+      "start": 265.2,
+      "end": 265.32,
+      "text": "Okay."
+    },
+    {
+      "start": 265.52,
+      "end": 270.28,
+      "text": "And you know the component shape getting an union like merging and you"
+    },
+    {
+      "start": 270.28,
+      "end": 275.9,
+      "text": "know the data structure that helps us in merging or connecting thing with"
+    },
+    {
+      "start": 275.9,
+      "end": 280.06,
+      "text": "dynamically dynamic because at every stage, someone else is getting"
+    },
+    {
+      "start": 280.06,
+      "end": 282.78,
+      "text": "corrected, that is the disjoint set."
+    },
+    {
+      "start": 283.12,
+      "end": 286.16,
+      "text": "Data structure gives us an option of union as well."
+    },
+    {
+      "start": 286.36,
+      "end": 286.56,
+      "text": "Right?"
+    },
+    {
+      "start": 286.82,
+      "end": 290.7,
+      "text": "So we know the data structure because anything that relates to merging,"
+    },
+    {
+      "start": 290.98,
+      "end": 294.78,
+      "text": "or maybe connecting that's when we think of this data structure in case you do"
+    },
+    {
+      "start": 294.78,
+      "end": 299.7,
+      "text": "and set data structure go back i've made a detailed video on this and i've also prepared"
+    },
+    {
+      "start": 299.7,
+      "end": 306.6,
+      "text": "a code snippet which can be used to solve across all problems so go back and watch it and learn"
+    },
+    {
+      "start": 306.6,
+      "end": 312.22,
+      "text": "that code snippet then come back to this so what i will initially do is i'll be like okay let's do"
+    },
+    {
+      "start": 312.22,
+      "end": 319.76,
+      "text": "one thing let's make this zero like assume this to be zero one two three four five because these"
+    },
+    {
+      "start": 319.76,
+      "end": 326.1,
+      "text": "are the indexes so so once i've assigned these indexes to the entire thing basically everyone"
+    },
+    {
+      "start": 326.1,
+      "end": 333.54,
+      "text": "like john this john is represented by zero who has all these males this john is represented by"
+    },
+    {
+      "start": 333.54,
+      "end": 340.44,
+      "text": "one who has this male so i have made sure that the indexes represent the name okay now so what"
+    },
+    {
+      "start": 340.44,
+      "end": 346.04,
+      "text": "is the initial configuration of this joint set it states that each of them will be the parent of"
+    },
+    {
+      "start": 346.04,
+      "end": 349.22,
+      "text": "themselves so i'll be like zero the parent of himself"
+    },
+    {
+      "start": 349.22,
+      "end": 349.74,
+      "text": "one two three four five six seven eight nine ten nine ten nine ten nine ten nine ten nine"
+    },
+    {
+      "start": 349.74,
+      "end": 354.08,
+      "text": "one the parent of himself two the parent of himself three again four again the parent of"
+    },
+    {
+      "start": 354.08,
+      "end": 361.66,
+      "text": "himself and five also the parent of himself now what i'll do is i know j1 belongs to john who is"
+    },
+    {
+      "start": 361.66,
+      "end": 368.96,
+      "text": "the node zero so i'll say j1 you belong to the node zero so i probably can keep something as"
+    },
+    {
+      "start": 368.96,
+      "end": 377.0,
+      "text": "a map where i'll say j1 at the rate com belongs to zero perfect done next j2 at the rate com"
+    },
+    {
+      "start": 377.0,
+      "end": 379.2,
+      "text": "this also belongs to"
+    },
+    {
+      "start": 379.2,
+      "end": 390.82,
+      "text": "zero done next j3 at the rate com j3 at the rate com this also belongs to zero done next j4 at the"
+    },
+    {
+      "start": 390.82,
+      "end": 401.44,
+      "text": "rate com this belongs to one perfect next r1 at the rate com this belongs to two again perfect"
+    },
+    {
+      "start": 401.44,
+      "end": 409.12,
+      "text": "next r2 at the rate com this belongs to two again next is where you need to understand"
+    },
+    {
+      "start": 409.2,
+      "end": 415.86,
+      "text": "next comes j1 at the rate com which ideally should belong to the node 3 which ideally should belong"
+    },
+    {
+      "start": 415.86,
+      "end": 427.18,
+      "text": "to the node 3 but we see that a j1 at the rate com j1 at the rate com already exists at node 0"
+    },
+    {
+      "start": 427.18,
+      "end": 438.96,
+      "text": "so apparently this guy or this entire guy who is nothing but the node 3 should be apart or"
+    },
+    {
+      "start": 438.96,
+      "end": 447.42,
+      "text": "connected to node 0 so what i'll do is i will just go ahead and since this j1 was already there"
+    },
+    {
+      "start": 447.42,
+      "end": 454.74,
+      "text": "at 0 i will connect 0 and this current guy and i will try to connect it because they'll merge"
+    },
+    {
+      "start": 454.74,
+      "end": 462.68,
+      "text": "because i know one thing if j1 and j1 matches it goes and merges to this so 0 and 3 whoever is here"
+    },
+    {
+      "start": 462.68,
+      "end": 468.54,
+      "text": "now gets merged to this so i'll just go and connect 3 to this and the 3 will get"
+    },
+    {
+      "start": 468.54,
+      "end": 468.94,
+      "text": "merged"
+    },
+    {
+      "start": 468.96,
+      "end": 477.56,
+      "text": "that goes off from here so j1 is done we do not need to assign j1 again here because it's of no"
+    },
+    {
+      "start": 477.56,
+      "end": 486.78,
+      "text": "use next we see j5 we see j5 is not here so we can go ahead and say okay j5 is not here and we"
+    },
+    {
+      "start": 486.78,
+      "end": 493.94,
+      "text": "can definitely assign it to 3 which is okay because even if you assign j5 to 3 it's not a"
+    },
+    {
+      "start": 493.94,
+      "end": 500.88,
+      "text": "part of 3 because 3's ultimate parent is 0 and that is the boss so he's already under 0 he's"
+    },
+    {
+      "start": 500.88,
+      "end": 507.32,
+      "text": "already under 0 so even if you assign j5 to 3 it's already under 0 doesn't matters perfect next we'll"
+    },
+    {
+      "start": 507.32,
+      "end": 515.32,
+      "text": "go to r2 the moment i go to r2 i see r2 is already a part of 2 it's already a part of 2 but over here"
+    },
+    {
+      "start": 515.32,
+      "end": 522.78,
+      "text": "r2 says i'm a part of 4 but wait that means the 4 will go and merge to 2 i'll just take 4 and merge"
+    },
+    {
+      "start": 522.78,
+      "end": 523.46,
+      "text": "it to 2"
+    },
+    {
+      "start": 523.46,
+      "end": 523.62,
+      "text": "you"
+    },
+    {
+      "start": 523.94,
+      "end": 532.78,
+      "text": "perfect done next r3 so if there is r3 next i will just take r3 at the rate com and say 4"
+    },
+    {
+      "start": 532.78,
+      "end": 539.18,
+      "text": "do i need to connect 4 again there is no need it's a new mail i just write it over here it's a new"
+    },
+    {
+      "start": 539.18,
+      "end": 546.3,
+      "text": "mail i just write it over here so i've written it and 4 and we see that 4 is already connected to 2"
+    },
+    {
+      "start": 546.3,
+      "end": 553.66,
+      "text": "which means this guy is already a part of this perfect next m1 at the rate com and it's not there"
+    },
+    {
+      "start": 553.94,
+      "end": 563.82,
+      "text": "m1 we can definitely write this m1 at the rate com is fifth probably i'll just erase this so that"
+    },
+    {
+      "start": 563.82,
+      "end": 570.86,
+      "text": "it doesn't get clumsy 5 is here perfect so apparently all the mails have been assigned"
+    },
+    {
+      "start": 570.86,
+      "end": 579.54,
+      "text": "their numbers all the mails have been assigned their numbers done very simple so this joint set"
+    },
+    {
+      "start": 579.54,
+      "end": 583.92,
+      "text": "data structure as of now looks something like this where one is alone and the other one is not"
+    },
+    {
+      "start": 583.94,
+      "end": 589.7,
+      "text": "alone zero is connected to three basically it means this and this is connected this means two"
+    },
+    {
+      "start": 589.7,
+      "end": 597.74,
+      "text": "and four is connected this means alone done now it's about merging the mails it's about merging"
+    },
+    {
+      "start": 597.74,
+      "end": 607.4,
+      "text": "the mails so what i will do is i know i will go one by one on this mail so first is on zero j1 at"
+    },
+    {
+      "start": 607.4,
+      "end": 613.82,
+      "text": "the rate com so i will go across and put this j1 at the rate com to zeros"
+    },
+    {
+      "start": 613.94,
+      "end": 621.28,
+      "text": "parent because i want to see where zero is he says i'm a part of zero itself so i'll take j1 at"
+    },
+    {
+      "start": 621.28,
+      "end": 627.54,
+      "text": "the rate com and i will attach it i'll attach it to zero because zero is the parent they'll attach"
+    },
+    {
+      "start": 627.54,
+      "end": 634.38,
+      "text": "it to j1 at the rate com i'll attach it to the zero then next done next i'll take j2 at the rate"
+    },
+    {
+      "start": 634.38,
+      "end": 639.8,
+      "text": "com he says i'm a part of zero who is the parent of himself he's the boss so i'll take it and"
+    },
+    {
+      "start": 639.8,
+      "end": 643.78,
+      "text": "attach it to zero no need to attach names as of now okay"
+    },
+    {
+      "start": 643.94,
+      "end": 651.98,
+      "text": "done next j3 at the rate com again zero so j3 at the rate com again zero perfect done so"
+    },
+    {
+      "start": 651.98,
+      "end": 661.1,
+      "text": "maybe i'll just quickly move it a bit so what's the next thing it's j4 at the rate com so if you"
+    },
+    {
+      "start": 661.1,
+      "end": 668.08,
+      "text": "see j4 belongs to one and one is the parent of himself so i'll just take one and i'll say j4"
+    },
+    {
+      "start": 668.08,
+      "end": 673.92,
+      "text": "at the rate com correct done next r1 at the rate com and i'll say j4 at the rate com correct done"
+    },
+    {
+      "start": 673.94,
+      "end": 681.32,
+      "text": "so j4 at the rate com belongs to two so two says r1 at the rate com next two again says r2 at the"
+    },
+    {
+      "start": 681.32,
+      "end": 687.46,
+      "text": "rate com carefully observe something two is the parent of himself so it's fine what is the next"
+    },
+    {
+      "start": 687.46,
+      "end": 697.56,
+      "text": "carefully see j5 j5 says i belong to three will you take a three and add j5 that's my question"
+    },
+    {
+      "start": 697.56,
+      "end": 703.92,
+      "text": "no you will go to three and say who is your parent he actually belongs to zero he actually belongs to"
+    },
+    {
+      "start": 703.94,
+      "end": 713.6,
+      "text": "zero i'll take this j5 and add it to zero done next r3 at the rate com belongs to four and four"
+    },
+    {
+      "start": 713.6,
+      "end": 722.74,
+      "text": "actually belongs to two i'll take r3 at the rate com and insert it to the ultimate parent r3 is"
+    },
+    {
+      "start": 722.74,
+      "end": 727.92,
+      "text": "also done r1 says i'm five so there is no one at three or four there is no one at three or four"
+    },
+    {
+      "start": 727.92,
+      "end": 733.36,
+      "text": "so i'll go to five and there will be m1 at the rate com"
+    },
+    {
+      "start": 733.36,
+      "end": 733.92,
+      "text": "on the right and i'll say j5 at the rate com and i'll say j5 at the rate com and i'll say j5 at the"
+    },
+    {
+      "start": 733.92,
+      "end": 738.06,
+      "text": "rate com and i'll say j5 at the rate com or the fifth index because five's parent is he himself"
+    },
+    {
+      "start": 738.06,
+      "end": 745.3,
+      "text": "so this is how it will look after merging this is how it will look after merging so what you can do"
+    },
+    {
+      "start": 745.3,
+      "end": 754.1,
+      "text": "is you can simply sort it sort this individually sort this individually sort this individually"
+    },
+    {
+      "start": 754.1,
+      "end": 758.42,
+      "text": "and in order to create the answer it's pretty simple in order to create the answer"
+    },
+    {
+      "start": 758.42,
+      "end": 762.22,
+      "text": "you have a zero go to zero figure out the name take the name"
+    },
+    {
+      "start": 762.22,
+      "end": 769.78,
+      "text": "name, John, and then whatever is this entire thing where you have stored, just put it over"
+    },
+    {
+      "start": 769.78,
+      "end": 775.82,
+      "text": "here, j1 at the rate com, dot, dot, dot, similarly for 1, take the name, at 1 again, it's John,"
+    },
+    {
+      "start": 775.96,
+      "end": 781.42,
+      "text": "so take John again, and since the other thing is sorted, take it and put, next, take the 2,"
+    },
+    {
+      "start": 781.92,
+      "end": 788.02,
+      "text": "at 2, if you see, there is Raj, so take Raj, and whatever is at Raj, sort it, and put it,"
+    },
+    {
+      "start": 788.02,
+      "end": 795.34,
+      "text": "so similarly, you will get the entire answer, which you can return, I said the question is hard,"
+    },
+    {
+      "start": 795.5,
+      "end": 800.48,
+      "text": "it is hard, once I've explained it, it might look easy, because you have a decent idea about"
+    },
+    {
+      "start": 800.48,
+      "end": 805.84,
+      "text": "disjoint set data structure, and if you have a decent hold on this data structure, these kind"
+    },
+    {
+      "start": 805.84,
+      "end": 811.58,
+      "text": "of questions kind of are easier to solve, because they just need shuttle implementation, they're"
+    },
+    {
+      "start": 811.58,
+      "end": 816.42,
+      "text": "usually implementation heavy, so without wasting time, let's move on to the code, I hope you have"
+    },
+    {
+      "start": 816.42,
+      "end": 818.0,
+      "text": "understood how to use the disjoint set data structure, and if you have any questions,"
+    },
+    {
+      "start": 818.0,
+      "end": 822.62,
+      "text": "in order to solve this problem, so I'll be coding the C++ solution on the right, and you can figure"
+    },
+    {
+      "start": 822.62,
+      "end": 828.46,
+      "text": "out the exact similar Java code on the left for the Java people, so before starting it, we will"
+    },
+    {
+      "start": 828.46,
+      "end": 834.44,
+      "text": "be copying the disjoint set template that we have, so in case you don't know about this, please go"
+    },
+    {
+      "start": 834.44,
+      "end": 839.2,
+      "text": "back and watch my previous videos, I have written this template, which is a pretty, pretty clean,"
+    },
+    {
+      "start": 839.5,
+      "end": 845.96,
+      "text": "and useful template for all the problems, so we're given the details, let's, let's see, what are we"
+    },
+    {
+      "start": 845.96,
+      "end": 847.98,
+      "text": "doing at first, then we can probably analyze it, and then we can probably analyze it, and then we"
+    },
+    {
+      "start": 848.0,
+      "end": 853.44,
+      "text": "can probably analyze how to code it, the first step that we did was, we iterated through all the"
+    },
+    {
+      "start": 853.44,
+      "end": 864.12,
+      "text": "mails, and made a mapping of the mail to the node, which they are belonging to, and in the meanwhile,"
+    },
+    {
+      "start": 864.78,
+      "end": 871.4,
+      "text": "if there was overlapping, something like three overlapped with zero, we connected zero with three,"
+    },
+    {
+      "start": 871.4,
+      "end": 877.78,
+      "text": "if there was an overlapping, so something for sure is, we have to overlap across all the mails,"
+    },
+    {
+      "start": 878.0,
+      "end": 883.68,
+      "text": "and something to notice is, the first is always a name, so since we're overlapping on the mails,"
+    },
+    {
+      "start": 884.36,
+      "end": 891.5,
+      "text": "we will always start from the index after the first, so let's quickly have details.size,"
+    },
+    {
+      "start": 891.94,
+      "end": 898.12,
+      "text": "okay, we have, now I know for int i equal to zero, i less than n, i plus plus is where we will be,"
+    },
+    {
+      "start": 898.5,
+      "end": 904.52,
+      "text": "now j will be this time starting on from one, because the first one contains the name,"
+    },
+    {
+      "start": 904.52,
+      "end": 907.6,
+      "text": "so details of i.size, and I can go across,"
+    },
+    {
+      "start": 908.0,
+      "end": 912.3,
+      "text": "and say j plus plus, perfect, what's the next thing that I'll write, the next thing will be"
+    },
+    {
+      "start": 912.3,
+      "end": 919.7,
+      "text": "string of mail, and it will be details of i.j, now we need a mapping, so probably I can take an"
+    },
+    {
+      "start": 919.7,
+      "end": 929.52,
+      "text": "unordered map of string integer, and I can say mapping of mail and node, that's, that's a good"
+    },
+    {
+      "start": 929.52,
+      "end": 937.9,
+      "text": "name, map mail node, so if map mail node contains, like does not, that is something,"
+    },
+    {
+      "start": 938.0,
+      "end": 945.96,
+      "text": "like dot find, if it does not contains this, then it will be pointing to the end, and if it is,"
+    },
+    {
+      "start": 946.38,
+      "end": 953.52,
+      "text": "that means it does not appear somewhere else, so I can definitely put this to this particular"
+    },
+    {
+      "start": 953.52,
+      "end": 958.88,
+      "text": "node, which is i, because i is the node, if you carefully see, zero is the node for the first guy,"
+    },
+    {
+      "start": 959.24,
+      "end": 963.46,
+      "text": "one is the node for the first guy, right, and this join set will do its job, but I have to put it"
+    },
+    {
+      "start": 963.46,
+      "end": 967.98,
+      "text": "into the node, right, if it is for the first time, but if it is for the first time, then I can put it"
+    },
+    {
+      "start": 968.0,
+      "end": 975.46,
+      "text": "as previously seen, for an example, let's see, john has a j1, which was seen at zero, so the map"
+    },
+    {
+      "start": 975.46,
+      "end": 983.0,
+      "text": "will contain zero, and this belongs to three, if it is seen at zero, that means the three and zero"
+    },
+    {
+      "start": 983.0,
+      "end": 989.04,
+      "text": "have to merge, right, because they're the same guy's accounts, so three will be pointing to zero,"
+    },
+    {
+      "start": 989.48,
+      "end": 997.9,
+      "text": "union, union, so ds dot union by size will be called, and I'll say the current node and map"
+    },
+    {
+      "start": 998.0,
+      "end": 1004.22,
+      "text": "mail node, so I can definitely take map mail node, and I can say, okay, just go ahead and connect"
+    },
+    {
+      "start": 1004.22,
+      "end": 1010.98,
+      "text": "yourself, so once I've done this, can I say the disjoint set is kind of created, and you have"
+    },
+    {
+      "start": 1010.98,
+      "end": 1016.84,
+      "text": "all these things in the disjoint set, also you have the map data structure, what is the next"
+    },
+    {
+      "start": 1016.84,
+      "end": 1025.48,
+      "text": "job rather, the next job is pretty simple, the next job is to take these mails and put them"
+    },
+    {
+      "start": 1025.48,
+      "end": 1027.98,
+      "text": "into a list of"
+    },
+    {
+      "start": 1028.0,
+      "end": 1035.18,
+      "text": "merged strings, so you have to go across, put it into zero, put it into zero, put it into zero,"
+    },
+    {
+      "start": 1035.46,
+      "end": 1041.64,
+      "text": "put it into one, put it into two, put it into two, but when there's a three, you do not put it into"
+    },
+    {
+      "start": 1041.64,
+      "end": 1047.96,
+      "text": "three, because three's ultimate parent is zero, you always put to the ultimate parent, so I need"
+    },
+    {
+      "start": 1047.96,
+      "end": 1057.68,
+      "text": "to create a vector of like list of merged mails of all these guys, remember, there might be people"
+    },
+    {
+      "start": 1057.68,
+      "end": 1057.98,
+      "text": "who are not in the list of merged mails, so I'm going to put it into the list of merged mails,"
+    },
+    {
+      "start": 1057.98,
+      "end": 1061.42,
+      "text": "but if there's a three, two are empty, like three is empty, four is empty, it might happen, that's"
+    },
+    {
+      "start": 1061.42,
+      "end": 1068.8,
+      "text": "not an issue, so now I will go across to the map mail node, because that is where all the mails"
+    },
+    {
+      "start": 1068.8,
+      "end": 1075.34,
+      "text": "and the node numberings are, so again, let's get the mail, it's stored in the first position in the"
+    },
+    {
+      "start": 1075.34,
+      "end": 1082.02,
+      "text": "map, and I need the node which it belongs to, and remember, the node will always, yes, the node will"
+    },
+    {
+      "start": 1082.02,
+      "end": 1087.96,
+      "text": "always be the ultimate parent, because if you're finding j5, j5 will be three, but actually,"
+    },
+    {
+      "start": 1087.98,
+      "end": 1094.42,
+      "text": "you put it into zero because that is where it will be merged so ds dot let's take the find"
+    },
+    {
+      "start": 1094.42,
+      "end": 1102.94,
+      "text": "ultimate parent and say find ultimate parent of this index done once this is done i can say"
+    },
+    {
+      "start": 1102.94,
+      "end": 1110.64,
+      "text": "merged mail so probably i can take merged mail and i can say okay merged mail of node can you store"
+    },
+    {
+      "start": 1110.64,
+      "end": 1117.06,
+      "text": "this particular mail perfect so what this will do is this will kind of create this"
+    },
+    {
+      "start": 1117.06,
+      "end": 1121.66,
+      "text": "now what is the next step i need the answer that's the third step i just need the answer"
+    },
+    {
+      "start": 1121.66,
+      "end": 1129.44,
+      "text": "so this merged mails will be attached with a name so for zero the name will be found at"
+    },
+    {
+      "start": 1129.44,
+      "end": 1138.76,
+      "text": "zero zero position for one one zero for two two zero for three empty no merged mails"
+    },
+    {
+      "start": 1138.76,
+      "end": 1140.46,
+      "text": "do not do anything"
+    },
+    {
+      "start": 1140.64,
+      "end": 1146.96,
+      "text": "so they need a list of list to be returned so the list of list is what i'll return this and an"
+    },
+    {
+      "start": 1146.96,
+      "end": 1152.8,
+      "text": "answer now i'll go across and say okay i need to go across all the merged mails but what if"
+    },
+    {
+      "start": 1152.8,
+      "end": 1160.94,
+      "text": "this guy or this node does not have any merged mails it got merged to someone else in that case"
+    },
+    {
+      "start": 1160.94,
+      "end": 1168.86,
+      "text": "i do not have anyone let's go back but in all the other cases first case is sort merged mail"
+    },
+    {
+      "start": 1169.14,
+      "end": 1170.46,
+      "text": "first i'll sort all"
+    },
+    {
+      "start": 1170.64,
+      "end": 1178.0,
+      "text": "the merged mails that is very very important go ahead and sort all of them sorted so merged"
+    },
+    {
+      "start": 1178.0,
+      "end": 1186.26,
+      "text": "mail will be sorted next vector string of temporary temporary will be like okay cool"
+    },
+    {
+      "start": 1186.26,
+      "end": 1193.78,
+      "text": "temporary push back the first thing that it'll push back is details i and the name that is how"
+    },
+    {
+      "start": 1193.78,
+      "end": 1198.42,
+      "text": "a list is created first the name and everything which is in the merged meal so maybe you can go"
+    },
+    {
+      "start": 1198.42,
+      "end": 1200.54,
+      "text": "across the merged mail i"
+    },
+    {
+      "start": 1200.64,
+      "end": 1207.58,
+      "text": "go across the merged mail i and simply say temporary dot push back whatever is there"
+    },
+    {
+      "start": 1207.58,
+      "end": 1213.66,
+      "text": "because you've already sorted it next the answer will be storing it so go across and say the answer"
+    },
+    {
+      "start": 1213.66,
+      "end": 1219.84,
+      "text": "to store it once you've done this you can simply return the answer so this is how the first step of"
+    },
+    {
+      "start": 1219.84,
+      "end": 1226.22,
+      "text": "connecting nodes and making the disjoint set making the ultimate parent next merging the"
+    },
+    {
+      "start": 1226.22,
+      "end": 1233.0,
+      "text": "mails according to their disjoint set data structure next just rearranging them in order"
+    },
+    {
+      "start": 1233.0,
+      "end": 1239.4,
+      "text": "to send the merged with the names as the list of list right so let's quickly compile this and see"
+    },
+    {
+      "start": 1239.4,
+      "end": 1243.98,
+      "text": "if it is actually compiling because it's a long implementation code okay we have some issues"
+    },
+    {
+      "start": 1243.98,
+      "end": 1249.2,
+      "text": "so it says ds was not declared in the scope okay uh we did not declare the disjoint set data"
+    },
+    {
+      "start": 1249.2,
+      "end": 1255.12,
+      "text": "structure so go ahead and declare the disjoint set data structure with the size n so yeah this"
+    },
+    {
+      "start": 1255.12,
+      "end": 1256.2,
+      "text": "will be after this"
+    },
+    {
+      "start": 1256.2,
+      "end": 1261.78,
+      "text": "line cool i think this should be fine let's see if we have any other compiling errors"
+    },
+    {
+      "start": 1261.78,
+      "end": 1271.68,
+      "text": "okay node was not declared let's see why was okay it will be int my bad small typos"
+    },
+    {
+      "start": 1271.68,
+      "end": 1281.18,
+      "text": "now let's have a compile okay on compilation it seems fine let's quickly submit this i hope you"
+    },
+    {
+      "start": 1281.18,
+      "end": 1285.32,
+      "text": "have understood the entire explanation as well as the code so before wrapping up i have a small"
+    },
+    {
+      "start": 1285.32,
+      "end": 1286.18,
+      "text": "request i was going to do a little bit of a test so i'm going to do a test so i'm going to do a"
+    },
+    {
+      "start": 1286.18,
+      "end": 1287.08,
+      "text": "test so i'm going to do a little bit of a test myself so i'm going to go through the statistics"
+    },
+    {
+      "start": 1287.08,
+      "end": 1291.84,
+      "text": "of our channel and i see that 50 percent of the viewers who watch my videos do not subscribe to"
+    },
+    {
+      "start": 1291.84,
+      "end": 1296.34,
+      "text": "our channel so it's a very very earnest request that please do consider subscribing to us because"
+    },
+    {
+      "start": 1296.34,
+      "end": 1300.88,
+      "text": "that is the only thing that keeps me motivated to make these kind of videos so please do subscribe"
+    },
+    {
+      "start": 1300.88,
+      "end": 1305.74,
+      "text": "and if you understood everything about this video please hit that like button and if you haven't"
+    },
+    {
+      "start": 1305.74,
+      "end": 1309.18,
+      "text": "checked out our dp series and the hd she the links will be in the description with this i'll"
+    },
+    {
+      "start": 1309.18,
+      "end": 1311.98,
+      "text": "be wrapping up this video let's meet in some other video till then bye bye take care"
+    }
+  ]
+}

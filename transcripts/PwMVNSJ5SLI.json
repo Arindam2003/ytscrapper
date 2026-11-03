@@ -1,0 +1,649 @@
+{
+  "video_id": "PwMVNSJ5SLI",
+  "title": "G-43. Find the City With the Smallest Number of Neighbours at a Threshold Distance",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 775.91,
+  "segments": [
+    {
+      "start": 2.74,
+      "end": 5.92,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.26,
+      "end": 10.56,
+      "text": "So in this video, we are going to solve the problem city with the smallest number of neighbors"
+    },
+    {
+      "start": 10.56,
+      "end": 16.44,
+      "text": "at a threshold distance. So what does the problem state? The problem states there are n cities"
+    },
+    {
+      "start": 16.44,
+      "end": 24.46,
+      "text": "numbered from 0 to n-1 given the array edges where edges i will be a tuple where we will be"
+    },
+    {
+      "start": 24.46,
+      "end": 31.5,
+      "text": "having a from 2 and a wait which is basically representing an edge from 2 with a particular"
+    },
+    {
+      "start": 31.5,
+      "end": 38.88,
+      "text": "weight. Okay, now you'll also be given an integer distance threshold. You need to find out a city"
+    },
+    {
+      "start": 38.88,
+      "end": 44.22,
+      "text": "with the smallest number of cities that are reachable through some path and those distances"
+    },
+    {
+      "start": 44.22,
+      "end": 52.34,
+      "text": "at most very important at most threshold distance. If there are multiple such cities again very"
+    },
+    {
+      "start": 52.34,
+      "end": 58.74,
+      "text": "important our answer will be the city with the greatest number. So let's understand what does"
+    },
+    {
+      "start": 58.74,
+      "end": 61.44,
+      "text": "the question state. Imagine this is an under"
+    },
+    {
+      "start": 61.44,
+      "end": 61.48,
+      "text": "a city with the greatest number of cities. So let's understand what does the question state."
+    },
+    {
+      "start": 61.48,
+      "end": 69.5,
+      "text": "And I'm giving you the threshold for so fast you from city 0. This is the city 0. If you want to go"
+    },
+    {
+      "start": 69.5,
+      "end": 75.52,
+      "text": "city 1. What will be the shortest path that you'll take that will be with a distance of 3 is that"
+    },
+    {
+      "start": 75.52,
+      "end": 84.4,
+      "text": "under the threshold it is so I can say I can reach from 0 to 1 under the threshold. Okay. Now let's"
+    },
+    {
+      "start": 84.4,
+      "end": 91.42,
+      "text": "try to reach 2. Can I reach 2 under the threshold the threshold is 4 and I'm taking exactly 4 that"
+    },
+    {
+      "start": 91.42,
+      "end": 98.2,
+      "text": "is okay because you have been clearly told at most we can use the threshold value. So in order to reach"
+    },
+    {
+      "start": 98.2,
+      "end": 107.6,
+      "text": "from 0 to 2 I'm using 3 plus 1 which is 4. So I can also reach 2. So can I say I can also go to 2."
+    },
+    {
+      "start": 107.78,
+      "end": 114.42,
+      "text": "Yes, I can. Perfect. Now let's look from 0 to the other one 3. So if I try to go to 3 in the shortest"
+    },
+    {
+      "start": 114.42,
+      "end": 121.36,
+      "text": "possible path this is the one which is going to take 5 which is crossing the threshold. So I cannot go from"
+    },
+    {
+      "start": 121.36,
+      "end": 128.42,
+      "text": "city 0 to city 3 under like at most with the threshold value. So city 3 will not be counted."
+    },
+    {
+      "start": 128.82,
+      "end": 135.34,
+      "text": "So as of now from city 0 we can go to 1 and 2. Similarly from 1 where can you go? Let's look at"
+    },
+    {
+      "start": 135.34,
+      "end": 144.0,
+      "text": "it from 1 you can go to 0 because it will take a 3 distance. So I can go to 0 from 1. I can go to 2"
+    },
+    {
+      "start": 144.0,
+      "end": 149.24,
+      "text": "as well which is going to take me 1 which is again under the threshold. I can also go to 3. Why?"
+    },
+    {
+      "start": 149.24,
+      "end": 151.2,
+      "text": "Because if I take this path."
+    },
+    {
+      "start": 151.36,
+      "end": 160.74,
+      "text": "It's going to take a total costing of 2 which is under the threshold. So similarly we can figure out for 2 and 3."
+    },
+    {
+      "start": 160.88,
+      "end": 168.9,
+      "text": "So I'll just copy paste for 2 it's 0 1 3 and for 3 it is going to be 1 2. So I figured out for every city"
+    },
+    {
+      "start": 168.9,
+      "end": 178.38,
+      "text": "with cities I can travel with this at most threshold distance value. So we can see we have"
+    },
+    {
+      "start": 178.38,
+      "end": 181.34,
+      "text": "two cities with the lowest number of cities. So I can go to 1 and 2. So I can go to 1 and 2. So I can go to 1 and 2."
+    },
+    {
+      "start": 181.36,
+      "end": 184.52,
+      "text": "So if I take this path and take the lowest number of cities that I can travel to like from 0 I can just"
+    },
+    {
+      "start": 184.52,
+      "end": 190.76,
+      "text": "travel to two cities. From 3 I can travel to 2 cities. But from 1 and 2 I can travel to 3 cities."
+    },
+    {
+      "start": 191.12,
+      "end": 196.34,
+      "text": "So I need to figure out the lowest number of cities that I can travel to. So I see these two are the"
+    },
+    {
+      "start": 196.34,
+      "end": 202.04,
+      "text": "options. Either 0 or either 3 because these are the lowest like which can just go to the lowest"
+    },
+    {
+      "start": 202.04,
+      "end": 207.48,
+      "text": "number of cities from here. Now if there are multiple such options you choose the largest one"
+    },
+    {
+      "start": 207.48,
+      "end": 211.08,
+      "text": "which is the largest one? 3. So your answer comes down to be"
+    },
+    {
+      "start": 211.36,
+      "end": 217.58,
+      "text": "three so this is what the question states you have to give me this you have to give me the"
+    },
+    {
+      "start": 217.58,
+      "end": 224.9,
+      "text": "note or the city number from where you can go to the least number of cities with at most yes very"
+    },
+    {
+      "start": 224.9,
+      "end": 231.04,
+      "text": "important at most this particular threshold value so in order to solve this particular problem there"
+    },
+    {
+      "start": 231.04,
+      "end": 237.94,
+      "text": "is a prerequisite please go back and watch floyd warshall algorithm so if you have not seen the"
+    },
+    {
+      "start": 237.94,
+      "end": 242.88,
+      "text": "floyd warshall algorithm you have to watch it so in the previous video i have explained the floyd"
+    },
+    {
+      "start": 242.88,
+      "end": 248.68,
+      "text": "warshall so if you watch the floyd warshall algorithm you know from every city from zero"
+    },
+    {
+      "start": 248.68,
+      "end": 254.94,
+      "text": "to all the cities how can you get the distance from one to all the cities how can you get the"
+    },
+    {
+      "start": 254.94,
+      "end": 261.24,
+      "text": "distance from two to all the cities again how can you get the distance similarly from three to all"
+    },
+    {
+      "start": 261.24,
+      "end": 266.88,
+      "text": "the cities how can you get the how can you get the distance that is using the floyd warshall algorithm"
+    },
+    {
+      "start": 266.88,
+      "end": 267.64,
+      "text": "if you remember"
+    },
+    {
+      "start": 267.94,
+      "end": 272.18,
+      "text": "So if you have seen the video of Floyd Warshall algorithm, you know that Floyd Warshall algorithm"
+    },
+    {
+      "start": 272.18,
+      "end": 278.78,
+      "text": "helps us to generate a 2D matrix. Yes. Where? When I say from zero, you want to go to three,"
+    },
+    {
+      "start": 279.26,
+      "end": 284.76,
+      "text": "the shortest distance value will be stored here. If you want to find from two, in order to go to"
+    },
+    {
+      "start": 284.76,
+      "end": 289.9,
+      "text": "two, the shortest distance will be stored here. If you want to find from three to one, the shortest"
+    },
+    {
+      "start": 289.9,
+      "end": 294.46,
+      "text": "distance will be stored here. So Floyd Warshall will help us to generate this. So let's quickly"
+    },
+    {
+      "start": 294.46,
+      "end": 301.66,
+      "text": "generate this particular. So I filled up the 2D matrix and this is how it looks. So for the city"
+    },
+    {
+      "start": 301.66,
+      "end": 307.72,
+      "text": "zero, in order to go to city zero, city one, city two, city three, these are the distance. From city"
+    },
+    {
+      "start": 307.72,
+      "end": 312.88,
+      "text": "one, in order to go to city zero, one, two, three, these are the distance. Similarly for two, these"
+    },
+    {
+      "start": 312.88,
+      "end": 317.84,
+      "text": "are the distance. Similarly for three, these are the distance. So I filled up all the distance."
+    },
+    {
+      "start": 317.84,
+      "end": 324.44,
+      "text": "Now what I can do is I can definitely keep a counter equal to zero. Okay. And let's"
+    },
+    {
+      "start": 324.44,
+      "end": 332.32,
+      "text": "keep something as counter max. Yes. Counter max equal to something like the maximum number of"
+    },
+    {
+      "start": 332.32,
+      "end": 337.94,
+      "text": "cities possible or something more than that. So over here we have four cities. So let's assume"
+    },
+    {
+      "start": 337.94,
+      "end": 344.7,
+      "text": "we keep five. Yes. Let's assume we keep five and let's assume we keep city equal to minus one"
+    },
+    {
+      "start": 344.7,
+      "end": 351.16,
+      "text": "initially, because as of now, no city has been found. So at first we will do an iteration on the"
+    },
+    {
+      "start": 354.44,
+      "end": 361.64,
+      "text": "threshold. Okay. Under the threshold count one, three under the threshold count, two, four under"
+    },
+    {
+      "start": 361.64,
+      "end": 369.8,
+      "text": "the threshold count, three. Okay. Five not under the threshold. So no more counts. So we've got a"
+    },
+    {
+      "start": 369.8,
+      "end": 376.16,
+      "text": "count of three cities which includes himself as well. So that is okay. Because zero to zero is"
+    },
+    {
+      "start": 376.16,
+      "end": 382.58,
+      "text": "himself, which is okay. So we have three cities, which includes itself, which are under or at most"
+    },
+    {
+      "start": 382.58,
+      "end": 384.32,
+      "text": "with a threshold value of four."
+    },
+    {
+      "start": 384.44,
+      "end": 390.92,
+      "text": "now we had assigned five which was the maximum so you got someone better we got lesser number"
+    },
+    {
+      "start": 390.92,
+      "end": 396.76,
+      "text": "of cities under the threshold so i can say okay three to be updated and the city that i got is"
+    },
+    {
+      "start": 396.76,
+      "end": 404.18,
+      "text": "zero perfect let's go to the city one three under the threshold zero under the threshold"
+    },
+    {
+      "start": 404.18,
+      "end": 412.46,
+      "text": "one under the threshold two under the threshold so four cities including one to one itself four"
+    },
+    {
+      "start": 412.46,
+      "end": 419.34,
+      "text": "cities under the threshold or at most the threshold right so what is the least that i've"
+    },
+    {
+      "start": 419.34,
+      "end": 428.24,
+      "text": "got till now that is three correct we have four so should we no because we are looking for minimum"
+    },
+    {
+      "start": 428.24,
+      "end": 434.78,
+      "text": "number of cities which takes at most this threshold so not to be considered next city two"
+    },
+    {
+      "start": 434.78,
+      "end": 442.38,
+      "text": "threshold threshold threshold threshold four cities again not to be"
+    },
+    {
+      "start": 442.38,
+      "end": 442.44,
+      "text": "considered"
+    },
+    {
+      "start": 442.46,
+      "end": 453.34,
+      "text": "next three not threshold threshold threshold threshold count three similar but if you remember"
+    },
+    {
+      "start": 453.34,
+      "end": 459.56,
+      "text": "if we have similar we take the bigger city so we will keep it as three or we will replace three by"
+    },
+    {
+      "start": 459.56,
+      "end": 465.22,
+      "text": "three your wish and we'll replace the city by the bigger one which is three if it is equal you"
+    },
+    {
+      "start": 465.22,
+      "end": 471.08,
+      "text": "replace the city index as well so at the end of the day once i've iterated all the cities i know"
+    },
+    {
+      "start": 471.08,
+      "end": 472.38,
+      "text": "that city three"
+    },
+    {
+      "start": 472.38,
+      "end": 478.26,
+      "text": "is my answer and that is what you have to return you have to just find the city not how many or less"
+    },
+    {
+      "start": 478.26,
+      "end": 483.88,
+      "text": "if how many are less then you have to subtract one because we are counting themselves as well"
+    },
+    {
+      "start": 483.88,
+      "end": 489.8,
+      "text": "because when we did we did count three to three as well we did count zero to zero as well which"
+    },
+    {
+      "start": 489.8,
+      "end": 495.12,
+      "text": "will always be zero so make sure you do this if the question states how many cities but as of now"
+    },
+    {
+      "start": 495.12,
+      "end": 500.02,
+      "text": "the question states which city so this is definitely going to work so i hope you have"
+    },
+    {
+      "start": 500.02,
+      "end": 502.36,
+      "text": "understood the entire explanation now it's time to quote it out so i'm going to stop here and i'll see you in the next video bye bye bye"
+    },
+    {
+      "start": 502.38,
+      "end": 510.14,
+      "text": "it up so we see find city and we are given n m edges distance threshold so what i'll go ahead"
+    },
+    {
+      "start": 510.14,
+      "end": 517.7,
+      "text": "uh and do is i'll create the distance array at first i'll i know it will be uh n cross n size"
+    },
+    {
+      "start": 517.7,
+      "end": 525.14,
+      "text": "and initially we will fill it with intermax or 1e9 whichever you wish to next i will go across"
+    },
+    {
+      "start": 525.14,
+      "end": 532.22,
+      "text": "all the edges i'll say okay listen distance of it zero because this is where from the"
+    },
+    {
+      "start": 532.38,
+      "end": 538.5,
+      "text": "right side of the edge i will fill it with intermax or two because it is a bi-directional edge"
+    },
+    {
+      "start": 538.5,
+      "end": 543.66,
+      "text": "like it's a bi-directional edge so fill it both the ways it's a bi-directional edge count"
+    },
+    {
+      "start": 543.66,
+      "end": 551.76,
+      "text": "remember this guys you have to fill it both the ways okay so you put one and then you say it of"
+    },
+    {
+      "start": 551.76,
+      "end": 559.02,
+      "text": "zero and then you can say it of two so i filled up the bi-directional edge both ways now i know one thing"
+    },
+    {
+      "start": 559.02,
+      "end": 562.14,
+      "text": "from itself to itself that is zero so you filled that as well right now let's go ahead and see what"
+    },
+    {
+      "start": 562.14,
+      "end": 569.38,
+      "text": "let's quickly uh get the floyd voshel algorithm working so we know the floyd voshel has a via"
+    },
+    {
+      "start": 569.38,
+      "end": 579.04,
+      "text": "like via this edge then via this node rather and then it has an i loop and then it has a"
+    },
+    {
+      "start": 579.04,
+      "end": 586.72,
+      "text": "j loop if you remember properly now i know one thing if if very very important pointer right if"
+    },
+    {
+      "start": 586.72,
+      "end": 594.26,
+      "text": "distance of ik that means it's not reachable which means it will be into max if it's not reachable"
+    },
+    {
+      "start": 594.26,
+      "end": 602.28,
+      "text": "or or distance of kj if it's also not reachable there is no need to take them into account"
+    },
+    {
+      "start": 602.28,
+      "end": 607.44,
+      "text": "remember this there is no need to take them into account and you can say continue i'm i'm not"
+    },
+    {
+      "start": 607.44,
+      "end": 613.82,
+      "text": "concerned because if via this there is it's not reachable it doesn't make sense otherwise i'll be"
+    },
+    {
+      "start": 613.82,
+      "end": 616.7,
+      "text": "like okay if it is not then i can say continue and i can say continue and i can say continue"
+    },
+    {
+      "start": 616.7,
+      "end": 625.52,
+      "text": "go ahead and write distance of ik plus distance of kj simple and i can say the entire floyd voshel"
+    },
+    {
+      "start": 625.52,
+      "end": 631.34,
+      "text": "algorithm is ready and we have the shortest distance stored in the distance okay now what"
+    },
+    {
+      "start": 631.34,
+      "end": 638.14,
+      "text": "is the next thing i need the count of city assume initially it is this and then i can say i need the"
+    },
+    {
+      "start": 638.14,
+      "end": 643.98,
+      "text": "city number assume initially it is minus one now let's go across all the cities so the first city"
+    },
+    {
+      "start": 643.98,
+      "end": 646.64,
+      "text": "is zero and we will go across till"
+    },
+    {
+      "start": 646.64,
+      "end": 646.68,
+      "text": "the"
+    },
+    {
+      "start": 646.7,
+      "end": 654.28,
+      "text": "this and then i can be like okay i need adjacent city so adjacent city will be from zero and"
+    },
+    {
+      "start": 654.28,
+      "end": 661.94,
+      "text": "adjacent city will be going on from here perfect and now i can say this is the city this is the"
+    },
+    {
+      "start": 661.94,
+      "end": 668.06,
+      "text": "adjacent city so the distance will be city to adjacent city that's what the floyd voshel tells"
+    },
+    {
+      "start": 668.06,
+      "end": 674.54,
+      "text": "me if it is lesser than the given threshold can i do a counter plus plus but i need a counter"
+    },
+    {
+      "start": 674.54,
+      "end": 676.64,
+      "text": "i need a counter which is for"
+    },
+    {
+      "start": 676.64,
+      "end": 682.64,
+      "text": "every city so probably we can assign it here this is for every city now once this counter has been"
+    },
+    {
+      "start": 682.64,
+      "end": 688.0,
+      "text": "computed can i save the count of city is less than the count of the city i can go ahead and say"
+    },
+    {
+      "start": 688.0,
+      "end": 693.6,
+      "text": "lesser than equal to because largest city is what we need count of city can be written as count and"
+    },
+    {
+      "start": 693.6,
+      "end": 700.56,
+      "text": "the city number can be written as the city once you have done everything you can go ahead and say"
+    },
+    {
+      "start": 700.56,
+      "end": 706.48,
+      "text": "okay city is what i am and i will be returning the ct number and i will be returning the city number"
+    },
+    {
+      "start": 706.48,
+      "end": 711.6,
+      "text": "and i will quickly compile and see if it is working fine it is let's submit this and see if all the test"
+    },
+    {
+      "start": 711.6,
+      "end": 717.36,
+      "text": "cases are passing or not all the test cases are passing so i have solved this problem using the"
+    },
+    {
+      "start": 717.36,
+      "end": 722.4,
+      "text": "floyd virtual algorithm i'll give you a small assignment i have done this problem using the"
+    },
+    {
+      "start": 722.4,
+      "end": 727.36,
+      "text": "floyd version that's your time to do it using the dextras algorithm you know what is it extras"
+    },
+    {
+      "start": 727.36,
+      "end": 732.16,
+      "text": "algorithm i've already done a lot of problems on it so go back and try to solve it using the dextras"
+    },
+    {
+      "start": 732.16,
+      "end": 736.32,
+      "text": "algorithm and make it work so the dextras algorithm is already doing all of these things it needs to"
+    },
+    {
+      "start": 736.32,
+      "end": 741.54,
+      "text": "and you can paste the code in the comments so that the people watching might find it useful in the"
+    },
+    {
+      "start": 741.54,
+      "end": 748.68,
+      "text": "later half of time okay so so before finishing up uh this video i have a very quick request to make"
+    },
+    {
+      "start": 748.68,
+      "end": 754.64,
+      "text": "us checking out our channel stats nearly 50 of the viewers who watch our videos do not subscribe to"
+    },
+    {
+      "start": 754.64,
+      "end": 758.88,
+      "text": "us please do consider subscribing to us and if you understood everything please do hit that like"
+    },
+    {
+      "start": 758.88,
+      "end": 763.36,
+      "text": "button if you haven't checked out our dp series and the hdc the links will be in the description"
+    },
+    {
+      "start": 763.36,
+      "end": 767.1,
+      "text": "with this i'll be wrapping up this video let's put in some of the video till then bye bye take care"
+    }
+  ]
+}

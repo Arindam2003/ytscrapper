@@ -1,0 +1,424 @@
+{
+  "video_id": "iTBaI90lpDQ",
+  "title": "G-23. Detect a Cycle in Directed Graph ｜ Topological Sort ｜ Kahn's Algorithm ｜ BFS",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 376.9,
+  "segments": [
+    {
+      "start": 3.12,
+      "end": 6.22,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.56,
+      "end": 13.32,
+      "text": "So in this video, we're going to learn about cycle detection in a directed graph using the BFS algorithm."
+    },
+    {
+      "start": 13.8,
+      "end": 19.9,
+      "text": "Now, in the previous video, we have done that using the DFS algorithm, but how to do that using the BFS algorithm?"
+    },
+    {
+      "start": 20.24,
+      "end": 25.88,
+      "text": "So if you remember in the DFS, we used something like a visited and then we use something like a path visited."
+    },
+    {
+      "start": 26.18,
+      "end": 32.38,
+      "text": "Now in the backtracking, we reset the path visit, but in BFS, there cannot be a backtracking."
+    },
+    {
+      "start": 32.38,
+      "end": 36.96,
+      "text": "So how do we implement a similar sort of algorithm into BFS?"
+    },
+    {
+      "start": 37.44,
+      "end": 41.9,
+      "text": "So this is where something like the Kahn's algorithm comes in."
+    },
+    {
+      "start": 42.24,
+      "end": 51.0,
+      "text": "So if you haven't checked out my video on topological sort using BFS, please go back and learn this algorithm and then come back and watch this."
+    },
+    {
+      "start": 51.26,
+      "end": 55.82,
+      "text": "Okay, it's just before this video in the playlist that you're watching right now."
+    },
+    {
+      "start": 56.32,
+      "end": 59.08,
+      "text": "So how do you solve this particular problem?"
+    },
+    {
+      "start": 59.08,
+      "end": 62.08,
+      "text": "So what I'll do is this is a."
+    },
+    {
+      "start": 62.38,
+      "end": 63.88,
+      "text": "Directed cyclic graph."
+    },
+    {
+      "start": 63.88,
+      "end": 68.64,
+      "text": "Can I see this is a directed cyclic graph."
+    },
+    {
+      "start": 69.06,
+      "end": 78.38,
+      "text": "So if you've seen the previous video on topological sort using BFS, you know that toposorts are only applicable on DAGs."
+    },
+    {
+      "start": 78.76,
+      "end": 85.36,
+      "text": "You know, this any of the toposort is only applicable on a DAG, which is directed a cyclic graph."
+    },
+    {
+      "start": 85.54,
+      "end": 88.46,
+      "text": "If it isn't a cyclic graph, it won't be applicable."
+    },
+    {
+      "start": 88.72,
+      "end": 91.94,
+      "text": "But this graph has a cycle if you carefully see."
+    },
+    {
+      "start": 91.94,
+      "end": 95.3,
+      "text": "This graph has a cycle and you need to tell me that."
+    },
+    {
+      "start": 95.3,
+      "end": 96.5,
+      "text": "Yes, it has a cycle."
+    },
+    {
+      "start": 96.84,
+      "end": 97.94,
+      "text": "So how do you detect it?"
+    },
+    {
+      "start": 98.24,
+      "end": 108.36,
+      "text": "So what I do is since I know a toposort is not possible for a graph that has a cycle, I'll still try to apply topological sort to this."
+    },
+    {
+      "start": 108.66,
+      "end": 112.76,
+      "text": "Yes, I'll I'll still try to find the toposort for this graph."
+    },
+    {
+      "start": 113.16,
+      "end": 114.44,
+      "text": "Okay, let's try out."
+    },
+    {
+      "start": 114.66,
+      "end": 116.12,
+      "text": "So what is the Kahn's algorithm?"
+    },
+    {
+      "start": 116.18,
+      "end": 116.96,
+      "text": "It's very simple."
+    },
+    {
+      "start": 117.3,
+      "end": 119.66,
+      "text": "Initially find the n degrees of all the nodes."
+    },
+    {
+      "start": 119.9,
+      "end": 121.62,
+      "text": "So I'll try to write the n degrees over here itself."
+    },
+    {
+      "start": 121.94,
+      "end": 124.4,
+      "text": "So 0 because there is no incoming nodes."
+    },
+    {
+      "start": 124.84,
+      "end": 125.54,
+      "text": "So 0 for this."
+    },
+    {
+      "start": 125.92,
+      "end": 127.06,
+      "text": "How many incoming are there?"
+    },
+    {
+      "start": 127.16,
+      "end": 128.1,
+      "text": "1 and 2."
+    },
+    {
+      "start": 128.58,
+      "end": 129.42,
+      "text": "So 2 for this."
+    },
+    {
+      "start": 129.92,
+      "end": 131.7,
+      "text": "How many incoming on this?"
+    },
+    {
+      "start": 132.82,
+      "end": 135.2,
+      "text": "So I see there is only one guy incoming."
+    },
+    {
+      "start": 135.68,
+      "end": 136.36,
+      "text": "So 1."
+    },
+    {
+      "start": 137.16,
+      "end": 138.76,
+      "text": "How many incoming on 5?"
+    },
+    {
+      "start": 139.14,
+      "end": 140.2,
+      "text": "Can I say it's 0?"
+    },
+    {
+      "start": 140.96,
+      "end": 142.04,
+      "text": "Sorry, it's 1 again."
+    },
+    {
+      "start": 142.66,
+      "end": 144.08,
+      "text": "How many incoming on 4?"
+    },
+    {
+      "start": 144.48,
+      "end": 148.78,
+      "text": "If I carefully see incoming on 4 as 1, so I can just write it as 1."
+    },
+    {
+      "start": 149.38,
+      "end": 151.68,
+      "text": "So I've written the n degrees of."
+    },
+    {
+      "start": 151.94,
+      "end": 157.32,
+      "text": "all of these nodes. Now what was the algorithm stating? The algorithm always stated initially"
+    },
+    {
+      "start": 157.32,
+      "end": 163.02,
+      "text": "start with a Q data structure. So let's start off with a Q data structure and in this Q data"
+    },
+    {
+      "start": 163.02,
+      "end": 169.16,
+      "text": "structure initially keep the node with the indegree 0 which is the 1. Now let's start the algorithm."
+    },
+    {
+      "start": 169.56,
+      "end": 175.98,
+      "text": "The algorithm states gets the first node and you can put that into the toposort array. So let's put"
+    },
+    {
+      "start": 175.98,
+      "end": 182.8,
+      "text": "it for node 1 who are the adjacents. So the adjacent is 2. Go to 2 and reduce its indegree"
+    },
+    {
+      "start": 182.8,
+      "end": 191.06,
+      "text": "by 1. So this will become 1. So we're done. Now what happens is the moment you reduce its"
+    },
+    {
+      "start": 191.06,
+      "end": 198.16,
+      "text": "indegree by 1 the moment you reduce its indegree by 1 the indegree is 1 and the Q is empty. The Q"
+    },
+    {
+      "start": 198.16,
+      "end": 205.96,
+      "text": "is empty and the toposort just has one guy. The toposort just has one guy. Why did it not"
+    },
+    {
+      "start": 205.96,
+      "end": 213.78,
+      "text": "work? Because this 2 was supposedly connected to 1 and if you remove this right if you remove this"
+    },
+    {
+      "start": 213.78,
+      "end": 219.08,
+      "text": "there is still a dependency on this because it's a cyclic dependency. So there are still nodes"
+    },
+    {
+      "start": 219.08,
+      "end": 224.66,
+      "text": "which are dependent. So you you're not able to create a toposort because what is a toposort?"
+    },
+    {
+      "start": 224.66,
+      "end": 232.62,
+      "text": "It is a linear ordering of n vertices. So if you do not produce a toposort of n size"
+    },
+    {
+      "start": 232.62,
+      "end": 235.66,
+      "text": "the toposort that you produce is of size 1."
+    },
+    {
+      "start": 235.96,
+      "end": 241.9,
+      "text": "So you cannot say that like you can definitely say there is a problem and the only problem"
+    },
+    {
+      "start": 241.9,
+      "end": 249.18,
+      "text": "that you can have is a cycle. If the toposort comes out to be exactly having n elements"
+    },
+    {
+      "start": 249.18,
+      "end": 255.28,
+      "text": "if the toposort exactly has n elements then you can say that it is a directed acyclic graph"
+    },
+    {
+      "start": 255.28,
+      "end": 260.68,
+      "text": "does not have a cycle. But if the toposort has anything lesser than n elements then you"
+    },
+    {
+      "start": 260.68,
+      "end": 265.76,
+      "text": "can say that it contains a cycle. Very simple. If you're able to generate a toposort it means"
+    },
+    {
+      "start": 265.96,
+      "end": 270.58,
+      "text": "it does not have a cycle. If you're not able to generate a toposort it means it does have"
+    },
+    {
+      "start": 270.58,
+      "end": 276.26,
+      "text": "a cycle which is causing an issue. So in order to code what we will go is we'll go to the"
+    },
+    {
+      "start": 276.26,
+      "end": 281.54,
+      "text": "toposort code and I'll copy paste it. Okay let's copy paste the code into the over here."
+    },
+    {
+      "start": 281.54,
+      "end": 287.98,
+      "text": "Now at then when the toposort has been produced we say listen if the toposort size is equal"
+    },
+    {
+      "start": 287.98,
+      "end": 293.28,
+      "text": "to equal to n then it does not have a cycle toposort was produced otherwise it does have"
+    },
+    {
+      "start": 293.28,
+      "end": 295.9,
+      "text": "a cycle. Otherwise it does have a cycle."
+    },
+    {
+      "start": 295.96,
+      "end": 301.36,
+      "text": "Now do we need to store the toposort? No we don't need. We can just omit this. We can"
+    },
+    {
+      "start": 301.36,
+      "end": 306.38,
+      "text": "omit this and we can probably keep a counter variable something like this instead of having"
+    },
+    {
+      "start": 306.38,
+      "end": 312.4,
+      "text": "the toposort stored because we just are concerned about the count. The count is okay. I will"
+    },
+    {
+      "start": 312.4,
+      "end": 323.57,
+      "text": "just quickly have a compilation. Sorry my bad. If we run this it is fine. Let's quickly"
+    },
+    {
+      "start": 323.57,
+      "end": 330.97,
+      "text": "submit this and see if it is working fine. Wow it does. So guys I hope you've understood"
+    },
+    {
+      "start": 330.97,
+      "end": 332.47,
+      "text": "this wonderful concept."
+    },
+    {
+      "start": 332.65,
+      "end": 334.33,
+      "text": "We've seen the time complexity and the space complexity being applied on detection of cycle"
+    },
+    {
+      "start": 334.33,
+      "end": 339.03,
+      "text": "in directed graph. What about the time complexity and the space complexity. It is similar to"
+    },
+    {
+      "start": 339.03,
+      "end": 344.27,
+      "text": "toposort. We're using an extra space of a q and a in degree which is bco of 2n. And then"
+    },
+    {
+      "start": 344.27,
+      "end": 348.63,
+      "text": "we are using the BFS algorithm which is v plus e for directed graphs. So guys I hope"
+    },
+    {
+      "start": 348.63,
+      "end": 352.71,
+      "text": "I was able to explain you this particular algorithm. So just in case I was please make"
+    },
+    {
+      "start": 352.71,
+      "end": 356.15,
+      "text": "sure you like this video. And if you are new to our channel what are you waiting for. I"
+    },
+    {
+      "start": 356.15,
+      "end": 360.43,
+      "text": "think it's high time that you hit that subscribe button. And if you haven't checked out our"
+    },
+    {
+      "start": 360.43,
+      "end": 361.93,
+      "text": "DPC series and the HD Sheet the links are in the description. Please leave your comments."
+    },
+    {
+      "start": 361.93,
+      "end": 362.09,
+      "text": "And if you are new to our channel then please subscribe. And if you're new to our channel"
+    },
+    {
+      "start": 362.09,
+      "end": 362.21,
+      "text": "then please leave your comments. And if you're new to our channel then please leave your comments."
+    },
+    {
+      "start": 362.21,
+      "end": 365.21,
+      "text": "description please make sure you check it out and yeah with this I'll be wrapping up"
+    },
+    {
+      "start": 365.21,
+      "end": 367.73,
+      "text": "this video let's meet in some other video till then bye bye take care"
+    }
+  ]
+}

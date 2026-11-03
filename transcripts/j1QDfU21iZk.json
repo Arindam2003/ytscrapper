@@ -1,0 +1,2309 @@
+{
+  "video_id": "j1QDfU21iZk",
+  "title": "G-56. Articulation Point in Graph",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1319.93,
+  "segments": [
+    {
+      "start": 3.73,
+      "end": 6.95,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 7.23,
+      "end": 9.93,
+      "text": "So in this video, we will be learning about articulation point."
+    },
+    {
+      "start": 10.23,
+      "end": 11.69,
+      "text": "What do you mean by articulation point?"
+    },
+    {
+      "start": 12.03,
+      "end": 18.61,
+      "text": "Now, if this is the given graph, any node on this graph, on whose removal,"
+    },
+    {
+      "start": 19.25,
+      "end": 25.49,
+      "text": "the graph breaks into multiple components, is what you call as articulation point."
+    },
+    {
+      "start": 25.83,
+      "end": 30.39,
+      "text": "Like if you see this graph, for an example, imagine I remove 0."
+    },
+    {
+      "start": 30.39,
+      "end": 35.71,
+      "text": "Do you see the graph being broken into 1 and 2 components?"
+    },
+    {
+      "start": 35.97,
+      "end": 36.51,
+      "text": "Do you see that?"
+    },
+    {
+      "start": 36.95,
+      "end": 37.67,
+      "text": "Do you see that, right?"
+    },
+    {
+      "start": 37.99,
+      "end": 41.99,
+      "text": "The graph got broken into 2 components on the removal of 0."
+    },
+    {
+      "start": 42.41,
+      "end": 46.33,
+      "text": "Similarly, if I try to remove 2, like if I try to remove 2,"
+    },
+    {
+      "start": 46.97,
+      "end": 49.29,
+      "text": "did the graph break down into multiple components?"
+    },
+    {
+      "start": 49.53,
+      "end": 50.09,
+      "text": "Yes, it did."
+    },
+    {
+      "start": 50.47,
+      "end": 52.81,
+      "text": "One is here and the other one is here."
+    },
+    {
+      "start": 53.09,
+      "end": 55.49,
+      "text": "The graph broke down into multiple components."
+    },
+    {
+      "start": 55.49,
+      "end": 57.41,
+      "text": "These edges will no more be there."
+    },
+    {
+      "start": 57.81,
+      "end": 60.37,
+      "text": "But the graph did break into multiple."
+    },
+    {
+      "start": 60.73,
+      "end": 61.39,
+      "text": "Components."
+    },
+    {
+      "start": 61.59,
+      "end": 66.51,
+      "text": "So any node on whose removal the graph breaks down into multiple component"
+    },
+    {
+      "start": 66.71,
+      "end": 69.23,
+      "text": "is known as an articulation point."
+    },
+    {
+      "start": 69.39,
+      "end": 71.55,
+      "text": "Now, can I see that 3 is an articulation point?"
+    },
+    {
+      "start": 71.91,
+      "end": 75.65,
+      "text": "No, I cannot because even if I remove 3, the graph is still connected."
+    },
+    {
+      "start": 75.81,
+      "end": 78.69,
+      "text": "I don't see any breakage apart from the removal of 3."
+    },
+    {
+      "start": 78.95,
+      "end": 81.69,
+      "text": "That is why 3 is not an articulation point."
+    },
+    {
+      "start": 82.05,
+      "end": 87.21,
+      "text": "For this particular graph, only 0 and 2 are articulation points."
+    },
+    {
+      "start": 87.45,
+      "end": 89.85,
+      "text": "Now, in order to understand articulation point,"
+    },
+    {
+      "start": 90.03,
+      "end": 90.33,
+      "text": "there"
+    },
+    {
+      "start": 90.53,
+      "end": 94.77,
+      "text": "is a prerequisite and the prerequisite is this particular video,"
+    },
+    {
+      "start": 95.15,
+      "end": 96.35,
+      "text": "Bridges in a Graph."
+    },
+    {
+      "start": 97.05,
+      "end": 101.57,
+      "text": "The video before this in this particular playlist is what you should have seen."
+    },
+    {
+      "start": 101.83,
+      "end": 105.03,
+      "text": "You should have understood what is time of insertion,"
+    },
+    {
+      "start": 105.29,
+      "end": 107.91,
+      "text": "what is the lowest time and everything."
+    },
+    {
+      "start": 108.23,
+      "end": 111.95,
+      "text": "And if you know that, then only you should watch this particular video,"
+    },
+    {
+      "start": 111.95,
+      "end": 115.89,
+      "text": "which is talking about articulation point, because I'm assuming you've seen the video"
+    },
+    {
+      "start": 115.89,
+      "end": 120.39,
+      "text": "of Bridges in a Graph because the concept that we have used in Bridges in a Graph,"
+    },
+    {
+      "start": 120.59,
+      "end": 123.53,
+      "text": "is what we will be using in the articulation point."
+    },
+    {
+      "start": 123.53,
+      "end": 127.29,
+      "text": "So please go back and watch it and come back and watch this video again."
+    },
+    {
+      "start": 127.55,
+      "end": 130.83,
+      "text": "So if you remember the Bridges video, we used two arrays."
+    },
+    {
+      "start": 130.89,
+      "end": 135.49,
+      "text": "One is the time of insertion, while the other one was the lowest time of insertion."
+    },
+    {
+      "start": 135.69,
+      "end": 139.49,
+      "text": "Now, the definition still stays the same, but there's a slight tweak."
+    },
+    {
+      "start": 139.89,
+      "end": 144.95,
+      "text": "Over here, the time of insertion states while you enter in the DFS, you store it."
+    },
+    {
+      "start": 145.25,
+      "end": 148.99,
+      "text": "But the lowest time of insertion has been changed and it states"
+    },
+    {
+      "start": 148.99,
+      "end": 154.19,
+      "text": "that the minimum of all adjacent nodes, like you take all the adjacent nodes"
+    },
+    {
+      "start": 154.49,
+      "end": 157.85,
+      "text": "apart from the parent and take all the lowest time of insertions."
+    },
+    {
+      "start": 158.45,
+      "end": 162.33,
+      "text": "But you also remove visited nodes."
+    },
+    {
+      "start": 162.65,
+      "end": 165.29,
+      "text": "Do not take parent and do not take visited nodes."
+    },
+    {
+      "start": 165.63,
+      "end": 167.05,
+      "text": "Why not visited nodes?"
+    },
+    {
+      "start": 167.29,
+      "end": 167.99,
+      "text": "I'll explain you."
+    },
+    {
+      "start": 168.23,
+      "end": 171.15,
+      "text": "In the Bridges video, there was nothing as visited nodes."
+    },
+    {
+      "start": 171.43,
+      "end": 173.55,
+      "text": "There was simply apart from parent."
+    },
+    {
+      "start": 173.85,
+      "end": 177.35,
+      "text": "Over here, it's apart from the parent and apart from the visited nodes."
+    },
+    {
+      "start": 177.59,
+      "end": 177.99,
+      "text": "Why?"
+    },
+    {
+      "start": 178.23,
+      "end": 178.95,
+      "text": "We will be talking about that."
+    },
+    {
+      "start": 179.25,
+      "end": 181.85,
+      "text": "In depth when I take this example."
+    },
+    {
+      "start": 182.05,
+      "end": 186.33,
+      "text": "So let's if you did not understand the exact use of low, do not worry."
+    },
+    {
+      "start": 186.53,
+      "end": 190.59,
+      "text": "When I do a dry run on this particular graph, you'll get an idea about what is the exact"
+    },
+    {
+      "start": 190.79,
+      "end": 194.53,
+      "text": "definition of low here because it's slightly different from the bridges in the graph."
+    },
+    {
+      "start": 194.73,
+      "end": 194.99,
+      "text": "Okay."
+    },
+    {
+      "start": 195.19,
+      "end": 199.99,
+      "text": "So in the bridges in a graph, if you remember in that video, the condition was very simple."
+    },
+    {
+      "start": 200.19,
+      "end": 208.23,
+      "text": "If the low of IT, like if the low of IT in any case was greater than the time of insertion of the node,"
+    },
+    {
+      "start": 208.49,
+      "end": 213.23,
+      "text": "then we could say that node and IT is a bridge, right?"
+    },
+    {
+      "start": 213.39,
+      "end": 221.63,
+      "text": "That means if that is a node cannot reach back to the node or before it, that means it is a bridge."
+    },
+    {
+      "start": 221.99,
+      "end": 225.59,
+      "text": "This was the condition being used in the bridges in a graph of video."
+    },
+    {
+      "start": 225.73,
+      "end": 226.59,
+      "text": "Now over here."
+    },
+    {
+      "start": 227.59,
+      "end": 229.33,
+      "text": "We are we removing an edge?"
+    },
+    {
+      "start": 229.99,
+      "end": 233.23,
+      "text": "No, we're removing the entire node."
+    },
+    {
+      "start": 233.47,
+      "end": 235.09,
+      "text": "We're removing the entire node."
+    },
+    {
+      "start": 235.29,
+      "end": 238.13,
+      "text": "So if you're saying this is an."
+    },
+    {
+      "start": 238.33,
+      "end": 247.63,
+      "text": "Articulation point, the five has to reach before, not at this node, not at this node in the previous in the previous"
+    },
+    {
+      "start": 247.83,
+      "end": 254.53,
+      "text": "bridges, if you could reach at two, it was okay because the edge was removed over here."
+    },
+    {
+      "start": 254.73,
+      "end": 255.33,
+      "text": "You have to."
+    },
+    {
+      "start": 256.53,
+      "end": 259.03,
+      "text": "Reach before to somewhere before two."
+    },
+    {
+      "start": 259.63,
+      "end": 264.83,
+      "text": "That is why that slightly like we'll slightly change the definition of."
+    },
+    {
+      "start": 265.73,
+      "end": 267.59,
+      "text": "We will say, hey, if."
+    },
+    {
+      "start": 268.23,
+      "end": 270.23,
+      "text": "The low of IT."
+    },
+    {
+      "start": 271.23,
+      "end": 272.23,
+      "text": "Cannot reach."
+    },
+    {
+      "start": 272.43,
+      "end": 280.23,
+      "text": "That means if it is greater than the time of insertion of node, that means it can either reach the node or it is greater."
+    },
+    {
+      "start": 280.43,
+      "end": 285.23,
+      "text": "Even if it's reaching the node that is of no use because I'm going to remove the node."
+    },
+    {
+      "start": 285.43,
+      "end": 288.23,
+      "text": "So even if you reach no, that's of no use."
+    },
+    {
+      "start": 288.43,
+      "end": 290.23,
+      "text": "So this is the updated condition."
+    },
+    {
+      "start": 290.43,
+      "end": 294.23,
+      "text": "This is the updated condition and there's a slight."
+    },
+    {
+      "start": 294.43,
+      "end": 298.13,
+      "text": "New introduction and that states."
+    },
+    {
+      "start": 298.33,
+      "end": 302.43,
+      "text": "Parent is not equal to minus one."
+    },
+    {
+      "start": 302.63,
+      "end": 304.63,
+      "text": "Yes, we have a slight new introduction."
+    },
+    {
+      "start": 304.83,
+      "end": 308.13,
+      "text": "We say parent is not equal to minus one."
+    },
+    {
+      "start": 308.33,
+      "end": 310.23,
+      "text": "Why parent not equal to minus one."
+    },
+    {
+      "start": 310.43,
+      "end": 311.23,
+      "text": "Let me explain."
+    },
+    {
+      "start": 311.43,
+      "end": 319.43,
+      "text": "So imagine if you have a graph like zero and it points to one and then it goes to and then goes to three, right?"
+    },
+    {
+      "start": 319.63,
+      "end": 325.23,
+      "text": "So apparently if you're at zero, if you're at zero, zero can never be the articulation point."
+    },
+    {
+      "start": 325.43,
+      "end": 326.03,
+      "text": "Why?"
+    },
+    {
+      "start": 326.23,
+      "end": 328.03,
+      "text": "Because even if you remove zero, it still stays."
+    },
+    {
+      "start": 328.33,
+      "end": 332.13,
+      "text": "As a component, it still stays as a single component."
+    },
+    {
+      "start": 332.33,
+      "end": 333.63,
+      "text": "So be very careful."
+    },
+    {
+      "start": 333.83,
+      "end": 338.43,
+      "text": "If it is the starting point, if it is the starting point, do not use the formula."
+    },
+    {
+      "start": 338.63,
+      "end": 339.63,
+      "text": "You will go wrong."
+    },
+    {
+      "start": 339.83,
+      "end": 340.53,
+      "text": "You'll go wrong."
+    },
+    {
+      "start": 340.73,
+      "end": 342.93,
+      "text": "For the starting point."
+    },
+    {
+      "start": 343.13,
+      "end": 346.43,
+      "text": "We'll use some different logic, which I'll talk at the back end."
+    },
+    {
+      "start": 346.63,
+      "end": 352.63,
+      "text": "But as of now, remember if it is the starting point, do not use this formula because this is of no use."
+    },
+    {
+      "start": 352.83,
+      "end": 354.63,
+      "text": "If you remove it's of no use."
+    },
+    {
+      "start": 354.83,
+      "end": 357.63,
+      "text": "The formula is of no use."
+    },
+    {
+      "start": 357.63,
+      "end": 359.93,
+      "text": "So do not use this for starting points."
+    },
+    {
+      "start": 360.13,
+      "end": 362.43,
+      "text": "For starting points, we'll use a different logic."
+    },
+    {
+      "start": 362.63,
+      "end": 362.93,
+      "text": "Okay."
+    },
+    {
+      "start": 363.13,
+      "end": 364.63,
+      "text": "So I hope you've understood."
+    },
+    {
+      "start": 365.03,
+      "end": 367.93,
+      "text": "You have to reach before the node, not at the node."
+    },
+    {
+      "start": 368.13,
+      "end": 369.23,
+      "text": "You have to reach before the node."
+    },
+    {
+      "start": 369.43,
+      "end": 369.73,
+      "text": "Okay."
+    },
+    {
+      "start": 370.13,
+      "end": 373.63,
+      "text": "Now, let's quickly start our time of insertion."
+    },
+    {
+      "start": 373.83,
+      "end": 375.73,
+      "text": "So let's start the deepest traversal with zero."
+    },
+    {
+      "start": 375.93,
+      "end": 376.93,
+      "text": "Market is visited."
+    },
+    {
+      "start": 377.13,
+      "end": 378.33,
+      "text": "So what are we storing?"
+    },
+    {
+      "start": 378.63,
+      "end": 381.33,
+      "text": "Time of insertion and low similar to bridges."
+    },
+    {
+      "start": 381.83,
+      "end": 384.73,
+      "text": "We inserted at time one and the lowest time is one."
+    },
+    {
+      "start": 385.03,
+      "end": 386.93,
+      "text": "Next, we go here."
+    },
+    {
+      "start": 386.93,
+      "end": 389.13,
+      "text": "So market is visited and two by two."
+    },
+    {
+      "start": 389.33,
+      "end": 393.13,
+      "text": "So does one have any of its adjacent?"
+    },
+    {
+      "start": 393.33,
+      "end": 393.73,
+      "text": "No."
+    },
+    {
+      "start": 393.93,
+      "end": 395.13,
+      "text": "So we will go back."
+    },
+    {
+      "start": 395.33,
+      "end": 400.33,
+      "text": "When we go back, will we apply the formula to this particular guy?"
+    },
+    {
+      "start": 400.53,
+      "end": 403.13,
+      "text": "Because we have came back from a node."
+    },
+    {
+      "start": 403.33,
+      "end": 404.53,
+      "text": "The DFS is completed."
+    },
+    {
+      "start": 404.73,
+      "end": 409.33,
+      "text": "But if you remember, it's stated as the first guy parent is minus one."
+    },
+    {
+      "start": 409.53,
+      "end": 411.93,
+      "text": "Do not do anything for first parents."
+    },
+    {
+      "start": 412.13,
+      "end": 413.73,
+      "text": "Do not do anything for first parents."
+    },
+    {
+      "start": 413.93,
+      "end": 415.33,
+      "text": "Okay, go to two."
+    },
+    {
+      "start": 415.53,
+      "end": 416.73,
+      "text": "So we'll go to two."
+    },
+    {
+      "start": 416.93,
+      "end": 419.13,
+      "text": "And we will update it like three by three."
+    },
+    {
+      "start": 419.33,
+      "end": 421.73,
+      "text": "Similarly, it will go here."
+    },
+    {
+      "start": 421.93,
+      "end": 424.73,
+      "text": "And the moment it goes here, it will update it by four by four."
+    },
+    {
+      "start": 424.93,
+      "end": 426.13,
+      "text": "But here comes the twist."
+    },
+    {
+      "start": 426.33,
+      "end": 429.73,
+      "text": "So it says I have updated myself by four by four."
+    },
+    {
+      "start": 429.93,
+      "end": 431.93,
+      "text": "I've updated myself by four by four."
+    },
+    {
+      "start": 432.13,
+      "end": 435.53,
+      "text": "But I can go but it's already visited."
+    },
+    {
+      "start": 435.73,
+      "end": 437.53,
+      "text": "I can go but it's already visited."
+    },
+    {
+      "start": 437.73,
+      "end": 442.33,
+      "text": "So what I will say is hey, listen, I will just update my low."
+    },
+    {
+      "start": 442.53,
+      "end": 443.53,
+      "text": "I'll just update my low."
+    },
+    {
+      "start": 443.73,
+      "end": 445.13,
+      "text": "But while updating my low."
+    },
+    {
+      "start": 445.33,
+      "end": 446.83,
+      "text": "I will just take this."
+    },
+    {
+      "start": 447.03,
+      "end": 447.93,
+      "text": "And not this."
+    },
+    {
+      "start": 448.13,
+      "end": 448.73,
+      "text": "Why?"
+    },
+    {
+      "start": 448.93,
+      "end": 450.73,
+      "text": "I'll explain you as we go forward."
+    },
+    {
+      "start": 450.93,
+      "end": 452.13,
+      "text": "We will not look at this."
+    },
+    {
+      "start": 452.33,
+      "end": 454.13,
+      "text": "We will just look at the time of insertion."
+    },
+    {
+      "start": 454.33,
+      "end": 455.33,
+      "text": "And that is what I'll take."
+    },
+    {
+      "start": 455.53,
+      "end": 456.53,
+      "text": "I'll update it with one."
+    },
+    {
+      "start": 456.73,
+      "end": 457.33,
+      "text": "Perfect."
+    },
+    {
+      "start": 457.53,
+      "end": 458.33,
+      "text": "Time to come back."
+    },
+    {
+      "start": 458.53,
+      "end": 464.33,
+      "text": "When it comes back, when it comes back, the low looks around it and says you're one."
+    },
+    {
+      "start": 464.53,
+      "end": 465.13,
+      "text": "You're one."
+    },
+    {
+      "start": 465.33,
+      "end": 466.33,
+      "text": "You're not my parent."
+    },
+    {
+      "start": 466.53,
+      "end": 468.73,
+      "text": "You're not a visited node because you did your DFS."
+    },
+    {
+      "start": 468.93,
+      "end": 471.33,
+      "text": "Since you did your DFS, give your low to me."
+    },
+    {
+      "start": 471.53,
+      "end": 475.53,
+      "text": "That updates its low to one."
+    },
+    {
+      "start": 475.73,
+      "end": 476.33,
+      "text": "Now."
+    },
+    {
+      "start": 477.03,
+      "end": 479.83,
+      "text": "Can I see the DFS of two?"
+    },
+    {
+      "start": 480.03,
+      "end": 482.83,
+      "text": "Call the DFS of three and adds back."
+    },
+    {
+      "start": 483.03,
+      "end": 487.13,
+      "text": "Now since it is back, two will say, okay, wait, I have done a DFS."
+    },
+    {
+      "start": 487.33,
+      "end": 490.33,
+      "text": "Let me see if I can be an articulation point."
+    },
+    {
+      "start": 490.53,
+      "end": 491.53,
+      "text": "Now."
+    },
+    {
+      "start": 491.73,
+      "end": 492.53,
+      "text": "What is two?"
+    },
+    {
+      "start": 492.73,
+      "end": 495.83,
+      "text": "Two is stating my time is three."
+    },
+    {
+      "start": 496.03,
+      "end": 497.53,
+      "text": "Two is stating my time is three."
+    },
+    {
+      "start": 497.73,
+      "end": 500.73,
+      "text": "So three is saying my lowest is one."
+    },
+    {
+      "start": 500.93,
+      "end": 503.13,
+      "text": "So I can reach before you."
+    },
+    {
+      "start": 503.33,
+      "end": 506.03,
+      "text": "Even if you are an articulation point, I can still reach."
+    },
+    {
+      "start": 506.03,
+      "end": 511.83,
+      "text": "So even if you remove, I'm still somewhere in the same component."
+    },
+    {
+      "start": 512.03,
+      "end": 516.93,
+      "text": "So this will not be an articulation point as of now, as of now."
+    },
+    {
+      "start": 517.13,
+      "end": 517.53,
+      "text": "Right?"
+    },
+    {
+      "start": 517.73,
+      "end": 522.63,
+      "text": "This is why I said greater than equal to this is having a lowest point of one."
+    },
+    {
+      "start": 522.83,
+      "end": 525.53,
+      "text": "This is having an entry point of three and it can reach before three."
+    },
+    {
+      "start": 525.73,
+      "end": 527.23,
+      "text": "So this is why this is perfect."
+    },
+    {
+      "start": 527.43,
+      "end": 527.93,
+      "text": "Perfect."
+    },
+    {
+      "start": 528.13,
+      "end": 529.43,
+      "text": "Let's go down."
+    },
+    {
+      "start": 529.63,
+      "end": 531.13,
+      "text": "So three is done."
+    },
+    {
+      "start": 531.33,
+      "end": 532.03,
+      "text": "Now we'll go to four."
+    },
+    {
+      "start": 532.23,
+      "end": 533.83,
+      "text": "It'll be like, sorry, sorry, my bad."
+    },
+    {
+      "start": 534.03,
+      "end": 535.53,
+      "text": "It'll be like five."
+    },
+    {
+      "start": 535.63,
+      "end": 535.93,
+      "text": "Bye."
+    },
+    {
+      "start": 536.13,
+      "end": 536.63,
+      "text": "Five."
+    },
+    {
+      "start": 536.83,
+      "end": 537.83,
+      "text": "Yeah, five by five."
+    },
+    {
+      "start": 538.03,
+      "end": 539.93,
+      "text": "So it says I have five by five."
+    },
+    {
+      "start": 540.13,
+      "end": 540.53,
+      "text": "Right?"
+    },
+    {
+      "start": 540.73,
+      "end": 541.93,
+      "text": "So it marks it as visited."
+    },
+    {
+      "start": 542.13,
+      "end": 545.13,
+      "text": "Next goes to six by six marks it as visited."
+    },
+    {
+      "start": 545.33,
+      "end": 549.33,
+      "text": "Next goes to seven by seven marks it as visited."
+    },
+    {
+      "start": 549.53,
+      "end": 551.23,
+      "text": "Now here comes the critical junction."
+    },
+    {
+      "start": 551.43,
+      "end": 552.63,
+      "text": "You have five."
+    },
+    {
+      "start": 552.83,
+      "end": 555.93,
+      "text": "Five's TFS is done."
+    },
+    {
+      "start": 556.13,
+      "end": 556.33,
+      "text": "Why?"
+    },
+    {
+      "start": 556.53,
+      "end": 560.13,
+      "text": "Because five has one adjacent node, which is already visited."
+    },
+    {
+      "start": 560.33,
+      "end": 565.43,
+      "text": "So now the low says I will look at the adjacent node, but that's visited."
+    },
+    {
+      "start": 565.53,
+      "end": 567.73,
+      "text": "So I will not take one."
+    },
+    {
+      "start": 567.93,
+      "end": 569.33,
+      "text": "I'll not take one if it's visited."
+    },
+    {
+      "start": 569.53,
+      "end": 571.03,
+      "text": "I'll not take one if it's visited."
+    },
+    {
+      "start": 571.23,
+      "end": 572.73,
+      "text": "Instead, I'll just take three."
+    },
+    {
+      "start": 572.93,
+      "end": 574.53,
+      "text": "Instead, I'll just take three."
+    },
+    {
+      "start": 574.73,
+      "end": 575.23,
+      "text": "Why?"
+    },
+    {
+      "start": 575.43,
+      "end": 576.63,
+      "text": "Why is the question?"
+    },
+    {
+      "start": 576.83,
+      "end": 577.33,
+      "text": "I'll take three."
+    },
+    {
+      "start": 577.53,
+      "end": 578.03,
+      "text": "Why not one?"
+    },
+    {
+      "start": 578.23,
+      "end": 579.33,
+      "text": "Why not one?"
+    },
+    {
+      "start": 579.53,
+      "end": 580.63,
+      "text": "Because in bridges we took one."
+    },
+    {
+      "start": 580.83,
+      "end": 582.33,
+      "text": "We took one because I was greedy."
+    },
+    {
+      "start": 582.53,
+      "end": 583.53,
+      "text": "You need to understand."
+    },
+    {
+      "start": 583.73,
+      "end": 585.33,
+      "text": "Now this node was visited."
+    },
+    {
+      "start": 585.53,
+      "end": 586.33,
+      "text": "Why was it visited?"
+    },
+    {
+      "start": 586.53,
+      "end": 588.03,
+      "text": "Because I traversed like this."
+    },
+    {
+      "start": 588.23,
+      "end": 589.03,
+      "text": "Then I went here."
+    },
+    {
+      "start": 589.23,
+      "end": 590.53,
+      "text": "Now I did not take one."
+    },
+    {
+      "start": 590.73,
+      "end": 591.03,
+      "text": "Why?"
+    },
+    {
+      "start": 591.23,
+      "end": 594.13,
+      "text": "Because imagine, just imagine, I remove this two."
+    },
+    {
+      "start": 594.33,
+      "end": 595.23,
+      "text": "Can I?"
+    },
+    {
+      "start": 595.43,
+      "end": 597.03,
+      "text": "Can you reach back to one?"
+    },
+    {
+      "start": 597.23,
+      "end": 598.43,
+      "text": "Had you taken one?"
+    },
+    {
+      "start": 598.63,
+      "end": 600.63,
+      "text": "Just just tell me how will you reach one?"
+    },
+    {
+      "start": 600.83,
+      "end": 601.73,
+      "text": "You cannot."
+    },
+    {
+      "start": 601.93,
+      "end": 609.03,
+      "text": "So if it is a visited node, do not take something which is via two, which is via two because two will be removed."
+    },
+    {
+      "start": 609.23,
+      "end": 610.03,
+      "text": "Might be removed."
+    },
+    {
+      "start": 610.23,
+      "end": 613.53,
+      "text": "That's why you'll always take three and not one."
+    },
+    {
+      "start": 613.73,
+      "end": 614.43,
+      "text": "Got it."
+    },
+    {
+      "start": 614.63,
+      "end": 620.13,
+      "text": "So can I say the DFS of five is completed and now it will try to come back."
+    },
+    {
+      "start": 620.33,
+      "end": 622.33,
+      "text": "So when it tries to come back, see what happens."
+    },
+    {
+      "start": 622.53,
+      "end": 625.33,
+      "text": "So I can say DFS of five is completed."
+    },
+    {
+      "start": 625.63,
+      "end": 628.23,
+      "text": "So the call came in from six."
+    },
+    {
+      "start": 628.43,
+      "end": 629.23,
+      "text": "Now it goes back."
+    },
+    {
+      "start": 629.43,
+      "end": 632.43,
+      "text": "Now six is saying, okay, what is the entry point of six?"
+    },
+    {
+      "start": 632.63,
+      "end": 633.83,
+      "text": "That is six."
+    },
+    {
+      "start": 634.03,
+      "end": 637.63,
+      "text": "What is the entry point of like where can five reach?"
+    },
+    {
+      "start": 637.83,
+      "end": 638.93,
+      "text": "Five can still reach three."
+    },
+    {
+      "start": 639.13,
+      "end": 641.83,
+      "text": "That means it can somewhere reach six back again."
+    },
+    {
+      "start": 642.03,
+      "end": 642.63,
+      "text": "Right?"
+    },
+    {
+      "start": 642.83,
+      "end": 644.63,
+      "text": "Even if you remove six, it can still."
+    },
+    {
+      "start": 644.83,
+      "end": 646.43,
+      "text": "It's a part of the same component."
+    },
+    {
+      "start": 646.63,
+      "end": 648.23,
+      "text": "This cannot be an articulation point."
+    },
+    {
+      "start": 648.43,
+      "end": 648.83,
+      "text": "Go back."
+    },
+    {
+      "start": 649.03,
+      "end": 651.63,
+      "text": "So when it now goes back, four says, okay, you're coming back."
+    },
+    {
+      "start": 651.83,
+      "end": 654.53,
+      "text": "Let me take yours because you are an adjacent node."
+    },
+    {
+      "start": 654.73,
+      "end": 655.53,
+      "text": "You're not a visitor."
+    },
+    {
+      "start": 655.73,
+      "end": 659.33,
+      "text": "You are one of my adjacent node who went into DFS, completed it."
+    },
+    {
+      "start": 659.53,
+      "end": 660.53,
+      "text": "I'll take your three."
+    },
+    {
+      "start": 660.73,
+      "end": 661.53,
+      "text": "I'll take your three."
+    },
+    {
+      "start": 661.73,
+      "end": 662.53,
+      "text": "I will take your three."
+    },
+    {
+      "start": 662.73,
+      "end": 667.33,
+      "text": "Now this time what happens is four called six."
+    },
+    {
+      "start": 667.53,
+      "end": 669.13,
+      "text": "Now what is four's entry point?"
+    },
+    {
+      "start": 669.33,
+      "end": 669.73,
+      "text": "Five."
+    },
+    {
+      "start": 669.93,
+      "end": 674.53,
+      "text": "Six says I can still somewhere go and reach three."
+    },
+    {
+      "start": 674.73,
+      "end": 677.13,
+      "text": "So I can still reach before you."
+    },
+    {
+      "start": 677.33,
+      "end": 679.33,
+      "text": "So you cannot be an articulation point."
+    },
+    {
+      "start": 679.53,
+      "end": 680.93,
+      "text": "Perfect."
+    },
+    {
+      "start": 681.13,
+      "end": 683.63,
+      "text": "Now comes the critical junction."
+    },
+    {
+      "start": 683.85,
+      "end": 684.53,
+      "text": "Four now goes back to three."
+    },
+    {
+      "start": 684.73,
+      "end": 686.53,
+      "text": "Two stating I'm complete."
+    },
+    {
+      "start": 686.73,
+      "end": 687.53,
+      "text": "I'm complete."
+    },
+    {
+      "start": 687.73,
+      "end": 690.73,
+      "text": "So four is complete."
+    },
+    {
+      "start": 690.93,
+      "end": 692.53,
+      "text": "It came from two."
+    },
+    {
+      "start": 692.73,
+      "end": 693.53,
+      "text": "So now it goes back."
+    },
+    {
+      "start": 693.73,
+      "end": 695.63,
+      "text": "Two says, okay, you're done."
+    },
+    {
+      "start": 695.83,
+      "end": 696.53,
+      "text": "What's your minimum?"
+    },
+    {
+      "start": 696.73,
+      "end": 696.93,
+      "text": "Three."
+    },
+    {
+      "start": 697.13,
+      "end": 697.93,
+      "text": "My minimum is one."
+    },
+    {
+      "start": 698.13,
+      "end": 699.23,
+      "text": "No need to take it."
+    },
+    {
+      "start": 699.43,
+      "end": 702.13,
+      "text": "So two says, can I be an articulation point?"
+    },
+    {
+      "start": 702.33,
+      "end": 703.93,
+      "text": "What's my entry point?"
+    },
+    {
+      "start": 704.13,
+      "end": 704.73,
+      "text": "That's three."
+    },
+    {
+      "start": 704.93,
+      "end": 706.53,
+      "text": "What's your minimum entry?"
+    },
+    {
+      "start": 706.73,
+      "end": 707.93,
+      "text": "You can just reach three."
+    },
+    {
+      "start": 708.13,
+      "end": 709.73,
+      "text": "That means you can reach to me."
+    },
+    {
+      "start": 709.93,
+      "end": 710.93,
+      "text": "Not before me."
+    },
+    {
+      "start": 711.13,
+      "end": 712.13,
+      "text": "Not before me."
+    },
+    {
+      "start": 712.33,
+      "end": 714.13,
+      "text": "So even if I remove myself."
+    },
+    {
+      "start": 714.73,
+      "end": 718.13,
+      "text": "You guys will be two separate, two separate entities."
+    },
+    {
+      "start": 718.33,
+      "end": 720.93,
+      "text": "So thereby two is an articulation point."
+    },
+    {
+      "start": 721.13,
+      "end": 724.13,
+      "text": "Thereby I find two is an articulation point."
+    },
+    {
+      "start": 724.33,
+      "end": 727.13,
+      "text": "So I can say two is an articulation point."
+    },
+    {
+      "start": 727.33,
+      "end": 727.93,
+      "text": "Got it?"
+    },
+    {
+      "start": 728.13,
+      "end": 728.73,
+      "text": "Very simple."
+    },
+    {
+      "start": 728.93,
+      "end": 730.53,
+      "text": "Very straightforward."
+    },
+    {
+      "start": 730.73,
+      "end": 734.93,
+      "text": "The only reason we did not take one is because had we taken one over here,"
+    },
+    {
+      "start": 735.13,
+      "end": 736.73,
+      "text": "this one would have been propagated here."
+    },
+    {
+      "start": 736.93,
+      "end": 738.53,
+      "text": "This one would have propagated here."
+    },
+    {
+      "start": 738.73,
+      "end": 742.73,
+      "text": "And I somehow would have said I can reach zero, which is not possible because it's"
+    },
+    {
+      "start": 742.93,
+      "end": 743.63,
+      "text": "via two."
+    },
+    {
+      "start": 743.63,
+      "end": 744.83,
+      "text": "It's via the visited path."
+    },
+    {
+      "start": 745.03,
+      "end": 750.03,
+      "text": "That's why you do not take visited because if a path is via visited, that's no point."
+    },
+    {
+      "start": 750.23,
+      "end": 752.83,
+      "text": "I want to go via some adjacent nodes."
+    },
+    {
+      "start": 753.03,
+      "end": 753.63,
+      "text": "Got it?"
+    },
+    {
+      "start": 753.83,
+      "end": 754.43,
+      "text": "Perfect."
+    },
+    {
+      "start": 754.63,
+      "end": 756.23,
+      "text": "Now two says, let's go back."
+    },
+    {
+      "start": 756.43,
+      "end": 759.83,
+      "text": "Now when I go back, again, the parent is for this minus one."
+    },
+    {
+      "start": 760.03,
+      "end": 760.83,
+      "text": "So I'll not consider."
+    },
+    {
+      "start": 761.03,
+      "end": 762.43,
+      "text": "So mostly done."
+    },
+    {
+      "start": 762.63,
+      "end": 768.43,
+      "text": "The updated condition says I should reach before this and the parent should be minus one."
+    },
+    {
+      "start": 768.63,
+      "end": 771.83,
+      "text": "And low should only update itself."
+    },
+    {
+      "start": 771.83,
+      "end": 774.03,
+      "text": "If it's not parent and not visited."
+    },
+    {
+      "start": 774.23,
+      "end": 777.23,
+      "text": "If it's visited, it takes the time of insertion."
+    },
+    {
+      "start": 777.43,
+      "end": 779.23,
+      "text": "So done and dusted."
+    },
+    {
+      "start": 779.43,
+      "end": 782.03,
+      "text": "Now the question comes is zero an articulation point."
+    },
+    {
+      "start": 782.23,
+      "end": 786.23,
+      "text": "It is because if you remove zero, split it into two components."
+    },
+    {
+      "start": 786.43,
+      "end": 789.83,
+      "text": "So the logic over here is very straightforward."
+    },
+    {
+      "start": 790.03,
+      "end": 794.63,
+      "text": "And imagine there is a node and it is like just connected to one."
+    },
+    {
+      "start": 794.83,
+      "end": 801.03,
+      "text": "In that case, this can never be an articulation point because even if you"
+    },
+    {
+      "start": 801.03,
+      "end": 803.43,
+      "text": "take it off, it's still a single component."
+    },
+    {
+      "start": 803.63,
+      "end": 805.23,
+      "text": "It is not broken into multiple."
+    },
+    {
+      "start": 805.43,
+      "end": 807.03,
+      "text": "So it cannot be an articulation point."
+    },
+    {
+      "start": 807.23,
+      "end": 811.43,
+      "text": "But the same parent, if it is connected to multiple children's, if it is connected"
+    },
+    {
+      "start": 811.63,
+      "end": 815.63,
+      "text": "to multiple children's, the moment you break it, the moment you break it, they"
+    },
+    {
+      "start": 815.83,
+      "end": 818.03,
+      "text": "will always be individual components."
+    },
+    {
+      "start": 818.23,
+      "end": 819.83,
+      "text": "This is what happened in this case."
+    },
+    {
+      "start": 820.03,
+      "end": 823.03,
+      "text": "The moment you took it, this was individual and this was individual, which"
+    },
+    {
+      "start": 823.23,
+      "end": 825.23,
+      "text": "was later connected, which was later connected here."
+    },
+    {
+      "start": 825.43,
+      "end": 826.03,
+      "text": "Right?"
+    },
+    {
+      "start": 826.23,
+      "end": 828.23,
+      "text": "So what's the grasp?"
+    },
+    {
+      "start": 828.43,
+      "end": 829.23,
+      "text": "If."
+    },
+    {
+      "start": 829.43,
+      "end": 830.23,
+      "text": "It's."
+    },
+    {
+      "start": 831.03,
+      "end": 832.03,
+      "text": "The starting point."
+    },
+    {
+      "start": 832.23,
+      "end": 837.43,
+      "text": "And if it has multiple children's, if it has multiple children's, then only I"
+    },
+    {
+      "start": 837.63,
+      "end": 840.43,
+      "text": "will say that it's an articulation point."
+    },
+    {
+      "start": 840.63,
+      "end": 845.03,
+      "text": "So for the starting point, if it has multiple children's, then only I'll say"
+    },
+    {
+      "start": 845.23,
+      "end": 846.63,
+      "text": "it is an articulation point."
+    },
+    {
+      "start": 846.83,
+      "end": 849.63,
+      "text": "I will not apply the formula to the starting point."
+    },
+    {
+      "start": 849.83,
+      "end": 850.43,
+      "text": "Never ever."
+    },
+    {
+      "start": 850.63,
+      "end": 851.23,
+      "text": "I'll do that."
+    },
+    {
+      "start": 851.43,
+      "end": 851.83,
+      "text": "Got it."
+    },
+    {
+      "start": 852.03,
+      "end": 857.03,
+      "text": "So before moving on to the code, did you observe something now when you came"
+    },
+    {
+      "start": 857.23,
+      "end": 860.93,
+      "text": "back from four to two to say I am articulation point."
+    },
+    {
+      "start": 861.13,
+      "end": 866.03,
+      "text": "Because four cannot reach back to any position before I was seeing that two"
+    },
+    {
+      "start": 866.23,
+      "end": 867.43,
+      "text": "is an articulation."
+    },
+    {
+      "start": 867.63,
+      "end": 872.63,
+      "text": "Now, what if there was another component which was similar to this seven and then"
+    },
+    {
+      "start": 872.83,
+      "end": 875.13,
+      "text": "eight and then nine and then similar."
+    },
+    {
+      "start": 875.33,
+      "end": 880.03,
+      "text": "So if there was another component, would have again gone the same way and you've"
+    },
+    {
+      "start": 880.23,
+      "end": 883.83,
+      "text": "again came back and again, you would have found two is an articulation."
+    },
+    {
+      "start": 884.03,
+      "end": 887.63,
+      "text": "So it might happen during the traversal course."
+    },
+    {
+      "start": 887.83,
+      "end": 890.63,
+      "text": "You might find two to be the articulation point."
+    },
+    {
+      "start": 891.03,
+      "end": 892.03,
+      "text": "So it might happen."
+    },
+    {
+      "start": 892.23,
+      "end": 896.63,
+      "text": "You might find two multiple times because if I just extend this graph, just"
+    },
+    {
+      "start": 896.83,
+      "end": 899.63,
+      "text": "imagine I extend this graph to something like this."
+    },
+    {
+      "start": 899.83,
+      "end": 904.23,
+      "text": "Imagine I'm taking it to seven and then eight and then nine."
+    },
+    {
+      "start": 904.43,
+      "end": 907.83,
+      "text": "So similar graph just extended into two portions."
+    },
+    {
+      "start": 908.03,
+      "end": 911.83,
+      "text": "So this when it came back, it found out two was an articulation."
+    },
+    {
+      "start": 912.03,
+      "end": 916.83,
+      "text": "Similarly, when this goes and comes back, it will find that this is again an"
+    },
+    {
+      "start": 917.03,
+      "end": 918.03,
+      "text": "articulation point."
+    },
+    {
+      "start": 918.23,
+      "end": 919.03,
+      "text": "So it might happen."
+    },
+    {
+      "start": 919.23,
+      "end": 920.93,
+      "text": "You might find two multiple times."
+    },
+    {
+      "start": 921.13,
+      "end": 926.23,
+      "text": "So if you have printing directly on the check of this condition, create a hashing"
+    },
+    {
+      "start": 926.43,
+      "end": 930.33,
+      "text": "say two is an articulation, say two is an articulation, say one is an articulation"
+    },
+    {
+      "start": 930.53,
+      "end": 933.53,
+      "text": "point, just mark it and at the end of the day, you can return it."
+    },
+    {
+      "start": 933.73,
+      "end": 936.43,
+      "text": "So I'll show you this during the code implementation."
+    },
+    {
+      "start": 936.63,
+      "end": 940.43,
+      "text": "So if you can see that the question states, you'll be given a zero based"
+    },
+    {
+      "start": 940.63,
+      "end": 941.23,
+      "text": "indexing graph."
+    },
+    {
+      "start": 941.43,
+      "end": 945.63,
+      "text": "You have to find all the articulation points and if there are none, you have to"
+    },
+    {
+      "start": 945.83,
+      "end": 948.23,
+      "text": "return a list which is containing a minus one."
+    },
+    {
+      "start": 948.43,
+      "end": 949.03,
+      "text": "What are we given?"
+    },
+    {
+      "start": 949.23,
+      "end": 949.93,
+      "text": "We're given the V."
+    },
+    {
+      "start": 950.13,
+      "end": 950.93,
+      "text": "We're given the adjacency list."
+    },
+    {
+      "start": 951.13,
+      "end": 954.93,
+      "text": "So what did we require in order to write the BFS?"
+    },
+    {
+      "start": 955.13,
+      "end": 957.13,
+      "text": "Sorry, DFS required a visitor."
+    },
+    {
+      "start": 957.33,
+      "end": 963.53,
+      "text": "So market of this one, just keep it as n and then you can have a teen of n."
+    },
+    {
+      "start": 963.73,
+      "end": 968.53,
+      "text": "Then you can have a low time as in that's something which you can have always"
+    },
+    {
+      "start": 968.73,
+      "end": 975.13,
+      "text": "and then you can have a mark which marks which are articulation points and"
+    },
+    {
+      "start": 975.33,
+      "end": 977.63,
+      "text": "then, you know, there can be multiple components."
+    },
+    {
+      "start": 977.83,
+      "end": 980.93,
+      "text": "So maybe you can just scroll through and you can say if not."
+    },
+    {
+      "start": 981.13,
+      "end": 986.33,
+      "text": "Visitor of I you can say DFS of I and the parent can be minus one."
+    },
+    {
+      "start": 986.53,
+      "end": 990.83,
+      "text": "Initially, you can pass in the visitor T in the low the mark and the adjacent"
+    },
+    {
+      "start": 991.03,
+      "end": 996.13,
+      "text": "and at the end of the day, you can say vector of int answer and you can just"
+    },
+    {
+      "start": 996.33,
+      "end": 1003.23,
+      "text": "go across all the notes and you can say if it is marked as articulation point,"
+    },
+    {
+      "start": 1003.83,
+      "end": 1010.23,
+      "text": "can you please store it over here and and if answer dot size like if there are"
+    },
+    {
+      "start": 1010.43,
+      "end": 1010.93,
+      "text": "no articulation."
+    },
+    {
+      "start": 1011.13,
+      "end": 1014.73,
+      "text": "Point they state you to return minus one."
+    },
+    {
+      "start": 1014.93,
+      "end": 1016.93,
+      "text": "So please return minus one else."
+    },
+    {
+      "start": 1017.13,
+      "end": 1020.73,
+      "text": "You can like else you can return the answer quite simply."
+    },
+    {
+      "start": 1020.93,
+      "end": 1022.43,
+      "text": "I just need to write the DFS."
+    },
+    {
+      "start": 1022.63,
+      "end": 1030.43,
+      "text": "So let's go across and say private and you can have a timer as zero and you"
+    },
+    {
+      "start": 1030.63,
+      "end": 1040.33,
+      "text": "can have the void DFS the void DFS is int node and it says int parent and then"
+    },
+    {
+      "start": 1040.43,
+      "end": 1043.23,
+      "text": "you can take all the things like vector visited."
+    },
+    {
+      "start": 1044.73,
+      "end": 1045.83,
+      "text": "They can take it by reference."
+    },
+    {
+      "start": 1045.83,
+      "end": 1049.83,
+      "text": "You can take the T in you can take the low at the same time."
+    },
+    {
+      "start": 1049.83,
+      "end": 1054.83,
+      "text": "You can see the vector of int and take by reference the mark and you at the"
+    },
+    {
+      "start": 1054.83,
+      "end": 1055.13,
+      "text": "same time."
+    },
+    {
+      "start": 1055.13,
+      "end": 1060.43,
+      "text": "You can take the adjacency list done was the first thing that you will do it"
+    },
+    {
+      "start": 1060.43,
+      "end": 1065.03,
+      "text": "always when you start off you'll say visited marked as this and the time of"
+    },
+    {
+      "start": 1065.03,
+      "end": 1069.33,
+      "text": "insertion the lowest time will be marked as timer."
+    },
+    {
+      "start": 1069.33,
+      "end": 1073.23,
+      "text": "And you can always increase the timer plus plus for the next step."
+    },
+    {
+      "start": 1073.23,
+      "end": 1079.63,
+      "text": "Now, let's go across to the adjacent nodes, which is like this and this one"
+    },
+    {
+      "start": 1079.63,
+      "end": 1085.33,
+      "text": "thing, you know for sure is if it is the parent you do not update the lower"
+    },
+    {
+      "start": 1085.33,
+      "end": 1086.43,
+      "text": "time insertion."
+    },
+    {
+      "start": 1086.43,
+      "end": 1088.73,
+      "text": "So you can just go over here."
+    },
+    {
+      "start": 1088.73,
+      "end": 1092.33,
+      "text": "You know, the other thing will be if it is not visited this adjacent node is"
+    },
+    {
+      "start": 1092.33,
+      "end": 1094.93,
+      "text": "not visited in that case."
+    },
+    {
+      "start": 1094.93,
+      "end": 1098.73,
+      "text": "What you will do is you will go across call it with the this DFS."
+    },
+    {
+      "start": 1098.73,
+      "end": 1102.93,
+      "text": "And you'll pass on the visitor the time in the low the mark and the adjacent"
+    },
+    {
+      "start": 1102.93,
+      "end": 1107.43,
+      "text": "and when you come back, you'll be very greedy to say hey, whatever you brought"
+    },
+    {
+      "start": 1107.43,
+      "end": 1107.83,
+      "text": "in."
+    },
+    {
+      "start": 1107.83,
+      "end": 1109.43,
+      "text": "Can you please give it to me?"
+    },
+    {
+      "start": 1109.43,
+      "end": 1110.43,
+      "text": "Okay done."
+    },
+    {
+      "start": 1110.43,
+      "end": 1114.03,
+      "text": "Next is the condition to check because you're coming back."
+    },
+    {
+      "start": 1114.03,
+      "end": 1122.03,
+      "text": "So if you cannot reach somewhere before me and you're not the first guy, you"
+    },
+    {
+      "start": 1122.03,
+      "end": 1126.63,
+      "text": "know the first guy if you remember sorry, you're not the first guy."
+    },
+    {
+      "start": 1126.63,
+      "end": 1127.23,
+      "text": "You're not the first guy."
+    },
+    {
+      "start": 1127.23,
+      "end": 1127.93,
+      "text": "If you remember."
+    },
+    {
+      "start": 1127.93,
+      "end": 1130.44,
+      "text": "Sorry."
+    },
+    {
+      "start": 1130.44,
+      "end": 1132.14,
+      "text": "Not equal to minus one."
+    },
+    {
+      "start": 1132.14,
+      "end": 1136.04,
+      "text": "If you're not the first guy, you're an articulation point my friend."
+    },
+    {
+      "start": 1136.04,
+      "end": 1141.64,
+      "text": "So I'll just mark it and if it is visited if it is visited in that case, I'll say low"
+    },
+    {
+      "start": 1141.64,
+      "end": 1149.04,
+      "text": "of node because it's the current guy will be minimum of low of node this time for the"
+    },
+    {
+      "start": 1149.04,
+      "end": 1149.64,
+      "text": "adjacent."
+    },
+    {
+      "start": 1149.64,
+      "end": 1151.94,
+      "text": "I will not take the low because it's visited."
+    },
+    {
+      "start": 1151.94,
+      "end": 1153.84,
+      "text": "I'll not take the low instead of that."
+    },
+    {
+      "start": 1153.84,
+      "end": 1157.04,
+      "text": "I'll take the time of insertion of that particular visited guy."
+    },
+    {
+      "start": 1157.04,
+      "end": 1158.54,
+      "text": "Once I've done this."
+    },
+    {
+      "start": 1158.54,
+      "end": 1160.24,
+      "text": "I think we are pretty much done."
+    },
+    {
+      "start": 1160.44,
+      "end": 1163.04,
+      "text": "I'll quickly compile this and see if it is running fine."
+    },
+    {
+      "start": 1164.44,
+      "end": 1170.44,
+      "text": "So you see this is just giving to why did it give to because for the starting point we have not"
+    },
+    {
+      "start": 1170.44,
+      "end": 1171.24,
+      "text": "written the logic."
+    },
+    {
+      "start": 1171.44,
+      "end": 1176.74,
+      "text": "If you remember the logic is very simple count the child's like the unvisited child."
+    },
+    {
+      "start": 1176.74,
+      "end": 1185.24,
+      "text": "So you can just count it and at the end you can write he listen if the child is greater than one."
+    },
+    {
+      "start": 1185.44,
+      "end": 1190.14,
+      "text": "If there are more than one child, this is definitely an articulation point."
+    },
+    {
+      "start": 1190.44,
+      "end": 1200.44,
+      "text": "And if you are the starting guy, if the starting guy and the child is greater than one, I can easily see that you are definitely a articulation point."
+    },
+    {
+      "start": 1200.44,
+      "end": 1203.44,
+      "text": "So if you add this condition up, I think it should give zero."
+    },
+    {
+      "start": 1203.44,
+      "end": 1204.04,
+      "text": "It does."
+    },
+    {
+      "start": 1204.04,
+      "end": 1207.14,
+      "text": "Now, let's quickly submit and see if it is running absolutely fine."
+    },
+    {
+      "start": 1207.14,
+      "end": 1207.84,
+      "text": "Yeah, it is."
+    },
+    {
+      "start": 1207.84,
+      "end": 1212.44,
+      "text": "So guys, I hope you've understood this right shuttle change to bridges."
+    },
+    {
+      "start": 1212.44,
+      "end": 1217.04,
+      "text": "One is you need to make sure you reach before it not on it before."
+    },
+    {
+      "start": 1217.04,
+      "end": 1217.94,
+      "text": "It is very important."
+    },
+    {
+      "start": 1217.94,
+      "end": 1220.24,
+      "text": "You don't compute for parents because."
+    },
+    {
+      "start": 1220.44,
+      "end": 1221.54,
+      "text": "Might happen."
+    },
+    {
+      "start": 1221.54,
+      "end": 1225.14,
+      "text": "It's a single parent and even on its removal doesn't matter."
+    },
+    {
+      "start": 1225.14,
+      "end": 1227.74,
+      "text": "So it's very important for a single parent."
+    },
+    {
+      "start": 1227.74,
+      "end": 1231.14,
+      "text": "You write it like this because it might have multiple components."
+    },
+    {
+      "start": 1231.14,
+      "end": 1234.14,
+      "text": "So in that case, it's definitely an articulation point."
+    },
+    {
+      "start": 1234.14,
+      "end": 1237.34,
+      "text": "If it has multiple component, it's definitely an articulation point."
+    },
+    {
+      "start": 1237.34,
+      "end": 1239.74,
+      "text": "Even if the condition is not satisfied."
+    },
+    {
+      "start": 1239.94,
+      "end": 1243.64,
+      "text": "So for parents, you have to write shuttle different conditions."
+    },
+    {
+      "start": 1243.84,
+      "end": 1249.04,
+      "text": "And if it's a visited guy, you don't take something on the top of it."
+    },
+    {
+      "start": 1249.04,
+      "end": 1249.54,
+      "text": "Why?"
+    },
+    {
+      "start": 1249.64,
+      "end": 1250.34,
+      "text": "Because you came by."
+    },
+    {
+      "start": 1250.44,
+      "end": 1252.44,
+      "text": "That path came by that path."
+    },
+    {
+      "start": 1252.44,
+      "end": 1254.44,
+      "text": "So if that's removed, you cannot go back."
+    },
+    {
+      "start": 1254.44,
+      "end": 1255.74,
+      "text": "You cannot go back."
+    },
+    {
+      "start": 1255.74,
+      "end": 1259.04,
+      "text": "That's why you just take the time of insertion and not the lowest."
+    },
+    {
+      "start": 1259.04,
+      "end": 1261.14,
+      "text": "If it's a visited one, very, very important."
+    },
+    {
+      "start": 1261.14,
+      "end": 1265.44,
+      "text": "This one and this line and this that's a shuttle change from bridges."
+    },
+    {
+      "start": 1265.44,
+      "end": 1269.14,
+      "text": "If I discuss about the time complexity in the space complexity space,"
+    },
+    {
+      "start": 1269.14,
+      "end": 1271.94,
+      "text": "complexity is quite simple 3n."
+    },
+    {
+      "start": 1271.94,
+      "end": 1274.24,
+      "text": "I wrote the time complexity."
+    },
+    {
+      "start": 1274.24,
+      "end": 1277.04,
+      "text": "The time complexity can be said as bring a defense Travis."
+    },
+    {
+      "start": 1277.04,
+      "end": 1279.64,
+      "text": "It's so V plus 2e and then a big off in here."
+    },
+    {
+      "start": 1279.64,
+      "end": 1282.14,
+      "text": "So quite simple to get this."
+    },
+    {
+      "start": 1282.74,
+      "end": 1289.34,
+      "text": "So I hope you've understood everything now before wrapping up this video of a very quick request to make us going through our channel statistics."
+    },
+    {
+      "start": 1289.64,
+      "end": 1293.04,
+      "text": "Nearly 50% of the users who watch my video do not subscribe to the channel."
+    },
+    {
+      "start": 1293.24,
+      "end": 1297.44,
+      "text": "So please please do consider subscribing to the channel if you haven't subscribed yet."
+    },
+    {
+      "start": 1297.54,
+      "end": 1301.24,
+      "text": "And if you understood the intuition, the algorithm and the code, what are you waiting for?"
+    },
+    {
+      "start": 1301.34,
+      "end": 1302.04,
+      "text": "Hit that like button."
+    },
+    {
+      "start": 1302.04,
+      "end": 1307.24,
+      "text": "And if you haven't checked out our DP series and the SDG and the other playlist, all the links will be in the description."
+    },
+    {
+      "start": 1307.24,
+      "end": 1308.74,
+      "text": "Make sure you check them out with this."
+    },
+    {
+      "start": 1308.74,
+      "end": 1309.54,
+      "text": "I'll be wrapping up this video."
+    },
+    {
+      "start": 1309.64,
+      "end": 1310.64,
+      "text": "Let's meet in some other video."
+    },
+    {
+      "start": 1310.64,
+      "end": 1311.14,
+      "text": "Tell them goodbye."
+    },
+    {
+      "start": 1311.14,
+      "end": 1311.54,
+      "text": "Take care."
+    }
+  ]
+}

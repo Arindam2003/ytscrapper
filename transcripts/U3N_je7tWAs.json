@@ -1,0 +1,1484 @@
+{
+  "video_id": "U3N_je7tWAs",
+  "title": "G-26. Alien Dictionary - Topological Sort",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1253.44,
+  "segments": [
+    {
+      "start": 2.77,
+      "end": 6.07,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.51,
+      "end": 8.99,
+      "text": "So today we will be solving the problem Alien Dictionary."
+    },
+    {
+      "start": 9.35,
+      "end": 10.61,
+      "text": "What does the problem say?"
+    },
+    {
+      "start": 10.99,
+      "end": 15.21,
+      "text": "It states, you are given a sorted dictionary of an alien language."
+    },
+    {
+      "start": 15.51,
+      "end": 17.75,
+      "text": "It is not the English language. It is an alien language."
+    },
+    {
+      "start": 18.23,
+      "end": 22.47,
+      "text": "Having n words and k starting alphabets of a standard dictionary."
+    },
+    {
+      "start": 23.25,
+      "end": 26.63,
+      "text": "Find the order of characters in the alien language."
+    },
+    {
+      "start": 27.11,
+      "end": 30.25,
+      "text": "Note, many orders may be possible for a particular test case."
+    },
+    {
+      "start": 30.25,
+      "end": 34.39,
+      "text": "Thus you may return any valid order and output will be 1"
+    },
+    {
+      "start": 34.39,
+      "end": 37.75,
+      "text": "if the order of a string returned by the function is correct"
+    },
+    {
+      "start": 37.75,
+      "end": 42.71,
+      "text": "else 0 denoting incorrect string return."
+    },
+    {
+      "start": 43.07,
+      "end": 44.85,
+      "text": "So let's analyze the problem statement."
+    },
+    {
+      "start": 45.17,
+      "end": 48.19,
+      "text": "So basically it states, you will be given something like BAA"
+    },
+    {
+      "start": 48.19,
+      "end": 51.49,
+      "text": "like a number of strings, n strings."
+    },
+    {
+      "start": 51.85,
+      "end": 54.31,
+      "text": "And you have to give me the sequence."
+    },
+    {
+      "start": 54.67,
+      "end": 56.87,
+      "text": "Now if I talk about the English dictionary,"
+    },
+    {
+      "start": 57.39,
+      "end": 58.69,
+      "text": "you know the sequence is very simple."
+    },
+    {
+      "start": 58.69,
+      "end": 60.21,
+      "text": "The sequence goes like A, B."
+    },
+    {
+      "start": 60.25,
+      "end": 63.61,
+      "text": "C, D, E, dot dot dot till x, y, z."
+    },
+    {
+      "start": 63.97,
+      "end": 65.59,
+      "text": "And if you follow the English dictionary,"
+    },
+    {
+      "start": 65.91,
+      "end": 69.21,
+      "text": "these n words would have been something like this."
+    },
+    {
+      "start": 70.09,
+      "end": 74.29,
+      "text": "First, we would have had ABCA, then ABCD,"
+    },
+    {
+      "start": 74.61,
+      "end": 79.81,
+      "text": "then definitely something like BAA, then CAB and then CAD."
+    },
+    {
+      "start": 80.11,
+      "end": 83.49,
+      "text": "Why does this happen in an English dictionary?"
+    },
+    {
+      "start": 83.49,
+      "end": 88.03,
+      "text": "Because if you see these couple of words, A appears before D."
+    },
+    {
+      "start": 88.45,
+      "end": 90.13,
+      "text": "A appears before D, thereby."
+    },
+    {
+      "start": 90.47,
+      "end": 93.23,
+      "text": "ABCA appears before ABCD."
+    },
+    {
+      "start": 93.53,
+      "end": 99.69,
+      "text": "Now if you go across ABCD and BAA, why does ABCD appear before BAA?"
+    },
+    {
+      "start": 99.97,
+      "end": 104.35,
+      "text": "Because A is smaller than B or A appears before B."
+    },
+    {
+      "start": 104.57,
+      "end": 111.37,
+      "text": "Now if you see BAA and CAB, if you carefully see, B appears before C in the dictionary."
+    },
+    {
+      "start": 111.61,
+      "end": 115.87,
+      "text": "And if you carefully see C, A, B, C, A, D, C, C, C, this is equal."
+    },
+    {
+      "start": 116.23,
+      "end": 117.67,
+      "text": "So B appears before D."
+    },
+    {
+      "start": 117.97,
+      "end": 119.97,
+      "text": "Thereby, CAB appears before CAB."
+    },
+    {
+      "start": 119.97,
+      "end": 120.01,
+      "text": "So B appears before D. Thereby, CAB appears before CAB."
+    },
+    {
+      "start": 120.01,
+      "end": 120.21,
+      "text": "Thereby, CAB appears before CAB."
+    },
+    {
+      "start": 120.31,
+      "end": 122.07,
+      "text": "So the question states, find out the ABCD in the normal dictionary."
+    },
+    {
+      "start": 122.29,
+      "end": 125.03,
+      "text": "But over here, we are not talking about any normal dictionary."
+    },
+    {
+      "start": 125.45,
+      "end": 127.05,
+      "text": "It's a dictionary of aliens, right?"
+    },
+    {
+      "start": 127.31,
+      "end": 128.75,
+      "text": "So it's an alien dictionary."
+    },
+    {
+      "start": 129.15,
+      "end": 133.19,
+      "text": "So in the alien dictionary, we are saying BAA, ABCD."
+    },
+    {
+      "start": 133.57,
+      "end": 135.93,
+      "text": "BAA appears before ABCD."
+    },
+    {
+      "start": 136.25,
+      "end": 142.41,
+      "text": "So we do not follow the standard dictionary or standard alphabetical order of ABCD,"
+    },
+    {
+      "start": 142.51,
+      "end": 143.73,
+      "text": "dot, dot, dot, dot, X, Y, Z."
+    },
+    {
+      "start": 143.99,
+      "end": 145.99,
+      "text": "We have to make our alien order."
+    },
+    {
+      "start": 146.05,
+      "end": 149.99,
+      "text": "So the question states, find out the ABCD."
+    },
+    {
+      "start": 150.21,
+      "end": 157.21,
+      "text": "order yes the question is very simple find out the alien order and over here they've clearly"
+    },
+    {
+      "start": 157.21,
+      "end": 164.37,
+      "text": "stated that k is four that means the alien order will have first four alphabets from the english"
+    },
+    {
+      "start": 164.37,
+      "end": 172.17,
+      "text": "dictionary which is a b c d just need to order them so if you carefully see this couple of guys"
+    },
+    {
+      "start": 172.17,
+      "end": 178.37,
+      "text": "are differentiated by b and a so can i say b appears before a can i say b appears before a"
+    },
+    {
+      "start": 178.37,
+      "end": 185.01,
+      "text": "in the alien order of dictionary that is the reason b double a is before a b c d that's because"
+    },
+    {
+      "start": 185.01,
+      "end": 192.55,
+      "text": "b appears before a so thereby in the alien order can i say b appears before a i can definitely see"
+    },
+    {
+      "start": 192.55,
+      "end": 200.79,
+      "text": "this if i compare these two a b c d a b c so these three are equal so d appears before a can i say d"
+    },
+    {
+      "start": 200.79,
+      "end": 207.53,
+      "text": "appears before a in the alien order thereby this string appears before this so d appears before a"
+    },
+    {
+      "start": 207.53,
+      "end": 208.35,
+      "text": "so you can definitely"
+    },
+    {
+      "start": 208.35,
+      "end": 214.25,
+      "text": "write d over here right now let's compare these two things so if you carefully see these two things"
+    },
+    {
+      "start": 214.25,
+      "end": 224.65,
+      "text": "a b c a c a b a appears before c a appears before c thereby a b c a appears before c a b so a appears"
+    },
+    {
+      "start": 224.65,
+      "end": 232.95,
+      "text": "before c so i can put in c over here let's see c a b and c a d and we are saying that c c is equal"
+    },
+    {
+      "start": 232.95,
+      "end": 238.19,
+      "text": "a is equal b appears before d in the alien order b must appear"
+    },
+    {
+      "start": 238.35,
+      "end": 246.03,
+      "text": "before d which is the case so can i see this is the alien order can i say this is the alien order"
+    },
+    {
+      "start": 246.03,
+      "end": 251.41,
+      "text": "i can definitely say that this is the alien order and this is what you have to return yes this is"
+    },
+    {
+      "start": 251.41,
+      "end": 259.97,
+      "text": "what you have to return now the question is something which says something before something"
+    },
+    {
+      "start": 259.97,
+      "end": 268.19,
+      "text": "isn't it b before d d before c a before c something before something which algorithmic"
+    },
+    {
+      "start": 268.35,
+      "end": 276.03,
+      "text": "algorithm yes you said it correctly it's nothing but the topological sort algorithm we apply the"
+    },
+    {
+      "start": 276.03,
+      "end": 281.19,
+      "text": "standard topological sort and if we apply that we should be able to solve this problem now the"
+    },
+    {
+      "start": 281.19,
+      "end": 286.65,
+      "text": "question boils down how do we apply the standard topological sort so we know that we have been said"
+    },
+    {
+      "start": 286.65,
+      "end": 292.77,
+      "text": "explicitly that there are four alphabets the first four alphabets from the english dictionary being"
+    },
+    {
+      "start": 292.77,
+      "end": 298.23,
+      "text": "used so i know something for sure that something like a b c d would have been used"
+    },
+    {
+      "start": 298.35,
+      "end": 306.73,
+      "text": "so what i will do over here is i will say a to be 0 b to be 1 c to be 2 and d to be 3 so i express"
+    },
+    {
+      "start": 306.73,
+      "end": 312.67,
+      "text": "all the alphabets in terms of number if there would have been till z it would have been 0 1 2 3 4"
+    },
+    {
+      "start": 312.67,
+      "end": 321.13,
+      "text": "till 24 25 so i'll try to express all the alphabets in terms of 0 base numbers a means"
+    },
+    {
+      "start": 321.13,
+      "end": 328.23,
+      "text": "0 b means 1 and so on now what i'll do is at first yes at first i'll pick up these couple"
+    },
+    {
+      "start": 328.23,
+      "end": 328.33,
+      "text": "of numbers and i'll pick up these couple of numbers and i'll pick up these couple of numbers"
+    },
+    {
+      "start": 328.35,
+      "end": 336.43,
+      "text": "guys which is b double a and a b c d at first i'll pick up b double a and a b c d so i'll say okay"
+    },
+    {
+      "start": 336.43,
+      "end": 345.85,
+      "text": "b double a and a b c d and i'll i'll figure out why is b double a i repeat i'll figure out why is"
+    },
+    {
+      "start": 345.85,
+      "end": 352.87,
+      "text": "b double a appearing before a b c d and the answer to that is very simple because b"
+    },
+    {
+      "start": 352.87,
+      "end": 358.23,
+      "text": "the aliens are saying b is smaller than a they"
+    },
+    {
+      "start": 358.23,
+      "end": 364.23,
+      "text": "thereby b double a appears before a b c d that is what the aliens are saying so i can say b"
+    },
+    {
+      "start": 364.23,
+      "end": 371.43,
+      "text": "is smaller than a which i can correspond to a directed graph and i can say hey listen"
+    },
+    {
+      "start": 371.43,
+      "end": 378.31,
+      "text": "probably i can have something like a b having an edge to a we can say that so we're trying to"
+    },
+    {
+      "start": 378.31,
+      "end": 384.27,
+      "text": "create a directed graph so b is having an edge to a perfect so we figured out why b double a"
+    },
+    {
+      "start": 384.27,
+      "end": 388.21,
+      "text": "appears before a b c d now if b double a appears before a b c d then we can say that b double a"
+    },
+    {
+      "start": 388.23,
+      "end": 393.27,
+      "text": "appears before a b c d that's the pair that we have figured out now do i need to again check for"
+    },
+    {
+      "start": 393.27,
+      "end": 399.27,
+      "text": "why does b double a appear before a b c a there's no need because if we check for b double a and a"
+    },
+    {
+      "start": 399.27,
+      "end": 407.19,
+      "text": "b c d we are satisfied and if we do the next two it will continue the flow got it so the next two"
+    },
+    {
+      "start": 407.19,
+      "end": 415.53,
+      "text": "are very simple a b c d and a b c a and now you will try to figure out why why the aliens are"
+    },
+    {
+      "start": 415.53,
+      "end": 421.97,
+      "text": "that ABCD should appear before ABCA in their dictionary and if we if we"
+    },
+    {
+      "start": 421.97,
+      "end": 430.35,
+      "text": "carefully observe AA if you carefully have an observation AA then BB same CC"
+    },
+    {
+      "start": 430.35,
+      "end": 436.31,
+      "text": "so all these English alphabets are same but where is the difference D tends to"
+    },
+    {
+      "start": 436.31,
+      "end": 441.97,
+      "text": "appear before a D tends to appear before a so I'll be like okay fine D is"
+    },
+    {
+      "start": 441.97,
+      "end": 448.03,
+      "text": "tending to appear before a so probably I'll say D tends to appear before a so I"
+    },
+    {
+      "start": 448.03,
+      "end": 454.75,
+      "text": "can have an edge from D to a now perfect done what is the next two guys the next"
+    },
+    {
+      "start": 454.75,
+      "end": 460.65,
+      "text": "two guys are very simple ABCA and CAB so I'm saying okay in the dictionary we"
+    },
+    {
+      "start": 460.65,
+      "end": 467.53,
+      "text": "have ABCA and CAB now I need to ask the aliens why are they thinking ABCA to be"
+    },
+    {
+      "start": 467.53,
+      "end": 471.93,
+      "text": "before CAB they'll tell me because in the dictionary a appears"
+    },
+    {
+      "start": 471.97,
+      "end": 476.91,
+      "text": "before C in the dictionary a appears before C so can I say there is an edge"
+    },
+    {
+      "start": 476.91,
+      "end": 483.03,
+      "text": "between from a to B so I can definitely see that there is an edge between a to"
+    },
+    {
+      "start": 483.03,
+      "end": 490.63,
+      "text": "C rather not be C okay done let's take the next guys what the next guys CAB CAD"
+    },
+    {
+      "start": 490.63,
+      "end": 497.11,
+      "text": "because that is what we have the last pairs CAB CAD so what we are saying is"
+    },
+    {
+      "start": 497.11,
+      "end": 501.91,
+      "text": "hey listen CAB appears before CAD in the alien dictionary why"
+    },
+    {
+      "start": 501.97,
+      "end": 507.05,
+      "text": "because B is apparently smaller than D according to them not according to me"
+    },
+    {
+      "start": 507.05,
+      "end": 512.89,
+      "text": "according to them B is smaller than D which means B is smaller than D means"
+    },
+    {
+      "start": 512.89,
+      "end": 518.17,
+      "text": "there's an edge between B to D there's an edge between B to D so I can have"
+    },
+    {
+      "start": 518.17,
+      "end": 522.55,
+      "text": "something like this there is an edge between B to D and got it so once you've"
+    },
+    {
+      "start": 522.55,
+      "end": 528.29,
+      "text": "done this once I've done this be pretty much done so we have created the"
+    },
+    {
+      "start": 528.29,
+      "end": 531.61,
+      "text": "directed graph if we carefully see we have"
+    },
+    {
+      "start": 531.97,
+      "end": 542.28,
+      "text": "the directed graph now assume assume if there was something like k equal to 5 then there would have"
+    },
+    {
+      "start": 542.28,
+      "end": 548.4,
+      "text": "been an alphabet as e as well which would have been 4 right which would have been 4 there would"
+    },
+    {
+      "start": 548.4,
+      "end": 555.34,
+      "text": "have been an alphabet as e as well which would have been 4 so where does that e lie in this dg"
+    },
+    {
+      "start": 555.34,
+      "end": 560.6,
+      "text": "because we do not have a mention of e but the alphabets are saying we have five alphabets we"
+    },
+    {
+      "start": 560.6,
+      "end": 567.78,
+      "text": "do not have a mention of e in that case we can consider the e to be a single yes we can consider"
+    },
+    {
+      "start": 567.78,
+      "end": 574.66,
+      "text": "the e to be a single node in the dg a single node in the dg this can lie anywhere in the order"
+    },
+    {
+      "start": 574.66,
+      "end": 580.26,
+      "text": "because this is not related so there are multiple components doesn't matter if someone is not"
+    },
+    {
+      "start": 580.26,
+      "end": 587.1,
+      "text": "related doesn't matter you can keep them as single what matters is you pick up pairs you pick up"
+    },
+    {
+      "start": 587.1,
+      "end": 590.5,
+      "text": "pairs you pick up pairs you pick up pairs find"
+    },
+    {
+      "start": 590.5,
+      "end": 590.58,
+      "text": "find"
+    },
+    {
+      "start": 590.58,
+      "end": 598.5,
+      "text": "who is appearing before whom and you make edges and you create the dg and then once that are left"
+    },
+    {
+      "start": 598.5,
+      "end": 606.76,
+      "text": "out will be single nodes once the dg is created what do i need yes what do i need i need an order"
+    },
+    {
+      "start": 606.76,
+      "end": 613.28,
+      "text": "so how do i get the order there's only one algorithm that gives us the order we perform"
+    },
+    {
+      "start": 613.28,
+      "end": 619.36,
+      "text": "the topological sort the topological wills because over here clearly states a is smaller than c"
+    },
+    {
+      "start": 619.36,
+      "end": 620.48,
+      "text": "or a"
+    },
+    {
+      "start": 620.48,
+      "end": 620.56,
+      "text": "a is smaller than c"
+    },
+    {
+      "start": 620.58,
+      "end": 622.58,
+      "text": "so how do i get the order there's only one algorithm that gives us the order we perform"
+    },
+    {
+      "start": 622.58,
+      "end": 625.38,
+      "text": "the topological sort must appear before c in the order and that is where the topological sort comes"
+    },
+    {
+      "start": 625.38,
+      "end": 630.66,
+      "text": "in if you figure out the topological sort of this you will definitely get something like b at first"
+    },
+    {
+      "start": 631.38,
+      "end": 638.66,
+      "text": "that's what you'll get b then you'll get something like d then you'll get something like a then you'll"
+    },
+    {
+      "start": 638.66,
+      "end": 646.34,
+      "text": "get something like c b d a c is the topo sort and if you include e then you can add e over here"
+    },
+    {
+      "start": 646.34,
+      "end": 650.48,
+      "text": "or at the front wherever you wish to but if you perform the topological sort of this you will get"
+    },
+    {
+      "start": 650.48,
+      "end": 658.88,
+      "text": "more of this particular directed acyclic graph you will get something like b d a c e as the topological"
+    },
+    {
+      "start": 658.88,
+      "end": 665.04,
+      "text": "salt now how do you implement this we are seeing like we have taken b da but instead of storing bd"
+    },
+    {
+      "start": 665.04,
+      "end": 670.32,
+      "text": "we will store something like zero one two three that's a very simple thing so the core concept"
+    },
+    {
+      "start": 670.32,
+      "end": 677.78,
+      "text": "lies if we can figure out between every pair if we can figure out between every pair who is appearing"
+    },
+    {
+      "start": 677.78,
+      "end": 680.38,
+      "text": "before whom like who is the differentiating factor"
+    },
+    {
+      "start": 680.38,
+      "end": 682.54,
+      "text": "Why is BAA before ABCD?"
+    },
+    {
+      "start": 682.84,
+      "end": 684.22,
+      "text": "That's because B is lesser than A."
+    },
+    {
+      "start": 684.56,
+      "end": 686.58,
+      "text": "If I can figure out this differentiating factor,"
+    },
+    {
+      "start": 686.96,
+      "end": 688.18,
+      "text": "and if I can create the DG,"
+    },
+    {
+      "start": 688.7,
+      "end": 692.42,
+      "text": "then the question boils down to finding the toposort of the DG."
+    },
+    {
+      "start": 692.76,
+      "end": 694.28,
+      "text": "That is as simple as it gets."
+    },
+    {
+      "start": 695.96,
+      "end": 700.94,
+      "text": "So can I say, in order to find out the differentiating factor between these two guys,"
+    },
+    {
+      "start": 701.54,
+      "end": 704.34,
+      "text": "so first I'll be like BAA, ABCD."
+    },
+    {
+      "start": 704.74,
+      "end": 706.66,
+      "text": "Next I'll be like ABCD, ABCA."
+    },
+    {
+      "start": 707.0,
+      "end": 708.9,
+      "text": "Next I'll be like ABCA, CAB."
+    },
+    {
+      "start": 708.9,
+      "end": 710.64,
+      "text": "Next I'll be like CAB, CAD."
+    },
+    {
+      "start": 711.24,
+      "end": 713.28,
+      "text": "Can I say, I can run a loop."
+    },
+    {
+      "start": 713.5,
+      "end": 720.12,
+      "text": "Yes, I can run a loop something like I equal to 0 till this guy, which is till 3."
+    },
+    {
+      "start": 720.58,
+      "end": 723.44,
+      "text": "And what I'll do is, first time I will be at BAA."
+    },
+    {
+      "start": 723.78,
+      "end": 728.62,
+      "text": "So I can say something like, okay, S1 is, let's say, array of I,"
+    },
+    {
+      "start": 729.72,
+      "end": 732.66,
+      "text": "which means BAA, which means it will be BAA."
+    },
+    {
+      "start": 733.0,
+      "end": 735.7,
+      "text": "So I'll just erase it and explain how do you implement this."
+    },
+    {
+      "start": 735.7,
+      "end": 738.7,
+      "text": "And I can say S2 to be array of..."
+    },
+    {
+      "start": 738.9,
+      "end": 742.34,
+      "text": "I plus 1, which means it will be ABCD."
+    },
+    {
+      "start": 742.74,
+      "end": 747.8,
+      "text": "So this is how, for the first time when I is 0, it will pick up array of I, BAA,"
+    },
+    {
+      "start": 748.14,
+      "end": 750.22,
+      "text": "and array of I plus 1, which is ABCD."
+    },
+    {
+      "start": 750.54,
+      "end": 751.04,
+      "text": "It'll pick up."
+    },
+    {
+      "start": 751.26,
+      "end": 755.52,
+      "text": "Now, what do you need to do is, you need to take these two strings and compare."
+    },
+    {
+      "start": 755.72,
+      "end": 757.48,
+      "text": "B is equal to A."
+    },
+    {
+      "start": 757.66,
+      "end": 758.08,
+      "text": "No."
+    },
+    {
+      "start": 758.36,
+      "end": 763.46,
+      "text": "The moment you find a non-equality, the moment you find a non-equality, you say,"
+    },
+    {
+      "start": 763.74,
+      "end": 766.58,
+      "text": "I don't need any further non-equalities in the future."
+    },
+    {
+      "start": 766.94,
+      "end": 768.78,
+      "text": "B is smaller than A."
+    },
+    {
+      "start": 768.9,
+      "end": 771.26,
+      "text": "And that is what determines for the dictionary to work."
+    },
+    {
+      "start": 771.58,
+      "end": 775.86,
+      "text": "So I will just go ahead and say, add an edge between B and A, and I'll stop."
+    },
+    {
+      "start": 776.26,
+      "end": 779.46,
+      "text": "So this is what happens for the first time when I is 0."
+    },
+    {
+      "start": 779.76,
+      "end": 783.58,
+      "text": "Next time when I is 1, what you'll do is, this will change."
+    },
+    {
+      "start": 783.9,
+      "end": 785.28,
+      "text": "Yes, this will definitely change."
+    },
+    {
+      "start": 785.58,
+      "end": 789.96,
+      "text": "And this time what will happen is, you will get ABCD because I is 1."
+    },
+    {
+      "start": 790.42,
+      "end": 793.66,
+      "text": "And ABCA, this is what will happen because I is 1."
+    },
+    {
+      "start": 793.66,
+      "end": 795.26,
+      "text": "So you'll get this and this."
+    },
+    {
+      "start": 795.52,
+      "end": 798.9,
+      "text": "If you start comparing, you just have an iterator or something like pointer."
+    },
+    {
+      "start": 799.22,
+      "end": 803.42,
+      "text": "So this is equal, this is equal, this is equal, this is equal."
+    },
+    {
+      "start": 803.42,
+      "end": 805.42,
+      "text": "So this will be A, not my bad."
+    },
+    {
+      "start": 805.42,
+      "end": 810.6,
+      "text": "So when I is 1, you get ABCD."
+    },
+    {
+      "start": 810.6,
+      "end": 813.6,
+      "text": "And for this 2, you'll get ABCA."
+    },
+    {
+      "start": 813.6,
+      "end": 817.6,
+      "text": "So now what will happen is, A equal, B equal, CC equal."
+    },
+    {
+      "start": 817.6,
+      "end": 819.6,
+      "text": "So D and A are the differentiating factor."
+    },
+    {
+      "start": 819.6,
+      "end": 823.6,
+      "text": "So you'll go ahead and add the edge DA to your graph."
+    },
+    {
+      "start": 823.6,
+      "end": 827.6,
+      "text": "Similarly, when I will be next time 2, what will happen?"
+    },
+    {
+      "start": 827.6,
+      "end": 829.6,
+      "text": "It'll get the next guy, ABCA."
+    },
+    {
+      "start": 829.6,
+      "end": 830.1,
+      "text": "Yes."
+    },
+    {
+      "start": 830.2,
+      "end": 830.8,
+      "text": "ABCA."
+    },
+    {
+      "start": 830.8,
+      "end": 831.4,
+      "text": "ABCA."
+    },
+    {
+      "start": 831.4,
+      "end": 833.4,
+      "text": "I'll get something like CAB."
+    },
+    {
+      "start": 833.4,
+      "end": 836.4,
+      "text": "So you can just go on every pair by pair."
+    },
+    {
+      "start": 836.4,
+      "end": 841.4,
+      "text": "And after you have gone pair by pair, you just take a pointer and you compare, you compare, you compare."
+    },
+    {
+      "start": 841.4,
+      "end": 846.4,
+      "text": "First time you get a differentiation, you say there's an edge between A and C and you stop."
+    },
+    {
+      "start": 846.4,
+      "end": 852.4,
+      "text": "Because you just need one guy to be the differentiating factor to place them in a dictionary order."
+    },
+    {
+      "start": 852.4,
+      "end": 854.4,
+      "text": "So guys, I hope you've understood the solution."
+    },
+    {
+      "start": 854.4,
+      "end": 855.8,
+      "text": "Now it's time to code it up."
+    },
+    {
+      "start": 855.8,
+      "end": 860.4,
+      "text": "So as usual, I'll be coding the C++ on the right and you can figure out the Java code on the left."
+    },
+    {
+      "start": 860.8,
+      "end": 862.0,
+      "text": "So what are we given?"
+    },
+    {
+      "start": 862.0,
+      "end": 868.8,
+      "text": "We're given the dictionary, the number of strings and the number of alphabets that we will take from the English alphabet."
+    },
+    {
+      "start": 868.8,
+      "end": 873.4,
+      "text": "So the first thing that I'll do is I'll try to create the adjacency list and that will be for K size."
+    },
+    {
+      "start": 873.4,
+      "end": 877.4,
+      "text": "Next, I know that I have to go through this dictionary."
+    },
+    {
+      "start": 877.4,
+      "end": 882.4,
+      "text": "So I'll go through this dictionary till N minus one because I need pairs."
+    },
+    {
+      "start": 882.4,
+      "end": 890.4,
+      "text": "The first string that I'll get is dictionary of I and the second string that I'll get is dictionary of I plus one."
+    },
+    {
+      "start": 890.8,
+      "end": 892.1,
+      "text": "Why till N minus one?"
+    },
+    {
+      "start": 892.1,
+      "end": 893.7,
+      "text": "Because you need pairs."
+    },
+    {
+      "start": 893.7,
+      "end": 898.8,
+      "text": "And if you have to take the next one, you just go to second last, not to the last."
+    },
+    {
+      "start": 898.8,
+      "end": 901.3,
+      "text": "Because at last, there will be no one else to compare."
+    },
+    {
+      "start": 901.3,
+      "end": 902.4,
+      "text": "Right? This is done."
+    },
+    {
+      "start": 902.4,
+      "end": 905.7,
+      "text": "Now, I need to compare every character."
+    },
+    {
+      "start": 905.7,
+      "end": 908.8,
+      "text": "First character, second character, third character, fourth character."
+    },
+    {
+      "start": 908.8,
+      "end": 914.3,
+      "text": "So I can go on till the length of minimum of S1 dot size."
+    },
+    {
+      "start": 914.3,
+      "end": 917.5,
+      "text": "Like whoever is minimal, I'll go on comparing till it."
+    },
+    {
+      "start": 917.5,
+      "end": 918.8,
+      "text": "I can take it something else."
+    },
+    {
+      "start": 918.8,
+      "end": 920.0,
+      "text": "Because if there is one thing, I can take it."
+    },
+    {
+      "start": 920.8,
+      "end": 926.8,
+      "text": "If there is one string this small, if there is one string this big, then we compare till the length of the smallest string."
+    },
+    {
+      "start": 926.8,
+      "end": 927.6,
+      "text": "Got it?"
+    },
+    {
+      "start": 927.6,
+      "end": 932.2,
+      "text": "So for int, you can say ptr equal to zero and pointer."
+    },
+    {
+      "start": 932.2,
+      "end": 935.6,
+      "text": "And ptr is lesser than the length and ptr plus plus."
+    },
+    {
+      "start": 935.6,
+      "end": 946.74,
+      "text": "So what I'll say is, hey listen, if S1 of ptr is like both the characters are different, which is not equal to S2 of ptr."
+    },
+    {
+      "start": 946.74,
+      "end": 951.84,
+      "text": "If both the characters are different, what do you do is you say adjacency of."
+    },
+    {
+      "start": 951.84,
+      "end": 954.04,
+      "text": "So you're saying someone appears before someone."
+    },
+    {
+      "start": 954.04,
+      "end": 956.54,
+      "text": "So S1 of ptr appears before."
+    },
+    {
+      "start": 956.54,
+      "end": 962.64,
+      "text": "S1 of ptr should be done as pushback of S2 of ptr."
+    },
+    {
+      "start": 962.64,
+      "end": 964.24,
+      "text": "Simple as that."
+    },
+    {
+      "start": 964.24,
+      "end": 966.04,
+      "text": "That's the thing you'll do."
+    },
+    {
+      "start": 966.04,
+      "end": 971.74,
+      "text": "Now, you're saying S1 has an edge, directed edge to S2."
+    },
+    {
+      "start": 971.74,
+      "end": 973.54,
+      "text": "S1 should appear before S2."
+    },
+    {
+      "start": 973.54,
+      "end": 976.14,
+      "text": "That is valid because in dictionary, it appears before."
+    },
+    {
+      "start": 976.14,
+      "end": 978.64,
+      "text": "But I need to store in terms of 0, 1, 2."
+    },
+    {
+      "start": 978.64,
+      "end": 980.54,
+      "text": "So just subtract minus A."
+    },
+    {
+      "start": 980.54,
+      "end": 981.74,
+      "text": "So that it automatically gets converted."
+    },
+    {
+      "start": 981.84,
+      "end": 983.34,
+      "text": "Into 0, 1, 2."
+    },
+    {
+      "start": 983.34,
+      "end": 985.54,
+      "text": "This is how you can easily create the graph."
+    },
+    {
+      "start": 985.54,
+      "end": 991.04,
+      "text": "Now, once your graph is ready by performing this constructive algorithm, what do you need?"
+    },
+    {
+      "start": 991.04,
+      "end": 998.04,
+      "text": "You need to find its toposort of this directed graph because they're clearly stated answer like ordering is possible."
+    },
+    {
+      "start": 998.04,
+      "end": 1001.04,
+      "text": "If they would have stated that answer is not possible."
+    },
+    {
+      "start": 1001.04,
+      "end": 1002.64,
+      "text": "We will discuss it afterwards."
+    },
+    {
+      "start": 1002.64,
+      "end": 1008.34,
+      "text": "But as of now, what I'll do is I'll go ahead and pick up the function that gives me toposort."
+    },
+    {
+      "start": 1008.34,
+      "end": 1010.54,
+      "text": "I'll just pick up the function that gives me toposort."
+    },
+    {
+      "start": 1010.54,
+      "end": 1011.84,
+      "text": "We have already done this."
+    },
+    {
+      "start": 1011.84,
+      "end": 1016.84,
+      "text": "So in case you have not checked out the previous videos, please check out for toposort."
+    },
+    {
+      "start": 1016.84,
+      "end": 1021.74,
+      "text": "We have already done the toposort for any given directed graph with multiple components."
+    },
+    {
+      "start": 1021.74,
+      "end": 1026.94,
+      "text": "Remember this works for multiple components as well for single nodes as well."
+    },
+    {
+      "start": 1026.94,
+      "end": 1031.14,
+      "text": "So we just pick up the toposort that we have learned in the previous videos."
+    },
+    {
+      "start": 1031.14,
+      "end": 1034.44,
+      "text": "Now what I'll say is okay, listen, we have the graph."
+    },
+    {
+      "start": 1034.44,
+      "end": 1039.04,
+      "text": "Can I ask this guy to give me the toposort?"
+    },
+    {
+      "start": 1039.04,
+      "end": 1040.54,
+      "text": "And what does he need? Needs?"
+    },
+    {
+      "start": 1040.54,
+      "end": 1043.34,
+      "text": "The number of vertices and the graph."
+    },
+    {
+      "start": 1043.34,
+      "end": 1045.14,
+      "text": "I'll give him the number of vertices."
+    },
+    {
+      "start": 1045.14,
+      "end": 1047.14,
+      "text": "Remember the number of vertices is not n."
+    },
+    {
+      "start": 1047.14,
+      "end": 1049.14,
+      "text": "n is the number of words in the dictionary."
+    },
+    {
+      "start": 1049.14,
+      "end": 1054.34,
+      "text": "The number of vertices is k and I give him the adjacency list."
+    },
+    {
+      "start": 1054.34,
+      "end": 1058.54,
+      "text": "Once I get this, also they're asking you to return a string, not a vector of int."
+    },
+    {
+      "start": 1058.54,
+      "end": 1060.14,
+      "text": "So let's convert this into a string."
+    },
+    {
+      "start": 1060.14,
+      "end": 1065.54,
+      "text": "The string of answer equal to this and I'll just go across the it of topo."
+    },
+    {
+      "start": 1065.54,
+      "end": 1070.24,
+      "text": "And I know answer is equal to answer plus, need to convert this into a character."
+    },
+    {
+      "start": 1070.54,
+      "end": 1071.94,
+      "text": "It is the alphabet."
+    },
+    {
+      "start": 1071.94,
+      "end": 1077.04,
+      "text": "If you remember we subtracted a, they'll again add a so that we get the character back."
+    },
+    {
+      "start": 1077.04,
+      "end": 1082.44,
+      "text": "And once you have got the character back, you can go ahead and return the answer because they require a string to be returned."
+    },
+    {
+      "start": 1082.44,
+      "end": 1083.84,
+      "text": "So go and compile it."
+    },
+    {
+      "start": 1083.84,
+      "end": 1086.34,
+      "text": "So in the same way, compile you see this is running absolutely fine."
+    },
+    {
+      "start": 1086.34,
+      "end": 1087.94,
+      "text": "Let's quickly submit this."
+    },
+    {
+      "start": 1087.94,
+      "end": 1091.14,
+      "text": "And if you submit this, you will see that all the test cases are."
+    },
+    {
+      "start": 1091.14,
+      "end": 1093.74,
+      "text": "So we have solved this particular problem."
+    },
+    {
+      "start": 1093.74,
+      "end": 1099.84,
+      "text": "Now, what if the interviewer tweaks the question and says, okay, this was when this was always possible."
+    },
+    {
+      "start": 1099.84,
+      "end": 1100.34,
+      "text": "Now, when?"
+    },
+    {
+      "start": 1100.54,
+      "end": 1102.24,
+      "text": "The order will not be possible."
+    },
+    {
+      "start": 1102.24,
+      "end": 1105.24,
+      "text": "What if the order is not possible?"
+    },
+    {
+      "start": 1105.24,
+      "end": 1106.84,
+      "text": "What if the dictionary is wrong?"
+    },
+    {
+      "start": 1106.84,
+      "end": 1108.54,
+      "text": "What if the order is not possible?"
+    },
+    {
+      "start": 1108.54,
+      "end": 1110.14,
+      "text": "How will you figure that out?"
+    },
+    {
+      "start": 1110.14,
+      "end": 1112.24,
+      "text": "So you'll tell him to test cases."
+    },
+    {
+      "start": 1112.24,
+      "end": 1117.54,
+      "text": "One of the test cases you can say him is if the string one is this and string two is this."
+    },
+    {
+      "start": 1117.54,
+      "end": 1121.64,
+      "text": "Whenever we try to compare the strings, what are we looking at?"
+    },
+    {
+      "start": 1121.64,
+      "end": 1123.64,
+      "text": "We are looking at is this matching?"
+    },
+    {
+      "start": 1123.64,
+      "end": 1125.14,
+      "text": "Is this matching?"
+    },
+    {
+      "start": 1125.14,
+      "end": 1126.14,
+      "text": "Is this matching?"
+    },
+    {
+      "start": 1126.14,
+      "end": 1130.24,
+      "text": "And apparently you ended up comparing like the comparison has gone."
+    },
+    {
+      "start": 1130.54,
+      "end": 1136.44,
+      "text": "Is finished and you did not find a differentiating point because ABC everything is matching."
+    },
+    {
+      "start": 1136.44,
+      "end": 1147.64,
+      "text": "If everything is matching doesn't matter if you're following the alien dictionary or if you're following the normal dictionary, the shorter string ABC should have been before ABCD for sure."
+    },
+    {
+      "start": 1147.64,
+      "end": 1154.74,
+      "text": "So you can see this test case that if everything is matching and the largest string is before the shortest string very important."
+    },
+    {
+      "start": 1154.74,
+      "end": 1158.04,
+      "text": "If ABC was before ABCD and that is fine."
+    },
+    {
+      "start": 1158.04,
+      "end": 1159.84,
+      "text": "You don't need to find an order for this."
+    },
+    {
+      "start": 1159.84,
+      "end": 1166.54,
+      "text": "But if the largest ring is before the shortest string when everyone matches, it's a no order is not possible."
+    },
+    {
+      "start": 1166.54,
+      "end": 1168.44,
+      "text": "It's a wrong dictionary."
+    },
+    {
+      "start": 1168.44,
+      "end": 1169.14,
+      "text": "Got it."
+    },
+    {
+      "start": 1169.14,
+      "end": 1178.44,
+      "text": "And the other one is if you have something like which it's a cyclic dependency something like ABC something like bat and something like ADE."
+    },
+    {
+      "start": 1178.44,
+      "end": 1188.94,
+      "text": "Now what we are saying over here is we are saying a to be smaller than B and we are seeing B to be smaller than a it's a cyclic dependency."
+    },
+    {
+      "start": 1188.94,
+      "end": 1189.74,
+      "text": "This is not possible."
+    },
+    {
+      "start": 1189.84,
+      "end": 1195.64,
+      "text": "So these are the two test cases when a dictionary is wrong when a dictionary is wrong."
+    },
+    {
+      "start": 1195.64,
+      "end": 1207.04,
+      "text": "Whenever you find two pairs having something like this or a cyclic dependency because we know for a cycle to post or any sorted order is not possible."
+    },
+    {
+      "start": 1207.04,
+      "end": 1208.64,
+      "text": "That is what you'll tell the interview."
+    },
+    {
+      "start": 1208.64,
+      "end": 1217.64,
+      "text": "If it gives you a follow-up question that when is it not possible you tell them listen if the largest ring appears before the shorter and everything is matching not possible."
+    },
+    {
+      "start": 1217.64,
+      "end": 1219.24,
+      "text": "If there's a cyclic dependency."
+    },
+    {
+      "start": 1219.24,
+      "end": 1219.64,
+      "text": "Okay."
+    },
+    {
+      "start": 1219.64,
+      "end": 1220.84,
+      "text": "So you can see not possible."
+    },
+    {
+      "start": 1220.84,
+      "end": 1227.24,
+      "text": "These are the two checks you have to integrate in the given code and it will start running absolutely fine."
+    },
+    {
+      "start": 1227.24,
+      "end": 1230.34,
+      "text": "So guys, I hope I was able to explain you this particular problem."
+    },
+    {
+      "start": 1230.34,
+      "end": 1233.44,
+      "text": "Just in case I was please please please hit that like button."
+    },
+    {
+      "start": 1233.44,
+      "end": 1236.84,
+      "text": "And if you're new to our Channel, please do consider subscribing to us."
+    },
+    {
+      "start": 1236.84,
+      "end": 1242.14,
+      "text": "And if you haven't checked out our DP series and the HD sheet the links are in the description and you have with this I'll be wrapping up this video."
+    },
+    {
+      "start": 1242.14,
+      "end": 1244.44,
+      "text": "Let's put in some of the video till then bye bye take care."
+    },
+    {
+      "start": 1249.64,
+      "end": 1251.04,
+      "text": "Golden."
+    }
+  ]
+}

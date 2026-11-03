@@ -1,0 +1,799 @@
+{
+  "video_id": "KG5YFfR0j8A",
+  "title": "G-18. Bipartite Graph ｜ DFS ｜ C++ ｜ Java",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 893.76,
+  "segments": [
+    {
+      "start": 2.99,
+      "end": 6.43,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.75,
+      "end": 11.89,
+      "text": "So in this video, we are going to learn about bipartite graph and we are going to check if a"
+    },
+    {
+      "start": 11.89,
+      "end": 18.01,
+      "text": "graph is bipartite or not using the DFS algorithm, which is the depth first search. Now, what is the"
+    },
+    {
+      "start": 18.01,
+      "end": 25.13,
+      "text": "definition of a bipartite graph? Given a graph, a graph that can be colored with exactly two colors,"
+    },
+    {
+      "start": 25.49,
+      "end": 31.53,
+      "text": "exactly two colors, such that no two adjacent nodes have the same color. Very, very important."
+    },
+    {
+      "start": 31.53,
+      "end": 35.27,
+      "text": "You are given two colors. You need to use those two colors to color a graph"
+    },
+    {
+      "start": 35.27,
+      "end": 42.03,
+      "text": "such that no two adjacent nodes have the same color. Very, very important. The two colors can"
+    },
+    {
+      "start": 42.03,
+      "end": 47.73,
+      "text": "be anything black, white, yellow, green, or whatever. So let's take yellow and green."
+    },
+    {
+      "start": 48.15,
+      "end": 56.05,
+      "text": "If I take this particular graph and try to color it, so yellow, obviously this is the adjacent node."
+    },
+    {
+      "start": 56.05,
+      "end": 60.61,
+      "text": "We cannot color it with yellow because yellow and yellow will have two adjacent nodes."
+    },
+    {
+      "start": 61.09,
+      "end": 61.49,
+      "text": "Thereby,"
+    },
+    {
+      "start": 61.53,
+      "end": 65.89,
+      "text": "we have to give it the opposite color, green. Then the next one will definitely have the opposite,"
+    },
+    {
+      "start": 66.09,
+      "end": 71.33,
+      "text": "yellow. Then the next one will have green. The next one will have yellow. The next one will have"
+    },
+    {
+      "start": 71.33,
+      "end": 76.55,
+      "text": "green, right? So if you see, all of them are opposite and none of the adjacent nodes are"
+    },
+    {
+      "start": 76.55,
+      "end": 82.81,
+      "text": "having the same color. Now, if we go this direction, this will be given a yellow. If we go"
+    },
+    {
+      "start": 82.81,
+      "end": 88.13,
+      "text": "the other, this will be green. Again, this will be yellow. If you see the entire graph, I took two"
+    },
+    {
+      "start": 88.13,
+      "end": 91.51,
+      "text": "colors, yellow and green, and I was able to color the graph in two different colors. So I took two"
+    },
+    {
+      "start": 91.53,
+      "end": 96.99,
+      "text": "colors. And if you carefully see every two adjacent nodes, yes, every two adjacent nodes are"
+    },
+    {
+      "start": 96.99,
+      "end": 103.55,
+      "text": "having different colors. Yes, every two adjacent nodes are having different color. But if I take"
+    },
+    {
+      "start": 103.55,
+      "end": 111.09,
+      "text": "this particular graph, so what I can say is this graph is a bipartite graph. Yes, I can call this"
+    },
+    {
+      "start": 111.09,
+      "end": 118.09,
+      "text": "graph as a bipartite graph. At the same time, if I check this out and I take the same color, yellow"
+    },
+    {
+      "start": 118.09,
+      "end": 121.29,
+      "text": "and green, yellow, obviously the adjacent will be opposite."
+    },
+    {
+      "start": 121.29,
+      "end": 127.19,
+      "text": "So I will say green, yellow, green, yellow, green. This is green, so this will be yellow. This is"
+    },
+    {
+      "start": 127.19,
+      "end": 132.57,
+      "text": "yellow, so this will be green. So if I follow this, these two adjacent nodes are having different"
+    },
+    {
+      "start": 132.57,
+      "end": 137.59,
+      "text": "colors. But at the same time, if you see these, these two adjacent nodes are having green color."
+    },
+    {
+      "start": 137.97,
+      "end": 144.05,
+      "text": "So thereby, this graph cannot be colored. You can try any other possibilities. This graph cannot be"
+    },
+    {
+      "start": 144.05,
+      "end": 150.73,
+      "text": "colored with two colors because you will end up either having this or this same colors. Now, the"
+    },
+    {
+      "start": 151.29,
+      "end": 157.07,
+      "text": "next thing I want to show you is a graph that is very simple because it was a even length cycle."
+    },
+    {
+      "start": 157.07,
+      "end": 165.41,
+      "text": "So you odd length 1, 2, 3, 4, 5. If you see the length of the cycle, it was odd. So if a graph has"
+    },
+    {
+      "start": 165.41,
+      "end": 172.65,
+      "text": "an odd length cycle, it will never be bipartite. Remember this. If a graph has odd length cycle,"
+    },
+    {
+      "start": 172.65,
+      "end": 180.05,
+      "text": "then it cannot be bipartite. Apart from that, if you see this one, 1, 2, 3, 4, 5, 6. So the length of"
+    },
+    {
+      "start": 180.05,
+      "end": 181.01,
+      "text": "this graph is odd."
+    },
+    {
+      "start": 181.29,
+      "end": 191.07,
+      "text": "Length of this is 6. And if I see this is an even length, this is an even length. And this is a"
+    },
+    {
+      "start": 191.07,
+      "end": 200.55,
+      "text": "bipartite graph. And this is a bipartite graph. Similarly, any linear length graph, any linear"
+    },
+    {
+      "start": 200.57,
+      "end": 206.59,
+      "text": "length, like if you give something like this, then like this, then like this, then like this, this is"
+    },
+    {
+      "start": 206.91,
+      "end": 211.05,
+      "text": "bipartite because you can grow like blue, green, blue, green."
+    },
+    {
+      "start": 211.29,
+      "end": 217.95,
+      "text": "You can color it. So anything apart from like any graph, which does not contain an odd length cycle"
+    },
+    {
+      "start": 218.31,
+      "end": 223.67,
+      "text": "are bipartite. And any graph that contains an odd length cycle cannot be bipartite. A simple"
+    },
+    {
+      "start": 223.67,
+      "end": 230.07,
+      "text": "definition of the bipartite graph. So we will be taking this graph and the algorithm that we will"
+    },
+    {
+      "start": 230.07,
+      "end": 235.91,
+      "text": "be applying is DFS. And you know, every graph can be represented in terms of adjacency list. So this"
+    },
+    {
+      "start": 235.91,
+      "end": 240.87,
+      "text": "is the particular adjacency list for the graph. And we are assuming that this graph has one"
+    },
+    {
+      "start": 241.29,
+      "end": 245.73,
+      "text": "component. If they are able to solve it for one component, we can definitely solve it for multiple"
+    },
+    {
+      "start": 245.73,
+      "end": 252.57,
+      "text": "components, right? Now in DFS algorithm, we always have a start node. So we can assume the start node"
+    },
+    {
+      "start": 252.57,
+      "end": 257.67,
+      "text": "to be one. You can take it to be eight. You can take it to be four, whichever you wish to. And we"
+    },
+    {
+      "start": 257.67,
+      "end": 263.91,
+      "text": "always have a visited matrix, sorry, visited array. But over here, what we will do is we will take a"
+    },
+    {
+      "start": 263.91,
+      "end": 271.07,
+      "text": "color array and of the same size of the number of nodes. And we will make sure every one is initially"
+    },
+    {
+      "start": 271.07,
+      "end": 275.99,
+      "text": "colored with minus one, which means none of the nodes are colored. And the colors that we will use"
+    },
+    {
+      "start": 275.99,
+      "end": 282.83,
+      "text": "to color the nodes are zero and one. These can be like yellow and green. So zero and one. So this is"
+    },
+    {
+      "start": 282.83,
+      "end": 287.93,
+      "text": "the graph. So initially what you do is you call the DFS function. Yes. Initially you call the DFS"
+    },
+    {
+      "start": 287.93,
+      "end": 293.45,
+      "text": "function from one, right? And the moment you call it from one, just to make sure, like you can just"
+    },
+    {
+      "start": 293.45,
+      "end": 298.07,
+      "text": "have it something like this. You can pass the color that you want to color it with and pass the color"
+    },
+    {
+      "start": 298.07,
+      "end": 300.11,
+      "text": "zero. So DFS of one, zero."
+    },
+    {
+      "start": 300.23,
+      "end": 300.73,
+      "text": "So the,"
+    },
+    {
+      "start": 300.73,
+      "end": 301.07,
+      "text": "So the moment you call it from one,"
+    },
+    {
+      "start": 301.07,
+      "end": 306.29,
+      "text": "the call comes in for DFS of one and the color zero, it goes to the position one and sees,"
+    },
+    {
+      "start": 306.29,
+      "end": 311.69,
+      "text": "can you color it with a color zero? And he's like, yeah, fine. I can color it with a color zero. So"
+    },
+    {
+      "start": 311.69,
+      "end": 316.29,
+      "text": "we had done it. And now what we will see is what the adjacent nodes are fun. And we see that there"
+    },
+    {
+      "start": 316.29,
+      "end": 322.25,
+      "text": "is only one. So what do you do is you call it for two. Yes. You call it for two. Now is two colored"
+    },
+    {
+      "start": 322.25,
+      "end": 326.81,
+      "text": "two is not colored. So you call it for two and which color will you give to? It'll obviously"
+    },
+    {
+      "start": 326.81,
+      "end": 330.73,
+      "text": "give the opposite color to what was off zero. So you'll give it two. So you'll give it two."
+    },
+    {
+      "start": 330.73,
+      "end": 336.43,
+      "text": "Give it the opposite color, which is one. So give it the opposite color that is one. So as of now,"
+    },
+    {
+      "start": 336.43,
+      "end": 343.51,
+      "text": "you'll go to two. So you'll have a color one. So let's color it with one. Now you go to two and"
+    },
+    {
+      "start": 343.51,
+      "end": 349.27,
+      "text": "what the adjacent nodes, the first adjacent node is one. And you see that it is already colored"
+    },
+    {
+      "start": 349.27,
+      "end": 355.27,
+      "text": "with a color zero, right? And this was colored with color one. So it's an adjacent node and it"
+    },
+    {
+      "start": 355.27,
+      "end": 360.19,
+      "text": "is colored with a different color. So that is okay. It is already colored with a different color. So I"
+    },
+    {
+      "start": 360.19,
+      "end": 360.69,
+      "text": "will not go."
+    },
+    {
+      "start": 360.73,
+      "end": 367.03,
+      "text": "There and the next is three. So I see the next is three. So what I'll do is I will go to three"
+    },
+    {
+      "start": 367.03,
+      "end": 373.23,
+      "text": "and I'll give it the opposite color. And what is the opposite color? Zero. So now you go to three"
+    },
+    {
+      "start": 373.23,
+      "end": 380.41,
+      "text": "and you say the color is zero and have it a color zero. Perfect. So the DFS call for three comes in"
+    },
+    {
+      "start": 380.41,
+      "end": 386.95,
+      "text": "and the first node that it sees is two. So three sees that the first adjacent node is two. And it"
+    },
+    {
+      "start": 386.95,
+      "end": 390.71,
+      "text": "checks that, okay, my color is zero and the adjacent colors is one. So if it's"
+    },
+    {
+      "start": 390.73,
+      "end": 397.07,
+      "text": "perfect, but it is already colored, so I will not go and visit it. Perfect. Next we have a four and"
+    },
+    {
+      "start": 397.07,
+      "end": 403.21,
+      "text": "we see that it is not colored. So what we will do is we will have a DFS call for four with the"
+    },
+    {
+      "start": 403.21,
+      "end": 409.87,
+      "text": "opposite color, which is one. So four will be colored with one now. Perfect. Next we have a DFS"
+    },
+    {
+      "start": 409.87,
+      "end": 420.19,
+      "text": "four and DFS four has a three. DFS four has a three and the four has a color one and the three has a color zero. So it has an opposite color,"
+    },
+    {
+      "start": 420.19,
+      "end": 425.39,
+      "text": "but it has been already colored so i will not go here the next adjusted node is five and the next"
+    },
+    {
+      "start": 425.39,
+      "end": 431.63,
+      "text": "is seven so probably uh let's go for seven first and then we can go for five just to uh have a"
+    },
+    {
+      "start": 431.63,
+      "end": 436.27,
+      "text": "better understanding of the dfs algo i'll just change it over here we'll have seven first and"
+    },
+    {
+      "start": 436.27,
+      "end": 446.59,
+      "text": "then five so the next node is seven so what i will do is i will now go to dfs of seven with the color"
+    },
+    {
+      "start": 446.59,
+      "end": 452.67,
+      "text": "zero and when i come back then i'll go to the dfs of five with the color zero because this is color"
+    },
+    {
+      "start": 452.67,
+      "end": 456.91,
+      "text": "one so we'll go to color zero this is color one so you'll go to color zero so dfs of four says"
+    },
+    {
+      "start": 456.91,
+      "end": 463.23,
+      "text": "i'll go to seven with the color zero this is like fine go to seven with the color zero right and now"
+    },
+    {
+      "start": 463.23,
+      "end": 469.71,
+      "text": "seven says i have four which is already colored and i have eight which is not colored so please"
+    },
+    {
+      "start": 469.71,
+      "end": 476.03,
+      "text": "go to eight and color it with the opposite color so dfs of eight with the color one so eight goes"
+    },
+    {
+      "start": 476.59,
+      "end": 483.17,
+      "text": "that with color one by the way just make sure you make mark the colors perfect now eight says i just"
+    },
+    {
+      "start": 483.17,
+      "end": 489.11,
+      "text": "have one guy seven eight says i just have one guy seven and that guy is already colored with zero"
+    },
+    {
+      "start": 489.11,
+      "end": 495.07,
+      "text": "which is my opposite color so that's okay so eight says i do not have any further notes eight says i"
+    },
+    {
+      "start": 495.07,
+      "end": 502.49,
+      "text": "do not have any further notes so what eight does is eight says fine from my end i did not have any"
+    },
+    {
+      "start": 502.49,
+      "end": 508.15,
+      "text": "problem i came up to eight and i did not find any problem to color the graph with only two colors"
+    },
+    {
+      "start": 508.15,
+      "end": 514.73,
+      "text": "i had absolutely no problem so please go back so it'll go back seven says okay fine my job is done"
+    },
+    {
+      "start": 514.73,
+      "end": 520.29,
+      "text": "because i don't have any further notes go back now four says i had a call for seven which is over"
+    },
+    {
+      "start": 520.29,
+      "end": 527.05,
+      "text": "and they did not find any problem so i will now go for five perfect now i will go for five so you"
+    },
+    {
+      "start": 527.05,
+      "end": 532.15,
+      "text": "realize there was one node which got completed then you do the dfs for five now we will go for"
+    },
+    {
+      "start": 532.15,
+      "end": 532.41,
+      "text": "five"
+    },
+    {
+      "start": 532.49,
+      "end": 536.65,
+      "text": "so what will happen is you'll go to five and you'll have a color zero the five says okay"
+    },
+    {
+      "start": 536.65,
+      "end": 541.95,
+      "text": "i have a color zero perfect now when you come to five five has the adjacent node as four"
+    },
+    {
+      "start": 541.95,
+      "end": 548.81,
+      "text": "which is already colored with color one that's perfect opposite color and a five has a six so"
+    },
+    {
+      "start": 548.81,
+      "end": 555.01,
+      "text": "we will go to six now let's go to six so we will go to six with the opposite color of one so we go"
+    },
+    {
+      "start": 555.01,
+      "end": 561.97,
+      "text": "and mark it as one we mark this as one perfect now we are at six so six says my first adjacent"
+    },
+    {
+      "start": 561.97,
+      "end": 562.47,
+      "text": "node is"
+    },
+    {
+      "start": 562.49,
+      "end": 569.29,
+      "text": "two very important six says my first adjacent node is two and i see it's already colored but"
+    },
+    {
+      "start": 569.29,
+      "end": 574.39,
+      "text": "dude wait it has been colored with the same color it has been colored with the same color i got an"
+    },
+    {
+      "start": 574.39,
+      "end": 581.31,
+      "text": "adjacent node i got an adjacent node with the same color that means it is a bipartite yes sorry that"
+    },
+    {
+      "start": 581.31,
+      "end": 588.19,
+      "text": "means it is not a bipartite it cannot be colored so six says hey when i was checking for two"
+    },
+    {
+      "start": 588.19,
+      "end": 592.25,
+      "text": "when i was checking for two it has the same color"
+    },
+    {
+      "start": 592.49,
+      "end": 599.29,
+      "text": "it has the same color as i do have so it is not a bipartite he says hey can you please return false"
+    },
+    {
+      "start": 599.29,
+      "end": 606.25,
+      "text": "so this dfs says i called for sex that guy is saying me i cannot be bipartite so i also cannot"
+    },
+    {
+      "start": 606.25,
+      "end": 612.17,
+      "text": "be bipartite so he returns a false now the four says i call dfs of five and that guy says he"
+    },
+    {
+      "start": 612.17,
+      "end": 617.69,
+      "text": "cannot be bipartite so i'll be like i also cannot be bipartite now three says i called four so i"
+    },
+    {
+      "start": 617.69,
+      "end": 622.33,
+      "text": "cannot be bipartite two says i called three so i cannot be bipartite one says i called four so i"
+    },
+    {
+      "start": 622.33,
+      "end": 629.29,
+      "text": "says i call two and he says false so i say false so everyone says false so ultimately you get the"
+    },
+    {
+      "start": 629.29,
+      "end": 635.29,
+      "text": "reason or you get the validation as false that this is not a piper type i hope that makes sense"
+    },
+    {
+      "start": 636.09,
+      "end": 641.61,
+      "text": "now if you would have done a normal dfs where you would have let's say take this graph super simple"
+    },
+    {
+      "start": 641.61,
+      "end": 646.81,
+      "text": "so what would have happened was you'd have gone dfs of one color zero and then you would have"
+    },
+    {
+      "start": 646.81,
+      "end": 653.61,
+      "text": "gone dfs of two color one then you would have gone for dfs of three color zero and then there"
+    },
+    {
+      "start": 653.61,
+      "end": 658.09,
+      "text": "was no other nodes so apparently this guy would have returned true and this guy would have said"
+    },
+    {
+      "start": 658.09,
+      "end": 663.69,
+      "text": "i did not find false so return true this guy would have said i did not find false so return true so"
+    },
+    {
+      "start": 663.69,
+      "end": 669.77,
+      "text": "apparently you would have got true so unless and until very important unless and until you don't"
+    },
+    {
+      "start": 669.77,
+      "end": 675.29,
+      "text": "get a false do not return a false if you're getting a false which means the adjacent node"
+    },
+    {
+      "start": 675.93,
+      "end": 676.73,
+      "text": "color should be"
+    },
+    {
+      "start": 676.81,
+      "end": 683.69,
+      "text": "equal to this guy's color this guy's color right that is what you need to do so now what i will do"
+    },
+    {
+      "start": 683.69,
+      "end": 689.85,
+      "text": "is i'll super quickly code this up so it's time to code it up c plus plus code on the right and"
+    },
+    {
+      "start": 689.85,
+      "end": 696.01,
+      "text": "the java code on the left so we're given v and we're given adjacency list so what we wrote was"
+    },
+    {
+      "start": 696.01,
+      "end": 702.09,
+      "text": "for a single like the logic that we debugged was for a single component so we are going to write"
+    },
+    {
+      "start": 702.09,
+      "end": 706.65,
+      "text": "this for multiple components okay perfect next please run a"
+    },
+    {
+      "start": 706.81,
+      "end": 715.77,
+      "text": "loop and make sure everyone yes everyone is marked as something as minus one but done now what is the"
+    },
+    {
+      "start": 715.77,
+      "end": 719.21,
+      "text": "next thing that you'll do you'll run it for components so you know how to run it for"
+    },
+    {
+      "start": 719.21,
+      "end": 723.69,
+      "text": "components connected components number of provinces question if you haven't seen it"
+    },
+    {
+      "start": 723.69,
+      "end": 728.73,
+      "text": "please go back and check it out so visited off sorry it's instead of visited this time we'll"
+    },
+    {
+      "start": 728.73,
+      "end": 736.17,
+      "text": "say color of i equal to minus one right and what we will do is we will call the dfs and we will ask"
+    },
+    {
+      "start": 736.81,
+      "end": 741.45,
+      "text": "for the color array and then we will say okay this is i start with color zero take the color array"
+    },
+    {
+      "start": 741.45,
+      "end": 748.41,
+      "text": "and take the adjacency okay and if you return a false then i guess it's not a bipartite if you"
+    },
+    {
+      "start": 748.41,
+      "end": 755.05,
+      "text": "return a false if this dfs i send you if any of the dfs returns are false it cannot be a bipartite"
+    },
+    {
+      "start": 755.05,
+      "end": 762.81,
+      "text": "if none of them do it's a true perfect done now we just need to write the bfs which is kind of simple"
+    },
+    {
+      "start": 763.77,
+      "end": 766.57,
+      "text": "we just need to write boolean dfs"
+    },
+    {
+      "start": 766.81,
+      "end": 777.45,
+      "text": "and the vector of adjacency perfect now what we will do we'll always color the node with the"
+    },
+    {
+      "start": 777.45,
+      "end": 783.69,
+      "text": "given color so please do it now we know these are the adjacency nodes so go and run it for the"
+    },
+    {
+      "start": 783.69,
+      "end": 789.85,
+      "text": "adjacency nodes now you check is this previously not colored if this is previously not colored you"
+    },
+    {
+      "start": 789.85,
+      "end": 795.53,
+      "text": "say okay please go and color it with the opposite color of the color that i have but if this is"
+    },
+    {
+      "start": 795.53,
+      "end": 796.73,
+      "text": "previously colored this is the color that i have so i'm going to check this color and i'm going to"
+    },
+    {
+      "start": 796.81,
+      "end": 801.85,
+      "text": "add this adjacent node is previously colored very very important if this adjacent node is previously"
+    },
+    {
+      "start": 801.85,
+      "end": 809.85,
+      "text": "colored and is having the same color as i have or you can say call if it is if it is then i say it"
+    },
+    {
+      "start": 809.85,
+      "end": 815.13,
+      "text": "cannot be a bipartite or if you have travels for all the adjacent nodes and you never found out"
+    },
+    {
+      "start": 816.25,
+      "end": 822.81,
+      "text": "any false you get a true so this is a dfs call as i said if any of the dfs calls return a false"
+    },
+    {
+      "start": 823.61,
+      "end": 826.41,
+      "text": "because this call might return a false might"
+    },
+    {
+      "start": 826.81,
+      "end": 832.25,
+      "text": "then you say cannot be wiped if this dfs call returns are false you don't need to check by"
+    },
+    {
+      "start": 832.25,
+      "end": 837.53,
+      "text": "any other nodes you cannot color it so this is how you can easily write it so what i'll do is i'll not"
+    },
+    {
+      "start": 837.53,
+      "end": 842.73,
+      "text": "quickly compile this up so now let's discuss the time complexity and the space complexity"
+    },
+    {
+      "start": 842.73,
+      "end": 848.49,
+      "text": "which algorithm are we using we're using a simple dfs algorithm assuming that the graph"
+    },
+    {
+      "start": 848.49,
+      "end": 854.49,
+      "text": "is bipartite and you can color it then it's a simple traversal algorithm so the time complexity"
+    },
+    {
+      "start": 854.49,
+      "end": 856.65,
+      "text": "and the space complexity will be similar to what we are using in the space complexity algorithm"
+    },
+    {
+      "start": 856.81,
+      "end": 862.75,
+      "text": "we used in dfs algorithm which is b go of v plus 2e which is the time complexity and the space that"
+    },
+    {
+      "start": 862.75,
+      "end": 867.31,
+      "text": "we are using is a color array which is b go of v so guys i hope i was able to explain you this"
+    },
+    {
+      "start": 867.31,
+      "end": 871.61,
+      "text": "particular problem so just in case i was please please hit that like button and if you're new to"
+    },
+    {
+      "start": 871.61,
+      "end": 875.93,
+      "text": "our channel what are you waiting for i think you should hit that subscribe button right away and"
+    },
+    {
+      "start": 875.93,
+      "end": 880.05,
+      "text": "if you haven't checked out our dp series and the sd sheet the links are in the description please"
+    },
+    {
+      "start": 880.05,
+      "end": 883.37,
+      "text": "make sure you check it out and with this i'll be wrapping up this video let's meet in some other"
+    },
+    {
+      "start": 883.37,
+      "end": 884.81,
+      "text": "video till then bye bye take care"
+    }
+  ]
+}

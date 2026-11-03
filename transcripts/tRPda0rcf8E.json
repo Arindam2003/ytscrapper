@@ -1,0 +1,1849 @@
+{
+  "video_id": "tRPda0rcf8E",
+  "title": "G-29. Word Ladder - I ｜ Shortest Paths",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1686.74,
+  "segments": [
+    {
+      "start": 2.8,
+      "end": 6.0,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.34,
+      "end": 12.46,
+      "text": "So in this video, we are going to solve this word ladder one problem, which is an extremely hard problem."
+    },
+    {
+      "start": 12.78,
+      "end": 18.08,
+      "text": "So what does the problem state? The problem states, you're given two distinct words, two distinct."
+    },
+    {
+      "start": 18.38,
+      "end": 26.24,
+      "text": "So a start word and a target word and a list denoting word list of unique words of equal lengths."
+    },
+    {
+      "start": 26.24,
+      "end": 32.94,
+      "text": "Find the length of the shortest transformation sequence from start word to the target word."
+    },
+    {
+      "start": 33.26,
+      "end": 39.24,
+      "text": "I need to keep the following conditions in mind. A word can only consist of lowercase characters."
+    },
+    {
+      "start": 39.78,
+      "end": 44.9,
+      "text": "Only one letter can be changed in each transformation. Very, very important."
+    },
+    {
+      "start": 45.56,
+      "end": 51.38,
+      "text": "Each transformed word must exist in the word list, including the target word."
+    },
+    {
+      "start": 51.38,
+      "end": 55.54,
+      "text": "The start word may or may not be part of the word list."
+    },
+    {
+      "start": 55.54,
+      "end": 61.44,
+      "text": "So what does this particular problem define? So it defines it given a begin word."
+    },
+    {
+      "start": 61.82,
+      "end": 66.22,
+      "text": "So over here it is hit. You're given an end word. Over here it is cog."
+    },
+    {
+      "start": 66.56,
+      "end": 70.7,
+      "text": "And you're given a word list, which will be containing a certain number of words."
+    },
+    {
+      "start": 70.8,
+      "end": 76.5,
+      "text": "And if you see, all of them are of length three. So if I start with hit."
+    },
+    {
+      "start": 76.5,
+      "end": 83.04,
+      "text": "So let's start with something like hit. Now what you can do is you can change any one of the character."
+    },
+    {
+      "start": 83.4,
+      "end": 84.62,
+      "text": "Like there are three characters in hit."
+    },
+    {
+      "start": 85.54,
+      "end": 88.04,
+      "text": "You can change H, you can change I, you can change T."
+    },
+    {
+      "start": 88.32,
+      "end": 91.24,
+      "text": "You can change any one of the characters of hit."
+    },
+    {
+      "start": 91.58,
+      "end": 95.42,
+      "text": "So assume I say that, hey, I'm going to change this I to O."
+    },
+    {
+      "start": 95.74,
+      "end": 101.24,
+      "text": "So what I'll get is hot. And if you carefully see, hot is there in the word list."
+    },
+    {
+      "start": 101.24,
+      "end": 103.14,
+      "text": "So you can have this transformation done."
+    },
+    {
+      "start": 103.52,
+      "end": 110.92,
+      "text": "In the next step, I say I'll change hot to dot, which means I'm going to change this H to D."
+    },
+    {
+      "start": 111.18,
+      "end": 113.5,
+      "text": "And if you see, dot does exist over here."
+    },
+    {
+      "start": 113.8,
+      "end": 115.44,
+      "text": "In the next I say I'm going to."
+    },
+    {
+      "start": 115.54,
+      "end": 123.56,
+      "text": "change dot to dog basically I'll change t to g which is dot to dog and if you see dog also exists"
+    },
+    {
+      "start": 123.56,
+      "end": 130.76,
+      "text": "in this particular word list in the next I'll say I'll change dog to I'll change the d and I'll make"
+    },
+    {
+      "start": 130.76,
+      "end": 136.8,
+      "text": "it c and I'll have a conk which is nothing but our end word if you carefully see this is nothing but"
+    },
+    {
+      "start": 136.8,
+      "end": 143.04,
+      "text": "our end word so if I ask you how many transformations did you do that was like one two three"
+    },
+    {
+      "start": 143.04,
+      "end": 150.32,
+      "text": "four and what is the sequence length that's five so thereby I can say that this is the shortest"
+    },
+    {
+      "start": 150.32,
+      "end": 155.92,
+      "text": "transformation sequence if you want to start from head and you want to end at something like a conk"
+    },
+    {
+      "start": 155.92,
+      "end": 163.04,
+      "text": "so if I show you one more example over here we have the word list as des d r d fr d g t d f s"
+    },
+    {
+      "start": 163.04,
+      "end": 170.14,
+      "text": "so d r can actually be changed to d fr and d fr does exist if you see and then d fr can be changed"
+    },
+    {
+      "start": 170.14,
+      "end": 173.02,
+      "text": "to d f s and d f s also does exist over here"
+    },
+    {
+      "start": 173.02,
+      "end": 180.22,
+      "text": "so over here the sequence is of length three thereby the output is three now it might now"
+    },
+    {
+      "start": 180.22,
+      "end": 185.32,
+      "text": "what if it is not possible to change a particular given word to any other word in that case you will"
+    },
+    {
+      "start": 185.32,
+      "end": 191.54,
+      "text": "just return zero stating that it is not possible the sequence length is zero now you must be"
+    },
+    {
+      "start": 191.54,
+      "end": 196.16,
+      "text": "thinking which algorithm to apply but before going into that direction let's analyze the problem"
+    },
+    {
+      "start": 196.16,
+      "end": 202.56,
+      "text": "we are given hit right so what can we do to this hit so hit is getting converted to"
+    },
+    {
+      "start": 202.56,
+      "end": 203.0,
+      "text": "something like a conk so if I say hit d fr d f s and d fr d f s is equal to d fr d f s so"
+    },
+    {
+      "start": 203.0,
+      "end": 210.82,
+      "text": "something like hot where the i is changed to o right so the second alphabet in the word is"
+    },
+    {
+      "start": 210.82,
+      "end": 218.84,
+      "text": "changed so if I say hit where can I change you can be like striver I can change the first h"
+    },
+    {
+      "start": 218.84,
+      "end": 229.06,
+      "text": "striver I can change the second i striver I can change the third t make sense now let's go deep"
+    },
+    {
+      "start": 229.06,
+      "end": 232.76,
+      "text": "if I ask you if you change h in hit"
+    },
+    {
+      "start": 233.0,
+      "end": 240.7,
+      "text": "what can you make hs you'll be like I can change h to a id makes sense I can change"
+    },
+    {
+      "start": 240.7,
+      "end": 250.14,
+      "text": "h to b it makes sense I can change h to c id that makes sense I can change h2 d it makes"
+    },
+    {
+      "start": 250.14,
+      "end": 257.86,
+      "text": "sense I can change h 2 rit makes sense I can change h to z id sorry z id that makes sense"
+    },
+    {
+      "start": 257.86,
+      "end": 262.84,
+      "text": "so apparently in the head I can pick up the first character and enter a change of this"
+    },
+    {
+      "start": 262.84,
+      "end": 267.22,
+      "text": "and I can change it to anything from A to Z."
+    },
+    {
+      "start": 267.58,
+      "end": 268.0,
+      "text": "Do you agree?"
+    },
+    {
+      "start": 268.94,
+      "end": 270.26,
+      "text": "I, you do agree, right?"
+    },
+    {
+      "start": 270.84,
+      "end": 273.3,
+      "text": "Similarly, can I say, I can pick up I,"
+    },
+    {
+      "start": 274.02,
+      "end": 278.28,
+      "text": "and I can change it to anything from A to Z."
+    },
+    {
+      "start": 278.48,
+      "end": 279.28,
+      "text": "Do you agree in this?"
+    },
+    {
+      "start": 279.88,
+      "end": 280.46,
+      "text": "You have to."
+    },
+    {
+      "start": 280.96,
+      "end": 284.24,
+      "text": "And when I change I to O, I get hot."
+    },
+    {
+      "start": 284.74,
+      "end": 287.42,
+      "text": "And that hot does exist over here."
+    },
+    {
+      "start": 287.42,
+      "end": 290.08,
+      "text": "If you see, the hot does exist."
+    },
+    {
+      "start": 290.08,
+      "end": 296.92,
+      "text": "So apparently, you can try changing like HAT, HBT, HCT, HET, HFT,"
+    },
+    {
+      "start": 297.62,
+      "end": 300.24,
+      "text": "but the only one valid will be hot."
+    },
+    {
+      "start": 300.42,
+      "end": 300.6,
+      "text": "Why?"
+    },
+    {
+      "start": 301.04,
+      "end": 302.98,
+      "text": "Because that exists in the world list."
+    },
+    {
+      "start": 303.8,
+      "end": 306.34,
+      "text": "And the next step, you can be like, I can change T as well."
+    },
+    {
+      "start": 306.86,
+      "end": 308.92,
+      "text": "T can be changed to A to Z,"
+    },
+    {
+      "start": 310.02,
+      "end": 312.0,
+      "text": "and the word has to be in the world list."
+    },
+    {
+      "start": 312.38,
+      "end": 312.72,
+      "text": "Agreed?"
+    },
+    {
+      "start": 313.16,
+      "end": 316.1,
+      "text": "So, this is the brute force that we will follow."
+    },
+    {
+      "start": 316.68,
+      "end": 318.18,
+      "text": "We will start with a particular word,"
+    },
+    {
+      "start": 318.18,
+      "end": 319.96,
+      "text": "and we will try changing it."
+    },
+    {
+      "start": 320.08,
+      "end": 322.08,
+      "text": "On character to character."
+    },
+    {
+      "start": 322.08,
+      "end": 325.68,
+      "text": "And every character, we will replace from A to Z."
+    },
+    {
+      "start": 325.68,
+      "end": 331.48,
+      "text": "And we will see if it is in the world list or not."
+    },
+    {
+      "start": 331.48,
+      "end": 331.98,
+      "text": "Got it?"
+    },
+    {
+      "start": 331.98,
+      "end": 334.28,
+      "text": "So as of now, you know the brute force, right?"
+    },
+    {
+      "start": 334.28,
+      "end": 335.88,
+      "text": "So if you know the brute force,"
+    },
+    {
+      "start": 335.88,
+      "end": 337.78,
+      "text": "the brute force is pretty simple."
+    },
+    {
+      "start": 337.78,
+      "end": 342.38,
+      "text": "You have HIT, you take H, and you try to change it from A to Z."
+    },
+    {
+      "start": 342.38,
+      "end": 345.08,
+      "text": "You take I, you try to change it from A to Z."
+    },
+    {
+      "start": 345.08,
+      "end": 348.38,
+      "text": "You take T, and you try to change it from A to Z."
+    },
+    {
+      "start": 348.38,
+      "end": 349.58,
+      "text": "And you count."
+    },
+    {
+      "start": 349.58,
+      "end": 354.08,
+      "text": "The minimum length, yes, you count the minimum length."
+    },
+    {
+      "start": 354.08,
+      "end": 359.58,
+      "text": "Because the question states, you have to find the shortest transformation sequence."
+    },
+    {
+      "start": 359.58,
+      "end": 363.88,
+      "text": "So you have to change it in such a way that you find the shortest transformation sequence."
+    },
+    {
+      "start": 363.88,
+      "end": 366.08,
+      "text": "Now, which algorithm to apply?"
+    },
+    {
+      "start": 366.08,
+      "end": 368.38,
+      "text": "If you are willing to find the shortest sequence."
+    },
+    {
+      "start": 368.38,
+      "end": 370.38,
+      "text": "Let's analyze that."
+    },
+    {
+      "start": 370.38,
+      "end": 378.18,
+      "text": "So, if I say, I will keep the HIT as the level 1, right at the top."
+    },
+    {
+      "start": 378.18,
+      "end": 379.38,
+      "text": "According to brute force, I will keep the HIT as the level 1, right at the top."
+    },
+    {
+      "start": 379.38,
+      "end": 390.38,
+      "text": "According to brute force, I will try to do H to AIT, BIT, CIT, DIT, and so on till ZIT."
+    },
+    {
+      "start": 390.38,
+      "end": 393.68,
+      "text": "I will try to do this, right?"
+    },
+    {
+      "start": 393.68,
+      "end": 396.88,
+      "text": "In order to transform HIT to any of these,"
+    },
+    {
+      "start": 396.88,
+      "end": 399.38,
+      "text": "in order to transform HIT to any of these,"
+    },
+    {
+      "start": 399.38,
+      "end": 403.18,
+      "text": "these words should exist in the word list, and they do not."
+    },
+    {
+      "start": 403.18,
+      "end": 408.78,
+      "text": "If you go and see in the word list, there is nothing like AIT, BIT, CIT, none of them."
+    },
+    {
+      "start": 409.38,
+      "end": 414.38,
+      "text": "Next, I will take I, and I will try to change it from A to Z."
+    },
+    {
+      "start": 414.38,
+      "end": 424.38,
+      "text": "So I will get like, HAT, HBT, HCT, dot dot dot, HOT, dot dot dot, H, ZT."
+    },
+    {
+      "start": 424.38,
+      "end": 426.88,
+      "text": "So these are all the words that I can change HIT to."
+    },
+    {
+      "start": 426.88,
+      "end": 430.88,
+      "text": "And apparently, only HOT does exist."
+    },
+    {
+      "start": 430.88,
+      "end": 435.38,
+      "text": "If you go and see, HOT is the only one that exists over here."
+    },
+    {
+      "start": 435.38,
+      "end": 437.38,
+      "text": "So I can say, from HIT, I can go to, HIT, BIT, CIT, none of them."
+    },
+    {
+      "start": 437.38,
+      "end": 438.38,
+      "text": "So I can say, from HIT, I can go to, HIT, none of them."
+    },
+    {
+      "start": 439.38,
+      "end": 440.38,
+      "text": "So I can say, from HIT, I can go to, HIT, none of them."
+    },
+    {
+      "start": 440.38,
+      "end": 449.38,
+      "text": "Now, I will take T, and I will try to change it to, HIA, HIB, HIC, so on to HIZ."
+    },
+    {
+      "start": 449.38,
+      "end": 452.38,
+      "text": "Let's see if they exist in the word list."
+    },
+    {
+      "start": 452.38,
+      "end": 455.38,
+      "text": "None of them. Yes, none of them do exist in the word list."
+    },
+    {
+      "start": 455.38,
+      "end": 457.38,
+      "text": "So that is not possible."
+    },
+    {
+      "start": 457.38,
+      "end": 459.38,
+      "text": "So only HOT is possible."
+    },
+    {
+      "start": 459.38,
+      "end": 465.38,
+      "text": "Can I say, this is the second step, because the length of the sequence will increase to two."
+    },
+    {
+      "start": 465.38,
+      "end": 466.38,
+      "text": "Perfect."
+    },
+    {
+      "start": 466.38,
+      "end": 467.38,
+      "text": "Now, I have a word as HOT."
+    },
+    {
+      "start": 467.38,
+      "end": 468.38,
+      "text": "Now, I have a word as HOT."
+    },
+    {
+      "start": 468.38,
+      "end": 470.38,
+      "text": "I will again perform the same thing."
+    },
+    {
+      "start": 470.38,
+      "end": 479.38,
+      "text": "I will take H, and I will try to do it like AOT, BOT, COT, DOT, and so on till ZOT."
+    },
+    {
+      "start": 479.38,
+      "end": 482.38,
+      "text": "And I will see, only DOT exists."
+    },
+    {
+      "start": 482.38,
+      "end": 483.38,
+      "text": "Only DOT exists."
+    },
+    {
+      "start": 483.38,
+      "end": 492.38,
+      "text": "If you go back and see, only DOT exists, and LOT also exists, and DOT and LOT also exist."
+    },
+    {
+      "start": 492.38,
+      "end": 497.38,
+      "text": "So if I change this to DOT, and I can also change it to LOT."
+    },
+    {
+      "start": 498.38,
+      "end": 500.38,
+      "text": "So that's when I change H."
+    },
+    {
+      "start": 500.38,
+      "end": 502.38,
+      "text": "Let's see for O."
+    },
+    {
+      "start": 502.38,
+      "end": 511.38,
+      "text": "HAT, HBT, HCT, HDT, so on till HZT."
+    },
+    {
+      "start": 511.38,
+      "end": 513.38,
+      "text": "Does anyone exist?"
+    },
+    {
+      "start": 513.38,
+      "end": 515.38,
+      "text": "Let's have a quick check."
+    },
+    {
+      "start": 515.38,
+      "end": 516.38,
+      "text": "No one."
+    },
+    {
+      "start": 516.38,
+      "end": 518.38,
+      "text": "Next, let's try to change T."
+    },
+    {
+      "start": 518.38,
+      "end": 525.38,
+      "text": "It will be like HOA, HOB, HOC, HO... and so on."
+    },
+    {
+      "start": 525.38,
+      "end": 526.38,
+      "text": "Does anyone exist?"
+    },
+    {
+      "start": 526.38,
+      "end": 527.38,
+      "text": "Have a check."
+    },
+    {
+      "start": 527.38,
+      "end": 529.38,
+      "text": "HOT does exist."
+    },
+    {
+      "start": 529.38,
+      "end": 531.38,
+      "text": "HOT does exist."
+    },
+    {
+      "start": 531.38,
+      "end": 537.38,
+      "text": "Because if I change this T to T, HOT does exist, but you will not take that into consideration."
+    },
+    {
+      "start": 537.38,
+      "end": 538.38,
+      "text": "Why?"
+    },
+    {
+      "start": 538.38,
+      "end": 539.38,
+      "text": "It's the same word."
+    },
+    {
+      "start": 539.38,
+      "end": 540.38,
+      "text": "It is the same word."
+    },
+    {
+      "start": 540.38,
+      "end": 542.38,
+      "text": "So you do not take that into consideration."
+    },
+    {
+      "start": 542.38,
+      "end": 545.38,
+      "text": "Because there's no point in going to HOT again, in going to HOT again."
+    },
+    {
+      "start": 545.38,
+      "end": 548.38,
+      "text": "Or there's no point in getting to HIT again."
+    },
+    {
+      "start": 548.38,
+      "end": 552.38,
+      "text": "I can change this O to I as well, and I'll get HIT."
+    },
+    {
+      "start": 552.38,
+      "end": 556.38,
+      "text": "But if I've come down from HIT to HOT, is there a point in going back to HIT?"
+    },
+    {
+      "start": 556.38,
+      "end": 559.38,
+      "text": "Because that will only elongate the sequence."
+    },
+    {
+      "start": 559.38,
+      "end": 562.38,
+      "text": "So apparently, this is the step 3."
+    },
+    {
+      "start": 562.38,
+      "end": 566.38,
+      "text": "Similarly, I can take DOT and I can do the transformations."
+    },
+    {
+      "start": 566.38,
+      "end": 569.38,
+      "text": "Similarly, I can take LOT and I can do the transformations."
+    },
+    {
+      "start": 569.38,
+      "end": 571.38,
+      "text": "And this will be level 4."
+    },
+    {
+      "start": 571.38,
+      "end": 574.38,
+      "text": "Similarly, I can just go on doing the transformations."
+    },
+    {
+      "start": 574.38,
+      "end": 576.38,
+      "text": "And this will be level 5."
+    },
+    {
+      "start": 576.38,
+      "end": 585.38,
+      "text": "Since we are going something like a level, something like a level, whenever, whenever, assume, somewhere over here,"
+    },
+    {
+      "start": 585.38,
+      "end": 588.38,
+      "text": "we reach the particular cog."
+    },
+    {
+      "start": 588.38,
+      "end": 591.38,
+      "text": "We reach the particular cog."
+    },
+    {
+      "start": 591.38,
+      "end": 595.38,
+      "text": "Can I say, the length taken will be 5."
+    },
+    {
+      "start": 595.38,
+      "end": 599.38,
+      "text": "And that will definitely be my shortest sequence."
+    },
+    {
+      "start": 599.38,
+      "end": 601.38,
+      "text": "Can I say this?"
+    },
+    {
+      "start": 601.38,
+      "end": 602.38,
+      "text": "I can."
+    },
+    {
+      "start": 602.38,
+      "end": 603.38,
+      "text": "Why?"
+    },
+    {
+      "start": 603.38,
+      "end": 610.38,
+      "text": "Because beyond this, since I'm doing level-wise, anyone that will be level 6, the length will increase."
+    },
+    {
+      "start": 610.38,
+      "end": 611.38,
+      "text": "So I'm definitely short."
+    },
+    {
+      "start": 611.38,
+      "end": 613.38,
+      "text": "I am definitely short."
+    },
+    {
+      "start": 613.38,
+      "end": 618.38,
+      "text": "Whatever I'm getting over here, that's the first instance of cog."
+    },
+    {
+      "start": 618.38,
+      "end": 621.38,
+      "text": "It might come over here again, but length 5 is what matters."
+    },
+    {
+      "start": 621.38,
+      "end": 626.38,
+      "text": "So the first time, whenever we encounter the end word, that is when we end."
+    },
+    {
+      "start": 626.38,
+      "end": 628.38,
+      "text": "Which traversal is this?"
+    },
+    {
+      "start": 628.38,
+      "end": 630.38,
+      "text": "Which traversal is this, guys?"
+    },
+    {
+      "start": 630.38,
+      "end": 632.38,
+      "text": "Yes, yes, yes."
+    },
+    {
+      "start": 632.38,
+      "end": 634.38,
+      "text": "It is nothing but the BFS traversal."
+    },
+    {
+      "start": 634.38,
+      "end": 640.38,
+      "text": "So we go ahead and apply BFS traversal to this in order to solve this amazing, tough problem."
+    },
+    {
+      "start": 640.38,
+      "end": 643.38,
+      "text": "So you saw how I started the problem using simple brute force."
+    },
+    {
+      "start": 643.38,
+      "end": 647.38,
+      "text": "Then I analyzed the brute force and figured out that we can apply BFS algorithm."
+    },
+    {
+      "start": 647.38,
+      "end": 653.38,
+      "text": "Now, it's trying to do a dry run on this particular example so that the algorithm gets into your head straight away."
+    },
+    {
+      "start": 653.38,
+      "end": 656.38,
+      "text": "So you know that this is the beginning word."
+    },
+    {
+      "start": 656.38,
+      "end": 660.38,
+      "text": "And in a BFS algorithm, we always start with a Q data structure."
+    },
+    {
+      "start": 660.38,
+      "end": 666.38,
+      "text": "So what I'll do is, I'll just take this word and say hit comma 1 because the length of the sequence as of now is 1."
+    },
+    {
+      "start": 666.38,
+      "end": 669.38,
+      "text": "So I've taken that and put that into the Q data structure."
+    },
+    {
+      "start": 669.38,
+      "end": 672.38,
+      "text": "The next thing that I'll do is, I'll take this out from the..."
+    },
+    {
+      "start": 673.38,
+      "end": 677.38,
+      "text": "Q data structure and I will start working on it."
+    },
+    {
+      "start": 677.38,
+      "end": 682.38,
+      "text": "So as of now, we have a word hit and we have the sequence length as 1, right?"
+    },
+    {
+      "start": 682.38,
+      "end": 688.38,
+      "text": "Now, what I need to do is, I need to take H and change it to A, which will make it AIT."
+    },
+    {
+      "start": 688.38,
+      "end": 692.38,
+      "text": "And then I'll check, does AIT exist in the word list?"
+    },
+    {
+      "start": 692.38,
+      "end": 694.38,
+      "text": "Now, this is an array."
+    },
+    {
+      "start": 694.38,
+      "end": 699.38,
+      "text": "If I go and do a linear search and check, that is definitely going to take a lot of time."
+    },
+    {
+      "start": 699.38,
+      "end": 702.38,
+      "text": "So what I'll do is, I'll take a set data structure."
+    },
+    {
+      "start": 702.38,
+      "end": 708.38,
+      "text": "And I'll make sure that the same thing, yes, the same word list does exist in the set data structure."
+    },
+    {
+      "start": 708.38,
+      "end": 720.38,
+      "text": "So that whenever I change this H to A and make it AIT, I can easily check in the set data structure if they exist or not in a very, very less time complexity."
+    },
+    {
+      "start": 720.38,
+      "end": 722.38,
+      "text": "So AIT doesn't exist."
+    },
+    {
+      "start": 722.38,
+      "end": 724.38,
+      "text": "Then I'll make it BIT that doesn't exist."
+    },
+    {
+      "start": 724.38,
+      "end": 730.38,
+      "text": "Then I'll try CIT, DIT, EIT, so on till ZIT."
+    },
+    {
+      "start": 730.38,
+      "end": 731.38,
+      "text": "None of them does exist."
+    },
+    {
+      "start": 731.38,
+      "end": 732.38,
+      "text": "Next."
+    },
+    {
+      "start": 732.38,
+      "end": 735.38,
+      "text": "I'll move to the next alphabet, I."
+    },
+    {
+      "start": 735.38,
+      "end": 737.38,
+      "text": "And I'll be like, HAT, does it exist?"
+    },
+    {
+      "start": 737.38,
+      "end": 738.38,
+      "text": "No."
+    },
+    {
+      "start": 738.38,
+      "end": 739.38,
+      "text": "HBT, does it exist?"
+    },
+    {
+      "start": 739.38,
+      "end": 740.38,
+      "text": "No."
+    },
+    {
+      "start": 740.38,
+      "end": 741.38,
+      "text": "HCT, does it exist?"
+    },
+    {
+      "start": 741.38,
+      "end": 742.38,
+      "text": "No."
+    },
+    {
+      "start": 742.38,
+      "end": 743.38,
+      "text": "HDT, does it exist?"
+    },
+    {
+      "start": 743.38,
+      "end": 744.38,
+      "text": "No."
+    },
+    {
+      "start": 744.38,
+      "end": 745.38,
+      "text": "I'll keep on doing."
+    },
+    {
+      "start": 745.38,
+      "end": 753.38,
+      "text": "And HOT, when I convert this I to O, when I convert this I to O, I see HOT does exist."
+    },
+    {
+      "start": 753.38,
+      "end": 756.38,
+      "text": "Yes, I see HOT does exist over here."
+    },
+    {
+      "start": 756.38,
+      "end": 761.38,
+      "text": "So what I'll do is, I'll simply take this and convert this to T, like O."
+    },
+    {
+      "start": 761.38,
+      "end": 763.38,
+      "text": "And that will be sequence length of two."
+    },
+    {
+      "start": 763.38,
+      "end": 770.38,
+      "text": "So I'll put that into the Q data structure saying this is of a sequence length two, right?"
+    },
+    {
+      "start": 770.38,
+      "end": 774.38,
+      "text": "So HIT got converted into a HOT with a sequence length of two."
+    },
+    {
+      "start": 774.38,
+      "end": 778.38,
+      "text": "Now, do you keep the HOT in the set data structure?"
+    },
+    {
+      "start": 778.38,
+      "end": 779.38,
+      "text": "Do you?"
+    },
+    {
+      "start": 779.38,
+      "end": 781.38,
+      "text": "The answer to that is no."
+    },
+    {
+      "start": 781.38,
+      "end": 789.38,
+      "text": "Because if you remember, in a BFS algorithm, whenever I visited the nodes, whenever I visited the nodes, I used to mark them as visited nodes."
+    },
+    {
+      "start": 789.38,
+      "end": 794.38,
+      "text": "But over here, we are not using anything such as visited."
+    },
+    {
+      "start": 794.38,
+      "end": 797.38,
+      "text": "So what I will do is, I'll say, okay, we got HOT."
+    },
+    {
+      "start": 797.38,
+      "end": 800.38,
+      "text": "So we will remove it from the set data structure."
+    },
+    {
+      "start": 800.38,
+      "end": 804.38,
+      "text": "And you might say, but Strava, what if we get this in the future?"
+    },
+    {
+      "start": 804.38,
+      "end": 808.38,
+      "text": "Let me come back and explain you this with a very trivial example."
+    },
+    {
+      "start": 808.38,
+      "end": 813.38,
+      "text": "Imagine, in order to go from Odisha to Kerala, there is only one particular way."
+    },
+    {
+      "start": 813.38,
+      "end": 818.38,
+      "text": "Okay, there is the shortest way because from Odisha to Kerala, there will be one shortest way."
+    },
+    {
+      "start": 818.38,
+      "end": 824.38,
+      "text": "And the shortest way will have a length of three sequence, right?"
+    },
+    {
+      "start": 824.38,
+      "end": 829.38,
+      "text": "So tell me one thing, if from Kolkata, you went to Odisha, right?"
+    },
+    {
+      "start": 829.38,
+      "end": 834.38,
+      "text": "And from there, you'll take a distance, like a sequence of three to reach Kerala, right?"
+    },
+    {
+      "start": 834.38,
+      "end": 839.38,
+      "text": "So if Odisha is on the level two, right?"
+    },
+    {
+      "start": 839.38,
+      "end": 843.38,
+      "text": "Will you take Odisha again in some other levels?"
+    },
+    {
+      "start": 843.38,
+      "end": 848.38,
+      "text": "For example, from Kolkata, you went to Bangalore and then to Odisha."
+    },
+    {
+      "start": 848.38,
+      "end": 853.38,
+      "text": "Does it make sense to take Odisha in this third step?"
+    },
+    {
+      "start": 853.38,
+      "end": 856.38,
+      "text": "Because you've already taken Odisha in the second step."
+    },
+    {
+      "start": 856.38,
+      "end": 860.38,
+      "text": "And you know, from the second step, that is the minimum that it will take."
+    },
+    {
+      "start": 860.38,
+      "end": 864.38,
+      "text": "And even if you start from Odisha, from here, it's again going to take three."
+    },
+    {
+      "start": 864.38,
+      "end": 869.38,
+      "text": "So if before you have got Odisha, if before you have got Odisha and you're taking three,"
+    },
+    {
+      "start": 869.38,
+      "end": 871.38,
+      "text": "after you're getting Odisha, you're again taking three."
+    },
+    {
+      "start": 871.38,
+      "end": 876.38,
+      "text": "So it's better now, once you've taken Odisha, there's no point in taking again afterwards."
+    },
+    {
+      "start": 876.38,
+      "end": 878.38,
+      "text": "Because the length..."
+    },
+    {
+      "start": 878.38,
+      "end": 882.38,
+      "text": "From Odisha to the last guy is three."
+    },
+    {
+      "start": 882.38,
+      "end": 886.38,
+      "text": "So if afterwards you take, it's already a lengthier guy."
+    },
+    {
+      "start": 886.38,
+      "end": 889.38,
+      "text": "So it's better you do not execute Odisha in the future."
+    },
+    {
+      "start": 889.38,
+      "end": 892.38,
+      "text": "So similarly, I can say something like HOT."
+    },
+    {
+      "start": 892.38,
+      "end": 900.38,
+      "text": "I won't execute HOT anywhere in the future because if I got that in the second step or second level,"
+    },
+    {
+      "start": 900.38,
+      "end": 903.38,
+      "text": "there's no point in encountering them in future levels."
+    },
+    {
+      "start": 903.38,
+      "end": 906.38,
+      "text": "Because from here, I can travel wherever I wish to."
+    },
+    {
+      "start": 906.38,
+      "end": 910.38,
+      "text": "So going from further levels will actually increase the length, right?"
+    },
+    {
+      "start": 910.38,
+      "end": 912.38,
+      "text": "Done."
+    },
+    {
+      "start": 912.38,
+      "end": 918.38,
+      "text": "Next, I'll try to convert I to everything else till H, Z, T."
+    },
+    {
+      "start": 918.38,
+      "end": 920.38,
+      "text": "But nothing will be there."
+    },
+    {
+      "start": 920.38,
+      "end": 922.38,
+      "text": "Next, I take T and I'll try to convert it."
+    },
+    {
+      "start": 922.38,
+      "end": 931.38,
+      "text": "So HIA, HIB, HIC, HID, so on till HIZ."
+    },
+    {
+      "start": 931.38,
+      "end": 934.38,
+      "text": "None of them is in the world list."
+    },
+    {
+      "start": 934.38,
+      "end": 935.38,
+      "text": "So we do not take..."
+    },
+    {
+      "start": 935.38,
+      "end": 939.38,
+      "text": "We just got one and we have inserted that into the Q data structure."
+    },
+    {
+      "start": 939.38,
+      "end": 940.38,
+      "text": "Time to omit this all."
+    },
+    {
+      "start": 940.38,
+      "end": 946.38,
+      "text": "Next, take the next guy from the Q data structure that is HOT with a sequence of two."
+    },
+    {
+      "start": 946.38,
+      "end": 949.38,
+      "text": "So as of now, I can say, where can HOT go?"
+    },
+    {
+      "start": 949.38,
+      "end": 950.38,
+      "text": "Let's analyze."
+    },
+    {
+      "start": 950.38,
+      "end": 952.38,
+      "text": "So we need to change H."
+    },
+    {
+      "start": 952.38,
+      "end": 962.38,
+      "text": "So it'll be like AOT, BOT, COT, DOT, so on till ZOT."
+    },
+    {
+      "start": 962.38,
+      "end": 964.38,
+      "text": "And you'll get dot."
+    },
+    {
+      "start": 964.38,
+      "end": 966.38,
+      "text": "And you'll get lot."
+    },
+    {
+      "start": 966.38,
+      "end": 971.38,
+      "text": "You carefully see, you get lot and you get dot."
+    },
+    {
+      "start": 971.38,
+      "end": 975.38,
+      "text": "So you can actually go to DOT with the step 3."
+    },
+    {
+      "start": 975.38,
+      "end": 980.38,
+      "text": "Or you can also go to LOT with the step 3 because both of them do exist."
+    },
+    {
+      "start": 980.38,
+      "end": 985.38,
+      "text": "So when you go to DOT, you just erase it and you put them with 3."
+    },
+    {
+      "start": 985.38,
+      "end": 989.38,
+      "text": "And when you go to LOT, you erase it and you put them with a 3."
+    },
+    {
+      "start": 989.38,
+      "end": 992.38,
+      "text": "So since we can go to DOT and LOT, we will remove them."
+    },
+    {
+      "start": 992.38,
+      "end": 993.38,
+      "text": "DOT is removed."
+    },
+    {
+      "start": 994.38,
+      "end": 1000.36,
+      "text": "and I'll put that into the queue. Next, I'll get lot. So, lot is removed and I'll try to put that"
+    },
+    {
+      "start": 1000.36,
+      "end": 1005.86,
+      "text": "into the queue data structure. So, can I do anything else? Let's try it out. We can change"
+    },
+    {
+      "start": 1005.86,
+      "end": 1016.1,
+      "text": "this O. So, H, A, T, H, B, T, H, C, T, H, D, T, H, E, T and so on till H, Z, T. None of them is"
+    },
+    {
+      "start": 1016.1,
+      "end": 1028.2,
+      "text": "there. So, next I'll change T, H, O, A, H, O, B, H, O, C, H, O, D, H, O, E and so on till H, O, Z."
+    },
+    {
+      "start": 1028.6,
+      "end": 1037.4,
+      "text": "None of them is there. Next, nothing. So, what I can say is we got it. So, this traversal of the"
+    },
+    {
+      "start": 1037.4,
+      "end": 1043.88,
+      "text": "queue is complete. What is the next thing? Let's get dot of three. So, dot of three. Now, let's"
+    },
+    {
+      "start": 1043.88,
+      "end": 1045.7,
+      "text": "try to change again. So, we have D."
+    },
+    {
+      "start": 1046.1,
+      "end": 1054.06,
+      "text": "Let's try to change D. So, it'll be like A, O, T, B, O, T, C, O, T, like D, O, T until Z, O, T."
+    },
+    {
+      "start": 1054.46,
+      "end": 1060.6,
+      "text": "None of them does exist in the whole list. Next, I'll change O. So, I'll get like D, A, T, D, B, T,"
+    },
+    {
+      "start": 1060.6,
+      "end": 1069.3,
+      "text": "D, C, T, D, D, T, D, E, T. None of them. Next, I'll try to change T. So, it'll be like D, O, A,"
+    },
+    {
+      "start": 1069.8,
+      "end": 1075.28,
+      "text": "D, O, B, D, O, C, D, O, D and so on D, O, G."
+    },
+    {
+      "start": 1075.5,
+      "end": 1076.08,
+      "text": "So, dot doesn't exist. So, it'll be like D, O, A, D, O, B, D, O, C, D, O, D and so on D, O, G."
+    },
+    {
+      "start": 1076.08,
+      "end": 1082.62,
+      "text": "All of them does exist. If you carefully see, dog does exist. So, what I will do is I'll take that."
+    },
+    {
+      "start": 1082.78,
+      "end": 1089.08,
+      "text": "Yes, I'll take the dog. So, I'll take the dog with a step four and I'll try to insert that into the"
+    },
+    {
+      "start": 1089.08,
+      "end": 1095.22,
+      "text": "queue data structure with a step four. What was the last word? It was log, not dog. So, done."
+    },
+    {
+      "start": 1096.48,
+      "end": 1102.08,
+      "text": "Nothing else is possible. Next, take L, O, T, three outside. Let's see. What can we make L, O,"
+    },
+    {
+      "start": 1103.82,
+      "end": 1106.06,
+      "text": "T, three? Let's try to change."
+    },
+    {
+      "start": 1106.08,
+      "end": 1116.4,
+      "text": "l a o t b o t since they are z o t nothing possible let's try to change o l a t l b t l c t"
+    },
+    {
+      "start": 1116.4,
+      "end": 1128.52,
+      "text": "l d t so on till l z t nothing is possible next t l o a l o b l o c l o g l o g is there"
+    },
+    {
+      "start": 1128.52,
+      "end": 1139.42,
+      "text": "l o g is there so you can take it to l o g with step four removed l o g with step four perfect"
+    },
+    {
+      "start": 1139.42,
+      "end": 1150.56,
+      "text": "next dog of four dog of four so as of now can i say if this is dog of four"
+    },
+    {
+      "start": 1150.56,
+      "end": 1158.5,
+      "text": "thereby when i try to change this d it will be like a o g"
+    },
+    {
+      "start": 1158.5,
+      "end": 1167.1,
+      "text": "b o g c o g and we see c o g is present here so we insert c o g with a five step"
+    },
+    {
+      "start": 1167.1,
+      "end": 1174.6,
+      "text": "you can stop over here but i generally do not i just want to explain you so c o g five is there"
+    },
+    {
+      "start": 1174.6,
+      "end": 1181.3,
+      "text": "done c o g is removed now this is the point you'll understand someone reached c o g with five"
+    },
+    {
+      "start": 1181.3,
+      "end": 1185.86,
+      "text": "someone reached c o g with five but the next time when the q tries to get this up"
+    },
+    {
+      "start": 1185.86,
+      "end": 1188.48,
+      "text": "l o g four and tries to get this up l o g four and tries to get this up l o g four and tries to"
+    },
+    {
+      "start": 1188.48,
+      "end": 1194.32,
+      "text": "change it it will actually get something like c o g it will actually get c o g because of this l"
+    },
+    {
+      "start": 1194.32,
+      "end": 1200.4,
+      "text": "when this l gets converted to c it will get c o g but there is no c o g in the world list because"
+    },
+    {
+      "start": 1200.4,
+      "end": 1204.8,
+      "text": "you've already encountered c o g because you've already encountered c o g this is what i was"
+    },
+    {
+      "start": 1204.8,
+      "end": 1210.16,
+      "text": "trying to explain once you have got someone it will take its path why will you again visit that"
+    },
+    {
+      "start": 1210.16,
+      "end": 1215.6,
+      "text": "path so this is how the set helped you if you erase it from the set there will be no further"
+    },
+    {
+      "start": 1215.6,
+      "end": 1218.4,
+      "text": "occurrence of like c o g five otherwise you'd have taken c o g five otherwise you'd have taken c o g five"
+    },
+    {
+      "start": 1218.48,
+      "end": 1225.36,
+      "text": "again and would have kept on going so that is how the set helps so l o g cannot be made into"
+    },
+    {
+      "start": 1225.36,
+      "end": 1233.04,
+      "text": "anything next time when you do an extra distraction from the queue you get c o g with five so your end"
+    },
+    {
+      "start": 1233.04,
+      "end": 1239.04,
+      "text": "word for c o g the word that you get from the queue is cog and the steps that it took was five"
+    },
+    {
+      "start": 1239.04,
+      "end": 1245.76,
+      "text": "so your answer boils down to five yes your answer boils down to five and this is the answer that you"
+    },
+    {
+      "start": 1245.76,
+      "end": 1248.32,
+      "text": "will return and imagine if the answer for that answer is a step higher than your answer for the"
+    },
+    {
+      "start": 1248.32,
+      "end": 1248.4,
+      "text": "answer for the answer which is the answer for the question is greater than 3 and if"
+    },
+    {
+      "start": 1248.4,
+      "end": 1255.28,
+      "text": "queue becomes empty you have tried out all possible changes and you never ever reached the end word"
+    },
+    {
+      "start": 1255.28,
+      "end": 1260.88,
+      "text": "during the extraction from the queue then you can after the end of the queue you can return zero"
+    },
+    {
+      "start": 1260.88,
+      "end": 1266.48,
+      "text": "which will be your particular answer so you have figured out what is the algorithm that is required"
+    },
+    {
+      "start": 1266.48,
+      "end": 1271.28,
+      "text": "to solve this complex problem so i'll be coding the c plus plus in the right and if you have any"
+    },
+    {
+      "start": 1271.28,
+      "end": 1277.6,
+      "text": "syntactical issues related to java you can watch it out on the left so we have a start word we have"
+    },
+    {
+      "start": 1277.6,
+      "end": 1282.64,
+      "text": "a target word and we know we need a queue which is going to stay over a pair and the pair will be"
+    },
+    {
+      "start": 1282.64,
+      "end": 1287.52,
+      "text": "having a string and an integer this is the queue that will be defined and we know we always start"
+    },
+    {
+      "start": 1287.52,
+      "end": 1295.6,
+      "text": "off with the start word and the sequence length is one and we know there will be a set right and this"
+    },
+    {
+      "start": 1295.6,
+      "end": 1302.56,
+      "text": "particular set will always have this particular target word so it's uh sorry the word list so"
+    },
+    {
+      "start": 1302.56,
+      "end": 1307.12,
+      "text": "you can always write something like this in c plus plus is a very simple thing you can just write this"
+    },
+    {
+      "start": 1308.56,
+      "end": 1314.32,
+      "text": "in c and then we'll take the entire vector and put it into this particular set data structure"
+    },
+    {
+      "start": 1314.32,
+      "end": 1321.12,
+      "text": "you can use the unordered set it takes amortized time complexity of uh one big of one"
+    },
+    {
+      "start": 1321.76,
+      "end": 1325.6,
+      "text": "but the worst case is still being coffin but the amortized is"
+    },
+    {
+      "start": 1325.6,
+      "end": 1331.04,
+      "text": "bigger of one so we'll be using an ordered set now you remember whenever we pushed something"
+    },
+    {
+      "start": 1331.04,
+      "end": 1337.44,
+      "text": "into the queue we marked it as visited so we can always use visited as deleting from the set we can"
+    },
+    {
+      "start": 1337.6,
+      "end": 1342.88,
+      "text": "say that okay can you please go and delete start word so if it exists it will delete the start"
+    },
+    {
+      "start": 1342.88,
+      "end": 1347.76,
+      "text": "word from the set this is done what's the next thing the next thing is very simple we say we"
+    },
+    {
+      "start": 1347.76,
+      "end": 1352.4,
+      "text": "will iterate till the queue is not empty so go ahead and wait till the queue is not empty done"
+    },
+    {
+      "start": 1352.4,
+      "end": 1356.64,
+      "text": "what's the next thing that you do you say okay give me the word so can i see the word will be"
+    },
+    {
+      "start": 1356.64,
+      "end": 1362.32,
+      "text": "very simple q.front.first and can i see these steps or the length will be very simple again"
+    },
+    {
+      "start": 1367.6,
+      "end": 1373.04,
+      "text": "is what you'll say take it out of the queue now every time you get a word for every character"
+    },
+    {
+      "start": 1373.04,
+      "end": 1377.2,
+      "text": "you're doing a change for every character so what you'll do is okay for every character i'm doing a"
+    },
+    {
+      "start": 1377.2,
+      "end": 1383.92,
+      "text": "change so can i actually traverse till all the characters i can so let's traverse till all the"
+    },
+    {
+      "start": 1383.92,
+      "end": 1390.24,
+      "text": "character which is something like this right now every character is nothing but can i say the"
+    },
+    {
+      "start": 1390.24,
+      "end": 1398.22,
+      "text": "character alphabet or original there's nothing but what if i this is the character that i'm looking"
+    },
+    {
+      "start": 1398.22,
+      "end": 1398.7,
+      "text": "to change"
+    },
+    {
+      "start": 1399.42,
+      "end": 1402.94,
+      "text": "so can i say what am i looking to change i can change it from a to z"
+    },
+    {
+      "start": 1403.9,
+      "end": 1415.98,
+      "text": "so can i say i'm looking to change it from a to z this to this to this so every character what i"
+    },
+    {
+      "start": 1415.98,
+      "end": 1421.9,
+      "text": "is what i'll replace so i'll say what i can you get replaced by ch every time it comes up it gets"
+    },
+    {
+      "start": 1421.9,
+      "end": 1427.02,
+      "text": "replaced by a new character first time let's imagine the orders just imagine the word to be"
+    },
+    {
+      "start": 1427.98,
+      "end": 1429.02,
+      "text": "hat okay"
+    },
+    {
+      "start": 1429.42,
+      "end": 1434.78,
+      "text": "what will happen is for the first time original will have something like edge right so this what"
+    },
+    {
+      "start": 1434.78,
+      "end": 1442.38,
+      "text": "i will be like instead of h it will be having for the first time a80 next time b80 next time cat"
+    },
+    {
+      "start": 1442.38,
+      "end": 1446.62,
+      "text": "so this is what the internal for loop will do yes this is what the internal"
+    },
+    {
+      "start": 1446.62,
+      "end": 1452.14,
+      "text": "for loop will do so you will be changing the values you'll be changing the values now what is"
+    },
+    {
+      "start": 1453.1,
+      "end": 1458.94,
+      "text": "does that value exist in your set so you'll be like okay set dot find does this word exist"
+    },
+    {
+      "start": 1459.58,
+      "end": 1466.14,
+      "text": "and if it does exist then it will never be equal to n because if it exists it will always like if"
+    },
+    {
+      "start": 1466.14,
+      "end": 1473.42,
+      "text": "it doesn't exist it will be pointing to n this means it exists in the set it is the count as well"
+    },
+    {
+      "start": 1473.42,
+      "end": 1479.5,
+      "text": "uh so done what's the next thing that you'll do if it exists what way between we're saying okay say"
+    },
+    {
+      "start": 1480.14,
+      "end": 1488.38,
+      "text": "market has visited which means do this tell the queue this guy is there with an increase steps"
+    },
+    {
+      "start": 1489.5,
+      "end": 1495.34,
+      "text": "done once you have pushed back into the queue make sure you replace it with the original y"
+    },
+    {
+      "start": 1495.34,
+      "end": 1501.98,
+      "text": "because over here you're always changing so the last moment the word i what i will always have z"
+    },
+    {
+      "start": 1501.98,
+      "end": 1508.7,
+      "text": "or z so you need to make sure that it gets back its original value so this is what you'll do"
+    },
+    {
+      "start": 1508.7,
+      "end": 1511.9,
+      "text": "right and over here can i see every time you're getting a word"
+    },
+    {
+      "start": 1512.54,
+      "end": 1517.98,
+      "text": "can you just go and quickly check if that is the target one if that is the target word can i say"
+    },
+    {
+      "start": 1517.98,
+      "end": 1519.34,
+      "text": "these are the steps that i'll take"
+    },
+    {
+      "start": 1519.42,
+      "end": 1524.54,
+      "text": "again you can write it over here as well over here also you can have a check but i usually"
+    },
+    {
+      "start": 1524.54,
+      "end": 1530.22,
+      "text": "prefer keeping it over here and then we can return a zero saying in case it did not find"
+    },
+    {
+      "start": 1530.22,
+      "end": 1536.3,
+      "text": "in case it finds it to return the steps otherwise a zero so this is how simple the code is so if"
+    },
+    {
+      "start": 1536.3,
+      "end": 1542.46,
+      "text": "compiler it is working now let's quickly try to submit this so when we submit it is running"
+    },
+    {
+      "start": 1542.46,
+      "end": 1549.18,
+      "text": "absolutely fine so this is how we can easily do this particular thing and you might uh"
+    },
+    {
+      "start": 1549.42,
+      "end": 1556.86,
+      "text": "ask me what the time complexity something i know for sure is whatever the word length is word length"
+    },
+    {
+      "start": 1556.86,
+      "end": 1563.9,
+      "text": "into 26 these things are running for word length into 26 like whatever your word length is because"
+    },
+    {
+      "start": 1563.9,
+      "end": 1568.86,
+      "text": "they have already stated all the word lengths will be same so whatever is your word length"
+    },
+    {
+      "start": 1571.02,
+      "end": 1576.14,
+      "text": "into 26 is the internal loop now how many transitions will you do how many transitions"
+    },
+    {
+      "start": 1576.14,
+      "end": 1579.4,
+      "text": "will you do at the worst case you can do a lot of transitions so you can do a lot of transitions"
+    },
+    {
+      "start": 1579.42,
+      "end": 1587.32,
+      "text": "but if you carefully think can i see the number of transitions can i see the number of transitions"
+    },
+    {
+      "start": 1587.32,
+      "end": 1596.16,
+      "text": "you can carefully see one two three four five six one two three four five six can i see the number"
+    },
+    {
+      "start": 1596.16,
+      "end": 1601.16,
+      "text": "of words over here will be the number of times it will go into the queue at the worst case"
+    },
+    {
+      "start": 1602.04,
+      "end": 1609.12,
+      "text": "because if it is not in the set of words it never goes into the queue so can i see the"
+    },
+    {
+      "start": 1609.42,
+      "end": 1619.56,
+      "text": "number of times the words are because that is only when it gets into the queue otherwise it will not go"
+    },
+    {
+      "start": 1619.56,
+      "end": 1626.04,
+      "text": "so can i say the complexity is n into word length into 26 every time can i see this i can definitely"
+    },
+    {
+      "start": 1626.04,
+      "end": 1632.04,
+      "text": "see that using any extra space yes you are using an vigo of n space to store all of these things"
+    },
+    {
+      "start": 1632.04,
+      "end": 1637.08,
+      "text": "into the set and by the way there's a logarithmic factor if you want to include it for set if you're"
+    },
+    {
+      "start": 1637.08,
+      "end": 1642.6,
+      "text": "assuming that your hash set works in b go of one then you can use b go of one over here otherwise"
+    },
+    {
+      "start": 1642.6,
+      "end": 1647.64,
+      "text": "you use a logarithmic if you're using something like a set you'll add a logarithmic so depending"
+    },
+    {
+      "start": 1647.64,
+      "end": 1653.72,
+      "text": "on what is the time complexity of a set this can vary so guys this will be the time complexity and"
+    },
+    {
+      "start": 1653.72,
+      "end": 1659.08,
+      "text": "the space complexity for this particular problem i hope i was able to explain you just in case i"
+    },
+    {
+      "start": 1659.08,
+      "end": 1663.32,
+      "text": "was please please make sure you like this video and if you're new to our channel what are you"
+    },
+    {
+      "start": 1663.32,
+      "end": 1667.32,
+      "text": "waiting for i think it's time that you hit that subscribe button and if you haven't checked out"
+    },
+    {
+      "start": 1667.32,
+      "end": 1671.56,
+      "text": "our dp series and the sd sheet and you're missing out on a lot of content the links"
+    },
+    {
+      "start": 1671.56,
+      "end": 1675.0,
+      "text": "are in the description please please make sure you check it out and yeah with this i'll be"
+    },
+    {
+      "start": 1675.0,
+      "end": 1681.15,
+      "text": "wrapping up this video let's meet in some other video till then bye bye take care"
+    }
+  ]
+}

@@ -1,0 +1,1274 @@
+{
+  "video_id": "WAOfKpxYHR8",
+  "title": "G-24. Course Schedule I and II ｜ Pre-requisite Tasks ｜ Topological Sort",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 691.58,
+  "segments": [
+    {
+      "start": 2.77,
+      "end": 6.01,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.37,
+      "end": 9.53,
+      "text": "So today we will be solving the problem Co-Schedule 1 and 2."
+    },
+    {
+      "start": 9.93,
+      "end": 11.71,
+      "text": "Both the problems are interlinked."
+    },
+    {
+      "start": 11.87,
+      "end": 14.49,
+      "text": "So we will be solving both the problems in this particular video."
+    },
+    {
+      "start": 14.91,
+      "end": 16.57,
+      "text": "So what does the problem state?"
+    },
+    {
+      "start": 16.83,
+      "end": 21.01,
+      "text": "A given total of n tasks leveled from 0 to n-1."
+    },
+    {
+      "start": 21.75,
+      "end": 23.65,
+      "text": "Some tasks might have prerequisites."
+    },
+    {
+      "start": 24.19,
+      "end": 28.11,
+      "text": "For example, to do task 0, you have to first complete task 1,"
+    },
+    {
+      "start": 28.59,
+      "end": 31.65,
+      "text": "which is expressed as a pair 0,1."
+    },
+    {
+      "start": 31.65,
+      "end": 36.59,
+      "text": "Given the total number of tasks n and a list of prerequisite tasks p,"
+    },
+    {
+      "start": 37.19,
+      "end": 39.65,
+      "text": "find if it is possible to finish all tasks."
+    },
+    {
+      "start": 40.01,
+      "end": 41.85,
+      "text": "So let's analyze the question."
+    },
+    {
+      "start": 42.57,
+      "end": 45.41,
+      "text": "So it states, if I'm stating 1,0,"
+    },
+    {
+      "start": 45.75,
+      "end": 51.17,
+      "text": "it means if you have to perform 0, you should have performed 1 before that."
+    },
+    {
+      "start": 51.49,
+      "end": 53.75,
+      "text": "So I can probably state something like this."
+    },
+    {
+      "start": 54.53,
+      "end": 57.01,
+      "text": "1 should have been performed before 0."
+    },
+    {
+      "start": 57.27,
+      "end": 58.33,
+      "text": "That is what they demand."
+    },
+    {
+      "start": 58.33,
+      "end": 61.29,
+      "text": "So this is about the first task."
+    },
+    {
+      "start": 61.65,
+      "end": 62.75,
+      "text": "What is about the next task?"
+    },
+    {
+      "start": 63.07,
+      "end": 68.69,
+      "text": "They're saying in order to perform task 1, you should have performed task 2."
+    },
+    {
+      "start": 69.01,
+      "end": 74.09,
+      "text": "So in order to perform task 1, before that, you should have performed the task 2."
+    },
+    {
+      "start": 74.33,
+      "end": 75.71,
+      "text": "So I can definitely align it."
+    },
+    {
+      "start": 76.07,
+      "end": 77.05,
+      "text": "So this is done."
+    },
+    {
+      "start": 77.51,
+      "end": 78.51,
+      "text": "Next, what are they saying?"
+    },
+    {
+      "start": 78.89,
+      "end": 83.41,
+      "text": "They're saying in order to perform task 2, you should have performed task 3."
+    },
+    {
+      "start": 83.75,
+      "end": 86.73,
+      "text": "So in order to perform task 2, you should have performed task 3,"
+    },
+    {
+      "start": 86.73,
+      "end": 89.57,
+      "text": "which means I can definitely go and write 3 over here."
+    },
+    {
+      "start": 90.01,
+      "end": 91.59,
+      "text": "So again, this task."
+    },
+    {
+      "start": 91.65,
+      "end": 92.65,
+      "text": "It can also be performed."
+    },
+    {
+      "start": 93.15,
+      "end": 97.55,
+      "text": "So what I see is if at first I perform 3, I can actually perform task 2,"
+    },
+    {
+      "start": 97.91,
+      "end": 99.03,
+      "text": "which will mean this."
+    },
+    {
+      "start": 99.29,
+      "end": 103.27,
+      "text": "Then if I perform task 2, I can actually perform task 1, which will mean this."
+    },
+    {
+      "start": 103.53,
+      "end": 107.61,
+      "text": "If I perform task 1, I can actually perform task 0, which means this."
+    },
+    {
+      "start": 107.89,
+      "end": 112.69,
+      "text": "So apparently I can actually perform all the given tasks that is given to us."
+    },
+    {
+      "start": 112.89,
+      "end": 118.13,
+      "text": "So thereby I can say, yes, it is possible to perform such a particular task."
+    },
+    {
+      "start": 118.55,
+      "end": 120.53,
+      "text": "So that was about when we can perform a task."
+    },
+    {
+      "start": 120.73,
+      "end": 121.55,
+      "text": "Let's take one more example."
+    },
+    {
+      "start": 121.65,
+      "end": 124.65,
+      "text": "And let's analyze when we cannot perform a task."
+    },
+    {
+      "start": 124.65,
+      "end": 127.65,
+      "text": "So if you carefully see this particular example, I'm saying, okay,"
+    },
+    {
+      "start": 127.65,
+      "end": 133.65,
+      "text": "1, in order to perform task 2, I should have performed task 1."
+    },
+    {
+      "start": 133.65,
+      "end": 140.65,
+      "text": "So task 2, I should have performed task 1, which means this can only be performed if task 1 is performed before it."
+    },
+    {
+      "start": 140.65,
+      "end": 141.15,
+      "text": "Okay."
+    },
+    {
+      "start": 141.15,
+      "end": 143.65,
+      "text": "So this can be done."
+    },
+    {
+      "start": 143.65,
+      "end": 148.65,
+      "text": "Let's go to the next one, which means we can only do 3 if 4 is performed."
+    },
+    {
+      "start": 148.65,
+      "end": 150.65,
+      "text": "We can only do 3 if 4 is performed."
+    },
+    {
+      "start": 150.65,
+      "end": 151.65,
+      "text": "So I can definitely say this."
+    },
+    {
+      "start": 151.65,
+      "end": 154.65,
+      "text": "We can only do 3 if 4 is performed."
+    },
+    {
+      "start": 154.65,
+      "end": 155.65,
+      "text": "Perfect."
+    },
+    {
+      "start": 155.65,
+      "end": 157.65,
+      "text": "Now, this could have been written over here."
+    },
+    {
+      "start": 157.65,
+      "end": 159.65,
+      "text": "I've written over here due to some reason."
+    },
+    {
+      "start": 159.65,
+      "end": 161.65,
+      "text": "Let's go to the next thing."
+    },
+    {
+      "start": 161.65,
+      "end": 165.65,
+      "text": "I'm saying 4 can only be performed if task 2 is done."
+    },
+    {
+      "start": 165.65,
+      "end": 171.65,
+      "text": "And we see task 2 can be performed before 4 because we do not have any dependency."
+    },
+    {
+      "start": 171.65,
+      "end": 174.65,
+      "text": "Thereby, this can also be performed."
+    },
+    {
+      "start": 174.65,
+      "end": 176.65,
+      "text": "Let's analyze the last one."
+    },
+    {
+      "start": 176.65,
+      "end": 180.65,
+      "text": "The last one says 1 can be performed if task 4 has been performed before."
+    },
+    {
+      "start": 180.65,
+      "end": 189.65,
+      "text": "So 1 has to be after 4."
+    },
+    {
+      "start": 189.65,
+      "end": 193.65,
+      "text": "But wait, 2 has to be before 4, which states this."
+    },
+    {
+      "start": 193.65,
+      "end": 196.65,
+      "text": "And 1 has to be before 2."
+    },
+    {
+      "start": 196.65,
+      "end": 198.65,
+      "text": "So is this possible?"
+    },
+    {
+      "start": 198.65,
+      "end": 199.65,
+      "text": "No."
+    },
+    {
+      "start": 199.65,
+      "end": 201.65,
+      "text": "You see there is a cyclic dependency happening."
+    },
+    {
+      "start": 201.65,
+      "end": 203.65,
+      "text": "You see there is a cyclic dependency."
+    },
+    {
+      "start": 203.65,
+      "end": 207.65,
+      "text": "So if I analyze it properly, 1 has to be performed before 2."
+    },
+    {
+      "start": 207.65,
+      "end": 209.65,
+      "text": "2 has to be performed before 4."
+    },
+    {
+      "start": 209.65,
+      "end": 215.65,
+      "text": "And in order to perform 1, it has to be performed before 4."
+    },
+    {
+      "start": 215.65,
+      "end": 217.65,
+      "text": "So first 4, then 1."
+    },
+    {
+      "start": 217.65,
+      "end": 219.65,
+      "text": "So you see a cycle getting formed."
+    },
+    {
+      "start": 219.65,
+      "end": 222.65,
+      "text": "So there is a cyclic dependency forming."
+    },
+    {
+      "start": 222.65,
+      "end": 225.65,
+      "text": "Like 1 has to be performed before 2."
+    },
+    {
+      "start": 225.65,
+      "end": 227.65,
+      "text": "2 before 4."
+    },
+    {
+      "start": 227.65,
+      "end": 230.65,
+      "text": "And 1 before 1."
+    },
+    {
+      "start": 230.65,
+      "end": 235.65,
+      "text": "So it's not possible because you have a cyclic dependency."
+    },
+    {
+      "start": 235.65,
+      "end": 237.65,
+      "text": "You cannot perform the task."
+    },
+    {
+      "start": 237.65,
+      "end": 238.65,
+      "text": "Got it?"
+    },
+    {
+      "start": 238.65,
+      "end": 243.65,
+      "text": "So thereby, I cannot perform this task because of the prior conditions."
+    },
+    {
+      "start": 243.65,
+      "end": 246.65,
+      "text": "Hence, we will say no to this."
+    },
+    {
+      "start": 246.65,
+      "end": 247.65,
+      "text": "Right?"
+    },
+    {
+      "start": 247.65,
+      "end": 248.65,
+      "text": "So this is what we have to figure out."
+    },
+    {
+      "start": 248.65,
+      "end": 252.65,
+      "text": "Given a pair of tasks, you have to tell me yes if you can perform."
+    },
+    {
+      "start": 252.65,
+      "end": 255.65,
+      "text": "You have to tell me no if you can't perform."
+    },
+    {
+      "start": 255.65,
+      "end": 256.65,
+      "text": "So this is what the problem states."
+    },
+    {
+      "start": 256.65,
+      "end": 258.65,
+      "text": "You'll be given a pair of tasks."
+    },
+    {
+      "start": 258.65,
+      "end": 260.65,
+      "text": "And you have to tell me yes if you can perform."
+    },
+    {
+      "start": 260.65,
+      "end": 264.65,
+      "text": "And you have to tell me no if you cannot perform the given pair of tasks."
+    },
+    {
+      "start": 264.65,
+      "end": 266.65,
+      "text": "Which algorithm to use?"
+    },
+    {
+      "start": 266.65,
+      "end": 270.65,
+      "text": "Can I say that I can definitely use something as a topological sort?"
+    },
+    {
+      "start": 270.65,
+      "end": 272.65,
+      "text": "Which you have learned in the previous video?"
+    },
+    {
+      "start": 272.65,
+      "end": 273.65,
+      "text": "Can we?"
+    },
+    {
+      "start": 273.65,
+      "end": 274.65,
+      "text": "Yes, we can."
+    },
+    {
+      "start": 274.65,
+      "end": 275.65,
+      "text": "Why?"
+    },
+    {
+      "start": 275.65,
+      "end": 277.65,
+      "text": "The reason is very simple."
+    },
+    {
+      "start": 277.65,
+      "end": 280.65,
+      "text": "If you remember the definition of topological sort, it stated,"
+    },
+    {
+      "start": 280.65,
+      "end": 283.65,
+      "text": "if there is an edge between u and v,"
+    },
+    {
+      "start": 283.65,
+      "end": 289.65,
+      "text": "which we can treat it as the tasks u should have been done if you want to perform the task v."
+    },
+    {
+      "start": 289.65,
+      "end": 292.65,
+      "text": "I can define this as an edge."
+    },
+    {
+      "start": 292.65,
+      "end": 295.65,
+      "text": "Then, the linear ordering of vertices must have u,"
+    },
+    {
+      "start": 295.65,
+      "end": 297.65,
+      "text": "must have u before v."
+    },
+    {
+      "start": 297.65,
+      "end": 302.65,
+      "text": "Then, the linear ordering of vertices must have u before v."
+    },
+    {
+      "start": 302.65,
+      "end": 304.65,
+      "text": "And that is what we are doing."
+    },
+    {
+      "start": 304.65,
+      "end": 307.65,
+      "text": "We are saying, okay, in order to perform task 1,"
+    },
+    {
+      "start": 307.65,
+      "end": 309.65,
+      "text": "it is something like this."
+    },
+    {
+      "start": 309.65,
+      "end": 311.65,
+      "text": "A directed edge from 1 to 0."
+    },
+    {
+      "start": 311.65,
+      "end": 314.65,
+      "text": "And 1 should appear before, like 1 should have been done before 0."
+    },
+    {
+      "start": 314.65,
+      "end": 315.65,
+      "text": "Right?"
+    },
+    {
+      "start": 315.65,
+      "end": 319.65,
+      "text": "So can I relate this problem to something as topological sort?"
+    },
+    {
+      "start": 319.65,
+      "end": 320.65,
+      "text": "Yes."
+    },
+    {
+      "start": 320.65,
+      "end": 324.65,
+      "text": "So can I say, I need to figure out possibility or not."
+    },
+    {
+      "start": 324.65,
+      "end": 328.65,
+      "text": "I need to figure out possible or not possible."
+    },
+    {
+      "start": 328.65,
+      "end": 330.65,
+      "text": "So when is a topological sort possible?"
+    },
+    {
+      "start": 330.65,
+      "end": 333.65,
+      "text": "When can I write linear ordering of vertices?"
+    },
+    {
+      "start": 333.65,
+      "end": 336.65,
+      "text": "Only when it's a directed graph."
+    },
+    {
+      "start": 336.65,
+      "end": 342.65,
+      "text": "And we assume we are given, we can express the pairs as directed graphs."
+    },
+    {
+      "start": 342.65,
+      "end": 345.65,
+      "text": "Like if we are given something like task 2 to 4,"
+    },
+    {
+      "start": 345.65,
+      "end": 349.65,
+      "text": "we can actually see it as 2 to 4."
+    },
+    {
+      "start": 349.65,
+      "end": 351.65,
+      "text": "So we can definitely express this as a directed graph."
+    },
+    {
+      "start": 351.65,
+      "end": 352.65,
+      "text": "What is the next thing?"
+    },
+    {
+      "start": 352.65,
+      "end": 353.65,
+      "text": "It's stated."
+    },
+    {
+      "start": 353.65,
+      "end": 355.65,
+      "text": "It's stated as cyclic graph."
+    },
+    {
+      "start": 355.65,
+      "end": 358.65,
+      "text": "It's stated as cyclic graph."
+    },
+    {
+      "start": 358.65,
+      "end": 361.65,
+      "text": "The graph must not have any cycles."
+    },
+    {
+      "start": 361.65,
+      "end": 363.65,
+      "text": "The graph must not have any cycles."
+    },
+    {
+      "start": 363.65,
+      "end": 368.65,
+      "text": "So thereby I can determine that topological sort is only valid for DAG."
+    },
+    {
+      "start": 368.65,
+      "end": 370.65,
+      "text": "And what does topological sort means?"
+    },
+    {
+      "start": 370.65,
+      "end": 375.65,
+      "text": "I can order them in such a way that u appears always before v."
+    },
+    {
+      "start": 375.65,
+      "end": 379.65,
+      "text": "So over here if you see, I cannot order these guys because"
+    },
+    {
+      "start": 379.65,
+      "end": 382.65,
+      "text": "you cannot make sure that 4 appears before 1."
+    },
+    {
+      "start": 382.65,
+      "end": 384.65,
+      "text": "It's not possible."
+    },
+    {
+      "start": 384.65,
+      "end": 385.65,
+      "text": "Why?"
+    },
+    {
+      "start": 385.65,
+      "end": 387.65,
+      "text": "Because it contains a cycle."
+    },
+    {
+      "start": 387.65,
+      "end": 389.65,
+      "text": "So thereby a topological sort will not be possible."
+    },
+    {
+      "start": 389.65,
+      "end": 390.65,
+      "text": "So can I say?"
+    },
+    {
+      "start": 390.65,
+      "end": 392.65,
+      "text": "The question is very straightforward."
+    },
+    {
+      "start": 392.65,
+      "end": 398.65,
+      "text": "Either you can solve it by saying I will detect if the graph has a cycle."
+    },
+    {
+      "start": 398.65,
+      "end": 400.65,
+      "text": "That's a very simple thing that you can do."
+    },
+    {
+      "start": 400.65,
+      "end": 402.65,
+      "text": "Detect a graph has a cycle."
+    },
+    {
+      "start": 402.65,
+      "end": 405.65,
+      "text": "And you can use DFS to do that."
+    },
+    {
+      "start": 405.65,
+      "end": 408.65,
+      "text": "Because it's a directed graph, you can use the DFS way."
+    },
+    {
+      "start": 408.65,
+      "end": 411.65,
+      "text": "Or you can use the BFS way which says"
+    },
+    {
+      "start": 411.65,
+      "end": 412.65,
+      "text": "topological sort."
+    },
+    {
+      "start": 412.65,
+      "end": 416.65,
+      "text": "Yes, we can use the BFS way which uses topological sort."
+    },
+    {
+      "start": 416.65,
+      "end": 421.65,
+      "text": "Now you can go the DFS way in order to just tell me a yes or no."
+    },
+    {
+      "start": 421.65,
+      "end": 425.65,
+      "text": "But in the next part of the question, they'll ask us the ordering."
+    },
+    {
+      "start": 425.65,
+      "end": 429.65,
+      "text": "Thereby I'll solve this problem using BFS or the topological sort."
+    },
+    {
+      "start": 429.65,
+      "end": 431.65,
+      "text": "You can definitely do it using DFS."
+    },
+    {
+      "start": 431.65,
+      "end": 434.65,
+      "text": "I've already taught you how to detect a cycle in a directed graph."
+    },
+    {
+      "start": 434.65,
+      "end": 437.65,
+      "text": "So you can go back and definitely do it using DFS as well."
+    },
+    {
+      "start": 437.65,
+      "end": 440.65,
+      "text": "So guys, I hope you have understood the explanation why topological sort or why cycle detection."
+    },
+    {
+      "start": 440.65,
+      "end": 443.65,
+      "text": "So as usual, I'll be writing the C++ code on the right."
+    },
+    {
+      "start": 443.65,
+      "end": 445.65,
+      "text": "And you can figure out the Java code on the left."
+    },
+    {
+      "start": 445.65,
+      "end": 447.65,
+      "text": "So you're given n."
+    },
+    {
+      "start": 447.65,
+      "end": 450.65,
+      "text": "You're given the pair of prerequisites."
+    },
+    {
+      "start": 450.65,
+      "end": 453.65,
+      "text": "So at first what I'll do is I'll try to create the graph."
+    },
+    {
+      "start": 453.65,
+      "end": 458.65,
+      "text": "Because we need to create the directed graph in order to check for a cycle or topological sort or whatever."
+    },
+    {
+      "start": 458.65,
+      "end": 461.65,
+      "text": "So what I'll do is I'll at first create the adjacency list."
+    },
+    {
+      "start": 461.65,
+      "end": 463.65,
+      "text": "And I've given the pair."
+    },
+    {
+      "start": 463.65,
+      "end": 465.65,
+      "text": "So I can just walk through the pairs."
+    },
+    {
+      "start": 465.65,
+      "end": 467.65,
+      "text": "Let's walk through the pairs."
+    },
+    {
+      "start": 467.65,
+      "end": 470.65,
+      "text": "And I can say adjacency of it.first."
+    },
+    {
+      "start": 470.65,
+      "end": 474.65,
+      "text": "Because I'm saying this guy should be performed before this."
+    },
+    {
+      "start": 474.65,
+      "end": 477.65,
+      "text": "So there's an edge between this to that."
+    },
+    {
+      "start": 477.65,
+      "end": 482.65,
+      "text": "So id.first.pushback of id.second."
+    },
+    {
+      "start": 482.65,
+      "end": 486.65,
+      "text": "So we're definitely sure that this is how we have to form the graph."
+    },
+    {
+      "start": 486.65,
+      "end": 488.65,
+      "text": "So I can say the graph is formed."
+    },
+    {
+      "start": 488.65,
+      "end": 489.65,
+      "text": "And it's a zero-based indexing."
+    },
+    {
+      "start": 489.65,
+      "end": 490.65,
+      "text": "So it's fine."
+    },
+    {
+      "start": 490.65,
+      "end": 492.65,
+      "text": "And we need to check for topo sort."
+    },
+    {
+      "start": 492.65,
+      "end": 494.65,
+      "text": "We need the topo sort to be checked."
+    },
+    {
+      "start": 494.65,
+      "end": 495.65,
+      "text": "Now what is the next thing?"
+    },
+    {
+      "start": 495.65,
+      "end": 496.65,
+      "text": "We need to check for topological sort."
+    },
+    {
+      "start": 496.65,
+      "end": 499.65,
+      "text": "So what I'll do is I'll go over here to the topological sort."
+    },
+    {
+      "start": 500.65,
+      "end": 503.65,
+      "text": "And I'll just copy paste the entire code that we wrote for topological sort."
+    },
+    {
+      "start": 503.65,
+      "end": 504.65,
+      "text": "And I'll bring that."
+    },
+    {
+      "start": 504.65,
+      "end": 506.65,
+      "text": "And I'll try to copy paste it here."
+    },
+    {
+      "start": 506.65,
+      "end": 509.65,
+      "text": "So this is the topological sort for any given graph."
+    },
+    {
+      "start": 509.65,
+      "end": 512.65,
+      "text": "I'll just remove this one."
+    },
+    {
+      "start": 512.65,
+      "end": 516.65,
+      "text": "So I can say, okay, this is how we have stored the topological sort."
+    },
+    {
+      "start": 516.65,
+      "end": 520.65,
+      "text": "And if my ordering contains all of them."
+    },
+    {
+      "start": 520.65,
+      "end": 524.65,
+      "text": "If my ordering contains all the vertices,"
+    },
+    {
+      "start": 524.65,
+      "end": 527.65,
+      "text": "then I can say that there was definitely not a cycle."
+    },
+    {
+      "start": 527.65,
+      "end": 529.65,
+      "text": "Thereby all the vertices,"
+    },
+    {
+      "start": 529.65,
+      "end": 532.65,
+      "text": "were there in the topo sort."
+    },
+    {
+      "start": 532.65,
+      "end": 534.65,
+      "text": "So I can say yes."
+    },
+    {
+      "start": 534.65,
+      "end": 536.65,
+      "text": "Or, which means true."
+    },
+    {
+      "start": 536.65,
+      "end": 539.65,
+      "text": "Or I can say, if not, then I can say a false."
+    },
+    {
+      "start": 539.65,
+      "end": 541.65,
+      "text": "So once you have done this,"
+    },
+    {
+      "start": 541.65,
+      "end": 543.65,
+      "text": "let's quickly analyze if everything is fine."
+    },
+    {
+      "start": 543.65,
+      "end": 545.65,
+      "text": "Okay, this is n."
+    },
+    {
+      "start": 545.65,
+      "end": 547.65,
+      "text": "So probably we can just convert this into v."
+    },
+    {
+      "start": 547.65,
+      "end": 549.65,
+      "text": "Because in topo sort we are using v."
+    },
+    {
+      "start": 549.65,
+      "end": 550.65,
+      "text": "And over here we can do it v."
+    },
+    {
+      "start": 550.65,
+      "end": 551.65,
+      "text": "Perfect."
+    },
+    {
+      "start": 551.65,
+      "end": 552.65,
+      "text": "Now let's compile and run."
+    },
+    {
+      "start": 552.65,
+      "end": 554.65,
+      "text": "Okay, compile and run."
+    },
+    {
+      "start": 554.65,
+      "end": 555.65,
+      "text": "And then I'll submit."
+    },
+    {
+      "start": 555.65,
+      "end": 557.65,
+      "text": "So you see that this is running absolutely fine."
+    },
+    {
+      "start": 557.65,
+      "end": 559.65,
+      "text": "Okay, so once we have solved this problem,"
+    },
+    {
+      "start": 559.65,
+      "end": 560.65,
+      "text": "we'll go to the next problem,"
+    },
+    {
+      "start": 560.65,
+      "end": 562.65,
+      "text": "which is course schedule."
+    },
+    {
+      "start": 562.65,
+      "end": 565.65,
+      "text": "This problem has slight modifications."
+    },
+    {
+      "start": 565.65,
+      "end": 569.65,
+      "text": "Now over here, if you have to do task 0,"
+    },
+    {
+      "start": 569.65,
+      "end": 571.65,
+      "text": "you have to first finish task 1."
+    },
+    {
+      "start": 571.65,
+      "end": 573.65,
+      "text": "So the ordering is like,"
+    },
+    {
+      "start": 573.65,
+      "end": 574.65,
+      "text": "in the previous question,"
+    },
+    {
+      "start": 574.65,
+      "end": 576.65,
+      "text": "it would have been given 1, 0."
+    },
+    {
+      "start": 576.65,
+      "end": 578.65,
+      "text": "Over here, they've just reversed it."
+    },
+    {
+      "start": 578.65,
+      "end": 580.65,
+      "text": "They're saying in order to perform 0,"
+    },
+    {
+      "start": 580.65,
+      "end": 582.65,
+      "text": "you should have done 1."
+    },
+    {
+      "start": 582.65,
+      "end": 584.65,
+      "text": "So there's an edge between 1 and 0."
+    },
+    {
+      "start": 584.65,
+      "end": 589.65,
+      "text": "So just the mention of the pair has been reversed."
+    },
+    {
+      "start": 589.65,
+      "end": 590.65,
+      "text": "Cool."
+    },
+    {
+      "start": 590.65,
+      "end": 592.65,
+      "text": "Now you have to find the ordering of task"
+    },
+    {
+      "start": 592.65,
+      "end": 594.65,
+      "text": "in order to finish all the tasks."
+    },
+    {
+      "start": 594.65,
+      "end": 596.65,
+      "text": "And there might be multiple correct answers."
+    },
+    {
+      "start": 596.65,
+      "end": 598.65,
+      "text": "You just need to return one of them."
+    },
+    {
+      "start": 598.65,
+      "end": 600.65,
+      "text": "If it is impossible to finish all tasks,"
+    },
+    {
+      "start": 600.65,
+      "end": 603.65,
+      "text": "return an empty array is what they are saying."
+    },
+    {
+      "start": 603.65,
+      "end": 605.65,
+      "text": "So what I'll do is I'll go back over here"
+    },
+    {
+      "start": 605.65,
+      "end": 607.65,
+      "text": "and I'll just try to copy this."
+    },
+    {
+      "start": 607.65,
+      "end": 610.65,
+      "text": "And then I'll do the changes that I require."
+    },
+    {
+      "start": 610.65,
+      "end": 612.65,
+      "text": "So if you see we're given n."
+    },
+    {
+      "start": 612.65,
+      "end": 615.65,
+      "text": "So if you see we're given n and m."
+    },
+    {
+      "start": 615.65,
+      "end": 617.65,
+      "text": "So I'll just convert this to capital V."
+    },
+    {
+      "start": 617.65,
+      "end": 618.65,
+      "text": "And let this be m."
+    },
+    {
+      "start": 618.65,
+      "end": 620.65,
+      "text": "So we're given a vector."
+    },
+    {
+      "start": 620.65,
+      "end": 623.65,
+      "text": "So over here, we know the pairs have been reversed."
+    },
+    {
+      "start": 623.65,
+      "end": 625.65,
+      "text": "So it of 1 because it is a vector."
+    },
+    {
+      "start": 625.65,
+      "end": 628.65,
+      "text": "And it will form a directed edge to it of 0"
+    },
+    {
+      "start": 628.65,
+      "end": 631.65,
+      "text": "because they're giving it in the opposite order this time."
+    },
+    {
+      "start": 631.65,
+      "end": 632.65,
+      "text": "So this is how we'll do."
+    },
+    {
+      "start": 632.65,
+      "end": 635.65,
+      "text": "Once you do everything, if this is possible,"
+    },
+    {
+      "start": 635.65,
+      "end": 637.65,
+      "text": "then we return the ordering to pull."
+    },
+    {
+      "start": 637.65,
+      "end": 641.65,
+      "text": "And if it is not, then we return simply an empty array."
+    },
+    {
+      "start": 641.65,
+      "end": 642.65,
+      "text": "This is what I will do."
+    },
+    {
+      "start": 642.65,
+      "end": 644.65,
+      "text": "Once I've done this, I'll try to compile and run"
+    },
+    {
+      "start": 644.65,
+      "end": 646.65,
+      "text": "and see if it is running fine."
+    },
+    {
+      "start": 646.65,
+      "end": 647.65,
+      "text": "And we see it is."
+    },
+    {
+      "start": 647.65,
+      "end": 649.65,
+      "text": "And now we'll try to submit this."
+    },
+    {
+      "start": 649.65,
+      "end": 652.65,
+      "text": "We see that all the test cases are running absolutely fine."
+    },
+    {
+      "start": 652.65,
+      "end": 656.65,
+      "text": "So guys, I hope you've understood how to implement topo sort in such problems."
+    },
+    {
+      "start": 656.65,
+      "end": 660.65,
+      "text": "Whenever you see problems where they state something before something,"
+    },
+    {
+      "start": 660.65,
+      "end": 663.65,
+      "text": "that is when the intuition of topo sort should jump to your brain."
+    },
+    {
+      "start": 663.65,
+      "end": 665.65,
+      "text": "Remember this always."
+    },
+    {
+      "start": 665.65,
+      "end": 667.65,
+      "text": "So I hope you've understood everything."
+    },
+    {
+      "start": 667.65,
+      "end": 670.65,
+      "text": "So just in case you did, please, please, please make sure you like this video."
+    },
+    {
+      "start": 670.65,
+      "end": 672.65,
+      "text": "And if you're new to our channel, what are you waiting for?"
+    },
+    {
+      "start": 672.65,
+      "end": 674.65,
+      "text": "Kill that subscribe button right away."
+    },
+    {
+      "start": 674.65,
+      "end": 676.65,
+      "text": "And if you haven't checked out our DPCs and the SD sheet,"
+    },
+    {
+      "start": 676.65,
+      "end": 678.65,
+      "text": "the links will be in the description."
+    },
+    {
+      "start": 678.65,
+      "end": 680.65,
+      "text": "And with this, I'll be wrapping up this video."
+    },
+    {
+      "start": 680.65,
+      "end": 681.65,
+      "text": "Let's meet in some other video."
+    },
+    {
+      "start": 681.65,
+      "end": 682.65,
+      "text": "Till then, bye-bye."
+    },
+    {
+      "start": 682.65,
+      "end": 685.18,
+      "text": "Take care."
+    }
+  ]
+}

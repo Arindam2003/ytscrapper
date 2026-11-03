@@ -1,0 +1,1294 @@
+{
+  "video_id": "DMnDM_sxVig",
+  "title": "G-47. Kruskal's Algorithm - Minimum Spanning Tree - C++ and Java",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 790.08,
+  "segments": [
+    {
+      "start": 2.74,
+      "end": 5.92,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.36,
+      "end": 9.94,
+      "text": "So today we will be learning about the Kruskal's algorithm."
+    },
+    {
+      "start": 10.18,
+      "end": 17.64,
+      "text": "But wait, before starting this video, please go back and watch my video on disjoint set."
+    },
+    {
+      "start": 18.02,
+      "end": 25.62,
+      "text": "It's a bit long video, but you'll get a lot of clarity about the concept that will be used in order to solve the Kruskal's algorithm."
+    },
+    {
+      "start": 26.12,
+      "end": 29.08,
+      "text": "If you do not know disjoint set, you will not understand anything."
+    },
+    {
+      "start": 29.08,
+      "end": 35.5,
+      "text": "I'm assuming you have seen my disjoint sets video and then I'll be teaching you Kruskal's algorithm."
+    },
+    {
+      "start": 36.08,
+      "end": 41.72,
+      "text": "Right before this video, whichever you'll find in the graph series is the disjoint sets video."
+    },
+    {
+      "start": 42.18,
+      "end": 46.02,
+      "text": "So what does Kruskal's algorithm help us to find?"
+    },
+    {
+      "start": 46.44,
+      "end": 49.5,
+      "text": "It helps us to find the minimum spanning tree."
+    },
+    {
+      "start": 49.94,
+      "end": 54.7,
+      "text": "Now what is a spanning tree? All of us know it. We have already discussed it in our previous lectures."
+    },
+    {
+      "start": 55.6,
+      "end": 57.74,
+      "text": "So this is the given graph."
+    },
+    {
+      "start": 57.74,
+      "end": 59.74,
+      "text": "And you have to find the minimum spanning tree."
+    },
+    {
+      "start": 59.74,
+      "end": 64.74,
+      "text": "We know we can implement Prim's algorithm to find it and we have done it in the previous videos."
+    },
+    {
+      "start": 64.74,
+      "end": 71.74,
+      "text": "But in this video, we will be applying the Kruskal's algorithm in order to find the minimum spanning tree of this particular graph."
+    },
+    {
+      "start": 71.74,
+      "end": 73.74,
+      "text": "What is the minimum spanning tree?"
+    },
+    {
+      "start": 73.74,
+      "end": 83.74,
+      "text": "If this graph can be represented in n nodes and n-1 edges such that you can reach from one node to every other node."
+    },
+    {
+      "start": 83.74,
+      "end": 86.74,
+      "text": "That is what you call as minimum spanning tree."
+    },
+    {
+      "start": 87.74,
+      "end": 89.74,
+      "text": "So you will be given a graph like this."
+    },
+    {
+      "start": 89.74,
+      "end": 93.74,
+      "text": "You might be given the adjacency list. You might be given edges."
+    },
+    {
+      "start": 93.74,
+      "end": 95.74,
+      "text": "You can be given anything."
+    },
+    {
+      "start": 95.74,
+      "end": 99.74,
+      "text": "The first task that you need to do is sort all the edges."
+    },
+    {
+      "start": 99.74,
+      "end": 103.74,
+      "text": "Sort all the edges according to weight."
+    },
+    {
+      "start": 103.74,
+      "end": 107.74,
+      "text": "Very very important. According to weight, you have to sort all the edges."
+    },
+    {
+      "start": 107.74,
+      "end": 111.74,
+      "text": "So let's quickly write down all the edges and sort them according to weight."
+    },
+    {
+      "start": 111.74,
+      "end": 116.74,
+      "text": "So once you have sorted all the edges, you'll find all the edges like this."
+    },
+    {
+      "start": 116.74,
+      "end": 122.74,
+      "text": "And you see the minimum weight at the front and then it keeps on increasing."
+    },
+    {
+      "start": 122.74,
+      "end": 128.74,
+      "text": "So you know the data structure disjoint set that we are going to use."
+    },
+    {
+      "start": 128.74,
+      "end": 131.74,
+      "text": "What does disjoint set provide us with?"
+    },
+    {
+      "start": 131.74,
+      "end": 133.74,
+      "text": "It provides us with two things."
+    },
+    {
+      "start": 133.74,
+      "end": 141.74,
+      "text": "Find ultimate parent and it also provides us with union by rank."
+    },
+    {
+      "start": 141.74,
+      "end": 144.74,
+      "text": "And we know if two guys belong to the same component,"
+    },
+    {
+      "start": 144.74,
+      "end": 148.74,
+      "text": "they will always have the same ultimate parent or the boss."
+    },
+    {
+      "start": 148.74,
+      "end": 154.74,
+      "text": "So remember, initially, when you declare the disjoint set with all these nodes."
+    },
+    {
+      "start": 154.74,
+      "end": 157.74,
+      "text": "So over here we have six nodes if you carefully observe."
+    },
+    {
+      "start": 157.74,
+      "end": 163.74,
+      "text": "If you define a disjoint set with six nodes, everyone will be a single guy."
+    },
+    {
+      "start": 163.74,
+      "end": 167.74,
+      "text": "Everyone will be a single guy with the parent pointing to themselves."
+    },
+    {
+      "start": 167.74,
+      "end": 171.74,
+      "text": "So everyone is single with the parent pointing to themselves."
+    },
+    {
+      "start": 171.74,
+      "end": 173.74,
+      "text": "So the first node is what you take."
+    },
+    {
+      "start": 173.74,
+      "end": 177.74,
+      "text": "So let's quickly take the first node which is saying 1, 4."
+    },
+    {
+      "start": 177.74,
+      "end": 180.74,
+      "text": "So you say, okay, 1, 4."
+    },
+    {
+      "start": 180.74,
+      "end": 183.74,
+      "text": "4 is your ultimate parent."
+    },
+    {
+      "start": 183.74,
+      "end": 184.74,
+      "text": "1 says 1, 4 says 4."
+    },
+    {
+      "start": 184.74,
+      "end": 186.74,
+      "text": "So do they belong to the same component?"
+    },
+    {
+      "start": 186.74,
+      "end": 189.74,
+      "text": "No, they do not belong to the same component."
+    },
+    {
+      "start": 189.74,
+      "end": 194.74,
+      "text": "So what you'll do is you will go ahead and say, okay, since they do not belong to the same component,"
+    },
+    {
+      "start": 194.74,
+      "end": 201.74,
+      "text": "I can take it and this will be part of my MST because this is the most minimal edge in the graph."
+    },
+    {
+      "start": 201.74,
+      "end": 202.74,
+      "text": "So let's take it, right?"
+    },
+    {
+      "start": 202.74,
+      "end": 203.74,
+      "text": "So I've taken it."
+    },
+    {
+      "start": 203.74,
+      "end": 204.74,
+      "text": "Perfect."
+    },
+    {
+      "start": 204.74,
+      "end": 207.74,
+      "text": "Next is 1, 2."
+    },
+    {
+      "start": 207.74,
+      "end": 209.74,
+      "text": "So you have a 1 and you have a 2."
+    },
+    {
+      "start": 209.74,
+      "end": 213.74,
+      "text": "So 2's parent is himself and 1 is this component."
+    },
+    {
+      "start": 213.74,
+      "end": 215.74,
+      "text": "Do they belong to the same component?"
+    },
+    {
+      "start": 215.74,
+      "end": 219.74,
+      "text": "Again, disjoint set will say, no, they do not belong to the same component."
+    },
+    {
+      "start": 219.74,
+      "end": 223.74,
+      "text": "So you'll go ahead and update 1, 2 with the edge."
+    },
+    {
+      "start": 223.74,
+      "end": 226.74,
+      "text": "So this will also be a part of your MST."
+    },
+    {
+      "start": 226.74,
+      "end": 228.74,
+      "text": "And you can also keep on counting the weight."
+    },
+    {
+      "start": 228.74,
+      "end": 232.74,
+      "text": "The weight will be 1 plus 2 because there are two edges which have been added."
+    },
+    {
+      "start": 232.74,
+      "end": 233.74,
+      "text": "So this is done."
+    },
+    {
+      "start": 233.74,
+      "end": 235.74,
+      "text": "Next is 2, 3."
+    },
+    {
+      "start": 235.74,
+      "end": 242.74,
+      "text": "This time there is 2 who will have an ultimate parent and there is 3 who will have an ultimate parent as 3 itself."
+    },
+    {
+      "start": 242.74,
+      "end": 246.74,
+      "text": "3 has the ultimate parent as itself and 2 is here in this component."
+    },
+    {
+      "start": 246.74,
+      "end": 248.74,
+      "text": "They definitely do not belong to the same component."
+    },
+    {
+      "start": 248.74,
+      "end": 250.74,
+      "text": "So you can go ahead and add 3."
+    },
+    {
+      "start": 250.74,
+      "end": 255.74,
+      "text": "Yes, you can go ahead and add 3 into your MST as well."
+    },
+    {
+      "start": 255.74,
+      "end": 256.74,
+      "text": "And that will be the edge weight."
+    },
+    {
+      "start": 256.74,
+      "end": 257.74,
+      "text": "Perfect."
+    },
+    {
+      "start": 257.74,
+      "end": 260.74,
+      "text": "This is also done, which is the next one."
+    },
+    {
+      "start": 260.74,
+      "end": 261.74,
+      "text": "The next one is 2, 4."
+    },
+    {
+      "start": 261.74,
+      "end": 268.74,
+      "text": "Now this time when you try to find the ultimate parent of 2 and 4, they will come out to be the same because they belong to the same component."
+    },
+    {
+      "start": 268.74,
+      "end": 273.74,
+      "text": "So you'll be like, I will not take this into my MST because they are already connected."
+    },
+    {
+      "start": 273.74,
+      "end": 278.74,
+      "text": "This will not make sense because you can already reach everyone."
+    },
+    {
+      "start": 278.74,
+      "end": 280.74,
+      "text": "Every node can be reachable to every other node."
+    },
+    {
+      "start": 280.74,
+      "end": 287.74,
+      "text": "So what's the point of making a cycle and introducing an extra edge because our goal is to find minimum."
+    },
+    {
+      "start": 287.74,
+      "end": 290.74,
+      "text": "So including an extra edge will not help us, right?"
+    },
+    {
+      "start": 290.74,
+      "end": 291.74,
+      "text": "What's the next thing?"
+    },
+    {
+      "start": 291.74,
+      "end": 292.74,
+      "text": "1, 5."
+    },
+    {
+      "start": 292.74,
+      "end": 295.74,
+      "text": "So 1 is here and 5 is a single guy."
+    },
+    {
+      "start": 295.74,
+      "end": 297.74,
+      "text": "Again, they do not belong to the same component."
+    },
+    {
+      "start": 297.74,
+      "end": 300.74,
+      "text": "This joint set will help you to find this."
+    },
+    {
+      "start": 300.74,
+      "end": 301.74,
+      "text": "So go ahead and add this."
+    },
+    {
+      "start": 301.74,
+      "end": 302.74,
+      "text": "Perfect."
+    },
+    {
+      "start": 302.74,
+      "end": 303.74,
+      "text": "What's the next thing?"
+    },
+    {
+      "start": 303.74,
+      "end": 305.74,
+      "text": "The next thing is 3, 4."
+    },
+    {
+      "start": 305.74,
+      "end": 309.74,
+      "text": "So we have a 3, we have a 4 and they definitely belong to the same component."
+    },
+    {
+      "start": 309.74,
+      "end": 311.74,
+      "text": "This joint set will again help you to find this."
+    },
+    {
+      "start": 311.74,
+      "end": 313.74,
+      "text": "So you'll not add this because there's no point in adding this."
+    },
+    {
+      "start": 313.74,
+      "end": 316.74,
+      "text": "We'll go ahead and discard it."
+    },
+    {
+      "start": 316.74,
+      "end": 318.74,
+      "text": "Next, you have 2, 6."
+    },
+    {
+      "start": 318.74,
+      "end": 319.74,
+      "text": "So you have a 2 over here."
+    },
+    {
+      "start": 319.74,
+      "end": 321.74,
+      "text": "And you have a 6 over here."
+    },
+    {
+      "start": 321.74,
+      "end": 324.74,
+      "text": "So 6 is alone and 2 is a part of this component."
+    },
+    {
+      "start": 324.74,
+      "end": 328.74,
+      "text": "So you can go ahead and say, okay, I'll take up 6 and that will be 7."
+    },
+    {
+      "start": 328.74,
+      "end": 331.74,
+      "text": "So by the way, I forgot to write 4 and now 7."
+    },
+    {
+      "start": 331.74,
+      "end": 333.74,
+      "text": "So this will be a part of it."
+    },
+    {
+      "start": 333.74,
+      "end": 334.74,
+      "text": "What's the next?"
+    },
+    {
+      "start": 334.74,
+      "end": 335.74,
+      "text": "It's 3, 6."
+    },
+    {
+      "start": 335.74,
+      "end": 336.74,
+      "text": "Where is 3?"
+    },
+    {
+      "start": 336.74,
+      "end": 337.74,
+      "text": "Where is 6?"
+    },
+    {
+      "start": 337.74,
+      "end": 339.74,
+      "text": "They belong to the same component."
+    },
+    {
+      "start": 339.74,
+      "end": 340.74,
+      "text": "So not to be taken."
+    },
+    {
+      "start": 340.74,
+      "end": 341.74,
+      "text": "What's the next?"
+    },
+    {
+      "start": 341.74,
+      "end": 342.74,
+      "text": "4, 5."
+    },
+    {
+      "start": 342.74,
+      "end": 346.74,
+      "text": "So the 4 and 5 belong to the same component."
+    },
+    {
+      "start": 346.74,
+      "end": 348.74,
+      "text": "So again, I will end up not taking this."
+    },
+    {
+      "start": 348.74,
+      "end": 357.74,
+      "text": "So apparently, I can say this is, this is my MST and the summation of weights will be 1 plus 2, 3 plus 3, 6, 10."
+    },
+    {
+      "start": 357.74,
+      "end": 360.74,
+      "text": "17 is the summation of weights."
+    },
+    {
+      "start": 360.74,
+      "end": 361.74,
+      "text": "Very simple, isn't it?"
+    },
+    {
+      "start": 361.74,
+      "end": 365.74,
+      "text": "You just need to know this joint set data structure."
+    },
+    {
+      "start": 365.74,
+      "end": 369.74,
+      "text": "And you can easily find MST from any given graph."
+    },
+    {
+      "start": 369.74,
+      "end": 372.74,
+      "text": "The weight as well as well as the MST."
+    },
+    {
+      "start": 372.74,
+      "end": 373.74,
+      "text": "Got it?"
+    },
+    {
+      "start": 373.74,
+      "end": 377.74,
+      "text": "So guys, I hope you've understood the entire explanation of Kruskal's algorithm."
+    },
+    {
+      "start": 377.74,
+      "end": 378.74,
+      "text": "Now it's time to code it up."
+    },
+    {
+      "start": 378.74,
+      "end": 383.74,
+      "text": "So as usual, the C++ solution is on the right and the exact similar Java code will be on"
+    },
+    {
+      "start": 383.74,
+      "end": 385.74,
+      "text": "the left of the Java people."
+    },
+    {
+      "start": 385.74,
+      "end": 386.74,
+      "text": "So what are we given?"
+    },
+    {
+      "start": 386.74,
+      "end": 387.74,
+      "text": "We're not given the edges."
+    },
+    {
+      "start": 387.74,
+      "end": 389.74,
+      "text": "We are rather given an adjacency list."
+    },
+    {
+      "start": 389.74,
+      "end": 391.74,
+      "text": "And remember, it's an adjacency list."
+    },
+    {
+      "start": 391.74,
+      "end": 395.74,
+      "text": "So it will be containing the graphs in bidirectional edges."
+    },
+    {
+      "start": 395.74,
+      "end": 400.74,
+      "text": "Like if you look at the driver code as well, they're basically taking the edge with uvw"
+    },
+    {
+      "start": 400.74,
+      "end": 403.74,
+      "text": "and they're basically storing it in two versions."
+    },
+    {
+      "start": 403.74,
+      "end": 404.74,
+      "text": "Carefully see."
+    },
+    {
+      "start": 404.74,
+      "end": 406.74,
+      "text": "So since it is a bidirectional edge."
+    },
+    {
+      "start": 406.74,
+      "end": 411.74,
+      "text": "It will be stored in two ways."
+    },
+    {
+      "start": 411.74,
+      "end": 412.74,
+      "text": "So it's pretty simple."
+    },
+    {
+      "start": 412.74,
+      "end": 413.74,
+      "text": "No need to panic."
+    },
+    {
+      "start": 413.74,
+      "end": 417.74,
+      "text": "So since we are storing it up, what you can do is you can say, okay, vector of pair."
+    },
+    {
+      "start": 417.74,
+      "end": 418.74,
+      "text": "This will be the weight."
+    },
+    {
+      "start": 418.74,
+      "end": 421.74,
+      "text": "And then I'll go ahead and store the two other nodes."
+    },
+    {
+      "start": 421.74,
+      "end": 424.74,
+      "text": "So this will be my edges where I'll be storing."
+    },
+    {
+      "start": 424.74,
+      "end": 427.74,
+      "text": "Now I will be going across all the nodes."
+    },
+    {
+      "start": 427.74,
+      "end": 429.74,
+      "text": "Yes, I'll be going across all the nodes."
+    },
+    {
+      "start": 429.74,
+      "end": 430.74,
+      "text": "So let's say zero based indexing."
+    },
+    {
+      "start": 430.74,
+      "end": 432.74,
+      "text": "And it's absolutely no problem."
+    },
+    {
+      "start": 432.74,
+      "end": 434.74,
+      "text": "So I'll be going across all the nodes."
+    },
+    {
+      "start": 434.74,
+      "end": 435.74,
+      "text": "Right now."
+    },
+    {
+      "start": 435.74,
+      "end": 448.74,
+      "text": "In every node, they're storing a vector, which is basically storing the, if you look at the driver's code again, basically storing u and w, basically the adjacent node and the weight."
+    },
+    {
+      "start": 448.74,
+      "end": 454.74,
+      "text": "So I can go ahead and say, okay, I'll go ahead with this adjacents of i."
+    },
+    {
+      "start": 454.74,
+      "end": 459.74,
+      "text": "And I can get the adjacent node, which will be at the ID of zero."
+    },
+    {
+      "start": 459.74,
+      "end": 462.74,
+      "text": "I'll get the weight, which will be at ID of one."
+    },
+    {
+      "start": 462.74,
+      "end": 463.74,
+      "text": "Right."
+    },
+    {
+      "start": 463.74,
+      "end": 464.74,
+      "text": "And I know the node is nothing but the i."
+    },
+    {
+      "start": 464.74,
+      "end": 465.74,
+      "text": "Okay."
+    },
+    {
+      "start": 465.74,
+      "end": 466.74,
+      "text": "I know the node is nothing but the i."
+    },
+    {
+      "start": 466.74,
+      "end": 470.74,
+      "text": "Just in order to improve understanding, I've written it."
+    },
+    {
+      "start": 470.74,
+      "end": 471.74,
+      "text": "So can I say edges?"
+    },
+    {
+      "start": 471.74,
+      "end": 472.74,
+      "text": "Can I say edges?"
+    },
+    {
+      "start": 472.74,
+      "end": 475.74,
+      "text": "Maybe I'll just remove this."
+    },
+    {
+      "start": 475.74,
+      "end": 480.74,
+      "text": "Maybe I can say edges dot push back."
+    },
+    {
+      "start": 480.74,
+      "end": 481.74,
+      "text": "What should I say?"
+    },
+    {
+      "start": 481.74,
+      "end": 484.74,
+      "text": "I say, wait, I know it's from node to adjacent node."
+    },
+    {
+      "start": 484.74,
+      "end": 485.74,
+      "text": "Perfect."
+    },
+    {
+      "start": 485.74,
+      "end": 494.74,
+      "text": "Now you might see, but Stryver, since it's a bi-directional edge, you will insert this twice."
+    },
+    {
+      "start": 494.74,
+      "end": 502.74,
+      "text": "Like if there is an edge between one to two with a weight of five, then one at one, there"
+    },
+    {
+      "start": 502.74,
+      "end": 507.74,
+      "text": "will be two comma five, like on the adjacency list on one, you will have two comma five."
+    },
+    {
+      "start": 507.74,
+      "end": 512.74,
+      "text": "And even at the place of two, you will have, if you remember the adjacency, one comma five."
+    },
+    {
+      "start": 512.74,
+      "end": 515.74,
+      "text": "So you'll apparently insert two edges."
+    },
+    {
+      "start": 515.74,
+      "end": 516.74,
+      "text": "It is okay."
+    },
+    {
+      "start": 516.74,
+      "end": 517.74,
+      "text": "We're using disjoint set."
+    },
+    {
+      "start": 517.74,
+      "end": 519.74,
+      "text": "It will automatically discard."
+    },
+    {
+      "start": 519.74,
+      "end": 522.74,
+      "text": "If you've taken one edge, it will automatically discard the next edge."
+    },
+    {
+      "start": 522.74,
+      "end": 523.74,
+      "text": "Right."
+    },
+    {
+      "start": 523.74,
+      "end": 528.74,
+      "text": "So it definitely goes ahead and adds twice this edge."
+    },
+    {
+      "start": 528.74,
+      "end": 534.74,
+      "text": "Like one, it will add as, first time it will add as five comma one to two edge."
+    },
+    {
+      "start": 534.74,
+      "end": 538.74,
+      "text": "And then the second time it will add as five comma two comma one."
+    },
+    {
+      "start": 538.74,
+      "end": 543.74,
+      "text": "So it will definitely add twice, but that is none of my concern because we are using"
+    },
+    {
+      "start": 543.74,
+      "end": 546.74,
+      "text": "our data structure, which is going to ignore it."
+    },
+    {
+      "start": 546.74,
+      "end": 549.74,
+      "text": "So edges dot begin, edges dot end."
+    },
+    {
+      "start": 549.74,
+      "end": 551.74,
+      "text": "Right."
+    },
+    {
+      "start": 551.74,
+      "end": 552.74,
+      "text": "Perfect."
+    },
+    {
+      "start": 552.74,
+      "end": 553.74,
+      "text": "We have sorted the edges."
+    },
+    {
+      "start": 553.74,
+      "end": 555.74,
+      "text": "Now we need a data structure for sure."
+    },
+    {
+      "start": 555.74,
+      "end": 557.74,
+      "text": "But before that, let's see what else we need."
+    },
+    {
+      "start": 557.74,
+      "end": 558.74,
+      "text": "We need to find the MST weight."
+    },
+    {
+      "start": 558.74,
+      "end": 562.74,
+      "text": "So maybe MST weight will be zero and we need to go across all the edges."
+    },
+    {
+      "start": 562.74,
+      "end": 565.74,
+      "text": "So let's quickly find the weight."
+    },
+    {
+      "start": 565.74,
+      "end": 569.74,
+      "text": "Weight will be at ID dot first."
+    },
+    {
+      "start": 569.74,
+      "end": 573.74,
+      "text": "And then we will have a U which will be ID dot second dot first."
+    },
+    {
+      "start": 573.74,
+      "end": 576.74,
+      "text": "We will be having a V which will be a V rather."
+    },
+    {
+      "start": 576.74,
+      "end": 579.74,
+      "text": "ID dot second dot second."
+    },
+    {
+      "start": 579.74,
+      "end": 582.74,
+      "text": "And then going ahead, we need to figure out if they belong to the same component or not."
+    },
+    {
+      "start": 582.74,
+      "end": 584.74,
+      "text": "This we will implement the data structure."
+    },
+    {
+      "start": 584.74,
+      "end": 589.74,
+      "text": "And if they belong to the, if they do not belong to the same data structure, we will"
+    },
+    {
+      "start": 589.74,
+      "end": 590.74,
+      "text": "take the weight and add it."
+    },
+    {
+      "start": 590.74,
+      "end": 595.74,
+      "text": "If they would have asked us to store MST, we can, we know the edges between U and V."
+    },
+    {
+      "start": 595.74,
+      "end": 597.74,
+      "text": "You can also store the MST."
+    },
+    {
+      "start": 597.74,
+      "end": 599.74,
+      "text": "But over here, they just need the MST weight."
+    },
+    {
+      "start": 599.74,
+      "end": 601.74,
+      "text": "So I'll go ahead and return the MST weight."
+    },
+    {
+      "start": 601.74,
+      "end": 606.74,
+      "text": "But now how do you figure out if they are belonging to the same component or not?"
+    },
+    {
+      "start": 606.74,
+      "end": 610.74,
+      "text": "If you remember, we have already discussed something like disjoint set data structure,"
+    },
+    {
+      "start": 610.74,
+      "end": 611.74,
+      "text": "and this was the snippet."
+    },
+    {
+      "start": 611.74,
+      "end": 615.74,
+      "text": "Of course, this copy paste and I'll go to the solution."
+    },
+    {
+      "start": 615.74,
+      "end": 616.74,
+      "text": "Yes."
+    },
+    {
+      "start": 616.74,
+      "end": 618.74,
+      "text": "And I'll paste this class."
+    },
+    {
+      "start": 618.74,
+      "end": 621.74,
+      "text": "So I have this disjoint set data structure already ready with us."
+    },
+    {
+      "start": 621.74,
+      "end": 628.74,
+      "text": "So I'll go ahead and declare disjoint set DS with V vertices."
+    },
+    {
+      "start": 628.74,
+      "end": 629.74,
+      "text": "Done."
+    },
+    {
+      "start": 629.74,
+      "end": 630.74,
+      "text": "I'll say DS."
+    },
+    {
+      "start": 630.74,
+      "end": 631.74,
+      "text": "Can you find the ultimate parent?"
+    },
+    {
+      "start": 631.74,
+      "end": 632.74,
+      "text": "Because this is the function."
+    },
+    {
+      "start": 632.74,
+      "end": 634.74,
+      "text": "If you see find ultimate parent."
+    },
+    {
+      "start": 634.74,
+      "end": 636.74,
+      "text": "So I will be like, okay, cool."
+    },
+    {
+      "start": 636.74,
+      "end": 639.74,
+      "text": "Can you find me the ultimate parent of U?"
+    },
+    {
+      "start": 639.74,
+      "end": 640.74,
+      "text": "If that's not equal to DS dot."
+    },
+    {
+      "start": 640.74,
+      "end": 642.74,
+      "text": "Find ultimate parent of U."
+    },
+    {
+      "start": 642.74,
+      "end": 644.74,
+      "text": "That means they belong to the different component."
+    },
+    {
+      "start": 644.74,
+      "end": 647.74,
+      "text": "So I'll go ahead and take it to the MST."
+    },
+    {
+      "start": 647.74,
+      "end": 653.74,
+      "text": "At the same time, I'll say you can use union by rank or union by size, whichever you wish to."
+    },
+    {
+      "start": 653.74,
+      "end": 657.74,
+      "text": "You can go ahead and say union by size and you'll go U comma V."
+    },
+    {
+      "start": 657.74,
+      "end": 658.74,
+      "text": "That's it."
+    },
+    {
+      "start": 658.74,
+      "end": 659.74,
+      "text": "You make it a union."
+    },
+    {
+      "start": 659.74,
+      "end": 660.74,
+      "text": "Simple as that."
+    },
+    {
+      "start": 660.74,
+      "end": 663.74,
+      "text": "Now I'll go ahead and compile and see if it is running fine."
+    },
+    {
+      "start": 663.74,
+      "end": 664.74,
+      "text": "Indeed it is."
+    },
+    {
+      "start": 664.74,
+      "end": 668.74,
+      "text": "Now let's quickly submit this and see if it is giving us correct answers or not."
+    },
+    {
+      "start": 668.74,
+      "end": 672.43,
+      "text": "It is indeed running for all the tests."
+    },
+    {
+      "start": 672.43,
+      "end": 673.43,
+      "text": "Yes, it is."
+    },
+    {
+      "start": 673.43,
+      "end": 675.43,
+      "text": "So now we've understood most of the algorithm."
+    },
+    {
+      "start": 675.43,
+      "end": 676.43,
+      "text": "What about the time complexity?"
+    },
+    {
+      "start": 676.43,
+      "end": 678.43,
+      "text": "First, you're figuring out all the edges."
+    },
+    {
+      "start": 678.43,
+      "end": 683.43,
+      "text": "So this is definitely going to take a big O of N plus the number of edges because you're going across."
+    },
+    {
+      "start": 683.43,
+      "end": 684.43,
+      "text": "Right."
+    },
+    {
+      "start": 684.43,
+      "end": 685.43,
+      "text": "Then you are sorting it."
+    },
+    {
+      "start": 685.43,
+      "end": 688.43,
+      "text": "Imagine you have M edges, M logarithmic of N, M to sort it."
+    },
+    {
+      "start": 688.43,
+      "end": 695.43,
+      "text": "And then you're moving across all the edges and you're using a disjoint cell data structure, which we know is four cross alpha."
+    },
+    {
+      "start": 695.43,
+      "end": 697.43,
+      "text": "So you're going to use this disjoint cell data structure."
+    },
+    {
+      "start": 697.43,
+      "end": 699.43,
+      "text": "And then you're going to use this disjoint cell data structure."
+    },
+    {
+      "start": 699.43,
+      "end": 700.43,
+      "text": "And then you're going to use this disjoint cell data structure."
+    },
+    {
+      "start": 700.43,
+      "end": 701.43,
+      "text": "Which we know is four cross alpha."
+    },
+    {
+      "start": 701.43,
+      "end": 705.43,
+      "text": "So we can write it as M cross four cross alpha."
+    },
+    {
+      "start": 705.43,
+      "end": 708.43,
+      "text": "And what external space am I using?"
+    },
+    {
+      "start": 708.43,
+      "end": 713.43,
+      "text": "This disjoint cell data structure will be using a parent and a size."
+    },
+    {
+      "start": 713.43,
+      "end": 716.43,
+      "text": "You can omit the rank because we're not using union by rank."
+    },
+    {
+      "start": 716.43,
+      "end": 718.43,
+      "text": "But yeah, we're using a parent and a size."
+    },
+    {
+      "start": 718.43,
+      "end": 720.43,
+      "text": "That is the extra space."
+    },
+    {
+      "start": 720.43,
+      "end": 723.43,
+      "text": "And we are using an extra space to store edges as well."
+    },
+    {
+      "start": 723.43,
+      "end": 725.43,
+      "text": "So we go off M over here."
+    },
+    {
+      "start": 725.43,
+      "end": 729.43,
+      "text": "So this is the time and the space complexity."
+    },
+    {
+      "start": 729.43,
+      "end": 731.43,
+      "text": "I am using, if you carefully see, like, M."
+    },
+    {
+      "start": 731.43,
+      "end": 733.43,
+      "text": "Four alpha is used twice."
+    },
+    {
+      "start": 733.43,
+      "end": 739.43,
+      "text": "So probably another twice you can add because this will be executed very limited number of times."
+    },
+    {
+      "start": 739.43,
+      "end": 746.43,
+      "text": "Like very, very rare case where the find new parent and union by size will always be executed."
+    },
+    {
+      "start": 746.43,
+      "end": 749.43,
+      "text": "So yeah, for safety, you can just add a cross two because it's twice."
+    },
+    {
+      "start": 749.43,
+      "end": 755.43,
+      "text": "So this is what the time complexity and the space complexity of Driscoll's algorithm is."
+    },
+    {
+      "start": 755.43,
+      "end": 759.43,
+      "text": "So guys, before wrapping up this video, I would like to request you something."
+    },
+    {
+      "start": 759.43,
+      "end": 760.43,
+      "text": "I was checking out our statistics."
+    },
+    {
+      "start": 761.43,
+      "end": 765.43,
+      "text": "Nearly 50% of the users who watch our video do not subscribe to us."
+    },
+    {
+      "start": 765.43,
+      "end": 768.43,
+      "text": "So it's an earnest request that please hit that subscribe button."
+    },
+    {
+      "start": 768.43,
+      "end": 772.43,
+      "text": "And if you understood the algorithm, the code and everything, do it that like button."
+    },
+    {
+      "start": 772.43,
+      "end": 776.43,
+      "text": "And if you haven't checked out our DPCS and the SD sheet, the links will be in the description."
+    },
+    {
+      "start": 776.43,
+      "end": 777.43,
+      "text": "Please make sure you check them out."
+    },
+    {
+      "start": 777.43,
+      "end": 778.43,
+      "text": "With this, I'll be wrapping up this video."
+    },
+    {
+      "start": 778.43,
+      "end": 779.43,
+      "text": "Let's put in some other video."
+    },
+    {
+      "start": 779.43,
+      "end": 780.43,
+      "text": "Till then, bye bye."
+    },
+    {
+      "start": 780.43,
+      "end": 781.43,
+      "text": "Take care."
+    }
+  ]
+}

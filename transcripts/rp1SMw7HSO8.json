@@ -1,0 +1,1469 @@
+{
+  "video_id": "rp1SMw7HSO8",
+  "title": "G-35. Print Shortest Path - Dijkstra's Algorithm",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1159.36,
+  "segments": [
+    {
+      "start": 2.83,
+      "end": 5.91,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.25,
+      "end": 10.77,
+      "text": "So in this video, we're going to solve shortest path in weighted undirected graph."
+    },
+    {
+      "start": 11.11,
+      "end": 14.87,
+      "text": "So what does the problem state? You're given a weighted undirected graph having"
+    },
+    {
+      "start": 14.87,
+      "end": 18.91,
+      "text": "n vertices and m edges, describing that there are"
+    },
+    {
+      "start": 18.91,
+      "end": 23.09,
+      "text": "edges between a to b with some weight. Find the shortest path"
+    },
+    {
+      "start": 23.09,
+      "end": 26.85,
+      "text": "between the vertex 1 and the vertex 2 and if the path"
+    },
+    {
+      "start": 26.85,
+      "end": 31.09,
+      "text": "does not exist, then return a list consisting of only minus 1."
+    },
+    {
+      "start": 31.09,
+      "end": 35.27,
+      "text": "So if you see this particular graph, it states that the shortest path"
+    },
+    {
+      "start": 35.27,
+      "end": 38.95,
+      "text": "is 1, 4, 3, 5. So"
+    },
+    {
+      "start": 38.95,
+      "end": 43.17,
+      "text": "let's understand the question. So till now, you"
+    },
+    {
+      "start": 43.17,
+      "end": 47.13,
+      "text": "know how to find the shortest path and if you do not know, I'll highly recommend you"
+    },
+    {
+      "start": 47.13,
+      "end": 50.91,
+      "text": "to go back and watch my videos on Dijkstra's algorithm."
+    },
+    {
+      "start": 51.23,
+      "end": 55.09,
+      "text": "I've already made 3 videos on them. So go back and watch them so that"
+    },
+    {
+      "start": 55.09,
+      "end": 59.25,
+      "text": "you have clarity about what Dijkstra's algorithm is and how to find the shortest"
+    },
+    {
+      "start": 59.25,
+      "end": 60.77,
+      "text": "path in any given."
+    },
+    {
+      "start": 61.09,
+      "end": 65.09,
+      "text": "After that, you can come back to this video in order to understand how to"
+    },
+    {
+      "start": 65.09,
+      "end": 69.01,
+      "text": "print the shortest path. So the question is nothing but you have to"
+    },
+    {
+      "start": 69.01,
+      "end": 72.79,
+      "text": "print the shortest path this time. You do not need to find the"
+    },
+    {
+      "start": 72.79,
+      "end": 77.17,
+      "text": "value of the path. Instead of that, you have to print the path. That is the difference"
+    },
+    {
+      "start": 77.17,
+      "end": 80.83,
+      "text": "between this problem and all the other previous problems. So"
+    },
+    {
+      "start": 80.83,
+      "end": 84.45,
+      "text": "they have clearly stated that the source is given as"
+    },
+    {
+      "start": 84.45,
+      "end": 88.97,
+      "text": "1. Yes. And they have clearly stated that the source is"
+    },
+    {
+      "start": 88.97,
+      "end": 90.97,
+      "text": "always 1 and the destination."
+    },
+    {
+      "start": 91.09,
+      "end": 95.09,
+      "text": "Is always n. That is 5 in this case. And it seems"
+    },
+    {
+      "start": 95.09,
+      "end": 99.09,
+      "text": "to be a 1 indexed graph. So if I"
+    },
+    {
+      "start": 99.09,
+      "end": 103.09,
+      "text": "talk about 1 to 5, I can have multiple paths. One of the"
+    },
+    {
+      "start": 103.09,
+      "end": 107.09,
+      "text": "paths is this, which gives me 2 plus 5, a value of"
+    },
+    {
+      "start": 107.09,
+      "end": 111.21,
+      "text": "7, right? One of the paths is this, this, this, which"
+    },
+    {
+      "start": 111.21,
+      "end": 115.21,
+      "text": "gives me a value of 2 plus 4 plus 1 again 7. I can say the other path"
+    },
+    {
+      "start": 115.21,
+      "end": 119.37,
+      "text": "is I go to 4, I go to 3, I go to this. That's 1"
+    },
+    {
+      "start": 119.53,
+      "end": 121.09,
+      "text": "plus 3 plus 1."
+    },
+    {
+      "start": 121.09,
+      "end": 125.09,
+      "text": "Which is nothing but I think 5. This is the shortest path that you can get."
+    },
+    {
+      "start": 125.09,
+      "end": 129.09,
+      "text": "Thereby I can say the shortest path is go from 1 to 4,"
+    },
+    {
+      "start": 129.09,
+      "end": 133.09,
+      "text": "then to 3 and then to 5. So what you need to return is,"
+    },
+    {
+      "start": 133.09,
+      "end": 137.09,
+      "text": "you have to return this in a list. And if there is no path,"
+    },
+    {
+      "start": 137.09,
+      "end": 141.09,
+      "text": "that means you cannot reach. In that case, you will return a list which contains"
+    },
+    {
+      "start": 141.09,
+      "end": 145.09,
+      "text": "only minus 1. That is the problem that you have to solve."
+    },
+    {
+      "start": 145.09,
+      "end": 149.09,
+      "text": "Okay. So how do you solve this problem? Now you know definitely something as"
+    },
+    {
+      "start": 149.09,
+      "end": 153.09,
+      "text": "Dijkstra does exist, which helps me to find"
+    },
+    {
+      "start": 153.09,
+      "end": 157.09,
+      "text": "the shortest path. Dijkstra will tell me that the shortest path's value"
+    },
+    {
+      "start": 157.09,
+      "end": 161.09,
+      "text": "is 5. But I do not need the value. I need the path."
+    },
+    {
+      "start": 161.09,
+      "end": 165.09,
+      "text": "So what I'll do is, I'll do a slight modification to Dijkstra."
+    },
+    {
+      "start": 165.09,
+      "end": 169.09,
+      "text": "I'll probably use something like a caching or"
+    },
+    {
+      "start": 169.09,
+      "end": 173.09,
+      "text": "a memo-iation, which you generally"
+    },
+    {
+      "start": 173.09,
+      "end": 177.09,
+      "text": "do in dynamic programming. How? We will see that. But I'll try to"
+    },
+    {
+      "start": 177.09,
+      "end": 181.09,
+      "text": "remember where am I coming from. Remember this point. I'll try to remember"
+    },
+    {
+      "start": 181.09,
+      "end": 185.09,
+      "text": "where am I coming from."
+    },
+    {
+      "start": 185.09,
+      "end": 189.09,
+      "text": "If I can do this, I think I'll be able to solve"
+    },
+    {
+      "start": 189.09,
+      "end": 193.09,
+      "text": "this problem. So you can take this as a hint, where I'm coming"
+    },
+    {
+      "start": 193.09,
+      "end": 197.09,
+      "text": "from and then you can backtrack the path. So take this as a hint, pause the video,"
+    },
+    {
+      "start": 197.09,
+      "end": 201.09,
+      "text": "think of a solution. And if you cannot, then you can watch the video. Okay."
+    },
+    {
+      "start": 201.09,
+      "end": 205.09,
+      "text": "So think, sorry, remember where I'm coming from."
+    },
+    {
+      "start": 205.09,
+      "end": 209.09,
+      "text": "So what I'll do is, I will take initially a priority queue and a distance"
+    },
+    {
+      "start": 209.09,
+      "end": 213.09,
+      "text": "array and a memo-iation array. So let's see the initial configuration."
+    },
+    {
+      "start": 213.09,
+      "end": 217.09,
+      "text": "So the initial configuration will look something like this, where we have a priority"
+    },
+    {
+      "start": 217.09,
+      "end": 221.09,
+      "text": "queue. Okay. We have a distance array with everything marked as infinite."
+    },
+    {
+      "start": 221.09,
+      "end": 225.09,
+      "text": "And we will have a caching array or a memo-iation"
+    },
+    {
+      "start": 225.09,
+      "end": 229.09,
+      "text": "array, which will be called as parent. That means where am I"
+    },
+    {
+      "start": 229.09,
+      "end": 233.09,
+      "text": "coming from. I'll always remember that. Okay. We will see the implementation."
+    },
+    {
+      "start": 233.09,
+      "end": 235.09,
+      "text": "But you'll just assign it to the parent."
+    },
+    {
+      "start": 235.09,
+      "end": 239.09,
+      "text": "To the index value. Whatever is the index value, just go and"
+    },
+    {
+      "start": 239.09,
+      "end": 243.09,
+      "text": "assign that. Okay. Done. Now, whatever is your source node, which we"
+    },
+    {
+      "start": 243.09,
+      "end": 247.09,
+      "text": "know in this case is always 1 and the destination"
+    },
+    {
+      "start": 247.09,
+      "end": 251.09,
+      "text": "is always n. Whichever is your source node, take it"
+    },
+    {
+      "start": 251.09,
+      "end": 255.09,
+      "text": "and put it into the priority queue. So basically the distance is 0"
+    },
+    {
+      "start": 255.09,
+      "end": 259.09,
+      "text": "and the source node is 1. Go over there and mark it as 0."
+    },
+    {
+      "start": 259.09,
+      "end": 263.09,
+      "text": "So when you start from 1, are you coming from somewhere? That's my simple"
+    },
+    {
+      "start": 263.09,
+      "end": 267.09,
+      "text": "question to you. Are you actually coming from somewhere? The answer to that is no because"
+    },
+    {
+      "start": 267.09,
+      "end": 271.09,
+      "text": "I'm starting from 1. That is my starting point. So thereby I will say"
+    },
+    {
+      "start": 271.09,
+      "end": 275.09,
+      "text": "1. We'll say 1 is the starting point. Okay. Next."
+    },
+    {
+      "start": 275.09,
+      "end": 279.09,
+      "text": "Let's iterate in the priority queue. So I know I'm taking a distance"
+    },
+    {
+      "start": 279.09,
+      "end": 283.09,
+      "text": "of 0 in order to reach the node 1. Okay. So"
+    },
+    {
+      "start": 283.09,
+      "end": 287.09,
+      "text": "from 1, where can you go? You can go to 2 and you can go to 4. Correct?"
+    },
+    {
+      "start": 287.09,
+      "end": 291.09,
+      "text": "You can again figure this out from the adjacency list. So"
+    },
+    {
+      "start": 291.09,
+      "end": 295.09,
+      "text": "if you decide to go to 2, you'll be requiring a distance of 2 which"
+    },
+    {
+      "start": 295.09,
+      "end": 299.09,
+      "text": "will make it a total distance of 2 which is actually better than"
+    },
+    {
+      "start": 299.09,
+      "end": 303.09,
+      "text": "the infinite. So I can say I took a distance of 2 in order"
+    },
+    {
+      "start": 303.09,
+      "end": 307.09,
+      "text": "to reach the node 2. Right? Now here comes the point. So"
+    },
+    {
+      "start": 307.09,
+      "end": 311.09,
+      "text": "in order to come to 2, where did you come in from? You came in from"
+    },
+    {
+      "start": 311.09,
+      "end": 315.09,
+      "text": "1. Go and store it. So I'm saying I came in from 1."
+    },
+    {
+      "start": 315.09,
+      "end": 319.09,
+      "text": "2 came in from 1. Perfect. Next, I can also"
+    },
+    {
+      "start": 319.09,
+      "end": 323.09,
+      "text": "go to 4. And if I go to 4, I'll take a distance of 4 which will make me"
+    },
+    {
+      "start": 323.09,
+      "end": 327.09,
+      "text": "like which will make it a total distance of 1. So what I can say is in order"
+    },
+    {
+      "start": 327.09,
+      "end": 331.09,
+      "text": "to reach 4, I can have a better distance 1. So 1, 4"
+    },
+    {
+      "start": 331.09,
+      "end": 335.09,
+      "text": "is what I'll put into the priority queue. Remember this priority queue is nothing"
+    },
+    {
+      "start": 335.09,
+      "end": 339.09,
+      "text": "but a minimum heap data structure which stores the minimum at the"
+    },
+    {
+      "start": 339.09,
+      "end": 343.09,
+      "text": "top. So where does the 4 come in from? Can I say it came in from"
+    },
+    {
+      "start": 343.09,
+      "end": 347.09,
+      "text": "1? Again, makes sense because 4 came in from 1. So I'll remember where does the 4"
+    },
+    {
+      "start": 347.09,
+      "end": 351.09,
+      "text": "came in from? So I'll just store at the index 4 that it comes"
+    },
+    {
+      "start": 351.09,
+      "end": 355.09,
+      "text": "from 1. The previous node of 4 is 1. That is"
+    },
+    {
+      "start": 355.09,
+      "end": 359.09,
+      "text": "what I'll remember. Got it? Once I've done it, I can say the entire iteration"
+    },
+    {
+      "start": 359.09,
+      "end": 363.09,
+      "text": "for this guy is done and thereby I'll go and pick up the next"
+    },
+    {
+      "start": 363.09,
+      "end": 367.09,
+      "text": "element. So can I say I have 2 elements in the priority queue. Which one will you"
+    },
+    {
+      "start": 367.09,
+      "end": 371.09,
+      "text": "get? You'll always take the shortest one because that is what the concept of"
+    },
+    {
+      "start": 371.09,
+      "end": 375.09,
+      "text": "minimum heap is. You'll get 1 and the node is"
+    },
+    {
+      "start": 375.09,
+      "end": 379.09,
+      "text": "4. Correct? Now where can you go from 4? Can I say I can go to"
+    },
+    {
+      "start": 379.09,
+      "end": 383.09,
+      "text": "1? But if I try to go to 1, that'll yield me another"
+    },
+    {
+      "start": 383.09,
+      "end": 387.09,
+      "text": "1 which'll make me a total distance of 2 and that's not"
+    },
+    {
+      "start": 387.09,
+      "end": 391.09,
+      "text": "considerable because I have a distance of 0. So I will not go there."
+    },
+    {
+      "start": 391.09,
+      "end": 395.09,
+      "text": "Can I go to 3? Yes, I can go to 3. So I'll try to go to 3 and that'll"
+    },
+    {
+      "start": 395.09,
+      "end": 399.09,
+      "text": "take me a distance of 3 which'll make, remember this,"
+    },
+    {
+      "start": 399.09,
+      "end": 403.09,
+      "text": "which will make a total distance of 4. Correct?"
+    },
+    {
+      "start": 403.09,
+      "end": 407.09,
+      "text": "And if it makes a total distance of 4, what he'll say is, okay,"
+    },
+    {
+      "start": 407.09,
+      "end": 411.09,
+      "text": "I got a total distance of 4. Shall I stop"
+    },
+    {
+      "start": 411.09,
+      "end": 415.09,
+      "text": "right now? The answer to that is no."
+    },
+    {
+      "start": 415.09,
+      "end": 419.09,
+      "text": "So I'm taking a total distance of 4. So this is better than infinite. So I take"
+    },
+    {
+      "start": 419.09,
+      "end": 423.09,
+      "text": "distance 4, the node 3 and put it into the priority queue. So"
+    },
+    {
+      "start": 423.09,
+      "end": 427.09,
+      "text": "where does 3 arrive from? It arrives from 4."
+    },
+    {
+      "start": 427.09,
+      "end": 431.09,
+      "text": "It arrives from 4. So go to 3 and say you're arriving from"
+    },
+    {
+      "start": 431.09,
+      "end": 435.09,
+      "text": "4 and store it over there. Perfect. So I can say the iteration over here is"
+    },
+    {
+      "start": 435.09,
+      "end": 439.09,
+      "text": "also done. Now, we have 4, 3 and 2, 2. If you"
+    },
+    {
+      "start": 439.09,
+      "end": 443.09,
+      "text": "do a pq.top, which one will be at the top? 2, 2. So I now"
+    },
+    {
+      "start": 443.09,
+      "end": 447.09,
+      "text": "am taking a distance of 2 in order to reach the node 2. From 2, where can you"
+    },
+    {
+      "start": 447.09,
+      "end": 451.09,
+      "text": "go? You can go to 1. So if you go to 1, that'll be taking a distance of"
+    },
+    {
+      "start": 451.09,
+      "end": 455.09,
+      "text": "2 and will make a total distance of 4 which'll not be considered because"
+    },
+    {
+      "start": 455.09,
+      "end": 459.09,
+      "text": "it has a 0. Right? I can go to 3 now. So let's take 3."
+    },
+    {
+      "start": 459.09,
+      "end": 463.09,
+      "text": "So if I try to go to 3, I'll take a distance of 4 which will make a total distance of"
+    },
+    {
+      "start": 463.09,
+      "end": 467.09,
+      "text": "6 which is not to be considered because 3 can be reachable in a distance of 4."
+    },
+    {
+      "start": 467.09,
+      "end": 471.09,
+      "text": "Can I go to 5? I can go to 5 if you see."
+    },
+    {
+      "start": 471.09,
+      "end": 475.09,
+      "text": "You can always go to 5 by taking a distance of 5. The total distance"
+    },
+    {
+      "start": 475.09,
+      "end": 479.09,
+      "text": "will be 7. So you'll say 5. Your distance is 7 and"
+    },
+    {
+      "start": 479.09,
+      "end": 483.09,
+      "text": "7, 5 is what you'll insert into the priority queue and you'll"
+    },
+    {
+      "start": 483.09,
+      "end": 487.09,
+      "text": "say 5. Remember you came in from 2. 5, remember you came in from"
+    },
+    {
+      "start": 487.09,
+      "end": 489.09,
+      "text": "2 and you assign that to the parent."
+    },
+    {
+      "start": 489.09,
+      "end": 493.09,
+      "text": "Right? And once you've done this, you'll simply go and omit this"
+    },
+    {
+      "start": 493.09,
+      "end": 497.09,
+      "text": "off. Right? Next, you'll get the next smallest."
+    },
+    {
+      "start": 497.09,
+      "end": 501.09,
+      "text": "So 2, 2 is done. Next is 4, 3. So I'm like, okay, 4,"
+    },
+    {
+      "start": 501.09,
+      "end": 505.09,
+      "text": "3. From 3, where can you go? 3 can actually go to 4."
+    },
+    {
+      "start": 505.09,
+      "end": 509.09,
+      "text": "If it decides to go to 4, it will take 3, make a distance"
+    },
+    {
+      "start": 509.09,
+      "end": 513.09,
+      "text": "of 7 which will not be considered because 4 can be reachable"
+    },
+    {
+      "start": 513.09,
+      "end": 517.09,
+      "text": "at a distance of 1. Not considered. 3 can also go to 2."
+    },
+    {
+      "start": 517.09,
+      "end": 521.09,
+      "text": "So if 3 decides to go to 2, it will take a distance of 4,"
+    },
+    {
+      "start": 521.09,
+      "end": 525.09,
+      "text": "make a total distance of 8 which will not be considered because I have a distance"
+    },
+    {
+      "start": 525.09,
+      "end": 529.09,
+      "text": "of 2. But 3 can actually go to 5 and it will take a distance"
+    },
+    {
+      "start": 529.09,
+      "end": 533.09,
+      "text": "of 1, make a total distance of 5 which will be considered"
+    },
+    {
+      "start": 533.09,
+      "end": 537.09,
+      "text": "because 5 was previously reachable with"
+    },
+    {
+      "start": 537.09,
+      "end": 541.09,
+      "text": "a distance of 7. So I'll say 5. You're now reachable with a distance of 5."
+    },
+    {
+      "start": 541.09,
+      "end": 545.09,
+      "text": "So 5, 5 is what will go into the priority queue."
+    },
+    {
+      "start": 545.09,
+      "end": 547.09,
+      "text": "Now you will say 5."
+    },
+    {
+      "start": 547.09,
+      "end": 551.09,
+      "text": "You have a new, yes you have a new parent and the new parent is 3"
+    },
+    {
+      "start": 551.09,
+      "end": 555.09,
+      "text": "because now when you come in from 3, you're taking a better distance. So why don't you"
+    },
+    {
+      "start": 555.09,
+      "end": 559.09,
+      "text": "store 3? So he stores 3. So what I can say is, this is done."
+    },
+    {
+      "start": 559.09,
+      "end": 563.09,
+      "text": "Next you go to the priority queue and say which is the next guy? And you"
+    },
+    {
+      "start": 563.09,
+      "end": 567.09,
+      "text": "tend to get, this is the next guy. From 5, where can you go?"
+    },
+    {
+      "start": 567.09,
+      "end": 571.09,
+      "text": "You can go to 2 which will take you a distance of 5, total distance"
+    },
+    {
+      "start": 571.09,
+      "end": 575.09,
+      "text": "of 10, not to be considered. From 5 you can go to 3."
+    },
+    {
+      "start": 575.09,
+      "end": 579.09,
+      "text": "Again takes a distance of 1, total distance of 6,"
+    },
+    {
+      "start": 579.09,
+      "end": 583.09,
+      "text": "not to be considered because can be reachable at 4. So I can say 5,"
+    },
+    {
+      "start": 583.09,
+      "end": 587.09,
+      "text": "5 will yield me nothing. So 5, 5 is done. Next"
+    },
+    {
+      "start": 587.09,
+      "end": 591.09,
+      "text": "will be 7, 5. If you again try 7, 5 it will also yield you"
+    },
+    {
+      "start": 591.09,
+      "end": 595.09,
+      "text": "nothing. So as of now, I can say the priority queue turns"
+    },
+    {
+      "start": 595.09,
+      "end": 599.09,
+      "text": "out to be empty. The priority queue turns out"
+    },
+    {
+      "start": 599.09,
+      "end": 603.09,
+      "text": "to be empty. So once the priority queue is empty, you can say okay,"
+    },
+    {
+      "start": 603.09,
+      "end": 607.09,
+      "text": "I have figured out the minimum distance and you can see in order"
+    },
+    {
+      "start": 607.09,
+      "end": 611.09,
+      "text": "to reach your destination because the destination was clearly stated"
+    },
+    {
+      "start": 611.09,
+      "end": 615.09,
+      "text": "as n which is 5 in this case. In your destination"
+    },
+    {
+      "start": 615.09,
+      "end": 619.09,
+      "text": "the value is 5 which is indeed the shortest path or the shortest"
+    },
+    {
+      "start": 619.09,
+      "end": 623.09,
+      "text": "value path that will be 5. Now how do you figure out the"
+    },
+    {
+      "start": 623.09,
+      "end": 627.09,
+      "text": "path? So how do you figure out the path? Very simple. You know what is"
+    },
+    {
+      "start": 627.09,
+      "end": 631.09,
+      "text": "the destination. Start from the destination. The destination says"
+    },
+    {
+      "start": 631.09,
+      "end": 635.09,
+      "text": "I am 5. Now you remember in order"
+    },
+    {
+      "start": 635.09,
+      "end": 639.09,
+      "text": "to reach 5, the shortest thing is 5. But you have stored"
+    },
+    {
+      "start": 639.09,
+      "end": 643.09,
+      "text": "where did 5 arrive from. So you know 5"
+    },
+    {
+      "start": 643.09,
+      "end": 647.09,
+      "text": "arrived from 3 and how will you get this? It's very simple."
+    },
+    {
+      "start": 647.09,
+      "end": 651.09,
+      "text": "If you go and say parent of 5, it will give you"
+    },
+    {
+      "start": 651.09,
+      "end": 655.09,
+      "text": "3 and you will go back to 3. Now you know you are at a 3."
+    },
+    {
+      "start": 655.09,
+      "end": 659.09,
+      "text": "So you say 3, okay to reach 3 I am taking a distance"
+    },
+    {
+      "start": 659.09,
+      "end": 663.09,
+      "text": "of 4. But where did 3 come in from? 4. So I will be"
+    },
+    {
+      "start": 663.09,
+      "end": 667.09,
+      "text": "like okay, if I do a parent of 3, that will"
+    },
+    {
+      "start": 667.09,
+      "end": 671.09,
+      "text": "take me back to 4. If you see 3"
+    },
+    {
+      "start": 671.09,
+      "end": 675.09,
+      "text": "stores 4. So it takes me back to 4. Fine."
+    },
+    {
+      "start": 675.09,
+      "end": 679.09,
+      "text": "So at 4, in order to reach 4, I am taking a distance of 1."
+    },
+    {
+      "start": 679.09,
+      "end": 683.09,
+      "text": "But where did 4 came in from? 4 came in from 1. So I will be like okay, 4"
+    },
+    {
+      "start": 683.09,
+      "end": 687.09,
+      "text": "came in from 1. Perfect. Now if I go to 1, I see"
+    },
+    {
+      "start": 687.09,
+      "end": 691.09,
+      "text": "1 is taking a distance of 0, which I can say is the source node."
+    },
+    {
+      "start": 691.09,
+      "end": 695.09,
+      "text": "I can probably stop over there. Because I know the source node will always be 0."
+    },
+    {
+      "start": 695.09,
+      "end": 699.09,
+      "text": "The other way to check is, if the parent is he himself,"
+    },
+    {
+      "start": 699.09,
+      "end": 703.09,
+      "text": "when I find where did 1 came in from, he says, I came"
+    },
+    {
+      "start": 703.09,
+      "end": 707.09,
+      "text": "in from 1. Which means it's the parent itself. Thereby you"
+    },
+    {
+      "start": 707.09,
+      "end": 711.09,
+      "text": "stop. Thereby you stop. And in order to write this,"
+    },
+    {
+      "start": 711.09,
+      "end": 715.09,
+      "text": "it's pretty straight forward. What you just need to do is"
+    },
+    {
+      "start": 715.09,
+      "end": 719.09,
+      "text": "probably you can keep the node as, let me"
+    },
+    {
+      "start": 719.09,
+      "end": 723.09,
+      "text": "erase this. It's very simple. You can probably keep the node as 5"
+    },
+    {
+      "start": 723.09,
+      "end": 727.09,
+      "text": "and you can have an array, let's"
+    },
+    {
+      "start": 727.09,
+      "end": 731.09,
+      "text": "say. Let's call it array. And then you can just have a"
+    },
+    {
+      "start": 731.09,
+      "end": 735.09,
+      "text": "while loop which states, hey listen, if the parent of"
+    },
+    {
+      "start": 735.09,
+      "end": 739.09,
+      "text": "node is not the node itself. Is"
+    },
+    {
+      "start": 739.09,
+      "end": 743.09,
+      "text": "not the node itself. That means it's not the source. So you can"
+    },
+    {
+      "start": 743.09,
+      "end": 747.09,
+      "text": "just go ahead and say, array can you please store"
+    },
+    {
+      "start": 747.09,
+      "end": 751.09,
+      "text": "this node. So at first what will happen?"
+    },
+    {
+      "start": 751.09,
+      "end": 755.09,
+      "text": "5 will get stored. Now 5 has to go back to where it came from."
+    },
+    {
+      "start": 755.09,
+      "end": 759.09,
+      "text": "So you say 5, can you go back to where you came"
+    },
+    {
+      "start": 759.09,
+      "end": 763.09,
+      "text": "in from? Which is parent of node. It goes back to parent of node. So at first"
+    },
+    {
+      "start": 763.09,
+      "end": 767.09,
+      "text": "5, this will not be equal. Thereby array"
+    },
+    {
+      "start": 767.09,
+      "end": 771.09,
+      "text": "will be added to 5. So at first array will be added with 5."
+    },
+    {
+      "start": 771.09,
+      "end": 773.09,
+      "text": "Next at this step,"
+    },
+    {
+      "start": 773.09,
+      "end": 777.09,
+      "text": "node will become, 5 has 3. So node becomes 3."
+    },
+    {
+      "start": 777.09,
+      "end": 781.09,
+      "text": "Correct? Again comes to this and doesn't."
+    },
+    {
+      "start": 781.09,
+      "end": 785.09,
+      "text": "So again adds 3. Separately 3 will be added. So in similar"
+    },
+    {
+      "start": 785.09,
+      "end": 789.09,
+      "text": "way, 4 will be added. And then when the node becomes"
+    },
+    {
+      "start": 789.09,
+      "end": 793.09,
+      "text": "1, what will happen is, this case which"
+    },
+    {
+      "start": 793.09,
+      "end": 797.09,
+      "text": "states parent of 1 not equal to 1 is"
+    },
+    {
+      "start": 797.09,
+      "end": 801.09,
+      "text": "unsatisfied because that is the case. And the while loop will end. At the end of"
+    },
+    {
+      "start": 801.09,
+      "end": 803.09,
+      "text": "the day, you have to say"
+    },
+    {
+      "start": 803.09,
+      "end": 807.09,
+      "text": "array.add whatever the source is or whatever the node is"
+    },
+    {
+      "start": 807.09,
+      "end": 811.09,
+      "text": "at the end because the loop does not goes"
+    },
+    {
+      "start": 811.09,
+      "end": 815.09,
+      "text": "in for this guy and does not adds in. So you have to add it"
+    },
+    {
+      "start": 815.09,
+      "end": 819.09,
+      "text": "manually afterwards. So once you add it manually, you will have the"
+    },
+    {
+      "start": 819.09,
+      "end": 823.09,
+      "text": "path but in the reverse order. So you have to reverse the array."
+    },
+    {
+      "start": 823.09,
+      "end": 827.09,
+      "text": "If you reverse the array, that will be your answer because if you reverse the array,"
+    },
+    {
+      "start": 827.09,
+      "end": 831.09,
+      "text": "you will get 1, 4, 3, 5 which was your shortest"
+    },
+    {
+      "start": 831.09,
+      "end": 835.09,
+      "text": "path. It can be multiple shortest paths but this is a way in which you"
+    },
+    {
+      "start": 835.09,
+      "end": 839.09,
+      "text": "can find one of them. And this is definitely one of the shortest paths."
+    },
+    {
+      "start": 839.09,
+      "end": 843.09,
+      "text": "So I hope the explanation is clear. So it's time to code it up now."
+    },
+    {
+      "start": 843.09,
+      "end": 847.09,
+      "text": "So as usual, I will be coding the C++ on the right and you can figure out the exact"
+    },
+    {
+      "start": 847.09,
+      "end": 851.09,
+      "text": "similar Java code on the left. So what are we given? We are given the number of nodes."
+    },
+    {
+      "start": 851.09,
+      "end": 855.09,
+      "text": "Remember, it's a 1 based indexing array because the constraint"
+    },
+    {
+      "start": 855.09,
+      "end": 859.09,
+      "text": "states 1 based. Edges are m and this is the"
+    },
+    {
+      "start": 859.09,
+      "end": 863.09,
+      "text": "number of edges given to you. So just create the graph at first. So the graph"
+    },
+    {
+      "start": 863.09,
+      "end": 867.09,
+      "text": "is very simple. N plus 1. Let's go ahead and create the graph. So"
+    },
+    {
+      "start": 867.09,
+      "end": 871.09,
+      "text": "edges are given like this in a vector. So something I know for"
+    },
+    {
+      "start": 871.09,
+      "end": 875.09,
+      "text": "sure is it's a weighted graph. So this will be paired."
+    },
+    {
+      "start": 875.09,
+      "end": 879.09,
+      "text": "Right? Because it's a weighted graph. So you have to store adjacency list in that way."
+    },
+    {
+      "start": 879.09,
+      "end": 883.09,
+      "text": "So I will be like adjacency of it of 0 because that is"
+    },
+    {
+      "start": 883.09,
+      "end": 887.09,
+      "text": "what the first u is. You can say"
+    },
+    {
+      "start": 887.09,
+      "end": 891.09,
+      "text": "pushback of it of 1 comma it"
+    },
+    {
+      "start": 891.09,
+      "end": 895.09,
+      "text": "of 2. That is how you can easily get the weight and the"
+    },
+    {
+      "start": 895.09,
+      "end": 899.09,
+      "text": "adjacent node. Right? And you have to do the opposite way as well."
+    },
+    {
+      "start": 899.09,
+      "end": 903.09,
+      "text": "It says adjacency of it of 1 dot push"
+    },
+    {
+      "start": 903.09,
+      "end": 907.09,
+      "text": "back of it of something like"
+    },
+    {
+      "start": 907.09,
+      "end": 911.09,
+      "text": "0 comma it of 2. Quite simple."
+    },
+    {
+      "start": 911.09,
+      "end": 915.09,
+      "text": "So I can say my graph is created. Next is to perform the Dijkstra's"
+    },
+    {
+      "start": 915.09,
+      "end": 919.09,
+      "text": "algorithm. So let's declare a priority queue. So I have defined a priority queue"
+    },
+    {
+      "start": 919.09,
+      "end": 923.09,
+      "text": "and this is how the priority queue looks like. Now what is your next step? If you remember"
+    },
+    {
+      "start": 923.09,
+      "end": 927.09,
+      "text": "you always require a distance array. So go ahead and declare a"
+    },
+    {
+      "start": 927.09,
+      "end": 931.09,
+      "text": "distance array but be careful that you declare it of size n plus 1 because"
+    },
+    {
+      "start": 931.09,
+      "end": 935.09,
+      "text": "it is a one based array. And you know the source node is always 1 so you can"
+    },
+    {
+      "start": 935.09,
+      "end": 939.09,
+      "text": "mark it as 0. Next what is the thing? Okay remember"
+    },
+    {
+      "start": 939.09,
+      "end": 943.09,
+      "text": "you also need a parent. So please make sure you declare a parent of the same"
+    },
+    {
+      "start": 943.09,
+      "end": 945.09,
+      "text": "size n plus 1. But"
+    },
+    {
+      "start": 945.09,
+      "end": 949.09,
+      "text": "there is a twist. All the parents, yes all the parents have to be"
+    },
+    {
+      "start": 949.09,
+      "end": 953.09,
+      "text": "marked with themselves. So parent of i has to be i themselves."
+    },
+    {
+      "start": 953.09,
+      "end": 957.09,
+      "text": "Make sure you do this. Once you have done this you can say"
+    },
+    {
+      "start": 957.09,
+      "end": 961.09,
+      "text": "pq dot empty. Correct? And you can just"
+    },
+    {
+      "start": 961.09,
+      "end": 965.09,
+      "text": "go ahead and do the standard stuff"
+    },
+    {
+      "start": 965.09,
+      "end": 969.09,
+      "text": "which is node equal to id dot second"
+    },
+    {
+      "start": 969.09,
+      "end": 973.09,
+      "text": "and you can say this taken till now is id dot first"
+    },
+    {
+      "start": 973.09,
+      "end": 977.09,
+      "text": "and you can say pq dot pop. Then you can go ahead and"
+    },
+    {
+      "start": 977.09,
+      "end": 981.09,
+      "text": "do the very very standard thing of going through. What is the"
+    },
+    {
+      "start": 981.09,
+      "end": 985.09,
+      "text": "adjacent node? That's again very simple. First what is the edge"
+    },
+    {
+      "start": 985.09,
+      "end": 989.09,
+      "text": "weight? Again second. You know what is the check?"
+    },
+    {
+      "start": 989.09,
+      "end": 993.09,
+      "text": "The check is very simple. If the distance taken till now with the"
+    },
+    {
+      "start": 993.09,
+      "end": 997.09,
+      "text": "weight is less than the distance taken to reach the adjacency node"
+    },
+    {
+      "start": 997.09,
+      "end": 1001.09,
+      "text": "you go ahead and say distance of adjacency node equal to this plus"
+    },
+    {
+      "start": 1001.09,
+      "end": 1005.09,
+      "text": "edge weight and you say pq dot push and you"
+    },
+    {
+      "start": 1005.09,
+      "end": 1009.09,
+      "text": "can say distance plus id weight is the new"
+    },
+    {
+      "start": 1009.09,
+      "end": 1013.09,
+      "text": "weight and the adjacent node is the new adjacent node and with this"
+    },
+    {
+      "start": 1013.09,
+      "end": 1017.09,
+      "text": "you say parent of this adjacent node"
+    },
+    {
+      "start": 1017.09,
+      "end": 1021.09,
+      "text": "is no one but the node itself."
+    },
+    {
+      "start": 1021.09,
+      "end": 1025.09,
+      "text": "So quite easy. Once you have done this"
+    },
+    {
+      "start": 1025.09,
+      "end": 1029.09,
+      "text": "you need to store the answer. But remember in case yes in case"
+    },
+    {
+      "start": 1029.09,
+      "end": 1033.09,
+      "text": "you were not able to reach the destination this will always"
+    },
+    {
+      "start": 1033.09,
+      "end": 1037.09,
+      "text": "be my one in nine. So you just return"
+    },
+    {
+      "start": 1037.09,
+      "end": 1041.09,
+      "text": "and list containing minus one. If not then you"
+    },
+    {
+      "start": 1041.09,
+      "end": 1045.09,
+      "text": "go ahead and say this is my path. I'll store the path here"
+    },
+    {
+      "start": 1045.09,
+      "end": 1049.09,
+      "text": "and now let's quickly find the path. I can start in from"
+    },
+    {
+      "start": 1049.09,
+      "end": 1053.09,
+      "text": "n. Remember you have to start from n not from one because"
+    },
+    {
+      "start": 1053.09,
+      "end": 1057.09,
+      "text": "you are storing where did you came in from. Got it? So while"
+    },
+    {
+      "start": 1057.09,
+      "end": 1061.09,
+      "text": "I can say parent of node is not"
+    },
+    {
+      "start": 1061.09,
+      "end": 1065.09,
+      "text": "equal to node. If that's the case I'll say path can you"
+    },
+    {
+      "start": 1065.09,
+      "end": 1069.09,
+      "text": "please go ahead and add this particular node."
+    },
+    {
+      "start": 1069.09,
+      "end": 1073.09,
+      "text": "Perfect and I can say node can you go back to where you came in from. Perfect"
+    },
+    {
+      "start": 1073.09,
+      "end": 1077.09,
+      "text": "at the end of the day can I say path can you please"
+    },
+    {
+      "start": 1077.09,
+      "end": 1081.09,
+      "text": "add on the first guy which is one. Once you have done this can I say path"
+    },
+    {
+      "start": 1081.09,
+      "end": 1085.09,
+      "text": "can you please reverse yourself and you'll be like"
+    },
+    {
+      "start": 1085.09,
+      "end": 1089.09,
+      "text": "why not. So I'll go ahead and reverse myself"
+    },
+    {
+      "start": 1089.09,
+      "end": 1093.09,
+      "text": "and once I've done this I can return the path. Okay this"
+    },
+    {
+      "start": 1093.09,
+      "end": 1097.09,
+      "text": "code works but what is the time complexity of this particular solution."
+    },
+    {
+      "start": 1097.09,
+      "end": 1101.09,
+      "text": "So the time complexity of this particular solution is nothing but e log v"
+    },
+    {
+      "start": 1101.09,
+      "end": 1105.09,
+      "text": "which is similar to Dijkstra's algorithm. So apart"
+    },
+    {
+      "start": 1105.09,
+      "end": 1109.09,
+      "text": "from that we are backtracking the path. So at the worst case what can be the path."
+    },
+    {
+      "start": 1109.09,
+      "end": 1113.09,
+      "text": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 till n."
+    },
+    {
+      "start": 1113.09,
+      "end": 1117.09,
+      "text": "You take a linear path, linear graph. So this at"
+    },
+    {
+      "start": 1117.09,
+      "end": 1121.09,
+      "text": "max might take b co of n. So Dijkstra plus b co"
+    },
+    {
+      "start": 1121.09,
+      "end": 1125.09,
+      "text": "of n which is e log v plus b co of n is the time complexity."
+    },
+    {
+      "start": 1125.09,
+      "end": 1129.09,
+      "text": "By using space you can easily determine the space complexity."
+    },
+    {
+      "start": 1129.09,
+      "end": 1133.09,
+      "text": "So guys I hope I was able to explain you this particular problem and you understood"
+    },
+    {
+      "start": 1133.09,
+      "end": 1137.09,
+      "text": "everything including the code. Just in case you did please please please make sure you like"
+    },
+    {
+      "start": 1137.09,
+      "end": 1141.09,
+      "text": "this video and if you are new to our channel what are you waiting for. Hit that subscribe"
+    },
+    {
+      "start": 1141.09,
+      "end": 1143.09,
+      "text": "button right away and if you haven't checked out our"
+    },
+    {
+      "start": 1143.09,
+      "end": 1147.09,
+      "text": "dp series and the hd sheet the links are in the description. With this I will be wrapping"
+    },
+    {
+      "start": 1147.09,
+      "end": 1152.79,
+      "text": "up this video. Let's speed in some other video till then bye bye take care."
+    }
+  ]
+}

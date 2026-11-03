@@ -1,0 +1,2789 @@
+{
+  "video_id": "9XybHVqTHcQ",
+  "title": "G-38. Cheapest Flights Within K Stops",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1435.52,
+  "segments": [
+    {
+      "start": 2.77,
+      "end": 5.89,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.29,
+      "end": 9.95,
+      "text": "So in this video, we're going to solve cheapest flights within K stops."
+    },
+    {
+      "start": 10.39,
+      "end": 11.69,
+      "text": "Now, what does the problem state?"
+    },
+    {
+      "start": 11.95,
+      "end": 16.41,
+      "text": "There are N cities and M edges connected by some number of flights."
+    },
+    {
+      "start": 16.89,
+      "end": 21.17,
+      "text": "You're given an array of flights where flights, I mean, from to price,"
+    },
+    {
+      "start": 21.45,
+      "end": 27.65,
+      "text": "which means you can fly from the city, from to city to with a cost price of this."
+    },
+    {
+      "start": 28.03,
+      "end": 31.81,
+      "text": "You're also given three integers, source, destination and K."
+    },
+    {
+      "start": 31.81,
+      "end": 37.63,
+      "text": "You have to return the cheapest price from source to destination with at most K stops."
+    },
+    {
+      "start": 37.87,
+      "end": 40.63,
+      "text": "If there is no such route, return minus one."
+    },
+    {
+      "start": 40.89,
+      "end": 43.91,
+      "text": "Now, this is one of my most favorite algorithms. Why?"
+    },
+    {
+      "start": 44.23,
+      "end": 49.71,
+      "text": "Because this is the algorithm which is implemented on a large scale on a number of websites."
+    },
+    {
+      "start": 50.07,
+      "end": 53.51,
+      "text": "OK, so cheapest flight within K stops."
+    },
+    {
+      "start": 54.21,
+      "end": 55.43,
+      "text": "So what does the problem state?"
+    },
+    {
+      "start": 55.95,
+      "end": 59.99,
+      "text": "Imagine this is the flight paths."
+    },
+    {
+      "start": 59.99,
+      "end": 61.51,
+      "text": "I'm saying in order to fly."
+    },
+    {
+      "start": 61.81,
+      "end": 63.79,
+      "text": "Fly from zero to the city one."
+    },
+    {
+      "start": 64.05,
+      "end": 65.17,
+      "text": "The cost is 100."
+    },
+    {
+      "start": 65.29,
+      "end": 69.01,
+      "text": "In order to fly from the city two to city zero, the cost is 100."
+    },
+    {
+      "start": 69.37,
+      "end": 71.35,
+      "text": "One to city two, the cost is 100."
+    },
+    {
+      "start": 71.61,
+      "end": 73.75,
+      "text": "One to city three, the cost is 600."
+    },
+    {
+      "start": 74.05,
+      "end": 76.75,
+      "text": "Two to city three, the cost is 200."
+    },
+    {
+      "start": 76.79,
+      "end": 80.83,
+      "text": "OK, now a customer comes up and says, hey, I want to fly from the city zero."
+    },
+    {
+      "start": 81.21,
+      "end": 84.63,
+      "text": "OK, I don't reach the destination three from here to here."
+    },
+    {
+      "start": 84.93,
+      "end": 87.31,
+      "text": "But I do not want to take a lot of stops."
+    },
+    {
+      "start": 87.45,
+      "end": 90.99,
+      "text": "But at max, yes, at max, I can take one stop."
+    },
+    {
+      "start": 91.19,
+      "end": 91.71,
+      "text": "I can fly."
+    },
+    {
+      "start": 91.71,
+      "end": 94.75,
+      "text": "I can fly directly or at max, I can take one stop."
+    },
+    {
+      "start": 94.95,
+      "end": 97.99,
+      "text": "OK, now are there any direct flights to this?"
+    },
+    {
+      "start": 98.55,
+      "end": 99.05,
+      "text": "I don't see."
+    },
+    {
+      "start": 99.69,
+      "end": 101.99,
+      "text": "Let's see if there are any flights with stop one."
+    },
+    {
+      "start": 102.33,
+      "end": 104.65,
+      "text": "So one and then one."
+    },
+    {
+      "start": 104.97,
+      "end": 110.49,
+      "text": "So if I take this route, I have to stop at the city one and the cost will be 700."
+    },
+    {
+      "start": 110.67,
+      "end": 110.95,
+      "text": "Correct."
+    },
+    {
+      "start": 110.95,
+      "end": 116.49,
+      "text": "Because 100 to fly from zero to city one and 600 to fly from city one to city three."
+    },
+    {
+      "start": 116.73,
+      "end": 117.03,
+      "text": "Correct."
+    },
+    {
+      "start": 117.27,
+      "end": 121.47,
+      "text": "Now the question comes, can we have any other path with one stop?"
+    },
+    {
+      "start": 121.71,
+      "end": 124.05,
+      "text": "And the answer to that is no."
+    },
+    {
+      "start": 124.95,
+      "end": 127.77,
+      "text": "Any path we take will not end up at city three."
+    },
+    {
+      "start": 128.01,
+      "end": 137.07,
+      "text": "So there can be another path, which is from here to here, then to here, which will cost me 100 plus 100, 200 plus 200, which is 400, which is cheapest."
+    },
+    {
+      "start": 137.19,
+      "end": 137.61,
+      "text": "Yes."
+    },
+    {
+      "start": 137.77,
+      "end": 139.21,
+      "text": "But the customer says no."
+    },
+    {
+      "start": 139.59,
+      "end": 141.75,
+      "text": "At max, I can fly one."
+    },
+    {
+      "start": 141.81,
+      "end": 144.15,
+      "text": "Like I can stop at one stop, not more than that."
+    },
+    {
+      "start": 144.55,
+      "end": 148.39,
+      "text": "If I take this path, it ends up stopping at city one and city two."
+    },
+    {
+      "start": 148.57,
+      "end": 150.43,
+      "text": "And the customer does not have that much of time."
+    },
+    {
+      "start": 150.63,
+      "end": 150.99,
+      "text": "Got it."
+    },
+    {
+      "start": 151.71,
+      "end": 155.43,
+      "text": "Now you might be thinking, what is a big deal in it?"
+    },
+    {
+      "start": 155.61,
+      "end": 158.19,
+      "text": "Let's apply a simple extra and that should give our answer."
+    },
+    {
+      "start": 158.53,
+      "end": 162.81,
+      "text": "So what I'll do is I'll take an test case and try to apply a simple extra."
+    },
+    {
+      "start": 163.17,
+      "end": 168.21,
+      "text": "And I will eventually explain you why a simple extra will fail."
+    },
+    {
+      "start": 168.37,
+      "end": 173.91,
+      "text": "But let's take a test case and try to implement a simple extra where we start from a given source node."
+    },
+    {
+      "start": 173.91,
+      "end": 175.49,
+      "text": "We use a priority queue."
+    },
+    {
+      "start": 175.51,
+      "end": 176.61,
+      "text": "We use a distance array."
+    },
+    {
+      "start": 176.85,
+      "end": 181.33,
+      "text": "By the way, if you do not know, next to his algorithm, I've already made a lot of videos on it."
+    },
+    {
+      "start": 181.33,
+      "end": 183.31,
+      "text": "So go back in the series and watch it."
+    },
+    {
+      "start": 183.73,
+      "end": 183.97,
+      "text": "Okay."
+    },
+    {
+      "start": 184.07,
+      "end": 185.35,
+      "text": "And then come back and watch this."
+    },
+    {
+      "start": 185.65,
+      "end": 187.11,
+      "text": "Do not jump in between."
+    },
+    {
+      "start": 187.23,
+      "end": 188.89,
+      "text": "Then you'll be like, I don't understand."
+    },
+    {
+      "start": 189.39,
+      "end": 192.11,
+      "text": "I am assuming you have seen the previous video in the series."
+    },
+    {
+      "start": 192.37,
+      "end": 194.27,
+      "text": "Then only I'm explaining this problem."
+    },
+    {
+      "start": 194.55,
+      "end": 199.13,
+      "text": "Assuming that you already know what I have taught, what I've taught in the previous videos."
+    },
+    {
+      "start": 199.21,
+      "end": 199.45,
+      "text": "Okay."
+    },
+    {
+      "start": 200.39,
+      "end": 200.83,
+      "text": "Okay."
+    },
+    {
+      "start": 200.83,
+      "end": 202.85,
+      "text": "So I'm assuming you know the extras algorithm."
+    },
+    {
+      "start": 202.85,
+      "end": 205.13,
+      "text": "So we will be taking this particular graph."
+    },
+    {
+      "start": 205.71,
+      "end": 206.89,
+      "text": "Source is given as zero."
+    },
+    {
+      "start": 207.45,
+      "end": 209.47,
+      "text": "Distance, sorry, destination is given as two."
+    },
+    {
+      "start": 209.85,
+      "end": 211.05,
+      "text": "And at maximum, you're allowed."
+    },
+    {
+      "start": 211.33,
+      "end": 211.83,
+      "text": "Two stops."
+    },
+    {
+      "start": 212.15,
+      "end": 213.21,
+      "text": "Nothing more than two stops."
+    },
+    {
+      "start": 213.65,
+      "end": 214.49,
+      "text": "Remember one thing."
+    },
+    {
+      "start": 214.81,
+      "end": 218.89,
+      "text": "If you're traveling something like this, these two are considered stops."
+    },
+    {
+      "start": 219.39,
+      "end": 224.09,
+      "text": "The end point or the starting point is not considered as a stop."
+    },
+    {
+      "start": 224.29,
+      "end": 225.31,
+      "text": "Keep that in your mind."
+    },
+    {
+      "start": 225.63,
+      "end": 229.71,
+      "text": "The middle points are the ones which are considered as stops."
+    },
+    {
+      "start": 230.03,
+      "end": 230.23,
+      "text": "Okay."
+    },
+    {
+      "start": 230.35,
+      "end": 231.77,
+      "text": "So we're given the source."
+    },
+    {
+      "start": 231.89,
+      "end": 232.87,
+      "text": "We're given the destination."
+    },
+    {
+      "start": 233.41,
+      "end": 234.63,
+      "text": "And we're given the k equal to two."
+    },
+    {
+      "start": 235.05,
+      "end": 238.01,
+      "text": "So what will be given as the input?"
+    },
+    {
+      "start": 238.29,
+      "end": 239.45,
+      "text": "The input will be something like this."
+    },
+    {
+      "start": 239.73,
+      "end": 241.31,
+      "text": "We're given 0, 1, 5."
+    },
+    {
+      "start": 242.05,
+      "end": 243.29,
+      "text": "And we're given 0, 3, 2."
+    },
+    {
+      "start": 243.29,
+      "end": 247.43,
+      "text": "Basically this edge, this edge will be given all the edges."
+    },
+    {
+      "start": 247.65,
+      "end": 249.01,
+      "text": "The step one is very simple."
+    },
+    {
+      "start": 249.27,
+      "end": 253.45,
+      "text": "I'll say step one is to create the graph from the edges."
+    },
+    {
+      "start": 253.79,
+      "end": 258.61,
+      "text": "And I've already taught you this in a lot of videos in the previous, like in the series."
+    },
+    {
+      "start": 258.61,
+      "end": 259.59,
+      "text": "So please go back and watch it."
+    },
+    {
+      "start": 259.81,
+      "end": 261.25,
+      "text": "So first step is very simple."
+    },
+    {
+      "start": 261.51,
+      "end": 262.87,
+      "text": "Create the graph with the given edges."
+    },
+    {
+      "start": 263.13,
+      "end": 263.85,
+      "text": "What is the next step?"
+    },
+    {
+      "start": 264.13,
+      "end": 267.49,
+      "text": "The next step is whatever is the source, go and mark it as zero."
+    },
+    {
+      "start": 267.61,
+      "end": 269.29,
+      "text": "Yes, go ahead and mark it as zero."
+    },
+    {
+      "start": 269.59,
+      "end": 271.33,
+      "text": "And we will be assigning a priority queue."
+    },
+    {
+      "start": 271.67,
+      "end": 272.83,
+      "text": "Which will be storing something."
+    },
+    {
+      "start": 273.09,
+      "end": 274.11,
+      "text": "That's the generic way."
+    },
+    {
+      "start": 274.43,
+      "end": 278.41,
+      "text": "It will be storing something like a distance, a node and a stops."
+    },
+    {
+      "start": 278.71,
+      "end": 281.41,
+      "text": "And we'll try to apply it and see why will it fail."
+    },
+    {
+      "start": 281.61,
+      "end": 281.95,
+      "text": "Okay."
+    },
+    {
+      "start": 282.13,
+      "end": 287.65,
+      "text": "Very simple because that's the, uh, that's the first intuition that should come to my brain that priority queue."
+    },
+    {
+      "start": 287.95,
+      "end": 290.03,
+      "text": "So I'll be like distance is zero."
+    },
+    {
+      "start": 290.15,
+      "end": 291.25,
+      "text": "The node is zero."
+    },
+    {
+      "start": 291.55,
+      "end": 293.33,
+      "text": "And initially I haven't taken any stops."
+    },
+    {
+      "start": 293.45,
+      "end": 295.27,
+      "text": "So 0, 0, 0, right?"
+    },
+    {
+      "start": 295.51,
+      "end": 298.21,
+      "text": "Now what I'll do is I'll start iterating on the priority queue."
+    },
+    {
+      "start": 298.27,
+      "end": 299.03,
+      "text": "And that's the first thing."
+    },
+    {
+      "start": 299.33,
+      "end": 300.05,
+      "text": "So I'll be like, okay."
+    },
+    {
+      "start": 300.51,
+      "end": 301.13,
+      "text": "Distance."
+    },
+    {
+      "start": 301.13,
+      "end": 301.91,
+      "text": "Till now zero."
+    },
+    {
+      "start": 302.27,
+      "end": 303.31,
+      "text": "Note is zero."
+    },
+    {
+      "start": 303.63,
+      "end": 306.11,
+      "text": "And stop still not taken is zero."
+    },
+    {
+      "start": 306.35,
+      "end": 306.71,
+      "text": "Right?"
+    },
+    {
+      "start": 307.07,
+      "end": 308.77,
+      "text": "Now, can I see from zero?"
+    },
+    {
+      "start": 308.77,
+      "end": 309.43,
+      "text": "Where can I move?"
+    },
+    {
+      "start": 309.83,
+      "end": 312.07,
+      "text": "I can move to one or I can move to three."
+    },
+    {
+      "start": 312.47,
+      "end": 314.47,
+      "text": "These are the two possible places I can move."
+    },
+    {
+      "start": 314.79,
+      "end": 322.23,
+      "text": "So if I decide to move to one, I'll cost plus five, which will make me a total cost of five."
+    },
+    {
+      "start": 322.49,
+      "end": 327.41,
+      "text": "And can I say the stops will be one because this is the stop where I am going to."
+    },
+    {
+      "start": 327.47,
+      "end": 329.79,
+      "text": "So the stops will increase by one."
+    },
+    {
+      "start": 330.09,
+      "end": 330.97,
+      "text": "And the distance will be."
+    },
+    {
+      "start": 330.97,
+      "end": 334.69,
+      "text": "Added by the cost that it takes to fly from zero to one."
+    },
+    {
+      "start": 334.81,
+      "end": 335.41,
+      "text": "Very simple."
+    },
+    {
+      "start": 335.59,
+      "end": 336.91,
+      "text": "Now we look at one."
+    },
+    {
+      "start": 337.27,
+      "end": 341.09,
+      "text": "It is saying that previously I could reach one with infinity."
+    },
+    {
+      "start": 341.29,
+      "end": 344.37,
+      "text": "So I'll go to one and I'll say, can I please update this?"
+    },
+    {
+      "start": 344.49,
+      "end": 347.49,
+      "text": "So let's quickly update this and this will become cost five."
+    },
+    {
+      "start": 347.79,
+      "end": 349.93,
+      "text": "I'm like, okay, five comma."
+    },
+    {
+      "start": 349.99,
+      "end": 351.81,
+      "text": "So let's quickly insert that into the priority queue."
+    },
+    {
+      "start": 352.09,
+      "end": 353.97,
+      "text": "Five comma node one."
+    },
+    {
+      "start": 354.25,
+      "end": 356.23,
+      "text": "Stop one inserted into the priority."
+    },
+    {
+      "start": 356.57,
+      "end": 356.85,
+      "text": "Correct."
+    },
+    {
+      "start": 357.07,
+      "end": 360.09,
+      "text": "Now, what is the next thing I can also go to the node three with a cost of plus two."
+    },
+    {
+      "start": 360.09,
+      "end": 360.19,
+      "text": "Correct."
+    },
+    {
+      "start": 360.19,
+      "end": 360.95,
+      "text": "Now what is the next thing?"
+    },
+    {
+      "start": 361.01,
+      "end": 361.25,
+      "text": "Two."
+    },
+    {
+      "start": 361.49,
+      "end": 366.73,
+      "text": "So the total cost will be something like two now and the stops taken will be one."
+    },
+    {
+      "start": 366.95,
+      "end": 373.25,
+      "text": "So can I say the new costing will be two because in order to reach three, I'm taking two costs."
+    },
+    {
+      "start": 373.43,
+      "end": 375.11,
+      "text": "So two comma three comma one step."
+    },
+    {
+      "start": 375.35,
+      "end": 375.77,
+      "text": "That's it."
+    },
+    {
+      "start": 376.07,
+      "end": 380.33,
+      "text": "Do does zero have any other adjacent cities to fly to?"
+    },
+    {
+      "start": 380.45,
+      "end": 383.27,
+      "text": "No, it just had a couple of adjacent cities to fly to."
+    },
+    {
+      "start": 383.51,
+      "end": 386.03,
+      "text": "You can figure that out from the adjacency list."
+    },
+    {
+      "start": 386.27,
+      "end": 387.69,
+      "text": "Now I'll quickly erase the soft."
+    },
+    {
+      "start": 387.89,
+      "end": 388.73,
+      "text": "Let's erase the soft."
+    },
+    {
+      "start": 388.91,
+      "end": 389.75,
+      "text": "And we erase that off."
+    },
+    {
+      "start": 389.99,
+      "end": 390.95,
+      "text": "Now priority queue will say."
+    },
+    {
+      "start": 391.15,
+      "end": 392.77,
+      "text": "Hey, listen, I'm a minimum heap."
+    },
+    {
+      "start": 392.99,
+      "end": 395.01,
+      "text": "So which one will be at the top?"
+    },
+    {
+      "start": 395.21,
+      "end": 396.53,
+      "text": "This one, because that's the minimum."
+    },
+    {
+      "start": 396.77,
+      "end": 398.75,
+      "text": "I'm saying I'm going to take a cost of two."
+    },
+    {
+      "start": 398.93,
+      "end": 403.19,
+      "text": "So I'm going to take a cost of two to reach the node three with a stop."
+    },
+    {
+      "start": 403.97,
+      "end": 404.57,
+      "text": "One stop."
+    },
+    {
+      "start": 404.67,
+      "end": 404.99,
+      "text": "Okay."
+    },
+    {
+      "start": 405.17,
+      "end": 407.19,
+      "text": "And then I'll erase this from the priority queue."
+    },
+    {
+      "start": 407.27,
+      "end": 408.89,
+      "text": "Let's quickly erase this from the priority queue."
+    },
+    {
+      "start": 409.01,
+      "end": 410.99,
+      "text": "Now three will be like, where can I go?"
+    },
+    {
+      "start": 411.41,
+      "end": 412.91,
+      "text": "Three is like, I can go to one."
+    },
+    {
+      "start": 413.15,
+      "end": 414.23,
+      "text": "Yes, I can go to one."
+    },
+    {
+      "start": 414.47,
+      "end": 417.11,
+      "text": "Three will be like, let's go to one, which is the node one."
+    },
+    {
+      "start": 417.29,
+      "end": 418.55,
+      "text": "And I'll take a plus two."
+    },
+    {
+      "start": 418.79,
+      "end": 420.47,
+      "text": "So the total cost will become four."
+    },
+    {
+      "start": 420.51,
+      "end": 420.89,
+      "text": "Why?"
+    },
+    {
+      "start": 421.23,
+      "end": 422.09,
+      "text": "Till now it was two."
+    },
+    {
+      "start": 422.33,
+      "end": 423.27,
+      "text": "I'm taking plus two."
+    },
+    {
+      "start": 423.35,
+      "end": 424.47,
+      "text": "So the cost will become four."
+    },
+    {
+      "start": 424.75,
+      "end": 426.49,
+      "text": "And can I say, I'll have one more stop."
+    },
+    {
+      "start": 426.55,
+      "end": 427.59,
+      "text": "So the stop will become two."
+    },
+    {
+      "start": 427.95,
+      "end": 429.21,
+      "text": "I'll definitely have one more stop."
+    },
+    {
+      "start": 429.55,
+      "end": 430.45,
+      "text": "The stop will become two."
+    },
+    {
+      "start": 430.79,
+      "end": 439.46,
+      "text": "So apparently as of now, can I say, I have again reached the node one with a cost of two."
+    },
+    {
+      "start": 439.84,
+      "end": 440.84,
+      "text": "Sorry, with a cost of four."
+    },
+    {
+      "start": 440.84,
+      "end": 443.54,
+      "text": "So node one with a cost of four, which stops two."
+    },
+    {
+      "start": 444.02,
+      "end": 445.58,
+      "text": "I'll just put that into the priority queue."
+    },
+    {
+      "start": 445.96,
+      "end": 449.56,
+      "text": "And I'll update the one with saying, I can reach you at a cost of four."
+    },
+    {
+      "start": 449.98,
+      "end": 450.32,
+      "text": "Perfect."
+    },
+    {
+      "start": 450.68,
+      "end": 452.7,
+      "text": "Now what I'll do is, I'll just omit this off."
+    },
+    {
+      "start": 453.2,
+      "end": 454.44,
+      "text": "Let's quickly omit this off."
+    },
+    {
+      "start": 454.7,
+      "end": 455.68,
+      "text": "I've omitted this off."
+    },
+    {
+      "start": 456.0,
+      "end": 457.6,
+      "text": "Now, again, we'll go to the priority queue."
+    },
+    {
+      "start": 457.92,
+      "end": 460.06,
+      "text": "And we will see, four is the minimum this time."
+    },
+    {
+      "start": 460.22,
+      "end": 461.02,
+      "text": "So I'll take out four."
+    },
+    {
+      "start": 461.38,
+      "end": 464.96,
+      "text": "So I'm like, okay, I can take a cost of four in order to reach a node one."
+    },
+    {
+      "start": 465.26,
+      "end": 467.94,
+      "text": "And with a number of stops as two."
+    },
+    {
+      "start": 468.28,
+      "end": 471.5,
+      "text": "Remember, we were only allowed two stops."
+    },
+    {
+      "start": 471.78,
+      "end": 473.82,
+      "text": "We were only allowed two stops."
+    },
+    {
+      "start": 474.08,
+      "end": 475.98,
+      "text": "So after this, it has to be the destination."
+    },
+    {
+      "start": 476.54,
+      "end": 477.7,
+      "text": "We cannot take any other thing."
+    },
+    {
+      "start": 477.94,
+      "end": 478.96,
+      "text": "It has to be the destination."
+    },
+    {
+      "start": 479.12,
+      "end": 479.44,
+      "text": "Got it?"
+    },
+    {
+      "start": 479.64,
+      "end": 481.7,
+      "text": "So what I'll do is, I'll still go ahead."
+    },
+    {
+      "start": 481.7,
+      "end": 482.78,
+      "text": "We can check about the destination."
+    },
+    {
+      "start": 482.84,
+      "end": 483.64,
+      "text": "We can check the destination afterwards."
+    },
+    {
+      "start": 484.14,
+      "end": 487.12,
+      "text": "But we will still go ahead and see, who are your adjacent nodes."
+    },
+    {
+      "start": 487.48,
+      "end": 490.98,
+      "text": "It states, one of my adjacent nodes is four."
+    },
+    {
+      "start": 491.34,
+      "end": 494.2,
+      "text": "And it also states, one of my adjacent nodes is two."
+    },
+    {
+      "start": 494.52,
+      "end": 497.06,
+      "text": "So imagine, it tries to go to the node two."
+    },
+    {
+      "start": 497.38,
+      "end": 498.54,
+      "text": "And takes a cost of five."
+    },
+    {
+      "start": 498.78,
+      "end": 500.86,
+      "text": "Which makes it a total cost of nine."
+    },
+    {
+      "start": 501.16,
+      "end": 502.22,
+      "text": "Which stops us three."
+    },
+    {
+      "start": 502.72,
+      "end": 505.2,
+      "text": "Remember, three stops is still okay."
+    },
+    {
+      "start": 505.3,
+      "end": 506.64,
+      "text": "Because this is the destination."
+    },
+    {
+      "start": 507.02,
+      "end": 507.7,
+      "text": "We can go ahead."
+    },
+    {
+      "start": 507.84,
+      "end": 508.44,
+      "text": "We can proceed."
+    },
+    {
+      "start": 508.82,
+      "end": 508.96,
+      "text": "Okay."
+    },
+    {
+      "start": 508.96,
+      "end": 512.6,
+      "text": "So we see something that stops we have exceeded."
+    },
+    {
+      "start": 512.84,
+      "end": 513.34,
+      "text": "That's fine."
+    },
+    {
+      "start": 513.5,
+      "end": 514.5,
+      "text": "The cost taken is nine."
+    },
+    {
+      "start": 514.8,
+      "end": 516.08,
+      "text": "So I'll be like, fine."
+    },
+    {
+      "start": 516.8,
+      "end": 518.38,
+      "text": "Where did I reach?"
+    },
+    {
+      "start": 518.6,
+      "end": 519.86,
+      "text": "That is the point of question."
+    },
+    {
+      "start": 520.22,
+      "end": 523.08,
+      "text": "I'll be like, I reached node two with a cost of nine."
+    },
+    {
+      "start": 523.36,
+      "end": 527.5,
+      "text": "So cost of nine, node two with stop three is what I'll put into the priority queue."
+    },
+    {
+      "start": 527.72,
+      "end": 528.22,
+      "text": "Correct?"
+    },
+    {
+      "start": 528.34,
+      "end": 529.62,
+      "text": "And where else I can go?"
+    },
+    {
+      "start": 529.84,
+      "end": 530.96,
+      "text": "I can go to the node four."
+    },
+    {
+      "start": 531.16,
+      "end": 531.66,
+      "text": "I can."
+    },
+    {
+      "start": 531.78,
+      "end": 532.68,
+      "text": "And how much it will take?"
+    },
+    {
+      "start": 532.9,
+      "end": 533.4,
+      "text": "Plus one."
+    },
+    {
+      "start": 533.68,
+      "end": 536.84,
+      "text": "So the total cost this time will be five in order to reach four."
+    },
+    {
+      "start": 537.08,
+      "end": 541.64,
+      "text": "So again, I can update this to something like five comma four with a stop three."
+    },
+    {
+      "start": 542.04,
+      "end": 542.82,
+      "text": "Because that is what I'll take."
+    },
+    {
+      "start": 543.04,
+      "end": 545.12,
+      "text": "Now you might be saying this is not the destination."
+    },
+    {
+      "start": 545.56,
+      "end": 547.7,
+      "text": "You're taking a lot of step, a lot of stops."
+    },
+    {
+      "start": 548.06,
+      "end": 548.28,
+      "text": "Okay."
+    },
+    {
+      "start": 548.54,
+      "end": 549.72,
+      "text": "Let's put that into the priority queue."
+    },
+    {
+      "start": 549.98,
+      "end": 550.54,
+      "text": "Do not think."
+    },
+    {
+      "start": 550.96,
+      "end": 551.16,
+      "text": "Perfect."
+    },
+    {
+      "start": 551.92,
+      "end": 552.54,
+      "text": "Allow me to do this."
+    },
+    {
+      "start": 554.08,
+      "end": 555.06,
+      "text": "So this step is done."
+    },
+    {
+      "start": 555.4,
+      "end": 556.02,
+      "text": "What's the next step?"
+    },
+    {
+      "start": 556.32,
+      "end": 557.96,
+      "text": "It'll say who is the minimum in the priority queue."
+    },
+    {
+      "start": 558.24,
+      "end": 560.2,
+      "text": "And the priority queue says I have a five, four, three."
+    },
+    {
+      "start": 560.6,
+      "end": 561.56,
+      "text": "I have a nine, two, three."
+    },
+    {
+      "start": 561.86,
+      "end": 562.84,
+      "text": "And I have a five, one, one."
+    },
+    {
+      "start": 563.16,
+      "end": 564.32,
+      "text": "So five, one, one is the minimum."
+    },
+    {
+      "start": 564.46,
+      "end": 565.1,
+      "text": "So I'll take it out."
+    },
+    {
+      "start": 565.3,
+      "end": 566.46,
+      "text": "Five, one, one is the minimum."
+    },
+    {
+      "start": 566.94,
+      "end": 572.28,
+      "text": "So five, sorry, cost of five in order to reach one."
+    },
+    {
+      "start": 572.28,
+      "end": 572.38,
+      "text": "Okay."
+    },
+    {
+      "start": 572.84,
+      "end": 576.4,
+      "text": "With a stop one, because that's a straight path that it took."
+    },
+    {
+      "start": 576.66,
+      "end": 576.96,
+      "text": "Correct."
+    },
+    {
+      "start": 577.16,
+      "end": 578.66,
+      "text": "Now the point comes."
+    },
+    {
+      "start": 578.9,
+      "end": 579.72,
+      "text": "You're standing at one."
+    },
+    {
+      "start": 579.84,
+      "end": 583.76,
+      "text": "It says two is one of my adjacent and four is one of my adjacent."
+    },
+    {
+      "start": 584.08,
+      "end": 587.28,
+      "text": "So if I try to go to two, the cost taken will be plus five."
+    },
+    {
+      "start": 587.62,
+      "end": 589.76,
+      "text": "And that will be a total cost of 10."
+    },
+    {
+      "start": 590.06,
+      "end": 590.36,
+      "text": "Right."
+    },
+    {
+      "start": 590.62,
+      "end": 594.56,
+      "text": "And if you see at two, you've already reached two at a nine step."
+    },
+    {
+      "start": 594.72,
+      "end": 595.96,
+      "text": "So this will not be considered."
+    },
+    {
+      "start": 596.12,
+      "end": 596.48,
+      "text": "Right."
+    },
+    {
+      "start": 596.72,
+      "end": 597.96,
+      "text": "And over here, there's a four."
+    },
+    {
+      "start": 598.16,
+      "end": 599.0,
+      "text": "Over here, there's a four."
+    },
+    {
+      "start": 599.4,
+      "end": 600.74,
+      "text": "So I can try to go to four."
+    },
+    {
+      "start": 601.16,
+      "end": 602.24,
+      "text": "I can try to go to four."
+    },
+    {
+      "start": 602.24,
+      "end": 606.68,
+      "text": "But the cost then will be one more, which will be a cost of six."
+    },
+    {
+      "start": 607.06,
+      "end": 609.12,
+      "text": "But the stops taken, very, very important."
+    },
+    {
+      "start": 609.42,
+      "end": 610.42,
+      "text": "The stops taken will be two."
+    },
+    {
+      "start": 610.66,
+      "end": 612.22,
+      "text": "Because previously the stop was one."
+    },
+    {
+      "start": 612.48,
+      "end": 613.54,
+      "text": "I'm taking one more stop."
+    },
+    {
+      "start": 613.62,
+      "end": 614.42,
+      "text": "So the stops is two."
+    },
+    {
+      "start": 614.78,
+      "end": 617.58,
+      "text": "But, but, but, you've already reached four."
+    },
+    {
+      "start": 617.82,
+      "end": 623.16,
+      "text": "Yes, you've already reached four at a cost of five, which is this path."
+    },
+    {
+      "start": 623.5,
+      "end": 626.18,
+      "text": "This is taking a larger cost."
+    },
+    {
+      "start": 626.84,
+      "end": 630.04,
+      "text": "So priority queue or the dexterous algorithm will say,"
+    },
+    {
+      "start": 630.04,
+      "end": 631.74,
+      "text": "I will not consider it."
+    },
+    {
+      "start": 631.74,
+      "end": 634.3,
+      "text": "Which is actually wrong, which is actually wrong."
+    },
+    {
+      "start": 634.3,
+      "end": 636.46,
+      "text": "Priority queue will say, I'll not consider it."
+    },
+    {
+      "start": 636.46,
+      "end": 641.1,
+      "text": "Because I already have reached till here at a costing of five."
+    },
+    {
+      "start": 641.1,
+      "end": 645.78,
+      "text": "I understand these are three stops, but in case it was not three stops,"
+    },
+    {
+      "start": 645.78,
+      "end": 647.42,
+      "text": "just imagine that scenario."
+    },
+    {
+      "start": 647.42,
+      "end": 652.26,
+      "text": "Like if K was more than that, it's like, I'll not allow you because I have better,"
+    },
+    {
+      "start": 652.26,
+      "end": 653.66,
+      "text": "but it cannot move ahead."
+    },
+    {
+      "start": 653.66,
+      "end": 658.58,
+      "text": "You need to understand this path, which is storing five at four."
+    },
+    {
+      "start": 658.58,
+      "end": 659.86,
+      "text": "Can this move ahead?"
+    },
+    {
+      "start": 659.86,
+      "end": 661.48,
+      "text": "No, because it already has three stops."
+    },
+    {
+      "start": 661.48,
+      "end": 664.24,
+      "text": "It cannot take the next journey."
+    },
+    {
+      "start": 664.24,
+      "end": 670.72,
+      "text": "It cannot take the next journey because three stops must include the destination as well."
+    },
+    {
+      "start": 670.72,
+      "end": 676.0,
+      "text": "But since I've taken this path, which is costing two plus two plus one, which is five, which is the minimal."
+    },
+    {
+      "start": 676.0,
+      "end": 679.84,
+      "text": "It tends to say, I have a better, I have five."
+    },
+    {
+      "start": 679.84,
+      "end": 681.52,
+      "text": "I take five to reach five."
+    },
+    {
+      "start": 681.52,
+      "end": 682.36,
+      "text": "Sorry, four."
+    },
+    {
+      "start": 682.36,
+      "end": 685.24,
+      "text": "Why will I take this distance, which is costing me six?"
+    },
+    {
+      "start": 685.24,
+      "end": 690.92,
+      "text": "So apparently I will not consider this, which is a wrong, wrong destination."
+    },
+    {
+      "start": 691.48,
+      "end": 693.16,
+      "text": "Which is a wrong direction."
+    },
+    {
+      "start": 693.16,
+      "end": 693.36,
+      "text": "Why?"
+    },
+    {
+      "start": 693.36,
+      "end": 696.48,
+      "text": "Because this direction cannot go here."
+    },
+    {
+      "start": 696.48,
+      "end": 701.96,
+      "text": "This is not possible because stops, you're done with stops, but this is still possible."
+    },
+    {
+      "start": 701.96,
+      "end": 705.28,
+      "text": "Five, one and one, which is seven."
+    },
+    {
+      "start": 705.28,
+      "end": 709.2,
+      "text": "This is still possible because just two stops and that's allowed."
+    },
+    {
+      "start": 709.2,
+      "end": 715.2,
+      "text": "Thereby, if you store everything in terms of distance, you store everything in terms of distance,"
+    },
+    {
+      "start": 715.2,
+      "end": 717.76,
+      "text": "whenever you reach two, that will be wrong."
+    },
+    {
+      "start": 717.76,
+      "end": 721.28,
+      "text": "So what do you have to do is you have to store everything in terms of distance."
+    },
+    {
+      "start": 721.48,
+      "end": 724.76,
+      "text": "You have to store everything in terms of stops."
+    },
+    {
+      "start": 724.76,
+      "end": 727.6,
+      "text": "Yes, you have to store everything in terms of stops."
+    },
+    {
+      "start": 727.6,
+      "end": 730.4,
+      "text": "You'll be like, whenever I reach someone, that's fine."
+    },
+    {
+      "start": 730.4,
+      "end": 737.88,
+      "text": "I will try to maintain this distance array, but this will not be my first priority of judgment."
+    },
+    {
+      "start": 737.88,
+      "end": 741.68,
+      "text": "My first priority of judgment will be stops."
+    },
+    {
+      "start": 741.68,
+      "end": 744.4,
+      "text": "And then I can just keep on comparing all the distances."
+    },
+    {
+      "start": 744.4,
+      "end": 746.4,
+      "text": "I can keep on comparing and store it."
+    },
+    {
+      "start": 746.4,
+      "end": 747.4,
+      "text": "Got it?"
+    },
+    {
+      "start": 747.4,
+      "end": 747.96,
+      "text": "Perfect."
+    },
+    {
+      "start": 747.96,
+      "end": 748.96,
+      "text": "So."
+    },
+    {
+      "start": 748.96,
+      "end": 750.08,
+      "text": "This is where."
+    },
+    {
+      "start": 750.08,
+      "end": 751.28,
+      "text": "We will not implement."
+    },
+    {
+      "start": 751.28,
+      "end": 752.88,
+      "text": "The algorithm that I tick you."
+    },
+    {
+      "start": 752.88,
+      "end": 753.88,
+      "text": "Got it?"
+    },
+    {
+      "start": 753.88,
+      "end": 759.88,
+      "text": "So what I'll do is I'll quickly erase this and try to implement the algorithm that will be required to solve this problem."
+    },
+    {
+      "start": 759.88,
+      "end": 765.88,
+      "text": "So I hope you have understood why cannot we implement the Dijkstra's algorithm, because it might happen."
+    },
+    {
+      "start": 765.88,
+      "end": 772.88,
+      "text": "You have taken this journey and you have got something like a very small distance, but you cannot move ahead."
+    },
+    {
+      "start": 772.88,
+      "end": 777.28,
+      "text": "So this journey is of no use."
+    },
+    {
+      "start": 777.28,
+      "end": 781.08,
+      "text": "Whereas someone else might take slightly more, but he can go ahead."
+    },
+    {
+      "start": 781.08,
+      "end": 784.68,
+      "text": "That's why storing shortest distance will not work."
+    },
+    {
+      "start": 784.68,
+      "end": 785.28,
+      "text": "Got it?"
+    },
+    {
+      "start": 785.28,
+      "end": 789.88,
+      "text": "So what I'll do is I'll store stops, node and distance."
+    },
+    {
+      "start": 789.88,
+      "end": 791.48,
+      "text": "So."
+    },
+    {
+      "start": 791.48,
+      "end": 792.48,
+      "text": "Zero stops."
+    },
+    {
+      "start": 792.48,
+      "end": 795.68,
+      "text": "Source zero, distance zero, source marked as zero."
+    },
+    {
+      "start": 795.68,
+      "end": 802.68,
+      "text": "So I'm at node zero, which has taken a distance zero, stop zero."
+    },
+    {
+      "start": 802.68,
+      "end": 805.28,
+      "text": "Zero can go to one, which will cost him five."
+    },
+    {
+      "start": 805.28,
+      "end": 808.08,
+      "text": "So one can be reached at a cost of five."
+    },
+    {
+      "start": 808.08,
+      "end": 810.48,
+      "text": "One can be reached at a cost of five."
+    },
+    {
+      "start": 810.48,
+      "end": 811.28,
+      "text": "With a stop one."
+    },
+    {
+      "start": 811.28,
+      "end": 812.28,
+      "text": "Stop one."
+    },
+    {
+      "start": 812.28,
+      "end": 814.28,
+      "text": "One can be reached at a cost of five."
+    },
+    {
+      "start": 814.28,
+      "end": 815.28,
+      "text": "Perfect."
+    },
+    {
+      "start": 815.28,
+      "end": 817.28,
+      "text": "I can also go to three, which is very obvious."
+    },
+    {
+      "start": 817.28,
+      "end": 819.28,
+      "text": "I can go to three and I can go to one."
+    },
+    {
+      "start": 819.28,
+      "end": 825.28,
+      "text": "So if I go to three, I'll cost plus two, which will make me reach it in two cost."
+    },
+    {
+      "start": 825.28,
+      "end": 826.28,
+      "text": "Stop one."
+    },
+    {
+      "start": 826.28,
+      "end": 828.28,
+      "text": "Node three at a cost of two."
+    },
+    {
+      "start": 828.28,
+      "end": 829.28,
+      "text": "Perfect."
+    },
+    {
+      "start": 829.28,
+      "end": 830.28,
+      "text": "Done."
+    },
+    {
+      "start": 830.28,
+      "end": 831.28,
+      "text": "Omit this."
+    },
+    {
+      "start": 832.08,
+      "end": 833.08,
+      "text": "Next."
+    },
+    {
+      "start": 833.08,
+      "end": 834.88,
+      "text": "Praticu says, which is the minimum?"
+    },
+    {
+      "start": 834.88,
+      "end": 836.68,
+      "text": "Praticu is like, I know which is the minimum."
+    },
+    {
+      "start": 836.68,
+      "end": 838.08,
+      "text": "Stop. This one."
+    },
+    {
+      "start": 838.08,
+      "end": 839.48,
+      "text": "Do we require a Praticu?"
+    },
+    {
+      "start": 839.48,
+      "end": 840.38,
+      "text": "We will talk about that."
+    },
+    {
+      "start": 840.48,
+      "end": 840.98,
+      "text": "As well."
+    },
+    {
+      "start": 841.88,
+      "end": 843.58,
+      "text": "So stop one."
+    },
+    {
+      "start": 845.18,
+      "end": 845.88,
+      "text": "Node one."
+    },
+    {
+      "start": 846.48,
+      "end": 847.18,
+      "text": "Distance five."
+    },
+    {
+      "start": 847.48,
+      "end": 848.28,
+      "text": "Where can one go?"
+    },
+    {
+      "start": 848.48,
+      "end": 849.48,
+      "text": "One can go to four."
+    },
+    {
+      "start": 849.48,
+      "end": 850.48,
+      "text": "One can go to two."
+    },
+    {
+      "start": 850.78,
+      "end": 851.78,
+      "text": "One can go to four."
+    },
+    {
+      "start": 851.98,
+      "end": 852.88,
+      "text": "One can go to two."
+    },
+    {
+      "start": 853.08,
+      "end": 853.48,
+      "text": "Okay."
+    },
+    {
+      "start": 853.48,
+      "end": 855.48,
+      "text": "So what I'll be like is, okay, fine."
+    },
+    {
+      "start": 855.68,
+      "end": 856.78,
+      "text": "One can go to four."
+    },
+    {
+      "start": 857.38,
+      "end": 857.88,
+      "text": "Right?"
+    },
+    {
+      "start": 857.98,
+      "end": 862.48,
+      "text": "And if it goes to four, it'll take another plus one, which will make it a total distance of six."
+    },
+    {
+      "start": 862.68,
+      "end": 864.78,
+      "text": "Four can be reached at a distance of six."
+    },
+    {
+      "start": 865.08,
+      "end": 866.08,
+      "text": "Distance of six."
+    },
+    {
+      "start": 866.38,
+      "end": 866.88,
+      "text": "Four."
+    },
+    {
+      "start": 867.08,
+      "end": 867.88,
+      "text": "And a stop two."
+    },
+    {
+      "start": 868.18,
+      "end": 869.18,
+      "text": "Very, very important."
+    },
+    {
+      "start": 869.28,
+      "end": 870.28,
+      "text": "Because previously it was stop one."
+    },
+    {
+      "start": 870.48,
+      "end": 871.98,
+      "text": "So plus one stop."
+    },
+    {
+      "start": 872.48,
+      "end": 873.08,
+      "text": "Stop two."
+    },
+    {
+      "start": 873.68,
+      "end": 874.18,
+      "text": "Nice."
+    },
+    {
+      "start": 874.48,
+      "end": 874.98,
+      "text": "Next."
+    },
+    {
+      "start": 874.98,
+      "end": 876.98,
+      "text": "It can also go to something like two."
+    },
+    {
+      "start": 877.28,
+      "end": 881.68,
+      "text": "If it goes to two, it will charge us another five, which will make it a cost of ten."
+    },
+    {
+      "start": 881.98,
+      "end": 886.28,
+      "text": "So I can reach two at a cost of ten and a stop of two stops."
+    },
+    {
+      "start": 886.78,
+      "end": 887.28,
+      "text": "Perfect."
+    },
+    {
+      "start": 887.38,
+      "end": 888.98,
+      "text": "That'll be like, stop two."
+    },
+    {
+      "start": 889.68,
+      "end": 890.78,
+      "text": "Node two."
+    },
+    {
+      "start": 891.08,
+      "end": 891.78,
+      "text": "Distance ten."
+    },
+    {
+      "start": 892.28,
+      "end": 892.78,
+      "text": "Amazing."
+    },
+    {
+      "start": 893.28,
+      "end": 893.78,
+      "text": "Next."
+    },
+    {
+      "start": 893.78,
+      "end": 894.78,
+      "text": "I'll just go and erase it."
+    },
+    {
+      "start": 897.52,
+      "end": 900.12,
+      "text": "Now, Praticu says, who is the shortest distance?"
+    },
+    {
+      "start": 900.22,
+      "end": 901.02,
+      "text": "It says this."
+    },
+    {
+      "start": 902.94,
+      "end": 903.44,
+      "text": "Stop."
+    },
+    {
+      "start": 903.94,
+      "end": 905.14,
+      "text": "Sorry, which is the shortest stop?"
+    },
+    {
+      "start": 905.24,
+      "end": 906.14,
+      "text": "Stop one."
+    },
+    {
+      "start": 906.64,
+      "end": 907.44,
+      "text": "Node three."
+    },
+    {
+      "start": 907.74,
+      "end": 908.44,
+      "text": "Distance two."
+    },
+    {
+      "start": 908.74,
+      "end": 909.14,
+      "text": "Perfect."
+    },
+    {
+      "start": 909.44,
+      "end": 912.84,
+      "text": "So I can go to one, which will cost me another two."
+    },
+    {
+      "start": 913.44,
+      "end": 916.24,
+      "text": "So that will be yielding me a cost of five."
+    },
+    {
+      "start": 916.64,
+      "end": 918.14,
+      "text": "So I've already reached."
+    },
+    {
+      "start": 918.34,
+      "end": 925.84,
+      "text": "I've already reached one at a cost of five at a better, at a better stops, like taking, consuming less the number of stops."
+    },
+    {
+      "start": 926.04,
+      "end": 930.64,
+      "text": "Will it make sense to consume more stops and reach at the same cost or more cost?"
+    },
+    {
+      "start": 931.04,
+      "end": 931.74,
+      "text": "Definitely not."
+    },
+    {
+      "start": 931.94,
+      "end": 933.24,
+      "text": "So not to be considered."
+    },
+    {
+      "start": 933.94,
+      "end": 936.34,
+      "text": "I can three go nowhere else."
+    },
+    {
+      "start": 936.54,
+      "end": 937.14,
+      "text": "Three is done."
+    },
+    {
+      "start": 937.84,
+      "end": 938.34,
+      "text": "Amazing."
+    },
+    {
+      "start": 938.74,
+      "end": 940.24,
+      "text": "Next, let's take it."
+    },
+    {
+      "start": 940.54,
+      "end": 941.24,
+      "text": "So this is done."
+    },
+    {
+      "start": 941.24,
+      "end": 943.54,
+      "text": "Next, two, four, six stops to."
+    },
+    {
+      "start": 945.14,
+      "end": 949.24,
+      "text": "I can say I'm at four and it has taken me six."
+    },
+    {
+      "start": 949.44,
+      "end": 951.84,
+      "text": "Now, four can be like stops is two."
+    },
+    {
+      "start": 951.94,
+      "end": 952.24,
+      "text": "Okay."
+    },
+    {
+      "start": 952.24,
+      "end": 953.24,
+      "text": "No, not an issue."
+    },
+    {
+      "start": 953.44,
+      "end": 955.74,
+      "text": "Four can only go to two and takes a one."
+    },
+    {
+      "start": 956.04,
+      "end": 957.44,
+      "text": "The cost will be updated to seven."
+    },
+    {
+      "start": 957.84,
+      "end": 958.64,
+      "text": "I got a better one."
+    },
+    {
+      "start": 959.04,
+      "end": 959.44,
+      "text": "Seven."
+    },
+    {
+      "start": 959.44,
+      "end": 961.44,
+      "text": "Okay, but the stops taken is three."
+    },
+    {
+      "start": 961.74,
+      "end": 962.34,
+      "text": "Fine."
+    },
+    {
+      "start": 962.34,
+      "end": 966.84,
+      "text": "That's the maximum we can allow because it might be the destination."
+    },
+    {
+      "start": 966.94,
+      "end": 967.34,
+      "text": "Right?"
+    },
+    {
+      "start": 967.44,
+      "end": 968.64,
+      "text": "So stop three."
+    },
+    {
+      "start": 969.04,
+      "end": 970.64,
+      "text": "No, two cost of seven."
+    },
+    {
+      "start": 972.04,
+      "end": 972.34,
+      "text": "Right?"
+    },
+    {
+      "start": 972.64,
+      "end": 976.24,
+      "text": "And I can easily go and update two to seven and I've done this."
+    },
+    {
+      "start": 976.54,
+      "end": 977.04,
+      "text": "This is done."
+    },
+    {
+      "start": 977.54,
+      "end": 978.34,
+      "text": "Let's see the next guy."
+    },
+    {
+      "start": 979.54,
+      "end": 980.24,
+      "text": "What's the next guy?"
+    },
+    {
+      "start": 980.34,
+      "end": 981.14,
+      "text": "Next guy is very simple."
+    },
+    {
+      "start": 981.34,
+      "end": 982.24,
+      "text": "Two comma two comma ten."
+    },
+    {
+      "start": 982.64,
+      "end": 983.54,
+      "text": "I'll take the next guy."
+    },
+    {
+      "start": 983.84,
+      "end": 986.74,
+      "text": "I'll be like two comma two comma ten."
+    },
+    {
+      "start": 987.04,
+      "end": 992.31,
+      "text": "So stops two and I'm late."
+    },
+    {
+      "start": 993.81,
+      "end": 994.51,
+      "text": "Which is the node?"
+    },
+    {
+      "start": 994.71,
+      "end": 995.61,
+      "text": "That's the destination."
+    },
+    {
+      "start": 995.71,
+      "end": 996.11,
+      "text": "I've reached."
+    },
+    {
+      "start": 996.81,
+      "end": 997.91,
+      "text": "No need to go beyond."
+    },
+    {
+      "start": 998.41,
+      "end": 998.91,
+      "text": "I've reached."
+    },
+    {
+      "start": 999.91,
+      "end": 1003.31,
+      "text": "No need to go to its adjacent next three comma two comma seven."
+    },
+    {
+      "start": 1003.71,
+      "end": 1004.61,
+      "text": "Again, we've reached."
+    },
+    {
+      "start": 1004.91,
+      "end": 1007.71,
+      "text": "It's kind of over because this is again the destination."
+    },
+    {
+      "start": 1008.11,
+      "end": 1009.21,
+      "text": "No more going forward."
+    },
+    {
+      "start": 1009.41,
+      "end": 1015.21,
+      "text": "So ultimately I can say I have reached and if you look at this to its"
+    },
+    {
+      "start": 1015.21,
+      "end": 1019.51,
+      "text": "storing seven, which is ultimately my minimum cost."
+    },
+    {
+      "start": 1019.81,
+      "end": 1023.21,
+      "text": "If I take at Max of a stops at Max of key stops and which is the minimum cost."
+    },
+    {
+      "start": 1023.81,
+      "end": 1024.61,
+      "text": "Which is the path?"
+    },
+    {
+      "start": 1024.81,
+      "end": 1029.61,
+      "text": "If I take somewhere out this path, sorry, my bad somewhere around this"
+    },
+    {
+      "start": 1029.61,
+      "end": 1030.31,
+      "text": "path rather."
+    },
+    {
+      "start": 1032.01,
+      "end": 1036.71,
+      "text": "Which is this path which is taking seven somewhere on this this and this"
+    },
+    {
+      "start": 1036.91,
+      "end": 1041.31,
+      "text": "which is something like five one one and this path two stops."
+    },
+    {
+      "start": 1041.81,
+      "end": 1047.11,
+      "text": "Why did we take one more stop because this is not a stop there by inserting"
+    },
+    {
+      "start": 1047.11,
+      "end": 1051.41,
+      "text": "three is okay, but do not go beyond three do not go beyond three if I"
+    },
+    {
+      "start": 1051.41,
+      "end": 1053.61,
+      "text": "inserting three make sure it's the destination."
+    },
+    {
+      "start": 1053.61,
+      "end": 1058.71,
+      "text": "Or do not go beyond at Max three and all the distances can be stored"
+    },
+    {
+      "start": 1058.91,
+      "end": 1062.01,
+      "text": "because that's what we are allowed to do not more than that."
+    },
+    {
+      "start": 1062.11,
+      "end": 1062.51,
+      "text": "Got it."
+    },
+    {
+      "start": 1062.61,
+      "end": 1063.81,
+      "text": "The question arises."
+    },
+    {
+      "start": 1064.01,
+      "end": 1066.01,
+      "text": "Do you actually need a priority queue?"
+    },
+    {
+      "start": 1066.01,
+      "end": 1068.01,
+      "text": "Because what is the use of priority queue?"
+    },
+    {
+      "start": 1068.21,
+      "end": 1072.61,
+      "text": "It always tells me the shortest stops or the minimum stops."
+    },
+    {
+      "start": 1072.81,
+      "end": 1077.11,
+      "text": "But do we require a priority queue because stops are increasing by plus"
+    },
+    {
+      "start": 1077.11,
+      "end": 1082.11,
+      "text": "one the distances are not something like plus four plus six plus seven."
+    },
+    {
+      "start": 1082.31,
+      "end": 1083.31,
+      "text": "It's like first."
+    },
+    {
+      "start": 1083.31,
+      "end": 1087.61,
+      "text": "You will always be at source at a stop zero and you take one step in all"
+    },
+    {
+      "start": 1087.61,
+      "end": 1089.51,
+      "text": "the direction to the adjacent cities."
+    },
+    {
+      "start": 1089.71,
+      "end": 1093.61,
+      "text": "So stop one stop one then you take adjacent cities another plus one plus"
+    },
+    {
+      "start": 1093.61,
+      "end": 1093.91,
+      "text": "one."
+    },
+    {
+      "start": 1094.11,
+      "end": 1098.21,
+      "text": "So if you carefully see it's like zero one one two three three it's increasing."
+    },
+    {
+      "start": 1098.51,
+      "end": 1100.41,
+      "text": "Do you actually need a priority queue?"
+    },
+    {
+      "start": 1100.71,
+      "end": 1105.51,
+      "text": "No because even if you take a queue data structure the topmost guy will"
+    },
+    {
+      "start": 1105.51,
+      "end": 1109.31,
+      "text": "always be the guy with the shortest number of stops."
+    },
+    {
+      "start": 1109.41,
+      "end": 1113.31,
+      "text": "We've already done a similar problem in the past in this series only."
+    },
+    {
+      "start": 1113.51,
+      "end": 1114.01,
+      "text": "Right?"
+    },
+    {
+      "start": 1114.11,
+      "end": 1118.71,
+      "text": "So I can see there's no need to take a priority queue because that adds an"
+    },
+    {
+      "start": 1119.01,
+      "end": 1120.81,
+      "text": "extra logarithmic thing."
+    },
+    {
+      "start": 1121.01,
+      "end": 1124.71,
+      "text": "I'll just take a queue and I know since the stops are increasing by plus"
+    },
+    {
+      "start": 1124.71,
+      "end": 1126.31,
+      "text": "one at every step."
+    },
+    {
+      "start": 1126.71,
+      "end": 1130.91,
+      "text": "It's constant the increase is constant."
+    },
+    {
+      "start": 1131.01,
+      "end": 1132.31,
+      "text": "If the increase is constant."
+    },
+    {
+      "start": 1132.31,
+      "end": 1133.71,
+      "text": "I don't need a priority queue."
+    },
+    {
+      "start": 1134.11,
+      "end": 1137.51,
+      "text": "Since the increase is constant the queue will make sure that it always"
+    },
+    {
+      "start": 1137.51,
+      "end": 1140.51,
+      "text": "gives me the shortest number of stops."
+    },
+    {
+      "start": 1140.71,
+      "end": 1142.71,
+      "text": "So so before moving on to the code."
+    },
+    {
+      "start": 1142.91,
+      "end": 1148.01,
+      "text": "One thing to notice whenever we reach the destination do not stop because"
+    },
+    {
+      "start": 1148.21,
+      "end": 1153.71,
+      "text": "in future if you carefully see we reach the destination over here, but going"
+    },
+    {
+      "start": 1153.71,
+      "end": 1156.71,
+      "text": "forward we reach the same destination at a better price."
+    },
+    {
+      "start": 1157.01,
+      "end": 1160.31,
+      "text": "Do not stop do not stop and take the answer from here."
+    },
+    {
+      "start": 1160.61,
+      "end": 1164.51,
+      "text": "Okay, and if this is marked as infinity you cannot thereby minus one."
+    },
+    {
+      "start": 1164.81,
+      "end": 1165.21,
+      "text": "Okay."
+    },
+    {
+      "start": 1165.61,
+      "end": 1167.61,
+      "text": "So guys, I hope you have understood the entire explanation."
+    },
+    {
+      "start": 1167.61,
+      "end": 1171.61,
+      "text": "So it's time to code it up as usual the C++ code is on the right and you can"
+    },
+    {
+      "start": 1171.61,
+      "end": 1172.61,
+      "text": "figure out the exact."
+    },
+    {
+      "start": 1172.91,
+      "end": 1174.41,
+      "text": "Java code on the left."
+    },
+    {
+      "start": 1174.51,
+      "end": 1179.11,
+      "text": "So we're given the number of notes or the number of airports and I given the"
+    },
+    {
+      "start": 1179.11,
+      "end": 1182.71,
+      "text": "all the flight informations first thing create the graph."
+    },
+    {
+      "start": 1182.81,
+      "end": 1186.81,
+      "text": "So I need to store that just in notes and the edge weights."
+    },
+    {
+      "start": 1187.01,
+      "end": 1188.31,
+      "text": "So we need a pair."
+    },
+    {
+      "start": 1188.31,
+      "end": 1189.31,
+      "text": "So just create it."
+    },
+    {
+      "start": 1189.41,
+      "end": 1190.51,
+      "text": "So auto of ID."
+    },
+    {
+      "start": 1190.51,
+      "end": 1194.81,
+      "text": "Let's go across to all the flights information and I can say okay, there's"
+    },
+    {
+      "start": 1194.81,
+      "end": 1198.11,
+      "text": "an edge from this remember it's a directed graph."
+    },
+    {
+      "start": 1198.41,
+      "end": 1202.21,
+      "text": "So it of one and ID of two is the cost."
+    },
+    {
+      "start": 1202.71,
+      "end": 1204.01,
+      "text": "The graph creation is done."
+    },
+    {
+      "start": 1204.11,
+      "end": 1206.21,
+      "text": "Next thing I can secure and in the queue."
+    },
+    {
+      "start": 1206.61,
+      "end": 1207.81,
+      "text": "I need to store three things."
+    },
+    {
+      "start": 1208.11,
+      "end": 1213.11,
+      "text": "So probably I can take a pair of int comma pair int comma end and this can be"
+    },
+    {
+      "start": 1213.11,
+      "end": 1217.71,
+      "text": "a cube and what do I need to store q dot push to something like I need to store"
+    },
+    {
+      "start": 1217.71,
+      "end": 1218.31,
+      "text": "stops."
+    },
+    {
+      "start": 1218.71,
+      "end": 1219.31,
+      "text": "Definitely."
+    },
+    {
+      "start": 1219.31,
+      "end": 1220.51,
+      "text": "I need to store the source."
+    },
+    {
+      "start": 1220.91,
+      "end": 1222.91,
+      "text": "I need to store the distance which is the new one."
+    },
+    {
+      "start": 1223.81,
+      "end": 1226.41,
+      "text": "Next I need to declare our distance array."
+    },
+    {
+      "start": 1226.71,
+      "end": 1230.91,
+      "text": "So let's quickly declare a distance array of same size really I can assign that"
+    },
+    {
+      "start": 1230.91,
+      "end": 1232.11,
+      "text": "to one e9."
+    },
+    {
+      "start": 1232.11,
+      "end": 1235.31,
+      "text": "Now, I know the distance till the source is zero."
+    },
+    {
+      "start": 1235.71,
+      "end": 1240.51,
+      "text": "These things I definitely know and at the end of the day if the distance to the"
+    },
+    {
+      "start": 1240.51,
+      "end": 1245.41,
+      "text": "destination is still one e9 that means we never reached and we can return a"
+    },
+    {
+      "start": 1245.41,
+      "end": 1251.41,
+      "text": "minus one else we can go ahead and return whatever distance it took and in"
+    },
+    {
+      "start": 1251.41,
+      "end": 1255.61,
+      "text": "between we can perform the dexterous algorithm."
+    },
+    {
+      "start": 1255.71,
+      "end": 1257.31,
+      "text": "So let's go and perform over here."
+    },
+    {
+      "start": 1257.31,
+      "end": 1262.01,
+      "text": "I can say auto of it equal to q dot front and at the same time I can secure."
+    },
+    {
+      "start": 1262.11,
+      "end": 1262.81,
+      "text": "Pop."
+    },
+    {
+      "start": 1263.11,
+      "end": 1269.21,
+      "text": "Now, can I write the stops as it dot first I can so go ahead and write it and"
+    },
+    {
+      "start": 1269.21,
+      "end": 1274.71,
+      "text": "can I write the node as it dot second dot first because this is how I'm storing"
+    },
+    {
+      "start": 1274.71,
+      "end": 1280.91,
+      "text": "if you see properly I'm storing it something like as stops and then a pair of"
+    },
+    {
+      "start": 1280.91,
+      "end": 1283.41,
+      "text": "node comma the distance."
+    },
+    {
+      "start": 1283.61,
+      "end": 1284.41,
+      "text": "That's how I'm storing."
+    },
+    {
+      "start": 1284.41,
+      "end": 1292.01,
+      "text": "Okay, so what will the distance or the cost will be it dot second dot second of it, but"
+    },
+    {
+      "start": 1292.11,
+      "end": 1300.81,
+      "text": "if the stops has exceeded the minimum number of stops given to us no need to go to"
+    },
+    {
+      "start": 1300.81,
+      "end": 1304.71,
+      "text": "any further adjacent cities and I'll just drop it over here."
+    },
+    {
+      "start": 1304.71,
+      "end": 1309.71,
+      "text": "I can say auto of it can be written as adjacent of node."
+    },
+    {
+      "start": 1310.11,
+      "end": 1316.61,
+      "text": "Okay, and then I can see what is the adjacent node and it will be like first right and I"
+    },
+    {
+      "start": 1316.61,
+      "end": 1320.81,
+      "text": "can also say what is the edge weight and it will be like I did of second is the adjacent"
+    },
+    {
+      "start": 1320.81,
+      "end": 1321.21,
+      "text": "node."
+    },
+    {
+      "start": 1321.51,
+      "end": 1321.81,
+      "text": "Once."
+    },
+    {
+      "start": 1321.81,
+      "end": 1322.11,
+      "text": "You've got."
+    },
+    {
+      "start": 1322.11,
+      "end": 1322.71,
+      "text": "The edge weight."
+    },
+    {
+      "start": 1322.71,
+      "end": 1329.51,
+      "text": "Can I say cost plus edw is what I'll take more to reach the adjacent node and if that"
+    },
+    {
+      "start": 1329.51,
+      "end": 1336.81,
+      "text": "is lesser than standard extra then this and the stops taken till now is just K till now"
+    },
+    {
+      "start": 1337.11,
+      "end": 1341.31,
+      "text": "because I can take one more in order to reach the destination till now if this is the case"
+    },
+    {
+      "start": 1341.61,
+      "end": 1347.51,
+      "text": "can I say distance of adjacent node will update itself to cost plus edw which is the edge"
+    },
+    {
+      "start": 1347.51,
+      "end": 1350.41,
+      "text": "weight and can I say the Q will be like okay fine."
+    },
+    {
+      "start": 1350.91,
+      "end": 1352.01,
+      "text": "I've taken one more stops."
+    },
+    {
+      "start": 1352.71,
+      "end": 1357.71,
+      "text": "That's what I did and at the same time can I see I'll have reached the adjacent node."
+    },
+    {
+      "start": 1357.71,
+      "end": 1358.91,
+      "text": "Yes at the same time."
+    },
+    {
+      "start": 1358.91,
+      "end": 1365.71,
+      "text": "Can I say the cost is cost plus edw I can and this is how the iteration will be done and then you can return the answer."
+    },
+    {
+      "start": 1366.31,
+      "end": 1368.71,
+      "text": "So I've compiled this and it is compiling now."
+    },
+    {
+      "start": 1368.71,
+      "end": 1372.71,
+      "text": "I'll quickly submit this and see if this is working fine PC."
+    },
+    {
+      "start": 1372.91,
+      "end": 1375.71,
+      "text": "We have successfully submitted this particular problem."
+    },
+    {
+      "start": 1375.71,
+      "end": 1378.31,
+      "text": "We can figure out the space complexity very easily."
+    },
+    {
+      "start": 1378.61,
+      "end": 1380.31,
+      "text": "But what about the time complexity?"
+    },
+    {
+      "start": 1380.41,
+      "end": 1382.01,
+      "text": "So if you remember the time complexity."
+    },
+    {
+      "start": 1382.01,
+      "end": 1386.61,
+      "text": "Was a log V of the extras algorithm, but we are not using anything as a priority Q."
+    },
+    {
+      "start": 1386.81,
+      "end": 1388.81,
+      "text": "So can we remove log V log V?"
+    },
+    {
+      "start": 1389.01,
+      "end": 1389.61,
+      "text": "Yes, I can."
+    },
+    {
+      "start": 1389.71,
+      "end": 1395.31,
+      "text": "So can I say he is the total number of edges that is that is what the definition was in the extra."
+    },
+    {
+      "start": 1395.31,
+      "end": 1398.21,
+      "text": "I've already proved this in the previous video go and watch it."
+    },
+    {
+      "start": 1398.31,
+      "end": 1399.91,
+      "text": "So what is he total number of edges?"
+    },
+    {
+      "start": 1400.11,
+      "end": 1406.61,
+      "text": "How can I say it is nothing but this flights if I just take it flights dot size because that is what the number of edges is."
+    },
+    {
+      "start": 1406.81,
+      "end": 1407.31,
+      "text": "That's it."
+    },
+    {
+      "start": 1407.41,
+      "end": 1408.71,
+      "text": "That is the time complexity."
+    },
+    {
+      "start": 1408.81,
+      "end": 1411.81,
+      "text": "So guys, I hope I was able to explain you the entire algorithm and the"
+    },
+    {
+      "start": 1411.81,
+      "end": 1412.51,
+      "text": "explanation."
+    },
+    {
+      "start": 1412.51,
+      "end": 1416.21,
+      "text": "So just in case I was please please please make sure you like this video."
+    },
+    {
+      "start": 1416.31,
+      "end": 1418.61,
+      "text": "And if you're new to our Channel, what are you waiting for?"
+    },
+    {
+      "start": 1418.71,
+      "end": 1420.11,
+      "text": "Hit that subscribe button right away."
+    },
+    {
+      "start": 1420.11,
+      "end": 1424.41,
+      "text": "And if you haven't checked out our DP series and the HDC the links are in the description."
+    },
+    {
+      "start": 1424.71,
+      "end": 1426.01,
+      "text": "Let's meet in some other video till then bye."
+    },
+    {
+      "start": 1426.01,
+      "end": 1426.11,
+      "text": "Bye."
+    },
+    {
+      "start": 1426.11,
+      "end": 1426.71,
+      "text": "Take care."
+    }
+  ]
+}

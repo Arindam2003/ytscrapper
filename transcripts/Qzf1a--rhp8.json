@@ -1,0 +1,2194 @@
+{
+  "video_id": "Qzf1a--rhp8",
+  "title": "G-6. Depth-First Search (DFS) ｜ C++ and Java ｜ Traversal Technique in Graphs",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1215.69,
+  "segments": [
+    {
+      "start": 2.99,
+      "end": 8.35,
+      "text": "So in this video we are going to learn about the second traversal technique that is the DFS traversal in a graph."
+    },
+    {
+      "start": 8.87,
+      "end": 12.79,
+      "text": "Now in the previous video you did learn about something which was BFS,"
+    },
+    {
+      "start": 13.63,
+      "end": 18.51,
+      "text": "breadth first search which was based on level. Now we will be learning as"
+    },
+    {
+      "start": 18.51,
+      "end": 23.07,
+      "text": "DFS which is depth first search."
+    },
+    {
+      "start": 23.47,
+      "end": 27.59,
+      "text": "Now this will be based on depth, depth, depth, yes."
+    },
+    {
+      "start": 28.03,
+      "end": 31.73,
+      "text": "So why did I emphasize so much on depth? You'll understand."
+    },
+    {
+      "start": 31.73,
+      "end": 38.01,
+      "text": "Again similarly you'll be given a graph and you'll be given a starting node."
+    },
+    {
+      "start": 38.45,
+      "end": 44.21,
+      "text": "Assume the starting node to be 1 over here. The starting node is 1, this is 1."
+    },
+    {
+      "start": 44.85,
+      "end": 51.81,
+      "text": "Now you go to any one of the neighboring nodes, 2, 3, 4, anyone you can go."
+    },
+    {
+      "start": 52.15,
+      "end": 58.63,
+      "text": "So for example I decide I will go from 1 to the left neighboring node which is 2."
+    },
+    {
+      "start": 58.63,
+      "end": 61.71,
+      "text": "So if you go to 2, you don't stop there."
+    },
+    {
+      "start": 61.75,
+      "end": 66.81,
+      "text": "Very important. You started from here, you go here and then you don't stop."
+    },
+    {
+      "start": 67.05,
+      "end": 70.21,
+      "text": "You go to depth, depth, so you go to depth which is 5."
+    },
+    {
+      "start": 70.61,
+      "end": 73.01,
+      "text": "Again you can either go to here or here, that is your choice."
+    },
+    {
+      "start": 73.41,
+      "end": 80.11,
+      "text": "But generally we go to the guy who is right at the first of the adjacency list or from left to right."
+    },
+    {
+      "start": 80.43,
+      "end": 83.57,
+      "text": "So 5 will be there. So you basically go like this."
+    },
+    {
+      "start": 83.57,
+      "end": 89.37,
+      "text": "So it's like 1, 2, 5. Done. Now you've gone like 1, 2, 5."
+    },
+    {
+      "start": 89.65,
+      "end": 91.25,
+      "text": "There is no further depth in it."
+    },
+    {
+      "start": 91.25,
+      "end": 96.95,
+      "text": "So what you do is, you come back and now you go to here, which is the 6."
+    },
+    {
+      "start": 97.43,
+      "end": 98.15,
+      "text": "Which is the 6."
+    },
+    {
+      "start": 98.55,
+      "end": 99.23,
+      "text": "So you go to 6."
+    },
+    {
+      "start": 100.29,
+      "end": 100.73,
+      "text": "Right?"
+    },
+    {
+      "start": 101.07,
+      "end": 104.51,
+      "text": "Now, you went like 1, 2, 5."
+    },
+    {
+      "start": 104.85,
+      "end": 105.53,
+      "text": "You came back."
+    },
+    {
+      "start": 105.63,
+      "end": 106.37,
+      "text": "You went to 6."
+    },
+    {
+      "start": 106.85,
+      "end": 108.49,
+      "text": "Now there is no depth of 6."
+    },
+    {
+      "start": 108.87,
+      "end": 109.59,
+      "text": "So you come back."
+    },
+    {
+      "start": 109.93,
+      "end": 112.85,
+      "text": "Now there is no further children of 2."
+    },
+    {
+      "start": 113.13,
+      "end": 113.85,
+      "text": "So you go back."
+    },
+    {
+      "start": 113.85,
+      "end": 120.91,
+      "text": "Now once this portion depth is completed, it starts going to the next portion, which is 3."
+    },
+    {
+      "start": 121.25,
+      "end": 121.87,
+      "text": "So you go to 3."
+    },
+    {
+      "start": 123.41,
+      "end": 123.85,
+      "text": "Done."
+    },
+    {
+      "start": 124.29,
+      "end": 129.69,
+      "text": "Now when you have gone to 3, now again, either you can go this way or you can go this way."
+    },
+    {
+      "start": 129.81,
+      "end": 130.79,
+      "text": "That is your choice."
+    },
+    {
+      "start": 131.23,
+      "end": 132.69,
+      "text": "So I decide I will go this way."
+    },
+    {
+      "start": 133.17,
+      "end": 134.03,
+      "text": "So I will go like 7."
+    },
+    {
+      "start": 134.39,
+      "end": 135.13,
+      "text": "I will go like 7."
+    },
+    {
+      "start": 135.37,
+      "end": 135.49,
+      "text": "Okay?"
+    },
+    {
+      "start": 135.89,
+      "end": 136.47,
+      "text": "So I go 7."
+    },
+    {
+      "start": 137.11,
+      "end": 139.23,
+      "text": "Now, you are like 1, 3, 7."
+    },
+    {
+      "start": 139.33,
+      "end": 141.51,
+      "text": "Now 7's depth is 8."
+    },
+    {
+      "start": 141.95,
+      "end": 144.33,
+      "text": "It does not need to be in down, neighbor."
+    },
+    {
+      "start": 145.03,
+      "end": 146.31,
+      "text": "7's depth is 8."
+    },
+    {
+      "start": 146.45,
+      "end": 147.09,
+      "text": "So you go to 8."
+    },
+    {
+      "start": 148.75,
+      "end": 150.51,
+      "text": "8's depth is 4."
+    },
+    {
+      "start": 150.51,
+      "end": 151.51,
+      "text": "So you go to 4."
+    },
+    {
+      "start": 151.51,
+      "end": 155.01,
+      "text": "So apparently, you started from 1."
+    },
+    {
+      "start": 155.01,
+      "end": 156.01,
+      "text": "You came to 3."
+    },
+    {
+      "start": 156.01,
+      "end": 157.01,
+      "text": "You went to 7."
+    },
+    {
+      "start": 157.01,
+      "end": 158.01,
+      "text": "You went to 8."
+    },
+    {
+      "start": 158.01,
+      "end": 159.01,
+      "text": "You went to 4."
+    },
+    {
+      "start": 159.01,
+      "end": 164.01,
+      "text": "And after that, you cannot go because this is already done."
+    },
+    {
+      "start": 164.01,
+      "end": 165.01,
+      "text": "So you go back."
+    },
+    {
+      "start": 165.01,
+      "end": 167.01,
+      "text": "There is no further go back."
+    },
+    {
+      "start": 167.01,
+      "end": 168.01,
+      "text": "No further go back."
+    },
+    {
+      "start": 168.01,
+      "end": 169.01,
+      "text": "No further go back."
+    },
+    {
+      "start": 169.01,
+      "end": 171.01,
+      "text": "So apparently, this portion is done."
+    },
+    {
+      "start": 171.01,
+      "end": 178.01,
+      "text": "Had there been, assume, had there been someone else, something like 9, 10, then coming back, you would have gone to 7."
+    },
+    {
+      "start": 178.01,
+      "end": 178.51,
+      "text": "So you go to 4."
+    },
+    {
+      "start": 178.51,
+      "end": 179.51,
+      "text": "So you go to 4."
+    },
+    {
+      "start": 179.51,
+      "end": 180.51,
+      "text": "So you go to 5."
+    },
+    {
+      "start": 180.51,
+      "end": 181.51,
+      "text": "So you go to 9, 10."
+    },
+    {
+      "start": 181.51,
+      "end": 182.51,
+      "text": "So you go to depth."
+    },
+    {
+      "start": 182.51,
+      "end": 183.51,
+      "text": "You go to depth at first."
+    },
+    {
+      "start": 183.51,
+      "end": 185.51,
+      "text": "I hope that makes sense."
+    },
+    {
+      "start": 185.51,
+      "end": 187.51,
+      "text": "So this will be the DFS."
+    },
+    {
+      "start": 187.51,
+      "end": 189.01,
+      "text": "This will be the DFS."
+    },
+    {
+      "start": 189.01,
+      "end": 193.51,
+      "text": "Again, it's not necessary that you go like this, this, then this."
+    },
+    {
+      "start": 193.51,
+      "end": 196.51,
+      "text": "You could have done the other way like 1, 3."
+    },
+    {
+      "start": 196.51,
+      "end": 199.51,
+      "text": "Then you could have gone like this 4, 8, 7."
+    },
+    {
+      "start": 199.51,
+      "end": 202.51,
+      "text": "Then you could have gone to 2, then to 6, then to 5."
+    },
+    {
+      "start": 202.51,
+      "end": 204.01,
+      "text": "You could have done that way."
+    },
+    {
+      "start": 204.01,
+      "end": 209.51,
+      "text": "That is, as long as you are traversing in depth, any traversal type will work."
+    },
+    {
+      "start": 209.51,
+      "end": 210.51,
+      "text": "And it should be depth."
+    },
+    {
+      "start": 210.51,
+      "end": 211.51,
+      "text": "Depth."
+    },
+    {
+      "start": 211.51,
+      "end": 212.51,
+      "text": "Okay."
+    },
+    {
+      "start": 212.51,
+      "end": 217.51,
+      "text": "So let's change the starting node in order to understand the DFS traversal more."
+    },
+    {
+      "start": 217.51,
+      "end": 218.51,
+      "text": "Okay."
+    },
+    {
+      "start": 218.51,
+      "end": 224.51,
+      "text": "So assume I change the starting node to be somewhere around 3."
+    },
+    {
+      "start": 224.51,
+      "end": 226.51,
+      "text": "Now assume this is the starting."
+    },
+    {
+      "start": 226.51,
+      "end": 228.51,
+      "text": "So again, this will be the first point for sure."
+    },
+    {
+      "start": 228.51,
+      "end": 230.51,
+      "text": "This will be the first point."
+    },
+    {
+      "start": 230.51,
+      "end": 234.51,
+      "text": "Now from 3, you can either go here, you can either go here, you can either go here."
+    },
+    {
+      "start": 234.51,
+      "end": 235.51,
+      "text": "Your choice."
+    },
+    {
+      "start": 235.51,
+      "end": 237.51,
+      "text": "So I decide I'll go to 4."
+    },
+    {
+      "start": 237.51,
+      "end": 238.51,
+      "text": "From 3, I decide I'll go to 4."
+    },
+    {
+      "start": 238.51,
+      "end": 240.51,
+      "text": "So it'll be like 4."
+    },
+    {
+      "start": 240.51,
+      "end": 242.51,
+      "text": "Then you'll go to 8."
+    },
+    {
+      "start": 242.51,
+      "end": 243.51,
+      "text": "Then you'll go to 7."
+    },
+    {
+      "start": 243.51,
+      "end": 245.51,
+      "text": "So it'll be like 3, 4, 8, 7."
+    },
+    {
+      "start": 245.51,
+      "end": 247.51,
+      "text": "So 3, 4, 8, 7."
+    },
+    {
+      "start": 247.51,
+      "end": 250.51,
+      "text": "So 3 went to 4, 4 went to 8, 8 went to 7."
+    },
+    {
+      "start": 250.51,
+      "end": 251.51,
+      "text": "Cannot go further."
+    },
+    {
+      "start": 251.51,
+      "end": 253.51,
+      "text": "Comes back, comes back, comes back."
+    },
+    {
+      "start": 253.51,
+      "end": 256.51,
+      "text": "So this portion depth is completed."
+    },
+    {
+      "start": 256.51,
+      "end": 257.51,
+      "text": "Depth is completed."
+    },
+    {
+      "start": 257.51,
+      "end": 260.51,
+      "text": "Now go the other way, which is 1."
+    },
+    {
+      "start": 260.51,
+      "end": 261.51,
+      "text": "So you go to 1."
+    },
+    {
+      "start": 261.51,
+      "end": 262.51,
+      "text": "You go to 2."
+    },
+    {
+      "start": 262.51,
+      "end": 263.51,
+      "text": "Again do the same thing."
+    },
+    {
+      "start": 263.51,
+      "end": 266.51,
+      "text": "5 and then 6 or the opposite."
+    },
+    {
+      "start": 266.51,
+      "end": 267.51,
+      "text": "It's like 1."
+    },
+    {
+      "start": 267.51,
+      "end": 270.51,
+      "text": "1, 2, 5, 6."
+    },
+    {
+      "start": 270.51,
+      "end": 271.51,
+      "text": "Now come back again."
+    },
+    {
+      "start": 271.51,
+      "end": 273.51,
+      "text": "Now 3, will it go to 7?"
+    },
+    {
+      "start": 273.51,
+      "end": 275.51,
+      "text": "No, because 7 has already been covered."
+    },
+    {
+      "start": 275.51,
+      "end": 277.51,
+      "text": "So we start from 3 and you go in this."
+    },
+    {
+      "start": 277.51,
+      "end": 278.51,
+      "text": "Then you go in this."
+    },
+    {
+      "start": 278.51,
+      "end": 280.51,
+      "text": "This will be the DFS."
+    },
+    {
+      "start": 280.51,
+      "end": 285.51,
+      "text": "There can be plenty of DFS depending on the starting node."
+    },
+    {
+      "start": 285.51,
+      "end": 287.51,
+      "text": "Yes, depending on the starting node."
+    },
+    {
+      "start": 287.51,
+      "end": 296.51,
+      "text": "And which algorithm, if I ask you, which algorithm usually goes to the depth, solves it, comes back?"
+    },
+    {
+      "start": 296.51,
+      "end": 297.51,
+      "text": "Yes."
+    },
+    {
+      "start": 297.51,
+      "end": 300.51,
+      "text": "You said that correctly, recursion."
+    },
+    {
+      "start": 300.51,
+      "end": 302.51,
+      "text": "That is absolutely correct."
+    },
+    {
+      "start": 302.51,
+      "end": 309.51,
+      "text": "The algorithm that always goes in depth, like if you remember, this kind of algorithm is,"
+    },
+    {
+      "start": 309.51,
+      "end": 311.51,
+      "text": "do you remember?"
+    },
+    {
+      "start": 311.51,
+      "end": 315.51,
+      "text": "This kind of algorithm is nothing but recursion."
+    },
+    {
+      "start": 315.51,
+      "end": 320.51,
+      "text": "And if you have not seen the recursion playlist, I will highly recommend you go back and watch"
+    },
+    {
+      "start": 320.51,
+      "end": 323.51,
+      "text": "my recursion playlist at least till video 7."
+    },
+    {
+      "start": 323.51,
+      "end": 326.51,
+      "text": "At least from video 1 to video 7."
+    },
+    {
+      "start": 326.51,
+      "end": 330.51,
+      "text": "Because entire graph without recursion will be nightmare."
+    },
+    {
+      "start": 330.51,
+      "end": 334.51,
+      "text": "You need to understand how graph works in DFS TravisL."
+    },
+    {
+      "start": 334.51,
+      "end": 336.51,
+      "text": "Otherwise, it will be a big, big mess."
+    },
+    {
+      "start": 336.51,
+      "end": 340.51,
+      "text": "So again, for this graph, where do you store that?"
+    },
+    {
+      "start": 340.51,
+      "end": 343.51,
+      "text": "You store this graph in an adjacency list."
+    },
+    {
+      "start": 343.51,
+      "end": 344.51,
+      "text": "That is something which you will do."
+    },
+    {
+      "start": 344.51,
+      "end": 348.51,
+      "text": "So please, please go and store this graph in an adjacency list."
+    },
+    {
+      "start": 348.51,
+      "end": 352.51,
+      "text": "So this is how the adjacency list for this particular graph will look like."
+    },
+    {
+      "start": 352.51,
+      "end": 355.51,
+      "text": "Now assuming the starting node is given as 1."
+    },
+    {
+      "start": 355.51,
+      "end": 358.51,
+      "text": "Assume the starting node is 1."
+    },
+    {
+      "start": 358.51,
+      "end": 360.51,
+      "text": "What will be the initial configuration?"
+    },
+    {
+      "start": 360.51,
+      "end": 362.51,
+      "text": "Again, similar to BFS TravisL."
+    },
+    {
+      "start": 362.51,
+      "end": 365.51,
+      "text": "You will first create a BFS."
+    },
+    {
+      "start": 365.51,
+      "end": 367.51,
+      "text": "First create a visited array."
+    },
+    {
+      "start": 367.51,
+      "end": 371.51,
+      "text": "Again, please go and check if it is a 1-based indexing."
+    },
+    {
+      "start": 371.51,
+      "end": 373.51,
+      "text": "So if you see a 1-based, 1 to 8."
+    },
+    {
+      "start": 373.51,
+      "end": 375.51,
+      "text": "So please create like a 9 size array."
+    },
+    {
+      "start": 375.51,
+      "end": 379.51,
+      "text": "0, 1, 2, 3, 4, 5, 6, 7, 8."
+    },
+    {
+      "start": 379.51,
+      "end": 387.16,
+      "text": "So a visited array is what initially you will start off with."
+    },
+    {
+      "start": 387.16,
+      "end": 388.16,
+      "text": "And what if it is the starting node?"
+    },
+    {
+      "start": 388.16,
+      "end": 389.16,
+      "text": "Just put it in the starting node."
+    },
+    {
+      "start": 389.16,
+      "end": 393.16,
+      "text": "This market has visited and everything else will be staying as 0."
+    },
+    {
+      "start": 393.16,
+      "end": 395.16,
+      "text": "Similar to what we did in BFS."
+    },
+    {
+      "start": 395.16,
+      "end": 396.16,
+      "text": "Done."
+    },
+    {
+      "start": 396.16,
+      "end": 397.16,
+      "text": "What will be the next step?"
+    },
+    {
+      "start": 397.16,
+      "end": 398.16,
+      "text": "Remember this."
+    },
+    {
+      "start": 398.16,
+      "end": 402.16,
+      "text": "The next step is going to be whatever is your starting."
+    },
+    {
+      "start": 402.16,
+      "end": 404.16,
+      "text": "You call a recursive function."
+    },
+    {
+      "start": 404.16,
+      "end": 405.16,
+      "text": "Remember this."
+    },
+    {
+      "start": 405.16,
+      "end": 409.16,
+      "text": "You call a recursive DFS function from that."
+    },
+    {
+      "start": 409.16,
+      "end": 410.16,
+      "text": "Okay."
+    },
+    {
+      "start": 410.16,
+      "end": 413.16,
+      "text": "Now what you will do is this DFS of 1."
+    },
+    {
+      "start": 413.16,
+      "end": 415.16,
+      "text": "I'll write the code somewhere."
+    },
+    {
+      "start": 415.16,
+      "end": 417.16,
+      "text": "DFS of node."
+    },
+    {
+      "start": 417.16,
+      "end": 418.16,
+      "text": "What this will do is."
+    },
+    {
+      "start": 418.16,
+      "end": 421.16,
+      "text": "The moment it gets into the function."
+    },
+    {
+      "start": 421.16,
+      "end": 422.16,
+      "text": "It states."
+    },
+    {
+      "start": 422.16,
+      "end": 423.16,
+      "text": "Hey dude listen."
+    },
+    {
+      "start": 423.16,
+      "end": 426.16,
+      "text": "This guy is done."
+    },
+    {
+      "start": 426.16,
+      "end": 428.16,
+      "text": "And this is a part of my DFS."
+    },
+    {
+      "start": 428.16,
+      "end": 430.16,
+      "text": "You can just add a list."
+    },
+    {
+      "start": 430.16,
+      "end": 434.16,
+      "text": "And you can say this is a part of my DFS."
+    },
+    {
+      "start": 434.16,
+      "end": 435.16,
+      "text": "Okay."
+    },
+    {
+      "start": 435.16,
+      "end": 438.16,
+      "text": "So this is the line where you will do the DFS traversal."
+    },
+    {
+      "start": 438.16,
+      "end": 440.16,
+      "text": "Because you are visiting a node."
+    },
+    {
+      "start": 440.16,
+      "end": 441.16,
+      "text": "So stored."
+    },
+    {
+      "start": 441.16,
+      "end": 442.16,
+      "text": "Now what you do is."
+    },
+    {
+      "start": 442.16,
+      "end": 443.16,
+      "text": "Remember this."
+    },
+    {
+      "start": 443.16,
+      "end": 444.16,
+      "text": "What you do is."
+    },
+    {
+      "start": 444.16,
+      "end": 446.16,
+      "text": "You went to 1."
+    },
+    {
+      "start": 446.16,
+      "end": 447.16,
+      "text": "Now either you can go to 2."
+    },
+    {
+      "start": 447.16,
+      "end": 449.16,
+      "text": "Either you can go to 3."
+    },
+    {
+      "start": 449.16,
+      "end": 450.16,
+      "text": "You go this depth."
+    },
+    {
+      "start": 450.16,
+      "end": 451.16,
+      "text": "Or you go this depth."
+    },
+    {
+      "start": 451.16,
+      "end": 454.16,
+      "text": "So you travel the neighbors."
+    },
+    {
+      "start": 454.16,
+      "end": 456.16,
+      "text": "Either you travel 2 first or 3 first."
+    },
+    {
+      "start": 456.16,
+      "end": 457.16,
+      "text": "That is your headache."
+    },
+    {
+      "start": 457.16,
+      "end": 459.16,
+      "text": "But you travel the neighbors at first."
+    },
+    {
+      "start": 459.16,
+      "end": 462.16,
+      "text": "So how do you travel the neighbors of 1."
+    },
+    {
+      "start": 462.16,
+      "end": 463.16,
+      "text": "Very simple."
+    },
+    {
+      "start": 463.16,
+      "end": 464.16,
+      "text": "They are stored in the adjacency list."
+    },
+    {
+      "start": 464.16,
+      "end": 465.16,
+      "text": "If you carefully see."
+    },
+    {
+      "start": 465.16,
+      "end": 467.16,
+      "text": "They are stored in the adjacency list."
+    },
+    {
+      "start": 467.16,
+      "end": 468.16,
+      "text": "So for any node."
+    },
+    {
+      "start": 468.16,
+      "end": 470.16,
+      "text": "You go to their adjacency list."
+    },
+    {
+      "start": 470.16,
+      "end": 472.16,
+      "text": "You go to their adjacency list."
+    },
+    {
+      "start": 472.16,
+      "end": 473.16,
+      "text": "Right."
+    },
+    {
+      "start": 473.16,
+      "end": 476.16,
+      "text": "So this is nothing but adjacency of 1."
+    },
+    {
+      "start": 476.16,
+      "end": 479.98,
+      "text": "So this is the vector."
+    },
+    {
+      "start": 479.98,
+      "end": 480.98,
+      "text": "This is the list."
+    },
+    {
+      "start": 480.98,
+      "end": 482.98,
+      "text": "So that is what you will pick up."
+    },
+    {
+      "start": 482.98,
+      "end": 484.98,
+      "text": "So pick up the list."
+    },
+    {
+      "start": 484.98,
+      "end": 486.98,
+      "text": "And run a for each loop in it."
+    },
+    {
+      "start": 486.98,
+      "end": 488.98,
+      "text": "So these are the neighbors."
+    },
+    {
+      "start": 488.98,
+      "end": 490.98,
+      "text": "Run a for each loop in it."
+    },
+    {
+      "start": 490.98,
+      "end": 492.98,
+      "text": "Adjacency of node."
+    },
+    {
+      "start": 492.98,
+      "end": 497.98,
+      "text": "So this is the list of neighbors."
+    },
+    {
+      "start": 497.98,
+      "end": 499.98,
+      "text": "And you are running it."
+    },
+    {
+      "start": 499.98,
+      "end": 500.98,
+      "text": "And now."
+    },
+    {
+      "start": 500.98,
+      "end": 502.98,
+      "text": "You go depth by each node."
+    },
+    {
+      "start": 502.98,
+      "end": 503.98,
+      "text": "So first."
+    },
+    {
+      "start": 505.98,
+      "end": 506.98,
+      "text": "You go to the depth of 2."
+    },
+    {
+      "start": 506.98,
+      "end": 516.43,
+      "text": "then you go to the depth of 3 so first go to the depth of one IT which is one"
+    },
+    {
+      "start": 516.43,
+      "end": 522.25,
+      "text": "neighbor and then next iteration the next IT will go so imagine this to have"
+    },
+    {
+      "start": 522.25,
+      "end": 527.71,
+      "text": "2 comma 3 what will happen first a call of 2 will be made so it will be like DFS"
+    },
+    {
+      "start": 527.71,
+      "end": 532.51,
+      "text": "of 2 is made then when this completes the call completes because it is a"
+    },
+    {
+      "start": 532.51,
+      "end": 537.29,
+      "text": "recursive call it's a recursive call when it completes then it goes through"
+    },
+    {
+      "start": 537.29,
+      "end": 541.19,
+      "text": "DFS of 3 you need to understand this okay so it's basically something like"
+    },
+    {
+      "start": 541.19,
+      "end": 546.79,
+      "text": "okay let's get back is something like okay first we have to let's call the DFS"
+    },
+    {
+      "start": 546.79,
+      "end": 551.91,
+      "text": "for 2 it will go and it's complete like go to the depth depth depth depth and"
+    },
+    {
+      "start": 551.91,
+      "end": 557.45,
+      "text": "then come back then the next guy will be 3 then it will go to DFS of 3 and then"
+    },
+    {
+      "start": 557.45,
+      "end": 563.47,
+      "text": "come back so it's like DFS of 2 will be performed in depth then DFS of 3 but you"
+    },
+    {
+      "start": 563.47,
+      "end": 567.27,
+      "text": "don't visit every time all the nodes because"
+    },
+    {
+      "start": 567.27,
+      "end": 573.41,
+      "text": "when you go to 2 it will have the neighboring as 1 5 6 but from 2 you will"
+    },
+    {
+      "start": 573.41,
+      "end": 578.69,
+      "text": "not go back to 1 from 2 you will not go back to 1 so it's very important a node"
+    },
+    {
+      "start": 578.69,
+      "end": 582.81,
+      "text": "which has been visited in its traversal you don't visit it again so what do you"
+    },
+    {
+      "start": 582.81,
+      "end": 589.37,
+      "text": "do is you say okay listen this node has to be unvisited for me to go into the"
+    },
+    {
+      "start": 589.37,
+      "end": 594.63,
+      "text": "depth of it this node has to be unvisited for me to go into the depth of"
+    },
+    {
+      "start": 594.63,
+      "end": 597.27,
+      "text": "it simple but this will be the simple"
+    },
+    {
+      "start": 597.27,
+      "end": 603.33,
+      "text": "lines of code that you need to execute so what will happen is DFS of 1 will"
+    },
+    {
+      "start": 603.33,
+      "end": 608.55,
+      "text": "come and will mark it as visited now it has two neighbors 2 & 3 so it will go to"
+    },
+    {
+      "start": 608.55,
+      "end": 614.23,
+      "text": "the depth of them right so for 2 it again goes and checks there is one but"
+    },
+    {
+      "start": 614.23,
+      "end": 619.15,
+      "text": "that is already visited then there is 5 and then there is 6 so it will go for"
+    },
+    {
+      "start": 619.15,
+      "end": 627.13,
+      "text": "both DFS for 5 and then DFS for 6 so how is the call coming up"
+    },
+    {
+      "start": 627.27,
+      "end": 633.35,
+      "text": "first the call was for 1 right so you can write 1 next the call went to 2"
+    },
+    {
+      "start": 633.35,
+      "end": 637.67,
+      "text": "right next the call went for 5 so now for 5 when"
+    },
+    {
+      "start": 637.67,
+      "end": 641.59,
+      "text": "you go to 5 remember this by the way when you go to 2 you will mark it as 1"
+    },
+    {
+      "start": 641.59,
+      "end": 648.27,
+      "text": "now you go to 5 mark it as 1 now for 5 what happens is see here 5 the"
+    },
+    {
+      "start": 648.27,
+      "end": 653.83,
+      "text": "neighbor is 2 which is already marked there will be no further calls so 5"
+    },
+    {
+      "start": 653.83,
+      "end": 657.15,
+      "text": "will say there are no further calls there are no neighbors so"
+    },
+    {
+      "start": 657.27,
+      "end": 658.35,
+      "text": "I don't call anyone."
+    },
+    {
+      "start": 658.89,
+      "end": 659.97,
+      "text": "So I will come back."
+    },
+    {
+      "start": 660.91,
+      "end": 661.65,
+      "text": "I came back."
+    },
+    {
+      "start": 662.03,
+      "end": 662.13,
+      "text": "Right."
+    },
+    {
+      "start": 662.55,
+      "end": 665.37,
+      "text": "Now DFS of 2 goes to DFS of 6."
+    },
+    {
+      "start": 668.7,
+      "end": 670.68,
+      "text": "6 says, do I have neighbors?"
+    },
+    {
+      "start": 671.36,
+      "end": 673.7,
+      "text": "I do 2, which is already visited."
+    },
+    {
+      "start": 673.94,
+      "end": 674.64,
+      "text": "No further calls."
+    },
+    {
+      "start": 675.44,
+      "end": 676.18,
+      "text": "Comes back."
+    },
+    {
+      "start": 676.74,
+      "end": 680.22,
+      "text": "Now 2 says, do I have any other neighbors apart from 5 and 6?"
+    },
+    {
+      "start": 680.54,
+      "end": 680.86,
+      "text": "No."
+    },
+    {
+      "start": 681.28,
+      "end": 681.96,
+      "text": "I go back."
+    },
+    {
+      "start": 682.58,
+      "end": 682.92,
+      "text": "1."
+    },
+    {
+      "start": 683.76,
+      "end": 685.02,
+      "text": "So 2 is completed."
+    },
+    {
+      "start": 685.02,
+      "end": 689.54,
+      "text": "So initially when you started with 2, it is completed."
+    },
+    {
+      "start": 690.02,
+      "end": 691.76,
+      "text": "Now the next guy 3 will be occurring."
+    },
+    {
+      "start": 692.4,
+      "end": 693.84,
+      "text": "Next guy 3 will be occurring."
+    },
+    {
+      "start": 694.34,
+      "end": 695.34,
+      "text": "So you go to 3 now."
+    },
+    {
+      "start": 695.94,
+      "end": 697.2,
+      "text": "3 is marked as visited."
+    },
+    {
+      "start": 697.72,
+      "end": 698.84,
+      "text": "And now you are traversing 3."
+    },
+    {
+      "start": 699.54,
+      "end": 701.46,
+      "text": "So the next, we go to DFS of 3."
+    },
+    {
+      "start": 701.84,
+      "end": 704.74,
+      "text": "So let's check out who are the neighbors of 3."
+    },
+    {
+      "start": 705.34,
+      "end": 708.14,
+      "text": "So the neighbor of 3 appears to be 4 and 7."
+    },
+    {
+      "start": 708.86,
+      "end": 710.16,
+      "text": "So first we will go to 4."
+    },
+    {
+      "start": 710.58,
+      "end": 711.6,
+      "text": "Then we will go to 7."
+    },
+    {
+      "start": 711.8,
+      "end": 716.54,
+      "text": "But apparently what will happen is, when you go to 4, 4 in turn will go to 8."
+    },
+    {
+      "start": 716.64,
+      "end": 718.28,
+      "text": "8 will go in turn to 7."
+    },
+    {
+      "start": 718.78,
+      "end": 719.84,
+      "text": "So 4."
+    },
+    {
+      "start": 720.02,
+      "end": 722.84,
+      "text": "When it goes to depth, it will visit 7."
+    },
+    {
+      "start": 723.36,
+      "end": 725.1,
+      "text": "So thereby, this call was made."
+    },
+    {
+      "start": 725.84,
+      "end": 730.1,
+      "text": "Depending on where 4 lies on the adjacency list, we made this call."
+    },
+    {
+      "start": 730.48,
+      "end": 733.58,
+      "text": "If there was something like 7 4, you would have gone like this."
+    },
+    {
+      "start": 733.96,
+      "end": 735.86,
+      "text": "So it depends on the adjacency list."
+    },
+    {
+      "start": 736.54,
+      "end": 739.4,
+      "text": "Which format, like which traversal, you will traverse."
+    },
+    {
+      "start": 739.92,
+      "end": 741.68,
+      "text": "So for 3, who are the neighbors?"
+    },
+    {
+      "start": 742.34,
+      "end": 742.62,
+      "text": "1?"
+    },
+    {
+      "start": 742.82,
+      "end": 743.12,
+      "text": "No."
+    },
+    {
+      "start": 743.46,
+      "end": 744.04,
+      "text": "4 and 7."
+    },
+    {
+      "start": 744.44,
+      "end": 745.06,
+      "text": "4 and 7."
+    },
+    {
+      "start": 745.44,
+      "end": 746.2,
+      "text": "First we go to 4."
+    },
+    {
+      "start": 746.62,
+      "end": 746.88,
+      "text": "Perfect."
+    },
+    {
+      "start": 747.44,
+      "end": 748.02,
+      "text": "Let's go to 4."
+    },
+    {
+      "start": 748.02,
+      "end": 748.1,
+      "text": "4."
+    },
+    {
+      "start": 749.86,
+      "end": 752.18,
+      "text": "Then we will think, shall we go to 7 or not?"
+    },
+    {
+      "start": 752.5,
+      "end": 754.56,
+      "text": "Then we will think, shall we go to 7 or not?"
+    },
+    {
+      "start": 754.62,
+      "end": 755.78,
+      "text": "We are not sure as of now."
+    },
+    {
+      "start": 756.12,
+      "end": 757.22,
+      "text": "But defense of 4 is sure."
+    },
+    {
+      "start": 757.46,
+      "end": 758.02,
+      "text": "Let's go to 4."
+    },
+    {
+      "start": 758.46,
+      "end": 759.14,
+      "text": "Market is visited."
+    },
+    {
+      "start": 759.64,
+      "end": 760.36,
+      "text": "And 4 is there."
+    },
+    {
+      "start": 760.76,
+      "end": 761.04,
+      "text": "Perfect."
+    },
+    {
+      "start": 761.52,
+      "end": 762.18,
+      "text": "Now let's go to 4."
+    },
+    {
+      "start": 762.7,
+      "end": 763.52,
+      "text": "Who are 4's neighbor?"
+    },
+    {
+      "start": 764.24,
+      "end": 765.36,
+      "text": "There should be 3 and 8."
+    },
+    {
+      "start": 766.08,
+      "end": 767.3,
+      "text": "3 is already visited."
+    },
+    {
+      "start": 767.84,
+      "end": 768.6,
+      "text": "But 8 is not."
+    },
+    {
+      "start": 768.66,
+      "end": 769.4,
+      "text": "So let's go to 8."
+    },
+    {
+      "start": 770.12,
+      "end": 770.76,
+      "text": "Very simple."
+    },
+    {
+      "start": 772.4,
+      "end": 775.04,
+      "text": "Again, if you are going to 8, market is visited."
+    },
+    {
+      "start": 775.04,
+      "end": 779.2,
+      "text": "At the moment you go to 8, who are 8's neighbors?"
+    },
+    {
+      "start": 779.86,
+      "end": 780.36,
+      "text": "4."
+    },
+    {
+      "start": 780.72,
+      "end": 781.36,
+      "text": "No need to go."
+    },
+    {
+      "start": 781.62,
+      "end": 782.12,
+      "text": "7."
+    },
+    {
+      "start": 782.52,
+      "end": 783.02,
+      "text": "Okay."
+    },
+    {
+      "start": 783.16,
+      "end": 783.66,
+      "text": "Interesting."
+    },
+    {
+      "start": 784.16,
+      "end": 784.88,
+      "text": "Let's go to 7."
+    },
+    {
+      "start": 788.98,
+      "end": 790.24,
+      "text": "And 7 is visited."
+    },
+    {
+      "start": 792.08,
+      "end": 794.42,
+      "text": "Now, who are 7's neighbors?"
+    },
+    {
+      "start": 795.42,
+      "end": 796.82,
+      "text": "3 and 8."
+    },
+    {
+      "start": 797.3,
+      "end": 798.94,
+      "text": "Those guys are already visited."
+    },
+    {
+      "start": 799.12,
+      "end": 800.5,
+      "text": "You have already traversed them."
+    },
+    {
+      "start": 800.6,
+      "end": 801.9,
+      "text": "So you do not go."
+    },
+    {
+      "start": 801.9,
+      "end": 802.86,
+      "text": "You do not go."
+    },
+    {
+      "start": 802.86,
+      "end": 803.92,
+      "text": "Yes, you do not go."
+    },
+    {
+      "start": 804.46,
+      "end": 806.2,
+      "text": "So apparently 7 is done."
+    },
+    {
+      "start": 806.88,
+      "end": 808.46,
+      "text": "7 says, I don't have anything."
+    },
+    {
+      "start": 808.98,
+      "end": 810.04,
+      "text": "My recursion is done."
+    },
+    {
+      "start": 810.36,
+      "end": 811.2,
+      "text": "Can you just go back?"
+    },
+    {
+      "start": 811.2,
+      "end": 812.62,
+      "text": "He's like, okay, let's go back."
+    },
+    {
+      "start": 813.26,
+      "end": 815.44,
+      "text": "8 says, I don't have any neighbors."
+    },
+    {
+      "start": 815.74,
+      "end": 816.48,
+      "text": "Can you please go back?"
+    },
+    {
+      "start": 816.64,
+      "end": 817.12,
+      "text": "He says, okay."
+    },
+    {
+      "start": 817.54,
+      "end": 818.66,
+      "text": "4 says, I don't have any neighbors."
+    },
+    {
+      "start": 818.76,
+      "end": 819.56,
+      "text": "Can you please go back?"
+    },
+    {
+      "start": 819.72,
+      "end": 819.88,
+      "text": "Yes."
+    },
+    {
+      "start": 820.28,
+      "end": 825.12,
+      "text": "So this 3, this 3 went into one of its neighbor 4."
+    },
+    {
+      "start": 825.64,
+      "end": 827.08,
+      "text": "Will it go to the next neighbor 7?"
+    },
+    {
+      "start": 827.48,
+      "end": 830.82,
+      "text": "No, because 7 was visited by this path."
+    },
+    {
+      "start": 831.14,
+      "end": 833.18,
+      "text": "There is no need to again go and visit 7."
+    },
+    {
+      "start": 833.66,
+      "end": 837.3,
+      "text": "So this supposed neighbor is no more visited."
+    },
+    {
+      "start": 838.84,
+      "end": 840.96,
+      "text": "Thereby, the DFS is this portion."
+    },
+    {
+      "start": 842.38,
+      "end": 843.24,
+      "text": "This is your."
+    },
+    {
+      "start": 843.36,
+      "end": 843.96,
+      "text": "DFS score."
+    },
+    {
+      "start": 844.7,
+      "end": 854.5,
+      "text": "So if you carefully observed from here, whether you went like this or whether you went like this dependent or was dependent on the adjacency list."
+    },
+    {
+      "start": 854.9,
+      "end": 857.0,
+      "text": "So I hope you've understood the technique."
+    },
+    {
+      "start": 857.16,
+      "end": 858.48,
+      "text": "That's time to check out the code."
+    },
+    {
+      "start": 858.92,
+      "end": 861.2,
+      "text": "So as usual in the code."
+    },
+    {
+      "start": 861.68,
+      "end": 864.34,
+      "text": "So the C++ code is what I'll be typing."
+    },
+    {
+      "start": 864.4,
+      "end": 867.86,
+      "text": "And on the left, you can see the entire Java code in the similar format."
+    },
+    {
+      "start": 868.1,
+      "end": 872.94,
+      "text": "So you can just follow Java code and you can understand every line while I type the C++ code."
+    },
+    {
+      "start": 872.94,
+      "end": 875.16,
+      "text": "The syntax is almost identical."
+    },
+    {
+      "start": 875.44,
+      "end": 876.62,
+      "text": "So what do we have?"
+    },
+    {
+      "start": 876.76,
+      "end": 879.36,
+      "text": "We have the number of notes and the adjacency list."
+    },
+    {
+      "start": 879.78,
+      "end": 882.72,
+      "text": "You don't need to create the graph because that is always given to you."
+    },
+    {
+      "start": 883.14,
+      "end": 890.24,
+      "text": "So if you carefully observe, it's a connected undirected graph and it says the starting index is zero vertex."
+    },
+    {
+      "start": 890.7,
+      "end": 892.22,
+      "text": "So something to observe."
+    },
+    {
+      "start": 892.62,
+      "end": 894.1,
+      "text": "It's a zero based indexing graph."
+    },
+    {
+      "start": 894.12,
+      "end": 895.4,
+      "text": "So this will do right."
+    },
+    {
+      "start": 895.94,
+      "end": 898.08,
+      "text": "But the starting index is zero."
+    },
+    {
+      "start": 898.2,
+      "end": 900.56,
+      "text": "So you can say the start is zero."
+    },
+    {
+      "start": 901.54,
+      "end": 902.58,
+      "text": "I need to store the."
+    },
+    {
+      "start": 902.94,
+      "end": 908.78,
+      "text": "So you can create a list in order to store the DFS."
+    },
+    {
+      "start": 909.44,
+      "end": 910.08,
+      "text": "Okay."
+    },
+    {
+      "start": 910.92,
+      "end": 915.84,
+      "text": "So over here you can go back and say, cool, private."
+    },
+    {
+      "start": 917.08,
+      "end": 920.06,
+      "text": "And right here, what you can write is void DFS."
+    },
+    {
+      "start": 922.14,
+      "end": 922.98,
+      "text": "This will be the note."
+    },
+    {
+      "start": 923.52,
+      "end": 924.02,
+      "text": "Correct."
+    },
+    {
+      "start": 924.36,
+      "end": 926.64,
+      "text": "You need this particular adjacency list."
+    },
+    {
+      "start": 926.92,
+      "end": 928.74,
+      "text": "So please carry the adjacency list as well."
+    },
+    {
+      "start": 929.64,
+      "end": 931.06,
+      "text": "And what is the next thing that you need?"
+    },
+    {
+      "start": 931.14,
+      "end": 931.92,
+      "text": "You need the visitor."
+    },
+    {
+      "start": 932.32,
+      "end": 932.92,
+      "text": "So please carry the adjacency list."
+    },
+    {
+      "start": 933.04,
+      "end": 937.94,
+      "text": "You need the visitor and you need the list, which stores the particular DFS."
+    },
+    {
+      "start": 938.04,
+      "end": 939.3,
+      "text": "So please carry the list as well."
+    },
+    {
+      "start": 939.96,
+      "end": 941.72,
+      "text": "Now, what will you do when you enter?"
+    },
+    {
+      "start": 941.94,
+      "end": 953.08,
+      "text": "So the moment you enter, you remember this is mandatory and you add it in the, you add the note into the vector or the list."
+    },
+    {
+      "start": 953.62,
+      "end": 954.24,
+      "text": "What's the next step?"
+    },
+    {
+      "start": 954.56,
+      "end": 958.76,
+      "text": "The next step that you do is you traverse for all its neighbors."
+    },
+    {
+      "start": 958.98,
+      "end": 960.72,
+      "text": "This is how you traverse for all its neighbors."
+    },
+    {
+      "start": 961.12,
+      "end": 961.56,
+      "text": "Remember this."
+    },
+    {
+      "start": 961.62,
+      "end": 964.1,
+      "text": "This is the way in which you would traverse."
+    },
+    {
+      "start": 964.28,
+      "end": 966.66,
+      "text": "All its neighbors."
+    },
+    {
+      "start": 966.86,
+      "end": 967.36,
+      "text": "Okay."
+    },
+    {
+      "start": 969.25,
+      "end": 971.41,
+      "text": "So now what is the first thing that you do?"
+    },
+    {
+      "start": 971.55,
+      "end": 975.67,
+      "text": "If this neighbor is non visited, very, very important."
+    },
+    {
+      "start": 976.05,
+      "end": 984.07,
+      "text": "If this neighbor is non visited, you call DFS, IT, adjacency, visit, and just pass on the parameters."
+    },
+    {
+      "start": 984.37,
+      "end": 985.77,
+      "text": "And this is how the DFS will be."
+    },
+    {
+      "start": 986.15,
+      "end": 988.89,
+      "text": "And over here, what you do is you call the DFS, the starting node."
+    },
+    {
+      "start": 989.95,
+      "end": 990.97,
+      "text": "The starting node can be anything."
+    },
+    {
+      "start": 991.83,
+      "end": 994.51,
+      "text": "Pass on the adjacency, pass on the visited, pass on the LS."
+    },
+    {
+      "start": 994.51,
+      "end": 998.23,
+      "text": "Once the entire DFS has been completed, you return the LS."
+    },
+    {
+      "start": 998.95,
+      "end": 1000.69,
+      "text": "And now you can just go and compile."
+    },
+    {
+      "start": 1000.89,
+      "end": 1001.63,
+      "text": "Hopefully it runs."
+    },
+    {
+      "start": 1006.72,
+      "end": 1008.68,
+      "text": "So if you see visited of N, okay."
+    },
+    {
+      "start": 1008.8,
+      "end": 1010.48,
+      "text": "As usual, our common mistake."
+    },
+    {
+      "start": 1012.48,
+      "end": 1013.06,
+      "text": "This will be B."
+    },
+    {
+      "start": 1014.16,
+      "end": 1017.52,
+      "text": "If you see the output is correct, let's quickly submit this."
+    },
+    {
+      "start": 1018.28,
+      "end": 1023.7,
+      "text": "So internally, the code has also been written in such a way that it follows the adjacency list."
+    },
+    {
+      "start": 1023.82,
+      "end": 1024.9,
+      "text": "So you don't need to worry."
+    },
+    {
+      "start": 1025.36,
+      "end": 1026.52,
+      "text": "The code will be working fine."
+    },
+    {
+      "start": 1026.52,
+      "end": 1026.58,
+      "text": "Okay."
+    },
+    {
+      "start": 1026.8,
+      "end": 1028.58,
+      "text": "So this is what is."
+    },
+    {
+      "start": 1028.7,
+      "end": 1031.2,
+      "text": "The DFS traversal of a graph."
+    },
+    {
+      "start": 1032.1,
+      "end": 1034.48,
+      "text": "So let's talk about the space complexity."
+    },
+    {
+      "start": 1035.06,
+      "end": 1036.8,
+      "text": "So what will be the space complexity?"
+    },
+    {
+      "start": 1036.86,
+      "end": 1038.26,
+      "text": "How many nodes are we visiting?"
+    },
+    {
+      "start": 1038.66,
+      "end": 1041.7,
+      "text": "At max, we are visiting N nodes in our traversal."
+    },
+    {
+      "start": 1042.02,
+      "end": 1046.88,
+      "text": "So we can say that we are storing N nodes in those DFS traversal."
+    },
+    {
+      "start": 1047.24,
+      "end": 1054.52,
+      "text": "We're using we go off N for visited and the recursion stack space at the worst case, because what is stack space?"
+    },
+    {
+      "start": 1054.52,
+      "end": 1057.8,
+      "text": "If you remember recursion, this is the stack space."
+    },
+    {
+      "start": 1057.8,
+      "end": 1064.3,
+      "text": "So the worst case, if I give you a graph, like a skewed graph, you will end up going like one, two, three, four."
+    },
+    {
+      "start": 1064.3,
+      "end": 1069.2,
+      "text": "So the recursion stack space at the worst case can be we go off N."
+    },
+    {
+      "start": 1069.2,
+      "end": 1074.4,
+      "text": "So I can call it near about we go off N if we do not include the adjacency list."
+    },
+    {
+      "start": 1074.4,
+      "end": 1076.2,
+      "text": "What about the DFS traversal?"
+    },
+    {
+      "start": 1076.2,
+      "end": 1078.2,
+      "text": "So how's the DFS traversal?"
+    },
+    {
+      "start": 1078.2,
+      "end": 1079.0,
+      "text": "It's a function."
+    },
+    {
+      "start": 1079.0,
+      "end": 1083.2,
+      "text": "And then it iterates on the neighbors, right?"
+    },
+    {
+      "start": 1083.2,
+      "end": 1084.8,
+      "text": "Iterates on the neighbors."
+    },
+    {
+      "start": 1084.8,
+      "end": 1085.76,
+      "text": "And for every neighbor, it calls the function."
+    },
+    {
+      "start": 1085.76,
+      "end": 1086.0,
+      "text": "So it iterates on the neighbors."
+    },
+    {
+      "start": 1086.0,
+      "end": 1086.16,
+      "text": "And for every neighbor, it calls the function."
+    },
+    {
+      "start": 1086.16,
+      "end": 1087.2,
+      "text": "And for every neighbor, it calls the function."
+    },
+    {
+      "start": 1087.2,
+      "end": 1088.4,
+      "text": "And for every neighbor, it calls the function."
+    },
+    {
+      "start": 1088.4,
+      "end": 1090.2,
+      "text": "This is how it is, right?"
+    },
+    {
+      "start": 1090.2,
+      "end": 1094.6,
+      "text": "So this function will always be called for a single node."
+    },
+    {
+      "start": 1094.6,
+      "end": 1098.3,
+      "text": "This function will always be called for a single node, right?"
+    },
+    {
+      "start": 1098.3,
+      "end": 1105.7,
+      "text": "And any node, for any node, it'll just be called once because you traverse a node single time."
+    },
+    {
+      "start": 1105.7,
+      "end": 1107.3,
+      "text": "For node one, it will come once."
+    },
+    {
+      "start": 1107.3,
+      "end": 1109.1,
+      "text": "For node two, it will come once."
+    },
+    {
+      "start": 1109.1,
+      "end": 1114.9,
+      "text": "And for every node, we will have a certain number of neighbors that it is iterating."
+    },
+    {
+      "start": 1114.9,
+      "end": 1116.2,
+      "text": "It is iterating."
+    },
+    {
+      "start": 1116.2,
+      "end": 1117.2,
+      "text": "So can I say for an iterating?"
+    },
+    {
+      "start": 1117.2,
+      "end": 1118.5,
+      "text": "For근 under container."
+    },
+    {
+      "start": 1118.5,
+      "end": 1120.5,
+      "text": "Can I say for an UNDERUCTED graph?"
+    },
+    {
+      "start": 1120.5,
+      "end": 1128.5,
+      "text": "These neighbors for three, the neighbors are one, seven, and four, which is the degree of the graph, which is the degree of the graph?"
+    },
+    {
+      "start": 1128.5,
+      "end": 1130.1,
+      "text": "Can I say it is the degree of the graph?"
+    },
+    {
+      "start": 1130.1,
+      "end": 1131.3,
+      "text": "14343, 0 assimilation 00, 0 simiche, 0 simite."
+    },
+    {
+      "start": 1131.3,
+      "end": 1132.5,
+      "text": "Oit, I sorry, degree of three."
+    },
+    {
+      "start": 1132.5,
+      "end": 1133.4,
+      "text": "Yes."
+    },
+    {
+      "start": 1133.4,
+      "end": 1135.7,
+      "text": "And for every node, can I say it will be the summation of degrees?"
+    },
+    {
+      "start": 1135.7,
+      "end": 1145.82,
+      "text": "You see the 22nd order in the"
+    },
+    {
+      "start": 1145.82,
+      "end": 1146.28,
+      "text": "diesia?"
+    },
+    {
+      "start": 1146.28,
+      "end": 1146.74,
+      "text": "So it shows 50,000 buck, Madaspoganno."
+    },
+    {
+      "start": 1147.2,
+      "end": 1151.52,
+      "text": "the number of neighbors plus number of neighbors plus number of neighbors which is equivalent to"
+    },
+    {
+      "start": 1151.52,
+      "end": 1156.02,
+      "text": "degree of a node plus degree of a node plus degree of a node which is equivalent to summation of"
+    },
+    {
+      "start": 1156.02,
+      "end": 1161.52,
+      "text": "degree right so what is the summation of degree if you remember the first lecture that is two"
+    },
+    {
+      "start": 1161.52,
+      "end": 1167.18,
+      "text": "into number of edges and then for every node you're calling the function once so we go of n"
+    },
+    {
+      "start": 1167.18,
+      "end": 1174.2,
+      "text": "for calling the recursion once so this is the time complexity for an undirected graph for a directed"
+    },
+    {
+      "start": 1174.2,
+      "end": 1180.02,
+      "text": "graph it will depend on the number of edges so this two will go off and the number of edges is"
+    },
+    {
+      "start": 1180.02,
+      "end": 1186.04,
+      "text": "what it will boil down to so guys i hope you have understood the entire explanation as well as the"
+    },
+    {
+      "start": 1186.04,
+      "end": 1190.7,
+      "text": "code and the time complexity in the space complexity just in case you did please hit that like button"
+    },
+    {
+      "start": 1190.7,
+      "end": 1195.22,
+      "text": "and if you're new to our channel what are you waiting for hit that subscribe button right away"
+    },
+    {
+      "start": 1195.22,
+      "end": 1201.2,
+      "text": "with this i'll be wrapping up this video and yeah for the dpcv's and the hd sheet you can find the"
+    },
+    {
+      "start": 1201.2,
+      "end": 1204.16,
+      "text": "link in the description make sure you check it out and let's wrap up this video"
+    },
+    {
+      "start": 1204.16,
+      "end": 1204.18,
+      "text": "you"
+    },
+    {
+      "start": 1204.2,
+      "end": 1206.34,
+      "text": "let's meet in some other video till then bye bye"
+    }
+  ]
+}

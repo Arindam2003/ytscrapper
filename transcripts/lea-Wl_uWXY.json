@@ -1,0 +1,679 @@
+{
+  "video_id": "lea-Wl_uWXY",
+  "title": "G-4. What are Connected Components ？",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 426.74,
+  "segments": [
+    {
+      "start": 3.02,
+      "end": 6.86,
+      "text": "So in this video, we will be learning about connected components in a graph."
+    },
+    {
+      "start": 7.24,
+      "end": 9.04,
+      "text": "Now, what do we mean by connected components?"
+    },
+    {
+      "start": 9.36,
+      "end": 14.82,
+      "text": "Till now, we have seen graphs like this, if you remember well enough."
+    },
+    {
+      "start": 15.58,
+      "end": 17.74,
+      "text": "We have also seen graphs like this."
+    },
+    {
+      "start": 18.32,
+      "end": 21.2,
+      "text": "In the first lecture, I told you this is also a graph."
+    },
+    {
+      "start": 21.64,
+      "end": 25.72,
+      "text": "It might be a binary tree, but this can also be called as a graph."
+    },
+    {
+      "start": 26.06,
+      "end": 29.76,
+      "text": "This is a connected graph, so we can also call this as a graph."
+    },
+    {
+      "start": 29.76,
+      "end": 32.96,
+      "text": "But what if I ask you, is this a graph?"
+    },
+    {
+      "start": 33.56,
+      "end": 39.3,
+      "text": "Like if I show you something like this, is this a graph?"
+    },
+    {
+      "start": 39.86,
+      "end": 42.36,
+      "text": "Then you might say, yes, Trevor, this is a graph."
+    },
+    {
+      "start": 42.84,
+      "end": 43.82,
+      "text": "This is a graph."
+    },
+    {
+      "start": 44.3,
+      "end": 45.26,
+      "text": "This is a graph."
+    },
+    {
+      "start": 45.7,
+      "end": 46.48,
+      "text": "This is a graph."
+    },
+    {
+      "start": 46.56,
+      "end": 47.38,
+      "text": "There are four graphs."
+    },
+    {
+      "start": 47.78,
+      "end": 48.92,
+      "text": "This is a single node."
+    },
+    {
+      "start": 49.06,
+      "end": 51.1,
+      "text": "This can also be treated as a single node."
+    },
+    {
+      "start": 51.58,
+      "end": 52.08,
+      "text": "You're correct."
+    },
+    {
+      "start": 52.76,
+      "end": 53.8,
+      "text": "You're absolutely correct."
+    },
+    {
+      "start": 54.04,
+      "end": 55.66,
+      "text": "These are four graphs."
+    },
+    {
+      "start": 56.32,
+      "end": 60.84,
+      "text": "But can I say, these four graphs, can they be one single graph?"
+    },
+    {
+      "start": 60.84,
+      "end": 63.2,
+      "text": "You might say, no, Trevor, they're not connected."
+    },
+    {
+      "start": 64.18,
+      "end": 64.84,
+      "text": "This is where the definition..."
+    },
+    {
+      "start": 65.62,
+      "end": 67.22,
+      "text": "Connected components come in."
+    },
+    {
+      "start": 67.58,
+      "end": 77.1,
+      "text": "So if I try to number them for an example, one, two, three, four, five, six, seven, eight, nine, ten."
+    },
+    {
+      "start": 77.1,
+      "end": 77.6,
+      "text": "Okay."
+    },
+    {
+      "start": 77.6,
+      "end": 78.24,
+      "text": "So number them."
+    },
+    {
+      "start": 78.68,
+      "end": 82.08,
+      "text": "Imagine someone comes up and sees the definition of graph."
+    },
+    {
+      "start": 82.68,
+      "end": 92.92,
+      "text": "Given an undirected graph with ten nodes, one, two, three, four, five, six, seven, eight, eight edges."
+    },
+    {
+      "start": 93.46,
+      "end": 94.26,
+      "text": "And he sees there just to be one, two, three, four, five, six, seven, eight edges."
+    },
+    {
+      "start": 94.26,
+      "end": 95.2,
+      "text": "And he sees there just to be one, two, three, four, five, six, seven, eight, eight edges."
+    },
+    {
+      "start": 95.2,
+      "end": 96.6,
+      "text": "In addition, we have there."
+    },
+    {
+      "start": 96.6,
+      "end": 97.92,
+      "text": "Cecilia reminds us of this very day."
+    },
+    {
+      "start": 97.92,
+      "end": 98.78,
+      "text": "Say one, two."
+    },
+    {
+      "start": 98.78,
+      "end": 99.86,
+      "text": "One, three."
+    },
+    {
+      "start": 99.86,
+      "end": 100.86,
+      "text": "Two, four."
+    },
+    {
+      "start": 100.86,
+      "end": 102.26,
+      "text": "Three, four."
+    },
+    {
+      "start": 102.26,
+      "end": 103.26,
+      "text": "Okay."
+    },
+    {
+      "start": 103.26,
+      "end": 104.58,
+      "text": "Five, six, five, six, seven, eight, nine, ten, o, he one, two, three, four, five, six,"
+    },
+    {
+      "start": 104.58,
+      "end": 106.32,
+      "text": "six, seven, eight, nine, 10 Dutch."
+    },
+    {
+      "start": 106.32,
+      "end": 108.56,
+      "text": "He just tells you about these eight edges."
+    },
+    {
+      "start": 108.56,
+      "end": 109.56,
+      "text": "So."
+    },
+    {
+      "start": 109.56,
+      "end": 111.9,
+      "text": "Apparently, it's a graph."
+    },
+    {
+      "start": 111.9,
+      "end": 112.9,
+      "text": "It's a graph."
+    },
+    {
+      "start": 112.9,
+      "end": 113.9,
+      "text": "It's a graph."
+    },
+    {
+      "start": 113.9,
+      "end": 114.9,
+      "text": "It's a graph which is in four pieces."
+    },
+    {
+      "start": 114.9,
+      "end": 115.9,
+      "text": "It's a graph."
+    },
+    {
+      "start": 115.9,
+      "end": 116.9,
+      "text": "It's a graph."
+    },
+    {
+      "start": 116.9,
+      "end": 120.0,
+      "text": "Which isn't one piece, two piece, three piece, four piece."
+    },
+    {
+      "start": 120.0,
+      "end": 123.96,
+      "text": "And the last one being a single guy."
+    },
+    {
+      "start": 123.96,
+      "end": 124.96,
+      "text": "So."
+    },
+    {
+      "start": 125.2,
+      "end": 133.78,
+      "text": "what we call components instead of piece it's a four components the graph has been broken down"
+    },
+    {
+      "start": 133.78,
+      "end": 140.38,
+      "text": "into four different components so next time you see two different portions and they're not"
+    },
+    {
+      "start": 140.38,
+      "end": 147.68,
+      "text": "connected don't say that those are not graphs so these are four different components of a single"
+    },
+    {
+      "start": 147.68,
+      "end": 151.84,
+      "text": "graph yeah they could have been four different graphs but according to the question and the input"
+    },
+    {
+      "start": 151.84,
+      "end": 159.56,
+      "text": "you can see them to be a part of a single graph so you will be applying a lot of algorithms going"
+    },
+    {
+      "start": 159.56,
+      "end": 165.86,
+      "text": "forward okay applying a lot of algorithms you'll be learning about algorithms assume a traversal"
+    },
+    {
+      "start": 165.86,
+      "end": 170.72,
+      "text": "algorithm okay assume a traversal algorithm i'll not take any name because i haven't taught you"
+    },
+    {
+      "start": 170.72,
+      "end": 177.12,
+      "text": "that so what will happen in future is if assume you're doing a traversal algorithm you'll be like"
+    },
+    {
+      "start": 177.12,
+      "end": 181.68,
+      "text": "one two four five assume you started a journey and you start like one"
+    },
+    {
+      "start": 181.84,
+      "end": 187.36,
+      "text": "you go to two then you go to four then you go to three so on this travesty you will never be able"
+    },
+    {
+      "start": 187.36,
+      "end": 194.34,
+      "text": "to reach these components you will be you will never be able to reach these components this is"
+    },
+    {
+      "start": 194.34,
+      "end": 201.92,
+      "text": "why any travesty that you will do any traversal you will always use something as a visited array"
+    },
+    {
+      "start": 201.92,
+      "end": 208.56,
+      "text": "yes you will always use something as a visited array remember the concept visited array"
+    },
+    {
+      "start": 208.56,
+      "end": 211.6,
+      "text": "over here we have 10 nodes so what you'll do is you'll create a"
+    },
+    {
+      "start": 211.84,
+      "end": 218.96,
+      "text": "an array of 11 size starting from the 0th index and you can go on till the 10th index so the size"
+    },
+    {
+      "start": 218.96,
+      "end": 225.38,
+      "text": "of the array will be 11 and what you will do is remember this you will always run a loop for any"
+    },
+    {
+      "start": 225.38,
+      "end": 232.1,
+      "text": "algorithm from 0 and this node numbering is from 1 to 10 so you can always run a loop from 1 to 10"
+    },
+    {
+      "start": 232.1,
+      "end": 240.6,
+      "text": "always and if the node is not visited remember this if the node is not visited you will call"
+    },
+    {
+      "start": 240.6,
+      "end": 246.8,
+      "text": "the traversal algorithm from that node i'll explain you now what happens you might be confused"
+    },
+    {
+      "start": 246.8,
+      "end": 251.2,
+      "text": "what is happening but let's understand so initially what you'll do is you'll say everyone to be"
+    },
+    {
+      "start": 251.2,
+      "end": 259.26,
+      "text": "unvisited which is false okay everyone initially is unvisited so thereby it will be false so what"
+    },
+    {
+      "start": 259.26,
+      "end": 265.92,
+      "text": "happens is when you start your traversal from 1 and you see 1 is unvisited so you see 1 is"
+    },
+    {
+      "start": 265.92,
+      "end": 270.42,
+      "text": "unvisited yes the if says 1 is unvisited so you go and say"
+    },
+    {
+      "start": 270.42,
+      "end": 270.58,
+      "text": "traversal from 1 and you see 1 is unvisited so you see 1 is unvisited yes the if says 1 is"
+    },
+    {
+      "start": 270.58,
+      "end": 271.52,
+      "text": "Traversal of 1."
+    },
+    {
+      "start": 271.92,
+      "end": 272.82,
+      "text": "Traversal of 1."
+    },
+    {
+      "start": 273.18,
+      "end": 274.72,
+      "text": "So 1 starts at traversal."
+    },
+    {
+      "start": 275.08,
+      "end": 277.74,
+      "text": "And the traversal algorithms are designed in such a way"
+    },
+    {
+      "start": 277.74,
+      "end": 281.44,
+      "text": "that they will traverse the entire connected portions of the graph."
+    },
+    {
+      "start": 281.76,
+      "end": 283.56,
+      "text": "Entire connected portions of the graph."
+    },
+    {
+      "start": 283.88,
+      "end": 288.5,
+      "text": "So it goes to 1, goes to 2, goes to 4 and goes to 3."
+    },
+    {
+      "start": 288.5,
+      "end": 293.76,
+      "text": "So apparently it will mark because it went to everyone."
+    },
+    {
+      "start": 294.52,
+      "end": 294.6,
+      "text": "Right?"
+    },
+    {
+      "start": 294.74,
+      "end": 295.46,
+      "text": "It went to everyone."
+    },
+    {
+      "start": 295.86,
+      "end": 300.04,
+      "text": "So it will mark everyone as visited because it traversed everyone."
+    },
+    {
+      "start": 300.04,
+      "end": 302.44,
+      "text": "Now the traversal, I will move to 2."
+    },
+    {
+      "start": 302.9,
+      "end": 306.08,
+      "text": "So it will see 2 is not, 2 is already visited."
+    },
+    {
+      "start": 306.46,
+      "end": 311.58,
+      "text": "In my traversal, yes, in my traversal, I have already visited 1, 2, 3, 4."
+    },
+    {
+      "start": 311.9,
+      "end": 313.38,
+      "text": "So I will not go for 2."
+    },
+    {
+      "start": 313.52,
+      "end": 314.26,
+      "text": "Then I will go to 3."
+    },
+    {
+      "start": 314.48,
+      "end": 315.06,
+      "text": "I will not go."
+    },
+    {
+      "start": 315.34,
+      "end": 316.08,
+      "text": "Then I will go to 4."
+    },
+    {
+      "start": 316.28,
+      "end": 316.92,
+      "text": "I will not go."
+    },
+    {
+      "start": 317.02,
+      "end": 321.72,
+      "text": "Next when I go to 5, I see 5 over here is 0."
+    },
+    {
+      "start": 322.0,
+      "end": 322.78,
+      "text": "Non-visited."
+    },
+    {
+      "start": 323.12,
+      "end": 325.46,
+      "text": "Then you again call the traversal for 5."
+    },
+    {
+      "start": 325.9,
+      "end": 329.54,
+      "text": "Now 5 will traverse, 6 will traverse, 7 will traverse."
+    },
+    {
+      "start": 329.54,
+      "end": 330.14,
+      "text": "So it's done."
+    },
+    {
+      "start": 330.58,
+      "end": 332.46,
+      "text": "Next it will be like 6, 7."
+    },
+    {
+      "start": 332.86,
+      "end": 333.8,
+      "text": "Next it goes to 8."
+    },
+    {
+      "start": 334.1,
+      "end": 335.56,
+      "text": "8 will say I have not been visited."
+    },
+    {
+      "start": 336.0,
+      "end": 338.44,
+      "text": "So now it will go and do a traversal for 8 and 9."
+    },
+    {
+      "start": 338.82,
+      "end": 339.82,
+      "text": "It will mark it as true."
+    },
+    {
+      "start": 340.32,
+      "end": 342.14,
+      "text": "Next, 9 traverse."
+    },
+    {
+      "start": 342.36,
+      "end": 343.66,
+      "text": "Next you go to 10, not traverse."
+    },
+    {
+      "start": 343.8,
+      "end": 344.58,
+      "text": "So 10 will be visited."
+    },
+    {
+      "start": 344.58,
+      "end": 351.56,
+      "text": "So in this way, any algorithm in the future, you don't just call like you can't do something like,"
+    },
+    {
+      "start": 351.76,
+      "end": 357.94,
+      "text": "okay, we start the traversal algorithm from node 1 and this will make sure that it visits everyone."
+    },
+    {
+      "start": 358.44,
+      "end": 359.44,
+      "text": "This is not possible."
+    },
+    {
+      "start": 359.44,
+      "end": 365.32,
+      "text": "If the graph has multiple components because you carefully saw if you started from 1,"
+    },
+    {
+      "start": 365.62,
+      "end": 370.86,
+      "text": "you would have only visited this portion and these portions would have not been touched."
+    },
+    {
+      "start": 371.24,
+      "end": 375.56,
+      "text": "So for any traversal algorithm, just make sure this is the pattern."
+    },
+    {
+      "start": 375.88,
+      "end": 376.66,
+      "text": "This is the pattern."
+    },
+    {
+      "start": 377.0,
+      "end": 381.44,
+      "text": "You always run from 1 to 10 and you check for 1, not visited."
+    },
+    {
+      "start": 381.84,
+      "end": 382.74,
+      "text": "Go and start it."
+    },
+    {
+      "start": 382.84,
+      "end": 384.88,
+      "text": "So it will mark everyone whom he can."
+    },
+    {
+      "start": 385.24,
+      "end": 386.76,
+      "text": "For the next guy, again he goes."
+    },
+    {
+      "start": 387.06,
+      "end": 388.38,
+      "text": "For the next guy, again he goes."
+    },
+    {
+      "start": 388.38,
+      "end": 389.42,
+      "text": "For the next guy, again."
+    },
+    {
+      "start": 389.56,
+      "end": 390.06,
+      "text": "Again he goes."
+    },
+    {
+      "start": 390.28,
+      "end": 398.2,
+      "text": "So this is how the traversal algorithms will be executed and this is what the connected components are."
+    },
+    {
+      "start": 399.0,
+      "end": 399.5,
+      "text": "Okay."
+    },
+    {
+      "start": 399.5,
+      "end": 401.12,
+      "text": "So guys, I hope you have understood this video."
+    },
+    {
+      "start": 401.12,
+      "end": 403.56,
+      "text": "Just in case you did, please make sure you like this video."
+    },
+    {
+      "start": 403.72,
+      "end": 405.92,
+      "text": "And if you're new to our channel, what are you waiting for?"
+    },
+    {
+      "start": 406.12,
+      "end": 407.82,
+      "text": "Hit that subscribe button right over here, man."
+    },
+    {
+      "start": 407.82,
+      "end": 408.52,
+      "text": "Just hit it."
+    },
+    {
+      "start": 408.82,
+      "end": 413.04,
+      "text": "And yeah, if you haven't checked out our DP series and the SD sheet, please make sure you check it out."
+    },
+    {
+      "start": 413.04,
+      "end": 414.66,
+      "text": "The link will be in the description."
+    },
+    {
+      "start": 415.0,
+      "end": 416.44,
+      "text": "And yeah, with this, I'll be wrapping up this video."
+    },
+    {
+      "start": 416.44,
+      "end": 417.34,
+      "text": "Let's meet in the next one."
+    },
+    {
+      "start": 417.34,
+      "end": 417.94,
+      "text": "Till then, bye-bye."
+    },
+    {
+      "start": 417.94,
+      "end": 418.44,
+      "text": "Take care."
+    },
+    {
+      "start": 420.81,
+      "end": 424.21,
+      "text": "Bye-bye."
+    }
+  ]
+}

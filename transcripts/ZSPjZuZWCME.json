@@ -1,0 +1,394 @@
+{
+  "video_id": "ZSPjZuZWCME",
+  "title": "G-44. Minimum Spanning Tree - Theory",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 478.51,
+  "segments": [
+    {
+      "start": 2.93,
+      "end": 6.19,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.51,
+      "end": 10.49,
+      "text": "So in this video, we're going to learn about minimum spanning tree, which is more commonly"
+    },
+    {
+      "start": 10.49,
+      "end": 15.51,
+      "text": "known as MST. So in order to understand minimum spanning tree, the first thing that you need to"
+    },
+    {
+      "start": 15.51,
+      "end": 22.87,
+      "text": "understand is what is a spanning tree. So you will be given an undirected weighted graph. So"
+    },
+    {
+      "start": 22.87,
+      "end": 33.21,
+      "text": "the edge will have different or equal weights and this graph will contain N nodes and M edges,"
+    },
+    {
+      "start": 33.75,
+      "end": 39.83,
+      "text": "where N can be any number, M can be any number. There is no relation between them. So if you see"
+    },
+    {
+      "start": 39.83,
+      "end": 48.35,
+      "text": "as of now, this graph is connected by 1, 2, 3, 4, 5, 6 edges, correct? And how many nodes are there?"
+    },
+    {
+      "start": 48.49,
+      "end": 52.77,
+      "text": "1, 2, 3, 4, 5. So this graph is currently having 5,"
+    },
+    {
+      "start": 52.87,
+      "end": 59.27,
+      "text": "N nodes and 6 edges. Now the task of a spanning tree or the definition of a spanning tree is,"
+    },
+    {
+      "start": 59.63,
+      "end": 68.87,
+      "text": "I'll write the definition, a tree in which we have N nodes, very, very important."
+    },
+    {
+      "start": 69.49,
+      "end": 76.31,
+      "text": "We have N nodes and N minus 1 edges. That is the definition of spanning tree,"
+    },
+    {
+      "start": 76.31,
+      "end": 84.15,
+      "text": "a tree in which we have N nodes or N minus 1 edges and all nodes are reachable from each other."
+    },
+    {
+      "start": 84.21,
+      "end": 94.27,
+      "text": "So if someone does ask you the definition of spanning tree, please make sure you tell them"
+    },
+    {
+      "start": 94.27,
+      "end": 100.69,
+      "text": "that it should have N nodes, N minus 1 edges and all nodes should be reachable from each other."
+    },
+    {
+      "start": 100.91,
+      "end": 105.21,
+      "text": "That is the definition of a tree. So if you remember a tree, like if I draw a tree,"
+    },
+    {
+      "start": 105.83,
+      "end": 113.65,
+      "text": "so what is this tree? 1, 2, 3, 4, 5. 5 nodes and if you carefully see 1, 2, 3, 4 edges."
+    },
+    {
+      "start": 114.21,
+      "end": 118.89,
+      "text": "And everyone is connected to each other. If you want to go from here, you can go."
+    },
+    {
+      "start": 119.01,
+      "end": 121.57,
+      "text": "If you want to go from here, you can go. If you want to go from here, you can go."
+    },
+    {
+      "start": 121.93,
+      "end": 128.01,
+      "text": "So everyone is connected and it has exactly 5 nodes and one lesser number of edges."
+    },
+    {
+      "start": 128.41,
+      "end": 131.41,
+      "text": "So that is what the definition of a spanning tree is."
+    },
+    {
+      "start": 131.47,
+      "end": 138.13,
+      "text": "You have to make sure that from this, you draw a tree out such that it has all the N nodes,"
+    },
+    {
+      "start": 138.59,
+      "end": 144.01,
+      "text": "N minus 1 edges and all nodes are reachable from each other. For an example, if I try to draw,"
+    },
+    {
+      "start": 144.21,
+      "end": 147.61,
+      "text": "one of the spanning trees, it can be something like I will take 0."
+    },
+    {
+      "start": 147.61,
+      "end": 157.79,
+      "text": "I will probably take 1 with it and I'll take 4 and then I'll take 2 and then I can definitely"
+    },
+    {
+      "start": 157.79,
+      "end": 163.25,
+      "text": "take something as 3. So can I say this is a spanning tree? I definitely can say that this"
+    },
+    {
+      "start": 163.25,
+      "end": 171.65,
+      "text": "is a spanning tree. Why? Because if you look 1, 2, 3, 4, 5, 5 nodes and if you carefully see"
+    },
+    {
+      "start": 174.21,
+      "end": 179.41,
+      "text": "it, you can see that it has 4 edges. So thereby, this can be called as a spanning tree."
+    },
+    {
+      "start": 179.73,
+      "end": 186.21,
+      "text": "And if you carefully observe, everyone, all the nodes are connected. Everyone is in a component,"
+    },
+    {
+      "start": 186.45,
+      "end": 192.63,
+      "text": "is in a single component. Thereby, this can be called as a spanning tree. Can I draw a few more"
+    },
+    {
+      "start": 192.63,
+      "end": 198.55,
+      "text": "spanning trees from this particular graph? Yes, we can. Assume I take 3. Assume I have something"
+    },
+    {
+      "start": 198.55,
+      "end": 204.13,
+      "text": "like a 1. Assume I have something like a 0. And then I have something like a 2. And then I have"
+    },
+    {
+      "start": 204.21,
+      "end": 211.53,
+      "text": "something like a 4. This is also a spanning tree. Why? Because if you see, we have 1, 2, 3, 4, 5"
+    },
+    {
+      "start": 211.53,
+      "end": 219.37,
+      "text": "and 1, 2, 3, 4 edges, 5 nodes and 4 edges again. Similarly, can I draw any other spanning tree?"
+    },
+    {
+      "start": 219.63,
+      "end": 227.21,
+      "text": "Yes, I can draw. How? Imagine I take 0 and then I take 1 and then I take 2. And what I can do is,"
+    },
+    {
+      "start": 227.21,
+      "end": 232.93,
+      "text": "I can probably relate 4 over here and I can have 3 over here. This is also a spanning tree. Why?"
+    },
+    {
+      "start": 234.21,
+      "end": 238.47,
+      "text": "Because I can draw 1, 2, 3, 4 edges and all the nodes are connected. So in this way, you can have"
+    },
+    {
+      "start": 238.47,
+      "end": 243.93,
+      "text": "a multiple. There is no restriction on the number of spanning trees. You can have any number of"
+    },
+    {
+      "start": 243.93,
+      "end": 249.11,
+      "text": "spanning trees. Depends on graphs. Any graph might have one spanning tree. Some graph might have 2."
+    },
+    {
+      "start": 249.23,
+      "end": 255.55,
+      "text": "Some graph might have 3. Some graph might have 5. There is no restrictions. It depends on a graph"
+    },
+    {
+      "start": 255.55,
+      "end": 261.05,
+      "text": "to a graph. So I've drawn two spanning trees. One is this one, while the other one is this one."
+    },
+    {
+      "start": 261.35,
+      "end": 263.41,
+      "text": "Now, what do you need to do is, you need to write the edge weights."
+    },
+    {
+      "start": 263.41,
+      "end": 270.25,
+      "text": "So imagine I write the edge weights. It is 6, this is 2, this is 5, and this is 3. If I sum it up,"
+    },
+    {
+      "start": 270.41,
+      "end": 277.69,
+      "text": "6 plus 2 is 8 plus 3 is 11. So the sum of all the edge weights is 16 in this case. If I write the"
+    },
+    {
+      "start": 277.69,
+      "end": 285.11,
+      "text": "edge weights over here, it's 2, it's 8, it's 3, it's 7. And if I try to sum it up, it's basically"
+    },
+    {
+      "start": 285.11,
+      "end": 292.21,
+      "text": "10, 3, 13, and the sum comes out to be 20. So you can draw all the spanning trees. You can draw all"
+    },
+    {
+      "start": 293.41,
+      "end": 298.93,
+      "text": "the spanning trees. You can figure out the sum. Now, the tree which has the least or the minimum"
+    },
+    {
+      "start": 298.93,
+      "end": 306.37,
+      "text": "sum will be the MST of this particular graph. So for this particular graph, what I can say is,"
+    },
+    {
+      "start": 306.73,
+      "end": 313.29,
+      "text": "this is the MST. Why? Because the sum is 16. You can try drawing out all the other spanning trees."
+    },
+    {
+      "start": 313.29,
+      "end": 320.47,
+      "text": "You'll find that this is the spanning tree which has the least sum. Can a graph have more than one"
+    },
+    {
+      "start": 323.41,
+      "end": 329.17,
+      "text": "spanning tree? Yes. So the MST is any tree, any tree with the least sum, any tree with the least"
+    },
+    {
+      "start": 329.17,
+      "end": 335.41,
+      "text": "sum is called the MST. It can be 2, it can be 3. But the sum has to be the least. You cannot say 20."
+    },
+    {
+      "start": 335.91,
+      "end": 340.25,
+      "text": "You can call this as a spanning tree. But you cannot call this as a minimum spanning tree."
+    },
+    {
+      "start": 340.49,
+      "end": 344.63,
+      "text": "But you can call this as a minimum spanning tree. You need to understand, this is a spanning tree,"
+    },
+    {
+      "start": 344.63,
+      "end": 352.55,
+      "text": "but this is a minimum spanning tree. Any tree which has the minimum sum is known as MST. I hope the"
+    },
+    {
+      "start": 353.41,
+      "end": 358.49,
+      "text": "MST is clear to you. So in case MST is clear, I'll give you a very, very small task. So this is a"
+    },
+    {
+      "start": 358.49,
+      "end": 364.69,
+      "text": "graph that I'm giving you. What you need to do is, you have to draw the corresponding MST of it."
+    },
+    {
+      "start": 365.03,
+      "end": 370.39,
+      "text": "So I'll also be drawing it. But you need to pause the video now, draw the MST, come back,"
+    },
+    {
+      "start": 370.45,
+      "end": 377.41,
+      "text": "and check out my answer. So what will be the MST for this particular graph? It's very simple."
+    },
+    {
+      "start": 377.67,
+      "end": 383.37,
+      "text": "What I'll do is, I'll first take 1, and probably I'll connect it with 4. Then I'll connect,"
+    },
+    {
+      "start": 383.41,
+      "end": 389.23,
+      "text": "it with 2. That'll be edge weight 1, 2. I'll try to connect with 3, which will give me an edge"
+    },
+    {
+      "start": 389.23,
+      "end": 394.35,
+      "text": "weight of 3. Then I'll try to connect with 5, which will give me an edge weight of 4. And then"
+    },
+    {
+      "start": 394.35,
+      "end": 399.97,
+      "text": "I'll try to connect with 6, which will give me an edge weight of 7. So I think sum will be 4 plus"
+    },
+    {
+      "start": 399.97,
+      "end": 410.07,
+      "text": "1, 5 plus 2, 7, 3. Sum will be 17 for this particular MST. So you can try it on your own"
+    },
+    {
+      "start": 410.07,
+      "end": 413.23,
+      "text": "as well. So in case you also got the same,"
+    },
+    {
+      "start": 413.41,
+      "end": 418.63,
+      "text": "MST, perfect. Just in case you did not, nothing to worry. With more and more examples in the"
+    },
+    {
+      "start": 418.63,
+      "end": 424.21,
+      "text": "upcoming videos, MST will definitely get clear to you. So now you must be thinking, how do we find"
+    },
+    {
+      "start": 424.21,
+      "end": 428.61,
+      "text": "the MST of a given graph? Very simple. There are a couple of algorithms. One is the Prim's"
+    },
+    {
+      "start": 428.61,
+      "end": 432.41,
+      "text": "algorithm, which I'll be discussing in the next video. And the other algorithm is the Kruskal."
+    },
+    {
+      "start": 432.81,
+      "end": 436.77,
+      "text": "But in order to understand that, you have to know disjoint set data structure. In the next video,"
+    },
+    {
+      "start": 436.77,
+      "end": 441.61,
+      "text": "let's learn Prim's. And then we'll be diving deep into disjoint set data structure,"
+    },
+    {
+      "start": 442.21,
+      "end": 443.09,
+      "text": "Kruskal's algorithm."
+    },
+    {
+      "start": 443.41,
+      "end": 449.91,
+      "text": "And we'll be doing a bunch of problems on disjoint set because it's a very, very important topic in"
+    },
+    {
+      "start": 449.91,
+      "end": 453.71,
+      "text": "graph data structure. Guys, I hope you have understood MST and everything that I've taught"
+    },
+    {
+      "start": 453.71,
+      "end": 457.79,
+      "text": "you in this particular video. Just in case you did, please, please make sure you like this video."
+    },
+    {
+      "start": 458.09,
+      "end": 461.47,
+      "text": "And if you're new to our channel, what are you waiting for? Hit that subscribe button right away."
+    },
+    {
+      "start": 461.63,
+      "end": 466.11,
+      "text": "And yes, if you haven't checked out our DPCS and the HD sheet, the links will be in the description."
+    },
+    {
+      "start": 466.33,
+      "end": 469.65,
+      "text": "With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

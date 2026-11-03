@@ -1,0 +1,929 @@
+{
+  "video_id": "-tgVpUgsQ5k",
+  "title": "G-5. Breadth-First Search (BFS) ｜ C++ and Java ｜ Traversal Technique in Graphs",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1178.61,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.04,
+      "text": "so in order to solve any graph problems we have to know traversal techniques and the first traversal"
+    },
+    {
+      "start": 5.04,
+      "end": 10.16,
+      "text": "technique that we are going to learn is bfs traversal technique now what is bfs it is nothing"
+    },
+    {
+      "start": 10.16,
+      "end": 17.76,
+      "text": "but the breadth first search technique okay you must have heard about this if you have read trees"
+    },
+    {
+      "start": 17.76,
+      "end": 21.68,
+      "text": "so this is the first technique that we are going to learn and in the next video we will be learning"
+    },
+    {
+      "start": 21.68,
+      "end": 28.0,
+      "text": "something as dfs we'll talk about dfs in the next video but as of now let's focus on bfs in order to"
+    },
+    {
+      "start": 28.0,
+      "end": 32.88,
+      "text": "solve any problem you have to know the traversal technique so you cannot skip this video so what"
+    },
+    {
+      "start": 32.88,
+      "end": 42.8,
+      "text": "is bfs as the name suggests breadth very important term breadth first search now usually graphs are"
+    },
+    {
+      "start": 42.8,
+      "end": 49.52,
+      "text": "of two kinds one can be the one based indexing graph which is this one if you carefully see n"
+    },
+    {
+      "start": 49.52,
+      "end": 55.52,
+      "text": "is 8 over here and the graph numbering starts like the node numbering starts from one or it can be"
+    },
+    {
+      "start": 55.52,
+      "end": 58.0,
+      "text": "zero based indexing where the graph numbering"
+    },
+    {
+      "start": 58.0,
+      "end": 63.04,
+      "text": "starts from zero that is okay you just need to make sure you write the code according to that"
+    },
+    {
+      "start": 63.04,
+      "end": 70.96,
+      "text": "but the logic remains same so let's come back to bfs so what is breadth breadth first search so"
+    },
+    {
+      "start": 70.96,
+      "end": 79.12,
+      "text": "this term is very important breadth it kind of signifies level wise traversal as well this is"
+    },
+    {
+      "start": 79.12,
+      "end": 84.08,
+      "text": "also called as level wise traversal but yeah generally the generic term is breadth first"
+    },
+    {
+      "start": 84.08,
+      "end": 87.84,
+      "text": "so let's understand so usually they will be telling you a"
+    },
+    {
+      "start": 88.0,
+      "end": 94.08,
+      "text": "number one this is the starting node this is the starting node okay so assume i say you over here"
+    },
+    {
+      "start": 94.64,
+      "end": 100.64,
+      "text": "the starting node is one so i'm saying that this is this starting node okay now what we"
+    },
+    {
+      "start": 100.64,
+      "end": 109.2,
+      "text": "say is okay this is at the level 0 that is what we generally say this is at level 0 and then you say"
+    },
+    {
+      "start": 109.2,
+      "end": 116.56,
+      "text": "the these guys are at a distance of one so you will call them as level 1 then you say these guys"
+    },
+    {
+      "start": 118.0,
+      "end": 126.16,
+      "text": "two and then you see this guy is at level three so what you do is in breadth first search traversal"
+    },
+    {
+      "start": 126.16,
+      "end": 132.48,
+      "text": "first you visit the first guy that is the starting node and you write that so that that is something"
+    },
+    {
+      "start": 132.48,
+      "end": 138.58,
+      "text": "that you have written then you go to all the guys that on the next level so this was at the"
+    },
+    {
+      "start": 138.58,
+      "end": 143.8,
+      "text": "zeroth level so the next level will be nothing but first so i can say this is at the first level"
+    },
+    {
+      "start": 143.8,
+      "end": 149.82,
+      "text": "and this is at the first level and the breadth first breadth first search traversal you can"
+    },
+    {
+      "start": 149.82,
+      "end": 155.38,
+      "text": "either traverse this and then this or you can either traverse two and then six that is completely"
+    },
+    {
+      "start": 155.38,
+      "end": 162.68,
+      "text": "your choice so i will decide to travel to six you can travel six two as well that is completely okay"
+    },
+    {
+      "start": 162.68,
+      "end": 169.82,
+      "text": "so this is also done now the next level is level two and you know these all guys are level two"
+    },
+    {
+      "start": 169.82,
+      "end": 173.78,
+      "text": "correct so what do you do is you say okay again"
+    },
+    {
+      "start": 173.8,
+      "end": 179.34,
+      "text": "you can write three four seven eight you can write something like eight seven four three"
+    },
+    {
+      "start": 179.34,
+      "end": 185.56,
+      "text": "that is completely your choice as long as you are traversing all the nodes in the level wise fashion"
+    },
+    {
+      "start": 185.56,
+      "end": 192.24,
+      "text": "we are completely okay with it so it is like three four seven eight so see this is level zero"
+    },
+    {
+      "start": 192.24,
+      "end": 197.64,
+      "text": "this is level one and all of these are level two so the level two can be traversed in any of the"
+    },
+    {
+      "start": 197.64,
+      "end": 202.86,
+      "text": "ways but they should be traveled together okay next will be level three and this is level three"
+    },
+    {
+      "start": 202.86,
+      "end": 203.74,
+      "text": "so i can say"
+    },
+    {
+      "start": 203.8,
+      "end": 210.74,
+      "text": "this is level three so this will be the breadth first bfs traversal of this particular"
+    },
+    {
+      "start": 210.74,
+      "end": 218.66,
+      "text": "graph but if the starting node is one very very important if the starting node is one what if i"
+    },
+    {
+      "start": 218.66,
+      "end": 223.86,
+      "text": "change the starting node so let's quickly change the starting node and understand bfs in depth"
+    },
+    {
+      "start": 223.86,
+      "end": 231.42,
+      "text": "so assume i tell you that the starting node as of now is six okay so i've changed the starting node"
+    },
+    {
+      "start": 231.42,
+      "end": 233.78,
+      "text": "remember this this is the starting node and i've changed the starting node and i've changed the"
+    },
+    {
+      "start": 233.8,
+      "end": 239.18,
+      "text": "starting node and this is at level zero if this is at level zero you cannot say this to be at level"
+    },
+    {
+      "start": 239.18,
+      "end": 247.66,
+      "text": "zero no this only one node can be at level zero so you write six at level zero if i ask you which"
+    },
+    {
+      "start": 247.66,
+      "end": 253.82,
+      "text": "is which is at level one then what do you do is you say this is at a distance one this is at a"
+    },
+    {
+      "start": 253.82,
+      "end": 260.38,
+      "text": "distance one this is at a distance one so all of these guys are at equivalent distance very very"
+    },
+    {
+      "start": 260.38,
+      "end": 266.46,
+      "text": "important all of these guys are at equivalent distance so thereby you call them as level one"
+    },
+    {
+      "start": 267.34,
+      "end": 272.7,
+      "text": "level one and level one again you can travel one first then seven then eight that is your choice"
+    },
+    {
+      "start": 272.7,
+      "end": 279.58,
+      "text": "so i'll decide to travel one seven eight so this is level zero this is level one you need to"
+    },
+    {
+      "start": 279.58,
+      "end": 286.54,
+      "text": "understand the distance distance breadth it goes equivalent in the breadth so it was here it went"
+    },
+    {
+      "start": 286.54,
+      "end": 292.3,
+      "text": "equivalent in the breadth that is very important to understand okay next if i ask you the next"
+    },
+    {
+      "start": 292.3,
+      "end": 301.26,
+      "text": "level that's two so for this this is level two this is level two and are there anyone else who"
+    },
+    {
+      "start": 301.26,
+      "end": 309.34,
+      "text": "is level two i don't see so i can see okay this guy is level two and this particular guy is level"
+    },
+    {
+      "start": 309.34,
+      "end": 315.74,
+      "text": "two so you can again write something like two and five so this is level two perfect and it's time"
+    },
+    {
+      "start": 316.54,
+      "end": 323.5,
+      "text": "three so obviously one two three so this will be three similarly one two three this will be three"
+    },
+    {
+      "start": 323.5,
+      "end": 329.58,
+      "text": "and are there any other no so this is three this is three so there are two guys who are three"
+    },
+    {
+      "start": 330.54,
+      "end": 335.98,
+      "text": "that's very important you travel breath wise breath wise and everything depends on the"
+    },
+    {
+      "start": 335.98,
+      "end": 341.74,
+      "text": "starting node depending on the starting node the traversal will change and you will always travel"
+    },
+    {
+      "start": 341.74,
+      "end": 346.46,
+      "text": "in the breath wise manner in the breath wise manner i hope that is clear in order to do a"
+    },
+    {
+      "start": 346.54,
+      "end": 351.18,
+      "text": "dfs traversal there is an initial configuration that you need to start off with so whatever is"
+    },
+    {
+      "start": 351.18,
+      "end": 357.26,
+      "text": "the starting node given to you what you do is you clearly take a q data structure now if you don't"
+    },
+    {
+      "start": 357.26,
+      "end": 362.54,
+      "text": "know q data structure please read about that you take a q data structure q is nothing but"
+    },
+    {
+      "start": 363.1,
+      "end": 370.46,
+      "text": "first in first out the guy who goes in first gets out first so the initial configuration says"
+    },
+    {
+      "start": 370.46,
+      "end": 375.98,
+      "text": "i am going to define a q data structure and that will always contain this particular guy remember"
+    },
+    {
+      "start": 376.54,
+      "end": 380.7,
+      "text": "it will always contain this particular guy starting node and there is another thing that"
+    },
+    {
+      "start": 380.7,
+      "end": 386.3,
+      "text": "you need to do you need to create something as a visited array okay and this visited array is"
+    },
+    {
+      "start": 386.3,
+      "end": 392.7,
+      "text": "something which is very common in all the graph questions and over here if you see the node is"
+    },
+    {
+      "start": 392.7,
+      "end": 399.42,
+      "text": "numbered till nine and since the graph is one based what you'll do is you'll create this visited"
+    },
+    {
+      "start": 399.42,
+      "end": 405.74,
+      "text": "of a size 10 okay please make sure you create of a size 10 so this is like zero one two three"
+    },
+    {
+      "start": 406.54,
+      "end": 413.42,
+      "text": "four five six seven eight nine so this will be the visited one and whatever is the starting node"
+    },
+    {
+      "start": 413.42,
+      "end": 419.9,
+      "text": "you go over there and you mark it as one and everyone else will be marked as zero so over here"
+    },
+    {
+      "start": 420.7,
+      "end": 427.82,
+      "text": "please understand this one means this guy is already in the queue whenever i say someone has"
+    },
+    {
+      "start": 427.82,
+      "end": 435.42,
+      "text": "been traversed someone has been touched we mark that as visited this will be the initial configuration"
+    },
+    {
+      "start": 436.54,
+      "end": 443.66,
+      "text": "which contains a starting node initially a visited array which will be of size depending on its one"
+    },
+    {
+      "start": 443.66,
+      "end": 449.5,
+      "text": "based or zero based you can decide and the starting node will be traversed so thereby it will"
+    },
+    {
+      "start": 449.5,
+      "end": 455.34,
+      "text": "be marked as one this is going to be the initial or the starting configuration in a bfs traversal"
+    },
+    {
+      "start": 455.34,
+      "end": 460.22,
+      "text": "now what is the next step that you will do whatever is in the queue you will start taking"
+    },
+    {
+      "start": 460.22,
+      "end": 466.22,
+      "text": "it out start taking it out start taking it out till the queue is not empty remember this keep"
+    },
+    {
+      "start": 466.54,
+      "end": 470.78,
+      "text": "taking out keep taking out till the queue is not empty okay so whatever is it the uh"
+    },
+    {
+      "start": 471.98,
+      "end": 478.3,
+      "text": "q data structure i take it out and you'll print it so assume i print this so this is printed right"
+    },
+    {
+      "start": 478.3,
+      "end": 484.3,
+      "text": "this is printed as a bfs travesty now very important whatever you take out of the queue"
+    },
+    {
+      "start": 484.3,
+      "end": 491.26,
+      "text": "one you took out of the queue so if you remember this graph you would have stored this in some data"
+    },
+    {
+      "start": 491.26,
+      "end": 496.46,
+      "text": "structure and which data structure was that that data structure was adjacency"
+    },
+    {
+      "start": 496.54,
+      "end": 502.22,
+      "text": "list do you remember yes so what will be the adjacency list for this particular graph can i"
+    },
+    {
+      "start": 502.22,
+      "end": 510.62,
+      "text": "say for zero it will be an empty data structure for one it will be storing this two and six remember"
+    },
+    {
+      "start": 510.62,
+      "end": 518.36,
+      "text": "this okay let's write for the next for three it will just be storing two so please write that"
+    },
+    {
+      "start": 518.92,
+      "end": 525.64,
+      "text": "sorry for two you have to write in the next step for two it will be storing one three and four"
+    },
+    {
+      "start": 526.2,
+      "end": 527.56,
+      "text": "so let's write one three and four"
+    },
+    {
+      "start": 528.04,
+      "end": 529.64,
+      "text": "so let's write one three and four"
+    },
+    {
+      "start": 529.64,
+      "end": 534.12,
+      "text": "next will be for three let's check out for three for three it's just storing two"
+    },
+    {
+      "start": 534.12,
+      "end": 541.08,
+      "text": "so let's uh store two in it next will be four for four it is having five and two"
+    },
+    {
+      "start": 541.08,
+      "end": 550.7,
+      "text": "so for four it will be two and five for five for six for seven for eight similarly create the"
+    },
+    {
+      "start": 550.7,
+      "end": 559.82,
+      "text": "entire adjacency list that i have already taught you in the second video so kindly create this and"
+    },
+    {
+      "start": 560.22,
+      "end": 600.52,
+      "text": "we can start off with the bfs traversal so so this is how the entire adjacency list will look like"
+    },
+    {
+      "start": 600.52,
+      "end": 606.2,
+      "text": "now whenever you take the first element out and you print it what you do is you go to one and you"
+    },
+    {
+      "start": 606.2,
+      "end": 615.88,
+      "text": "say who are your neighbors i i repeat you ask who are your neighbors okay and how will you know who"
+    },
+    {
+      "start": 615.88,
+      "end": 620.76,
+      "text": "are its neighbors if you remember well enough in the graph you can see that two and six are its"
+    },
+    {
+      "start": 620.76,
+      "end": 623.16,
+      "text": "neighbors two and six are its neighbors two and six are its neighbors two and six are its neighbors"
+    },
+    {
+      "start": 623.4,
+      "end": 629.4,
+      "text": "who are at an equivalent distance so if you remember this guy stores all the neighbors"
+    },
+    {
+      "start": 629.4,
+      "end": 635.4,
+      "text": "remember in the second lecture i told you so who are the neighbors of one two and six so what you"
+    },
+    {
+      "start": 635.4,
+      "end": 643.88,
+      "text": "do is you take two you take six first take two put that into the queue data structure okay and mark"
+    },
+    {
+      "start": 643.88,
+      "end": 652.76,
+      "text": "it as one next take six put it into the queue data structure and mark it as one perfect done so first"
+    },
+    {
+      "start": 653.4,
+      "end": 660.12,
+      "text": "of one is done so it is very simple let me repeat you took out one you basically went to its"
+    },
+    {
+      "start": 660.12,
+      "end": 665.4,
+      "text": "neighbors and you put that into the queue and marked it as visited next time take out the next"
+    },
+    {
+      "start": 665.4,
+      "end": 671.48,
+      "text": "guy so i'll take out the next guy too do the same thing on this two as well go to two's neighbors"
+    },
+    {
+      "start": 671.48,
+      "end": 678.04,
+      "text": "who are two's neighbors how will you know again two's neighbors are one three four very obvious"
+    },
+    {
+      "start": 678.04,
+      "end": 682.6,
+      "text": "one three four are its neighbors and that is stored in the adjacency list so two's neighbors"
+    },
+    {
+      "start": 683.4,
+      "end": 690.6,
+      "text": "are not the neighbors but remember this one will not be put into the queue why because you've"
+    },
+    {
+      "start": 690.6,
+      "end": 695.32,
+      "text": "already traversed one because you've already traversed one how will you know that because"
+    },
+    {
+      "start": 695.32,
+      "end": 702.04,
+      "text": "because yes one is already marked as visited so you already know one has been touched or traversed"
+    },
+    {
+      "start": 702.04,
+      "end": 708.28,
+      "text": "so you'll not take one instead of that what you will do is you will simply uh omit one and you'll"
+    },
+    {
+      "start": 708.28,
+      "end": 713.24,
+      "text": "not put that into the queue let's check out the next it is three and four so you'll just take three"
+    },
+    {
+      "start": 713.24,
+      "end": 719.56,
+      "text": "that into the queue and mark three and four as visited perfect this is done next you take the"
+    },
+    {
+      "start": 719.56,
+      "end": 727.4,
+      "text": "next element out six so six is there again do the same thing for six who are six neighbor one"
+    },
+    {
+      "start": 727.4,
+      "end": 735.8,
+      "text": "already visited seven not visited nine not visited so you take seven and you take nine and you put"
+    },
+    {
+      "start": 735.8,
+      "end": 742.28,
+      "text": "that into the queue data structure at the same time mark seven as true nine is true perfect"
+    },
+    {
+      "start": 743.24,
+      "end": 750.12,
+      "text": "done six is done what is the next thing three let's take out three what three is neighbors"
+    },
+    {
+      "start": 750.68,
+      "end": 757.56,
+      "text": "just two already visited nothing to do so three is also done let's take the next one out four"
+    },
+    {
+      "start": 757.56,
+      "end": 765.0,
+      "text": "who are forced neighbor two already visited five take five put that into the queue"
+    },
+    {
+      "start": 765.8,
+      "end": 776.76,
+      "text": "five is true perfect four is also done next take seven who are seven neighbors six visited eight"
+    },
+    {
+      "start": 776.76,
+      "end": 787.32,
+      "text": "not visited take eight and put that into the queue and mark it as visited perfect next so nine what"
+    },
+    {
+      "start": 787.32,
+      "end": 794.92,
+      "text": "what about nine for nine there's one neighbor six but that is already visited so done next take five"
+    },
+    {
+      "start": 796.2,
+      "end": 803.16,
+      "text": "for five who is the neighbor four and eight and if you carefully see four and eight"
+    },
+    {
+      "start": 803.72,
+      "end": 810.92,
+      "text": "are already visited so no need to do anything five is also done next take eight and for eight"
+    },
+    {
+      "start": 812.2,
+      "end": 818.68,
+      "text": "if you see five and seven are already visited no need to do anything so this is also done"
+    },
+    {
+      "start": 818.68,
+      "end": 825.32,
+      "text": "apparently if you see this is your bfs traversal yes this is"
+    },
+    {
+      "start": 825.96,
+      "end": 833.8,
+      "text": "your bfs traversal zeroth level first level second level and the third level if you carefully"
+    },
+    {
+      "start": 833.8,
+      "end": 842.52,
+      "text": "see so we were successfully able to print the bfs traversal of a particular graph right now it's time"
+    },
+    {
+      "start": 842.52,
+      "end": 846.2,
+      "text": "that we check out the code so i hope you have understood the entire explanation now it's time"
+    },
+    {
+      "start": 846.2,
+      "end": 850.76,
+      "text": "to check out the c plus plus code and the java code so what i'll do is i'll write the c plus"
+    },
+    {
+      "start": 850.76,
+      "end": 855.72,
+      "text": "plus code and i'll explain every step and the java code is on the left so that you can just follow for"
+    },
+    {
+      "start": 855.72,
+      "end": 860.32,
+      "text": "every corresponding C++ step, what will be the Java code, and we are going to follow the same"
+    },
+    {
+      "start": 860.32,
+      "end": 864.84,
+      "text": "structure of code, so you will not face a problem. So, generally, what will happen is you will be"
+    },
+    {
+      "start": 864.84,
+      "end": 870.9,
+      "text": "given something like vector int, where you have to store the BFS and return, and always you will"
+    },
+    {
+      "start": 870.9,
+      "end": 875.84,
+      "text": "be given the number of nodes, and you will be given the adjacency list. You don't need to create"
+    },
+    {
+      "start": 875.84,
+      "end": 880.32,
+      "text": "the adjacency list. They will be giving you the adjacency list in almost all the problems. Now,"
+    },
+    {
+      "start": 880.32,
+      "end": 886.96,
+      "text": "this problem states a directed graph, but we will be coding this for an undirected graph, and then"
+    },
+    {
+      "start": 886.96,
+      "end": 892.4,
+      "text": "I'll tell you why the same code will work for directed graph as well. Okay, so what is the"
+    },
+    {
+      "start": 892.4,
+      "end": 897.48,
+      "text": "initial step, if you remember? So, first, let's quickly check if this is a zero-based indexing"
+    },
+    {
+      "start": 897.48,
+      "end": 903.32,
+      "text": "graph. So, if you see, it is a zero-based indexing graph because the graph is starting from zero,"
+    },
+    {
+      "start": 903.58,
+      "end": 910.06,
+      "text": "right? So, what you will do is you will just create an int visited array of n size and probably mark"
+    },
+    {
+      "start": 910.06,
+      "end": 910.3,
+      "text": "every node. So, you will create an int visited array of n size and probably mark every node."
+    },
+    {
+      "start": 910.32,
+      "end": 915.88,
+      "text": "And, you know, the initial configuration will be having zero, and we will have a queue,"
+    },
+    {
+      "start": 916.54,
+      "end": 921.82,
+      "text": "okay? And in the queue, you know, it will be having the starting node. Done. Now, what we did,"
+    },
+    {
+      "start": 922.1,
+      "end": 926.46,
+      "text": "we always took out everything from the queue till there was something in the queue. So, can I say,"
+    },
+    {
+      "start": 926.84,
+      "end": 932.7,
+      "text": "always take out, like, till it is having something, till it is having something, till the size is,"
+    },
+    {
+      "start": 933.12,
+      "end": 938.82,
+      "text": "like, still is not empty. Just take it out. And I can say the node that is taken out, like,"
+    },
+    {
+      "start": 938.82,
+      "end": 940.18,
+      "text": "it will be queue.front."
+    },
+    {
+      "start": 940.32,
+      "end": 946.52,
+      "text": "And we can just see queue.front. So, this will make sure you always get the node. And can I say,"
+    },
+    {
+      "start": 946.64,
+      "end": 954.38,
+      "text": "if I have to store the VFS, apparently, I can just do it over here. And I can easily store"
+    },
+    {
+      "start": 954.38,
+      "end": 960.7,
+      "text": "whichever node comes out. That is what gets into the VFS. Done. What is the next thing that we did?"
+    },
+    {
+      "start": 960.96,
+      "end": 964.66,
+      "text": "We always took out the node, if you remember, and we checked out its neighbor nodes,"
+    },
+    {
+      "start": 964.9,
+      "end": 970.08,
+      "text": "right? So, who is storing the neighbor nodes? Yes, the adjacency list. So,"
+    },
+    {
+      "start": 970.08,
+      "end": 978.76,
+      "text": "for this node, can I say, if I do auto of it of adjacency node, what does this mean? Whenever I"
+    },
+    {
+      "start": 978.76,
+      "end": 986.68,
+      "text": "write adjacency node, I am saying index node. That adjacency element will be a vector. If you"
+    },
+    {
+      "start": 986.68,
+      "end": 993.48,
+      "text": "remember the vector adjacency list, if you remember the list, if you say index, that index is storing"
+    },
+    {
+      "start": 993.48,
+      "end": 998.54,
+      "text": "a vector. And that vector is storing all the neighbor elements. So, you have to just iterate"
+    },
+    {
+      "start": 998.54,
+      "end": 1000.04,
+      "text": "on them. So, these are the neighbor."
+    },
+    {
+      "start": 1000.08,
+      "end": 1007.12,
+      "text": "You just need to check, have they been previously visited? If not, you say, okay, let me visit them."
+    },
+    {
+      "start": 1007.6,
+      "end": 1013.0,
+      "text": "Very simple. And let me put them into the queue as well. So, that in the next step, they can be"
+    },
+    {
+      "start": 1013.0,
+      "end": 1019.34,
+      "text": "taken into the VFS. Once this is done, you can say, this is my answer. Once this is done,"
+    },
+    {
+      "start": 1019.7,
+      "end": 1024.86,
+      "text": "you can always say, this is my answer. Okay. Now, let's quickly compile this and check. So,"
+    },
+    {
+      "start": 1024.9,
+      "end": 1028.94,
+      "text": "if you see the compilation is successful, and let's quickly now submit the code and check if"
+    },
+    {
+      "start": 1028.94,
+      "end": 1029.7,
+      "text": "it's working fine."
+    },
+    {
+      "start": 1030.08,
+      "end": 1035.56,
+      "text": "And so, it's time to understand the space complexity and the time complexity. Space"
+    },
+    {
+      "start": 1035.56,
+      "end": 1044.04,
+      "text": "complexity is very simple. A queue, a visited node, and a VFS list. So, we go off 3n, which is"
+    },
+    {
+      "start": 1044.04,
+      "end": 1050.6,
+      "text": "almost equivalent to we go off n. And the adjacency list is given to you. So, you can just omit this."
+    },
+    {
+      "start": 1051.18,
+      "end": 1058.98,
+      "text": "And what about the time complexity? Time complexity is very simple. Now, if I go and analyze the time"
+    },
+    {
+      "start": 1058.98,
+      "end": 1060.06,
+      "text": "complexity, I can see that the time complexity is very simple. So, I can just omit this. And I can"
+    },
+    {
+      "start": 1060.54,
+      "end": 1067.56,
+      "text": "I know one thing for sure. If you look at the code, in the code, this is running. And you know,"
+    },
+    {
+      "start": 1067.64,
+      "end": 1074.52,
+      "text": "every time a node will come and go into the VFS. So, a node goes once into the VFS, I know for sure,"
+    },
+    {
+      "start": 1074.66,
+      "end": 1084.5,
+      "text": "goes once into the VFS. Right? So, if a node goes once into the VFS, and it runs on all its neighbors,"
+    },
+    {
+      "start": 1084.8,
+      "end": 1089.7,
+      "text": "can I say it runs on all its degrees, runs on..."
+    },
+    {
+      "start": 1090.08,
+      "end": 1100.44,
+      "text": "all degrees so can i say it's something like while q not empty and then there's a for loop"
+    },
+    {
+      "start": 1100.44,
+      "end": 1108.6,
+      "text": "and this for loop runs for all node and it will run for the number of degrees of that node because"
+    },
+    {
+      "start": 1108.6,
+      "end": 1115.6,
+      "text": "if this guy has three neighbors it's going to run for three neighbors all degrees so can i say this"
+    },
+    {
+      "start": 1115.6,
+      "end": 1122.58,
+      "text": "for loop is what it is running so thereby thereby i can say the time complexity to be the q itself"
+    },
+    {
+      "start": 1122.58,
+      "end": 1129.14,
+      "text": "will run we go of n times because there are n nodes and this inside guy will run for total"
+    },
+    {
+      "start": 1129.14,
+      "end": 1135.82,
+      "text": "degrees and if you remember the total degrees we have already concluded as twice of edges this was"
+    },
+    {
+      "start": 1135.82,
+      "end": 1141.58,
+      "text": "done in the first lecture the total degrees because for every node we traverse all the"
+    },
+    {
+      "start": 1141.58,
+      "end": 1145.58,
+      "text": "neighboring nodes so this will be the time complexity for this"
+    },
+    {
+      "start": 1145.6,
+      "end": 1151.22,
+      "text": "particular guy so guys i hope you have understood the entire bfs algorithm just in case you did"
+    },
+    {
+      "start": 1151.22,
+      "end": 1155.68,
+      "text": "please please please make sure you like this video and if you're new to our channel what are you"
+    },
+    {
+      "start": 1155.68,
+      "end": 1160.36,
+      "text": "waiting for man just hit that subscribe button right away and with this i will be wrapping up"
+    },
+    {
+      "start": 1160.36,
+      "end": 1164.84,
+      "text": "this video if you haven't checked out our dpcs and the sd sheet the links are in the description"
+    },
+    {
+      "start": 1164.84,
+      "end": 1168.74,
+      "text": "make sure you check it out with this let's wrap up this video let's meet in some other video till"
+    },
+    {
+      "start": 1168.74,
+      "end": 1169.86,
+      "text": "then bye bye take care"
+    }
+  ]
+}

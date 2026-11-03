@@ -1,0 +1,1439 @@
+{
+  "video_id": "73sneFXuTEg",
+  "title": "G-22. Kahn's Algorithm ｜ Topological Sort Algorithm ｜ BFS",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 829.7,
+  "segments": [
+    {
+      "start": 2.83,
+      "end": 6.09,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.39,
+      "end": 11.39,
+      "text": "So in this video, we're going to learn about topological sorting and we are going to use the BFS algorithm."
+    },
+    {
+      "start": 11.71,
+      "end": 18.31,
+      "text": "We have done the DFS algorithm in the previous video and this algorithm is famously known as the Kahn's algorithm."
+    },
+    {
+      "start": 19.47,
+      "end": 21.21,
+      "text": "Kahn, Kahn, whatever you can call it."
+    },
+    {
+      "start": 21.53,
+      "end": 23.63,
+      "text": "So what is topological sorting?"
+    },
+    {
+      "start": 24.11,
+      "end": 30.63,
+      "text": "So it's basically a linear ordering of vertices such that if there is an edge between u and v,"
+    },
+    {
+      "start": 30.63,
+      "end": 34.53,
+      "text": "u always appears before v in that ordering."
+    },
+    {
+      "start": 35.17,
+      "end": 36.67,
+      "text": "So let me give you an example."
+    },
+    {
+      "start": 37.15,
+      "end": 44.03,
+      "text": "So if I write 5, 4, then I can write something like 0, 2, 3, 1."
+    },
+    {
+      "start": 44.37,
+      "end": 49.27,
+      "text": "Now this is a valid linear ordering of the graph."
+    },
+    {
+      "start": 49.99,
+      "end": 52.69,
+      "text": "What I can do is I can write down all the edges."
+    },
+    {
+      "start": 53.03,
+      "end": 54.41,
+      "text": "So let's write down all the edges."
+    },
+    {
+      "start": 54.41,
+      "end": 60.61,
+      "text": "So the first edge is 5, 0, then 4, 0, then 4."
+    },
+    {
+      "start": 60.99,
+      "end": 65.59,
+      "text": "5, 2, then 4, 1, then 2, 3, and then 3, 1."
+    },
+    {
+      "start": 65.81,
+      "end": 69.57,
+      "text": "So these are all the six edges of that given graph."
+    },
+    {
+      "start": 69.83,
+      "end": 71.07,
+      "text": "Okay, so we have six edges."
+    },
+    {
+      "start": 71.77,
+      "end": 73.19,
+      "text": "Let's check out 5, 0."
+    },
+    {
+      "start": 73.71,
+      "end": 77.33,
+      "text": "So if you see 5, 0, 5 appears before 0."
+    },
+    {
+      "start": 77.59,
+      "end": 78.41,
+      "text": "So this is perfect."
+    },
+    {
+      "start": 79.11,
+      "end": 83.75,
+      "text": "4, 0, 4 appears before 0 and that is what the lining stated."
+    },
+    {
+      "start": 83.75,
+      "end": 86.81,
+      "text": "5, 2, 5 appears before 2."
+    },
+    {
+      "start": 87.37,
+      "end": 90.27,
+      "text": "4, 1, 4 appears before 1."
+    },
+    {
+      "start": 90.63,
+      "end": 93.23,
+      "text": "2, 3, 2 appears before 3."
+    },
+    {
+      "start": 93.57,
+      "end": 96.23,
+      "text": "3, 1, 3 appears before 1."
+    },
+    {
+      "start": 96.75,
+      "end": 100.09,
+      "text": "Even I can have something like 4, 5, 2, 3, 1, 0."
+    },
+    {
+      "start": 100.49,
+      "end": 103.21,
+      "text": "This is also a valid linear ordering."
+    },
+    {
+      "start": 103.41,
+      "end": 103.97,
+      "text": "Let's check it out."
+    },
+    {
+      "start": 104.05,
+      "end": 106.13,
+      "text": "5, 0, 5 appears before 0."
+    },
+    {
+      "start": 106.53,
+      "end": 108.81,
+      "text": "4, 0, 4 appears before 0."
+    },
+    {
+      "start": 109.21,
+      "end": 111.23,
+      "text": "5, 2, 5 appears before 2."
+    },
+    {
+      "start": 111.65,
+      "end": 113.77,
+      "text": "4, 1, 4 appears before 1."
+    },
+    {
+      "start": 113.95,
+      "end": 116.31,
+      "text": "2, 3, 2 appears before 3."
+    },
+    {
+      "start": 116.71,
+      "end": 118.71,
+      "text": "3, 1, 3 appears before 1."
+    },
+    {
+      "start": 119.07,
+      "end": 120.61,
+      "text": "So there can be multiple."
+    },
+    {
+      "start": 120.77,
+      "end": 124.07,
+      "text": "Such linear ordering of vertices."
+    },
+    {
+      "start": 124.37,
+      "end": 128.37,
+      "text": "As long as all the edges satisfy this particular condition,"
+    },
+    {
+      "start": 128.65,
+      "end": 133.25,
+      "text": "I can say any of that linear ordering to be a topological sort."
+    },
+    {
+      "start": 133.55,
+      "end": 137.51,
+      "text": "Now our task is to print any such topological sort."
+    },
+    {
+      "start": 137.91,
+      "end": 145.57,
+      "text": "So remember one thing, topological sort or toposort is only valid in DAGs."
+    },
+    {
+      "start": 145.89,
+      "end": 148.21,
+      "text": "This is only valid in DAGs."
+    },
+    {
+      "start": 148.57,
+      "end": 149.53,
+      "text": "What is DAG?"
+    },
+    {
+      "start": 149.77,
+      "end": 150.41,
+      "text": "It is nothing."
+    },
+    {
+      "start": 150.41,
+      "end": 154.17,
+      "text": "But directed acyclic."
+    },
+    {
+      "start": 154.53,
+      "end": 156.17,
+      "text": "Which means does not have a cycle."
+    },
+    {
+      "start": 156.41,
+      "end": 158.03,
+      "text": "Directed acyclic graph."
+    },
+    {
+      "start": 158.35,
+      "end": 159.59,
+      "text": "Why a directed?"
+    },
+    {
+      "start": 159.91,
+      "end": 163.07,
+      "text": "Assume I'm saying you to take an undirected vertices."
+    },
+    {
+      "start": 163.83,
+      "end": 165.57,
+      "text": "Something like 1 to 2."
+    },
+    {
+      "start": 165.73,
+      "end": 169.83,
+      "text": "This is an undirected edge between a node 1 and between a node 2."
+    },
+    {
+      "start": 170.03,
+      "end": 176.47,
+      "text": "So if you carefully see this is from 1 to 2 and from 2 to 1."
+    },
+    {
+      "start": 176.91,
+      "end": 180.29,
+      "text": "So in the linear ordering, you can't have such a linear ordering such that"
+    },
+    {
+      "start": 180.29,
+      "end": 181.57,
+      "text": "1 appears before 2."
+    },
+    {
+      "start": 181.83,
+      "end": 186.17,
+      "text": "At the same time 2 appears before 1 because the edge is bidirectional."
+    },
+    {
+      "start": 186.17,
+      "end": 190.75,
+      "text": "If we call it a undirected graph, thereby it has to be a directed graph."
+    },
+    {
+      "start": 191.15,
+      "end": 192.47,
+      "text": "What about acyclic?"
+    },
+    {
+      "start": 192.67,
+      "end": 193.53,
+      "text": "Let's understand."
+    },
+    {
+      "start": 193.79,
+      "end": 199.29,
+      "text": "So imagine I draw 1, then I go to 2, then I go to 3 and then I go to 1 back again."
+    },
+    {
+      "start": 199.63,
+      "end": 201.29,
+      "text": "So there's an edge between 1 to 2."
+    },
+    {
+      "start": 201.29,
+      "end": 202.45,
+      "text": "There is an edge between 2 to 3."
+    },
+    {
+      "start": 202.45,
+      "end": 203.87,
+      "text": "There is an edge between 3 to 1."
+    },
+    {
+      "start": 204.25,
+      "end": 207.59,
+      "text": "So what I'm saying is in the linear ordering, 1 should be before 2."
+    },
+    {
+      "start": 208.79,
+      "end": 210.05,
+      "text": "2 should be before 3."
+    },
+    {
+      "start": 210.29,
+      "end": 212.29,
+      "text": "3 should be before 1."
+    },
+    {
+      "start": 212.67,
+      "end": 214.85,
+      "text": "So acyclic dependency is there."
+    },
+    {
+      "start": 214.85,
+      "end": 219.77,
+      "text": "So thereby you cannot have 1 at both the places."
+    },
+    {
+      "start": 219.77,
+      "end": 223.41,
+      "text": "You cannot have 1 before 3 or you cannot have 1 after 3."
+    },
+    {
+      "start": 223.73,
+      "end": 225.29,
+      "text": "You cannot satisfy it."
+    },
+    {
+      "start": 225.39,
+      "end": 229.53,
+      "text": "Thereby we have to have a graph which does not contain a cycle."
+    },
+    {
+      "start": 229.77,
+      "end": 236.17,
+      "text": "So directed acyclic graph is where a topo sort is valid."
+    },
+    {
+      "start": 237.61,
+      "end": 240.19,
+      "text": "Now previously we have solved topological sorting using the"
+    },
+    {
+      "start": 240.19,
+      "end": 240.69,
+      "text": "DFS."
+    },
+    {
+      "start": 241.07,
+      "end": 243.63,
+      "text": "Since we are using BFS over here, we know what we need."
+    },
+    {
+      "start": 243.95,
+      "end": 245.17,
+      "text": "We need a Q data structure."
+    },
+    {
+      "start": 245.53,
+      "end": 247.81,
+      "text": "This is nothing but the first in first out data structure."
+    },
+    {
+      "start": 248.17,
+      "end": 249.87,
+      "text": "This is the particular adjacency list."
+    },
+    {
+      "start": 250.27,
+      "end": 254.85,
+      "text": "And this is a new thing that we will introduce because it is not exactly the"
+    },
+    {
+      "start": 254.85,
+      "end": 257.69,
+      "text": "BFS algorithm, a slightly modified version of it."
+    },
+    {
+      "start": 257.95,
+      "end": 259.65,
+      "text": "So we're going to use an indegree."
+    },
+    {
+      "start": 259.93,
+      "end": 261.43,
+      "text": "What is the definition of an indegree?"
+    },
+    {
+      "start": 261.79,
+      "end": 264.43,
+      "text": "Number of incoming edges to a node."
+    },
+    {
+      "start": 264.43,
+      "end": 265.47,
+      "text": "Yes, very important."
+    },
+    {
+      "start": 265.81,
+      "end": 268.53,
+      "text": "Number of incoming edges to a node."
+    },
+    {
+      "start": 268.53,
+      "end": 270.11,
+      "text": "I have already talked to you about this."
+    },
+    {
+      "start": 270.11,
+      "end": 270.95,
+      "text": "In the first video."
+    },
+    {
+      "start": 271.31,
+      "end": 275.79,
+      "text": "So if I ask you for zero, what is the number of incoming edges?"
+    },
+    {
+      "start": 275.79,
+      "end": 276.73,
+      "text": "Can I say it is two?"
+    },
+    {
+      "start": 277.19,
+      "end": 281.03,
+      "text": "So I will say the number of incoming edges for zero is two."
+    },
+    {
+      "start": 281.35,
+      "end": 282.83,
+      "text": "For one, how much is it?"
+    },
+    {
+      "start": 283.25,
+      "end": 287.23,
+      "text": "It is again two because there are two incoming edges to one as well."
+    },
+    {
+      "start": 287.35,
+      "end": 287.95,
+      "text": "So two."
+    },
+    {
+      "start": 288.43,
+      "end": 291.89,
+      "text": "Now, if I ask you what is for three, there's just one incoming edge."
+    },
+    {
+      "start": 291.91,
+      "end": 292.67,
+      "text": "This is outgoing."
+    },
+    {
+      "start": 292.67,
+      "end": 294.77,
+      "text": "So indegree is just one."
+    },
+    {
+      "start": 295.25,
+      "end": 297.47,
+      "text": "So this is, uh, sorry for two."
+    },
+    {
+      "start": 297.47,
+      "end": 299.95,
+      "text": "It is actually one because there is one."
+    },
+    {
+      "start": 300.11,
+      "end": 301.31,
+      "text": "For three also there is one."
+    },
+    {
+      "start": 301.67,
+      "end": 304.51,
+      "text": "And now for four, are there any incoming edges?"
+    },
+    {
+      "start": 304.91,
+      "end": 306.11,
+      "text": "Do you see any incoming edges?"
+    },
+    {
+      "start": 306.15,
+      "end": 306.53,
+      "text": "No."
+    },
+    {
+      "start": 306.83,
+      "end": 308.03,
+      "text": "So you'll be like zero."
+    },
+    {
+      "start": 308.51,
+      "end": 310.55,
+      "text": "And for five, are there any incoming edges?"
+    },
+    {
+      "start": 310.61,
+      "end": 310.87,
+      "text": "No."
+    },
+    {
+      "start": 310.91,
+      "end": 311.87,
+      "text": "So you'll be like zero."
+    },
+    {
+      "start": 312.41,
+      "end": 314.45,
+      "text": "Now what is, what was the definition of toposort?"
+    },
+    {
+      "start": 314.93,
+      "end": 321.15,
+      "text": "If there is an edge between U and V, U appears before V in the linear ordering."
+    },
+    {
+      "start": 321.53,
+      "end": 323.07,
+      "text": "That was the definition of toposort."
+    },
+    {
+      "start": 323.43,
+      "end": 323.75,
+      "text": "Right?"
+    },
+    {
+      "start": 324.11,
+      "end": 329.21,
+      "text": "So can I say since five and four do not have"
+    },
+    {
+      "start": 329.23,
+      "end": 329.99,
+      "text": "any of the incoming edges?"
+    },
+    {
+      "start": 329.99,
+      "end": 330.09,
+      "text": "Right?"
+    },
+    {
+      "start": 330.23,
+      "end": 335.49,
+      "text": "So you can place five or four at the starting."
+    },
+    {
+      "start": 335.89,
+      "end": 339.37,
+      "text": "You can place either five or four at the starting of your linear ordering,"
+    },
+    {
+      "start": 339.61,
+      "end": 343.61,
+      "text": "because there has to be no one before five, because there is the indegree is zero."
+    },
+    {
+      "start": 343.61,
+      "end": 345.61,
+      "text": "There is no one before five or four."
+    },
+    {
+      "start": 345.89,
+      "end": 347.09,
+      "text": "They can place them at the starting."
+    },
+    {
+      "start": 347.35,
+      "end": 352.11,
+      "text": "So what do you do is you say, okay, initially there will always be a node."
+    },
+    {
+      "start": 352.15,
+      "end": 355.11,
+      "text": "There will be a minimum of one node whose indegree is zero."
+    },
+    {
+      "start": 355.43,
+      "end": 357.41,
+      "text": "So the step one is very clear."
+    },
+    {
+      "start": 357.83,
+      "end": 359.99,
+      "text": "Insert all nodes with."
+    },
+    {
+      "start": 359.99,
+      "end": 360.99,
+      "text": "Indegree zero."
+    },
+    {
+      "start": 360.99,
+      "end": 361.99,
+      "text": "With indegree zero."
+    },
+    {
+      "start": 361.99,
+      "end": 364.99,
+      "text": "So can I say I'll insert four and five?"
+    },
+    {
+      "start": 364.99,
+      "end": 366.99,
+      "text": "You can do five and four as well."
+    },
+    {
+      "start": 366.99,
+      "end": 368.99,
+      "text": "So I've inserted four and five."
+    },
+    {
+      "start": 368.99,
+      "end": 369.99,
+      "text": "Okay."
+    },
+    {
+      "start": 369.99,
+      "end": 372.99,
+      "text": "Now the ordering can have four and five."
+    },
+    {
+      "start": 372.99,
+      "end": 376.99,
+      "text": "Now four and five would be having the incoming edge to someone."
+    },
+    {
+      "start": 376.99,
+      "end": 377.99,
+      "text": "Right?"
+    },
+    {
+      "start": 377.99,
+      "end": 379.99,
+      "text": "So they were getting into someone."
+    },
+    {
+      "start": 379.99,
+      "end": 382.99,
+      "text": "So what I'll do is I'll take four out at first."
+    },
+    {
+      "start": 382.99,
+      "end": 383.99,
+      "text": "I took four out."
+    },
+    {
+      "start": 383.99,
+      "end": 384.99,
+      "text": "Now four was into someone."
+    },
+    {
+      "start": 384.99,
+      "end": 385.99,
+      "text": "So I'll take four out."
+    },
+    {
+      "start": 385.99,
+      "end": 386.99,
+      "text": "So I'll take four out."
+    },
+    {
+      "start": 386.99,
+      "end": 387.99,
+      "text": "So I'll take four out."
+    },
+    {
+      "start": 387.99,
+      "end": 388.99,
+      "text": "So I'll take four out."
+    },
+    {
+      "start": 388.99,
+      "end": 389.25,
+      "text": "Right?"
+    },
+    {
+      "start": 389.25,
+      "end": 389.33,
+      "text": "Right?"
+    },
+    {
+      "start": 389.33,
+      "end": 389.97,
+      "text": "So I'll take four out."
+    },
+    {
+      "start": 389.97,
+      "end": 390.97,
+      "text": "So I'll take four out."
+    },
+    {
+      "start": 390.97,
+      "end": 391.97,
+      "text": "Now four was into someone."
+    },
+    {
+      "start": 391.97,
+      "end": 392.97,
+      "text": "Let's see."
+    },
+    {
+      "start": 392.97,
+      "end": 393.97,
+      "text": "Four was into zero."
+    },
+    {
+      "start": 393.97,
+      "end": 394.97,
+      "text": "And four was into one."
+    },
+    {
+      "start": 394.97,
+      "end": 398.97,
+      "text": "Tell me like, let's take it off because I already have four before it."
+    },
+    {
+      "start": 398.97,
+      "end": 399.97,
+      "text": "I already have four before it."
+    },
+    {
+      "start": 399.97,
+      "end": 401.97,
+      "text": "So I'm pleased in my ordering four."
+    },
+    {
+      "start": 401.97,
+      "end": 403.97,
+      "text": "I pleased in my ordering four."
+    },
+    {
+      "start": 403.97,
+      "end": 404.97,
+      "text": "So I have four before it."
+    },
+    {
+      "start": 404.97,
+      "end": 408.97,
+      "text": "So from zero take out four."
+    },
+    {
+      "start": 408.97,
+      "end": 412.97,
+      "text": "So the all indegree will reduce to one."
+    },
+    {
+      "start": 412.97,
+      "end": 413.97,
+      "text": "And from one also take out four."
+    },
+    {
+      "start": 413.97,
+      "end": 415.97,
+      "text": "So the indegree will reduce to one."
+    },
+    {
+      "start": 415.97,
+      "end": 417.97,
+      "text": "So what I did was I said, let's take it out."
+    },
+    {
+      "start": 417.97,
+      "end": 418.97,
+      "text": "Yes, let's take it out."
+    },
+    {
+      "start": 418.97,
+      "end": 420.97,
+      "text": "You can say I removed these edges."
+    },
+    {
+      "start": 420.97,
+      "end": 422.97,
+      "text": "I kind of removed these edges."
+    },
+    {
+      "start": 422.97,
+      "end": 424.97,
+      "text": "I'm saying take them out."
+    },
+    {
+      "start": 424.97,
+      "end": 427.97,
+      "text": "Take them out because they're no more into consideration."
+    },
+    {
+      "start": 427.97,
+      "end": 428.97,
+      "text": "Okay, perfect."
+    },
+    {
+      "start": 428.97,
+      "end": 429.97,
+      "text": "So I've taken them out."
+    },
+    {
+      "start": 429.97,
+      "end": 430.97,
+      "text": "Right?"
+    },
+    {
+      "start": 430.97,
+      "end": 435.97,
+      "text": "After taking four out, is the zero having an indegree zero?"
+    },
+    {
+      "start": 435.97,
+      "end": 442.97,
+      "text": "No, there are still a lot of edges which are into it and are not yet in my direction or"
+    },
+    {
+      "start": 442.97,
+      "end": 444.97,
+      "text": "in my linear ordering."
+    },
+    {
+      "start": 444.97,
+      "end": 445.97,
+      "text": "Okay, fine."
+    },
+    {
+      "start": 445.97,
+      "end": 447.97,
+      "text": "So I've done the work for four."
+    },
+    {
+      "start": 447.97,
+      "end": 449.97,
+      "text": "So I've taken out five."
+    },
+    {
+      "start": 449.97,
+      "end": 451.97,
+      "text": "So five will be in my linear ordering now."
+    },
+    {
+      "start": 451.97,
+      "end": 457.97,
+      "text": "Who, like five if you see, is entering two and is entering zero."
+    },
+    {
+      "start": 457.97,
+      "end": 461.97,
+      "text": "So if I take it out from zero, the indegree will become zero."
+    },
+    {
+      "start": 461.97,
+      "end": 465.97,
+      "text": "So the indegree of zero now becomes zero."
+    },
+    {
+      "start": 465.97,
+      "end": 468.97,
+      "text": "So you can take that zero and put it into the queue."
+    },
+    {
+      "start": 468.97,
+      "end": 470.97,
+      "text": "And from two also you'll take it out."
+    },
+    {
+      "start": 470.97,
+      "end": 472.97,
+      "text": "So the indegree of two will also become zero."
+    },
+    {
+      "start": 472.97,
+      "end": 474.97,
+      "text": "So you can put that out as well."
+    },
+    {
+      "start": 474.97,
+      "end": 475.97,
+      "text": "Perfect."
+    },
+    {
+      "start": 475.97,
+      "end": 476.97,
+      "text": "Now, can I say?"
+    },
+    {
+      "start": 476.97,
+      "end": 483.97,
+      "text": "Since you took four and five out, four and five was already entering zero."
+    },
+    {
+      "start": 483.97,
+      "end": 485.97,
+      "text": "Thereby the indegree becomes zero."
+    },
+    {
+      "start": 485.97,
+      "end": 489.97,
+      "text": "So you're very sure that you have placed four and five before."
+    },
+    {
+      "start": 489.97,
+      "end": 490.97,
+      "text": "Right?"
+    },
+    {
+      "start": 490.97,
+      "end": 494.97,
+      "text": "Now, when you take the next element out of the queue, it is zero."
+    },
+    {
+      "start": 494.97,
+      "end": 497.97,
+      "text": "And you can place that into the linear ordering."
+    },
+    {
+      "start": 497.97,
+      "end": 501.97,
+      "text": "Because it is now an indegree of zero because four and five have been taken out."
+    },
+    {
+      "start": 501.97,
+      "end": 502.97,
+      "text": "Got it?"
+    },
+    {
+      "start": 502.97,
+      "end": 503.97,
+      "text": "Perfect."
+    },
+    {
+      "start": 503.97,
+      "end": 506.97,
+      "text": "For zero, you will see, does it have any indegree?"
+    },
+    {
+      "start": 506.97,
+      "end": 507.97,
+      "text": "Like anywhere?"
+    },
+    {
+      "start": 507.97,
+      "end": 508.97,
+      "text": "Any adjacent nodes?"
+    },
+    {
+      "start": 508.97,
+      "end": 509.97,
+      "text": "No."
+    },
+    {
+      "start": 509.97,
+      "end": 510.97,
+      "text": "So nothing to be done."
+    },
+    {
+      "start": 510.97,
+      "end": 512.97,
+      "text": "Next, you take out two."
+    },
+    {
+      "start": 512.97,
+      "end": 514.97,
+      "text": "Where is two heading to?"
+    },
+    {
+      "start": 514.97,
+      "end": 516.97,
+      "text": "Two is heading to three."
+    },
+    {
+      "start": 516.97,
+      "end": 518.97,
+      "text": "The adjacent node of two is three."
+    },
+    {
+      "start": 518.97,
+      "end": 522.97,
+      "text": "So you reduce the indegree of three by one and become zero."
+    },
+    {
+      "start": 522.97,
+      "end": 525.97,
+      "text": "So now you can take three and put it into the queue."
+    },
+    {
+      "start": 525.97,
+      "end": 526.97,
+      "text": "Perfect."
+    },
+    {
+      "start": 526.97,
+      "end": 528.97,
+      "text": "Next, you take out three."
+    },
+    {
+      "start": 528.97,
+      "end": 530.97,
+      "text": "Now you have three."
+    },
+    {
+      "start": 530.97,
+      "end": 532.97,
+      "text": "Three is saying, who am I?"
+    },
+    {
+      "start": 532.97,
+      "end": 534.97,
+      "text": "You can take out three."
+    },
+    {
+      "start": 534.97,
+      "end": 536.97,
+      "text": "Three was getting into one."
+    },
+    {
+      "start": 536.97,
+      "end": 538.97,
+      "text": "So one will now reduce its indegree to zero."
+    },
+    {
+      "start": 538.97,
+      "end": 540.97,
+      "text": "So now you can take out one."
+    },
+    {
+      "start": 540.97,
+      "end": 541.97,
+      "text": "Perfect."
+    },
+    {
+      "start": 541.97,
+      "end": 542.97,
+      "text": "Now you can remove it."
+    },
+    {
+      "start": 542.97,
+      "end": 545.97,
+      "text": "Suddenly this indegree will become zero and this will be done."
+    },
+    {
+      "start": 545.97,
+      "end": 547.97,
+      "text": "So apparently now you have one."
+    },
+    {
+      "start": 547.97,
+      "end": 549.97,
+      "text": "So you can take out one."
+    },
+    {
+      "start": 549.97,
+      "end": 551.97,
+      "text": "And over here you can place out one."
+    },
+    {
+      "start": 551.97,
+      "end": 553.97,
+      "text": "So does one have any adjacent node?"
+    },
+    {
+      "start": 553.97,
+      "end": 554.97,
+      "text": "No."
+    },
+    {
+      "start": 554.97,
+      "end": 559.97,
+      "text": "So I can say at the end of the day, we have four, five, zero, two, three, one as a valid"
+    },
+    {
+      "start": 559.97,
+      "end": 561.97,
+      "text": "to post sort."
+    },
+    {
+      "start": 561.97,
+      "end": 563.97,
+      "text": "So what I did was super simple."
+    },
+    {
+      "start": 563.97,
+      "end": 566.97,
+      "text": "I insert all the nodes with indegree zero."
+    },
+    {
+      "start": 566.97,
+      "end": 568.97,
+      "text": "Take them out of the queue."
+    },
+    {
+      "start": 568.97,
+      "end": 575.35,
+      "text": "Take them out of the queue and just remove the adjacent."
+    },
+    {
+      "start": 575.35,
+      "end": 577.35,
+      "text": "Just reduce the indegree of the adjacent nodes."
+    },
+    {
+      "start": 577.35,
+      "end": 581.35,
+      "text": "And if the adjacent nodes have the indegree zero, I see them."
+    },
+    {
+      "start": 581.35,
+      "end": 583.35,
+      "text": "You have your guys set before."
+    },
+    {
+      "start": 583.35,
+      "end": 587.35,
+      "text": "So you can now go to the queue because you will be a part of the toposort."
+    },
+    {
+      "start": 587.35,
+      "end": 588.35,
+      "text": "Got it?"
+    },
+    {
+      "start": 588.35,
+      "end": 589.35,
+      "text": "So quite simple."
+    },
+    {
+      "start": 589.35,
+      "end": 590.35,
+      "text": "Quick question."
+    },
+    {
+      "start": 590.35,
+      "end": 592.35,
+      "text": "How do you figure out the indegree?"
+    },
+    {
+      "start": 592.35,
+      "end": 594.35,
+      "text": "How do you figure out the indegree?"
+    },
+    {
+      "start": 594.35,
+      "end": 595.35,
+      "text": "Very simple."
+    },
+    {
+      "start": 595.35,
+      "end": 602.35,
+      "text": "If I'm saying two is having an adjacent node to three, which means two is directed to three."
+    },
+    {
+      "start": 602.35,
+      "end": 605.35,
+      "text": "So can I see the indegree of three will increase by plus one."
+    },
+    {
+      "start": 605.35,
+      "end": 611.35,
+      "text": "So what I do is I traverse in the adjacent node and whatever is there, whatever is there,"
+    },
+    {
+      "start": 611.35,
+      "end": 614.35,
+      "text": "I see indegree of three can do a plus plus."
+    },
+    {
+      "start": 614.35,
+      "end": 619.35,
+      "text": "If there is zero, I can say indegree of zero will do a plus plus."
+    },
+    {
+      "start": 619.35,
+      "end": 623.35,
+      "text": "If there is one, I can say indegree of one will do a plus plus because if I'm saying"
+    },
+    {
+      "start": 623.35,
+      "end": 624.35,
+      "text": "three to one, it means there is a plus plus."
+    },
+    {
+      "start": 624.35,
+      "end": 625.35,
+      "text": "If there is one, I can say indegree of one."
+    },
+    {
+      "start": 625.35,
+      "end": 626.35,
+      "text": "If there is two, I can say indegree of one."
+    },
+    {
+      "start": 626.35,
+      "end": 627.35,
+      "text": "If there is three to one, it means there is an inner edge to one."
+    },
+    {
+      "start": 627.35,
+      "end": 628.35,
+      "text": "There is an incoming edge to one."
+    },
+    {
+      "start": 628.35,
+      "end": 629.35,
+      "text": "So very simple."
+    },
+    {
+      "start": 629.35,
+      "end": 630.35,
+      "text": "You traverse in the adjacent node and you can increase the indegree."
+    },
+    {
+      "start": 630.35,
+      "end": 631.35,
+      "text": "So we will now go back to the code editor."
+    },
+    {
+      "start": 631.35,
+      "end": 632.35,
+      "text": "As usual, the C++ code is on the right and the Java code will be on the left."
+    },
+    {
+      "start": 632.35,
+      "end": 633.35,
+      "text": "So what is the first thing that you do?"
+    },
+    {
+      "start": 633.35,
+      "end": 634.35,
+      "text": "You will obviously have an indegree."
+    },
+    {
+      "start": 634.35,
+      "end": 635.35,
+      "text": "Yes."
+    },
+    {
+      "start": 635.35,
+      "end": 636.35,
+      "text": "And since it's a zero based indexing, you can keep it like this."
+    },
+    {
+      "start": 636.35,
+      "end": 637.35,
+      "text": "Let's traverse in the adjacent C node."
+    },
+    {
+      "start": 637.35,
+      "end": 638.35,
+      "text": "In the adjacent C node, you can see that the C++ code is on the right."
+    },
+    {
+      "start": 638.35,
+      "end": 639.35,
+      "text": "So what is the first thing that you do?"
+    },
+    {
+      "start": 639.35,
+      "end": 640.35,
+      "text": "You will obviously have an indegree."
+    },
+    {
+      "start": 640.35,
+      "end": 641.35,
+      "text": "Yes."
+    },
+    {
+      "start": 641.35,
+      "end": 665.79,
+      "text": "And since it's a zero based indexing, you can keep it like this."
+    },
+    {
+      "start": 665.79,
+      "end": 670.69,
+      "text": "Now you know what you will do in Indegree, these nodes will be plus plus."
+    },
+    {
+      "start": 670.69,
+      "end": 676.47,
+      "text": "right after this you go to all the nodes and you say hey listen who is the guy who is having an"
+    },
+    {
+      "start": 676.47,
+      "end": 689.26,
+      "text": "indegree of zero indegree of zero if you have an indegree of zero i can say q of int q can you just"
+    },
+    {
+      "start": 689.26,
+      "end": 695.0,
+      "text": "take it into the queue like fine i'll take it into the queue you have the queue ready someone will"
+    },
+    {
+      "start": 695.0,
+      "end": 700.56,
+      "text": "always be there with an indegree zero because it is a directed acyclic graph so you get the first"
+    },
+    {
+      "start": 700.56,
+      "end": 707.5,
+      "text": "node saying q dot front and you can always do a q dot pop perfect and since you need to store the"
+    },
+    {
+      "start": 707.5,
+      "end": 714.68,
+      "text": "topo sort probably you can do a vector of int or topo and over here you can say topo dot push back"
+    },
+    {
+      "start": 714.68,
+      "end": 719.42,
+      "text": "of the node so to store the topo sort and now you need to traverse for all its adjacent nodes"
+    },
+    {
+      "start": 719.42,
+      "end": 723.4,
+      "text": "which is something like this and you know one thing for sure you have to take it off"
+    },
+    {
+      "start": 723.4,
+      "end": 729.14,
+      "text": "so indegree of that node because node is done now node is removed but node is in your topo sort"
+    },
+    {
+      "start": 729.14,
+      "end": 730.54,
+      "text": "so something i can"
+    },
+    {
+      "start": 730.54,
+      "end": 742.44,
+      "text": "write node is in your topo sort so please remove it from the indegree because the node is already"
+    },
+    {
+      "start": 742.44,
+      "end": 749.14,
+      "text": "there so if i have removed on from the indegree and if after removing the indegree of it of that"
+    },
+    {
+      "start": 749.14,
+      "end": 753.42,
+      "text": "node becomes zero i can say i have one more element and i can put that into the topo sort"
+    },
+    {
+      "start": 753.42,
+      "end": 760.38,
+      "text": "once i've done this i can simply return the topo and that will be my answer perfect this is how"
+    },
+    {
+      "start": 760.38,
+      "end": 760.52,
+      "text": "i'm going to do it so i'm going to do it in the topo sort and i'm going to do it in the topo sort"
+    },
+    {
+      "start": 760.54,
+      "end": 765.34,
+      "text": "uh easily i can write the topo sort now let's quickly run this off and see if it is running fine"
+    },
+    {
+      "start": 765.34,
+      "end": 772.28,
+      "text": "okay it is let's quickly submit this remember any of the topological sort will be accepted if you"
+    },
+    {
+      "start": 772.28,
+      "end": 777.66,
+      "text": "see over here you can find any of the topological sort it is absolutely okay so this is how you can"
+    },
+    {
+      "start": 777.66,
+      "end": 782.8,
+      "text": "easily do it again which of the uh what is the space complexity using an indegree of bico of n"
+    },
+    {
+      "start": 782.8,
+      "end": 788.68,
+      "text": "we're using a q again which can take a bico of n and then uh it's a simple bfs algorithm that we"
+    },
+    {
+      "start": 788.68,
+      "end": 790.52,
+      "text": "are doing which is going to take a bico of n and then we're going to take a bico of n and then we're"
+    },
+    {
+      "start": 790.54,
+      "end": 791.02,
+      "text": "going to take a bico of n and then we're going to take a bico of n and then we're going to take a"
+    },
+    {
+      "start": 791.02,
+      "end": 794.22,
+      "text": "of it's a directed graph so v plus e because of it's a directed graph so v plus e because"
+    },
+    {
+      "start": 794.22,
+      "end": 802.86,
+      "text": "every edge will only have like it's considered like once so v plus e is the uh time complexity"
+    },
+    {
+      "start": 802.86,
+      "end": 807.1,
+      "text": "so guys i hope i was able to explain you this particular algorithm so just in case i was"
+    },
+    {
+      "start": 807.1,
+      "end": 811.26,
+      "text": "please make sure you like this video and if you're new to our channel what are you waiting for hit"
+    },
+    {
+      "start": 811.26,
+      "end": 815.34,
+      "text": "that subscribe button right away and if you haven't checked out our dp series and the sdc"
+    },
+    {
+      "start": 815.34,
+      "end": 818.86,
+      "text": "the links are in the description and then with this i'll be wrapping up this video let's put"
+    },
+    {
+      "start": 818.86,
+      "end": 820.38,
+      "text": "in some other video till then bye bye take care"
+    },
+    {
+      "start": 820.54,
+      "end": 824.0,
+      "text": "care"
+    }
+  ]
+}

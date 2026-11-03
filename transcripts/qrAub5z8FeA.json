@@ -1,0 +1,2719 @@
+{
+  "video_id": "qrAub5z8FeA",
+  "title": "G-55. Bridges in Graph - Using Tarjan's Algorithm of time in and low time",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1404.12,
+  "segments": [
+    {
+      "start": 3.12,
+      "end": 6.16,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.48,
+      "end": 9.48,
+      "text": "So in this video, we're going to learn about bridges in a graph."
+    },
+    {
+      "start": 9.76,
+      "end": 12.0,
+      "text": "Now, what is the definition of a bridge? Very simple."
+    },
+    {
+      "start": 12.5,
+      "end": 18.58,
+      "text": "Pick up any edge and if you remove it, the component gets broken into two or more components."
+    },
+    {
+      "start": 18.76,
+      "end": 20.44,
+      "text": "For an example, let's remove this."
+    },
+    {
+      "start": 21.02,
+      "end": 24.14,
+      "text": "So the moment you remove this, previously it was connected."
+    },
+    {
+      "start": 24.62,
+      "end": 29.44,
+      "text": "Now, can you see this is a single standalone component and this is a single standalone component."
+    },
+    {
+      "start": 29.44,
+      "end": 33.02,
+      "text": "So they got broken down into two separate components, right?"
+    },
+    {
+      "start": 33.38,
+      "end": 41.53,
+      "text": "Now, imagine I say, okay, if I remove this, they're again broken down into two separate components."
+    },
+    {
+      "start": 41.75,
+      "end": 44.55,
+      "text": "So it's a bridge. Now, what if I say, let's remove this."
+    },
+    {
+      "start": 44.85,
+      "end": 49.43,
+      "text": "If you remove this, it is not broken down into two or more components."
+    },
+    {
+      "start": 49.69,
+      "end": 53.11,
+      "text": "It still stays as a single component, but that's not a bridge."
+    },
+    {
+      "start": 53.59,
+      "end": 58.85,
+      "text": "Imagine I remove this, it's broken down. One here and one here."
+    },
+    {
+      "start": 59.63,
+      "end": 62.57,
+      "text": "So what is the definition of a bridge? Very simple."
+    },
+    {
+      "start": 63.25,
+      "end": 63.99,
+      "text": "Any edge."
+    },
+    {
+      "start": 64.53,
+      "end": 72.69,
+      "text": "Any edge on whose removal the graph is broken down into two or more components."
+    },
+    {
+      "start": 73.43,
+      "end": 77.07,
+      "text": "That is the definition of a bridge. Got it?"
+    },
+    {
+      "start": 77.39,
+      "end": 81.69,
+      "text": "Now, which algorithm will we use to find a bridge in a graph?"
+    },
+    {
+      "start": 82.11,
+      "end": 82.73,
+      "text": "It's very simple."
+    },
+    {
+      "start": 83.65,
+      "end": 87.61,
+      "text": "We will be using some logic in the DFS algorithm."
+    },
+    {
+      "start": 87.61,
+      "end": 90.67,
+      "text": "So the prerequisite is quite straightforward."
+    },
+    {
+      "start": 91.99,
+      "end": 93.17,
+      "text": "You must be knowing."
+    },
+    {
+      "start": 93.89,
+      "end": 94.51,
+      "text": "The DFS."
+    },
+    {
+      "start": 94.79,
+      "end": 95.29,
+      "text": "Algorithm."
+    },
+    {
+      "start": 95.73,
+      "end": 97.99,
+      "text": "Just in case you do not know the DFS algorithm."
+    },
+    {
+      "start": 98.19,
+      "end": 102.19,
+      "text": "I made the, I made a detailed video on this, on this particular playlist."
+    },
+    {
+      "start": 102.35,
+      "end": 102.93,
+      "text": "Scroll up."
+    },
+    {
+      "start": 103.05,
+      "end": 104.31,
+      "text": "You'll find the video for DFS."
+    },
+    {
+      "start": 104.55,
+      "end": 105.93,
+      "text": "Go back and watch it and come back."
+    },
+    {
+      "start": 106.11,
+      "end": 106.41,
+      "text": "Okay."
+    },
+    {
+      "start": 106.65,
+      "end": 109.67,
+      "text": "So the prerequisite is DFS algorithm."
+    },
+    {
+      "start": 110.03,
+      "end": 114.03,
+      "text": "So we will be taking this particular graph and we know the bridges in this graph."
+    },
+    {
+      "start": 114.41,
+      "end": 117.91,
+      "text": "One is this, the other one is this, and the other one is this."
+    },
+    {
+      "start": 118.17,
+      "end": 121.11,
+      "text": "But the problem is stating print all the bridges."
+    },
+    {
+      "start": 121.35,
+      "end": 122.07,
+      "text": "That is the problem."
+    },
+    {
+      "start": 122.13,
+      "end": 124.31,
+      "text": "It states print all the bridges."
+    },
+    {
+      "start": 124.53,
+      "end": 125.13,
+      "text": "That is the question."
+    },
+    {
+      "start": 125.39,
+      "end": 127.27,
+      "text": "So four and five is a bridge."
+    },
+    {
+      "start": 127.69,
+      "end": 129.05,
+      "text": "You can write it as five and four."
+    },
+    {
+      "start": 129.63,
+      "end": 130.77,
+      "text": "Five and six is a bridge."
+    },
+    {
+      "start": 130.91,
+      "end": 132.27,
+      "text": "Again, you can write it as six and five."
+    },
+    {
+      "start": 132.71,
+      "end": 133.71,
+      "text": "Ten and eight is a bridge."
+    },
+    {
+      "start": 133.93,
+      "end": 135.03,
+      "text": "Then I did as eight and ten."
+    },
+    {
+      "start": 135.25,
+      "end": 136.41,
+      "text": "So there are three bridges."
+    },
+    {
+      "start": 136.83,
+      "end": 140.65,
+      "text": "I want you to bring all the bridges in this particular graph."
+    },
+    {
+      "start": 140.91,
+      "end": 145.17,
+      "text": "That is what the question states to implement the algorithm, to find the bridges in a graph."
+    },
+    {
+      "start": 145.43,
+      "end": 148.83,
+      "text": "What we will do is we will take two separate arrays."
+    },
+    {
+      "start": 149.21,
+      "end": 153.83,
+      "text": "One is the time of insertion, but the other one is the lowest time."
+    },
+    {
+      "start": 153.89,
+      "end": 154.27,
+      "text": "Time."
+    },
+    {
+      "start": 154.37,
+      "end": 154.53,
+      "text": "Of."
+    },
+    {
+      "start": 154.53,
+      "end": 159.63,
+      "text": "insertion now what does that mean you remember DFS travis how does DFS"
+    },
+    {
+      "start": 159.63,
+      "end": 164.71,
+      "text": "travisl work maybe it starts from one goes to two goes to three then goes to"
+    },
+    {
+      "start": 164.71,
+      "end": 170.11,
+      "text": "four so first occurrence link first time of insertion is here second time of"
+    },
+    {
+      "start": 170.11,
+      "end": 173.27,
+      "text": "insertion is here third time of insertion is here fourth time of"
+    },
+    {
+      "start": 173.27,
+      "end": 179.55,
+      "text": "insertion so while doing the DFS travisl keep a track when are you reaching a"
+    },
+    {
+      "start": 179.55,
+      "end": 183.71,
+      "text": "node in which step are you reaching a node so the step at which you reach the"
+    },
+    {
+      "start": 183.71,
+      "end": 190.79,
+      "text": "node that is what we call as time of insertion got it what is the lowest time"
+    },
+    {
+      "start": 190.79,
+      "end": 198.13,
+      "text": "of insertion what it does is it finds the lowest of all so if I'm standing"
+    },
+    {
+      "start": 198.13,
+      "end": 203.27,
+      "text": "here it will look at all the adjacent nodes and take the lowest among them but"
+    },
+    {
+      "start": 203.27,
+      "end": 208.13,
+      "text": "it will not consider the parent did not understand no worries I'll be doing a"
+    },
+    {
+      "start": 208.13,
+      "end": 212.99,
+      "text": "proper dry run you'll understand this but remember this line apart from parent"
+    },
+    {
+      "start": 212.99,
+      "end": 218.61,
+      "text": "apart from parent this is the key point over here okay so let's start on with the algorithm so with"
+    },
+    {
+      "start": 218.61,
+      "end": 224.55,
+      "text": "the algorithm how we start is we will write time of insertion and the lowest time so let's start"
+    },
+    {
+      "start": 224.55,
+      "end": 230.85,
+      "text": "with one so that's where we start so market is visited in the dfs travis the time of insertion"
+    },
+    {
+      "start": 230.85,
+      "end": 235.69,
+      "text": "is the first step so timer will be one and the lowest time will be one so the first is the time"
+    },
+    {
+      "start": 235.69,
+      "end": 241.71,
+      "text": "of insertion the second is the lowest time since initially you do not have any adjacent nodes let's"
+    },
+    {
+      "start": 241.71,
+      "end": 246.73,
+      "text": "assume the current time is your lowest then we will check around adjacent and we'll figure it out"
+    },
+    {
+      "start": 246.73,
+      "end": 252.59,
+      "text": "next it will go to two so market has visited and the time of insertion is two and the lowest time"
+    },
+    {
+      "start": 252.59,
+      "end": 260.07,
+      "text": "is three next is three three by three next is four four by four next is five five by five next is six"
+    },
+    {
+      "start": 260.07,
+      "end": 266.91,
+      "text": "six by six please make sure your market has visited okay next is seven seven by seven next is"
+    },
+    {
+      "start": 266.91,
+      "end": 271.35,
+      "text": "eight eight by eight next is nine by nine"
+    },
+    {
+      "start": 271.71,
+      "end": 278.23,
+      "text": "now here comes a critical case that you need to understand so at nine when you're doing a dfs"
+    },
+    {
+      "start": 278.23,
+      "end": 285.33,
+      "text": "traversal of nine it has a time of insertion as nine and the lowest time of nine right can nine"
+    },
+    {
+      "start": 285.33,
+      "end": 292.49,
+      "text": "go to anywhere if i ask you what are the adjacent nodes of nine it's eight which is where it is"
+    },
+    {
+      "start": 292.49,
+      "end": 299.53,
+      "text": "coming in from if you look at this so it's the parent because eight is calling the nine so it's"
+    },
+    {
+      "start": 301.71,
+      "end": 309.19,
+      "text": "considered parent will nine go to six in dfs we did not visit nodes which i visited it will not"
+    },
+    {
+      "start": 309.19,
+      "end": 317.09,
+      "text": "go it will not go but remember of all adjacent nodes that is what low is but low will say okay"
+    },
+    {
+      "start": 317.09,
+      "end": 323.41,
+      "text": "i will not go there but i'll pick up your low your lowest is six i'll pick up so i'll just pick"
+    },
+    {
+      "start": 323.41,
+      "end": 331.39,
+      "text": "up that and write it to myself perfect now remember this eight called nine so as of now"
+    },
+    {
+      "start": 331.71,
+      "end": 337.83,
+      "text": "can i say nine has no more adjacent nodes to go it doesn't have anything to go so it will come back"
+    },
+    {
+      "start": 337.83,
+      "end": 345.21,
+      "text": "it will come back let's come back so it will come back now when it comes back can i see for sure"
+    },
+    {
+      "start": 345.21,
+      "end": 354.57,
+      "text": "that the nine's dfs traversal is complete done and dusted it is it is so nine's time of insertion is"
+    },
+    {
+      "start": 354.57,
+      "end": 361.71,
+      "text": "nine and the lowest time is six now eight will say hey you are one of my adjacent nodes hey nine you"
+    },
+    {
+      "start": 361.71,
+      "end": 367.65,
+      "text": "are one of my adjacent nodes and you did complete your traversal so i'll update my low what is your"
+    },
+    {
+      "start": 367.65,
+      "end": 375.39,
+      "text": "low six better than me so i'll update my low to six so that is the definition of low it says i"
+    },
+    {
+      "start": 375.39,
+      "end": 382.05,
+      "text": "will take off all adjacent nodes apart from parent eight did not look at its parent it took it from"
+    },
+    {
+      "start": 382.05,
+      "end": 389.73,
+      "text": "its adjacent node six it got it took and updated the low done now once you have updated it states"
+    },
+    {
+      "start": 391.71,
+      "end": 398.25,
+      "text": "that you have done your job now can can we can eight and nine be a bridge can this be a bridge"
+    },
+    {
+      "start": 398.25,
+      "end": 405.51,
+      "text": "okay can this be a bridge how do i check it how do i check it this is where these two arrays will"
+    },
+    {
+      "start": 405.51,
+      "end": 414.15,
+      "text": "help now he says nine is nine has done his dfs practice can eight nine be a bridge so he removes"
+    },
+    {
+      "start": 414.15,
+      "end": 421.17,
+      "text": "that hypothetically just remove that nine says hey you're removing you're removing he'll ask eight"
+    },
+    {
+      "start": 421.71,
+      "end": 427.71,
+      "text": "times a time of insertion he says in order to reach me it has to be the eighth step it has to"
+    },
+    {
+      "start": 427.71,
+      "end": 435.51,
+      "text": "be the eighth step nine says i have an adjacent guy i have an adjacent guy who can reach at the"
+    },
+    {
+      "start": 435.51,
+      "end": 441.69,
+      "text": "sixth step the nine says i have an adjacent guy i have an adjacent guy who can reach at the sixth"
+    },
+    {
+      "start": 441.69,
+      "end": 449.37,
+      "text": "step so even if you remove even if you remove i can still go to the sixth step and the sixth step"
+    },
+    {
+      "start": 449.37,
+      "end": 451.41,
+      "text": "will take me to the seventh and the seventh will take me to the eighth step and the seventh will"
+    },
+    {
+      "start": 451.41,
+      "end": 451.65,
+      "text": "take me to the eighth step and the seventh will take me to the eighth step and the seventh will"
+    },
+    {
+      "start": 451.65,
+      "end": 452.87,
+      "text": "So I can reach you."
+    },
+    {
+      "start": 453.39,
+      "end": 455.81,
+      "text": "Now if I can reach you, it's not a bridge."
+    },
+    {
+      "start": 456.19,
+      "end": 457.75,
+      "text": "Because the definition of a bridge is"
+    },
+    {
+      "start": 457.75,
+      "end": 459.45,
+      "text": "split it into two components."
+    },
+    {
+      "start": 459.89,
+      "end": 461.61,
+      "text": "So if I'm split into two components,"
+    },
+    {
+      "start": 461.85,
+      "end": 462.89,
+      "text": "I can't reach you back."
+    },
+    {
+      "start": 463.01,
+      "end": 463.85,
+      "text": "I can't reach you back."
+    },
+    {
+      "start": 464.15,
+      "end": 465.57,
+      "text": "So if there's a path to reach you back,"
+    },
+    {
+      "start": 466.19,
+      "end": 468.17,
+      "text": "it did not get split it into two components."
+    },
+    {
+      "start": 468.61,
+      "end": 470.89,
+      "text": "It's not a bridge."
+    },
+    {
+      "start": 471.43,
+      "end": 474.19,
+      "text": "So I am sure that it is not a bridge."
+    },
+    {
+      "start": 474.85,
+      "end": 477.01,
+      "text": "Now since I know 8 and 9 cannot be a bridge,"
+    },
+    {
+      "start": 477.55,
+      "end": 479.37,
+      "text": "so like hypothetically I removed it,"
+    },
+    {
+      "start": 479.37,
+      "end": 480.83,
+      "text": "so hypothetically I'll place it back."
+    },
+    {
+      "start": 480.83,
+      "end": 484.93,
+      "text": "So 8 has done for 9."
+    },
+    {
+      "start": 485.27,
+      "end": 486.11,
+      "text": "The DFS is done."
+    },
+    {
+      "start": 486.21,
+      "end": 487.69,
+      "text": "It has taken its lowest value."
+    },
+    {
+      "start": 487.95,
+      "end": 488.65,
+      "text": "Now time to move ahead."
+    },
+    {
+      "start": 489.31,
+      "end": 490.71,
+      "text": "Now we move to 10."
+    },
+    {
+      "start": 491.15,
+      "end": 495.29,
+      "text": "So can I say it was 9 at the last step."
+    },
+    {
+      "start": 496.27,
+      "end": 498.73,
+      "text": "This will be at the 10th step."
+    },
+    {
+      "start": 498.93,
+      "end": 501.25,
+      "text": "So I'll write 10,10."
+    },
+    {
+      "start": 501.83,
+      "end": 502.89,
+      "text": "10,10 written."
+    },
+    {
+      "start": 503.35,
+      "end": 504.47,
+      "text": "And mark it as visited."
+    },
+    {
+      "start": 504.81,
+      "end": 506.49,
+      "text": "Next, 11,11."
+    },
+    {
+      "start": 506.89,
+      "end": 507.67,
+      "text": "Mark it as visited."
+    },
+    {
+      "start": 507.67,
+      "end": 509.61,
+      "text": "Next, 12,12."
+    },
+    {
+      "start": 510.07,
+      "end": 510.79,
+      "text": "Mark it as visited."
+    },
+    {
+      "start": 511.03,
+      "end": 512.71,
+      "text": "Now comes the point."
+    },
+    {
+      "start": 513.05,
+      "end": 516.17,
+      "text": "Let's erase this and write the DFS of 12."
+    },
+    {
+      "start": 516.67,
+      "end": 518.81,
+      "text": "So when I write DFS of 12,"
+    },
+    {
+      "start": 519.91,
+      "end": 521.07,
+      "text": "can it go somewhere?"
+    },
+    {
+      "start": 522.01,
+      "end": 524.33,
+      "text": "It says I have an adjacent node 10,"
+    },
+    {
+      "start": 524.69,
+      "end": 526.11,
+      "text": "but it's already visited."
+    },
+    {
+      "start": 526.69,
+      "end": 527.47,
+      "text": "It's already visited."
+    },
+    {
+      "start": 527.77,
+      "end": 528.87,
+      "text": "So I cannot go there."
+    },
+    {
+      "start": 528.99,
+      "end": 529.89,
+      "text": "I cannot go there."
+    },
+    {
+      "start": 530.11,
+      "end": 531.01,
+      "text": "It's already visited."
+    },
+    {
+      "start": 531.49,
+      "end": 533.79,
+      "text": "Now, if it cannot go there,"
+    },
+    {
+      "start": 534.19,
+      "end": 535.53,
+      "text": "because it's already visited."
+    },
+    {
+      "start": 535.53,
+      "end": 537.77,
+      "text": "So you came via some path"
+    },
+    {
+      "start": 537.77,
+      "end": 539.67,
+      "text": "and that is the reason it is visited."
+    },
+    {
+      "start": 540.15,
+      "end": 542.41,
+      "text": "So this is never a bridge for sure."
+    },
+    {
+      "start": 542.81,
+      "end": 545.31,
+      "text": "Because if it's visited,"
+    },
+    {
+      "start": 545.47,
+      "end": 547.49,
+      "text": "you would have visited in the previous path."
+    },
+    {
+      "start": 547.79,
+      "end": 549.45,
+      "text": "So it's definitely not a bridge."
+    },
+    {
+      "start": 550.21,
+      "end": 551.45,
+      "text": "But what's our job."
+    },
+    {
+      "start": 551.87,
+      "end": 553.53,
+      "text": "Low will say wait."
+    },
+    {
+      "start": 554.03,
+      "end": 555.11,
+      "text": "I know 12."
+    },
+    {
+      "start": 555.49,
+      "end": 556.31,
+      "text": "It's your adjacent node."
+    },
+    {
+      "start": 556.45,
+      "end": 558.25,
+      "text": "So why don't you pick its lowest time."
+    },
+    {
+      "start": 558.41,
+      "end": 560.23,
+      "text": "He just picks it and makes it 10."
+    },
+    {
+      "start": 560.67,
+      "end": 561.17,
+      "text": "Nice."
+    },
+    {
+      "start": 561.47,
+      "end": 562.19,
+      "text": "Next."
+    },
+    {
+      "start": 562.43,
+      "end": 568.01,
+      "text": "Can I say that the DFS of 11 called 12."
+    },
+    {
+      "start": 568.01,
+      "end": 569.07,
+      "text": "."
+    },
+    {
+      "start": 569.07,
+      "end": 571.61,
+      "text": "And now, 12 says, I have done."
+    },
+    {
+      "start": 571.97,
+      "end": 572.83,
+      "text": "I am complete."
+    },
+    {
+      "start": 573.25,
+      "end": 576.97,
+      "text": "So, whenever it's complete, what is 11's job?"
+    },
+    {
+      "start": 577.09,
+      "end": 579.47,
+      "text": "11 says, well, you are done and dusted."
+    },
+    {
+      "start": 579.97,
+      "end": 581.49,
+      "text": "Your time in and low end is ready."
+    },
+    {
+      "start": 581.91,
+      "end": 582.69,
+      "text": "I'll just take your low."
+    },
+    {
+      "start": 583.33,
+      "end": 584.79,
+      "text": "Because that's better than mine."
+    },
+    {
+      "start": 585.23,
+      "end": 585.73,
+      "text": "So, I'll take it."
+    },
+    {
+      "start": 586.03,
+      "end": 590.05,
+      "text": "Once I've taken it, 11 says, can this be a hypothetical edge?"
+    },
+    {
+      "start": 590.77,
+      "end": 591.81,
+      "text": "It tries to remove it."
+    },
+    {
+      "start": 592.45,
+      "end": 594.95,
+      "text": "So, 11 can be reached at the 11th step."
+    },
+    {
+      "start": 594.95,
+      "end": 600.23,
+      "text": "And 12 says, I have an adjacent who can be at the 10th step."
+    },
+    {
+      "start": 600.35,
+      "end": 602.09,
+      "text": "So, I'll just go to the 10th and then I'll reach you."
+    },
+    {
+      "start": 602.49,
+      "end": 604.37,
+      "text": "If I can reach you, this cannot be a bridge."
+    },
+    {
+      "start": 604.71,
+      "end": 605.57,
+      "text": "This cannot be a bridge."
+    },
+    {
+      "start": 606.01,
+      "end": 606.83,
+      "text": "This is not a bridge."
+    },
+    {
+      "start": 607.31,
+      "end": 607.83,
+      "text": "Okay, fine."
+    },
+    {
+      "start": 608.33,
+      "end": 610.07,
+      "text": "So, let's erase this."
+    },
+    {
+      "start": 610.89,
+      "end": 612.25,
+      "text": "Now, 11 is done."
+    },
+    {
+      "start": 612.99,
+      "end": 613.61,
+      "text": "Who called 11?"
+    },
+    {
+      "start": 613.81,
+      "end": 614.13,
+      "text": "Let's write."
+    },
+    {
+      "start": 614.63,
+      "end": 615.31,
+      "text": "10 called 11."
+    },
+    {
+      "start": 615.41,
+      "end": 615.77,
+      "text": "Can I say?"
+    },
+    {
+      "start": 616.93,
+      "end": 617.31,
+      "text": "I can."
+    },
+    {
+      "start": 617.77,
+      "end": 618.61,
+      "text": "Now, 11 is done."
+    },
+    {
+      "start": 618.73,
+      "end": 619.83,
+      "text": "So, it will go back."
+    },
+    {
+      "start": 620.35,
+      "end": 624.01,
+      "text": "Now, when it goes back to 10, 10 says, okay, he's coming back."
+    },
+    {
+      "start": 624.01,
+      "end": 624.87,
+      "text": "He's coming back."
+    },
+    {
+      "start": 625.17,
+      "end": 626.09,
+      "text": "So, what's my first job?"
+    },
+    {
+      "start": 626.63,
+      "end": 629.27,
+      "text": "Low says, okay, this is an adjacent node."
+    },
+    {
+      "start": 629.59,
+      "end": 631.03,
+      "text": "Who has done his DFS traversal?"
+    },
+    {
+      "start": 631.27,
+      "end": 632.09,
+      "text": "So, is low as ready?"
+    },
+    {
+      "start": 632.85,
+      "end": 633.63,
+      "text": "I will just pick up."
+    },
+    {
+      "start": 633.81,
+      "end": 635.29,
+      "text": "But it's already 10."
+    },
+    {
+      "start": 635.45,
+      "end": 636.15,
+      "text": "Here is also 10."
+    },
+    {
+      "start": 636.39,
+      "end": 638.11,
+      "text": "So, there's no point of picking it up."
+    },
+    {
+      "start": 638.45,
+      "end": 640.61,
+      "text": "Now, next question."
+    },
+    {
+      "start": 641.05,
+      "end": 641.77,
+      "text": "Can this be a bridge?"
+    },
+    {
+      "start": 641.97,
+      "end": 642.85,
+      "text": "Because I'm coming back."
+    },
+    {
+      "start": 643.19,
+      "end": 643.93,
+      "text": "The DFS is complete."
+    },
+    {
+      "start": 644.39,
+      "end": 646.07,
+      "text": "So, I'll just check for this to be a bridge."
+    },
+    {
+      "start": 646.45,
+      "end": 650.13,
+      "text": "So, if I try to remove this, 10 can be reached at the 10th step."
+    },
+    {
+      "start": 650.87,
+      "end": 653.33,
+      "text": "And 11, if you remove this, 11 says,"
+    },
+    {
+      "start": 653.33,
+      "end": 656.95,
+      "text": "I still have an adjacent where I can reach you."
+    },
+    {
+      "start": 657.65,
+      "end": 659.01,
+      "text": "So, not possible."
+    },
+    {
+      "start": 659.35,
+      "end": 660.03,
+      "text": "This is not a bridge."
+    },
+    {
+      "start": 660.45,
+      "end": 661.29,
+      "text": "This is not a bridge."
+    },
+    {
+      "start": 661.83,
+      "end": 662.75,
+      "text": "It's not a bridge again."
+    },
+    {
+      "start": 663.75,
+      "end": 672.61,
+      "text": "So, can I say now that the 8 called 10 and now 10's DFS is completed."
+    },
+    {
+      "start": 672.95,
+      "end": 674.19,
+      "text": "10's DFS is completed."
+    },
+    {
+      "start": 674.61,
+      "end": 675.59,
+      "text": "So, now it will go back."
+    },
+    {
+      "start": 675.77,
+      "end": 676.91,
+      "text": "Now, it will go back to 8."
+    },
+    {
+      "start": 677.29,
+      "end": 680.19,
+      "text": "When it goes back to 8, what is 8's first job?"
+    },
+    {
+      "start": 680.61,
+      "end": 682.89,
+      "text": "8 says, 10, you are my adjacent."
+    },
+    {
+      "start": 682.89,
+      "end": 683.01,
+      "text": "So, I can reach you."
+    },
+    {
+      "start": 683.01,
+      "end": 683.11,
+      "text": "So, I can reach you."
+    },
+    {
+      "start": 683.33,
+      "end": 683.99,
+      "text": "You have done your job."
+    },
+    {
+      "start": 684.37,
+      "end": 684.97,
+      "text": "What's your low?"
+    },
+    {
+      "start": 685.27,
+      "end": 685.45,
+      "text": "10."
+    },
+    {
+      "start": 685.89,
+      "end": 686.73,
+      "text": "My low is 6."
+    },
+    {
+      "start": 687.13,
+      "end": 688.97,
+      "text": "So, there's no point in taking your low."
+    },
+    {
+      "start": 689.49,
+      "end": 690.15,
+      "text": "Forget about it."
+    },
+    {
+      "start": 690.63,
+      "end": 692.63,
+      "text": "Now, the next step 8 says is, okay, let's wait."
+    },
+    {
+      "start": 693.05,
+      "end": 693.99,
+      "text": "Can we be an edge?"
+    },
+    {
+      "start": 694.45,
+      "end": 695.31,
+      "text": "Can we be a bridge?"
+    },
+    {
+      "start": 695.91,
+      "end": 697.93,
+      "text": "For that, 8 says, what is my step?"
+    },
+    {
+      "start": 698.25,
+      "end": 698.97,
+      "text": "My step is 8."
+    },
+    {
+      "start": 699.67,
+      "end": 705.91,
+      "text": "10 says, the lowest step that I can reach to buy all my adjacent nodes is 10."
+    },
+    {
+      "start": 706.37,
+      "end": 708.93,
+      "text": "So, I cannot reach 8 or something before 8."
+    },
+    {
+      "start": 709.37,
+      "end": 710.45,
+      "text": "So, I cannot reach you back."
+    },
+    {
+      "start": 710.71,
+      "end": 712.19,
+      "text": "If I cannot reach you back,"
+    },
+    {
+      "start": 712.71,
+      "end": 713.31,
+      "text": "I am stating,"
+    },
+    {
+      "start": 713.59,
+      "end": 716.09,
+      "text": "that this guy is a bridge."
+    },
+    {
+      "start": 716.39,
+      "end": 718.31,
+      "text": "I am stating that this guy is a bridge."
+    },
+    {
+      "start": 718.95,
+      "end": 719.45,
+      "text": "Perfect."
+    },
+    {
+      "start": 719.95,
+      "end": 720.45,
+      "text": "Done."
+    },
+    {
+      "start": 720.55,
+      "end": 721.75,
+      "text": "We got our first bridge."
+    },
+    {
+      "start": 722.71,
+      "end": 723.55,
+      "text": "Got our first bridge."
+    },
+    {
+      "start": 723.89,
+      "end": 725.75,
+      "text": "Now, 8 says, I'm done with 9."
+    },
+    {
+      "start": 725.75,
+      "end": 726.75,
+      "text": "I'm done with 10."
+    },
+    {
+      "start": 726.85,
+      "end": 728.41,
+      "text": "I'm done with all the adjacent nodes."
+    },
+    {
+      "start": 728.71,
+      "end": 729.71,
+      "text": "So, now go back to 7."
+    },
+    {
+      "start": 730.11,
+      "end": 734.51,
+      "text": "When it goes to 7, so 7, ideally, you would have called 8."
+    },
+    {
+      "start": 735.57,
+      "end": 736.07,
+      "text": "Right?"
+    },
+    {
+      "start": 736.43,
+      "end": 737.47,
+      "text": "Now, 8's job is done."
+    },
+    {
+      "start": 737.47,
+      "end": 738.75,
+      "text": "So, it goes back to 7."
+    },
+    {
+      "start": 739.15,
+      "end": 741.09,
+      "text": "7's first step is low."
+    },
+    {
+      "start": 741.29,
+      "end": 743.17,
+      "text": "So, I'll say, 8, you are done."
+    },
+    {
+      "start": 743.33,
+      "end": 744.19,
+      "text": "What's your lowest?"
+    },
+    {
+      "start": 744.61,
+      "end": 745.03,
+      "text": "6."
+    },
+    {
+      "start": 745.57,
+      "end": 746.43,
+      "text": "So, I'll just pick you."
+    },
+    {
+      "start": 746.87,
+      "end": 747.41,
+      "text": "I'll just pick."
+    },
+    {
+      "start": 748.03,
+      "end": 748.61,
+      "text": "He picks up."
+    },
+    {
+      "start": 749.15,
+      "end": 750.51,
+      "text": "Now, next step."
+    },
+    {
+      "start": 750.93,
+      "end": 753.09,
+      "text": "7 and 8 check for bridge."
+    },
+    {
+      "start": 753.65,
+      "end": 754.95,
+      "text": "So, when they check for bridge,"
+    },
+    {
+      "start": 756.05,
+      "end": 758.89,
+      "text": "8 says, okay, my lowest is 6."
+    },
+    {
+      "start": 759.15,
+      "end": 760.51,
+      "text": "I can still go to 6."
+    },
+    {
+      "start": 761.31,
+      "end": 762.89,
+      "text": "7 says, my step is 7."
+    },
+    {
+      "start": 763.35,
+      "end": 766.95,
+      "text": "So, if 8 can reach 6, that means it can reach back 7."
+    },
+    {
+      "start": 767.35,
+      "end": 768.25,
+      "text": "So, this is not a bridge."
+    },
+    {
+      "start": 768.67,
+      "end": 770.01,
+      "text": "This is definitely not a bridge."
+    },
+    {
+      "start": 770.27,
+      "end": 771.43,
+      "text": "So, 7's."
+    },
+    {
+      "start": 771.43,
+      "end": 773.43,
+      "text": "DFS is done."
+    },
+    {
+      "start": 773.43,
+      "end": 774.93,
+      "text": "It will now go back to 6."
+    },
+    {
+      "start": 774.93,
+      "end": 777.43,
+      "text": "So, let's write for 6 now."
+    },
+    {
+      "start": 777.43,
+      "end": 777.93,
+      "text": "Wait."
+    },
+    {
+      "start": 777.93,
+      "end": 779.43,
+      "text": "So, I'll be right."
+    },
+    {
+      "start": 779.43,
+      "end": 784.43,
+      "text": "DFS of 6 called 7 and 7 is done."
+    },
+    {
+      "start": 784.43,
+      "end": 785.43,
+      "text": "Right?"
+    },
+    {
+      "start": 785.43,
+      "end": 786.43,
+      "text": "What's 6's first job?"
+    },
+    {
+      "start": 786.43,
+      "end": 787.43,
+      "text": "Low."
+    },
+    {
+      "start": 787.43,
+      "end": 789.43,
+      "text": "Low will be looking for it."
+    },
+    {
+      "start": 789.43,
+      "end": 792.43,
+      "text": "Low says, okay, 7, you're done."
+    },
+    {
+      "start": 792.43,
+      "end": 793.43,
+      "text": "What's your low?"
+    },
+    {
+      "start": 793.43,
+      "end": 794.43,
+      "text": "6."
+    },
+    {
+      "start": 794.43,
+      "end": 795.43,
+      "text": "My lowest is 6."
+    },
+    {
+      "start": 795.43,
+      "end": 797.43,
+      "text": "No need to do anything."
+    },
+    {
+      "start": 797.43,
+      "end": 798.43,
+      "text": "So, if I remove this."
+    },
+    {
+      "start": 799.43,
+      "end": 800.93,
+      "text": "If I remove this, 7 says."
+    },
+    {
+      "start": 801.43,
+      "end": 805.43,
+      "text": "I can still reach back 6, which is your step, which is via this."
+    },
+    {
+      "start": 805.43,
+      "end": 807.43,
+      "text": "Because that's why it is 6 and this is 6."
+    },
+    {
+      "start": 807.43,
+      "end": 809.43,
+      "text": "So, even if you remove this, it can still reach you back."
+    },
+    {
+      "start": 809.43,
+      "end": 810.43,
+      "text": "No point."
+    },
+    {
+      "start": 810.43,
+      "end": 811.43,
+      "text": "No point."
+    },
+    {
+      "start": 811.43,
+      "end": 812.43,
+      "text": "Not a bridge."
+    },
+    {
+      "start": 812.43,
+      "end": 813.43,
+      "text": "Done."
+    },
+    {
+      "start": 813.43,
+      "end": 814.43,
+      "text": "Can I say 6 is done?"
+    },
+    {
+      "start": 814.43,
+      "end": 816.43,
+      "text": "I can say 6 is now done."
+    },
+    {
+      "start": 816.43,
+      "end": 818.43,
+      "text": "Who was called by 6?"
+    },
+    {
+      "start": 818.43,
+      "end": 819.43,
+      "text": "5 called 6."
+    },
+    {
+      "start": 819.43,
+      "end": 820.43,
+      "text": "So, it goes back."
+    },
+    {
+      "start": 820.43,
+      "end": 823.43,
+      "text": "The moment it goes back, 5 says, wait."
+    },
+    {
+      "start": 823.43,
+      "end": 824.43,
+      "text": "Your match is in."
+    },
+    {
+      "start": 824.43,
+      "end": 826.43,
+      "text": "Low is again looking for it."
+    },
+    {
+      "start": 826.43,
+      "end": 827.43,
+      "text": "6."
+    },
+    {
+      "start": 827.43,
+      "end": 828.43,
+      "text": "It has 5."
+    },
+    {
+      "start": 828.43,
+      "end": 829.43,
+      "text": "Will not take it."
+    },
+    {
+      "start": 829.43,
+      "end": 830.43,
+      "text": "5 says."
+    },
+    {
+      "start": 830.43,
+      "end": 832.43,
+      "text": "My time of insertion is 5."
+    },
+    {
+      "start": 832.43,
+      "end": 834.43,
+      "text": "6 says, the lowest I can get is 6."
+    },
+    {
+      "start": 834.43,
+      "end": 836.43,
+      "text": "I cannot reach you back."
+    },
+    {
+      "start": 836.43,
+      "end": 837.43,
+      "text": "Cannot reach you back."
+    },
+    {
+      "start": 837.43,
+      "end": 839.43,
+      "text": "5 and 6 is a bridge."
+    },
+    {
+      "start": 839.43,
+      "end": 841.43,
+      "text": "So, I got one more bridge."
+    },
+    {
+      "start": 841.43,
+      "end": 842.43,
+      "text": "I got one more bridge."
+    },
+    {
+      "start": 842.43,
+      "end": 843.43,
+      "text": "Perfect."
+    },
+    {
+      "start": 843.43,
+      "end": 844.43,
+      "text": "5 is done."
+    },
+    {
+      "start": 844.43,
+      "end": 845.43,
+      "text": "What's the next step?"
+    },
+    {
+      "start": 845.43,
+      "end": 847.43,
+      "text": "5 says, let's go back to 4."
+    },
+    {
+      "start": 847.43,
+      "end": 849.43,
+      "text": "5 says, let's go back to 4."
+    },
+    {
+      "start": 849.43,
+      "end": 851.43,
+      "text": "So, 4 which called 5."
+    },
+    {
+      "start": 851.43,
+      "end": 853.43,
+      "text": "The 5 will go back to it."
+    },
+    {
+      "start": 853.43,
+      "end": 855.43,
+      "text": "The moment it goes back to 4."
+    },
+    {
+      "start": 855.43,
+      "end": 857.43,
+      "text": "4, slow, looks for it."
+    },
+    {
+      "start": 857.43,
+      "end": 859.43,
+      "text": "And says, you have 5, but I have 4."
+    },
+    {
+      "start": 859.43,
+      "end": 860.43,
+      "text": "A lot."
+    },
+    {
+      "start": 860.43,
+      "end": 862.43,
+      "text": "4 says, hey, I need 4th step."
+    },
+    {
+      "start": 862.43,
+      "end": 865.43,
+      "text": "5 says, the lowest I can get is 5th."
+    },
+    {
+      "start": 865.43,
+      "end": 867.43,
+      "text": "So, 4, 5 is a bridge again."
+    },
+    {
+      "start": 867.43,
+      "end": 869.43,
+      "text": "4, 5 is a bridge again."
+    },
+    {
+      "start": 869.43,
+      "end": 872.43,
+      "text": "So, I can say 5 is done and we have figured out 4, 5 is a bridge."
+    },
+    {
+      "start": 872.43,
+      "end": 874.43,
+      "text": "Do you remember how the deepest call happened?"
+    },
+    {
+      "start": 874.43,
+      "end": 876.43,
+      "text": "1 came here, then it went here."
+    },
+    {
+      "start": 876.43,
+      "end": 880.43,
+      "text": "But 4 did not check out its other adjacent node which was 1."
+    },
+    {
+      "start": 880.43,
+      "end": 882.43,
+      "text": "So, now, it came back."
+    },
+    {
+      "start": 882.43,
+      "end": 885.43,
+      "text": "Now, 4 will try to go here, but it's already visited."
+    },
+    {
+      "start": 885.43,
+      "end": 886.43,
+      "text": "So, it's already visited."
+    },
+    {
+      "start": 886.43,
+      "end": 887.43,
+      "text": "So, it's already visited."
+    },
+    {
+      "start": 887.43,
+      "end": 888.43,
+      "text": "So, it's already visited."
+    },
+    {
+      "start": 888.43,
+      "end": 889.43,
+      "text": "So, it will not go."
+    },
+    {
+      "start": 889.43,
+      "end": 890.43,
+      "text": "So, it's already visited."
+    },
+    {
+      "start": 890.43,
+      "end": 891.43,
+      "text": "So, it will not go."
+    },
+    {
+      "start": 891.43,
+      "end": 894.43,
+      "text": "But, since it came via here, it can pick up the low and update him."
+    },
+    {
+      "start": 894.43,
+      "end": 895.43,
+      "text": "Because he's greedy."
+    },
+    {
+      "start": 895.43,
+      "end": 897.43,
+      "text": "So, just look for the adjacent node, slow."
+    },
+    {
+      "start": 897.43,
+      "end": 898.43,
+      "text": "It will update him."
+    },
+    {
+      "start": 898.43,
+      "end": 902.43,
+      "text": "Now, 4 will try to go back to 3 because that is where it came from."
+    },
+    {
+      "start": 902.43,
+      "end": 905.43,
+      "text": "The moment it tries to go back to 3, 3 is greedy."
+    },
+    {
+      "start": 905.43,
+      "end": 906.43,
+      "text": "3 is low, it's greedy."
+    },
+    {
+      "start": 906.43,
+      "end": 908.43,
+      "text": "3 will look for, okay, wait."
+    },
+    {
+      "start": 908.43,
+      "end": 909.43,
+      "text": "Let me take it low."
+    },
+    {
+      "start": 909.43,
+      "end": 910.43,
+      "text": "It will take it slow."
+    },
+    {
+      "start": 910.43,
+      "end": 911.43,
+      "text": "That's the first thing it will do."
+    },
+    {
+      "start": 911.43,
+      "end": 916.43,
+      "text": "Next, I will try to see if 4 and 3 can be a bridge."
+    },
+    {
+      "start": 916.43,
+      "end": 917.43,
+      "text": "4 and 3 can be a bridge."
+    },
+    {
+      "start": 917.43,
+      "end": 918.43,
+      "text": "4 and 3 can be a bridge."
+    },
+    {
+      "start": 918.43,
+      "end": 922.43,
+      "text": "So, 4 sees, okay, I can reach the first step."
+    },
+    {
+      "start": 922.43,
+      "end": 924.43,
+      "text": "3 is entry time is 3."
+    },
+    {
+      "start": 924.43,
+      "end": 926.43,
+      "text": "So, I can reach this, not a bridge."
+    },
+    {
+      "start": 926.43,
+      "end": 929.43,
+      "text": "Similarly, you can track back and do everything."
+    },
+    {
+      "start": 929.43,
+      "end": 931.43,
+      "text": "So, apparently, we got 3 bridges."
+    },
+    {
+      "start": 931.43,
+      "end": 933.43,
+      "text": "One here, one here."
+    },
+    {
+      "start": 933.43,
+      "end": 935.43,
+      "text": "That's how easy it was."
+    },
+    {
+      "start": 935.43,
+      "end": 937.43,
+      "text": "So, I hope you have got the intuition."
+    },
+    {
+      "start": 937.43,
+      "end": 939.43,
+      "text": "The intuition is pretty simple."
+    },
+    {
+      "start": 939.43,
+      "end": 940.43,
+      "text": "Pretty simple."
+    },
+    {
+      "start": 940.43,
+      "end": 944.43,
+      "text": "The reason we have stored low apart from the parent is, is very simple."
+    },
+    {
+      "start": 944.43,
+      "end": 947.43,
+      "text": "Like, if I just draw it, this is the parent."
+    },
+    {
+      "start": 947.43,
+      "end": 950.43,
+      "text": "And this, like, the parent is usually the node."
+    },
+    {
+      "start": 950.43,
+      "end": 951.43,
+      "text": "And this is the IT."
+    },
+    {
+      "start": 951.43,
+      "end": 958.43,
+      "text": "Now, the reason, the reason this IT guy is not storing the low here is because we are removing this."
+    },
+    {
+      "start": 958.43,
+      "end": 964.43,
+      "text": "So, if there is someone else who can take before the parent or to the parent, that is what we need to look for."
+    },
+    {
+      "start": 964.43,
+      "end": 968.43,
+      "text": "That is why we are not storing the parent's low."
+    },
+    {
+      "start": 968.43,
+      "end": 969.43,
+      "text": "Got it?"
+    },
+    {
+      "start": 969.43,
+      "end": 970.43,
+      "text": "That's a simple intuition."
+    },
+    {
+      "start": 970.43,
+      "end": 976.43,
+      "text": "I just look for, if there is any other way I can go back to prior, like prior to that DFS traversal or to that node."
+    },
+    {
+      "start": 976.43,
+      "end": 981.43,
+      "text": "That is the simple intuition behind this, like, small."
+    },
+    {
+      "start": 981.43,
+      "end": 984.43,
+      "text": "I hope you have understood the entire intuition and the algorithm."
+    },
+    {
+      "start": 984.43,
+      "end": 985.43,
+      "text": "Now, it's time to code it up."
+    },
+    {
+      "start": 985.43,
+      "end": 988.43,
+      "text": "So, the problem is critical connections in a network."
+    },
+    {
+      "start": 988.43,
+      "end": 992.43,
+      "text": "It states the graph is zero-based indexing and so and so."
+    },
+    {
+      "start": 992.43,
+      "end": 994.43,
+      "text": "You have to find all the critical connections."
+    },
+    {
+      "start": 994.43,
+      "end": 998.43,
+      "text": "So, the definition of bridge is defined as critical connections over here."
+    },
+    {
+      "start": 998.43,
+      "end": 1000.43,
+      "text": "What are we given?"
+    },
+    {
+      "start": 1000.43,
+      "end": 1002.43,
+      "text": "N and the connections."
+    },
+    {
+      "start": 1002.43,
+      "end": 1004.43,
+      "text": "So, they are basically given the edges."
+    },
+    {
+      "start": 1004.43,
+      "end": 1005.43,
+      "text": "So, you have to form the graph."
+    },
+    {
+      "start": 1005.43,
+      "end": 1013.43,
+      "text": "So, as usual, I'll be coding the C++ solution and you can figure out the exact similar Java code on the left."
+    },
+    {
+      "start": 1013.43,
+      "end": 1014.43,
+      "text": "Okay."
+    },
+    {
+      "start": 1014.43,
+      "end": 1016.43,
+      "text": "So, let's quickly start coding this up."
+    },
+    {
+      "start": 1016.43,
+      "end": 1018.43,
+      "text": "The first step is pretty simple."
+    },
+    {
+      "start": 1018.43,
+      "end": 1021.43,
+      "text": "We'll create the adjacency list of size N."
+    },
+    {
+      "start": 1021.43,
+      "end": 1025.43,
+      "text": "Let's go across the connections, which is this."
+    },
+    {
+      "start": 1025.43,
+      "end": 1031.43,
+      "text": "And what we'll do is we'll say adjacency of it of zero because this is, yeah, this is a vector."
+    },
+    {
+      "start": 1031.43,
+      "end": 1034.43,
+      "text": "So, push back of it of one."
+    },
+    {
+      "start": 1034.43,
+      "end": 1038.43,
+      "text": "And you can just copy paste the same line because it's an undirected graph."
+    },
+    {
+      "start": 1038.43,
+      "end": 1040.43,
+      "text": "And you can say ID of one."
+    },
+    {
+      "start": 1040.43,
+      "end": 1043.43,
+      "text": "So, off with ID of zero."
+    },
+    {
+      "start": 1043.43,
+      "end": 1045.43,
+      "text": "So, the graph is created."
+    },
+    {
+      "start": 1045.43,
+      "end": 1048.43,
+      "text": "Once the graph is created, what do you require for the DFS traversal?"
+    },
+    {
+      "start": 1048.43,
+      "end": 1049.43,
+      "text": "Just think yourself."
+    },
+    {
+      "start": 1049.43,
+      "end": 1051.43,
+      "text": "You will be requiring a visited array."
+    },
+    {
+      "start": 1051.43,
+      "end": 1053.43,
+      "text": "So, let's go across and mark it."
+    },
+    {
+      "start": 1053.43,
+      "end": 1054.43,
+      "text": "You'll be requiring a TN."
+    },
+    {
+      "start": 1054.43,
+      "end": 1057.43,
+      "text": "You can mark everything as zero."
+    },
+    {
+      "start": 1057.43,
+      "end": 1059.43,
+      "text": "And you'll be requiring in this."
+    },
+    {
+      "start": 1059.43,
+      "end": 1061.43,
+      "text": "What's the other thing that you'll be requiring?"
+    },
+    {
+      "start": 1061.43,
+      "end": 1063.43,
+      "text": "You'll be requiring to store all the bridges."
+    },
+    {
+      "start": 1063.43,
+      "end": 1068.43,
+      "text": "So, maybe we can create a vector of vector of int."
+    },
+    {
+      "start": 1068.43,
+      "end": 1070.43,
+      "text": "And maybe you can call this as bridges."
+    },
+    {
+      "start": 1070.43,
+      "end": 1072.43,
+      "text": "That is what you want to store."
+    },
+    {
+      "start": 1072.43,
+      "end": 1073.43,
+      "text": "And we require a timer."
+    },
+    {
+      "start": 1073.43,
+      "end": 1076.43,
+      "text": "So, maybe you can declare it globally."
+    },
+    {
+      "start": 1076.43,
+      "end": 1078.43,
+      "text": "Timer equal to zero."
+    },
+    {
+      "start": 1078.43,
+      "end": 1079.43,
+      "text": "That is the step."
+    },
+    {
+      "start": 1079.43,
+      "end": 1081.43,
+      "text": "Or you can keep it as one as well."
+    },
+    {
+      "start": 1081.43,
+      "end": 1090.19,
+      "text": "Now, let's write this as void DFS IND node."
+    },
+    {
+      "start": 1090.19,
+      "end": 1092.19,
+      "text": "Okay, we need the parent."
+    },
+    {
+      "start": 1092.19,
+      "end": 1095.19,
+      "text": "And we need the visited."
+    },
+    {
+      "start": 1095.19,
+      "end": 1099.52,
+      "text": "And then we need the graph as well."
+    },
+    {
+      "start": 1099.52,
+      "end": 1101.52,
+      "text": "So, go ahead and take the graph."
+    },
+    {
+      "start": 1101.52,
+      "end": 1103.52,
+      "text": "That's the adjacency list."
+    },
+    {
+      "start": 1103.52,
+      "end": 1104.52,
+      "text": "What else we require?"
+    },
+    {
+      "start": 1104.52,
+      "end": 1105.52,
+      "text": "We require the time in."
+    },
+    {
+      "start": 1105.52,
+      "end": 1107.52,
+      "text": "And we require the lower time."
+    },
+    {
+      "start": 1107.52,
+      "end": 1108.52,
+      "text": "Done."
+    },
+    {
+      "start": 1108.52,
+      "end": 1110.52,
+      "text": "Now, the moment you enter the graph."
+    },
+    {
+      "start": 1110.52,
+      "end": 1112.52,
+      "text": "What's the first thing that you will do?"
+    },
+    {
+      "start": 1112.52,
+      "end": 1116.52,
+      "text": "The first thing that you do is mark it as visited."
+    },
+    {
+      "start": 1116.52,
+      "end": 1119.52,
+      "text": "So, go across and mark it as visited."
+    },
+    {
+      "start": 1119.52,
+      "end": 1120.52,
+      "text": "What's the next thing that you'll do?"
+    },
+    {
+      "start": 1120.52,
+      "end": 1122.52,
+      "text": "You will say time of insertion of the node."
+    },
+    {
+      "start": 1122.52,
+      "end": 1125.52,
+      "text": "And the lowest time of the node is equal to timer."
+    },
+    {
+      "start": 1125.52,
+      "end": 1126.52,
+      "text": "And then you can just increase the timer for that."
+    },
+    {
+      "start": 1126.52,
+      "end": 1129.52,
+      "text": "So, you can just increase the timer for the next step."
+    },
+    {
+      "start": 1129.52,
+      "end": 1133.52,
+      "text": "Now, go across and travel for its adjacent node."
+    },
+    {
+      "start": 1133.52,
+      "end": 1138.52,
+      "text": "Now, something I know is if it is, if the adjacent node is the parent,"
+    },
+    {
+      "start": 1138.52,
+      "end": 1140.52,
+      "text": "we don't need to call the DFS."
+    },
+    {
+      "start": 1140.52,
+      "end": 1142.52,
+      "text": "Or we don't need to take it into consideration."
+    },
+    {
+      "start": 1142.52,
+      "end": 1145.52,
+      "text": "So, the IT, the adjacent node is equal to parent."
+    },
+    {
+      "start": 1145.52,
+      "end": 1147.52,
+      "text": "Let's not do anything and go ahead."
+    },
+    {
+      "start": 1147.52,
+      "end": 1150.52,
+      "text": "And the other thing can be if it's not visited, right?"
+    },
+    {
+      "start": 1150.52,
+      "end": 1152.52,
+      "text": "Or else if it's visited."
+    },
+    {
+      "start": 1152.52,
+      "end": 1154.52,
+      "text": "That's two of the cases."
+    },
+    {
+      "start": 1154.52,
+      "end": 1159.52,
+      "text": "So, remember, if it's not visited, what's the first thing that you'll do?"
+    },
+    {
+      "start": 1159.52,
+      "end": 1161.52,
+      "text": "We will go and traverse for it."
+    },
+    {
+      "start": 1161.52,
+      "end": 1163.52,
+      "text": "So, IT, the parent will be node."
+    },
+    {
+      "start": 1163.52,
+      "end": 1166.52,
+      "text": "The visited, the adjacent, the T in and the low."
+    },
+    {
+      "start": 1166.52,
+      "end": 1170.52,
+      "text": "Once the DFS of IT is completed, it comes back."
+    },
+    {
+      "start": 1170.52,
+      "end": 1171.52,
+      "text": "Node is greedy."
+    },
+    {
+      "start": 1171.52,
+      "end": 1173.52,
+      "text": "So, node says, you have came back, right?"
+    },
+    {
+      "start": 1173.52,
+      "end": 1174.52,
+      "text": "Okay, wait."
+    },
+    {
+      "start": 1174.52,
+      "end": 1175.52,
+      "text": "Wait."
+    },
+    {
+      "start": 1175.52,
+      "end": 1177.52,
+      "text": "What's your lowest time?"
+    },
+    {
+      "start": 1177.52,
+      "end": 1178.52,
+      "text": "Give it to me."
+    },
+    {
+      "start": 1178.52,
+      "end": 1179.52,
+      "text": "And he takes it."
+    },
+    {
+      "start": 1179.52,
+      "end": 1181.52,
+      "text": "I've taken the lowest time."
+    },
+    {
+      "start": 1181.52,
+      "end": 1182.52,
+      "text": "He's taken it."
+    },
+    {
+      "start": 1182.52,
+      "end": 1183.52,
+      "text": "Now, he'll say, okay."
+    },
+    {
+      "start": 1183.52,
+      "end": 1188.52,
+      "text": "Can this node to IT be a bridge?"
+    },
+    {
+      "start": 1188.52,
+      "end": 1189.52,
+      "text": "He'll ask."
+    },
+    {
+      "start": 1189.52,
+      "end": 1194.52,
+      "text": "So, for that, he'll say, hey, adjacent node, what's your lowest time?"
+    },
+    {
+      "start": 1194.52,
+      "end": 1196.52,
+      "text": "What's your lowest time?"
+    },
+    {
+      "start": 1196.52,
+      "end": 1200.52,
+      "text": "So, adjacent node will say, my lowest time is low of IT."
+    },
+    {
+      "start": 1200.52,
+      "end": 1209.52,
+      "text": "If that's somewhere lesser than equal, the current node's time of insertion, then he can reach."
+    },
+    {
+      "start": 1209.52,
+      "end": 1212.52,
+      "text": "But if it is not, if the lowest time is greater,"
+    },
+    {
+      "start": 1212.52,
+      "end": 1215.52,
+      "text": "then the time of insertion, then he cannot reach the current node."
+    },
+    {
+      "start": 1215.52,
+      "end": 1217.52,
+      "text": "That means it's a bridge."
+    },
+    {
+      "start": 1217.52,
+      "end": 1219.52,
+      "text": "So, you go across and say, it is a bridge."
+    },
+    {
+      "start": 1219.52,
+      "end": 1222.52,
+      "text": "And maybe you can just store this."
+    },
+    {
+      "start": 1222.52,
+      "end": 1226.52,
+      "text": "It is a vector of vector, int and bridges."
+    },
+    {
+      "start": 1226.52,
+      "end": 1227.52,
+      "text": "Perfect."
+    },
+    {
+      "start": 1227.52,
+      "end": 1230.52,
+      "text": "So, you can just take this bridges."
+    },
+    {
+      "start": 1230.52,
+      "end": 1233.41,
+      "text": "Perfect."
+    },
+    {
+      "start": 1233.41,
+      "end": 1236.41,
+      "text": "And over here, you can say, okay, this is a bridge."
+    },
+    {
+      "start": 1236.41,
+      "end": 1239.41,
+      "text": "So, bridges.push back."
+    },
+    {
+      "start": 1239.41,
+      "end": 1243.41,
+      "text": "Because if you cannot reach, because if the lowest time cannot reach before or equivalent,"
+    },
+    {
+      "start": 1243.41,
+      "end": 1248.41,
+      "text": "to the node, that means they got split into two different components."
+    },
+    {
+      "start": 1248.41,
+      "end": 1250.41,
+      "text": "They can write as IT and node."
+    },
+    {
+      "start": 1250.41,
+      "end": 1251.41,
+      "text": "This is a bridge."
+    },
+    {
+      "start": 1251.41,
+      "end": 1253.41,
+      "text": "You can write it as node and IT as well."
+    },
+    {
+      "start": 1253.41,
+      "end": 1254.41,
+      "text": "Perfect."
+    },
+    {
+      "start": 1254.41,
+      "end": 1255.41,
+      "text": "Done."
+    },
+    {
+      "start": 1255.41,
+      "end": 1256.41,
+      "text": "What if it's visited?"
+    },
+    {
+      "start": 1256.41,
+      "end": 1261.41,
+      "text": "That means while the DFS traversal was being done, previously, you would have visited it."
+    },
+    {
+      "start": 1261.41,
+      "end": 1263.41,
+      "text": "So, you have already visited it."
+    },
+    {
+      "start": 1263.41,
+      "end": 1267.41,
+      "text": "So, it's definitely in the same component, even if you remove that."
+    },
+    {
+      "start": 1267.41,
+      "end": 1271.41,
+      "text": "So, bridge, not possible because you're coming by visiting it."
+    },
+    {
+      "start": 1271.41,
+      "end": 1272.41,
+      "text": "You're coming by visiting it."
+    },
+    {
+      "start": 1272.41,
+      "end": 1273.41,
+      "text": "So, how can it be a bridge?"
+    },
+    {
+      "start": 1273.41,
+      "end": 1276.41,
+      "text": "I'll just be considered with the lowest time."
+    },
+    {
+      "start": 1276.41,
+      "end": 1279.41,
+      "text": "So, he is just bothered about himself."
+    },
+    {
+      "start": 1279.41,
+      "end": 1281.41,
+      "text": "He'll be like, hey, Addison, I don't care."
+    },
+    {
+      "start": 1281.41,
+      "end": 1282.41,
+      "text": "Just give me your lowest time."
+    },
+    {
+      "start": 1282.41,
+      "end": 1283.41,
+      "text": "I'll just take it."
+    },
+    {
+      "start": 1283.41,
+      "end": 1284.41,
+      "text": "It cannot be a bridge I know."
+    },
+    {
+      "start": 1284.41,
+      "end": 1285.41,
+      "text": "So, it's perfect."
+    },
+    {
+      "start": 1285.41,
+      "end": 1287.41,
+      "text": "This is how you can write it."
+    },
+    {
+      "start": 1287.41,
+      "end": 1290.41,
+      "text": "Just take the lowest time of the Addison."
+    },
+    {
+      "start": 1290.41,
+      "end": 1292.41,
+      "text": "Compare it if it can reach."
+    },
+    {
+      "start": 1292.41,
+      "end": 1294.41,
+      "text": "And once you've done this, call the DFS."
+    },
+    {
+      "start": 1294.41,
+      "end": 1298.41,
+      "text": "By the way, assuming it's a single component, we start from zero."
+    },
+    {
+      "start": 1298.41,
+      "end": 1300.41,
+      "text": "We give the parent as initial as minus one."
+    },
+    {
+      "start": 1300.41,
+      "end": 1301.41,
+      "text": "We need the visited."
+    },
+    {
+      "start": 1301.41,
+      "end": 1302.41,
+      "text": "We need the adjacent."
+    },
+    {
+      "start": 1302.41,
+      "end": 1303.41,
+      "text": "We need the time of insertion."
+    },
+    {
+      "start": 1303.41,
+      "end": 1304.41,
+      "text": "We need the low."
+    },
+    {
+      "start": 1304.41,
+      "end": 1305.41,
+      "text": "Okay."
+    },
+    {
+      "start": 1305.41,
+      "end": 1306.41,
+      "text": "Make sure you pass everything correctly."
+    },
+    {
+      "start": 1306.41,
+      "end": 1307.41,
+      "text": "Otherwise, it will be a mess."
+    },
+    {
+      "start": 1307.41,
+      "end": 1308.41,
+      "text": "And once you've done this, you can return the bridges."
+    },
+    {
+      "start": 1308.41,
+      "end": 1309.41,
+      "text": "So, this is how you can easily get all the bridges."
+    },
+    {
+      "start": 1309.41,
+      "end": 1310.41,
+      "text": "Now, let's quickly go and run this and see if it is running fine."
+    },
+    {
+      "start": 1310.41,
+      "end": 1311.41,
+      "text": "Okay."
+    },
+    {
+      "start": 1311.41,
+      "end": 1312.41,
+      "text": "We have some mistake."
+    },
+    {
+      "start": 1312.41,
+      "end": 1313.41,
+      "text": "Let's see what mistake we have."
+    },
+    {
+      "start": 1313.41,
+      "end": 1314.41,
+      "text": "Okay."
+    },
+    {
+      "start": 1314.41,
+      "end": 1315.41,
+      "text": "There is a brace missing."
+    },
+    {
+      "start": 1315.41,
+      "end": 1316.41,
+      "text": "Okay."
+    },
+    {
+      "start": 1316.41,
+      "end": 1317.41,
+      "text": "We've given that."
+    },
+    {
+      "start": 1317.41,
+      "end": 1318.41,
+      "text": "Now, let's quickly run this and see if it is running fine."
+    },
+    {
+      "start": 1318.41,
+      "end": 1319.41,
+      "text": "It is."
+    },
+    {
+      "start": 1319.41,
+      "end": 1320.41,
+      "text": "Now, let's submit this and see if it is running."
+    },
+    {
+      "start": 1320.41,
+      "end": 1321.41,
+      "text": "Okay."
+    },
+    {
+      "start": 1321.41,
+      "end": 1322.41,
+      "text": "So, we have a mistake."
+    },
+    {
+      "start": 1322.41,
+      "end": 1323.41,
+      "text": "Let's see what mistake we have."
+    },
+    {
+      "start": 1323.41,
+      "end": 1324.41,
+      "text": "Okay."
+    },
+    {
+      "start": 1324.41,
+      "end": 1325.41,
+      "text": "There is a brace missing."
+    },
+    {
+      "start": 1325.41,
+      "end": 1326.41,
+      "text": "Okay."
+    },
+    {
+      "start": 1326.41,
+      "end": 1327.41,
+      "text": "So, we have a brace missing."
+    },
+    {
+      "start": 1327.41,
+      "end": 1328.41,
+      "text": "It's happened."
+    },
+    {
+      "start": 1328.41,
+      "end": 1331.01,
+      "text": "It's not going to return."
+    },
+    {
+      "start": 1331.01,
+      "end": 1332.01,
+      "text": "Okay."
+    },
+    {
+      "start": 1332.01,
+      "end": 1333.01,
+      "text": "It's not going to return."
+    },
+    {
+      "start": 1333.01,
+      "end": 1334.01,
+      "text": "This is a bad mistake."
+    },
+    {
+      "start": 1334.01,
+      "end": 1335.01,
+      "text": "This is a mistake."
+    },
+    {
+      "start": 1335.01,
+      "end": 1336.01,
+      "text": "Now, if you can just let go of that."
+    },
+    {
+      "start": 1336.01,
+      "end": 1337.01,
+      "text": "Now, let's quickly run this and see if it is running fine."
+    },
+    {
+      "start": 1337.01,
+      "end": 1338.01,
+      "text": "It is."
+    },
+    {
+      "start": 1338.01,
+      "end": 1339.01,
+      "text": "Now, let's submit this and see if it is getting submitted or not."
+    },
+    {
+      "start": 1339.01,
+      "end": 1340.01,
+      "text": "Okay."
+    },
+    {
+      "start": 1340.01,
+      "end": 1341.01,
+      "text": "So, now, it is time to discuss the time complexity and the space complexity."
+    },
+    {
+      "start": 1341.01,
+      "end": 1342.01,
+      "text": "First, let's discuss the space complexity."
+    },
+    {
+      "start": 1342.01,
+      "end": 1343.01,
+      "text": "We are using 3n over here."
+    },
+    {
+      "start": 1343.01,
+      "end": 1346.83,
+      "text": "And, v plus 2e to create the graph."
+    },
+    {
+      "start": 1346.83,
+      "end": 1349.63,
+      "text": "So, v plus 2e, and then 3n."
+    },
+    {
+      "start": 1349.63,
+      "end": 1351.53,
+      "text": "So, you can say plus of, that's the space."
+    },
+    {
+      "start": 1351.53,
+      "end": 1356.37,
+      "text": "If that's the space complexity, what is the time complexity?"
+    },
+    {
+      "start": 1356.37,
+      "end": 1357.37,
+      "text": "Can I sit?"
+    },
+    {
+      "start": 1357.37,
+      "end": 1363.79,
+      "text": "a DFS traversal and you know the DFS traversal takes V plus 2E. So the time complexity is V plus"
+    },
+    {
+      "start": 1363.79,
+      "end": 1370.19,
+      "text": "2E. So this is how you can easily find all the bridges in a graph. So I hope you've understood"
+    },
+    {
+      "start": 1370.19,
+      "end": 1374.19,
+      "text": "everything. Before wrapping up this video, I have a very quick request to make. I was going through"
+    },
+    {
+      "start": 1374.19,
+      "end": 1378.99,
+      "text": "our channel statistics. Nearly 50% of the users who watch our video do not hit that subscribe button."
+    },
+    {
+      "start": 1379.25,
+      "end": 1382.81,
+      "text": "So if you're new to our channel, please, please, please do consider subscribing to us. If you've"
+    },
+    {
+      "start": 1382.81,
+      "end": 1386.71,
+      "text": "understood the intuition, the algorithm and the code, make sure you hit that like button. And if"
+    },
+    {
+      "start": 1386.71,
+      "end": 1390.13,
+      "text": "you haven't checked out our SD sheet and the other playlist, all the links will be in the"
+    },
+    {
+      "start": 1390.13,
+      "end": 1393.99,
+      "text": "description. Make sure you check them out as well. With this, I'll be wrapping up this video. Let's"
+    },
+    {
+      "start": 1393.99,
+      "end": 1395.29,
+      "text": "spend some of the video. Till then, bye-bye."
+    }
+  ]
+}

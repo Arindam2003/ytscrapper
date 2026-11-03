@@ -1,0 +1,1334 @@
+{
+  "video_id": "BPlrALf1LDU",
+  "title": "G-11. Detect a Cycle in an Undirected Graph using BFS ｜ C++ ｜ Java",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1218.84,
+  "segments": [
+    {
+      "start": 3.34,
+      "end": 7.02,
+      "text": "hey everyone welcome back to the channel i hope you guys are doing extremely well"
+    },
+    {
+      "start": 7.02,
+      "end": 13.66,
+      "text": "so in this video we are going to learn about detecting a cycle yes cycle in an undirected"
+    },
+    {
+      "start": 13.66,
+      "end": 18.94,
+      "text": "very very important in an undirected graph so in this video we will be learning how to solve this"
+    },
+    {
+      "start": 18.94,
+      "end": 25.18,
+      "text": "using bfs in the next we will be learning how to solve this using dfs now since now like till now"
+    },
+    {
+      "start": 25.18,
+      "end": 30.7,
+      "text": "you have seen how to use bfs in order to solve matrix related problems or how to traverse in"
+    },
+    {
+      "start": 30.7,
+      "end": 36.38,
+      "text": "a graph but how do you detect a cycle so if you remember the definition of a cycle you start from"
+    },
+    {
+      "start": 36.38,
+      "end": 42.62,
+      "text": "a node and you go and you go and you go and you go you go and you come back to the same node so if"
+    },
+    {
+      "start": 42.62,
+      "end": 48.78,
+      "text": "you are able to come back to the same node then only we say that the graph has a particular cycle"
+    },
+    {
+      "start": 48.78,
+      "end": 53.58,
+      "text": "so how do you detect a cycle but before that let's do one thing for this particular graph create the"
+    },
+    {
+      "start": 53.58,
+      "end": 59.1,
+      "text": "adjacency list if you don't know what is an adjacency list lecture 2 or lecture 3. so what is bfs"
+    },
+    {
+      "start": 60.7,
+      "end": 66.38,
+      "text": "how the adjacency list will look like so we're going to detect this using bfs what is bfs it is"
+    },
+    {
+      "start": 66.38,
+      "end": 72.62,
+      "text": "nothing but a traversal technique where you start from a node and you visit all the nodes in that"
+    },
+    {
+      "start": 72.62,
+      "end": 79.82,
+      "text": "graph so if you are starting from this node 1 yes what do you visit in the next step you visit 2 3"
+    },
+    {
+      "start": 80.86,
+      "end": 90.62,
+      "text": "because they are at a distance of 1 or level 1 at the next step you visit 5 6 4 why because"
+    },
+    {
+      "start": 90.7,
+      "end": 98.06,
+      "text": "they are at a distance of 2 if you see they are at a distance of 2 and the next time you visit this"
+    },
+    {
+      "start": 98.06,
+      "end": 106.54,
+      "text": "7. so this is what the bfs traversal is it goes in level wise like level 1 level 2 level 3 so"
+    },
+    {
+      "start": 106.54,
+      "end": 113.5,
+      "text": "basically it visits simultaneously these two nodes then these three nodes then this node this is what"
+    },
+    {
+      "start": 113.5,
+      "end": 120.54,
+      "text": "we call as bfs traversal whereas dfs is different where you just go go go go go so you go basically"
+    },
+    {
+      "start": 120.7,
+      "end": 126.78,
+      "text": "okay what is the intuition of the algorithm let's understand so we know bfs is nothing but a"
+    },
+    {
+      "start": 126.78,
+      "end": 135.26,
+      "text": "traversal technique right so imagine the first thing is one where you started from where from"
+    },
+    {
+      "start": 135.26,
+      "end": 141.18,
+      "text": "one where do you go you go to two you go to three at the same junction remember this from one you go"
+    },
+    {
+      "start": 141.18,
+      "end": 147.1,
+      "text": "to two and three at the same junction because they are at level one so you went to two and three but"
+    },
+    {
+      "start": 147.1,
+      "end": 150.54,
+      "text": "remember this you came from one you came from one to two and you went to three and you went to three"
+    },
+    {
+      "start": 150.7,
+      "end": 156.3,
+      "text": "and three separately but you went into two and three because they are at the same distance of"
+    },
+    {
+      "start": 156.3,
+      "end": 162.94,
+      "text": "the level one now from two where can you go so if you carefully see from two you can go to one"
+    },
+    {
+      "start": 163.66,
+      "end": 169.82,
+      "text": "and you can go to five but will you go to one dude you just came back from this you just came"
+    },
+    {
+      "start": 169.82,
+      "end": 176.14,
+      "text": "from one only so why will you go back to the guy from whom you came you need to do a traversal"
+    },
+    {
+      "start": 176.14,
+      "end": 180.62,
+      "text": "so apparently from two you can go to five right so"
+    },
+    {
+      "start": 180.7,
+      "end": 186.38,
+      "text": "so from two you can go to five so from one you came to two from two you can go to five"
+    },
+    {
+      "start": 186.38,
+      "end": 190.94,
+      "text": "now there is something as three if you remember we had two and three from two we went to five"
+    },
+    {
+      "start": 190.94,
+      "end": 196.7,
+      "text": "but now where will you go from three from three you can go to six you can go to four you can go"
+    },
+    {
+      "start": 196.7,
+      "end": 201.58,
+      "text": "to one but why will you go to one you just came from one right so you'll go to six and you'll"
+    },
+    {
+      "start": 201.58,
+      "end": 209.66,
+      "text": "go to four so apparently the two and three went to five six four went to five six and four and"
+    },
+    {
+      "start": 209.66,
+      "end": 211.6,
+      "text": "And remember this."
+    },
+    {
+      "start": 212.64,
+      "end": 214.6,
+      "text": "From 2, you went to 5."
+    },
+    {
+      "start": 215.54,
+      "end": 215.94,
+      "text": "Okay."
+    },
+    {
+      "start": 216.2,
+      "end": 218.04,
+      "text": "And from 3, you went to 6 and 4."
+    },
+    {
+      "start": 219.42,
+      "end": 219.82,
+      "text": "Correct."
+    },
+    {
+      "start": 220.22,
+      "end": 222.36,
+      "text": "So if you carefully see from 5, where can you go?"
+    },
+    {
+      "start": 222.64,
+      "end": 223.5,
+      "text": "You can go to 7."
+    },
+    {
+      "start": 223.66,
+      "end": 224.5,
+      "text": "You can go to 2."
+    },
+    {
+      "start": 224.84,
+      "end": 226.7,
+      "text": "But from 5, why will you go to 2?"
+    },
+    {
+      "start": 226.78,
+      "end": 229.62,
+      "text": "Because it is nothing but where you came from."
+    },
+    {
+      "start": 229.74,
+      "end": 231.08,
+      "text": "So you will try to go to 7."
+    },
+    {
+      "start": 233.02,
+      "end": 237.24,
+      "text": "And when you try to go from 6, you'll never go to 3 because you came from 3."
+    },
+    {
+      "start": 237.24,
+      "end": 239.22,
+      "text": "And you again go to 7."
+    },
+    {
+      "start": 239.22,
+      "end": 243.16,
+      "text": "So there are 2 guys who are actually going to the same place."
+    },
+    {
+      "start": 243.7,
+      "end": 247.04,
+      "text": "But if you remember, when you started, you went in different directions."
+    },
+    {
+      "start": 247.48,
+      "end": 250.36,
+      "text": "Now, how did you arrive at the same position?"
+    },
+    {
+      "start": 250.84,
+      "end": 254.52,
+      "text": "That is only because it is cycle and it is connecting."
+    },
+    {
+      "start": 254.98,
+      "end": 256.32,
+      "text": "This is how the BFS will work."
+    },
+    {
+      "start": 256.74,
+      "end": 258.24,
+      "text": "So I hope you have got the intuition."
+    },
+    {
+      "start": 258.36,
+      "end": 259.32,
+      "text": "The intuition is very simple."
+    },
+    {
+      "start": 259.7,
+      "end": 261.32,
+      "text": "You started in 2 different paths."
+    },
+    {
+      "start": 261.74,
+      "end": 263.94,
+      "text": "And now if you are colliding in some portion,"
+    },
+    {
+      "start": 264.32,
+      "end": 267.94,
+      "text": "that will only be because there is something as a cycle."
+    },
+    {
+      "start": 267.94,
+      "end": 269.2,
+      "text": "So what does the BFS mean?"
+    },
+    {
+      "start": 269.34,
+      "end": 271.34,
+      "text": "It means the BFS algorithm state."
+    },
+    {
+      "start": 271.34,
+      "end": 275.34,
+      "text": "If you remember well enough, the BFS algorithm, the first step of the BFS algorithm is"
+    },
+    {
+      "start": 275.34,
+      "end": 278.34,
+      "text": "define a queue and insert the first node."
+    },
+    {
+      "start": 278.34,
+      "end": 283.34,
+      "text": "So this is the first node or the source node with the parent."
+    },
+    {
+      "start": 283.34,
+      "end": 285.34,
+      "text": "You need to remember where it came from."
+    },
+    {
+      "start": 285.34,
+      "end": 286.34,
+      "text": "Very, very important."
+    },
+    {
+      "start": 286.34,
+      "end": 289.34,
+      "text": "So I can say it came from 0 or minus 1."
+    },
+    {
+      "start": 289.34,
+      "end": 290.34,
+      "text": "That is your choice."
+    },
+    {
+      "start": 290.34,
+      "end": 292.34,
+      "text": "It came from minus 1."
+    },
+    {
+      "start": 292.34,
+      "end": 295.34,
+      "text": "At the same time, you need to create a visited array."
+    },
+    {
+      "start": 295.34,
+      "end": 296.34,
+      "text": "Do you remember?"
+    },
+    {
+      "start": 296.34,
+      "end": 297.34,
+      "text": "Yes, you have to."
+    },
+    {
+      "start": 297.34,
+      "end": 300.46,
+      "text": "1, 2, 3, 4, 5, 6."
+    },
+    {
+      "start": 300.46,
+      "end": 304.46,
+      "text": "So it is like 1, 2, 3, 4, 5, 6, 7."
+    },
+    {
+      "start": 304.46,
+      "end": 309.46,
+      "text": "And all of these will be marked as 0 apart from the guy 1."
+    },
+    {
+      "start": 309.46,
+      "end": 312.46,
+      "text": "So this is how the visited array will look like."
+    },
+    {
+      "start": 312.46,
+      "end": 313.46,
+      "text": "Which one is your source node?"
+    },
+    {
+      "start": 313.46,
+      "end": 315.46,
+      "text": "The source node is 1."
+    },
+    {
+      "start": 315.46,
+      "end": 316.46,
+      "text": "Correct?"
+    },
+    {
+      "start": 316.46,
+      "end": 317.46,
+      "text": "So 1 is visited."
+    },
+    {
+      "start": 317.46,
+      "end": 319.46,
+      "text": "So what you will do at the first step is you will take this 1 out."
+    },
+    {
+      "start": 319.46,
+      "end": 323.46,
+      "text": "So you will take this 1 out and you will say this came from nowhere."
+    },
+    {
+      "start": 323.46,
+      "end": 324.46,
+      "text": "That is minus 1."
+    },
+    {
+      "start": 324.46,
+      "end": 325.46,
+      "text": "It did come from nowhere."
+    },
+    {
+      "start": 325.46,
+      "end": 326.46,
+      "text": "That is why minus 1."
+    },
+    {
+      "start": 326.46,
+      "end": 327.46,
+      "text": "Let's remove this."
+    },
+    {
+      "start": 327.46,
+      "end": 328.46,
+      "text": "So you have 1."
+    },
+    {
+      "start": 328.46,
+      "end": 329.46,
+      "text": "Where can this one go?"
+    },
+    {
+      "start": 329.46,
+      "end": 332.46,
+      "text": "It can go to 2 and it can go to 3."
+    },
+    {
+      "start": 332.46,
+      "end": 333.46,
+      "text": "How will you know this?"
+    },
+    {
+      "start": 333.46,
+      "end": 338.46,
+      "text": "You will go to the adjacency list and you will see what it is stored."
+    },
+    {
+      "start": 338.46,
+      "end": 339.46,
+      "text": "And you see 2 and 3 are stored."
+    },
+    {
+      "start": 339.46,
+      "end": 342.46,
+      "text": "So you can go to 2 and you can go to 3."
+    },
+    {
+      "start": 342.46,
+      "end": 345.46,
+      "text": "So you go to 2 and you say it came from 1."
+    },
+    {
+      "start": 345.46,
+      "end": 347.46,
+      "text": "You go to 3 and you say it came from 1."
+    },
+    {
+      "start": 347.46,
+      "end": 349.46,
+      "text": "So 1 can go to 2."
+    },
+    {
+      "start": 349.46,
+      "end": 353.46,
+      "text": "So mark it as visited and put that into the queue."
+    },
+    {
+      "start": 353.46,
+      "end": 354.46,
+      "text": "Then you can go to 3."
+    },
+    {
+      "start": 354.46,
+      "end": 355.46,
+      "text": "Mark it as visited."
+    },
+    {
+      "start": 355.46,
+      "end": 356.46,
+      "text": "So you can see that."
+    },
+    {
+      "start": 356.46,
+      "end": 363.58,
+      "text": "does visited and put that into the queue once this is done we can just omit this perfect now again"
+    },
+    {
+      "start": 363.58,
+      "end": 371.14,
+      "text": "get the next guy get the two comma one so we got the two comma one perfect so can i say two came"
+    },
+    {
+      "start": 371.14,
+      "end": 377.68,
+      "text": "from one it did so from two where can you go again go to the adjacency list and it says you can go to"
+    },
+    {
+      "start": 377.68,
+      "end": 383.52,
+      "text": "one but dude i just came back from one why will i go back to one i will not so i'll just go back"
+    },
+    {
+      "start": 383.52,
+      "end": 391.7,
+      "text": "to five so i'll go to five and say visited and i'll insert five came from two perfect so five"
+    },
+    {
+      "start": 391.7,
+      "end": 399.02,
+      "text": "came from two and five is visited let's omit this the next guy will be three comma one so three came"
+    },
+    {
+      "start": 399.02,
+      "end": 404.96,
+      "text": "from one see this observe this three came from one from three where can you go you can go to one"
+    },
+    {
+      "start": 404.96,
+      "end": 412.3,
+      "text": "but you came from one you can go to four yes you can go to six yes so apparently you can go to four"
+    },
+    {
+      "start": 412.3,
+      "end": 413.5,
+      "text": "and six so you can go to four and six so you can go to four and six so you can go to four and six"
+    },
+    {
+      "start": 413.5,
+      "end": 420.46,
+      "text": "go to 4 and you can go to 6. From 3, you can go to 4. Market has visited and 4 came from 3. You can"
+    },
+    {
+      "start": 420.46,
+      "end": 429.04,
+      "text": "go to 6. Market has visited and 6 came from 3. Perfect. This is also done. What is the next step?"
+    },
+    {
+      "start": 429.62,
+      "end": 437.62,
+      "text": "Next step is to get the 5, 2. So, there is 5 which came from 2. From 5, where can you go? You can go"
+    },
+    {
+      "start": 437.62,
+      "end": 443.1,
+      "text": "to 2 as well as 7. But it just now came from 2. So, you will not go. So, you will try to go to 7."
+    },
+    {
+      "start": 443.5,
+      "end": 452.48,
+      "text": "So, you will go to 7. So, 7 came from 5. So, you went to 7. Perfect. And now omit this. At the next"
+    },
+    {
+      "start": 452.48,
+      "end": 460.48,
+      "text": "step, you get 4, 3. So, you get 4 and it came from 3. So, 4 has just 3 as the neighboring node."
+    },
+    {
+      "start": 460.78,
+      "end": 467.04,
+      "text": "So, it came from 3. So, it will not do anything and it will omit this. Next, there is 6 and it"
+    },
+    {
+      "start": 467.04,
+      "end": 473.48,
+      "text": "came from 3. Important part. Important part. Very, very important part. Where can 6 go? 6 can"
+    },
+    {
+      "start": 473.48,
+      "end": 480.62,
+      "text": "go to 3 but it came from 3. 6 can go to 7. But if you go and see in the visited, it says, hey,"
+    },
+    {
+      "start": 480.62,
+      "end": 490.56,
+      "text": "we have already visited 7. But BFS tells me, but BFS tells me, but, but, we travel always in equal"
+    },
+    {
+      "start": 490.56,
+      "end": 497.2,
+      "text": "direction. How can someone visit 7? It can only happen if someone touched it right before me."
+    },
+    {
+      "start": 497.68,
+      "end": 502.66,
+      "text": "And now if I go and touch it, it means it's a cycle. Someone at a level 2,"
+    },
+    {
+      "start": 503.48,
+      "end": 508.24,
+      "text": "and now I'm at a level 2. Someone right before me at level 2 touched the 7. And now I'm at level 2"
+    },
+    {
+      "start": 508.24,
+      "end": 513.04,
+      "text": "and I'm touching it. Thereby, there is a cycle. If someone has visited it, because we took two"
+    },
+    {
+      "start": 513.04,
+      "end": 519.4,
+      "text": "different paths, and if someone has already touched 7, it means it has a cycle. So, we will say,"
+    },
+    {
+      "start": 519.94,
+      "end": 528.54,
+      "text": "yes, it has a particular cycle. That is how easy we can do this. So, I hope you've understood"
+    },
+    {
+      "start": 528.54,
+      "end": 533.42,
+      "text": "this particular BFS algorithm. So, we will now go back and try to write this BFS"
+    },
+    {
+      "start": 533.48,
+      "end": 538.88,
+      "text": "algorithm, which detects a cycle. So, let's code this up. So, I'll be coding the C++ solution,"
+    },
+    {
+      "start": 539.0,
+      "end": 543.5,
+      "text": "and the Java solution, as usual, is on the left. You can follow it. So, we're given the number of"
+    },
+    {
+      "start": 543.5,
+      "end": 549.72,
+      "text": "vertices or the number of nodes and the adjacency list. So, what I'll do is, I'll just have private"
+    },
+    {
+      "start": 549.72,
+      "end": 556.24,
+      "text": "function. I just want to write for a graph, okay, where we know that this is the source"
+    },
+    {
+      "start": 556.24,
+      "end": 568.09,
+      "text": "or something like this. So, we have the source. Why am I writing like this? I'll tell you."
+    },
+    {
+      "start": 568.41,
+      "end": 574.87,
+      "text": "As we move forward, okay, adjacency. So, this is what I'm trying to write, and I'll write visited."
+    },
+    {
+      "start": 575.65,
+      "end": 581.13,
+      "text": "We need a visited array as well. So, please carry a visited array with it as well. So, we will write"
+    },
+    {
+      "start": 581.13,
+      "end": 587.17,
+      "text": "something like visited of this source is equal to 1. We will declare a queue, and it will have a"
+    },
+    {
+      "start": 587.17,
+      "end": 593.27,
+      "text": "pair of int, int, y pair, because we need to store where it came from, if you remember, and"
+    },
+    {
+      "start": 593.27,
+      "end": 597.81,
+      "text": "initialize your source, and it came from minus 1 always. So, we write something as,"
+    },
+    {
+      "start": 598.41,
+      "end": 603.69,
+      "text": "not queue.empty, which means let's travel still the queue is not empty. We can say the node that"
+    },
+    {
+      "start": 603.69,
+      "end": 610.67,
+      "text": "we are currently standing is front.first. We can say the parent is nothing but queue.front.second."
+    },
+    {
+      "start": 610.67,
+      "end": 616.31,
+      "text": "And once you have got both of these, you can always say queue.form, right? Super simple."
+    },
+    {
+      "start": 616.87,
+      "end": 622.61,
+      "text": "Now, what's the next step? You need to go to all its adjacent nodes. So, please go to all its"
+    },
+    {
+      "start": 622.61,
+      "end": 628.03,
+      "text": "adjacent nodes. If the adjacent node has yet not been touched,"
+    },
+    {
+      "start": 628.41,
+      "end": 636.25,
+      "text": "no one has visited it. Then I say, hey, listen, if it is not, let's visit this guy. Let's put this"
+    },
+    {
+      "start": 636.81,
+      "end": 643.37,
+      "text": "put this into the queue saying it came from node. Perfect. But what if it has visited? This is where"
+    },
+    {
+      "start": 643.37,
+      "end": 652.01,
+      "text": "we need to understand. So, whenever we were at 5, we knew 5 came from 2. 5 came from 2, we know."
+    },
+    {
+      "start": 652.57,
+      "end": 658.17,
+      "text": "And 5 had something as 2 as the first adjacent node. Remember, whenever you run the for loop,"
+    },
+    {
+      "start": 658.41,
+      "end": 666.35,
+      "text": "the first adjacent node will be 2. But when you see this 2 forms a cycle. No, no way, because you"
+    },
+    {
+      "start": 666.35,
+      "end": 672.35,
+      "text": "came from 2 to 5. But this 2 would have been visited because it has previously been touched,"
+    },
+    {
+      "start": 672.35,
+      "end": 679.11,
+      "text": "but not not in something like this. Just because you came by that path, that is where this 2 was"
+    },
+    {
+      "start": 679.11,
+      "end": 685.81,
+      "text": "touched. That is why it was marked as visited. Right? But let's go to the other case. When you"
+    },
+    {
+      "start": 685.81,
+      "end": 692.91,
+      "text": "go to 7, from 5 to 7, 7 was unvisited. Thereby, you went to 7. Thereby, you had something like 7,5"
+    },
+    {
+      "start": 692.91,
+      "end": 699.21,
+      "text": "because 7 was unvisited. Right? So, if it is unvisited, you go and just put it in. But what"
+    },
+    {
+      "start": 699.21,
+      "end": 706.81,
+      "text": "if it is visited? Let's come to this. At 6, it came from 3. So, 6 has adjacent node as 3. But"
+    },
+    {
+      "start": 706.81,
+      "end": 713.87,
+      "text": "this guy is visited because it came from 3. But why is this guy visited? Why is this guy visited?"
+    },
+    {
+      "start": 713.87,
+      "end": 715.79,
+      "text": "It did not come from 7. Why is this guy visited? It did not come from 7. Why is this guy visited?"
+    },
+    {
+      "start": 715.81,
+      "end": 721.31,
+      "text": "If someone is visited, remember this. If someone is visited, and it did not come from it,"
+    },
+    {
+      "start": 721.95,
+      "end": 727.87,
+      "text": "if someone is visited, that means it will come to else and it did not come from it which means it's"
+    },
+    {
+      "start": 727.87,
+      "end": 735.31,
+      "text": "not the parent. Which means it is a cycle. If this guy is visited, it will come here and it's not"
+    },
+    {
+      "start": 735.31,
+      "end": 740.85,
+      "text": "the parent. How did it visit himself? That's because it's a cycle. Someone else touched it."
+    },
+    {
+      "start": 740.85,
+      "end": 745.67,
+      "text": "And if it is a cycle, you say cycle. What else? If you just go across and you traverse"
+    },
+    {
+      "start": 745.67,
+      "end": 749.83,
+      "text": "everything something like i'll give you an example if you traverse everything in sense"
+    },
+    {
+      "start": 749.83,
+      "end": 755.99,
+      "text": "imagine you have something like zero one node two node three node and over here at four you had five"
+    },
+    {
+      "start": 755.99,
+      "end": 760.63,
+      "text": "you had six imagine a graph like this what will happen is you'll start from the zero node then"
+    },
+    {
+      "start": 760.63,
+      "end": 766.23,
+      "text": "you'll go one four then you'll go two five then you'll go three six over so if your q at the end"
+    },
+    {
+      "start": 766.23,
+      "end": 772.15,
+      "text": "you traverse everything and there is no guy who's previously visited and it's not the parrot then"
+    },
+    {
+      "start": 772.15,
+      "end": 778.87,
+      "text": "you say there is no cycle so this is how you can always do from a source from a source because over"
+    },
+    {
+      "start": 778.87,
+      "end": 785.43,
+      "text": "here the source was zero over here the source was one what if the graph is broken into multiple"
+    },
+    {
+      "start": 785.43,
+      "end": 791.51,
+      "text": "components please go back and watch the lecture connected components please go back and watch"
+    },
+    {
+      "start": 791.51,
+      "end": 796.47,
+      "text": "the connector connected components what if the graph is broken into multiple components"
+    },
+    {
+      "start": 796.47,
+      "end": 801.99,
+      "text": "so something like this imagine one two three this is a"
+    },
+    {
+      "start": 802.15,
+      "end": 812.79,
+      "text": "graph five six seven eight nine so what will happen is for the first time when you call it"
+    },
+    {
+      "start": 812.79,
+      "end": 819.27,
+      "text": "from one it will go and visit this this then this but it will not find a cycle here then you have to"
+    },
+    {
+      "start": 819.27,
+      "end": 824.23,
+      "text": "again call it for two but will you there's no point there's no point again calling for two"
+    },
+    {
+      "start": 824.23,
+      "end": 829.83,
+      "text": "because if one went ahead and did a traversal of the entire thing and i did not find a cycle"
+    },
+    {
+      "start": 829.83,
+      "end": 831.99,
+      "text": "calling for two calling for three calling"
+    },
+    {
+      "start": 832.15,
+      "end": 836.07,
+      "text": "for 4 will never be able to find it a cycle. Will it be? Obviously not."
+    },
+    {
+      "start": 836.47,
+      "end": 839.99,
+      "text": "Right? The next step is like, okay, fine. We go to then"
+    },
+    {
+      "start": 839.99,
+      "end": 842.45,
+      "text": "5, 5, 6, no cycle."
+    },
+    {
+      "start": 843.79,
+      "end": 847.25,
+      "text": "Then we call it for 7. Now 7 says I got a cycle."
+    },
+    {
+      "start": 848.19,
+      "end": 852.21,
+      "text": "Yes. With the same method. So you need to call for this one"
+    },
+    {
+      "start": 852.21,
+      "end": 856.37,
+      "text": "once, need to call for this one once, need to call it for this one once."
+    },
+    {
+      "start": 856.77,
+      "end": 860.29,
+      "text": "So apparently you need to write like in terms of whenever there is a problem"
+    },
+    {
+      "start": 860.29,
+      "end": 863.89,
+      "text": "of multiple components. Like if you see over here"
+    },
+    {
+      "start": 863.89,
+      "end": 868.29,
+      "text": "in the example 2, we have something like a multiple component thing. So what do you"
+    },
+    {
+      "start": 868.29,
+      "end": 871.49,
+      "text": "need to do is, you need to always write something like this. For"
+    },
+    {
+      "start": 871.49,
+      "end": 875.81,
+      "text": "I equal to the start link. If the nodes are 1, you start from 1"
+    },
+    {
+      "start": 875.81,
+      "end": 879.47,
+      "text": "equal to n and you go like I++"
+    },
+    {
+      "start": 879.47,
+      "end": 884.23,
+      "text": "okay. And over here what you do is, you say if not visited"
+    },
+    {
+      "start": 884.23,
+      "end": 889.71,
+      "text": "I, please call the detect cycle."
+    },
+    {
+      "start": 889.71,
+      "end": 889.79,
+      "text": "Okay."
+    },
+    {
+      "start": 891.67,
+      "end": 895.85,
+      "text": "And start the source with I. And if this is true,"
+    },
+    {
+      "start": 896.85,
+      "end": 900.43,
+      "text": "I will say, hey listen, this came down as a true."
+    },
+    {
+      "start": 900.83,
+      "end": 904.97,
+      "text": "So can you say that there is a cycle? And if you have visited all the components"
+    },
+    {
+      "start": 904.97,
+      "end": 908.89,
+      "text": "and you never got a cycle, you say false. This is the standard procedure"
+    },
+    {
+      "start": 908.89,
+      "end": 913.03,
+      "text": "to do for components. So what will happen is, let's analyze what will happen."
+    },
+    {
+      "start": 913.43,
+      "end": 916.35,
+      "text": "For the first time it is 1. So it will go for 1"
+    },
+    {
+      "start": 916.35,
+      "end": 921.11,
+      "text": "and find that it is not visited because you will have a single visited array."
+    },
+    {
+      "start": 921.11,
+      "end": 921.35,
+      "text": "Okay."
+    },
+    {
+      "start": 921.67,
+      "end": 925.15,
+      "text": "So it will have a single visited array with all marked as zeros."
+    },
+    {
+      "start": 925.39,
+      "end": 929.35,
+      "text": "So it will, whenever it goes to 1 and it finds 0, it goes and calls the"
+    },
+    {
+      "start": 929.35,
+      "end": 934.87,
+      "text": "detect cycle. And the detect cycle will go and mark visit, visit, visit, and visit."
+    },
+    {
+      "start": 935.19,
+      "end": 936.79,
+      "text": "So all of these guys will be visited."
+    },
+    {
+      "start": 937.39,
+      "end": 937.79,
+      "text": "Correct."
+    },
+    {
+      "start": 938.05,
+      "end": 939.41,
+      "text": "And it will not return a cycle."
+    },
+    {
+      "start": 939.91,
+      "end": 941.53,
+      "text": "So apparently next time it will be 2."
+    },
+    {
+      "start": 942.41,
+      "end": 943.81,
+      "text": "So 2 will be already visited."
+    },
+    {
+      "start": 944.07,
+      "end": 946.31,
+      "text": "We've already visited the component that has 2."
+    },
+    {
+      "start": 946.67,
+      "end": 948.67,
+      "text": "Next it will be 3, already visited."
+    },
+    {
+      "start": 949.25,
+      "end": 950.35,
+      "text": "4, already visited."
+    },
+    {
+      "start": 950.47,
+      "end": 950.99,
+      "text": "5, not visited."
+    },
+    {
+      "start": 951.67,
+      "end": 953.67,
+      "text": "So go for 5."
+    },
+    {
+      "start": 953.67,
+      "end": 954.95,
+      "text": "So you again call for 5."
+    },
+    {
+      "start": 955.43,
+      "end": 956.91,
+      "text": "So 5 goes visit, visit."
+    },
+    {
+      "start": 956.95,
+      "end": 958.23,
+      "text": "So 5 goes and visits it."
+    },
+    {
+      "start": 959.31,
+      "end": 960.03,
+      "text": "No cycle again."
+    },
+    {
+      "start": 960.51,
+      "end": 962.19,
+      "text": "So then I will increase to 6."
+    },
+    {
+      "start": 962.57,
+      "end": 963.35,
+      "text": "6 is visited."
+    },
+    {
+      "start": 963.71,
+      "end": 964.75,
+      "text": "Then it will increase to 7."
+    },
+    {
+      "start": 965.17,
+      "end": 969.91,
+      "text": "The moment it increases to 7 and calls it for 7, it gives him a cycle."
+    },
+    {
+      "start": 970.17,
+      "end": 972.17,
+      "text": "It says, hey, it's true."
+    },
+    {
+      "start": 972.49,
+      "end": 973.39,
+      "text": "We have a cycle."
+    },
+    {
+      "start": 973.75,
+      "end": 976.15,
+      "text": "If we start from 7 and it says true."
+    },
+    {
+      "start": 977.09,
+      "end": 978.71,
+      "text": "This is how you check for components."
+    },
+    {
+      "start": 979.09,
+      "end": 981.43,
+      "text": "So always remember, by the way, let's check out."
+    },
+    {
+      "start": 981.91,
+      "end": 985.63,
+      "text": "OK, so they have clearly used something like zero over here."
+    },
+    {
+      "start": 985.91,
+      "end": 987.07,
+      "text": "And it's a zero-based indexing."
+    },
+    {
+      "start": 987.07,
+      "end": 991.25,
+      "text": "So what we can do is we can declare something like visited of v."
+    },
+    {
+      "start": 992.05,
+      "end": 994.23,
+      "text": "And we can mark it as zero."
+    },
+    {
+      "start": 994.39,
+      "end": 994.69,
+      "text": "OK."
+    },
+    {
+      "start": 994.77,
+      "end": 996.49,
+      "text": "Means all of them are non-visited."
+    },
+    {
+      "start": 996.91,
+      "end": 1000.95,
+      "text": "And we can say we can since it's a zero-based indexing graph, something like this."
+    },
+    {
+      "start": 1001.33,
+      "end": 1005.85,
+      "text": "If not visited of i, that means not visited."
+    },
+    {
+      "start": 1006.59,
+      "end": 1009.07,
+      "text": "If let's call the detect that we wrote."
+    },
+    {
+      "start": 1010.03,
+      "end": 1011.35,
+      "text": "And now please go and detect from the source."
+    },
+    {
+      "start": 1011.67,
+      "end": 1017.59,
+      "text": "source this adjacency this visited this and if this is true tell them that this is cycle and if"
+    },
+    {
+      "start": 1017.59,
+      "end": 1023.75,
+      "text": "none of them is true trend limit there is no cycle we say a graph to have a cycle if any of the"
+    },
+    {
+      "start": 1023.75,
+      "end": 1028.43,
+      "text": "component has a cycle remember this we say a graph to have a cycle if any of the components have a"
+    },
+    {
+      "start": 1028.43,
+      "end": 1033.59,
+      "text": "cycle so let's quickly run this and see if it is running fine perfect as you see it is giving us"
+    },
+    {
+      "start": 1033.59,
+      "end": 1040.91,
+      "text": "correct answer so if i discuss the time complexity now can you help me analyze that what would be"
+    },
+    {
+      "start": 1040.91,
+      "end": 1047.09,
+      "text": "the time complexity how many nodes will we visit at the worst case i can say this detect will be"
+    },
+    {
+      "start": 1047.09,
+      "end": 1056.25,
+      "text": "like n into all the adjacent nodes n into because it's going to visit all the adjacent nodes one by"
+    },
+    {
+      "start": 1056.25,
+      "end": 1062.67,
+      "text": "one so for every node for for the first time if i go back here for the first time it'll go here"
+    },
+    {
+      "start": 1062.67,
+      "end": 1068.51,
+      "text": "then here then here then here then here then here so can i say it's a summation of degrees"
+    },
+    {
+      "start": 1068.51,
+      "end": 1070.89,
+      "text": "remember the bfs algorithm"
+    },
+    {
+      "start": 1070.91,
+      "end": 1076.01,
+      "text": "you should remember the bfs algorithm i taught you so whatever time the bfs algorithm takes"
+    },
+    {
+      "start": 1076.01,
+      "end": 1084.55,
+      "text": "it's going to take the same time which is first it'll be n things twice of edge why twice of edge"
+    },
+    {
+      "start": 1084.55,
+      "end": 1091.35,
+      "text": "because for every node you're traversing for all its adjacent nodes and the adjacent nodes is"
+    },
+    {
+      "start": 1091.35,
+      "end": 1096.59,
+      "text": "nothing but the degree so the summation of all adjacent nodes is equal to the summation of"
+    },
+    {
+      "start": 1096.59,
+      "end": 1100.89,
+      "text": "degrees summation of adjacent nodes is what you're doing which is equal to the"
+    },
+    {
+      "start": 1100.91,
+      "end": 1107.61,
+      "text": "summation of degree which is equal to 2e in directed undirected graph rather if you remember"
+    },
+    {
+      "start": 1107.61,
+      "end": 1114.75,
+      "text": "the first lecture so n plus 2e are we using any extra space if you carefully see uh we're using"
+    },
+    {
+      "start": 1114.75,
+      "end": 1120.97,
+      "text": "a q data structure so somewhere around bico of n and then i visited bico often so yeah we can just"
+    },
+    {
+      "start": 1120.97,
+      "end": 1125.93,
+      "text": "wrap it up to something as bico of n and you might argue but striver we are running a for loop and"
+    },
+    {
+      "start": 1125.93,
+      "end": 1130.25,
+      "text": "for every for loop you are calling it no no you're not calling it for every for loop you're not calling it for every for loop"
+    },
+    {
+      "start": 1130.91,
+      "end": 1137.57,
+      "text": "you can just do a bico of n because for the first time when you called for this component it went in"
+    },
+    {
+      "start": 1138.85,
+      "end": 1144.05,
+      "text": "for one only it went and it went like four times it never went for two never for three never for four"
+    },
+    {
+      "start": 1144.05,
+      "end": 1149.61,
+      "text": "once you called for five it went for five and it touched six similarly when you'll call for seven"
+    },
+    {
+      "start": 1149.61,
+      "end": 1155.37,
+      "text": "it'll touch this it'll be like calls will go but in total the moment you touch everyone there will"
+    },
+    {
+      "start": 1155.37,
+      "end": 1160.65,
+      "text": "be no more calls so in summation it's it's not like every time you're going like n n n n"
+    },
+    {
+      "start": 1160.91,
+      "end": 1165.89,
+      "text": "it's not like that okay so that's why you don't need to complicate stuff so you can just keep it"
+    },
+    {
+      "start": 1165.89,
+      "end": 1170.89,
+      "text": "simple and say that the complexity is near about n plus 2e and if you want to include the component"
+    },
+    {
+      "start": 1170.89,
+      "end": 1177.01,
+      "text": "thing bico of n because in overall i'm going to touch everyone which is going to take this and"
+    },
+    {
+      "start": 1177.01,
+      "end": 1181.27,
+      "text": "there's a for loop that is running not into because overall i'll make sure i take this"
+    },
+    {
+      "start": 1181.27,
+      "end": 1187.47,
+      "text": "right so that will be the time complexity and the space complexity for this one so guys i hope i was"
+    },
+    {
+      "start": 1187.47,
+      "end": 1190.67,
+      "text": "able to explain you how to detect a cycle in an"
+    },
+    {
+      "start": 1190.91,
+      "end": 1195.91,
+      "text": "interactive graph using bfs just in case i was please make sure you like this video and if you're"
+    },
+    {
+      "start": 1195.91,
+      "end": 1200.51,
+      "text": "new to our channel what are you waiting for still now hit that subscribe button because that is the"
+    },
+    {
+      "start": 1200.51,
+      "end": 1204.63,
+      "text": "only thing that keeps me motivated to make these kind of videos and yeah with this i'll be wrapping"
+    },
+    {
+      "start": 1204.63,
+      "end": 1210.13,
+      "text": "up this video let's meet in some other video till then wait check out the dpc sd sheet till then bye"
+    }
+  ]
+}

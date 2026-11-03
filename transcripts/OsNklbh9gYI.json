@@ -1,0 +1,924 @@
+{
+  "video_id": "OsNklbh9gYI",
+  "title": "G-3. Graph Representation in Java ｜ Two Ways to Represent",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 792.45,
+  "segments": [
+    {
+      "start": 3.34,
+      "end": 9.46,
+      "text": "So in the previous video, we did learn about graph and its type and all the other terminologies that are used in graphs."
+    },
+    {
+      "start": 9.9,
+      "end": 15.18,
+      "text": "In this video, we will be learning about how to store such a complex data structure in Java."
+    },
+    {
+      "start": 15.56,
+      "end": 17.38,
+      "text": "So I'll be breaking the video into two parts."
+    },
+    {
+      "start": 17.88,
+      "end": 21.82,
+      "text": "The first being, how is the input of a graph given to you?"
+    },
+    {
+      "start": 21.86,
+      "end": 23.26,
+      "text": "That is very important to understand."
+    },
+    {
+      "start": 23.76,
+      "end": 29.72,
+      "text": "While the next being, how do you store it or which data structure do we use to store it?"
+    },
+    {
+      "start": 29.96,
+      "end": 32.14,
+      "text": "So let's understand about the input."
+    },
+    {
+      "start": 32.14,
+      "end": 40.04,
+      "text": "So if you see this is a graph data structure and the first thing that they will tell you is n and m,"
+    },
+    {
+      "start": 40.44,
+      "end": 45.64,
+      "text": "where n is nothing but the number of nodes and m is nothing but the number of edges."
+    },
+    {
+      "start": 46.1,
+      "end": 52.14,
+      "text": "For this question, for this graph rather, the number of nodes are 5, the number of edges are 6."
+    },
+    {
+      "start": 52.32,
+      "end": 58.12,
+      "text": "Why? Because 5 nodes, number of edges 1, 2, 3, 4, 5, 6, number of edges 6."
+    },
+    {
+      "start": 58.4,
+      "end": 60.02,
+      "text": "That is something which we know for sure."
+    },
+    {
+      "start": 60.28,
+      "end": 62.02,
+      "text": "Now, the next thing that they will tell you..."
+    },
+    {
+      "start": 62.14,
+      "end": 64.84,
+      "text": "is given m lines."
+    },
+    {
+      "start": 66.58,
+      "end": 71.32,
+      "text": "Given m lines and those m lines will represent all the edges."
+    },
+    {
+      "start": 71.82,
+      "end": 76.72,
+      "text": "And I'm talking about undirected or undirected graph as of now."
+    },
+    {
+      "start": 77.14,
+      "end": 80.86,
+      "text": "At the end, I'll tell you what is the change that is required for directed graph."
+    },
+    {
+      "start": 81.28,
+      "end": 83.38,
+      "text": "So they can give you 1, 2."
+    },
+    {
+      "start": 83.86,
+      "end": 86.32,
+      "text": "Now 1, 2 resembles this particular edge."
+    },
+    {
+      "start": 87.22,
+      "end": 90.32,
+      "text": "They can give you 1, 2 or they can give you something like 2, 1."
+    },
+    {
+      "start": 90.7,
+      "end": 91.32,
+      "text": "Either of them."
+    },
+    {
+      "start": 91.7,
+      "end": 92.14,
+      "text": "Either of them."
+    },
+    {
+      "start": 92.46,
+      "end": 99.26,
+      "text": "Next being 1, 3, 3, 4, 2, 4, 2, 5, 4, 5."
+    },
+    {
+      "start": 100.54,
+      "end": 102.3,
+      "text": "Order can be anything."
+    },
+    {
+      "start": 102.78,
+      "end": 105.38,
+      "text": "1, 3 can be at first, 2, 4 can be at first."
+    },
+    {
+      "start": 105.84,
+      "end": 106.74,
+      "text": "Order can be anything."
+    },
+    {
+      "start": 107.12,
+      "end": 111.28,
+      "text": "As long as they are telling you about all the edges, that is what matters."
+    },
+    {
+      "start": 111.56,
+      "end": 115.2,
+      "text": "So n, m in the first line and the next will be containing this."
+    },
+    {
+      "start": 115.5,
+      "end": 118.72,
+      "text": "So the input will be something like 5, 6, which represents n and m."
+    },
+    {
+      "start": 119.12,
+      "end": 121.42,
+      "text": "Then 1, 2, 1, 3 and so on till 4 and 5."
+    },
+    {
+      "start": 122.14,
+      "end": 126.96,
+      "text": "This is how the input will look like."
+    },
+    {
+      "start": 127.36,
+      "end": 127.46,
+      "text": "Right?"
+    },
+    {
+      "start": 127.78,
+      "end": 129.92,
+      "text": "Now, it's a complex data structure."
+    },
+    {
+      "start": 130.28,
+      "end": 133.1,
+      "text": "So you might ask, but Sreva, how do we store it?"
+    },
+    {
+      "start": 133.42,
+      "end": 136.12,
+      "text": "So in order to store it, we're going to use two things."
+    },
+    {
+      "start": 136.56,
+      "end": 141.26,
+      "text": "One is the matrix, which we call as adjacency matrix."
+    },
+    {
+      "start": 141.94,
+      "end": 147.26,
+      "text": "And the second is list, which we call as adjacency list."
+    },
+    {
+      "start": 148.2,
+      "end": 150.6,
+      "text": "So in order to store the graph in a matrix,"
+    },
+    {
+      "start": 150.6,
+      "end": 152.04,
+      "text": "the first thing we need to observe,"
+    },
+    {
+      "start": 152.14,
+      "end": 156.08,
+      "text": "is the graph a one-based indexing graph or not?"
+    },
+    {
+      "start": 156.5,
+      "end": 159.08,
+      "text": "So if you carefully see, what do you mean by one-based indexing?"
+    },
+    {
+      "start": 159.44,
+      "end": 162.28,
+      "text": "The nodes are numbered from 1 till 5,"
+    },
+    {
+      "start": 162.7,
+      "end": 163.88,
+      "text": "but the number of nodes are 5."
+    },
+    {
+      "start": 164.04,
+      "end": 165.8,
+      "text": "So it's a one-based indexing graph."
+    },
+    {
+      "start": 166.3,
+      "end": 166.34,
+      "text": "Okay?"
+    },
+    {
+      "start": 166.58,
+      "end": 169.62,
+      "text": "So what you will do is, you will define a matrix,"
+    },
+    {
+      "start": 169.82,
+      "end": 174.14,
+      "text": "a 2D matrix of n plus 1 and n plus 1 size,"
+    },
+    {
+      "start": 174.54,
+      "end": 176.36,
+      "text": "which is 6 cross 6."
+    },
+    {
+      "start": 176.46,
+      "end": 177.46,
+      "text": "Why 6 cross 6?"
+    },
+    {
+      "start": 177.86,
+      "end": 180.68,
+      "text": "So that you have the fifth index with you."
+    },
+    {
+      "start": 180.68,
+      "end": 181.86,
+      "text": "So that you have the,"
+    },
+    {
+      "start": 182.14,
+      "end": 183.4,
+      "text": "fifth index with you."
+    },
+    {
+      "start": 183.4,
+      "end": 183.9,
+      "text": "Done."
+    },
+    {
+      "start": 183.9,
+      "end": 185.34,
+      "text": "Now what you will do is,"
+    },
+    {
+      "start": 185.34,
+      "end": 188.04,
+      "text": "you will go to the first edge that is given to you,"
+    },
+    {
+      "start": 188.04,
+      "end": 189.04,
+      "text": "1 and 2."
+    },
+    {
+      "start": 189.04,
+      "end": 191.04,
+      "text": "And you'll go to the first row,"
+    },
+    {
+      "start": 192.04,
+      "end": 193.04,
+      "text": "second column."
+    },
+    {
+      "start": 193.64,
+      "end": 194.64,
+      "text": "And the intersection,"
+    },
+    {
+      "start": 195.04,
+      "end": 196.04,
+      "text": "is where you'll say,"
+    },
+    {
+      "start": 196.04,
+      "end": 197.04,
+      "text": "1."
+    },
+    {
+      "start": 197.04,
+      "end": 200.04,
+      "text": "1 symbolizes, there is an edge between,"
+    },
+    {
+      "start": 200.04,
+      "end": 201.54,
+      "text": "1 and 2."
+    },
+    {
+      "start": 201.54,
+      "end": 202.54,
+      "text": "And,"
+    },
+    {
+      "start": 202.54,
+      "end": 204.54,
+      "text": "there is also an edge between 2 and 1,"
+    },
+    {
+      "start": 204.54,
+      "end": 206.54,
+      "text": "because it's an undirected graph."
+    },
+    {
+      "start": 206.54,
+      "end": 207.54,
+      "text": "So what you'll do is,"
+    },
+    {
+      "start": 207.54,
+      "end": 209.54,
+      "text": "you'll go to 2, you'll go to 1,"
+    },
+    {
+      "start": 209.54,
+      "end": 211.54,
+      "text": "and on the intersection again,"
+    },
+    {
+      "start": 211.54,
+      "end": 212.54,
+      "text": "you'll put a 1."
+    },
+    {
+      "start": 212.54,
+      "end": 214.54,
+      "text": "So this is how you can,"
+    },
+    {
+      "start": 214.54,
+      "end": 215.54,
+      "text": "store the edge."
+    },
+    {
+      "start": 215.54,
+      "end": 216.54,
+      "text": "Next,"
+    },
+    {
+      "start": 216.54,
+      "end": 217.54,
+      "text": "1, 3."
+    },
+    {
+      "start": 217.54,
+      "end": 219.54,
+      "text": "So you go to 1 and 3,"
+    },
+    {
+      "start": 219.54,
+      "end": 220.54,
+      "text": "mark it as 1."
+    },
+    {
+      "start": 220.54,
+      "end": 222.04,
+      "text": "And 3 and 1 and mark it as 1."
+    },
+    {
+      "start": 222.04,
+      "end": 224.04,
+      "text": "Next you go to 2, 4."
+    },
+    {
+      "start": 224.04,
+      "end": 225.04,
+      "text": "Mark it as 1."
+    },
+    {
+      "start": 225.04,
+      "end": 226.04,
+      "text": "4, 2 and mark it as 1."
+    },
+    {
+      "start": 226.04,
+      "end": 228.04,
+      "text": "Next you go to 3, 4."
+    },
+    {
+      "start": 228.04,
+      "end": 229.04,
+      "text": "Mark it as 1."
+    },
+    {
+      "start": 229.04,
+      "end": 230.54,
+      "text": "4 and 3, mark it as 1."
+    },
+    {
+      "start": 230.54,
+      "end": 232.04,
+      "text": "Next you go to 2 and 5."
+    },
+    {
+      "start": 232.04,
+      "end": 233.04,
+      "text": "Mark it as 1."
+    },
+    {
+      "start": 233.04,
+      "end": 234.54,
+      "text": "5 and 2, mark it as 1."
+    },
+    {
+      "start": 234.54,
+      "end": 236.54,
+      "text": "Next you go to 4, 5."
+    },
+    {
+      "start": 236.54,
+      "end": 237.54,
+      "text": "Mark it as 1."
+    },
+    {
+      "start": 237.54,
+      "end": 239.04,
+      "text": "5, 4, mark it as 1."
+    },
+    {
+      "start": 239.04,
+      "end": 240.04,
+      "text": "This is how,"
+    },
+    {
+      "start": 240.04,
+      "end": 241.04,
+      "text": "all of these things,"
+    },
+    {
+      "start": 241.04,
+      "end": 247.3,
+      "text": "these things are stored in a matrix all the remaining guys can be easily filled up with"
+    },
+    {
+      "start": 247.3,
+      "end": 254.46,
+      "text": "zeros zero means there is no edge one means there is an edge between the ith row like ith node"
+    },
+    {
+      "start": 254.46,
+      "end": 262.34,
+      "text": "and the jth column okay that is the definition of one now how much space are you using i can say i'm"
+    },
+    {
+      "start": 262.34,
+      "end": 268.36,
+      "text": "using n square space because i'm approximately taking n plus one into n plus one which is near"
+    },
+    {
+      "start": 268.36,
+      "end": 277.66,
+      "text": "about n square space so this is where this method is not appreciable because it ends up taking a lot"
+    },
+    {
+      "start": 277.66,
+      "end": 284.86,
+      "text": "of space thereby this method is not used widely but you can use this if the graph is a smaller"
+    },
+    {
+      "start": 284.86,
+      "end": 290.88,
+      "text": "graph so if you check out the java code for this adjacency matrix you're given n and m then you"
+    },
+    {
+      "start": 290.88,
+      "end": 296.64,
+      "text": "declare a matrix then assume the input the first thing they give you is one and two there's an edge"
+    },
+    {
+      "start": 296.64,
+      "end": 298.26,
+      "text": "between one and two you go to"
+    },
+    {
+      "start": 298.26,
+      "end": 298.36,
+      "text": "one and two and you go to one and two and you go to one and two and you go to one and two and you"
+    },
+    {
+      "start": 298.36,
+      "end": 302.68,
+      "text": "and two and you mark it as one and you go to two and one and you mark it as one similarly for these"
+    },
+    {
+      "start": 302.68,
+      "end": 310.2,
+      "text": "guys as well like for every edge you mark i j and j i as one so if there is an edge given like u and"
+    },
+    {
+      "start": 310.2,
+      "end": 318.04,
+      "text": "v you say adjacency of uv equal to one and adjacency of vu equal to one that's how you can"
+    },
+    {
+      "start": 318.04,
+      "end": 324.04,
+      "text": "easily store them in an adjacency matrix so if you store them in a matrix it is going to be costly"
+    },
+    {
+      "start": 324.04,
+      "end": 330.36,
+      "text": "right so this is where something like an adjacency list comes in so what do you do is you define"
+    },
+    {
+      "start": 330.36,
+      "end": 337.96,
+      "text": "something like an array list so i'll be something like array list okay and inside that i'll also be"
+    },
+    {
+      "start": 337.96,
+      "end": 345.32,
+      "text": "storing an array list so it will be something like this array list inside that instead of integer"
+    },
+    {
+      "start": 345.32,
+      "end": 350.04,
+      "text": "it will be another array list this is what we will be defining okay and the first step that"
+    },
+    {
+      "start": 350.04,
+      "end": 353.8,
+      "text": "you will check is again if it is one based indexing"
+    },
+    {
+      "start": 354.36,
+      "end": 359.8,
+      "text": "and if it is then what you will do is you will run a loop yes you will run a loop and you will add"
+    },
+    {
+      "start": 360.44,
+      "end": 367.88,
+      "text": "exactly n plus one array list to this particular adjacency list you will add exactly n plus one"
+    },
+    {
+      "start": 367.88,
+      "end": 373.88,
+      "text": "arrow less to this adjacency list so if you look at the code i have defined an adjacency list and"
+    },
+    {
+      "start": 373.88,
+      "end": 380.84,
+      "text": "then i have added exactly n plus one error list if the code is visible to you exactly n plus one"
+    },
+    {
+      "start": 380.84,
+      "end": 383.88,
+      "text": "arrow list have been added so once it is added"
+    },
+    {
+      "start": 384.04,
+      "end": 389.64,
+      "text": "will it look like so it will be something like on the zeroth index there is an empty arrow list"
+    },
+    {
+      "start": 389.64,
+      "end": 395.08,
+      "text": "on the first index there is an empty arrow list second third and fourth so on all these five"
+    },
+    {
+      "start": 395.08,
+      "end": 403.4,
+      "text": "indexes you have an empty arrow list right and what is our target remember this our target is"
+    },
+    {
+      "start": 404.12,
+      "end": 412.52,
+      "text": "if i'm standing at the fourth array list this fourth array list should contain three two five"
+    },
+    {
+      "start": 412.52,
+      "end": 419.4,
+      "text": "this fourth arrow list should contain three two five so every array list on an index should"
+    },
+    {
+      "start": 419.4,
+      "end": 427.16,
+      "text": "contain its neighbors for two it should contain four five one in any order that is what our target"
+    },
+    {
+      "start": 427.16,
+      "end": 434.52,
+      "text": "of array list will be okay so what we will do is if there is one and two for an example the first"
+    },
+    {
+      "start": 434.52,
+      "end": 440.04,
+      "text": "thing is one and two what i'll do is i'll go to the arrow list of one and i'll say please store"
+    },
+    {
+      "start": 442.52,
+      "end": 447.48,
+      "text": "one so i'll go to the arrow list of two and i'll say please store one and i'll say please store one"
+    },
+    {
+      "start": 447.48,
+      "end": 454.04,
+      "text": "okay for one and three i'll say go to one and store three for three go and store one perfect"
+    },
+    {
+      "start": 454.04,
+      "end": 462.2,
+      "text": "for two and four i'll say four store two and i'll say two please store four perfect and for"
+    },
+    {
+      "start": 463.96,
+      "end": 469.16,
+      "text": "and for three and four i'll go to three and store four for four i'll store three for two and five"
+    },
+    {
+      "start": 469.16,
+      "end": 475.92,
+      "text": "two store five five store two four and five four store five five store four so"
+    },
+    {
+      "start": 475.92,
+      "end": 481.8,
+      "text": "I can sell my list are completed and for every guy I have the neighbor notes I"
+    },
+    {
+      "start": 481.8,
+      "end": 487.34,
+      "text": "have the neighbor vertexes stored in this particular array list so this is"
+    },
+    {
+      "start": 487.34,
+      "end": 492.72,
+      "text": "how you can store it in a list so if you carefully observe what is the space that"
+    },
+    {
+      "start": 492.72,
+      "end": 497.84,
+      "text": "you're using if I ask you what is the space that you're using now every edge"
+    },
+    {
+      "start": 497.84,
+      "end": 504.06,
+      "text": "has two nodes every edge has two nodes for every edge you're storing two guys"
+    },
+    {
+      "start": 504.06,
+      "end": 510.26,
+      "text": "like for one and two you stored for one you stored for one you store two and for"
+    },
+    {
+      "start": 510.26,
+      "end": 517.22,
+      "text": "two you stored one right so twice so I can say we go of twice of edges is what"
+    },
+    {
+      "start": 517.22,
+      "end": 522.2,
+      "text": "is the space complexity again if you count the number of edges were six and"
+    },
+    {
+      "start": 522.2,
+      "end": 526.5,
+      "text": "the space that you took was one two three four five six seven eight nine ten"
+    },
+    {
+      "start": 526.5,
+      "end": 527.6,
+      "text": "eleven twelve"
+    },
+    {
+      "start": 527.84,
+      "end": 532.48,
+      "text": "exactly 12 is the space that you're taking yeah this might be an extra stop"
+    },
+    {
+      "start": 532.48,
+      "end": 537.14,
+      "text": "but near about you can say near about we go off to M is the space that we are"
+    },
+    {
+      "start": 537.14,
+      "end": 542.36,
+      "text": "using so if I go back to the code and if you see edge one and two you can"
+    },
+    {
+      "start": 542.36,
+      "end": 546.68,
+      "text": "carefully observe that I am saying dot get one which means get the arrow list"
+    },
+    {
+      "start": 546.68,
+      "end": 551.84,
+      "text": "of one this means get the arrow list at the first index and please store two in"
+    },
+    {
+      "start": 551.84,
+      "end": 555.74,
+      "text": "it get the arrow list in the second index and please store one in it this is"
+    },
+    {
+      "start": 555.74,
+      "end": 556.9,
+      "text": "how you store one two"
+    },
+    {
+      "start": 557.84,
+      "end": 565.6,
+      "text": "short you can say get of u add v get of v add u for every uv that is given to you right and if you"
+    },
+    {
+      "start": 565.6,
+      "end": 571.44,
+      "text": "want to print the graph super simple you just iterate and you can print all the edges yes you"
+    },
+    {
+      "start": 571.44,
+      "end": 578.72,
+      "text": "can print all the edges connected all the edges okay this is how you can easily print this"
+    },
+    {
+      "start": 578.72,
+      "end": 585.36,
+      "text": "particular graph now some question what if it's a directed graph so in that case it'll be like"
+    },
+    {
+      "start": 585.36,
+      "end": 591.44,
+      "text": "one is directed to true sorry two so what you'll do is you'll remove this so you just need one"
+    },
+    {
+      "start": 591.44,
+      "end": 597.18,
+      "text": "if they are saying if they are saying it's a directed graph you just add one edge it's from"
+    },
+    {
+      "start": 597.18,
+      "end": 602.54,
+      "text": "one to two or from u to v that's it v is a neighbor of u because you can go from u to v"
+    },
+    {
+      "start": 602.54,
+      "end": 609.16,
+      "text": "not from v to u so you just add one so as of now you've understood how to store an undirected graph"
+    },
+    {
+      "start": 609.16,
+      "end": 614.22,
+      "text": "a directed graph what if i ask you how do you store a weighted graph what does a weighted graph"
+    },
+    {
+      "start": 614.22,
+      "end": 615.34,
+      "text": "means now what if"
+    },
+    {
+      "start": 615.36,
+      "end": 619.82,
+      "text": "the graph comes up uh something like okay there's an edge between one and two and the weight is two"
+    },
+    {
+      "start": 619.82,
+      "end": 623.7,
+      "text": "there's an edge between one and three the weight is three edge between three and four the weight is"
+    },
+    {
+      "start": 623.7,
+      "end": 628.94,
+      "text": "four edge between two and four the weight is one edge between this has six and then edge between"
+    },
+    {
+      "start": 628.94,
+      "end": 633.86,
+      "text": "this has three what if they start assigning something like weights to it yes what if they"
+    },
+    {
+      "start": 633.86,
+      "end": 639.86,
+      "text": "start assigning edge weights that's when you call that as weighted graph the first technique that we"
+    },
+    {
+      "start": 639.86,
+      "end": 644.88,
+      "text": "learned was matrix right and if there is an edge between one and two"
+    },
+    {
+      "start": 645.36,
+      "end": 651.28,
+      "text": "you basically went to one basically one went to two and you wrote one in it so instead of"
+    },
+    {
+      "start": 651.28,
+      "end": 658.8,
+      "text": "writing one you take the edge weight two and you write in both the places so that's a slight change"
+    },
+    {
+      "start": 658.8,
+      "end": 663.36,
+      "text": "that you have to do you have to go back to the code and instead of saying equal to one you say"
+    },
+    {
+      "start": 663.36,
+      "end": 671.92,
+      "text": "equal to weight so it's going to be like adjacency of u v equal to weight right but that was of"
+    },
+    {
+      "start": 671.92,
+      "end": 678.32,
+      "text": "matrix but if i ask you how do you store in a list so if you remember in the list we were doing"
+    },
+    {
+      "start": 678.32,
+      "end": 689.28,
+      "text": "something like 0 1 2 3 4 5 and for 4 the neighbors were 2 3 5 if you carefully observe before the"
+    },
+    {
+      "start": 689.28,
+      "end": 696.48,
+      "text": "neighbors were 2 3 5 so how do you store the weights so as of now you're just storing 2 3 5"
+    },
+    {
+      "start": 696.48,
+      "end": 701.84,
+      "text": "so instead of that yes instead of that what you'll do is you'll stop pairs"
+    },
+    {
+      "start": 701.92,
+      "end": 711.2,
+      "text": "in it and so pairs in it and you'll see 4 can be like okay i know it has 2 but it has 2 comma 1"
+    },
+    {
+      "start": 711.2,
+      "end": 716.48,
+      "text": "because the edge weight is one i know it has three but it has three comma four because the edge weight"
+    },
+    {
+      "start": 716.48,
+      "end": 722.96,
+      "text": "is four i know it is five but the edge weight is three so instead of storing something like two"
+    },
+    {
+      "start": 722.96,
+      "end": 731.76,
+      "text": "three five as single guys you will just tweak the data structure to store pairs to store pairs and"
+    },
+    {
+      "start": 731.92,
+      "end": 737.28,
+      "text": "those pairs will be like the first guy will be the four to two and the second guy will be the edge"
+    },
+    {
+      "start": 737.28,
+      "end": 742.64,
+      "text": "weight the first guy will be four to three and the second guy will be the edge weight so while"
+    },
+    {
+      "start": 742.64,
+      "end": 750.32,
+      "text": "defining the list instead of integer you have to define a pair class of integer and integer"
+    },
+    {
+      "start": 750.32,
+      "end": 755.84,
+      "text": "and you can easily yes you can easily store the weights as well i'll be showing you the"
+    },
+    {
+      "start": 755.84,
+      "end": 761.76,
+      "text": "implementation probably in some video where we will be solving a problem in weighted graphs but as of"
+    },
+    {
+      "start": 761.92,
+      "end": 766.72,
+      "text": "just keep this in mind so i hope you have understood the entire implementation of graph"
+    },
+    {
+      "start": 766.72,
+      "end": 771.12,
+      "text": "in java just in case you did please make sure you like this video and if you're new to our channel"
+    },
+    {
+      "start": 771.12,
+      "end": 775.28,
+      "text": "what are you waiting for kill that subscribe button right away and if you haven't checked out"
+    },
+    {
+      "start": 775.28,
+      "end": 780.08,
+      "text": "our dp series and the sd sheet man the link is in the description make sure you check it out with"
+    },
+    {
+      "start": 780.08,
+      "end": 786.71,
+      "text": "this i'll be wrapping up this video let's meet in some other video till then bye bye take care"
+    }
+  ]
+}

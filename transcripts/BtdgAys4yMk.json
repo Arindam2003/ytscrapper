@@ -1,0 +1,1944 @@
+{
+  "video_id": "BtdgAys4yMk",
+  "title": "G-14. Surrounded Regions ｜ Replace O's with X's ｜ C++ ｜ Java",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1396.57,
+  "segments": [
+    {
+      "start": 2.8,
+      "end": 5.92,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.24,
+      "end": 9.78,
+      "text": "So in this video, we are going to solve this problem, replace O's with X."
+    },
+    {
+      "start": 10.22,
+      "end": 14.9,
+      "text": "So given a matrix of size n cross m where every element is either O or an X,"
+    },
+    {
+      "start": 15.44,
+      "end": 18.9,
+      "text": "now your target is to replace O's with X that are surrounded by X."
+    },
+    {
+      "start": 19.76,
+      "end": 23.16,
+      "text": "A O or a set of O is considered to be surrounded by X"
+    },
+    {
+      "start": 23.16,
+      "end": 27.22,
+      "text": "if there are X at locations just below, above, left and right."
+    },
+    {
+      "start": 27.72,
+      "end": 29.68,
+      "text": "So let's take an example on the iPad."
+    },
+    {
+      "start": 29.68,
+      "end": 38.72,
+      "text": "So if we take this example and if I see this O is not surrounded by X on the top."
+    },
+    {
+      "start": 39.24,
+      "end": 43.9,
+      "text": "This O is surrounded by a 0 but this is not surrounded by X."
+    },
+    {
+      "start": 44.44,
+      "end": 49.8,
+      "text": "This O is surrounded by an O on this but nothing on top."
+    },
+    {
+      "start": 50.14,
+      "end": 55.6,
+      "text": "So I can say this is a set of O's which is surrounded by X on the left,"
+    },
+    {
+      "start": 56.42,
+      "end": 59.2,
+      "text": "on the bottom, on the right."
+    },
+    {
+      "start": 59.2,
+      "end": 61.2,
+      "text": "But nothing on the top."
+    },
+    {
+      "start": 61.32,
+      "end": 64.74,
+      "text": "Similarly, these are the set of the zeros which are surrounded by X on the left,"
+    },
+    {
+      "start": 64.96,
+      "end": 71.56,
+      "text": "X on the right, nothing on the right, rather X on the left, nothing on the right, nothing on the bottom."
+    },
+    {
+      "start": 71.62,
+      "end": 73.36,
+      "text": "But the moment,"
+    },
+    {
+      "start": 73.36,
+      "end": 79.36,
+      "text": "the moment I say, hey listen, let's convert this guy to an X."
+    },
+    {
+      "start": 79.92,
+      "end": 82.56,
+      "text": "Now if I take this set of O's"
+    },
+    {
+      "start": 83.84,
+      "end": 89.0,
+      "text": "on the top X, on the left X, on the right X,"
+    },
+    {
+      "start": 89.2,
+      "end": 94.08,
+      "text": "on the bottom X, remember diagonals are not considered."
+    },
+    {
+      "start": 94.44,
+      "end": 98.7,
+      "text": "Just the top, just this are considered, not diagonals."
+    },
+    {
+      "start": 99.04,
+      "end": 102.64,
+      "text": "Thereby they are surrounded by X on all the four directions."
+    },
+    {
+      "start": 102.88,
+      "end": 111.0,
+      "text": "So this set of zeros, I can say these set of zeros are surrounded by X on all the four directions, not diagonals."
+    },
+    {
+      "start": 111.28,
+      "end": 113.36,
+      "text": "Thereby I can convert them to X."
+    },
+    {
+      "start": 113.5,
+      "end": 116.32,
+      "text": "I can convert these O's to X."
+    },
+    {
+      "start": 116.66,
+      "end": 118.26,
+      "text": "But the moment I see these O's,"
+    },
+    {
+      "start": 119.2,
+      "end": 121.6,
+      "text": "this is surrounded by X on the left,"
+    },
+    {
+      "start": 122.56,
+      "end": 126.24,
+      "text": "on the top, but nothing on the right, nothing on the bottom, it is vacant."
+    },
+    {
+      "start": 126.54,
+      "end": 130.88,
+      "text": "So thereby, these O's will stay as O's only."
+    },
+    {
+      "start": 131.14,
+      "end": 133.14,
+      "text": "So what I can say is,"
+    },
+    {
+      "start": 134.12,
+      "end": 137.28,
+      "text": "what is the first observation that you figured?"
+    },
+    {
+      "start": 138.68,
+      "end": 140.38,
+      "text": "If someone is on the boundary,"
+    },
+    {
+      "start": 141.32,
+      "end": 148.8,
+      "text": "if someone is on the boundary, that is where he cannot be covered."
+    },
+    {
+      "start": 149.2,
+      "end": 154.2,
+      "text": "That is very obvious because for this example, like if I just erase this,"
+    },
+    {
+      "start": 154.54,
+      "end": 158.14,
+      "text": "for this example, there was O's, right? This was the O."
+    },
+    {
+      "start": 158.48,
+      "end": 163.78,
+      "text": "Now I know if these O's are somewhere not connected to a boundary,"
+    },
+    {
+      "start": 164.02,
+      "end": 165.72,
+      "text": "they're bound to be surrounded by X."
+    },
+    {
+      "start": 165.72,
+      "end": 167.22,
+      "text": "They're bound to be surrounded by X."
+    },
+    {
+      "start": 167.22,
+      "end": 168.32,
+      "text": "Very obvious, right?"
+    },
+    {
+      "start": 168.32,
+      "end": 172.76,
+      "text": "Because they will be bound to be surrounded by X if they're not connected to the boundary."
+    },
+    {
+      "start": 172.76,
+      "end": 176.76,
+      "text": "But if somehow, if somehow, if I convert this X to O,"
+    },
+    {
+      "start": 177.26,
+      "end": 178.56,
+      "text": "these guys will be surround,"
+    },
+    {
+      "start": 178.56,
+      "end": 181.36,
+      "text": "like these guys will be connected to the boundary."
+    },
+    {
+      "start": 182.0,
+      "end": 184.64,
+      "text": "They will be connected to a zero which is on the boundary."
+    },
+    {
+      "start": 185.06,
+      "end": 188.06,
+      "text": "Thereby, you cannot convert these set of zeros."
+    },
+    {
+      "start": 188.24,
+      "end": 190.24,
+      "text": "So do you get an observation? Do you?"
+    },
+    {
+      "start": 190.7,
+      "end": 192.74,
+      "text": "So let me give you one more example."
+    },
+    {
+      "start": 193.0,
+      "end": 197.48,
+      "text": "So if you see this, they are nowhere connected to a boundary which has a zero."
+    },
+    {
+      "start": 197.92,
+      "end": 200.34,
+      "text": "So thereby, they're bound to be surrounded by X."
+    },
+    {
+      "start": 200.58,
+      "end": 205.46,
+      "text": "They're bound to be surrounded by X on the top, on the right, on the bottom, on the left."
+    },
+    {
+      "start": 205.46,
+      "end": 207.98,
+      "text": "They're bound because they're not connected to a boundary."
+    },
+    {
+      "start": 207.98,
+      "end": 211.48,
+      "text": "So this pretty simple observation is, if I change this to an O,"
+    },
+    {
+      "start": 212.92,
+      "end": 218.28,
+      "text": "you can't say that this set of O's will be surrounded by X completely because there's a boundary gap."
+    },
+    {
+      "start": 218.28,
+      "end": 220.28,
+      "text": "And if you take these set of O's,"
+    },
+    {
+      "start": 220.78,
+      "end": 223.82,
+      "text": "you have an empty over here, you have an empty over here."
+    },
+    {
+      "start": 224.0,
+      "end": 227.16,
+      "text": "This might be surrounded but this has an empty."
+    },
+    {
+      "start": 227.16,
+      "end": 232.0,
+      "text": "So if someone is connected to the boundary, if a set of zeros is connected to a boundary,"
+    },
+    {
+      "start": 232.0,
+      "end": 235.36,
+      "text": "they cannot be surrounded by X. That is my first observation."
+    },
+    {
+      "start": 235.74,
+      "end": 237.42,
+      "text": "A set of X,"
+    },
+    {
+      "start": 237.98,
+      "end": 240.48,
+      "text": "connected to a boundary O,"
+    },
+    {
+      "start": 240.48,
+      "end": 242.48,
+      "text": "connected to a boundary O,"
+    },
+    {
+      "start": 244.48,
+      "end": 247.48,
+      "text": "can't be converted."
+    },
+    {
+      "start": 247.48,
+      "end": 248.48,
+      "text": "Yes."
+    },
+    {
+      "start": 251.06,
+      "end": 252.56,
+      "text": "Pretty simple and straightforward."
+    },
+    {
+      "start": 252.56,
+      "end": 254.56,
+      "text": "Now, let's have some observations."
+    },
+    {
+      "start": 255.56,
+      "end": 256.56,
+      "text": "So can I say,"
+    },
+    {
+      "start": 258.06,
+      "end": 260.56,
+      "text": "if I've observed this,"
+    },
+    {
+      "start": 260.56,
+      "end": 263.56,
+      "text": "now which algorithm shall I apply?"
+    },
+    {
+      "start": 265.06,
+      "end": 267.56,
+      "text": "I just need to go through the connections."
+    },
+    {
+      "start": 267.56,
+      "end": 268.56,
+      "text": "Go through the connections."
+    },
+    {
+      "start": 268.56,
+      "end": 269.86,
+      "text": "So can I say,"
+    },
+    {
+      "start": 270.06,
+      "end": 271.56,
+      "text": "if this is an O,"
+    },
+    {
+      "start": 271.56,
+      "end": 273.06,
+      "text": "that's a boundary O,"
+    },
+    {
+      "start": 273.06,
+      "end": 274.56,
+      "text": "and that is what I'm considering."
+    },
+    {
+      "start": 274.56,
+      "end": 276.56,
+      "text": "Anyone that is connected to the boundary,"
+    },
+    {
+      "start": 276.56,
+      "end": 277.56,
+      "text": "I repeat,"
+    },
+    {
+      "start": 277.56,
+      "end": 279.56,
+      "text": "anyone that is connected to the boundary,"
+    },
+    {
+      "start": 279.56,
+      "end": 283.56,
+      "text": "in this direction, in this direction, in this direction, in this direction,"
+    },
+    {
+      "start": 283.56,
+      "end": 286.56,
+      "text": "they will never be converted to X."
+    },
+    {
+      "start": 286.56,
+      "end": 288.56,
+      "text": "They will never ever be converted to X."
+    },
+    {
+      "start": 288.56,
+      "end": 292.06,
+      "text": "So I'm like, okay, I can just do simple algorithm,"
+    },
+    {
+      "start": 292.06,
+      "end": 296.56,
+      "text": "which starts from this boundary and goes and connects to all the O's."
+    },
+    {
+      "start": 296.56,
+      "end": 299.06,
+      "text": "So probably if I just apply some DFS,"
+    },
+    {
+      "start": 299.06,
+      "end": 299.56,
+      "text": "you can apply BFS."
+    },
+    {
+      "start": 299.56,
+      "end": 301.06,
+      "text": "You can apply BFS as well."
+    },
+    {
+      "start": 301.06,
+      "end": 302.56,
+      "text": "If I apply DFS,"
+    },
+    {
+      "start": 302.56,
+      "end": 303.56,
+      "text": "this is an O."
+    },
+    {
+      "start": 304.56,
+      "end": 306.56,
+      "text": "I know this cannot be converted."
+    },
+    {
+      "start": 307.56,
+      "end": 308.56,
+      "text": "Then I go to this."
+    },
+    {
+      "start": 308.56,
+      "end": 309.56,
+      "text": "This is connected."
+    },
+    {
+      "start": 309.56,
+      "end": 310.56,
+      "text": "This also cannot be."
+    },
+    {
+      "start": 310.56,
+      "end": 312.06,
+      "text": "This is connected to this."
+    },
+    {
+      "start": 312.06,
+      "end": 313.06,
+      "text": "This also cannot be."
+    },
+    {
+      "start": 313.06,
+      "end": 314.56,
+      "text": "This is connected to this."
+    },
+    {
+      "start": 314.56,
+      "end": 315.56,
+      "text": "This also cannot be."
+    },
+    {
+      "start": 315.56,
+      "end": 316.56,
+      "text": "This is connected to this."
+    },
+    {
+      "start": 316.56,
+      "end": 317.56,
+      "text": "This also cannot be."
+    },
+    {
+      "start": 317.56,
+      "end": 319.06,
+      "text": "None of them cannot be."
+    },
+    {
+      "start": 319.06,
+      "end": 320.56,
+      "text": "None of them cannot be."
+    },
+    {
+      "start": 320.56,
+      "end": 321.56,
+      "text": "Remember this."
+    },
+    {
+      "start": 321.56,
+      "end": 322.56,
+      "text": "And done."
+    },
+    {
+      "start": 322.56,
+      "end": 325.06,
+      "text": "Because this boundary zero is no more connected to this"
+    },
+    {
+      "start": 325.06,
+      "end": 326.06,
+      "text": "because this is diagonal."
+    },
+    {
+      "start": 326.06,
+      "end": 328.56,
+      "text": "So apparently I can say these set of zeros,"
+    },
+    {
+      "start": 328.56,
+      "end": 330.06,
+      "text": "no matter what you do,"
+    },
+    {
+      "start": 330.06,
+      "end": 331.56,
+      "text": "since they're connected to this guy,"
+    },
+    {
+      "start": 331.56,
+      "end": 333.56,
+      "text": "they cannot be converted to an X."
+    },
+    {
+      "start": 333.56,
+      "end": 334.56,
+      "text": "Similarly, I can say,"
+    },
+    {
+      "start": 334.56,
+      "end": 336.56,
+      "text": "if I take this boundary,"
+    },
+    {
+      "start": 336.56,
+      "end": 338.56,
+      "text": "and I say, okay, go to this."
+    },
+    {
+      "start": 338.56,
+      "end": 341.56,
+      "text": "So these two also cannot be converted to X."
+    },
+    {
+      "start": 341.56,
+      "end": 342.56,
+      "text": "Can I see this?"
+    },
+    {
+      "start": 342.56,
+      "end": 343.56,
+      "text": "I can."
+    },
+    {
+      "start": 343.56,
+      "end": 346.56,
+      "text": "Now, if I just go back a couple of steps,"
+    },
+    {
+      "start": 346.56,
+      "end": 348.56,
+      "text": "okay, since we have done the algorithm."
+    },
+    {
+      "start": 348.56,
+      "end": 352.56,
+      "text": "Now, what if I go across and I say, okay, let's do this X."
+    },
+    {
+      "start": 352.56,
+      "end": 353.56,
+      "text": "Let's do this X."
+    },
+    {
+      "start": 355.06,
+      "end": 356.56,
+      "text": "Now I know what is the boundary."
+    },
+    {
+      "start": 356.56,
+      "end": 357.56,
+      "text": "This is the first O boundary."
+    },
+    {
+      "start": 357.56,
+      "end": 358.56,
+      "text": "Like,"
+    },
+    {
+      "start": 358.56,
+      "end": 359.56,
+      "text": "this is the first O boundary."
+    },
+    {
+      "start": 359.56,
+      "end": 360.56,
+      "text": "So this is where we have."
+    },
+    {
+      "start": 360.56,
+      "end": 363.56,
+      "text": "So if I say, go and connect with all those that you're connected with,"
+    },
+    {
+      "start": 363.56,
+      "end": 365.56,
+      "text": "he will go and say, okay, these zeros."
+    },
+    {
+      "start": 365.56,
+      "end": 367.56,
+      "text": "But apart from that,"
+    },
+    {
+      "start": 367.56,
+      "end": 369.56,
+      "text": "are these zeros touched?"
+    },
+    {
+      "start": 369.56,
+      "end": 370.56,
+      "text": "No, they're not touched."
+    },
+    {
+      "start": 370.56,
+      "end": 371.56,
+      "text": "No, they're not touched."
+    },
+    {
+      "start": 371.56,
+      "end": 373.56,
+      "text": "So if they're not touched, what do you say?"
+    },
+    {
+      "start": 373.56,
+      "end": 375.56,
+      "text": "Please convert them to X."
+    },
+    {
+      "start": 375.56,
+      "end": 376.56,
+      "text": "Perfect."
+    },
+    {
+      "start": 376.56,
+      "end": 378.56,
+      "text": "So the algorithm is very simple."
+    },
+    {
+      "start": 378.56,
+      "end": 381.56,
+      "text": "Start from the boundary zeros."
+    },
+    {
+      "start": 381.56,
+      "end": 382.56,
+      "text": "They can be multiples."
+    },
+    {
+      "start": 382.56,
+      "end": 384.56,
+      "text": "Remember this, they can be multiples."
+    },
+    {
+      "start": 384.56,
+      "end": 387.56,
+      "text": "Start from the boundary zeros."
+    },
+    {
+      "start": 387.56,
+      "end": 394.56,
+      "text": "And mark them that they will not be converted,"
+    },
+    {
+      "start": 394.56,
+      "end": 401.94,
+      "text": "that they will not be converted and convert the rest zeros."
+    },
+    {
+      "start": 401.94,
+      "end": 404.94,
+      "text": "Convert the remaining, sorry, O's."
+    },
+    {
+      "start": 404.94,
+      "end": 406.94,
+      "text": "Remaining O's."
+    },
+    {
+      "start": 406.94,
+      "end": 407.94,
+      "text": "That's my algorithm."
+    },
+    {
+      "start": 407.94,
+      "end": 408.94,
+      "text": "Okay."
+    },
+    {
+      "start": 408.94,
+      "end": 409.94,
+      "text": "So, okay."
+    },
+    {
+      "start": 409.94,
+      "end": 411.94,
+      "text": "So let's take this example."
+    },
+    {
+      "start": 411.94,
+      "end": 413.94,
+      "text": "We're going to perform a DFS traversal."
+    },
+    {
+      "start": 413.94,
+      "end": 415.94,
+      "text": "You can do the BFS traversal as well."
+    },
+    {
+      "start": 415.94,
+      "end": 417.94,
+      "text": "As long as you're starting with the boundaries"
+    },
+    {
+      "start": 417.94,
+      "end": 420.94,
+      "text": "and marking all of those guys who are connected to it,"
+    },
+    {
+      "start": 420.94,
+      "end": 421.94,
+      "text": "that's absolutely okay."
+    },
+    {
+      "start": 421.94,
+      "end": 425.94,
+      "text": "So what I'll do is this is my matrix, right?"
+    },
+    {
+      "start": 425.94,
+      "end": 428.94,
+      "text": "So I'll create a corresponding visited matrix."
+    },
+    {
+      "start": 428.94,
+      "end": 429.94,
+      "text": "Again, you can modify this,"
+    },
+    {
+      "start": 429.94,
+      "end": 433.94,
+      "text": "but I do not modify the given matrix."
+    },
+    {
+      "start": 433.94,
+      "end": 436.94,
+      "text": "I don't modify the given matrix because over here,"
+    },
+    {
+      "start": 436.94,
+      "end": 441.94,
+      "text": "they have clearly stated, replace the O's with X."
+    },
+    {
+      "start": 441.94,
+      "end": 444.94,
+      "text": "So you just replace those with X and return that."
+    },
+    {
+      "start": 444.94,
+      "end": 446.94,
+      "text": "You just replace that and return."
+    },
+    {
+      "start": 446.94,
+      "end": 450.94,
+      "text": "Apart from that, I will not do any modification to the data."
+    },
+    {
+      "start": 450.94,
+      "end": 454.94,
+      "text": "So what I'll do is I'll create a corresponding visited matrix now."
+    },
+    {
+      "start": 454.94,
+      "end": 455.94,
+      "text": "Okay."
+    },
+    {
+      "start": 455.94,
+      "end": 457.94,
+      "text": "So on the left, we have a matrix."
+    },
+    {
+      "start": 457.94,
+      "end": 459.94,
+      "text": "On the right, we have a visited matrix."
+    },
+    {
+      "start": 459.94,
+      "end": 460.94,
+      "text": "Okay."
+    },
+    {
+      "start": 460.94,
+      "end": 463.94,
+      "text": "Now what you do is, you know, you need the boundary O's."
+    },
+    {
+      "start": 463.94,
+      "end": 466.94,
+      "text": "So you go to all the boundaries and find out the first two."
+    },
+    {
+      "start": 466.94,
+      "end": 467.94,
+      "text": "Let's check out."
+    },
+    {
+      "start": 467.94,
+      "end": 471.94,
+      "text": "Boundary, no, no, no, O, no, O, no."
+    },
+    {
+      "start": 471.94,
+      "end": 475.94,
+      "text": "There is no O on the first row."
+    },
+    {
+      "start": 475.94,
+      "end": 478.94,
+      "text": "Let's go uncheck and the first column."
+    },
+    {
+      "start": 478.94,
+      "end": 480.94,
+      "text": "Is there any one on the first column?"
+    },
+    {
+      "start": 480.94,
+      "end": 481.94,
+      "text": "I see the first column."
+    },
+    {
+      "start": 481.94,
+      "end": 483.94,
+      "text": "Yes, there is an O."
+    },
+    {
+      "start": 483.94,
+      "end": 484.94,
+      "text": "There is an O."
+    },
+    {
+      "start": 484.94,
+      "end": 485.94,
+      "text": "So do one thing."
+    },
+    {
+      "start": 485.94,
+      "end": 487.94,
+      "text": "Call the DFS with this guy."
+    },
+    {
+      "start": 487.94,
+      "end": 488.94,
+      "text": "Call the DFS with this guy."
+    },
+    {
+      "start": 488.94,
+      "end": 491.94,
+      "text": "So what you'll do is let's quickly write down the row numbers."
+    },
+    {
+      "start": 491.94,
+      "end": 492.94,
+      "text": "Zero."
+    },
+    {
+      "start": 492.94,
+      "end": 494.94,
+      "text": "This is and the column numbers."
+    },
+    {
+      "start": 494.94,
+      "end": 501.6,
+      "text": "Let's call the DFS from zero comma or rather four comma zero."
+    },
+    {
+      "start": 501.6,
+      "end": 503.6,
+      "text": "This is the DFS call."
+    },
+    {
+      "start": 503.6,
+      "end": 504.6,
+      "text": "You know how the DFS works."
+    },
+    {
+      "start": 504.6,
+      "end": 506.6,
+      "text": "DFS four comma zero will go and mark it."
+    },
+    {
+      "start": 506.6,
+      "end": 508.6,
+      "text": "As visited."
+    },
+    {
+      "start": 508.6,
+      "end": 509.6,
+      "text": "Mark it as visited."
+    },
+    {
+      "start": 509.6,
+      "end": 510.6,
+      "text": "Done."
+    },
+    {
+      "start": 510.6,
+      "end": 513.6,
+      "text": "DFS four comma zero checks the top guy."
+    },
+    {
+      "start": 513.6,
+      "end": 514.6,
+      "text": "It's an X."
+    },
+    {
+      "start": 514.6,
+      "end": 515.6,
+      "text": "No need to go to an X."
+    },
+    {
+      "start": 515.6,
+      "end": 517.6,
+      "text": "Checks the right guy."
+    },
+    {
+      "start": 517.6,
+      "end": 518.6,
+      "text": "It's an O."
+    },
+    {
+      "start": 518.6,
+      "end": 519.6,
+      "text": "Please go and mark it."
+    },
+    {
+      "start": 519.6,
+      "end": 520.6,
+      "text": "Please go and mark it."
+    },
+    {
+      "start": 520.6,
+      "end": 526.94,
+      "text": "So you will say, okay, I'll do a DFS for four comma one."
+    },
+    {
+      "start": 526.94,
+      "end": 529.94,
+      "text": "But will there be any subsequent DFS?"
+    },
+    {
+      "start": 529.94,
+      "end": 532.94,
+      "text": "Like when it comes back, will there be a subsequent DFS?"
+    },
+    {
+      "start": 532.94,
+      "end": 535.94,
+      "text": "No, because there is no one on the bottom."
+    },
+    {
+      "start": 535.94,
+      "end": 536.94,
+      "text": "There is no one on the left."
+    },
+    {
+      "start": 536.94,
+      "end": 542.52,
+      "text": "this one is X and this one is the only you it just goes to this TFS so go to"
+    },
+    {
+      "start": 542.52,
+      "end": 546.1,
+      "text": "the food comma one now when you go to the food comma one you again market is"
+    },
+    {
+      "start": 546.1,
+      "end": 551.46,
+      "text": "visited a standing at food comma one you check up okay this is a no this is an X"
+    },
+    {
+      "start": 551.46,
+      "end": 558.28,
+      "text": "no one already visited so you just go to this guy which is three comma one which"
+    },
+    {
+      "start": 558.28,
+      "end": 563.28,
+      "text": "is three comma one perfect now what will happen is you started here you went here"
+    },
+    {
+      "start": 563.28,
+      "end": 567.3,
+      "text": "you went here they are three comma one please make sure marketers visit it"
+    },
+    {
+      "start": 567.3,
+      "end": 576.09,
+      "text": "please make sure you mark it as visited done correct next three comma one"
+    },
+    {
+      "start": 576.09,
+      "end": 584.55,
+      "text": "standard three comma one up no no visited no so this guy this guy started"
+    },
+    {
+      "start": 584.55,
+      "end": 590.07,
+      "text": "from here and it did a DFS and mark this this this and then from here it did not"
+    },
+    {
+      "start": 590.07,
+      "end": 595.55,
+      "text": "find anyone else to go so he says no more DFS thereby comes back comes back"
+    },
+    {
+      "start": 595.55,
+      "end": 595.63,
+      "text": "you"
+    },
+    {
+      "start": 595.65,
+      "end": 611.01,
+      "text": "N"
+    },
+    {
+      "start": 611.01,
+      "end": 615.87,
+      "text": "these set of zeros cannot be converted done so as of now I've checked the first"
+    },
+    {
+      "start": 615.87,
+      "end": 621.53,
+      "text": "row and the first column let's check out the last column in the last column you"
+    },
+    {
+      "start": 621.53,
+      "end": 625.15,
+      "text": "have a whole but that's already marked you have another oh that's already marked"
+    },
+    {
+      "start": 625.15,
+      "end": 625.55,
+      "text": "you have another oh that's already marked"
+    },
+    {
+      "start": 625.65,
+      "end": 632.03,
+      "text": "So no need to again perform DFS traversals because their connections would have already been marked in the previous traversal."
+    },
+    {
+      "start": 632.85,
+      "end": 633.73,
+      "text": "X, X, X."
+    },
+    {
+      "start": 634.01,
+      "end": 635.65,
+      "text": "So this done, this done, and this done."
+    },
+    {
+      "start": 635.97,
+      "end": 637.13,
+      "text": "We are only left with this guy."
+    },
+    {
+      "start": 638.01,
+      "end": 639.33,
+      "text": "We have an X, you know."
+    },
+    {
+      "start": 639.83,
+      "end": 640.35,
+      "text": "We have an O."
+    },
+    {
+      "start": 640.57,
+      "end": 641.63,
+      "text": "Yes, start from here."
+    },
+    {
+      "start": 641.97,
+      "end": 643.33,
+      "text": "While checking, you just get an O."
+    },
+    {
+      "start": 643.73,
+      "end": 648.47,
+      "text": "So the moment you got an O, start the DFS from there, which is DFS of 1,4."
+    },
+    {
+      "start": 648.97,
+      "end": 651.41,
+      "text": "This is an O, which is DFS of 1,4."
+    },
+    {
+      "start": 651.53,
+      "end": 652.81,
+      "text": "Please mark it as visited."
+    },
+    {
+      "start": 653.17,
+      "end": 654.17,
+      "text": "Please mark it as visited."
+    },
+    {
+      "start": 654.17,
+      "end": 658.85,
+      "text": "The moment you have marked it as visited, done."
+    },
+    {
+      "start": 659.43,
+      "end": 660.45,
+      "text": "Now what is your next step?"
+    },
+    {
+      "start": 660.71,
+      "end": 661.77,
+      "text": "The next step is very simple."
+    },
+    {
+      "start": 662.67,
+      "end": 671.16,
+      "text": "Check out its, no, no, no, yes, which is DFS of 2,4."
+    },
+    {
+      "start": 671.7,
+      "end": 672.48,
+      "text": "Mark it as visited."
+    },
+    {
+      "start": 673.36,
+      "end": 674.0,
+      "text": "Now you go here."
+    },
+    {
+      "start": 674.92,
+      "end": 675.72,
+      "text": "Does it have on the right?"
+    },
+    {
+      "start": 675.88,
+      "end": 676.06,
+      "text": "No."
+    },
+    {
+      "start": 676.14,
+      "end": 676.84,
+      "text": "Does it have on the top?"
+    },
+    {
+      "start": 676.94,
+      "end": 677.24,
+      "text": "Visited."
+    },
+    {
+      "start": 677.4,
+      "end": 678.12,
+      "text": "Does it have on the right?"
+    },
+    {
+      "start": 678.22,
+      "end": 678.38,
+      "text": "No."
+    },
+    {
+      "start": 678.5,
+      "end": 679.22,
+      "text": "Does it have on the bottom?"
+    },
+    {
+      "start": 679.62,
+      "end": 680.92,
+      "text": "No, it does not have."
+    },
+    {
+      "start": 681.2,
+      "end": 683.08,
+      "text": "It does not do any further traversal."
+    },
+    {
+      "start": 683.36,
+      "end": 684.22,
+      "text": "This is also visited."
+    },
+    {
+      "start": 684.72,
+      "end": 685.16,
+      "text": "So."
+    },
+    {
+      "start": 685.16,
+      "end": 691.42,
+      "text": "So apparently this zero is visited and this zero is visited because these set of O's were"
+    },
+    {
+      "start": 691.52,
+      "end": 692.8,
+      "text": "connected to the boundaries."
+    },
+    {
+      "start": 693.32,
+      "end": 694.16,
+      "text": "You can't say diagonal."
+    },
+    {
+      "start": 694.42,
+      "end": 696.4,
+      "text": "So apparently this is done."
+    },
+    {
+      "start": 697.22,
+      "end": 698.34,
+      "text": "You started the DFS done."
+    },
+    {
+      "start": 698.78,
+      "end": 699.28,
+      "text": "Do we have O?"
+    },
+    {
+      "start": 699.84,
+      "end": 700.9,
+      "text": "But this is already visited."
+    },
+    {
+      "start": 701.08,
+      "end": 702.6,
+      "text": "No need XX."
+    },
+    {
+      "start": 702.84,
+      "end": 710.72,
+      "text": "So I have traversed from all the boundaries and marked the corresponding set of zeros that"
+    },
+    {
+      "start": 710.78,
+      "end": 712.04,
+      "text": "cannot be converted."
+    },
+    {
+      "start": 712.28,
+      "end": 714.9,
+      "text": "The corresponding set of zeros that cannot be converted."
+    },
+    {
+      "start": 714.9,
+      "end": 715.4,
+      "text": "Job done."
+    },
+    {
+      "start": 715.4,
+      "end": 719.58,
+      "text": "Travessals done for all the boundary guys."
+    },
+    {
+      "start": 719.94,
+      "end": 720.54,
+      "text": "Next step."
+    },
+    {
+      "start": 721.84,
+      "end": 722.22,
+      "text": "Zero."
+    },
+    {
+      "start": 723.3,
+      "end": 723.88,
+      "text": "Is it zero?"
+    },
+    {
+      "start": 724.62,
+      "end": 726.78,
+      "text": "That means none of the boundary visited it."
+    },
+    {
+      "start": 727.08,
+      "end": 728.72,
+      "text": "This can be converted to an X."
+    },
+    {
+      "start": 729.24,
+      "end": 729.74,
+      "text": "Zero."
+    },
+    {
+      "start": 730.16,
+      "end": 730.66,
+      "text": "Zero."
+    },
+    {
+      "start": 730.92,
+      "end": 731.38,
+      "text": "X."
+    },
+    {
+      "start": 731.7,
+      "end": 732.24,
+      "text": "Zero."
+    },
+    {
+      "start": 732.44,
+      "end": 732.94,
+      "text": "Zero."
+    },
+    {
+      "start": 733.18,
+      "end": 733.62,
+      "text": "X."
+    },
+    {
+      "start": 733.92,
+      "end": 734.42,
+      "text": "Zero."
+    },
+    {
+      "start": 734.78,
+      "end": 735.14,
+      "text": "One."
+    },
+    {
+      "start": 735.7,
+      "end": 737.3,
+      "text": "Someone visited from the boundary."
+    },
+    {
+      "start": 737.5,
+      "end": 738.96,
+      "text": "Someone visited from the boundary."
+    },
+    {
+      "start": 739.58,
+      "end": 740.58,
+      "text": "Keep it as O."
+    },
+    {
+      "start": 741.6,
+      "end": 742.16,
+      "text": "Zero."
+    },
+    {
+      "start": 742.52,
+      "end": 742.96,
+      "text": "Zero."
+    },
+    {
+      "start": 743.06,
+      "end": 743.82,
+      "text": "X."
+    },
+    {
+      "start": 744.16,
+      "end": 744.86,
+      "text": "No one visited."
+    },
+    {
+      "start": 745.42,
+      "end": 746.2,
+      "text": "Someone visited from the boundary."
+    },
+    {
+      "start": 746.2,
+      "end": 746.7,
+      "text": "Zero."
+    },
+    {
+      "start": 747.04,
+      "end": 747.54,
+      "text": "One."
+    },
+    {
+      "start": 747.92,
+      "end": 749.0,
+      "text": "Someone visited from the boundary."
+    },
+    {
+      "start": 749.3,
+      "end": 749.8,
+      "text": "Zero."
+    },
+    {
+      "start": 750.06,
+      "end": 751.78,
+      "text": "Someone visited from the boundary."
+    },
+    {
+      "start": 751.8,
+      "end": 752.3,
+      "text": "Zero."
+    },
+    {
+      "start": 752.42,
+      "end": 753.58,
+      "text": "Someone visited from the boundary."
+    },
+    {
+      "start": 753.82,
+      "end": 754.28,
+      "text": "Zero."
+    },
+    {
+      "start": 754.4,
+      "end": 755.76,
+      "text": "Someone visited from the boundary."
+    },
+    {
+      "start": 756.08,
+      "end": 759.74,
+      "text": "So if someone did not visit it from the boundary, you convert it into an X."
+    },
+    {
+      "start": 759.92,
+      "end": 760.9,
+      "text": "Otherwise you do not."
+    },
+    {
+      "start": 760.98,
+      "end": 762.54,
+      "text": "This is as simple as it can get."
+    },
+    {
+      "start": 763.06,
+      "end": 765.9,
+      "text": "So, if I break down the algorithm, it's very simple."
+    },
+    {
+      "start": 766.78,
+      "end": 773.48,
+      "text": "From boundary, find O's."
+    },
+    {
+      "start": 774.96,
+      "end": 777.68,
+      "text": "And Travessals."
+    },
+    {
+      "start": 778.68,
+      "end": 785.52,
+      "text": "and connect or traverse and mark all those connected to it and traverse and mark all those"
+    },
+    {
+      "start": 785.52,
+      "end": 793.7,
+      "text": "or zeros whatever connected to it okay so let's quickly check out the code so guys as usual i'll"
+    },
+    {
+      "start": 793.7,
+      "end": 799.96,
+      "text": "be coding the c++ and the java code is on the left so we are given an m and a character vector"
+    },
+    {
+      "start": 799.96,
+      "end": 806.68,
+      "text": "so what do you need to do you need to basically convert it so what is the first step you need a"
+    },
+    {
+      "start": 806.68,
+      "end": 813.78,
+      "text": "visited one so please create a visited one there's the first thing you'll need n cross vector of int"
+    },
+    {
+      "start": 813.78,
+      "end": 820.02,
+      "text": "m cross zero so visited are marked as zeros what's the next thing that you need you need to traverse"
+    },
+    {
+      "start": 820.02,
+      "end": 826.58,
+      "text": "the first row first column and the first and the last row and the last column so let's traverse"
+    },
+    {
+      "start": 826.58,
+      "end": 833.18,
+      "text": "on the first row which is so if i traverse on the first row you will have to go to every column"
+    },
+    {
+      "start": 833.18,
+      "end": 840.45,
+      "text": "so so i can say this is uh"
+    },
+    {
+      "start": 840.45,
+      "end": 840.69,
+      "text": "so i can say this is uh"
+    },
+    {
+      "start": 840.69,
+      "end": 849.99,
+      "text": "traverse rows travels first row and last row this will be doing it okay so can i say that"
+    },
+    {
+      "start": 850.95,
+      "end": 858.99,
+      "text": "if this is unvisited which is the first row means zero through and the column is j this is the first"
+    },
+    {
+      "start": 858.99,
+      "end": 866.11,
+      "text": "row and if i say the last row it means n minus one and j the column so this is for first row"
+    },
+    {
+      "start": 868.96,
+      "end": 872.76,
+      "text": "and this is for the last row perfect very simple"
+    },
+    {
+      "start": 872.9,
+      "end": 880.2,
+      "text": "because if i take you back this is zero only this changes this changes this changes this changes"
+    },
+    {
+      "start": 880.2,
+      "end": 885.48,
+      "text": "so this is your j and the zero stays constant for the first row and if you look at for the last row"
+    },
+    {
+      "start": 886.08,
+      "end": 892.16,
+      "text": "this is constant and this changes that is what i have written right so this is the first row if it"
+    },
+    {
+      "start": 892.16,
+      "end": 898.18,
+      "text": "is not visited and it is a zero very important it is a o rather i've been messing it up that's been"
+    },
+    {
+      "start": 898.18,
+      "end": 907.04,
+      "text": "very bad that's fine uh if of o and j but if it is this o can you go and say can you please call"
+    },
+    {
+      "start": 907.04,
+      "end": 913.4,
+      "text": "this dfs for i comma j with the visited matrix and the matrix will add the dfs afterwards similarly"
+    },
+    {
+      "start": 913.4,
+      "end": 925.06,
+      "text": "can i say the same thing if it is having n minus 1 and j equal to equal to an o i say dfs of n minus"
+    },
+    {
+      "start": 925.06,
+      "end": 933.52,
+      "text": "1 by the way this will not be i comma j this will be 0 comma j n minus 1 j visited matrix perfect"
+    },
+    {
+      "start": 933.52,
+      "end": 939.98,
+      "text": "done that will be for the first one the first column can i do a similar thing for the last row"
+    },
+    {
+      "start": 939.98,
+      "end": 943.32,
+      "text": "and last column sorry first column and the last"
+    },
+    {
+      "start": 943.32,
+      "end": 943.38,
+      "text": "column"
+    },
+    {
+      "start": 943.4,
+      "end": 951.52,
+      "text": "i can i can write something like this and i know the first column will be something like this if"
+    },
+    {
+      "start": 951.52,
+      "end": 958.68,
+      "text": "not visited of what i and the first column will always have zero and and"
+    },
+    {
+      "start": 958.68,
+      "end": 968.2,
+      "text": "matrix of i and this is equal to equal to o then you do a dfs traversal for i comma o comma visited"
+    },
+    {
+      "start": 968.2,
+      "end": 973.32,
+      "text": "comma matrix perfect and similarly can i say if not visited the last column is equal to equal to"
+    },
+    {
+      "start": 973.32,
+      "end": 980.52,
+      "text": "equal to o and if this one i comma no is going to be m minus one is going to be m minus one and"
+    },
+    {
+      "start": 980.76,
+      "end": 987.56,
+      "text": "and matrix of i and m minus one is going to be equal to equal to o then you do a dfs call for"
+    },
+    {
+      "start": 987.56,
+      "end": 993.56,
+      "text": "this guy which is i comma m minus one and i visited and a matrix perfect so this is how you'll do it"
+    },
+    {
+      "start": 993.56,
+      "end": 1000.68,
+      "text": "and we'll write the dfs call slowly after that what we'll do is you will go for the entire stuff yes"
+    },
+    {
+      "start": 1000.68,
+      "end": 1002.44,
+      "text": "i'll write something like this"
+    },
+    {
+      "start": 1002.44,
+      "end": 1009.22,
+      "text": "you'll go for the entire stuff and you'll see if this guy is not visited and this guy is still"
+    },
+    {
+      "start": 1009.22,
+      "end": 1015.32,
+      "text": "oh that means you were not touched by anyone in the boundary so can you please convert yourself"
+    },
+    {
+      "start": 1015.32,
+      "end": 1021.26,
+      "text": "into an x and once you have and you run the same matrix right that is something which you have done"
+    },
+    {
+      "start": 1021.26,
+      "end": 1028.48,
+      "text": "i i solely did change the matrix because it was saying replace os with x if it would have sent me"
+    },
+    {
+      "start": 1028.48,
+      "end": 1035.44,
+      "text": "something else and i would have not tampered with the matrix okay so this is done now you just need"
+    },
+    {
+      "start": 1035.44,
+      "end": 1042.74,
+      "text": "to write the dfs so please write the dfs so it's very simple you say private void dfs you have the"
+    },
+    {
+      "start": 1042.74,
+      "end": 1052.62,
+      "text": "row you have the column and you have the visited so now the moment you reach the row column please"
+    },
+    {
+      "start": 1052.62,
+      "end": 1057.6,
+      "text": "make sure you mark it because they are getting attached so once you've marked so once you've"
+    },
+    {
+      "start": 1057.6,
+      "end": 1062.38,
+      "text": "visited this guy what's your task check for top right"
+    },
+    {
+      "start": 1062.64,
+      "end": 1068.58,
+      "text": "bottom and left so how do you check i think everyone now remembers that isn't it you've"
+    },
+    {
+      "start": 1068.58,
+      "end": 1075.44,
+      "text": "been doing that throughout so if you are standing at a row column you need to check the top which is"
+    },
+    {
+      "start": 1075.44,
+      "end": 1080.82,
+      "text": "row minus one column you need to check the bottom which is row plus one column you need to check the"
+    },
+    {
+      "start": 1080.82,
+      "end": 1086.3,
+      "text": "right which is row comma column plus one you need to check the left which is row comma column minus"
+    },
+    {
+      "start": 1086.3,
+      "end": 1092.42,
+      "text": "one so apparently minus one plus zero minus one plus zero plus one"
+    },
+    {
+      "start": 1092.64,
+      "end": 1098.9,
+      "text": "plus zero that is the delta row that will happen in my previous videos i've already told you this"
+    },
+    {
+      "start": 1098.9,
+      "end": 1105.38,
+      "text": "this is plus zero this will be plus one plus zero minus one so this is the delta row and delta column"
+    },
+    {
+      "start": 1106.18,
+      "end": 1112.22,
+      "text": "right so what you can do is you can probably declare it over here the delta rows or you can"
+    },
+    {
+      "start": 1112.22,
+      "end": 1117.82,
+      "text": "declare it globally that is your choice i'll leave that on you so this will be the delta row and delta"
+    },
+    {
+      "start": 1117.82,
+      "end": 1123.66,
+      "text": "column and this will be the delta column which will be something like zero comma"
+    },
+    {
+      "start": 1123.92,
+      "end": 1134.12,
+      "text": "1 comma 0 comma minus 1 perfect so you can pass this on over here but a lot of i don't feel like"
+    },
+    {
+      "start": 1134.12,
+      "end": 1139.72,
+      "text": "passing these many parameters but it's okay so pass down this and now you just need to take it"
+    },
+    {
+      "start": 1139.72,
+      "end": 1145.46,
+      "text": "over here which is delta row and this is going to be delta column perfect now you know there are"
+    },
+    {
+      "start": 1145.72,
+      "end": 1152.24,
+      "text": "which is in this way go into the four neighbors now you just need to check if they are not visited"
+    },
+    {
+      "start": 1153.92,
+      "end": 1163.52,
+      "text": "the new neighbor so new neighbor will be row plus del row of i the new column will be column plus"
+    },
+    {
+      "start": 1163.52,
+      "end": 1169.6,
+      "text": "del column of i perfect now what is the next thing that you'll do you will say if the firstly please"
+    },
+    {
+      "start": 1169.6,
+      "end": 1174.4,
+      "text": "check for validity new row has to be uh by the way you need to also carry the nm that's a lot of"
+    },
+    {
+      "start": 1174.4,
+      "end": 1185.93,
+      "text": "things let's do one thing let's uh figure out nm over here because i need to change a lot of places"
+    },
+    {
+      "start": 1185.93,
+      "end": 1192.57,
+      "text": "which i am not fond of as of now so yeah done so you can say if this is greater than equal to zero"
+    },
+    {
+      "start": 1193.21,
+      "end": 1200.65,
+      "text": "at the same time this n row is lesser than e less than n at the same time n column is greater than"
+    },
+    {
+      "start": 1200.65,
+      "end": 1206.41,
+      "text": "equal to zero at the same time and column is also lesser than m and at the same time these are not"
+    },
+    {
+      "start": 1206.41,
+      "end": 1214.73,
+      "text": "visited and row and n column and at the same time the matrix also has to give you something like"
+    },
+    {
+      "start": 1215.93,
+      "end": 1224.57,
+      "text": "n oh if all of these set all of these satisfy what you will do is you will say okay we can call"
+    },
+    {
+      "start": 1224.57,
+      "end": 1240.22,
+      "text": "the tfs for the n row n column with a visited with a matrix with a del row and a del column"
+    },
+    {
+      "start": 1240.22,
+      "end": 1253.32,
+      "text": "so just make sure these are all capital o's not zeros my bad okay so once you've converted these"
+    },
+    {
+      "start": 1253.32,
+      "end": 1258.12,
+      "text": "i think we are pretty much uh okay and we can now do a component so let's analyze the time of the"
+    },
+    {
+      "start": 1258.12,
+      "end": 1264.2,
+      "text": "complexity in space complexity so this is simple like b go of n uh because you're traversing for"
+    },
+    {
+      "start": 1264.2,
+      "end": 1270.76,
+      "text": "all the boundary of our rows boundary columns so this is b go of n this is another b go of n"
+    },
+    {
+      "start": 1270.76,
+      "end": 1278.36,
+      "text": "but at the end of the day how many times will this dfs be called assume you have all the matrix"
+    },
+    {
+      "start": 1278.36,
+      "end": 1284.44,
+      "text": "let's take a case where you have something like this zero zero zero zero zero zero zero zero"
+    },
+    {
+      "start": 1284.44,
+      "end": 1288.04,
+      "text": "zero zero zero okay you have a matrix like this and you start with the first"
+    },
+    {
+      "start": 1288.12,
+      "end": 1294.44,
+      "text": "guy and then you call a dfs the dfs will go like this go like this go like this go like this go"
+    },
+    {
+      "start": 1294.44,
+      "end": 1301.24,
+      "text": "like this go like this and mark everyone at a single instance so it will be traversing everyone"
+    },
+    {
+      "start": 1301.24,
+      "end": 1306.44,
+      "text": "at the worst case but once this dfs call has been started from here it will mark everyone"
+    },
+    {
+      "start": 1307.56,
+      "end": 1313.96,
+      "text": "and when you start the next dfs call it will never go it will never go so can i say the dfs in total"
+    },
+    {
+      "start": 1313.96,
+      "end": 1318.04,
+      "text": "will run for b go of n cross m cells into four for four directions"
+    },
+    {
+      "start": 1318.12,
+      "end": 1324.28,
+      "text": "so that is obvious and plus there will be uh running they you're running like the loop"
+    },
+    {
+      "start": 1324.28,
+      "end": 1331.16,
+      "text": "for boundaries couple of times so i can narrate it to almost near about n cross m i can narrate the"
+    },
+    {
+      "start": 1331.16,
+      "end": 1338.84,
+      "text": "time complexity to near about n cross m and if i ask you the space complexity yeah we're definitely"
+    },
+    {
+      "start": 1338.84,
+      "end": 1346.76,
+      "text": "using something like visited delros or n cross m and uh if you're performing a dfs at this case"
+    },
+    {
+      "start": 1346.76,
+      "end": 1347.96,
+      "text": "the worst auxiliary value is the one that is the most common one and that is the one that is the"
+    },
+    {
+      "start": 1347.96,
+      "end": 1348.04,
+      "text": "most common one and that is the one that is the most common one and that is the one that is the"
+    },
+    {
+      "start": 1348.04,
+      "end": 1348.2,
+      "text": "most common one and that is the one that is the most common one and that is the one that is the most common"
+    },
+    {
+      "start": 1348.2,
+      "end": 1353.88,
+      "text": "also be n cross m because you'll go go go go go so you'll completely go into the depth so the"
+    },
+    {
+      "start": 1353.88,
+      "end": 1359.16,
+      "text": "space complexity is also near about n cross m in almost all these problems that we are solving"
+    },
+    {
+      "start": 1359.16,
+      "end": 1364.44,
+      "text": "you'll find n cross m uh to be very standard in all the matrix problems so this is how this will"
+    },
+    {
+      "start": 1364.44,
+      "end": 1370.44,
+      "text": "be done so guys i hope i was able to uh make you explain this tough problem so just in case i was"
+    },
+    {
+      "start": 1370.44,
+      "end": 1375.8,
+      "text": "able to please please hit that like button and if you are new to our channel what are you waiting"
+    },
+    {
+      "start": 1375.8,
+      "end": 1377.88,
+      "text": "for hit that subscribe button right away and i will see you in the next video bye"
+    },
+    {
+      "start": 1377.88,
+      "end": 1382.04,
+      "text": "and if you haven't checked out our sd sheet and the dp series the link is in the description"
+    },
+    {
+      "start": 1382.04,
+      "end": 1385.32,
+      "text": "please make sure you check it out and yeah with this i'll be wrapping up this video let's meet"
+    },
+    {
+      "start": 1385.32,
+      "end": 1390.57,
+      "text": "in some other video till then bye bye take care"
+    }
+  ]
+}

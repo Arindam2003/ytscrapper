@@ -1,0 +1,1499 @@
+{
+  "video_id": "YbY8cVwWAvw",
+  "title": "G-42. Floyd Warshall Algorithm",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1812.67,
+  "segments": [
+    {
+      "start": 2.83,
+      "end": 5.99,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.37,
+      "end": 11.11,
+      "text": "So today we will be learning one more shortest path algorithm which is the"
+    },
+    {
+      "start": 11.11,
+      "end": 16.45,
+      "text": "Floyd-Vershul shortest path algorithm. Now this is very very different from the"
+    },
+    {
+      "start": 16.45,
+      "end": 20.29,
+      "text": "Dijkstra or the Bellman-Ford that you learn because Dijkstra and Bellman-Ford"
+    },
+    {
+      "start": 20.29,
+      "end": 26.53,
+      "text": "were a single source shortest path algorithm where you were given a source"
+    },
+    {
+      "start": 26.53,
+      "end": 31.55,
+      "text": "and you have to find out till all the other nodes the shortest path. There was"
+    },
+    {
+      "start": 31.55,
+      "end": 36.65,
+      "text": "only a single source but when you talk about Floyd-Vershul it is different."
+    },
+    {
+      "start": 37.11,
+      "end": 44.85,
+      "text": "Over here there are five nodes so from every node be it from 0, 1, 2, 3, 4 from"
+    },
+    {
+      "start": 44.85,
+      "end": 50.81,
+      "text": "every node you have to tell me the shortest path to every other node over"
+    },
+    {
+      "start": 50.81,
+      "end": 55.97,
+      "text": "here. If I'm asking you from 4 to 1 you should be knowing. If I'm asking you from"
+    },
+    {
+      "start": 55.97,
+      "end": 60.17,
+      "text": "1 to 3 you should be knowing. So there are multiple"
+    },
+    {
+      "start": 79.71,
+      "end": 85.65,
+      "text": "I hope pretty much you have understood what you need to find. Now"
+    },
+    {
+      "start": 85.65,
+      "end": 91.11,
+      "text": "what is the shortest path? Very simple if I'm asking you from 0 to 1 and I ask you"
+    },
+    {
+      "start": 91.11,
+      "end": 97.27,
+      "text": "what is the shortest path in order to reach from zero to one so you can take multiple paths one of"
+    },
+    {
+      "start": 97.27,
+      "end": 103.11,
+      "text": "the paths will take you six you can take this path which is gonna take you five you can take probably"
+    },
+    {
+      "start": 103.11,
+      "end": 108.63,
+      "text": "this path which is again going to take you five or you can take the shortest one which is go here"
+    },
+    {
+      "start": 108.63,
+      "end": 116.31,
+      "text": "go here go here which is going to take two one one which is an addition of i think four yeah"
+    },
+    {
+      "start": 116.31,
+      "end": 123.61,
+      "text": "that's the shortest path so the shortest path from zero to one is zero to two two to four"
+    },
+    {
+      "start": 123.61,
+      "end": 128.49,
+      "text": "four to one this is the shortest path if i'm asking you that's the definition of shortest path"
+    },
+    {
+      "start": 128.49,
+      "end": 135.63,
+      "text": "any path that takes the least amount of edge weights is known as the shortest path so what is"
+    },
+    {
+      "start": 135.63,
+      "end": 143.57,
+      "text": "the thought process behind the blurred virtual algorithm now it's very simple it states go via"
+    },
+    {
+      "start": 143.57,
+      "end": 146.11,
+      "text": "every edge go via"
+    },
+    {
+      "start": 146.31,
+      "end": 152.61,
+      "text": "node rather or go via every vertex or node whatever you wish right so it's"
+    },
+    {
+      "start": 152.61,
+      "end": 157.95,
+      "text": "very simple it states go via every vertex and node go go and try try try"
+    },
+    {
+      "start": 157.95,
+      "end": 163.93,
+      "text": "try and get the shortest one so for an example for an example let's take we"
+    },
+    {
+      "start": 163.93,
+      "end": 169.11,
+      "text": "want to find from 0 to 1 right so if you're trying to find from 0 to 1 assume"
+    },
+    {
+      "start": 169.11,
+      "end": 173.85,
+      "text": "the distance you're trying to find is from 0 to 1 okay so what are the"
+    },
+    {
+      "start": 173.85,
+      "end": 178.41,
+      "text": "possible ways that you can go you can be like striver I can go from 0 to 1"
+    },
+    {
+      "start": 178.41,
+      "end": 182.09,
+      "text": "directly I'll be like yeah that does make sense right because that's the"
+    },
+    {
+      "start": 182.09,
+      "end": 186.15,
+      "text": "straightaway path 0 to 1 if there is an edge I go via that that's one of the"
+    },
+    {
+      "start": 186.15,
+      "end": 192.45,
+      "text": "ways but if I ask you go via every vertex then you can be like okay I can"
+    },
+    {
+      "start": 192.45,
+      "end": 199.05,
+      "text": "probably go via 2 so which will mean I will go to 2 and then from 2 I'll go to"
+    },
+    {
+      "start": 199.05,
+      "end": 203.59,
+      "text": "1 does that make sense yes and if I go from 0 to 2"
+    },
+    {
+      "start": 203.85,
+      "end": 207.87,
+      "text": "cost me 2 and from 2 to 1 it's gonna cost me 3 which will give me a total"
+    },
+    {
+      "start": 207.87,
+      "end": 213.09,
+      "text": "cost of 5 which is nothing but this particular path that is if I go via 2"
+    },
+    {
+      "start": 213.09,
+      "end": 219.09,
+      "text": "that is if I go via 2 can I go via 3 I can that will be something like I'll go"
+    },
+    {
+      "start": 219.09,
+      "end": 226.23,
+      "text": "from 0 to 3 and then I'll go from 3 to 1 correct so if I go from 0 to 3 that's"
+    },
+    {
+      "start": 226.23,
+      "end": 231.93,
+      "text": "gonna cost me 4 from 3 to 1 that's gonna cost me 1 which will be a total cost of"
+    },
+    {
+      "start": 231.93,
+      "end": 233.17,
+      "text": "5 again"
+    },
+    {
+      "start": 233.85,
+      "end": 242.27,
+      "text": "go via 4 i can go via 4 so if i go via 4 let's let me write that in white if i go via 4 it'll"
+    },
+    {
+      "start": 242.27,
+      "end": 250.71,
+      "text": "be 0 to 4 and 4 to 1 right but 0 to 4 if you see it's not direct path it's a path via 2"
+    },
+    {
+      "start": 250.71,
+      "end": 256.33,
+      "text": "probably someone would have computed assume as of now someone has computed that and given you"
+    },
+    {
+      "start": 256.33,
+      "end": 263.61,
+      "text": "from 0 to 4 it's a 3 okay so i'll be like okay 3 and from 4 to 1 it's a 1 so a total of 4"
+    },
+    {
+      "start": 263.61,
+      "end": 273.11,
+      "text": "so apparently we notice that from 0 to 4 and 4 to 1 it's taking me a cost of 4 which is indeed"
+    },
+    {
+      "start": 273.11,
+      "end": 279.83,
+      "text": "the shortest one so what i did was in order to go from 0 to 1 i tried out every different vertex"
+    },
+    {
+      "start": 280.05,
+      "end": 287.85,
+      "text": "can be 2 can be 3 can be 4 and apparently i took the minimal path and this is what it is"
+    },
+    {
+      "start": 287.85,
+      "end": 293.49,
+      "text": "so the logic is very simple assume all the vertex are from like the vertex"
+    },
+    {
+      "start": 293.49,
+      "end": 293.59,
+      "text": "acceptance of x and x zeroes are from x and y zeroes are from x and i put all the vertices"
+    },
+    {
+      "start": 293.59,
+      "end": 293.61,
+      "text": "récup ro because x and y is very simple and that's all suppose all the vertex are from like the vertex is"
+    },
+    {
+      "start": 293.61,
+      "end": 299.63,
+      "text": "are definitely from 0 to n minus 1 so i can say all the vertex so if i'm trying to look can i say"
+    },
+    {
+      "start": 299.63,
+      "end": 307.35,
+      "text": "if some somewhere down the line if this is i and this is j and can i say this is nothing but i go"
+    },
+    {
+      "start": 307.35,
+      "end": 317.29,
+      "text": "from straight i to j which is nothing but the edge itself and can i say this this this to be k"
+    },
+    {
+      "start": 317.29,
+      "end": 325.85,
+      "text": "assume so can i write the path to be minimum of if you try out all the k's it will be from i to k"
+    },
+    {
+      "start": 325.85,
+      "end": 333.51,
+      "text": "very obvious because you go from 0 to 2 and then from 2 to this which is nothing but the j"
+    },
+    {
+      "start": 334.11,
+      "end": 343.37,
+      "text": "correct so can i write this plus j of k i can that's what the path is from i to k i'll go"
+    },
+    {
+      "start": 343.37,
+      "end": 347.27,
+      "text": "and from j to k is what i have to go and if i take minimum"
+    },
+    {
+      "start": 347.27,
+      "end": 354.69,
+      "text": "of all of them 5 5 4 minimum of all of the go through vertex then the answer i'll have the"
+    },
+    {
+      "start": 354.69,
+      "end": 359.87,
+      "text": "answer somewhere down the line i've understood but i need to implement this on a wider scale"
+    },
+    {
+      "start": 359.87,
+      "end": 366.71,
+      "text": "what do i mean by a wider scale because over here 0 to 4 was not a direct edge because 0 to 4 meant"
+    },
+    {
+      "start": 366.71,
+      "end": 374.89,
+      "text": "it went via 2 so it was going via 2 so somewhere down the line in the past someone would have also"
+    },
+    {
+      "start": 374.89,
+      "end": 377.25,
+      "text": "computed 0 to 4 and they would have also computed 0 to 4 and they would have also computed 0 to 4"
+    },
+    {
+      "start": 377.25,
+      "end": 385.87,
+      "text": "have implemented via 2 via to understand so 0 to 4 would have been computed and stored so this is"
+    },
+    {
+      "start": 385.87,
+      "end": 390.43,
+      "text": "where you get an idea okay something like a dynamic programming because we're using something"
+    },
+    {
+      "start": 390.43,
+      "end": 396.39,
+      "text": "which has already been computed so you get an idea that okay this is a dynamic programming solution"
+    },
+    {
+      "start": 396.99,
+      "end": 400.87,
+      "text": "it's not necessarily that you know dynamic programming i'm just saying try to relate"
+    },
+    {
+      "start": 400.87,
+      "end": 405.95,
+      "text": "we're using something which is pre-computed if i write it properly i can write something which is"
+    },
+    {
+      "start": 406.63,
+      "end": 407.23,
+      "text": "pre-computed"
+    },
+    {
+      "start": 407.25,
+      "end": 415.73,
+      "text": "which was in this case this one because 0 to 4 was pre-computed you did not compute at the point"
+    },
+    {
+      "start": 415.73,
+      "end": 422.37,
+      "text": "someone already knew what was the value to go from 0 to 4 that is what you need as a pre-computation"
+    },
+    {
+      "start": 422.37,
+      "end": 429.07,
+      "text": "so you pretty much got the formula now what i'll do is i'll try to give you a sense of the graph"
+    },
+    {
+      "start": 429.07,
+      "end": 435.33,
+      "text": "and then slowly and slowly step by step implement this algorithm so that you understand how is this"
+    },
+    {
+      "start": 435.33,
+      "end": 436.63,
+      "text": "algorithm implemented"
+    },
+    {
+      "start": 436.63,
+      "end": 442.31,
+      "text": "till now in all the problems we have been using the adjacency list in order to store the graph"
+    },
+    {
+      "start": 442.31,
+      "end": 447.35,
+      "text": "but in the lecture 2 i've also taught you one more method which is the adjacency matrix method"
+    },
+    {
+      "start": 447.35,
+      "end": 452.87,
+      "text": "so you're gonna use the adjacency matrix method in order to store this particular graph okay it's"
+    },
+    {
+      "start": 452.87,
+      "end": 457.59,
+      "text": "very simple in case you haven't seen the lecture 2 it's very very simple so something we know for"
+    },
+    {
+      "start": 457.59,
+      "end": 462.47,
+      "text": "sure is if 0 is the node and i want to go to 0 itself the cost will be 0 if i want to go from 1 to 1"
+    },
+    {
+      "start": 462.47,
+      "end": 469.69,
+      "text": "the cost will be zero. If I want to go from one to one, the cost will be still zero. So from any"
+    },
+    {
+      "start": 469.69,
+      "end": 476.65,
+      "text": "given node to the node itself, the cost is going to be zero no matter what you do because you're"
+    },
+    {
+      "start": 476.65,
+      "end": 482.69,
+      "text": "already standing in the node. Something I know, zero, zero. So this portion will be storing the"
+    },
+    {
+      "start": 482.69,
+      "end": 489.19,
+      "text": "cost. So I can call this as a cost matrix. So zero to zero will be zero, one to one will be zero,"
+    },
+    {
+      "start": 489.19,
+      "end": 494.01,
+      "text": "two to two will be zero, three to three will be zero. So basically I'm saying this is zero, zero,"
+    },
+    {
+      "start": 494.41,
+      "end": 500.85,
+      "text": "zero. This is one, one, zero. This is two, two, zero. This is three, three, which is again zero."
+    },
+    {
+      "start": 501.17,
+      "end": 507.75,
+      "text": "Pretty much understood, right? Now what are the other, it says zero to one is two. So go to zero"
+    },
+    {
+      "start": 507.75,
+      "end": 513.93,
+      "text": "to one and store two. Go to zero, go to one and store two. It says one to zero is one. So you go"
+    },
+    {
+      "start": 513.93,
+      "end": 519.17,
+      "text": "to one, you go to zero and you store one, okay? It says three to zero is,"
+    },
+    {
+      "start": 519.19,
+      "end": 524.49,
+      "text": "three. So go to three, go to zero and store three. Do not store the opposite vertex because"
+    },
+    {
+      "start": 524.49,
+      "end": 529.95,
+      "text": "it's a directed graph. It is a directed graph. If it's an undirected graph, for an example,"
+    },
+    {
+      "start": 530.49,
+      "end": 536.93,
+      "text": "if it's an undirected graph and you want to apply, and you want to apply this Floyd version,"
+    },
+    {
+      "start": 537.45,
+      "end": 545.47,
+      "text": "just split this into something like this. Five, five. As you see, dual direction edge,"
+    },
+    {
+      "start": 545.47,
+      "end": 549.13,
+      "text": "but with different values. In undirected, just make sure you assign,"
+    },
+    {
+      "start": 549.19,
+      "end": 554.53,
+      "text": "them same values. Now remember, you just store three, zero as three, because there is no zero,"
+    },
+    {
+      "start": 554.67,
+      "end": 563.25,
+      "text": "three. Okay. Nice. Next is three, one as five. So go to three and one and assign five. Next is"
+    },
+    {
+      "start": 563.25,
+      "end": 570.81,
+      "text": "one, two as three. Go to one and two and assign as three. Perfect. One, two, one, two assigned as"
+    },
+    {
+      "start": 570.81,
+      "end": 575.37,
+      "text": "three. Do we have any other thing? One, two, three, four, five, one, two, three, four, five."
+    },
+    {
+      "start": 575.37,
+      "end": 578.83,
+      "text": "Okay. We have three to two as four, three to two as four. Done."
+    },
+    {
+      "start": 579.19,
+      "end": 585.53,
+      "text": "So what I've done is I've assigned the cost. Make sure everyone else is infinity, which means"
+    },
+    {
+      "start": 585.53,
+      "end": 592.47,
+      "text": "unreachable as of now, which means unreachable as of now. So this is the initial cost matrix,"
+    },
+    {
+      "start": 592.81,
+      "end": 599.21,
+      "text": "which you can always derive from the given graph. Now you must be thinking, but Stryver, this is a"
+    },
+    {
+      "start": 599.21,
+      "end": 605.17,
+      "text": "DG, a directed graph. What if it's a UG? How will we implement the Floyd version? Very simple."
+    },
+    {
+      "start": 605.67,
+      "end": 609.05,
+      "text": "If there is an edge like this, and it has a cost of five,"
+    },
+    {
+      "start": 609.19,
+      "end": 617.45,
+      "text": "you say, okay, five this way, five this way. So this is how you convert a UG to a DG. Make"
+    },
+    {
+      "start": 617.45,
+      "end": 621.99,
+      "text": "dual direction edge. Similar to something like this. If you see over here, there's a"
+    },
+    {
+      "start": 621.99,
+      "end": 628.75,
+      "text": "dual direction edge, but with different weights. Okay. So if you have to apply Floyd version"
+    },
+    {
+      "start": 628.75,
+      "end": 637.37,
+      "text": "in an undirected graph, just split that edge into two edges of same weights. That's how you can"
+    },
+    {
+      "start": 637.37,
+      "end": 638.89,
+      "text": "easily convert a UG."
+    },
+    {
+      "start": 639.19,
+      "end": 646.23,
+      "text": "To a directed graph. So this is the initial cost. Now, what did I say? Let's, as of now,"
+    },
+    {
+      "start": 646.83,
+      "end": 656.43,
+      "text": "assume that I'm going to move via vertex zero. That's my first thing. I'll move via vertex zero."
+    },
+    {
+      "start": 656.81,
+      "end": 662.53,
+      "text": "So if I move via vertex zero, I will have some upgraded distance, something for sure. So let's"
+    },
+    {
+      "start": 662.53,
+      "end": 668.49,
+      "text": "start off with vertex zero and see what will be the resultant matrix that we will get. Now,"
+    },
+    {
+      "start": 668.49,
+      "end": 669.17,
+      "text": "I'm saying, if I move via vertex zero, I will have some upgraded distance, something for sure."
+    },
+    {
+      "start": 669.19,
+      "end": 676.09,
+      "text": "So I'm going to move via the root zero. So can I say, at first, this is zero to zero stored as"
+    },
+    {
+      "start": 676.09,
+      "end": 685.49,
+      "text": "zero. Next is zero to one. So which means you're moving via root zero, which is zero to zero plus"
+    },
+    {
+      "start": 685.49,
+      "end": 691.93,
+      "text": "zero to one. Can I say it's similar to saying zero to one, because zero to zero will always be zero"
+    },
+    {
+      "start": 691.97,
+      "end": 698.91,
+      "text": "and zero to one is what we have already stored too. So I can just copy paste too. Next is zero to"
+    },
+    {
+      "start": 698.91,
+      "end": 699.17,
+      "text": "two. Next is zero to two. So this is what we have already stored too. So let's say, if I move via vertex"
+    },
+    {
+      "start": 699.19,
+      "end": 706.85,
+      "text": "can I say it's similar 0 to 2 is nothing but saying 0 to via 0 by the way via 0 means 0 to"
+    },
+    {
+      "start": 706.85,
+      "end": 714.99,
+      "text": "0 which is again 0 plus 0 to 2 which is nothing but infinity so similarly this will also be"
+    },
+    {
+      "start": 714.99,
+      "end": 722.85,
+      "text": "infinity y 0 to 3 will mean 0 to 0 and 0 to 3 similarly this will mean 1 to 0 what does 1 to 0"
+    },
+    {
+      "start": 722.85,
+      "end": 732.57,
+      "text": "mean 1 to 0 means via 0 means 1 to 0 itself and then 0 to 0 via 0 means that only right via 0"
+    },
+    {
+      "start": 732.57,
+      "end": 739.09,
+      "text": "means that because this is i this is j you're moving via 0 so can I say this one this one this"
+    },
+    {
+      "start": 739.09,
+      "end": 745.75,
+      "text": "one will just copy paste these values just go across copy paste these values why because very"
+    },
+    {
+      "start": 745.75,
+      "end": 751.09,
+      "text": "simple if your destination is 0 you can't move via 0 so whatever you're taking in order to reach 0"
+    },
+    {
+      "start": 751.09,
+      "end": 752.39,
+      "text": "that is what you copy paste."
+    },
+    {
+      "start": 752.71,
+      "end": 752.83,
+      "text": "So don't worry about that."
+    },
+    {
+      "start": 752.83,
+      "end": 758.71,
+      "text": "What about these places let's fill them up so I'm saying this place is 1 to 2 so I'm saying"
+    },
+    {
+      "start": 758.71,
+      "end": 771.19,
+      "text": "1 to 2 via 0 which means 1 to 0 plus 0 to 2 let's see the value of 1 to 0 1 to 0 is 1 so I'll just"
+    },
+    {
+      "start": 771.19,
+      "end": 779.63,
+      "text": "write 1 plus 0 to 2 plus 0 to 2 is infinity so that means it's an infinity which I do not need"
+    },
+    {
+      "start": 779.63,
+      "end": 782.69,
+      "text": "to write so what I'll do is I will keep it as of now and what I'll do is I'll keep it as of now"
+    },
+    {
+      "start": 782.69,
+      "end": 789.31,
+      "text": "and whatever is the value because I know in order to reach 1 to 2 I'm taking 3 and if I go via 0 I'm"
+    },
+    {
+      "start": 789.31,
+      "end": 796.01,
+      "text": "taking infinity so 3 is a better option so let's keep 3 no offense let's keep 3 next one I see is"
+    },
+    {
+      "start": 796.01,
+      "end": 805.69,
+      "text": "1 to 3 you see next one is 1 to 3 okay so for 1 to 3 it will be I'll go from 1 sorry I'll go from 1"
+    },
+    {
+      "start": 805.69,
+      "end": 812.41,
+      "text": "to 0 plus 0 to 3 now what is 1 to 0 that's 1."
+    },
+    {
+      "start": 812.41,
+      "end": 812.55,
+      "text": "Let's go from 1 to 0 to 3."
+    },
+    {
+      "start": 812.55,
+      "end": 819.51,
+      "text": "Let's see what is 0 to 3 so 0 to 3 is again infinity so if you go via 0 you'll again get"
+    },
+    {
+      "start": 819.51,
+      "end": 826.03,
+      "text": "infinity and for 1 to 3 are we reachable in 1 to 3 no infinity we'll just copy paste infinity so"
+    },
+    {
+      "start": 826.03,
+      "end": 831.37,
+      "text": "similarly I can say this is done similarly what I'll do is I'll figure out the next guys which"
+    },
+    {
+      "start": 831.37,
+      "end": 838.65,
+      "text": "is this which is nothing but 2 to 1 now 2 to 1 via 0 let's see I'll go from 2 to 0 how much is it"
+    },
+    {
+      "start": 838.89,
+      "end": 841.15,
+      "text": "2 to 0 is infinity so"
+    },
+    {
+      "start": 841.15,
+      "end": 842.27,
+      "text": "the"
+    },
+    {
+      "start": 842.27,
+      "end": 850.55,
+      "text": "the path will not be considered next I'll do 2 to 2 so if I go again to do 0 it is again infinity not"
+    },
+    {
+      "start": 850.55,
+      "end": 856.61,
+      "text": "to be considered next I'll go 2 to 3 which will be via 0 which is again infinity not to be considered"
+    },
+    {
+      "start": 856.61,
+      "end": 863.07,
+      "text": "so apparently everyone else is infinity in this case because it was previously infinity now also"
+    },
+    {
+      "start": 863.07,
+      "end": 869.03,
+      "text": "I'm getting infinity so infinity infinity proper next let's see the next part which is somewhere"
+    },
+    {
+      "start": 869.03,
+      "end": 872.11,
+      "text": "this one this one and this one okay so 3 to 1."
+    },
+    {
+      "start": 872.27,
+      "end": 901.25,
+      "text": "Let's see if we can get something better 3 to 1 what am I saying via 0 via 0 let's see if I go via 0 which is 3 0 3 0 is 3 okay perfect plus 0 to 1 because I have to reach 1 so 0 to 1 0 to 1 is 2 so that gives me a total of 5 which is already what I'm taking so nothing better we just copy paste the values we just copy paste the values so 3 to 1 is done."
+    },
+    {
+      "start": 901.25,
+      "end": 902.23,
+      "text": "Let's get the next."
+    },
+    {
+      "start": 902.27,
+      "end": 931.25,
+      "text": "What is the next guy I'm saying 3 to 2 which means I'll go via 0 which is 3 0 right plus 0 2 let's see what's the value of 3 0 3 0 is 3 what's the value of 0 2 0 2 is infinity nothing better so you're already reaching 3 2 at 4 so we'll keep 4 perfect so this is what happens if I try to go via 0 so via 0 via 0."
+    },
+    {
+      "start": 931.25,
+      "end": 932.15,
+      "text": "Via 0."
+    },
+    {
+      "start": 932.27,
+      "end": 962.25,
+      "text": "I built all the paths all the paths have been built let's move to the next one so next one I'll see via 1 let's go via 1 and see what is the new because remember via 0 path has been built here via 0 path has been built here I'll figure out the via 1 path now once I figured out the via 1 I'll figure it out via 2 via 3 and so on we'll get all the answers so again we know if even if I go via 1."
+    },
+    {
+      "start": 962.27,
+      "end": 962.77,
+      "text": "Via 1."
+    },
+    {
+      "start": 962.77,
+      "end": 991.27,
+      "text": "Something I know for sure is these guys will be 0 note to note and anyone who goes 1 like if the source is 1 like for this guy this entire portion will be nothing but this why because if you're trying to reach 1 0 it actually means 1 to via 1 means 1 to 1 plus 1 to 0 so you're actually going to himself only if you're saying starting from 1 going via 1."
+    },
+    {
+      "start": 991.27,
+      "end": 991.91,
+      "text": "Via 1."
+    },
+    {
+      "start": 992.27,
+      "end": 999.93,
+      "text": "It doesn't make sense so you just copy paste whatever is there you just copy paste 1 0 3 and infinity similarly can I say."
+    },
+    {
+      "start": 999.93,
+      "end": 1000.27,
+      "text": "Via 1."
+    },
+    {
+      "start": 1000.27,
+      "end": 1012.31,
+      "text": "If this is one the destination it still doesn't make sense via going via 1 and reaching 1 will that make sense going via 1 and reaching 1 will that make sense now you copy paste this row as well."
+    },
+    {
+      "start": 1012.31,
+      "end": 1012.77,
+      "text": "Via 1."
+    },
+    {
+      "start": 1012.77,
+      "end": 1022.23,
+      "text": "2 0 infinity 5 done copy paste it so now let's compute this this this this and this this."
+    },
+    {
+      "start": 1022.27,
+      "end": 1026.43,
+      "text": "5 values left to be computed let's do it so first one is 0 to."
+    },
+    {
+      "start": 1026.43,
+      "end": 1029.43,
+      "text": "Via 1 means 0 1."
+    },
+    {
+      "start": 1029.43,
+      "end": 1051.75,
+      "text": "Plus 1 2 let's compute this so 0 1 means 0 sorry you'll take this 0 and this one which is 2 0 1 means 2 plus 1 2 1 2 means 3 you get a 3 which makes it 5 what is the value already stored infinity you are reaching at a better position 5."
+    },
+    {
+      "start": 1051.75,
+      "end": 1052.23,
+      "text": "You."
+    },
+    {
+      "start": 1052.27,
+      "end": 1056.03,
+      "text": "Go via when you're reaching at 5 much better much better."
+    },
+    {
+      "start": 1056.03,
+      "end": 1057.03,
+      "text": "Next."
+    },
+    {
+      "start": 1057.03,
+      "end": 1058.27,
+      "text": "0 3."
+    },
+    {
+      "start": 1058.27,
+      "end": 1059.47,
+      "text": "Via 1."
+    },
+    {
+      "start": 1059.47,
+      "end": 1060.15,
+      "text": "Means."
+    },
+    {
+      "start": 1060.15,
+      "end": 1061.87,
+      "text": "0 1 is 2."
+    },
+    {
+      "start": 1061.87,
+      "end": 1064.51,
+      "text": "Plus 1 3 let's see the value of 1 3."
+    },
+    {
+      "start": 1064.51,
+      "end": 1070.87,
+      "text": "So if I take the value of 1 and 3 that's infinity not to be considered so what is the value is this copy paste."
+    },
+    {
+      "start": 1070.87,
+      "end": 1072.51,
+      "text": "Perfect let's copy paste the value."
+    },
+    {
+      "start": 1072.51,
+      "end": 1074.11,
+      "text": "Amazing next."
+    },
+    {
+      "start": 1074.11,
+      "end": 1077.11,
+      "text": "Let's erase this let's go to the next row."
+    },
+    {
+      "start": 1077.11,
+      "end": 1081.23,
+      "text": "If I go to the next row or the next row it's this one and this one 2 0."
+    },
+    {
+      "start": 1081.23,
+      "end": 1082.19,
+      "text": "So if I go via 2."
+    },
+    {
+      "start": 1082.19,
+      "end": 1082.23,
+      "text": "0."
+    },
+    {
+      "start": 1082.23,
+      "end": 1085.59,
+      "text": "That's going via 1."
+    },
+    {
+      "start": 1085.59,
+      "end": 1089.99,
+      "text": "Which is 2 1 and then going from 1 to 0 let's see the values of 2 1."
+    },
+    {
+      "start": 1089.99,
+      "end": 1099.35,
+      "text": "So I go to 1 infinity not to be considered so whatever is the value this copy paste still we have been figured out next is this one which is 2 3."
+    },
+    {
+      "start": 1099.35,
+      "end": 1112.15,
+      "text": "So if I go via 2 3 which will be 2 1 plus yes plus nothing but 1 3 what is 2 1 let's see 2 1 infinity again not to."
+    },
+    {
+      "start": 1112.15,
+      "end": 1114.63,
+      "text": "be considered next."
+    },
+    {
+      "start": 1114.63,
+      "end": 1118.43,
+      "text": "This is the next one 3 0 so if we take 3 0."
+    },
+    {
+      "start": 1118.43,
+      "end": 1131.11,
+      "text": "That's nothing but 3 1 plus 1 0 correct so what's the value of 3 1 what's the value of 3 1 guys 3 1's value is very simple it's 5 so let's write 5."
+    },
+    {
+      "start": 1131.11,
+      "end": 1136.11,
+      "text": "Plus 1 0 what's the value of 1 0 guys 1 0 is 1 so plus 1 which is 6 so as of now what is the value of 3 0 it is 3."
+    },
+    {
+      "start": 1136.11,
+      "end": 1136.71,
+      "text": "So as of now what is the value of 3 0 it is 3."
+    },
+    {
+      "start": 1136.71,
+      "end": 1141.27,
+      "text": "So as of now what is the value of 3 0 it is 3."
+    },
+    {
+      "start": 1141.27,
+      "end": 1153.63,
+      "text": "I'm already reaching 3 0 at a value 3 so why will I take 6 so I'll keep reaching directly reaching previously whatever previous ways I've taken to reach 3 that's better."
+    },
+    {
+      "start": 1153.63,
+      "end": 1169.37,
+      "text": "No need to take the new upgraded version next is 3 2 let's compute 3 2 so if I try to compute 3 2 it'll be 3 1 again which will be 5 right plus 1 2 which is nothing but 3 this time that's 8."
+    },
+    {
+      "start": 1169.37,
+      "end": 1171.15,
+      "text": "So if you see it's already."
+    },
+    {
+      "start": 1171.27,
+      "end": 1176.39,
+      "text": "Reaching at 4 so why will I take the 8 one so via 1 I have computed it."
+    },
+    {
+      "start": 1176.39,
+      "end": 1190.91,
+      "text": "I've computed the matrix via 1 as well similarly what you'll do is you will go via 2 and then you will get a matrix using that matrix you will do a via 3 and you will get an ultimate matrix."
+    },
+    {
+      "start": 1190.91,
+      "end": 1199.01,
+      "text": "Whenever you get this ultimate matrix this will be your shortest path between everyone between everyone."
+    },
+    {
+      "start": 1199.45,
+      "end": 1201.15,
+      "text": "So if someone tomorrow comes up and says."
+    },
+    {
+      "start": 1201.27,
+      "end": 1209.91,
+      "text": "You hate giving the shortest path between 3 and 0 so you go 3 you go 0 and you say whatever is stored here that's a shortest path."
+    },
+    {
+      "start": 1209.91,
+      "end": 1221.03,
+      "text": "So you can figure out from every node 1 to every node 2 the shortest path from this ultimate matrix that has been generated."
+    },
+    {
+      "start": 1221.03,
+      "end": 1231.15,
+      "text": "So what are we doing exactly at first we're going via 0 then via 1 then via 2 then via 3 so can I say I'm going with everyone."
+    },
+    {
+      "start": 1231.15,
+      "end": 1239.21,
+      "text": "And whenever I'm going by as you know basically taking this when I'm taking this and I'm taking this then I'm taking this then I'm taking this I'm taking this is basically for this."
+    },
+    {
+      "start": 1239.57,
+      "end": 1250.23,
+      "text": "Taking this for this taking this for this I'm doing this for this I'm dating this every iteration can I say what I'm doing is very straightforward and very simple."
+    },
+    {
+      "start": 1250.89,
+      "end": 1253.77,
+      "text": "And that's nothing but I'm going from I equal to 0."
+    },
+    {
+      "start": 1254.59,
+      "end": 1256.33,
+      "text": "To the last node."
+    },
+    {
+      "start": 1257.17,
+      "end": 1261.07,
+      "text": "And this is what I'm doing because I want to go from my 2G."
+    },
+    {
+      "start": 1261.15,
+      "end": 1268.73,
+      "text": "so this is what i'm doing at every node can i say this yes or no i can and what am i doing"
+    },
+    {
+      "start": 1268.73,
+      "end": 1276.97,
+      "text": "i'm trying to go for an example cost of ij i'll take the cost as minimum of minimum of either"
+    },
+    {
+      "start": 1276.97,
+      "end": 1283.31,
+      "text": "what i have taken to reach it that is currently what i'm taking currently if i'm taking five"
+    },
+    {
+      "start": 1283.31,
+      "end": 1289.59,
+      "text": "i'll consider that five and i'll consider the new one via one so the new one via will be nothing but"
+    },
+    {
+      "start": 1289.59,
+      "end": 1299.95,
+      "text": "cost of i via whatever you're going via plus cost of that via of j can i say this i can"
+    },
+    {
+      "start": 1299.95,
+      "end": 1306.99,
+      "text": "and this is what i'm doing at every iteration every iteration first via zero via will be zero"
+    },
+    {
+      "start": 1306.99,
+      "end": 1313.75,
+      "text": "here next via one so via will be one here next via two it'll get two i'm trying out everyone"
+    },
+    {
+      "start": 1313.75,
+      "end": 1319.27,
+      "text": "trying out this this this everyone and automatically these will be zeros because you have"
+    },
+    {
+      "start": 1319.59,
+      "end": 1323.95,
+      "text": "initially you would have assigned zero so this will take care that it will always be zeros when"
+    },
+    {
+      "start": 1323.95,
+      "end": 1328.81,
+      "text": "you do comparisons so what is this via first it is zero then it is one then it is two then it is three"
+    },
+    {
+      "start": 1328.81,
+      "end": 1337.29,
+      "text": "so can i say for via equal to zero via lesser than n because zero one two three every node"
+    },
+    {
+      "start": 1337.29,
+      "end": 1344.67,
+      "text": "till via plus plus is what this will be and once you have done this n cube loop operation"
+    },
+    {
+      "start": 1344.67,
+      "end": 1349.19,
+      "text": "at the end of the day you will have your resultant matrix"
+    },
+    {
+      "start": 1349.59,
+      "end": 1354.47,
+      "text": "which will be your answer so if you see we have pretty much derived this one for every iteration"
+    },
+    {
+      "start": 1354.47,
+      "end": 1359.99,
+      "text": "and then we have wrapped it under a wire because via will always change first get the wire zero via"
+    },
+    {
+      "start": 1359.99,
+      "end": 1367.27,
+      "text": "one via two and ultimately the cost of ij will be storing your ultimate shortest distance now"
+    },
+    {
+      "start": 1367.27,
+      "end": 1373.59,
+      "text": "couple of questions first question is how to detect a negative cycle what if the graph has a"
+    },
+    {
+      "start": 1373.59,
+      "end": 1379.43,
+      "text": "negative cycle because we know for a negative cycle imagine a"
+    },
+    {
+      "start": 1379.59,
+      "end": 1387.67,
+      "text": "cycle like this where we say okay it takes minus two minus three plus two so the total costing is"
+    },
+    {
+      "start": 1387.67,
+      "end": 1394.47,
+      "text": "minus two plus two minus three minus two plus two guys goes so total costing is minus three"
+    },
+    {
+      "start": 1394.47,
+      "end": 1402.63,
+      "text": "so what will happen is the floyd version will work properly and it will figure out a path via one"
+    },
+    {
+      "start": 1402.63,
+      "end": 1409.19,
+      "text": "two to reach zero so the costing of zero and zero will be minus three"
+    },
+    {
+      "start": 1409.59,
+      "end": 1416.31,
+      "text": "and apparently the costing of any given node to itself should be zero because the"
+    },
+    {
+      "start": 1416.31,
+      "end": 1423.35,
+      "text": "node to node should always be zero and if it is anything lesser to zero if the costing of"
+    },
+    {
+      "start": 1423.35,
+      "end": 1432.47,
+      "text": "any node can i say this if the costing of any node from zero to n it's very simple if the costing of"
+    },
+    {
+      "start": 1432.47,
+      "end": 1438.79,
+      "text": "i and i which is the node to node itself is lesser than zero i can always say"
+    },
+    {
+      "start": 1439.59,
+      "end": 1446.71,
+      "text": "negative cycle exists i can always say negative cycle exists very simple if we are going from"
+    },
+    {
+      "start": 1447.83,
+      "end": 1454.39,
+      "text": "all the nodes and node to node is less than zero means floyd roshiel has gone via this and has"
+    },
+    {
+      "start": 1454.39,
+      "end": 1459.83,
+      "text": "reduced the cost from zero to something lesser because of a negative cycle and you know if it"
+    },
+    {
+      "start": 1459.83,
+      "end": 1463.75,
+      "text": "has a negative cycle it doesn't make sense to find the shortest path because someone will do"
+    },
+    {
+      "start": 1465.75,
+      "end": 1469.59,
+      "text": "unlimited turns and you'll just reduce its cost every now and then"
+    },
+    {
+      "start": 1469.59,
+      "end": 1473.19,
+      "text": "so thereby it's not possible for a negative"
+    },
+    {
+      "start": 1473.19,
+      "end": 1476.79,
+      "text": "cycle so i hope you've understood the entire explanation it's time to code it up so as"
+    },
+    {
+      "start": 1476.79,
+      "end": 1482.31,
+      "text": "usual the c plus solution is on the right and the exact similar java code is on the left so"
+    },
+    {
+      "start": 1482.31,
+      "end": 1485.75,
+      "text": "you have to find the shortest distance between every pair of vertices in a given"
+    },
+    {
+      "start": 1485.75,
+      "end": 1490.87,
+      "text": "edge weight directed graph the graph is represented by an adjacent matrix and the"
+    },
+    {
+      "start": 1490.87,
+      "end": 1497.67,
+      "text": "matrix denotes the weight of the edges if it exits else minus one remember they are stating minus one"
+    },
+    {
+      "start": 1497.67,
+      "end": 1499.19,
+      "text": "not as infinity if you are not going to use the matrix method then it's not going to work that's"
+    },
+    {
+      "start": 1499.19,
+      "end": 1499.43,
+      "text": "how to find the shortest distance between a given edge weight and the ages don't work so if you want to"
+    },
+    {
+      "start": 1499.43,
+      "end": 1505.43,
+      "text": "if there is an edge they're stating it as minus one so you have to probably do a bit of a thing"
+    },
+    {
+      "start": 1505.43,
+      "end": 1512.39,
+      "text": "before doing it so do it in place you have to do it in place is what you have to do and i'm"
+    },
+    {
+      "start": 1512.39,
+      "end": 1516.87,
+      "text": "assuming that there the graph does not contains negative cycles otherwise they would have stated"
+    },
+    {
+      "start": 1516.87,
+      "end": 1521.91,
+      "text": "it so we have to do it in place that means whatever the matrix is given you have to update"
+    },
+    {
+      "start": 1521.91,
+      "end": 1529.35,
+      "text": "it with the shortest path instead of uh actually doing a cost matrix and returning it so remember"
+    },
+    {
+      "start": 1529.43,
+      "end": 1533.67,
+      "text": "if you have a plant a y point i will say empty so right now i've set it to at least in an odd"
+    },
+    {
+      "start": 1533.67,
+      "end": 1539.75,
+      "text": "number so here you can see every 1 over here everything is doing what i will tell you do"
+    },
+    {
+      "start": 1539.75,
+      "end": 1546.47,
+      "text": "the r plane it is not helping here and if i am making a comma in this left area here"
+    },
+    {
+      "start": 1547.67,
+      "end": 1553.51,
+      "text": "i am going all the way up to zero so this is the point where this is going to look misaligned"
+    },
+    {
+      "start": 1554.31,
+      "end": 1558.83,
+      "text": "so what you have to do now is go and I will write this 123 bunny train that is there"
+    },
+    {
+      "start": 1559.43,
+      "end": 1565.95,
+      "text": "can say 1 e 9 i'll just give it a very big value and while i return i'll just change it to minus 1"
+    },
+    {
+      "start": 1565.95,
+      "end": 1570.47,
+      "text": "and one other condition i'll always keep if i is equal to equal to j which is the diagonal"
+    },
+    {
+      "start": 1570.47,
+      "end": 1576.39,
+      "text": "i know the reaching place is always 0 so that's what i'll initialize and before returning just"
+    },
+    {
+      "start": 1576.39,
+      "end": 1581.87,
+      "text": "make sure you do the same thing yes before returning just make sure you do the opposite of"
+    },
+    {
+      "start": 1581.87,
+      "end": 1588.83,
+      "text": "it okay so before returning if it's 1 e 9 still which means it's not reachable and if it's not"
+    },
+    {
+      "start": 1588.83,
+      "end": 1594.05,
+      "text": "reachable do it a minus 1 before returning you do this okay now let's perform our algorithm it's"
+    },
+    {
+      "start": 1594.05,
+      "end": 1600.83,
+      "text": "very simple we know k will be 0 and k will go till less this and after that we know i will be 0 and i"
+    },
+    {
+      "start": 1600.83,
+      "end": 1607.59,
+      "text": "will also go till this and we know the other thing will be j equal to 0 and j will go lesser than"
+    },
+    {
+      "start": 1607.59,
+      "end": 1616.89,
+      "text": "this and the other thing we know is matrix of i j will be minimum of matrix of i j comma matrix of"
+    },
+    {
+      "start": 1616.89,
+      "end": 1618.47,
+      "text": "i via k"
+    },
+    {
+      "start": 1618.47,
+      "end": 1618.81,
+      "text": "so"
+    },
+    {
+      "start": 1618.81,
+      "end": 1618.83,
+      "text": "so"
+    },
+    {
+      "start": 1618.83,
+      "end": 1625.59,
+      "text": "this and matrix of k to j perfect and i think this should be more or less it about the algorithm"
+    },
+    {
+      "start": 1625.59,
+      "end": 1629.99,
+      "text": "it's a very uh straightforward one so if you see on compilation it is giving the correct output so"
+    },
+    {
+      "start": 1629.99,
+      "end": 1636.27,
+      "text": "i'll submit it and yeah it does pass so one more thing to add before i wrap it up if in an interview"
+    },
+    {
+      "start": 1636.27,
+      "end": 1641.55,
+      "text": "someone does ask you what if there is a negative cycle so you'll say hey i'll just probably write"
+    },
+    {
+      "start": 1641.55,
+      "end": 1647.75,
+      "text": "something like this over here if it's a negative cycle i'd like if the matrix contains i i equal"
+    },
+    {
+      "start": 1647.75,
+      "end": 1648.81,
+      "text": "lesser than zero"
+    },
+    {
+      "start": 1648.81,
+      "end": 1654.61,
+      "text": "before assigning this lesser than zero then i can probably print something or something like this"
+    },
+    {
+      "start": 1654.61,
+      "end": 1660.11,
+      "text": "i can do it over here so let's discuss the time and space complexity the time complexity of the"
+    },
+    {
+      "start": 1660.11,
+      "end": 1665.67,
+      "text": "algorithm major time complexity is n cube definitely now a lot of you will be thinking"
+    },
+    {
+      "start": 1665.67,
+      "end": 1671.01,
+      "text": "the space complexity is bigo of one because you're using the given matrix no whenever we talk about"
+    },
+    {
+      "start": 1671.01,
+      "end": 1676.91,
+      "text": "space complexity it's generally the space that i'm using to solve that problem in order to solve"
+    },
+    {
+      "start": 1676.91,
+      "end": 1678.79,
+      "text": "this problem i'm using matrix so the space that i'm using to solve that problem is the space that i'm"
+    },
+    {
+      "start": 1678.79,
+      "end": 1686.33,
+      "text": "using if i would have not been using this then i can avoid it but if i'm using that goes inside my"
+    },
+    {
+      "start": 1686.33,
+      "end": 1691.43,
+      "text": "space that i've been using i'll say the n square is the space we're using a cost matrix the cost"
+    },
+    {
+      "start": 1691.43,
+      "end": 1695.33,
+      "text": "matrix will be your space which is n square you can't say if someone is giving you something"
+    },
+    {
+      "start": 1695.33,
+      "end": 1700.95,
+      "text": "it it does contain a space we're taking it you need place to store it right so you are using"
+    },
+    {
+      "start": 1700.95,
+      "end": 1708.29,
+      "text": "some space which is n square over here so i hope uh it is clear i might be thinking but striver"
+    },
+    {
+      "start": 1708.79,
+      "end": 1713.43,
+      "text": "is a very good example of this so let's go back and analyze the graph and see if you would have"
+    },
+    {
+      "start": 1713.43,
+      "end": 1721.03,
+      "text": "implemented dixtra so let's go back and analyze that as well so if you remember dixtra does not"
+    },
+    {
+      "start": 1721.03,
+      "end": 1729.43,
+      "text": "yes does not works for negative cycles it will fall under yes a tle loop so that's where dixtra"
+    },
+    {
+      "start": 1729.43,
+      "end": 1734.23,
+      "text": "cannot be implemented but if the graph does not have negative cycles or something you can actually"
+    },
+    {
+      "start": 1734.23,
+      "end": 1738.79,
+      "text": "apply dixtra for all the nodes because dixtra in itself takes e log v so what you can do is i'm"
+    },
+    {
+      "start": 1738.79,
+      "end": 1745.75,
+      "text": "going to apply dixtra on every individual node to find out the answer every individual node and"
+    },
+    {
+      "start": 1745.75,
+      "end": 1753.19,
+      "text": "it will still be n cross e log v so it will still be less like v cross e log v it won't go till n"
+    },
+    {
+      "start": 1753.19,
+      "end": 1758.95,
+      "text": "cube which the floyd ocean is taking apply individual dixtra on every node to get every"
+    },
+    {
+      "start": 1758.95,
+      "end": 1764.55,
+      "text": "pair distance you can do that but it doesn't work for negative now if in an interview someone does"
+    },
+    {
+      "start": 1764.55,
+      "end": 1768.79,
+      "text": "ask you about floyd ocean do not just tell the algorithm tell about these extra things like"
+    },
+    {
+      "start": 1768.79,
+      "end": 1774.31,
+      "text": "does something like a dixtra will not work where how can you detect a negative cycle if you add up"
+    },
+    {
+      "start": 1774.31,
+      "end": 1779.75,
+      "text": "these extra points in an interview it's always a cherry on the cake so make sure you add these"
+    },
+    {
+      "start": 1779.75,
+      "end": 1785.51,
+      "text": "extra points if the interviewer does ask you about the floyd ocean algorithm so guys i hope i was able"
+    },
+    {
+      "start": 1785.51,
+      "end": 1789.19,
+      "text": "to explain you the floyd ocean algorithm and you've understood everything just in case you did"
+    },
+    {
+      "start": 1789.19,
+      "end": 1792.55,
+      "text": "please please please make sure you like this video and if you're new to our channel what are you"
+    },
+    {
+      "start": 1792.55,
+      "end": 1795.91,
+      "text": "waiting for i think it's time that you hit that subscribe button and if you haven't checked out"
+    },
+    {
+      "start": 1795.91,
+      "end": 1798.71,
+      "text": "our dp series and the sdc the links will be in the description"
+    },
+    {
+      "start": 1798.79,
+      "end": 1802.07,
+      "text": "please make sure you check them out with this i'll be wrapping up this video let's meet in some other"
+    },
+    {
+      "start": 1802.07,
+      "end": 1803.83,
+      "text": "video till then bye bye take care"
+    }
+  ]
+}

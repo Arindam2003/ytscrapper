@@ -1,0 +1,1789 @@
+{
+  "video_id": "Rn6B-Q4SNyA",
+  "title": "G-51. Number of Islands - II - Online Queries - DSU",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1531.29,
+  "segments": [
+    {
+      "start": 3.3,
+      "end": 6.34,
+      "text": "hey everyone welcome back to the channel i hope you guys are doing extremely well"
+    },
+    {
+      "start": 6.34,
+      "end": 12.42,
+      "text": "so today we will be solving the problem number of islands two and it's a problem which is kind of"
+    },
+    {
+      "start": 12.42,
+      "end": 18.18,
+      "text": "an online query problem what do you mean by online query i give you a query you tell me the answer i"
+    },
+    {
+      "start": 18.18,
+      "end": 22.5,
+      "text": "give you a query you tell me the answer i give you a query you tell me the answer i give you something"
+    },
+    {
+      "start": 22.5,
+      "end": 26.98,
+      "text": "you do some changes you tell me the answer the changes what you need to do i will tell you"
+    },
+    {
+      "start": 26.98,
+      "end": 32.34,
+      "text": "okay so every time i'll give you something you do the changes as according to the question and then"
+    },
+    {
+      "start": 32.34,
+      "end": 39.38,
+      "text": "you return the answer so give answer give answer give answer that's what you call as online queries"
+    },
+    {
+      "start": 39.38,
+      "end": 44.58,
+      "text": "okay so this is the part two of this problem i've already solved part one in this particular series"
+    },
+    {
+      "start": 44.58,
+      "end": 51.54,
+      "text": "you can go back and watch it as well so the prerequisite for this video is disjoint set"
+    },
+    {
+      "start": 51.54,
+      "end": 56.42,
+      "text": "data structure i've already discussed this in the previous video in this particular graph series"
+    },
+    {
+      "start": 56.42,
+      "end": 60.98,
+      "text": "just in case you don't know about it go back and watch it the reason i'm asking you to go back and"
+    },
+    {
+      "start": 60.98,
+      "end": 62.08,
+      "text": "watch it is because that's your IQ in not knowing about it so click watch video just go back and"
+    },
+    {
+      "start": 62.08,
+      "end": 62.12,
+      "text": "watch it there's a link in the description for the reaction page where you go back and watch it"
+    },
+    {
+      "start": 62.16,
+      "end": 62.22,
+      "text": "because that is gave toTYP2VMSで and then you give answer the answer this given the answer give answer々 that's"
+    },
+    {
+      "start": 62.22,
+      "end": 62.28,
+      "text": "what do you call as online queries okay so this is the path to of this problem I've already solved part one in this particular series"
+    },
+    {
+      "start": 62.28,
+      "end": 66.28,
+      "text": "because I'm going to reuse the snippet of the code that I've coded in the disjoint set video."
+    },
+    {
+      "start": 66.52,
+      "end": 66.58,
+      "text": "Okay."
+    },
+    {
+      "start": 66.82,
+      "end": 68.42,
+      "text": "So let's understand the question."
+    },
+    {
+      "start": 68.94,
+      "end": 70.52,
+      "text": "Zero is C."
+    },
+    {
+      "start": 71.06,
+      "end": 72.64,
+      "text": "One is island."
+    },
+    {
+      "start": 72.96,
+      "end": 73.48,
+      "text": "Keep it in mind."
+    },
+    {
+      "start": 73.62,
+      "end": 73.72,
+      "text": "Okay."
+    },
+    {
+      "start": 74.18,
+      "end": 78.02,
+      "text": "Initially, all are like, we have an entire C."
+    },
+    {
+      "start": 78.46,
+      "end": 83.0,
+      "text": "Someone comes up and says, hey, can you create an island at 0,0?"
+    },
+    {
+      "start": 83.12,
+      "end": 86.08,
+      "text": "I'll be like, okay, let me create an island at 0,0."
+    },
+    {
+      "start": 86.42,
+      "end": 88.6,
+      "text": "So you just create an island at this position."
+    },
+    {
+      "start": 88.96,
+      "end": 89.18,
+      "text": "Okay."
+    },
+    {
+      "start": 89.18,
+      "end": 94.5,
+      "text": "Now remember, what do we mean by components kind of this?"
+    },
+    {
+      "start": 94.92,
+      "end": 97.94,
+      "text": "So if I have 1, 1, 1, it's a component."
+    },
+    {
+      "start": 98.24,
+      "end": 104.68,
+      "text": "If they share a similar side, they can share a similar this side, this side, this side, this side."
+    },
+    {
+      "start": 105.04,
+      "end": 109.18,
+      "text": "You can't say these two be connected because they're sharing a diagonal low."
+    },
+    {
+      "start": 109.46,
+      "end": 110.48,
+      "text": "They have to share a side."
+    },
+    {
+      "start": 110.94,
+      "end": 111.1,
+      "text": "Okay."
+    },
+    {
+      "start": 111.34,
+      "end": 112.62,
+      "text": "You'll understand as we move."
+    },
+    {
+      "start": 112.92,
+      "end": 115.08,
+      "text": "So as of now, we have a single component."
+    },
+    {
+      "start": 115.48,
+      "end": 119.08,
+      "text": "So after the placement of the first guy, the answer is 0."
+    },
+    {
+      "start": 119.18,
+      "end": 119.42,
+      "text": "Is 1."
+    },
+    {
+      "start": 119.84,
+      "end": 124.02,
+      "text": "Because I just have a single group of islands, a single group of islands."
+    },
+    {
+      "start": 124.04,
+      "end": 124.28,
+      "text": "Okay."
+    },
+    {
+      "start": 124.64,
+      "end": 126.16,
+      "text": "The next guy is 0, 0."
+    },
+    {
+      "start": 126.36,
+      "end": 128.54,
+      "text": "But wait, we already have an island there."
+    },
+    {
+      "start": 129.04,
+      "end": 130.7,
+      "text": "So there's no need to place the island again."
+    },
+    {
+      "start": 131.04,
+      "end": 133.74,
+      "text": "Thereby, we still have one island."
+    },
+    {
+      "start": 134.0,
+      "end": 138.04,
+      "text": "So remember this, if there is an island already, you do not place another island."
+    },
+    {
+      "start": 138.14,
+      "end": 138.5,
+      "text": "Okay."
+    },
+    {
+      "start": 138.7,
+      "end": 140.92,
+      "text": "Next, 1, 1."
+    },
+    {
+      "start": 141.18,
+      "end": 142.24,
+      "text": "Let's place an island there."
+    },
+    {
+      "start": 143.08,
+      "end": 143.74,
+      "text": "1, 1."
+    },
+    {
+      "start": 144.4,
+      "end": 146.08,
+      "text": "Can I call this as a group of islands?"
+    },
+    {
+      "start": 146.26,
+      "end": 148.78,
+      "text": "I said, you know, they're individual groups."
+    },
+    {
+      "start": 148.78,
+      "end": 150.0,
+      "text": "They're individual groups."
+    },
+    {
+      "start": 150.32,
+      "end": 152.52,
+      "text": "So we have two groups after this placement."
+    },
+    {
+      "start": 152.98,
+      "end": 154.96,
+      "text": "So we have two groups after this placement."
+    },
+    {
+      "start": 155.16,
+      "end": 155.3,
+      "text": "Perfect."
+    },
+    {
+      "start": 155.52,
+      "end": 157.0,
+      "text": "Next, 1, 0."
+    },
+    {
+      "start": 157.16,
+      "end": 157.92,
+      "text": "Where's 1, 0?"
+    },
+    {
+      "start": 158.18,
+      "end": 158.32,
+      "text": "Here."
+    },
+    {
+      "start": 158.66,
+      "end": 159.52,
+      "text": "Let's quickly place it."
+    },
+    {
+      "start": 159.9,
+      "end": 162.76,
+      "text": "Now, this and this share a side."
+    },
+    {
+      "start": 163.2,
+      "end": 164.64,
+      "text": "This and this share a side."
+    },
+    {
+      "start": 165.08,
+      "end": 167.94,
+      "text": "So this is a single group."
+    },
+    {
+      "start": 168.54,
+      "end": 170.92,
+      "text": "So after the placement of this, you have one group."
+    },
+    {
+      "start": 171.64,
+      "end": 171.9,
+      "text": "Nice."
+    },
+    {
+      "start": 172.18,
+      "end": 173.62,
+      "text": "Next, 0, 1."
+    },
+    {
+      "start": 173.74,
+      "end": 174.26,
+      "text": "Where's 0, 1?"
+    },
+    {
+      "start": 174.5,
+      "end": 174.66,
+      "text": "Here."
+    },
+    {
+      "start": 175.0,
+      "end": 176.16,
+      "text": "So you can place it over here."
+    },
+    {
+      "start": 176.16,
+      "end": 178.52,
+      "text": "Now, if you see this, it's a single group."
+    },
+    {
+      "start": 178.78,
+      "end": 180.34,
+      "text": "So you still have a single group."
+    },
+    {
+      "start": 180.78,
+      "end": 181.1,
+      "text": "Amazing."
+    },
+    {
+      "start": 181.48,
+      "end": 182.04,
+      "text": "What's the next?"
+    },
+    {
+      "start": 182.44,
+      "end": 183.16,
+      "text": "0, 3."
+    },
+    {
+      "start": 183.6,
+      "end": 184.7,
+      "text": "Go ahead and put it over here."
+    },
+    {
+      "start": 185.2,
+      "end": 190.92,
+      "text": "So this time, can I say, I have one group over here, one group over here, because in between there are Cs."
+    },
+    {
+      "start": 191.18,
+      "end": 193.34,
+      "text": "You cannot connect them because they need to share a side."
+    },
+    {
+      "start": 193.82,
+      "end": 195.76,
+      "text": "Thereby, we have now again 2."
+    },
+    {
+      "start": 196.22,
+      "end": 197.88,
+      "text": "Next, we have 1, 3."
+    },
+    {
+      "start": 198.04,
+      "end": 198.78,
+      "text": "Where's 1, 3?"
+    },
+    {
+      "start": 198.96,
+      "end": 199.14,
+      "text": "Here."
+    },
+    {
+      "start": 199.52,
+      "end": 202.96,
+      "text": "So can I say, even if I put it here, it's still going to be the same."
+    },
+    {
+      "start": 203.1,
+      "end": 204.1,
+      "text": "It's still going to be the same."
+    },
+    {
+      "start": 204.1,
+      "end": 206.36,
+      "text": "So thereby, I can say, hey, listen."
+    },
+    {
+      "start": 207.22,
+      "end": 207.98,
+      "text": "It's still having."
+    },
+    {
+      "start": 208.78,
+      "end": 211.48,
+      "text": "2 group of islands, which is pretty decent."
+    },
+    {
+      "start": 211.7,
+      "end": 212.32,
+      "text": "0, 4."
+    },
+    {
+      "start": 212.72,
+      "end": 213.5,
+      "text": "Where's 0, 4?"
+    },
+    {
+      "start": 213.92,
+      "end": 214.38,
+      "text": "Which is here."
+    },
+    {
+      "start": 214.84,
+      "end": 216.5,
+      "text": "So even if I place it here, remember this."
+    },
+    {
+      "start": 216.98,
+      "end": 221.42,
+      "text": "Even if I place it here, it's still going to be in the same group."
+    },
+    {
+      "start": 222.02,
+      "end": 226.38,
+      "text": "If it is still in the same group, can I say, it doesn't matter to us."
+    },
+    {
+      "start": 226.94,
+      "end": 228.04,
+      "text": "It's still in the same group."
+    },
+    {
+      "start": 228.36,
+      "end": 229.94,
+      "text": "So thereby, I still have 2."
+    },
+    {
+      "start": 230.26,
+      "end": 230.5,
+      "text": "Perfect."
+    },
+    {
+      "start": 230.66,
+      "end": 231.1,
+      "text": "Next, what?"
+    },
+    {
+      "start": 231.34,
+      "end": 231.86,
+      "text": "3, 2."
+    },
+    {
+      "start": 232.06,
+      "end": 232.66,
+      "text": "Where's 3, 2?"
+    },
+    {
+      "start": 233.04,
+      "end": 233.3,
+      "text": "Here."
+    },
+    {
+      "start": 233.68,
+      "end": 234.56,
+      "text": "Let's quickly place it."
+    },
+    {
+      "start": 234.56,
+      "end": 235.4,
+      "text": "I place it."
+    },
+    {
+      "start": 235.7,
+      "end": 238.18,
+      "text": "The moment I place it there, can I say, I have now 3?"
+    },
+    {
+      "start": 238.78,
+      "end": 241.22,
+      "text": "1 here, 1 here, and 1 here."
+    },
+    {
+      "start": 241.58,
+      "end": 241.76,
+      "text": "Yes."
+    },
+    {
+      "start": 242.12,
+      "end": 243.64,
+      "text": "Next, I have 2, 2."
+    },
+    {
+      "start": 243.84,
+      "end": 244.42,
+      "text": "Let's place it."
+    },
+    {
+      "start": 244.9,
+      "end": 246.08,
+      "text": "The moment I place 2, 2."
+    },
+    {
+      "start": 246.34,
+      "end": 247.38,
+      "text": "Again, this is separate."
+    },
+    {
+      "start": 247.7,
+      "end": 248.5,
+      "text": "This is separate."
+    },
+    {
+      "start": 248.9,
+      "end": 249.48,
+      "text": "This is separate."
+    },
+    {
+      "start": 249.86,
+      "end": 250.52,
+      "text": "Be very careful."
+    },
+    {
+      "start": 250.78,
+      "end": 252.44,
+      "text": "Because you cannot connect them diagonally."
+    },
+    {
+      "start": 253.48,
+      "end": 254.12,
+      "text": "We still have 3."
+    },
+    {
+      "start": 254.72,
+      "end": 256.16,
+      "text": "Next, 1, 2."
+    },
+    {
+      "start": 256.76,
+      "end": 257.0,
+      "text": "Okay."
+    },
+    {
+      "start": 257.64,
+      "end": 258.86,
+      "text": "Now is the point."
+    },
+    {
+      "start": 259.22,
+      "end": 263.82,
+      "text": "The moment you place it here, everyone is an individual group now."
+    },
+    {
+      "start": 264.88,
+      "end": 266.1,
+      "text": "So it's 1."
+    },
+    {
+      "start": 266.7,
+      "end": 268.46,
+      "text": "Right from 3, you boil down to 1."
+    },
+    {
+      "start": 268.78,
+      "end": 270.5,
+      "text": "Right from 3, you boil down to 1."
+    },
+    {
+      "start": 270.8,
+      "end": 272.42,
+      "text": "Next, we have 0, 2."
+    },
+    {
+      "start": 272.58,
+      "end": 273.32,
+      "text": "Where's 0, 2?"
+    },
+    {
+      "start": 273.62,
+      "end": 273.78,
+      "text": "Here."
+    },
+    {
+      "start": 274.18,
+      "end": 278.14,
+      "text": "Even if you place it here, it still stays as a single thing."
+    },
+    {
+      "start": 278.48,
+      "end": 279.76,
+      "text": "So you still have a single thing."
+    },
+    {
+      "start": 280.18,
+      "end": 281.72,
+      "text": "So I can say, I still have a single thing."
+    },
+    {
+      "start": 282.28,
+      "end": 284.2,
+      "text": "So ultimately, you need to return."
+    },
+    {
+      "start": 284.68,
+      "end": 287.46,
+      "text": "After first query, answer is 1, 1, 2, 1, 1."
+    },
+    {
+      "start": 287.72,
+      "end": 290.3,
+      "text": "We can put them into a list."
+    },
+    {
+      "start": 290.74,
+      "end": 293.16,
+      "text": "And this is the list you have to return."
+    },
+    {
+      "start": 293.16,
+      "end": 294.76,
+      "text": "The online query list."
+    },
+    {
+      "start": 295.14,
+      "end": 296.3,
+      "text": "This is what you have to return."
+    },
+    {
+      "start": 296.58,
+      "end": 296.72,
+      "text": "Right?"
+    },
+    {
+      "start": 297.06,
+      "end": 297.76,
+      "text": "Understood the question?"
+    },
+    {
+      "start": 297.76,
+      "end": 299.58,
+      "text": "So how will you solve this problem?"
+    },
+    {
+      "start": 299.72,
+      "end": 301.04,
+      "text": "Which algorithm to use?"
+    },
+    {
+      "start": 301.48,
+      "end": 302.52,
+      "text": "Can I say, what are you doing?"
+    },
+    {
+      "start": 302.86,
+      "end": 303.84,
+      "text": "You're first placing here."
+    },
+    {
+      "start": 304.2,
+      "end": 305.22,
+      "text": "Then maybe you're placing."
+    },
+    {
+      "start": 305.52,
+      "end": 306.28,
+      "text": "Then you're placing here."
+    },
+    {
+      "start": 306.6,
+      "end": 308.46,
+      "text": "And when you're placing somewhere here, you're connecting."
+    },
+    {
+      "start": 308.72,
+      "end": 309.16,
+      "text": "You're connecting."
+    },
+    {
+      "start": 309.82,
+      "end": 310.28,
+      "text": "Right?"
+    },
+    {
+      "start": 310.46,
+      "end": 311.18,
+      "text": "And then you're placing here."
+    },
+    {
+      "start": 311.26,
+      "end": 311.66,
+      "text": "You're connecting."
+    },
+    {
+      "start": 312.0,
+      "end": 312.76,
+      "text": "Then you're placing here."
+    },
+    {
+      "start": 312.86,
+      "end": 313.36,
+      "text": "Then you're placing."
+    },
+    {
+      "start": 313.44,
+      "end": 313.84,
+      "text": "You're connecting."
+    },
+    {
+      "start": 314.08,
+      "end": 314.66,
+      "text": "Then you're placing here."
+    },
+    {
+      "start": 314.72,
+      "end": 315.0,
+      "text": "You're connecting."
+    },
+    {
+      "start": 315.36,
+      "end": 316.08,
+      "text": "Then you're placing here."
+    },
+    {
+      "start": 316.2,
+      "end": 316.76,
+      "text": "Then you're placing here."
+    },
+    {
+      "start": 316.78,
+      "end": 317.1,
+      "text": "You're connecting."
+    },
+    {
+      "start": 317.66,
+      "end": 318.76,
+      "text": "You're connecting people."
+    },
+    {
+      "start": 319.12,
+      "end": 320.06,
+      "text": "You're connecting cells."
+    },
+    {
+      "start": 320.36,
+      "end": 321.28,
+      "text": "You're connecting nodes."
+    },
+    {
+      "start": 322.02,
+      "end": 322.78,
+      "text": "Which algorithm?"
+    },
+    {
+      "start": 323.78,
+      "end": 324.8,
+      "text": "You got it right."
+    },
+    {
+      "start": 325.14,
+      "end": 327.62,
+      "text": "This joint set data structure is the algorithm."
+    },
+    {
+      "start": 327.76,
+      "end": 334.32,
+      "text": "which will be used why because that is the only algorithm which connects connects connects and"
+    },
+    {
+      "start": 334.32,
+      "end": 341.22,
+      "text": "is used in dynamic graphs it's a dynamic graph it is changing every now and then so dynamic graph"
+    },
+    {
+      "start": 341.22,
+      "end": 347.46,
+      "text": "connections there's only one data structure that is the disjoint set data structure so you know"
+    },
+    {
+      "start": 347.46,
+      "end": 351.62,
+      "text": "in disjoint set data structure we have nodes the zeroth node will be the parent of himself the"
+    },
+    {
+      "start": 351.62,
+      "end": 354.96,
+      "text": "first node will be the parent of himself the second node will be the parent of himself so on"
+    },
+    {
+      "start": 354.96,
+      "end": 360.62,
+      "text": "till end nodes so if we are representing every cell as a node you have to give every cell a"
+    },
+    {
+      "start": 360.62,
+      "end": 367.82,
+      "text": "number which will be represented in disjoint set so can i say cell zero cell one cell two cell three"
+    },
+    {
+      "start": 367.82,
+      "end": 377.27,
+      "text": "cell five cell six cell seven cell eight cell nine ten eleven twelve can i say i can go on till"
+    },
+    {
+      "start": 377.27,
+      "end": 385.31,
+      "text": "19 which is kind of like four this was four which is m equal to five this was three n equal to four"
+    },
+    {
+      "start": 385.31,
+      "end": 387.41,
+      "text": "five into four like we need"
+    },
+    {
+      "start": 387.55,
+      "end": 395.85,
+      "text": "20 positions because 0 to 90 is 20 position can i say it's like n cross n but how do i figure out"
+    },
+    {
+      "start": 395.85,
+      "end": 405.97,
+      "text": "because this is 0 1 2 3 4 5 6 7 8 9 10 11 how do i figure out 11 is representing 2 comma 1 how do i"
+    },
+    {
+      "start": 405.97,
+      "end": 412.95,
+      "text": "figure this out or vice versa 2 comma 1 means 11th node how will you figure this out now very very"
+    },
+    {
+      "start": 412.95,
+      "end": 423.41,
+      "text": "easy you know every column has five nodes this column has again five so five plus five till here"
+    },
+    {
+      "start": 423.41,
+      "end": 430.23,
+      "text": "will be 10 nodes because first column will consume five nodes second column will consume five nodes"
+    },
+    {
+      "start": 430.23,
+      "end": 436.59,
+      "text": "again so when you add the third column which is the second index can i say two into five the"
+    },
+    {
+      "start": 436.59,
+      "end": 441.97,
+      "text": "previous two columns would have consumed till here 10 nodes which is very obvious which is very"
+    },
+    {
+      "start": 441.97,
+      "end": 442.89,
+      "text": "obvious they would"
+    },
+    {
+      "start": 442.89,
+      "end": 442.93,
+      "text": "have"
+    },
+    {
+      "start": 442.93,
+      "end": 449.65,
+      "text": "already consumed 10 nodes which is nothing but 2 into 5 2 is the row number because it is 0 based"
+    },
+    {
+      "start": 449.65,
+      "end": 455.63,
+      "text": "indexing previously there was 2 rows so 2 into 5 10 nodes have been consumed now i'm looking for"
+    },
+    {
+      "start": 455.63,
+      "end": 463.75,
+      "text": "the first position which means it's you got it which means 2 into 5 plus 1 will give you 11"
+    },
+    {
+      "start": 463.75,
+      "end": 471.59,
+      "text": "because if you're like 9 this will be 10 right because very simple and this will be 11 so you"
+    },
+    {
+      "start": 471.59,
+      "end": 476.17,
+      "text": "just because if you're looking at this it's a plus 2 you're looking at this as a plus 3 it's a"
+    },
+    {
+      "start": 476.17,
+      "end": 484.39,
+      "text": "plus 4 so can i say the formula to compute the node the formula is very simple any row column"
+    },
+    {
+      "start": 484.39,
+      "end": 493.39,
+      "text": "can be said as row into m why m because every column sorry every row has five guys which is"
+    },
+    {
+      "start": 493.39,
+      "end": 500.41,
+      "text": "nothing but the column length right so can i say row into m plus the column number is what"
+    },
+    {
+      "start": 500.41,
+      "end": 501.57,
+      "text": "the node"
+    },
+    {
+      "start": 501.57,
+      "end": 507.99,
+      "text": "id will be signified or the node number will be signified so you figured this out very simple"
+    },
+    {
+      "start": 507.99,
+      "end": 514.29,
+      "text": "right before implementing disjoint cell data structure remember one thing if there are multiple"
+    },
+    {
+      "start": 514.29,
+      "end": 521.47,
+      "text": "same cell numbers you don't mark it again and again remember so what you can do is you can"
+    },
+    {
+      "start": 521.47,
+      "end": 527.17,
+      "text": "maybe use a visited array to keep a track that you do not reuse a cell number because if you're"
+    },
+    {
+      "start": 527.17,
+      "end": 531.19,
+      "text": "getting twice it doesn't make sense okay so first thing"
+    },
+    {
+      "start": 531.57,
+      "end": 541.51,
+      "text": "you're starting off can i say the initial number of islands are zero i can right so the moment i"
+    },
+    {
+      "start": 541.51,
+      "end": 547.99,
+      "text": "have the first guy i see is it marked in the visited array it's not so i'll maybe mark it as"
+    },
+    {
+      "start": 547.99,
+      "end": 554.47,
+      "text": "true let's quickly mark it as true so i marked the zeroth guy as true what is my next thing"
+    },
+    {
+      "start": 554.47,
+      "end": 560.81,
+      "text": "once i mark the zeroth guy as true my next thing will be to take this node zero right take this"
+    },
+    {
+      "start": 561.57,
+      "end": 567.47,
+      "text": "node zero and see if there is an island on the right no if there is an island on the bottom no"
+    },
+    {
+      "start": 567.47,
+      "end": 574.39,
+      "text": "and the left and the upper guys are not there so apparently this guy himself will contribute to the"
+    },
+    {
+      "start": 574.39,
+      "end": 580.87,
+      "text": "island so the count will increase and it did not have anyone on the right or on the bottom so it"
+    },
+    {
+      "start": 580.87,
+      "end": 588.07,
+      "text": "could not get connected to the other islands perfect next i have 0 0 i see this is already"
+    },
+    {
+      "start": 588.07,
+      "end": 591.41,
+      "text": "visited so i'll say hey the count will still be one so i'll say hey the count will still be one"
+    },
+    {
+      "start": 591.57,
+      "end": 594.29,
+      "text": "so see first we got one now the count still stays"
+    },
+    {
+      "start": 594.29,
+      "end": 600.77,
+      "text": "at one next we'll go to one comma one the moment we go to one comma one we are like it's not visited"
+    },
+    {
+      "start": 600.77,
+      "end": 607.57,
+      "text": "so let's mark it as visible and now let's look at its is there an island no let's look at it"
+    },
+    {
+      "start": 607.57,
+      "end": 614.45,
+      "text": "is there an island no is there an island no is there an island so no island so this guy himself"
+    },
+    {
+      "start": 615.01,
+      "end": 621.45,
+      "text": "himself contributes one to the answer so i increase the contribution to two and i can see the answer to the two"
+    },
+    {
+      "start": 621.57,
+      "end": 626.45,
+      "text": "here will be two and i'll mark it as visited perfect next will be one comma zero this is"
+    },
+    {
+      "start": 626.45,
+      "end": 632.61,
+      "text": "where the twist comes one comma zero is this which is unvisited so first mark it as visit"
+    },
+    {
+      "start": 632.61,
+      "end": 641.01,
+      "text": "right that means it's an island so we have an island here right imagine this one comma zero"
+    },
+    {
+      "start": 641.01,
+      "end": 645.81,
+      "text": "would have contributed one to the answer just imagine would have contributed one to the answer"
+    },
+    {
+      "start": 645.81,
+      "end": 651.01,
+      "text": "if it was not surrounded by anyone but now i'll look at this around i'll be like okay"
+    },
+    {
+      "start": 651.57,
+      "end": 658.69,
+      "text": "the answer is three till now because it was not surrounded by anyone i imagined when i got"
+    },
+    {
+      "start": 658.69,
+      "end": 665.73,
+      "text": "to select now this guy looked at the front top and said hey i can go and connect with you if i can go"
+    },
+    {
+      "start": 665.73,
+      "end": 673.81,
+      "text": "and connect with you i myself will no more be an answer i myself will no more be a single individual"
+    },
+    {
+      "start": 673.81,
+      "end": 681.49,
+      "text": "island so maybe reduce like okay reduce fine so i'll now have the connection between zero and"
+    },
+    {
+      "start": 681.57,
+      "end": 686.85,
+      "text": "five in the disjoint set i'll just ask them to connect zero and five and they'll get connected"
+    },
+    {
+      "start": 686.85,
+      "end": 692.69,
+      "text": "right next i will look at the right and i'll have a another guy i have another island"
+    },
+    {
+      "start": 693.49,
+      "end": 697.97,
+      "text": "okay i'll also connect with this guy so the this will also reduce to one"
+    },
+    {
+      "start": 697.97,
+      "end": 704.61,
+      "text": "why previously it was two individual guys this guy connected to this reduce them by one again"
+    },
+    {
+      "start": 704.61,
+      "end": 709.65,
+      "text": "connected to one reduced by one said eventually connected two guys so the reduction will be two"
+    },
+    {
+      "start": 711.57,
+      "end": 717.65,
+      "text": "himself got plus one but he actually reduced two guys and made them connected got it simple so the"
+    },
+    {
+      "start": 717.65,
+      "end": 724.53,
+      "text": "answer is one answer stays has to be one one comma zero next zero comma one is this guy let's mark it"
+    },
+    {
+      "start": 724.53,
+      "end": 730.77,
+      "text": "as visited and imagine it is a low and increase the value by plus one to two now let's see this"
+    },
+    {
+      "start": 730.77,
+      "end": 736.85,
+      "text": "guy says there's no one on the top like okay there's no one on the right okay and there's"
+    },
+    {
+      "start": 736.85,
+      "end": 741.33,
+      "text": "someone on the bottom remember this there's someone on the bottom so i'll be like can i go and get"
+    },
+    {
+      "start": 741.57,
+      "end": 747.25,
+      "text": "connected with this guy i can because we were not connected previously we were not connected"
+    },
+    {
+      "start": 747.25,
+      "end": 752.93,
+      "text": "previously so if i go and connect with themselves i'll reduce my answer to my one right next"
+    },
+    {
+      "start": 753.65,
+      "end": 760.77,
+      "text": "this done this done this time this okay wait i can connect but will it make sense to connect"
+    },
+    {
+      "start": 761.65,
+      "end": 764.93,
+      "text": "aren't they already connected and the disjoint set will say"
+    },
+    {
+      "start": 765.65,
+      "end": 771.01,
+      "text": "yes you guys are already connected so what's the point of connecting here what's the point of"
+    },
+    {
+      "start": 771.57,
+      "end": 776.37,
+      "text": "connecting you're already connected via this and if you find the ultimate boss you'll find the boss"
+    },
+    {
+      "start": 776.37,
+      "end": 782.37,
+      "text": "to be zero for this as well as zero for this so there's no point in connecting so i'll not connect"
+    },
+    {
+      "start": 782.37,
+      "end": 788.53,
+      "text": "thereby it still stays as one if you're not connecting keep the answer as it is perfect next"
+    },
+    {
+      "start": 789.09,
+      "end": 795.33,
+      "text": "zero comma three where's zero comma three it is here mark it as visited does it and increase the"
+    },
+    {
+      "start": 795.33,
+      "end": 801.57,
+      "text": "answer by plus one increase the answer by plus one why imagine itself to be alone imagine itself to be"
+    },
+    {
+      "start": 801.57,
+      "end": 807.09,
+      "text": "alone does it have anyone on the top no does it have anyone here no does it have anyone here no"
+    },
+    {
+      "start": 807.09,
+      "end": 814.37,
+      "text": "does it have anyone here no so though you consider himself to be alone yeah that plus one work if it"
+    },
+    {
+      "start": 814.37,
+      "end": 820.21,
+      "text": "would have got connected to someone minus one would have been done but since it has no one the"
+    },
+    {
+      "start": 820.21,
+      "end": 828.21,
+      "text": "plus one state and you got an answer as two perfect next one comma three where's that here mark it as"
+    },
+    {
+      "start": 828.21,
+      "end": 831.41,
+      "text": "visited increase the answer by plus one so if you're not connected to someone you're not connected to"
+    },
+    {
+      "start": 832.13,
+      "end": 840.37,
+      "text": "eventually like initially individual connected we can we can go and connect the moment you connect"
+    },
+    {
+      "start": 841.17,
+      "end": 846.53,
+      "text": "reduce can you connect to the right now can you connect to the water no no so the answer is two"
+    },
+    {
+      "start": 846.53,
+      "end": 853.57,
+      "text": "it actually makes sense next zero comma four so let's analyze zero comma four let's see how"
+    },
+    {
+      "start": 853.57,
+      "end": 861.57,
+      "text": "again do the same thing increase the answer by one and mark it as visited now top no no no can i connect"
+    },
+    {
+      "start": 862.13,
+      "end": 868.93,
+      "text": "yes they're not connected the moment you connect reduce the answer by one two perfect next three"
+    },
+    {
+      "start": 868.93,
+      "end": 873.73,
+      "text": "comma two so next is three comma two so let's go to three comma two and mark it again increase the"
+    },
+    {
+      "start": 873.73,
+      "end": 879.57,
+      "text": "answer by one considering itself as individual when it came does it have anyone at the top"
+    },
+    {
+      "start": 879.57,
+      "end": 887.17,
+      "text": "no does it have anyone on this no on this no on this no on this no so we consider itself as alone"
+    },
+    {
+      "start": 887.17,
+      "end": 890.93,
+      "text": "that worked thereby the answer for this will be three perfect next"
+    },
+    {
+      "start": 892.13,
+      "end": 902.13,
+      "text": "two comma two which is this so consider itself to be alone increased but the moment it saw no no no"
+    },
+    {
+      "start": 902.13,
+      "end": 907.81,
+      "text": "but the moment it saw saw downwards it found someone to be connected to already an existing"
+    },
+    {
+      "start": 907.81,
+      "end": 914.21,
+      "text": "guy so it gets connected and reduces the answer makes sense it's connected to another island so"
+    },
+    {
+      "start": 914.21,
+      "end": 920.93,
+      "text": "why will it be considered individually right what's next one comma two very very very important"
+    },
+    {
+      "start": 920.93,
+      "end": 926.49,
+      "text": "once you understand this you understand everything okay one comma two where is that this is somewhere"
+    },
+    {
+      "start": 926.49,
+      "end": 932.37,
+      "text": "here right so what i do is i'll be like okay let's consider this as an individual let's consider this"
+    },
+    {
+      "start": 932.37,
+      "end": 938.01,
+      "text": "as an individual so the answer should be four answer should be four if individuals should have"
+    },
+    {
+      "start": 938.01,
+      "end": 944.43,
+      "text": "been considered should happen but we will now start connecting can it connect to the top no"
+    },
+    {
+      "start": 944.43,
+      "end": 950.55,
+      "text": "can it connect to the right yes go and connect connected answer reduced by one can it connect"
+    },
+    {
+      "start": 950.55,
+      "end": 957.23,
+      "text": "to the bottom yes they're not connected by any means nice answer is one more can it connect to"
+    },
+    {
+      "start": 957.23,
+      "end": 962.63,
+      "text": "the left yes go and connect it to the left which is this answer is by one move the answer is one"
+    },
+    {
+      "start": 962.63,
+      "end": 972.53,
+      "text": "and market is visited nice so if you see everyone got connected and it reduced three and it got"
+    },
+    {
+      "start": 972.53,
+      "end": 979.07,
+      "text": "it just did a plus one for himself so eventually it's a plus one got it nice so we have one as"
+    },
+    {
+      "start": 979.07,
+      "end": 980.41,
+      "text": "the answer next is zero comma two"
+    },
+    {
+      "start": 980.55,
+      "end": 987.17,
+      "text": "this is this so you say visited and you increase the answer by one because for himself just in case"
+    },
+    {
+      "start": 987.17,
+      "end": 995.41,
+      "text": "it doesn't get connected to anyone now no it gets connected to this guy and says i've reduced myself"
+    },
+    {
+      "start": 995.41,
+      "end": 1002.43,
+      "text": "by one next the moment it tries to get here it is already connected finds it's already connected so"
+    },
+    {
+      "start": 1002.43,
+      "end": 1006.65,
+      "text": "there's no point in connecting here it's already connected there's no point in connecting here"
+    },
+    {
+      "start": 1006.65,
+      "end": 1009.89,
+      "text": "so the answer is one over"
+    },
+    {
+      "start": 1010.55,
+      "end": 1019.43,
+      "text": "and this is the list that you can easily return pretty simple four directions travels just connect"
+    },
+    {
+      "start": 1019.43,
+      "end": 1024.21,
+      "text": "connect connect connect and whenever you're connecting to someone reduce minus one that's"
+    },
+    {
+      "start": 1024.21,
+      "end": 1029.13,
+      "text": "it pretty simple i hope you have understood the entire explanation it's time to code it"
+    },
+    {
+      "start": 1029.13,
+      "end": 1032.95,
+      "text": "up so as usual we'll be coding the c plus plus solution on the right and you can figure"
+    },
+    {
+      "start": 1032.95,
+      "end": 1038.55,
+      "text": "out the exact similar java code on the left what do we require obviously the disjoint"
+    },
+    {
+      "start": 1038.55,
+      "end": 1039.55,
+      "text": "set data structure so let's go ahead and start the java code and we're going to start with"
+    },
+    {
+      "start": 1039.55,
+      "end": 1040.55,
+      "text": "this one so let's go ahead and start the java code and we're going to start the java code"
+    },
+    {
+      "start": 1040.55,
+      "end": 1041.55,
+      "text": "and we're going to start the java code and we're going to start the java code and we're going to"
+    },
+    {
+      "start": 1041.55,
+      "end": 1047.99,
+      "text": "quickly take it off okay we will just uh get rid of all the functions okay so disjoint set now i"
+    },
+    {
+      "start": 1047.99,
+      "end": 1053.19,
+      "text": "need the size what was the size if you remember yes and into those were the total number of notes"
+    },
+    {
+      "start": 1053.99,
+      "end": 1058.23,
+      "text": "quickly let's have it what's the next thing we require we require a visited"
+    },
+    {
+      "start": 1058.23,
+      "end": 1064.15,
+      "text": "so maybe we can keep it as this and we can use the mem set like visited zero and sorry"
+    },
+    {
+      "start": 1064.15,
+      "end": 1070.15,
+      "text": "uh size of visited this will make sure everything is marked as zero initial number of count"
+    },
+    {
+      "start": 1070.55,
+      "end": 1076.87,
+      "text": "of islands maybe we can keep it as zero saying that initial number of count of islands is"
+    },
+    {
+      "start": 1076.87,
+      "end": 1081.83,
+      "text": "zero and we can have a list which will store all the answers and at the end of the day"
+    },
+    {
+      "start": 1081.83,
+      "end": 1087.19,
+      "text": "after performing the operations we can return this particular answer now i will be like"
+    },
+    {
+      "start": 1087.19,
+      "end": 1093.19,
+      "text": "okay fine we got what's the step we have to go through all these queries so let's go through"
+    },
+    {
+      "start": 1093.19,
+      "end": 1099.83,
+      "text": "all these queries now i know one thing the row will be id of zero right i know one thing the column will be it of"
+    },
+    {
+      "start": 1100.55,
+      "end": 1107.03,
+      "text": "one and something i know for sure is if visited like if this guy has previously been visited"
+    },
+    {
+      "start": 1107.59,
+      "end": 1113.59,
+      "text": "like it's it's already an island so it's not going to add up or delete anything from the answer if"
+    },
+    {
+      "start": 1113.59,
+      "end": 1118.31,
+      "text": "it's already an island because everything would have been previously computed correct so what i"
+    },
+    {
+      "start": 1118.31,
+      "end": 1124.23,
+      "text": "can say is hey listen there's going to be no change whatsoever in the count of islands so"
+    },
+    {
+      "start": 1124.23,
+      "end": 1129.27,
+      "text": "you can just do it and go to the next query perfect but if it is not then i'll be like okay"
+    },
+    {
+      "start": 1129.27,
+      "end": 1135.11,
+      "text": "let's mark this as visited and at the same time say let's count it as an individual island then"
+    },
+    {
+      "start": 1135.11,
+      "end": 1141.67,
+      "text": "we can do these subtractions up right and everything so can i say the upward guy will be"
+    },
+    {
+      "start": 1141.67,
+      "end": 1147.43,
+      "text": "row minus one column can i say upward guy will be row minus one column i can row minus one column"
+    },
+    {
+      "start": 1147.43,
+      "end": 1154.15,
+      "text": "right so and then can i say the right guy will be row comma column plus one i can can i say the"
+    },
+    {
+      "start": 1154.15,
+      "end": 1159.19,
+      "text": "bottom guy will be row plus one and there will be no change in the column right and can i say"
+    },
+    {
+      "start": 1159.27,
+      "end": 1167.19,
+      "text": "the left guy will be row comma column minus one i can so if you see i can either write four"
+    },
+    {
+      "start": 1167.19,
+      "end": 1175.19,
+      "text": "different statements or i can combine them into a dx and a dy where or you can say dr which is"
+    },
+    {
+      "start": 1175.19,
+      "end": 1181.67,
+      "text": "the change in the rows and the change in the columns now how do you figure this out so if you"
+    },
+    {
+      "start": 1181.67,
+      "end": 1187.35,
+      "text": "see it's a minus one on the row for the first time it's a plus zero it's a plus one it's a plus zero"
+    },
+    {
+      "start": 1189.27,
+      "end": 1195.75,
+      "text": "zero plus one and a zero so i just took the changes in the row and then there is a change"
+    },
+    {
+      "start": 1195.75,
+      "end": 1201.83,
+      "text": "in column as plus zero for the first time change as plus one change as zero change as minus one if"
+    },
+    {
+      "start": 1201.83,
+      "end": 1207.43,
+      "text": "you carefully notice right so if you see column is minus one and we have a minus one if you see"
+    },
+    {
+      "start": 1207.43,
+      "end": 1214.63,
+      "text": "column is just column and it is uh zero over here column is plus one plus one so if you see"
+    },
+    {
+      "start": 1214.63,
+      "end": 1219.03,
+      "text": "minus one like this zero and minus one will be the first guy"
+    },
+    {
+      "start": 1219.27,
+      "end": 1226.23,
+      "text": "then zero plus one plus one zero and zero minus one so i've already taught this technique that's"
+    },
+    {
+      "start": 1226.23,
+      "end": 1232.87,
+      "text": "why i did not use the ipad so index lesser than four and index plus plus can i say the new row"
+    },
+    {
+      "start": 1232.87,
+      "end": 1240.47,
+      "text": "that means the adjacent row or maybe you can say adjacent row will be the current row plus the"
+    },
+    {
+      "start": 1240.47,
+      "end": 1246.55,
+      "text": "change in the dr which is dr index right and can i say the adjacent column will be nothing but column"
+    },
+    {
+      "start": 1249.27,
+      "end": 1255.59,
+      "text": "change the delta c right so this is this is the new ones i need to check the validity it might be"
+    },
+    {
+      "start": 1256.79,
+      "end": 1263.43,
+      "text": "crossing the grid right so just make sure you check out the validity of this thing so first"
+    },
+    {
+      "start": 1263.43,
+      "end": 1269.91,
+      "text": "make sure is valid is what you will call so go across and say adjacents are adjacent column"
+    },
+    {
+      "start": 1270.95,
+      "end": 1274.95,
+      "text": "and the n and m once you've checked the validity then you can do the other things"
+    },
+    {
+      "start": 1274.95,
+      "end": 1277.91,
+      "text": "so maybe you can write a private boolean function"
+    },
+    {
+      "start": 1279.27,
+      "end": 1287.27,
+      "text": "that's what i will do private boolean check or rather is valid and i will say okay ind adjacent"
+    },
+    {
+      "start": 1287.27,
+      "end": 1295.11,
+      "text": "row and the adjacent column ind and indm okay and i can say when will it be valid if it is this"
+    },
+    {
+      "start": 1296.63,
+      "end": 1304.87,
+      "text": "if it is this if it is sorry adjacent oh why am i writing adjacent and just star and just yeah"
+    },
+    {
+      "start": 1304.87,
+      "end": 1309.19,
+      "text": "and then it will be for column adjacent column and an adjacent"
+    },
+    {
+      "start": 1309.27,
+      "end": 1316.31,
+      "text": "column was lesser than m can i see it'll be valid for this so just return it if this is true request"
+    },
+    {
+      "start": 1316.31,
+      "end": 1321.67,
+      "text": "true if any of the conditions are false it will go as false so is valid will be checked via this"
+    },
+    {
+      "start": 1321.67,
+      "end": 1326.95,
+      "text": "once this valid is check the other thing i need to check is is the adjacent guy actually an island"
+    },
+    {
+      "start": 1326.95,
+      "end": 1333.51,
+      "text": "then only i will connect so it has to be an island so on visited on adjacent row and adjacent column"
+    },
+    {
+      "start": 1333.51,
+      "end": 1338.79,
+      "text": "it has to be an island if it is not an island there's no point in connecting understood so it"
+    },
+    {
+      "start": 1338.79,
+      "end": 1344.47,
+      "text": "has to be an island if it's not an island then i do not do anything what after this check for"
+    },
+    {
+      "start": 1344.47,
+      "end": 1350.89,
+      "text": "validity check for island i need to connect them but will you connect if they're already connected"
+    },
+    {
+      "start": 1350.89,
+      "end": 1355.85,
+      "text": "i'll be like no so let's check for connectivity as well ds dot how do you check for connectivity"
+    },
+    {
+      "start": 1355.85,
+      "end": 1361.27,
+      "text": "if their parents are same or not right find parent of whom you have to find the node numbers now"
+    },
+    {
+      "start": 1361.27,
+      "end": 1373.55,
+      "text": "so can i say the node number right the current node number will be row into m plus column i can"
+    },
+    {
+      "start": 1373.55,
+      "end": 1382.59,
+      "text": "and can i say the adjacent node number will be adjacent row into m right plus adjacent column"
+    },
+    {
+      "start": 1383.15,
+      "end": 1391.09,
+      "text": "very simple so i need to connect these two guys so node number if the find parents are not equal"
+    },
+    {
+      "start": 1391.09,
+      "end": 1391.25,
+      "text": "right"
+    },
+    {
+      "start": 1391.27,
+      "end": 1395.57,
+      "text": "very very important if the find parents are not equal so you can just write this"
+    },
+    {
+      "start": 1395.57,
+      "end": 1404.85,
+      "text": "take the adjacent number if they are not equal can i say okay they're not equal so we're connecting"
+    },
+    {
+      "start": 1404.85,
+      "end": 1410.67,
+      "text": "reduce minus one if you remember and say ds dot call the union let's do some connections"
+    },
+    {
+      "start": 1410.67,
+      "end": 1416.57,
+      "text": "union by size whom will you connect one is the node number right what's the other one is the"
+    },
+    {
+      "start": 1416.57,
+      "end": 1423.23,
+      "text": "adjacent node number so go ahead and connect these guys so once this entire for loop has been computed"
+    },
+    {
+      "start": 1424.03,
+      "end": 1424.19,
+      "text": "can you see the connection between the two guys right so you can see the connection between the"
+    },
+    {
+      "start": 1424.19,
+      "end": 1425.33,
+      "text": "two guys right so you can see the connection between the two guys right so you can see the answer will be stored"
+    },
+    {
+      "start": 1426.29,
+      "end": 1431.85,
+      "text": "because you will have the number of islands and then you can go ahead and return it this is how"
+    },
+    {
+      "start": 1431.85,
+      "end": 1438.97,
+      "text": "simple it was make sure you uh end the disjoint set and end it with a semicolon so if you see the"
+    },
+    {
+      "start": 1438.97,
+      "end": 1445.05,
+      "text": "answer is coming fine so let's quickly submit this and see if it is running fine so all the test cases"
+    },
+    {
+      "start": 1445.05,
+      "end": 1451.21,
+      "text": "do run but did you notice something look at the code quality look at the variable naming and also"
+    },
+    {
+      "start": 1451.21,
+      "end": 1454.01,
+      "text": "see how i wrote like an error free code and i'm going to show you how to do that so let's go ahead"
+    },
+    {
+      "start": 1454.01,
+      "end": 1456.79,
+      "text": "and see how i wrote like an error free code so these things are very very important if you look"
+    },
+    {
+      "start": 1456.79,
+      "end": 1462.79,
+      "text": "at all the other lectures on youtube they will not be having this level of code quality not be using"
+    },
+    {
+      "start": 1462.79,
+      "end": 1468.63,
+      "text": "a class of disjoint set they'll probably be using a find union parent and inside the solution this"
+    },
+    {
+      "start": 1468.63,
+      "end": 1474.47,
+      "text": "is something you should not do in interviews in interviews these things stand down make you stand"
+    },
+    {
+      "start": 1474.47,
+      "end": 1480.07,
+      "text": "out apart from the rest of the crowd who watch all these crap motivational videos this is where"
+    },
+    {
+      "start": 1480.07,
+      "end": 1483.83,
+      "text": "you can actually be like hey you gotta hire me because my code quality is not good enough to be"
+    },
+    {
+      "start": 1483.83,
+      "end": 1490.29,
+      "text": "is of supreme nature got it so make sure you focus on these small things because these things do"
+    },
+    {
+      "start": 1490.29,
+      "end": 1495.37,
+      "text": "matter when you go for an interview so before wrapping up this video i have a very very earnest"
+    },
+    {
+      "start": 1495.37,
+      "end": 1501.53,
+      "text": "request to me please do consider subscribing to us i did check out our statistics nearly 50 of the"
+    },
+    {
+      "start": 1501.53,
+      "end": 1505.89,
+      "text": "users who watch our video do not subscribe so please do consider subscribing to us because that"
+    },
+    {
+      "start": 1505.89,
+      "end": 1511.53,
+      "text": "is the only thing that keeps you motivated to make videos at like 3 24 a.m in the night so please uh"
+    },
+    {
+      "start": 1511.53,
+      "end": 1513.69,
+      "text": "if you have watched the video till here consider subscribing"
+    },
+    {
+      "start": 1513.83,
+      "end": 1518.47,
+      "text": "hit that like button if you haven't checked out our dp series and the hdc the links will be in"
+    },
+    {
+      "start": 1518.47,
+      "end": 1521.51,
+      "text": "the description with this i'll be wrapping up this video let's meet in some other video"
+    },
+    {
+      "start": 1521.51,
+      "end": 1521.93,
+      "text": "bye"
+    }
+  ]
+}

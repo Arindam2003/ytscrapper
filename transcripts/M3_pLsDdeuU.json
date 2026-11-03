@@ -1,0 +1,1684 @@
+{
+  "video_id": "M3_pLsDdeuU",
+  "title": "G-1. Introduction to Graph ｜ Types ｜ Different Conventions Used",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 822.36,
+  "segments": [
+    {
+      "start": 2.99,
+      "end": 20.11,
+      "text": "So with this video, we will be starting off with the graph series and the first video in this series will be introduction to graph, where we will be learning about what different kinds of graphs we have and all the conventions that revolve around the graph that will be used going forward in the next set of videos."
+    },
+    {
+      "start": 20.11,
+      "end": 23.21,
+      "text": "So you see the structure."
+    },
+    {
+      "start": 23.77,
+      "end": 28.11,
+      "text": "OK, now this structure is generally known as a graph."
+    },
+    {
+      "start": 29.39,
+      "end": 32.69,
+      "text": "Now, let's talk about the types of graph."
+    },
+    {
+      "start": 32.99,
+      "end": 36.33,
+      "text": "Now, this structure is known as an undirected graph."
+    },
+    {
+      "start": 37.37,
+      "end": 38.75,
+      "text": "Why? I will tell you."
+    },
+    {
+      "start": 39.11,
+      "end": 43.19,
+      "text": "Whereas this structure is known as a directed graph."
+    },
+    {
+      "start": 44.41,
+      "end": 47.89,
+      "text": "You would have guessed why, because you see arrows over here."
+    },
+    {
+      "start": 47.89,
+      "end": 48.87,
+      "text": "That is why directed."
+    },
+    {
+      "start": 49.11,
+      "end": 50.49,
+      "text": "You don't see arrows over here."
+    },
+    {
+      "start": 50.59,
+      "end": 51.43,
+      "text": "That's why undirected."
+    },
+    {
+      "start": 51.51,
+      "end": 53.09,
+      "text": "But what are these things?"
+    },
+    {
+      "start": 53.49,
+      "end": 54.75,
+      "text": "We need to know that as well."
+    },
+    {
+      "start": 54.85,
+      "end": 55.01,
+      "text": "Right."
+    },
+    {
+      "start": 55.19,
+      "end": 56.47,
+      "text": "So let's understand."
+    },
+    {
+      "start": 56.73,
+      "end": 59.89,
+      "text": "So in graphs, you will see these circular things."
+    },
+    {
+      "start": 61.17,
+      "end": 61.29,
+      "text": "OK."
+    },
+    {
+      "start": 61.43,
+      "end": 62.97,
+      "text": "And those are generally known as."
+    },
+    {
+      "start": 62.99,
+      "end": 63.99,
+      "text": "Nodes."
+    },
+    {
+      "start": 63.99,
+      "end": 64.99,
+      "text": "Remember this."
+    },
+    {
+      "start": 64.99,
+      "end": 67.99,
+      "text": "Nodes or vertex."
+    },
+    {
+      "start": 67.99,
+      "end": 70.99,
+      "text": "We generally call them as nodes or vertex."
+    },
+    {
+      "start": 70.99,
+      "end": 73.99,
+      "text": "Now, these nodes are represented by a number."
+    },
+    {
+      "start": 73.99,
+      "end": 76.99,
+      "text": "Like for an example, I said this is the node one."
+    },
+    {
+      "start": 76.99,
+      "end": 77.99,
+      "text": "This is node two."
+    },
+    {
+      "start": 77.99,
+      "end": 78.99,
+      "text": "This can be node three."
+    },
+    {
+      "start": 78.99,
+      "end": 79.99,
+      "text": "This can be four."
+    },
+    {
+      "start": 79.99,
+      "end": 80.99,
+      "text": "This can be five."
+    },
+    {
+      "start": 80.99,
+      "end": 83.99,
+      "text": "There is no specific order in which you number the nodes."
+    },
+    {
+      "start": 83.99,
+      "end": 85.99,
+      "text": "The numbering of the nodes can be in any order."
+    },
+    {
+      "start": 85.99,
+      "end": 86.99,
+      "text": "Remember this."
+    },
+    {
+      "start": 86.99,
+      "end": 89.99,
+      "text": "So over here, how many nodes we have?"
+    },
+    {
+      "start": 89.99,
+      "end": 91.99,
+      "text": "We have exactly five nodes."
+    },
+    {
+      "start": 91.99,
+      "end": 92.99,
+      "text": "So."
+    },
+    {
+      "start": 92.99,
+      "end": 95.99,
+      "text": "So we write the number of nodes as five."
+    },
+    {
+      "start": 95.99,
+      "end": 96.99,
+      "text": "Remember this."
+    },
+    {
+      "start": 96.99,
+      "end": 97.99,
+      "text": "The number of nodes as five."
+    },
+    {
+      "start": 97.99,
+      "end": 102.99,
+      "text": "We can also call this as V, which is the number of vertex."
+    },
+    {
+      "start": 102.99,
+      "end": 107.99,
+      "text": "Now, every node, like if you see this two nodes are connected."
+    },
+    {
+      "start": 107.99,
+      "end": 108.99,
+      "text": "Right."
+    },
+    {
+      "start": 108.99,
+      "end": 111.99,
+      "text": "These two nodes are connected by a horizontal line."
+    },
+    {
+      "start": 111.99,
+      "end": 114.99,
+      "text": "Now, what is this horizontal line referred as?"
+    },
+    {
+      "start": 114.99,
+      "end": 118.99,
+      "text": "This horizontal line is referred as an edge."
+    },
+    {
+      "start": 118.99,
+      "end": 121.99,
+      "text": "So if I be specific, this edge can also be known as."
+    },
+    {
+      "start": 121.99,
+      "end": 124.99,
+      "text": "Or called as undirected edge."
+    },
+    {
+      "start": 124.99,
+      "end": 125.99,
+      "text": "Why undirected edge?"
+    },
+    {
+      "start": 125.99,
+      "end": 129.99,
+      "text": "If you see the edge can also go from one to four."
+    },
+    {
+      "start": 129.99,
+      "end": 130.99,
+      "text": "Right."
+    },
+    {
+      "start": 130.99,
+      "end": 133.99,
+      "text": "Or the edge can also go from four to one."
+    },
+    {
+      "start": 133.99,
+      "end": 135.99,
+      "text": "So it can be a bidirectional edge."
+    },
+    {
+      "start": 135.99,
+      "end": 138.99,
+      "text": "The edge can be in both the directions."
+    },
+    {
+      "start": 138.99,
+      "end": 143.99,
+      "text": "So thereby, whenever you see an undirected graph and there is a mention that there is"
+    },
+    {
+      "start": 143.99,
+      "end": 149.99,
+      "text": "an edge between U and V, it resembles that there is an edge between U and V as well as"
+    },
+    {
+      "start": 149.99,
+      "end": 150.99,
+      "text": "there is an edge between V and V."
+    },
+    {
+      "start": 150.99,
+      "end": 156.99,
+      "text": "So an undirected graph means there can be an edge in both the directions."
+    },
+    {
+      "start": 156.99,
+      "end": 160.99,
+      "text": "So as of now, we just need to know about these terminologies."
+    },
+    {
+      "start": 160.99,
+      "end": 166.99,
+      "text": "Node vertex, undirected edge, and this is known as an undirected graph."
+    },
+    {
+      "start": 166.99,
+      "end": 167.99,
+      "text": "Okay."
+    },
+    {
+      "start": 167.99,
+      "end": 172.99,
+      "text": "Now, is it compulsory that the graph has to be something like a circle or something like"
+    },
+    {
+      "start": 172.99,
+      "end": 173.99,
+      "text": "that?"
+    },
+    {
+      "start": 173.99,
+      "end": 174.99,
+      "text": "We will be talking about that."
+    },
+    {
+      "start": 174.99,
+      "end": 178.99,
+      "text": "But before that, let's understand what is a directed graph."
+    },
+    {
+      "start": 178.99,
+      "end": 179.99,
+      "text": "Now, the only different."
+    },
+    {
+      "start": 179.99,
+      "end": 183.99,
+      "text": "Only difference in a directed graph is this thing that you see over here."
+    },
+    {
+      "start": 183.99,
+      "end": 185.99,
+      "text": "This will be a directed edge."
+    },
+    {
+      "start": 185.99,
+      "end": 186.99,
+      "text": "Remember this."
+    },
+    {
+      "start": 186.99,
+      "end": 189.99,
+      "text": "This thing will be a directed edge."
+    },
+    {
+      "start": 189.99,
+      "end": 191.99,
+      "text": "Rest, everything will stay the same."
+    },
+    {
+      "start": 191.99,
+      "end": 196.99,
+      "text": "Imagine if I number this one and four, then I can only see that there is an edge between"
+    },
+    {
+      "start": 196.99,
+      "end": 200.99,
+      "text": "one and four, which means if I'm standing at one, I can go to four."
+    },
+    {
+      "start": 200.99,
+      "end": 203.99,
+      "text": "But if I'm standing at four, I cannot come back to one."
+    },
+    {
+      "start": 203.99,
+      "end": 206.99,
+      "text": "So this is what we call as directed graph."
+    },
+    {
+      "start": 206.99,
+      "end": 209.99,
+      "text": "A directed graph is a graph where I can go to one."
+    },
+    {
+      "start": 209.99,
+      "end": 216.99,
+      "text": "Where all the edges, please mind this word, where all the edges are directed."
+    },
+    {
+      "start": 216.99,
+      "end": 218.99,
+      "text": "Where all the edges are directed."
+    },
+    {
+      "start": 218.99,
+      "end": 221.99,
+      "text": "Can there be multiple directed edges?"
+    },
+    {
+      "start": 221.99,
+      "end": 222.99,
+      "text": "Yes."
+    },
+    {
+      "start": 222.99,
+      "end": 227.99,
+      "text": "You can also have something like this where you say there is an edge between one to four."
+    },
+    {
+      "start": 227.99,
+      "end": 230.99,
+      "text": "There is an edge between four to one."
+    },
+    {
+      "start": 230.99,
+      "end": 234.99,
+      "text": "So you can also have bidirectional edges as well."
+    },
+    {
+      "start": 234.99,
+      "end": 237.99,
+      "text": "So that is the two kind of graphs that we generally have."
+    },
+    {
+      "start": 237.99,
+      "end": 238.99,
+      "text": "One is the undirected graph."
+    },
+    {
+      "start": 238.99,
+      "end": 240.99,
+      "text": "While the other one is the directed graph."
+    },
+    {
+      "start": 240.99,
+      "end": 242.99,
+      "text": "So that was about the types of graph."
+    },
+    {
+      "start": 242.99,
+      "end": 245.99,
+      "text": "Now let's understand the other type of graph."
+    },
+    {
+      "start": 245.99,
+      "end": 248.99,
+      "text": "Now there are something known as cycles in a graph."
+    },
+    {
+      "start": 248.99,
+      "end": 251.99,
+      "text": "Remember this cycles in a graph."
+    },
+    {
+      "start": 251.99,
+      "end": 254.99,
+      "text": "Now you might be thinking, what does graph mean?"
+    },
+    {
+      "start": 254.99,
+      "end": 258.99,
+      "text": "Is it always a circular structure or what it is?"
+    },
+    {
+      "start": 258.99,
+      "end": 263.99,
+      "text": "Now I can say if I just draw some graphs, this is also a graph."
+    },
+    {
+      "start": 263.99,
+      "end": 265.99,
+      "text": "Wait, what does a graph mean?"
+    },
+    {
+      "start": 265.99,
+      "end": 268.24,
+      "text": "It means a graph."
+    },
+    {
+      "start": 268.24,
+      "end": 269.24,
+      "text": "It means a graph."
+    },
+    {
+      "start": 269.24,
+      "end": 270.24,
+      "text": "So a graph."
+    },
+    {
+      "start": 270.24,
+      "end": 271.24,
+      "text": "We don't see a circle."
+    },
+    {
+      "start": 271.24,
+      "end": 273.24,
+      "text": "Yes, we don't see a circle getting completed."
+    },
+    {
+      "start": 273.24,
+      "end": 277.24,
+      "text": "We can say this is also a graph."
+    },
+    {
+      "start": 277.24,
+      "end": 279.24,
+      "text": "Now you might have read in the binary trees."
+    },
+    {
+      "start": 279.24,
+      "end": 284.24,
+      "text": "If you have not read binary trees, you can definitely read them from my playlist."
+    },
+    {
+      "start": 284.24,
+      "end": 286.24,
+      "text": "So this is a binary tree."
+    },
+    {
+      "start": 286.24,
+      "end": 288.24,
+      "text": "But this can also be called as a graph."
+    },
+    {
+      "start": 288.24,
+      "end": 289.24,
+      "text": "Why?"
+    },
+    {
+      "start": 289.24,
+      "end": 291.24,
+      "text": "Because it follows all the rules."
+    },
+    {
+      "start": 291.24,
+      "end": 292.24,
+      "text": "We have nodes."
+    },
+    {
+      "start": 292.24,
+      "end": 294.24,
+      "text": "We have edges."
+    },
+    {
+      "start": 294.24,
+      "end": 295.24,
+      "text": "And they are perfect."
+    },
+    {
+      "start": 295.24,
+      "end": 297.24,
+      "text": "And that is what is the minimal condition for anything to be called a graph."
+    },
+    {
+      "start": 297.24,
+      "end": 299.24,
+      "text": "So this guy can also be called a graph."
+    },
+    {
+      "start": 299.24,
+      "end": 304.24,
+      "text": "So a graph does not necessarily mean that it has to be an enclosed structure."
+    },
+    {
+      "start": 304.24,
+      "end": 306.24,
+      "text": "It can be an open structure as well."
+    },
+    {
+      "start": 306.24,
+      "end": 307.24,
+      "text": "Okay."
+    },
+    {
+      "start": 307.24,
+      "end": 309.24,
+      "text": "So this is where something as cycle comes in."
+    },
+    {
+      "start": 309.24,
+      "end": 310.24,
+      "text": "Okay."
+    },
+    {
+      "start": 310.24,
+      "end": 311.24,
+      "text": "Now what is a cycle?"
+    },
+    {
+      "start": 311.24,
+      "end": 316.24,
+      "text": "Cycle definitely means if you're starting from a node, you reach back to that node."
+    },
+    {
+      "start": 316.24,
+      "end": 317.24,
+      "text": "Remember this."
+    },
+    {
+      "start": 317.24,
+      "end": 318.24,
+      "text": "Start from a node."
+    },
+    {
+      "start": 318.24,
+      "end": 320.24,
+      "text": "And then you start from a node."
+    },
+    {
+      "start": 320.24,
+      "end": 322.24,
+      "text": "And then you start from a node."
+    },
+    {
+      "start": 322.24,
+      "end": 323.24,
+      "text": "And then you start from a node."
+    },
+    {
+      "start": 323.24,
+      "end": 324.24,
+      "text": "And then you start from a node."
+    },
+    {
+      "start": 324.24,
+      "end": 325.24,
+      "text": "And then you start from a node."
+    },
+    {
+      "start": 325.24,
+      "end": 326.24,
+      "text": "And then you start from a node."
+    },
+    {
+      "start": 327.24,
+      "end": 331.24,
+      "text": "And end at that node."
+    },
+    {
+      "start": 331.24,
+      "end": 333.24,
+      "text": "That is the definition of a cycle."
+    },
+    {
+      "start": 333.24,
+      "end": 336.24,
+      "text": "Now if you carefully observe over here."
+    },
+    {
+      "start": 336.24,
+      "end": 338.24,
+      "text": "Can I say this has a cycle?"
+    },
+    {
+      "start": 338.24,
+      "end": 339.24,
+      "text": "Yes."
+    },
+    {
+      "start": 339.24,
+      "end": 340.24,
+      "text": "Why?"
+    },
+    {
+      "start": 340.24,
+      "end": 342.24,
+      "text": "Because if you start from 1, you can go to 2."
+    },
+    {
+      "start": 342.24,
+      "end": 343.24,
+      "text": "You can go to 5."
+    },
+    {
+      "start": 343.24,
+      "end": 344.24,
+      "text": "You can go to 4."
+    },
+    {
+      "start": 344.24,
+      "end": 345.24,
+      "text": "You can come back."
+    },
+    {
+      "start": 345.24,
+      "end": 348.24,
+      "text": "So there is a cycle in this graph."
+    },
+    {
+      "start": 348.24,
+      "end": 350.24,
+      "text": "There are multiple cycles."
+    },
+    {
+      "start": 350.24,
+      "end": 354.24,
+      "text": "You can also say this is a cycle."
+    },
+    {
+      "start": 354.24,
+      "end": 356.24,
+      "text": "You can also say this is a cycle."
+    },
+    {
+      "start": 356.24,
+      "end": 358.24,
+      "text": "So there can be multiple cycles."
+    },
+    {
+      "start": 358.24,
+      "end": 367.24,
+      "text": "So if there is a single cycle in a graph, you generally call that as an undirected cyclic graph."
+    },
+    {
+      "start": 367.24,
+      "end": 369.24,
+      "text": "Undirected cyclic graph."
+    },
+    {
+      "start": 369.24,
+      "end": 374.24,
+      "text": "The definition graph does not assume that it is an enclosed structure."
+    },
+    {
+      "start": 374.24,
+      "end": 381.24,
+      "text": "But the moment you attach the term cyclic to it, we can always call it as an undirected cyclic graph."
+    },
+    {
+      "start": 381.24,
+      "end": 383.24,
+      "text": "I hope that is sure."
+    },
+    {
+      "start": 383.24,
+      "end": 385.24,
+      "text": "Now let's come back to this example."
+    },
+    {
+      "start": 385.24,
+      "end": 386.24,
+      "text": "Let's omit this."
+    },
+    {
+      "start": 386.24,
+      "end": 388.24,
+      "text": "Now this is a directed graph."
+    },
+    {
+      "start": 388.24,
+      "end": 390.24,
+      "text": "Do we see a cycle over here?"
+    },
+    {
+      "start": 390.24,
+      "end": 392.24,
+      "text": "Now this, no."
+    },
+    {
+      "start": 392.24,
+      "end": 395.62,
+      "text": "Do we see a cycle here?"
+    },
+    {
+      "start": 395.62,
+      "end": 396.62,
+      "text": "No."
+    },
+    {
+      "start": 396.62,
+      "end": 397.62,
+      "text": "Do we see a cycle here?"
+    },
+    {
+      "start": 397.62,
+      "end": 398.62,
+      "text": "No."
+    },
+    {
+      "start": 398.62,
+      "end": 405.62,
+      "text": "So this directed graph does not have a cycle because we are starting at 1 but we are not ending at 1."
+    },
+    {
+      "start": 405.62,
+      "end": 409.62,
+      "text": "Or we are starting at this particular node but we are not ending over here."
+    },
+    {
+      "start": 409.62,
+      "end": 414.62,
+      "text": "So unless and until we start from a node and we end at there via some path."
+    },
+    {
+      "start": 414.62,
+      "end": 415.62,
+      "text": "I will tell you what path is."
+    },
+    {
+      "start": 415.62,
+      "end": 418.62,
+      "text": "We don't call that as a cyclic graph."
+    },
+    {
+      "start": 418.62,
+      "end": 424.62,
+      "text": "So we can call this as directed acyclic graph."
+    },
+    {
+      "start": 424.62,
+      "end": 427.62,
+      "text": "So it is generally known as acyclic graph."
+    },
+    {
+      "start": 427.62,
+      "end": 429.62,
+      "text": "Acyclic means no cycle."
+    },
+    {
+      "start": 429.62,
+      "end": 433.62,
+      "text": "So directed acyclic graph is what we call this."
+    },
+    {
+      "start": 433.62,
+      "end": 437.62,
+      "text": "But over here, if I just attach an edge."
+    },
+    {
+      "start": 437.62,
+      "end": 439.62,
+      "text": "If I just include another edge."
+    },
+    {
+      "start": 439.62,
+      "end": 441.62,
+      "text": "We can say that this graph has a cycle."
+    },
+    {
+      "start": 441.62,
+      "end": 442.62,
+      "text": "Why?"
+    },
+    {
+      "start": 442.62,
+      "end": 444.62,
+      "text": "Because this is a cycle."
+    },
+    {
+      "start": 444.62,
+      "end": 448.62,
+      "text": "So it will now become directed cyclic graph."
+    },
+    {
+      "start": 448.62,
+      "end": 458.62,
+      "text": "But without this edge, it is known as directed acyclic graph which is commonly known as DAG."
+    },
+    {
+      "start": 458.62,
+      "end": 461.62,
+      "text": "Which you will be hearing in the next set of the lectures."
+    },
+    {
+      "start": 461.62,
+      "end": 462.62,
+      "text": "Fine?"
+    },
+    {
+      "start": 462.62,
+      "end": 465.62,
+      "text": "So let's come to the next term which is path."
+    },
+    {
+      "start": 465.62,
+      "end": 467.62,
+      "text": "Now what is the definition of a path?"
+    },
+    {
+      "start": 467.62,
+      "end": 470.62,
+      "text": "It can contain a lot of vertices."
+    },
+    {
+      "start": 470.62,
+      "end": 473.62,
+      "text": "It can contain a lot of nodes or vertices."
+    },
+    {
+      "start": 474.62,
+      "end": 477.62,
+      "text": "And each of them are reachable."
+    },
+    {
+      "start": 477.62,
+      "end": 479.62,
+      "text": "Very important."
+    },
+    {
+      "start": 479.62,
+      "end": 481.62,
+      "text": "Each of them are reachable."
+    },
+    {
+      "start": 481.62,
+      "end": 483.62,
+      "text": "Okay?"
+    },
+    {
+      "start": 483.62,
+      "end": 485.62,
+      "text": "So what does this mean?"
+    },
+    {
+      "start": 485.62,
+      "end": 492.62,
+      "text": "So assume I write something like 1, 2, 3, 4, 5."
+    },
+    {
+      "start": 492.62,
+      "end": 494.62,
+      "text": "So we know that this is a graph."
+    },
+    {
+      "start": 494.62,
+      "end": 496.62,
+      "text": "Again, satisfies all the definition."
+    },
+    {
+      "start": 496.62,
+      "end": 497.62,
+      "text": "You have nodes."
+    },
+    {
+      "start": 497.62,
+      "end": 498.62,
+      "text": "You have edges."
+    },
+    {
+      "start": 498.62,
+      "end": 500.62,
+      "text": "So this is definitely a graph."
+    },
+    {
+      "start": 500.62,
+      "end": 501.62,
+      "text": "Right?"
+    },
+    {
+      "start": 501.62,
+      "end": 502.62,
+      "text": "So over here what we see is."
+    },
+    {
+      "start": 502.62,
+      "end": 503.62,
+      "text": "If I write this."
+    },
+    {
+      "start": 503.62,
+      "end": 506.62,
+      "text": "If I write 1, 2, 3, 5."
+    },
+    {
+      "start": 506.62,
+      "end": 509.62,
+      "text": "It is a path because 1, 2, 3, 5."
+    },
+    {
+      "start": 509.62,
+      "end": 511.62,
+      "text": "This is a path."
+    },
+    {
+      "start": 511.62,
+      "end": 513.62,
+      "text": "Because you go from 1 to 2 to 3 to 5."
+    },
+    {
+      "start": 513.62,
+      "end": 514.62,
+      "text": "This is a path."
+    },
+    {
+      "start": 514.62,
+      "end": 518.62,
+      "text": "But if I write something like 1, 2, 3, 2, 1."
+    },
+    {
+      "start": 518.62,
+      "end": 520.62,
+      "text": "This is not a path."
+    },
+    {
+      "start": 520.62,
+      "end": 521.62,
+      "text": "Why?"
+    },
+    {
+      "start": 521.62,
+      "end": 524.62,
+      "text": "Because you are saying 1, 2, 3."
+    },
+    {
+      "start": 524.62,
+      "end": 526.62,
+      "text": "And again you are saying 2."
+    },
+    {
+      "start": 526.62,
+      "end": 529.62,
+      "text": "You cannot have a node appearing twice in a path."
+    },
+    {
+      "start": 529.62,
+      "end": 532.62,
+      "text": "A node cannot appear twice in a path."
+    },
+    {
+      "start": 532.62,
+      "end": 533.62,
+      "text": "Remember this."
+    },
+    {
+      "start": 533.62,
+      "end": 535.62,
+      "text": "A node cannot appear twice in a path."
+    },
+    {
+      "start": 535.62,
+      "end": 536.62,
+      "text": "It can only appear once."
+    },
+    {
+      "start": 536.62,
+      "end": 538.62,
+      "text": "Is this a path?"
+    },
+    {
+      "start": 538.62,
+      "end": 539.62,
+      "text": "No."
+    },
+    {
+      "start": 539.62,
+      "end": 540.62,
+      "text": "Why?"
+    },
+    {
+      "start": 540.62,
+      "end": 541.62,
+      "text": "Because you say 1."
+    },
+    {
+      "start": 541.62,
+      "end": 542.62,
+      "text": "You say 3."
+    },
+    {
+      "start": 542.62,
+      "end": 543.62,
+      "text": "You say 5."
+    },
+    {
+      "start": 543.62,
+      "end": 544.62,
+      "text": "But how do you reach from 1 to 3?"
+    },
+    {
+      "start": 544.62,
+      "end": 546.62,
+      "text": "There is no connectivity from 1 to 3."
+    },
+    {
+      "start": 546.62,
+      "end": 548.62,
+      "text": "There is no edge from 1 to 3."
+    },
+    {
+      "start": 548.62,
+      "end": 549.62,
+      "text": "So you cannot."
+    },
+    {
+      "start": 549.62,
+      "end": 551.62,
+      "text": "So a path that you are writing."
+    },
+    {
+      "start": 551.62,
+      "end": 555.62,
+      "text": "The adjacent nodes must have an edge between them."
+    },
+    {
+      "start": 555.62,
+      "end": 557.62,
+      "text": "Like 1, 2 has an edge."
+    },
+    {
+      "start": 557.62,
+      "end": 558.62,
+      "text": "2 and 3 has an edge."
+    },
+    {
+      "start": 558.62,
+      "end": 560.62,
+      "text": "3 and 5 has an edge."
+    },
+    {
+      "start": 560.62,
+      "end": 561.62,
+      "text": "So that you can travel in that path."
+    },
+    {
+      "start": 561.62,
+      "end": 566.62,
+      "text": "So that is what is the definition of a path."
+    },
+    {
+      "start": 566.62,
+      "end": 569.62,
+      "text": "So the next term that we will be learning is the degrees in a graph."
+    },
+    {
+      "start": 569.62,
+      "end": 574.62,
+      "text": "So assume if I name them as 1, 2, 3, 4, 5."
+    },
+    {
+      "start": 574.62,
+      "end": 577.62,
+      "text": "And I say can you tell me the degree of the node 3."
+    },
+    {
+      "start": 577.62,
+      "end": 583.62,
+      "text": "So remember the definition of a degree is the number of edges that go inside that or go outside that total."
+    },
+    {
+      "start": 583.62,
+      "end": 588.62,
+      "text": "So I can say there is 1, 2, 3 which is attached to 3."
+    },
+    {
+      "start": 588.62,
+      "end": 590.62,
+      "text": "So the degree of 3 is 3."
+    },
+    {
+      "start": 590.62,
+      "end": 593.62,
+      "text": "Similarly the degree of 4 is 2."
+    },
+    {
+      "start": 593.62,
+      "end": 594.62,
+      "text": "Why?"
+    },
+    {
+      "start": 594.62,
+      "end": 597.62,
+      "text": "Because there are 2 edges which are attached to it."
+    },
+    {
+      "start": 597.62,
+      "end": 599.62,
+      "text": "The degree of 5 will be 3."
+    },
+    {
+      "start": 599.62,
+      "end": 600.62,
+      "text": "The degree of 2 will be 2."
+    },
+    {
+      "start": 600.62,
+      "end": 602.62,
+      "text": "And the degree of 1 will be 2."
+    },
+    {
+      "start": 602.62,
+      "end": 606.62,
+      "text": "So the definition of a degree for an undirected graph."
+    },
+    {
+      "start": 606.62,
+      "end": 607.62,
+      "text": "Very important."
+    },
+    {
+      "start": 607.62,
+      "end": 613.62,
+      "text": "For an undirected graph is the number of edges that are attached to it is known as the degree of the graph."
+    },
+    {
+      "start": 613.62,
+      "end": 616.62,
+      "text": "And there is a property as well."
+    },
+    {
+      "start": 616.62,
+      "end": 618.62,
+      "text": "Please take care of this property."
+    },
+    {
+      "start": 618.62,
+      "end": 619.62,
+      "text": "The property states."
+    },
+    {
+      "start": 620.62,
+      "end": 622.62,
+      "text": "That the total degree."
+    },
+    {
+      "start": 622.62,
+      "end": 631.62,
+      "text": "Yes the total degree of a graph is equal to twice of the number of edges."
+    },
+    {
+      "start": 631.62,
+      "end": 634.62,
+      "text": "Is equal to twice of the number of edges."
+    },
+    {
+      "start": 634.62,
+      "end": 635.62,
+      "text": "Why?"
+    },
+    {
+      "start": 635.62,
+      "end": 640.62,
+      "text": "Because every edge is associated to 2 nodes."
+    },
+    {
+      "start": 640.62,
+      "end": 641.62,
+      "text": "That is the reason."
+    },
+    {
+      "start": 641.62,
+      "end": 642.62,
+      "text": "Why?"
+    },
+    {
+      "start": 642.62,
+      "end": 644.62,
+      "text": "Because every edge is associated with 2 nodes."
+    },
+    {
+      "start": 644.62,
+      "end": 646.62,
+      "text": "So let's compute the degree."
+    },
+    {
+      "start": 646.62,
+      "end": 648.62,
+      "text": "So the degree of this is 2."
+    },
+    {
+      "start": 648.62,
+      "end": 649.62,
+      "text": "Again 2."
+    },
+    {
+      "start": 649.62,
+      "end": 651.62,
+      "text": "2 and 3."
+    },
+    {
+      "start": 651.62,
+      "end": 652.62,
+      "text": "So if I compute the total."
+    },
+    {
+      "start": 652.62,
+      "end": 654.62,
+      "text": "We will be getting 63912."
+    },
+    {
+      "start": 654.62,
+      "end": 656.62,
+      "text": "So the total degree of this graph is 12."
+    },
+    {
+      "start": 656.62,
+      "end": 659.62,
+      "text": "And if I compute the number of edges."
+    },
+    {
+      "start": 659.62,
+      "end": 662.62,
+      "text": "1, 2, 3, 4, 5, 6."
+    },
+    {
+      "start": 662.62,
+      "end": 664.62,
+      "text": "6 number of edges."
+    },
+    {
+      "start": 664.62,
+      "end": 666.62,
+      "text": "And the property gets satisfied."
+    },
+    {
+      "start": 666.62,
+      "end": 668.62,
+      "text": "Intuition is very simple."
+    },
+    {
+      "start": 668.62,
+      "end": 670.62,
+      "text": "Every edge is connected to 2 nodes."
+    },
+    {
+      "start": 670.62,
+      "end": 673.62,
+      "text": "There by this particular property stands."
+    },
+    {
+      "start": 673.62,
+      "end": 675.62,
+      "text": "So this was for undirected graph."
+    },
+    {
+      "start": 675.62,
+      "end": 677.62,
+      "text": "Now let's talk about something which is directed graph."
+    },
+    {
+      "start": 677.62,
+      "end": 680.62,
+      "text": "Now remember this."
+    },
+    {
+      "start": 680.62,
+      "end": 683.62,
+      "text": "In directed graph we have 2 different things."
+    },
+    {
+      "start": 683.62,
+      "end": 687.62,
+      "text": "One is the in degree of a particular node."
+    },
+    {
+      "start": 687.62,
+      "end": 692.62,
+      "text": "While the other one is the out degree of this particular node."
+    },
+    {
+      "start": 692.62,
+      "end": 695.62,
+      "text": "Now what do you mean by in degree or out degree."
+    },
+    {
+      "start": 695.62,
+      "end": 697.62,
+      "text": "So imagine this is the graph."
+    },
+    {
+      "start": 697.62,
+      "end": 702.3,
+      "text": "So let's quickly draw a graph."
+    },
+    {
+      "start": 702.3,
+      "end": 703.3,
+      "text": "Perfect."
+    },
+    {
+      "start": 703.3,
+      "end": 705.3,
+      "text": "So if I ask you for this particular node."
+    },
+    {
+      "start": 705.3,
+      "end": 707.3,
+      "text": "I ask you for this particular node."
+    },
+    {
+      "start": 707.3,
+      "end": 709.3,
+      "text": "What is the in degree for this node."
+    },
+    {
+      "start": 709.3,
+      "end": 711.3,
+      "text": "What will be the answer."
+    },
+    {
+      "start": 711.3,
+      "end": 713.3,
+      "text": "Assume this node is node number 3."
+    },
+    {
+      "start": 713.3,
+      "end": 715.3,
+      "text": "In degree of 3."
+    },
+    {
+      "start": 715.3,
+      "end": 717.3,
+      "text": "The number of incoming edges."
+    },
+    {
+      "start": 717.3,
+      "end": 719.3,
+      "text": "The number of incoming edges."
+    },
+    {
+      "start": 719.3,
+      "end": 721.3,
+      "text": "The edges that go inside it is the in degree."
+    },
+    {
+      "start": 721.3,
+      "end": 723.3,
+      "text": "So that's 2."
+    },
+    {
+      "start": 723.3,
+      "end": 724.3,
+      "text": "So if I ask you."
+    },
+    {
+      "start": 724.3,
+      "end": 726.3,
+      "text": "What is the out degree of that particular node."
+    },
+    {
+      "start": 726.3,
+      "end": 728.3,
+      "text": "The number of outgoing edges."
+    },
+    {
+      "start": 728.3,
+      "end": 729.3,
+      "text": "That is only 1."
+    },
+    {
+      "start": 729.3,
+      "end": 730.3,
+      "text": "So you can say."
+    },
+    {
+      "start": 730.3,
+      "end": 732.3,
+      "text": "The out degree is 1."
+    },
+    {
+      "start": 732.3,
+      "end": 735.3,
+      "text": "So the in degree and out degree will be in this way."
+    },
+    {
+      "start": 735.3,
+      "end": 738.3,
+      "text": "So that will be in terms of directed graph."
+    },
+    {
+      "start": 738.3,
+      "end": 741.3,
+      "text": "Now the last term that we will be learning about is."
+    },
+    {
+      "start": 741.3,
+      "end": 743.3,
+      "text": "The edge weights."
+    },
+    {
+      "start": 743.3,
+      "end": 747.3,
+      "text": "That's very important to understand what is an edge weight."
+    },
+    {
+      "start": 747.3,
+      "end": 748.3,
+      "text": "Now we talked that."
+    },
+    {
+      "start": 748.3,
+      "end": 749.3,
+      "text": "Okay these are nodes."
+    },
+    {
+      "start": 749.3,
+      "end": 750.3,
+      "text": "And this is an edge."
+    },
+    {
+      "start": 750.3,
+      "end": 751.3,
+      "text": "Now every node."
+    },
+    {
+      "start": 751.3,
+      "end": 752.3,
+      "text": "Every edge rather."
+    },
+    {
+      "start": 752.3,
+      "end": 756.3,
+      "text": "Every edge will be having a weight."
+    },
+    {
+      "start": 756.3,
+      "end": 758.3,
+      "text": "Now in problems that you will be facing."
+    },
+    {
+      "start": 758.3,
+      "end": 760.3,
+      "text": "They might say that this edge has a weight 3."
+    },
+    {
+      "start": 760.3,
+      "end": 762.3,
+      "text": "This edge might have a weight 2."
+    },
+    {
+      "start": 762.3,
+      "end": 763.3,
+      "text": "This might have 1."
+    },
+    {
+      "start": 763.3,
+      "end": 764.3,
+      "text": "This might have 5."
+    },
+    {
+      "start": 764.3,
+      "end": 765.3,
+      "text": "This might have 6."
+    },
+    {
+      "start": 765.3,
+      "end": 766.3,
+      "text": "This might have 2."
+    },
+    {
+      "start": 766.3,
+      "end": 767.3,
+      "text": "This might have 1."
+    },
+    {
+      "start": 767.3,
+      "end": 768.3,
+      "text": "This might have 5."
+    },
+    {
+      "start": 768.3,
+      "end": 769.3,
+      "text": "This might have 7."
+    },
+    {
+      "start": 769.3,
+      "end": 772.3,
+      "text": "They can assign any weights to any edges."
+    },
+    {
+      "start": 772.3,
+      "end": 775.3,
+      "text": "And this is what we call as edge weight."
+    },
+    {
+      "start": 775.3,
+      "end": 777.3,
+      "text": "What if weights are not assigned."
+    },
+    {
+      "start": 777.3,
+      "end": 779.3,
+      "text": "Like they don't tell you what are the weights."
+    },
+    {
+      "start": 779.3,
+      "end": 784.3,
+      "text": "In that case we will always assume unit weights."
+    },
+    {
+      "start": 784.3,
+      "end": 785.3,
+      "text": "Which is 1."
+    },
+    {
+      "start": 785.3,
+      "end": 787.3,
+      "text": "If the weights are not assigned."
+    },
+    {
+      "start": 787.3,
+      "end": 789.3,
+      "text": "We assume unit weights."
+    },
+    {
+      "start": 789.3,
+      "end": 790.3,
+      "text": "That is 1."
+    },
+    {
+      "start": 790.3,
+      "end": 792.3,
+      "text": "So guys that will be it for this particular video."
+    },
+    {
+      "start": 792.3,
+      "end": 796.3,
+      "text": "I hope you understood everything that I taught in this particular video."
+    },
+    {
+      "start": 796.3,
+      "end": 797.3,
+      "text": "Just in case you did."
+    },
+    {
+      "start": 797.3,
+      "end": 798.3,
+      "text": "Please hit that like button."
+    },
+    {
+      "start": 798.3,
+      "end": 799.3,
+      "text": "And if you are new to our channel."
+    },
+    {
+      "start": 799.3,
+      "end": 800.3,
+      "text": "What are you waiting for."
+    },
+    {
+      "start": 800.3,
+      "end": 801.3,
+      "text": "Kill that subscribe button right away."
+    },
+    {
+      "start": 801.3,
+      "end": 802.3,
+      "text": "And if you haven't checked out our DP series and all the other series."
+    },
+    {
+      "start": 802.3,
+      "end": 803.3,
+      "text": "The links are in the description."
+    },
+    {
+      "start": 803.3,
+      "end": 804.3,
+      "text": "Please make sure you check them out."
+    },
+    {
+      "start": 804.3,
+      "end": 805.3,
+      "text": "With this I will be wrapping up this video."
+    },
+    {
+      "start": 805.3,
+      "end": 806.3,
+      "text": "Let's meet in the next lecture."
+    },
+    {
+      "start": 806.3,
+      "end": 807.3,
+      "text": "Till then bye bye take care."
+    },
+    {
+      "start": 807.3,
+      "end": 808.3,
+      "text": "Whenever your heart is broken."
+    },
+    {
+      "start": 808.3,
+      "end": 809.3,
+      "text": "I will be back with a new video."
+    },
+    {
+      "start": 809.3,
+      "end": 810.3,
+      "text": "Till then bye bye take care."
+    },
+    {
+      "start": 810.3,
+      "end": 811.3,
+      "text": "Whenever your heart is broken."
+    },
+    {
+      "start": 811.3,
+      "end": 812.3,
+      "text": "Till then bye bye take care."
+    },
+    {
+      "start": 812.3,
+      "end": 813.3,
+      "text": "Whenever your heart is broken."
+    }
+  ]
+}

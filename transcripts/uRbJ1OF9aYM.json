@@ -1,0 +1,2244 @@
+{
+  "video_id": "uRbJ1OF9aYM",
+  "title": "G-20. Find Eventual Safe States - DFS",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1422.52,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 1.54,
+      "text": "So hey everyone, welcome back to the channel."
+    },
+    {
+      "start": 1.66,
+      "end": 3.3,
+      "text": "I hope you guys are doing extremely well."
+    },
+    {
+      "start": 3.56,
+      "end": 7.1,
+      "text": "One more problem in the graph series, which is the eventual safe states."
+    },
+    {
+      "start": 7.56,
+      "end": 8.52,
+      "text": "What is the problem state?"
+    },
+    {
+      "start": 8.62,
+      "end": 12.96,
+      "text": "The problem states are given a directed graph of v vertices and e edges."
+    },
+    {
+      "start": 13.46,
+      "end": 15.58,
+      "text": "And the graph is a zero-based indexing graph."
+    },
+    {
+      "start": 16.4,
+      "end": 19.78,
+      "text": "A node is a terminal node if there are no outgoing edges."
+    },
+    {
+      "start": 20.3,
+      "end": 22.94,
+      "text": "So there should be incoming, there might be incoming edges,"
+    },
+    {
+      "start": 23.26,
+      "end": 25.28,
+      "text": "but there should be no outgoing edges."
+    },
+    {
+      "start": 25.66,
+      "end": 27.92,
+      "text": "Then we call that node as a terminal node."
+    },
+    {
+      "start": 27.92,
+      "end": 32.58,
+      "text": "A node is a safe node if every possible, very, very important point,"
+    },
+    {
+      "start": 32.92,
+      "end": 39.14,
+      "text": "if every possible path starting from that node leads to a terminal node."
+    },
+    {
+      "start": 39.6,
+      "end": 44.26,
+      "text": "Now you need to return me an array containing all the safe nodes of the graph."
+    },
+    {
+      "start": 44.78,
+      "end": 49.34,
+      "text": "The answer should be sorted in ascending order."
+    },
+    {
+      "start": 49.84,
+      "end": 52.34,
+      "text": "So what does the question state?"
+    },
+    {
+      "start": 52.76,
+      "end": 54.38,
+      "text": "So this is the given example."
+    },
+    {
+      "start": 54.5,
+      "end": 56.8,
+      "text": "They're asking you out of this,"
+    },
+    {
+      "start": 56.8,
+      "end": 59.26,
+      "text": "which are the safe nodes?"
+    },
+    {
+      "start": 59.26,
+      "end": 60.46,
+      "text": "That's what you need to figure out."
+    },
+    {
+      "start": 60.8,
+      "end": 61.72,
+      "text": "What is the safe node?"
+    },
+    {
+      "start": 62.04,
+      "end": 63.64,
+      "text": "Every path, very important."
+    },
+    {
+      "start": 64.0,
+      "end": 66.88,
+      "text": "Every path ends up at a terminal node."
+    },
+    {
+      "start": 67.3,
+      "end": 68.54,
+      "text": "Ends up at which node?"
+    },
+    {
+      "start": 68.96,
+      "end": 69.94,
+      "text": "A terminal node."
+    },
+    {
+      "start": 70.22,
+      "end": 71.3,
+      "text": "What is a terminal node?"
+    },
+    {
+      "start": 72.04,
+      "end": 77.68,
+      "text": "No outgoing edges, or you can say outdegree of that node is zero."
+    },
+    {
+      "start": 77.98,
+      "end": 82.12,
+      "text": "So in this video, I'll be solving this using the cycle detection technique."
+    },
+    {
+      "start": 82.46,
+      "end": 86.28,
+      "text": "And in the next video, I'll be solving this using the BFS or the toposort"
+    },
+    {
+      "start": 86.8,
+      "end": 87.8,
+      "text": "technique."
+    },
+    {
+      "start": 87.8,
+      "end": 93.34,
+      "text": "So in this video, you need to be knowing about cycle detection in an undirected graph."
+    },
+    {
+      "start": 93.34,
+      "end": 97.86,
+      "text": "If you haven't seen, you can go back to like three or four videos in the series, you'll"
+    },
+    {
+      "start": 97.86,
+      "end": 98.86,
+      "text": "get that video."
+    },
+    {
+      "start": 98.86,
+      "end": 101.68,
+      "text": "So outdegree has to be zero."
+    },
+    {
+      "start": 101.68,
+      "end": 109.04,
+      "text": "So can I see this guy has one outgoing edge, but this is definitely not a terminal node."
+    },
+    {
+      "start": 109.04,
+      "end": 111.68,
+      "text": "Can I say this has no outgoing edge?"
+    },
+    {
+      "start": 111.68,
+      "end": 112.68,
+      "text": "I can."
+    },
+    {
+      "start": 112.68,
+      "end": 115.04,
+      "text": "And can I say this is a terminal node for me?"
+    },
+    {
+      "start": 115.04,
+      "end": 116.04,
+      "text": "I can."
+    },
+    {
+      "start": 116.04,
+      "end": 119.54,
+      "text": "So the first terminal node I can spot is six."
+    },
+    {
+      "start": 119.88,
+      "end": 122.1,
+      "text": "Do you spot any other terminal nodes?"
+    },
+    {
+      "start": 122.16,
+      "end": 122.92,
+      "text": "Yes, you do."
+    },
+    {
+      "start": 123.28,
+      "end": 126.72,
+      "text": "If you see five has incoming, but no outgoing."
+    },
+    {
+      "start": 126.96,
+      "end": 129.54,
+      "text": "So I spotted one more terminal, which is five."
+    },
+    {
+      "start": 129.96,
+      "end": 131.82,
+      "text": "Do I spot any further terminal nodes?"
+    },
+    {
+      "start": 132.3,
+      "end": 133.08,
+      "text": "I do not."
+    },
+    {
+      "start": 133.5,
+      "end": 138.66,
+      "text": "I do not because everyone has an incoming and an outgoing edge as well."
+    },
+    {
+      "start": 138.9,
+      "end": 140.46,
+      "text": "So let's start with zero."
+    },
+    {
+      "start": 140.84,
+      "end": 142.44,
+      "text": "Let's pick out the first path."
+    },
+    {
+      "start": 142.98,
+      "end": 144.78,
+      "text": "One, three."
+    },
+    {
+      "start": 144.78,
+      "end": 145.48,
+      "text": "Four."
+    },
+    {
+      "start": 146.04,
+      "end": 152.18,
+      "text": "So it redirects me back to zero, not toward any of the terminal nodes."
+    },
+    {
+      "start": 152.18,
+      "end": 157.32,
+      "text": "So zero cannot be a part or zero cannot be called a safe node."
+    },
+    {
+      "start": 157.32,
+      "end": 159.32,
+      "text": "Let's try it with one."
+    },
+    {
+      "start": 159.32,
+      "end": 164.36,
+      "text": "One goes to three, three goes to zero, zero comes back to one."
+    },
+    {
+      "start": 164.36,
+      "end": 171.62,
+      "text": "So one can also not be part of a safe node because it comes back to himself or it doesn't,"
+    },
+    {
+      "start": 171.62,
+      "end": 174.88,
+      "text": "like all the parts do not end up at the terminal node."
+    },
+    {
+      "start": 174.88,
+      "end": 175.88,
+      "text": "Let's check out two."
+    },
+    {
+      "start": 176.04,
+      "end": 177.32,
+      "text": "Two has only one part."
+    },
+    {
+      "start": 177.32,
+      "end": 180.64,
+      "text": "If you can see two has only one part and that ends up at five."
+    },
+    {
+      "start": 180.64,
+      "end": 184.48,
+      "text": "Two has only one part that ends up at five."
+    },
+    {
+      "start": 184.48,
+      "end": 185.84,
+      "text": "So can I see this?"
+    },
+    {
+      "start": 185.84,
+      "end": 186.24,
+      "text": "Yes."
+    },
+    {
+      "start": 186.24,
+      "end": 186.92,
+      "text": "Can I see this?"
+    },
+    {
+      "start": 186.92,
+      "end": 188.72,
+      "text": "That two is a safe node."
+    },
+    {
+      "start": 188.72,
+      "end": 191.24,
+      "text": "I can definitely see that two is a safe node."
+    },
+    {
+      "start": 191.24,
+      "end": 192.12,
+      "text": "So two is safe."
+    },
+    {
+      "start": 192.12,
+      "end": 193.56,
+      "text": "Let's check out the three."
+    },
+    {
+      "start": 193.56,
+      "end": 194.56,
+      "text": "Three."
+    },
+    {
+      "start": 194.56,
+      "end": 201.12,
+      "text": "One of your parts is definitely ending up at the terminal nodes, but are all the parts."
+    },
+    {
+      "start": 201.12,
+      "end": 201.8,
+      "text": "Let's check."
+    },
+    {
+      "start": 201.8,
+      "end": 204.72,
+      "text": "Three has one more path like this, like this."
+    },
+    {
+      "start": 204.72,
+      "end": 205.88,
+      "text": "And like this."
+    },
+    {
+      "start": 205.88,
+      "end": 208.96,
+      "text": "Which ends up at the three himself."
+    },
+    {
+      "start": 208.96,
+      "end": 211.88,
+      "text": "So I can definitely see three cannot be a part of it."
+    },
+    {
+      "start": 211.88,
+      "end": 214.14,
+      "text": "Can I have four as a part of it?"
+    },
+    {
+      "start": 214.14,
+      "end": 217.24,
+      "text": "Yes, it does end up at a terminal node five."
+    },
+    {
+      "start": 217.24,
+      "end": 221.2,
+      "text": "So four can also be a part of my safe node, right?"
+    },
+    {
+      "start": 221.2,
+      "end": 222.5,
+      "text": "Let's check out for five."
+    },
+    {
+      "start": 222.5,
+      "end": 226.8,
+      "text": "Five is himself a terminal node, which means it's a safe node."
+    },
+    {
+      "start": 226.8,
+      "end": 228.72,
+      "text": "So five is a safe node."
+    },
+    {
+      "start": 228.72,
+      "end": 229.88,
+      "text": "Let's check out for six."
+    },
+    {
+      "start": 229.88,
+      "end": 232.24,
+      "text": "It's a terminal node, so a safe node."
+    },
+    {
+      "start": 232.24,
+      "end": 235.28,
+      "text": "So I can say this is the array in the sorting order."
+    },
+    {
+      "start": 235.28,
+      "end": 237.32,
+      "text": "Which you have to return as an answer."
+    },
+    {
+      "start": 237.32,
+      "end": 239.68,
+      "text": "So you have to figure out all the parts."
+    },
+    {
+      "start": 239.68,
+      "end": 245.64,
+      "text": "And if all of the parts end up at a terminal node, then you say that, okay, that guy is"
+    },
+    {
+      "start": 245.64,
+      "end": 247.76,
+      "text": "definitely a safe node."
+    },
+    {
+      "start": 247.76,
+      "end": 250.24,
+      "text": "So the question is very straightforward."
+    },
+    {
+      "start": 250.24,
+      "end": 254.16,
+      "text": "Give me all the safe nodes present in a graph."
+    },
+    {
+      "start": 254.16,
+      "end": 258.0,
+      "text": "So do you remember the cycle detection technique where we detected a cycle?"
+    },
+    {
+      "start": 258.0,
+      "end": 263.9,
+      "text": "So can I see by observing this particular example, we did figure out that all the possible"
+    },
+    {
+      "start": 263.9,
+      "end": 264.9,
+      "text": "parts."
+    },
+    {
+      "start": 265.28,
+      "end": 266.28,
+      "text": "Are there."
+    },
+    {
+      "start": 266.28,
+      "end": 270.78,
+      "text": "But if they return back to themselves, if they return back to themselves, like there"
+    },
+    {
+      "start": 270.78,
+      "end": 274.92,
+      "text": "was one, three, zero, right?"
+    },
+    {
+      "start": 274.92,
+      "end": 279.88,
+      "text": "These three were the part of the cycle and they can never be safe."
+    },
+    {
+      "start": 279.88,
+      "end": 280.88,
+      "text": "Something to observe."
+    },
+    {
+      "start": 280.88,
+      "end": 285.78,
+      "text": "Anyone who's a part of the cycle can never be a safe node."
+    },
+    {
+      "start": 285.78,
+      "end": 291.32,
+      "text": "So imagine if I have a seven, which is pointing to one, will seven be a safe node?"
+    },
+    {
+      "start": 291.32,
+      "end": 292.32,
+      "text": "No."
+    },
+    {
+      "start": 292.32,
+      "end": 293.32,
+      "text": "Why?"
+    },
+    {
+      "start": 293.32,
+      "end": 299.52,
+      "text": "Because seven can have a path through the same cycle and end back at not a safe node"
+    },
+    {
+      "start": 299.52,
+      "end": 301.38,
+      "text": "or not a terminal node."
+    },
+    {
+      "start": 301.38,
+      "end": 307.52,
+      "text": "So what he can see is everyone who's a part of the cycle, everyone who's a part of the"
+    },
+    {
+      "start": 307.52,
+      "end": 313.24,
+      "text": "cycle, everyone who's connected to the cycle, you can say everyone is a part of the cycle"
+    },
+    {
+      "start": 313.24,
+      "end": 316.32,
+      "text": "and everyone who's connected to the cycle will never be safe nodes."
+    },
+    {
+      "start": 316.32,
+      "end": 322.32,
+      "text": "And if you look at this, this is not having any incoming adjust to the cycle, no incoming"
+    },
+    {
+      "start": 322.32,
+      "end": 323.32,
+      "text": "adjust to the cycle."
+    },
+    {
+      "start": 323.32,
+      "end": 326.44,
+      "text": "Thereby it will always end up at terminal nodes."
+    },
+    {
+      "start": 326.44,
+      "end": 332.66,
+      "text": "If there's a cycle and anyone who's connected to that incoming adjust, so it will turn back"
+    },
+    {
+      "start": 332.66,
+      "end": 333.66,
+      "text": "on that stuff."
+    },
+    {
+      "start": 333.66,
+      "end": 335.98,
+      "text": "So you cannot end up at a terminal node."
+    },
+    {
+      "start": 335.98,
+      "end": 342.38,
+      "text": "So a slight observation we have noticed is anyone who's a part of the cycle, anyone who"
+    },
+    {
+      "start": 342.38,
+      "end": 347.96,
+      "text": "is a part of the cycle cannot be a safe node."
+    },
+    {
+      "start": 347.96,
+      "end": 351.12,
+      "text": "And anyone that leads to a cycle."
+    },
+    {
+      "start": 351.12,
+      "end": 352.52,
+      "text": "Anyone that leads to a cycle."
+    },
+    {
+      "start": 352.52,
+      "end": 355.76,
+      "text": "Can not be."
+    },
+    {
+      "start": 355.76,
+      "end": 358.28,
+      "text": "So I have figured out two ways."
+    },
+    {
+      "start": 358.28,
+      "end": 360.62,
+      "text": "Apart from them, everyone else can be a safe node."
+    },
+    {
+      "start": 360.62,
+      "end": 362.78,
+      "text": "I can definitely say that, right?"
+    },
+    {
+      "start": 362.78,
+      "end": 369.28,
+      "text": "So the whole problem can be easily solved by figuring out which guys are a part of a cycle"
+    },
+    {
+      "start": 369.28,
+      "end": 372.76,
+      "text": "and which guys are incoming to the cycle."
+    },
+    {
+      "start": 372.76,
+      "end": 374.68,
+      "text": "That is what we need to figure out."
+    },
+    {
+      "start": 374.68,
+      "end": 379.34,
+      "text": "Once you've figured that out, I think we should be able to solve this problem very, very easily."
+    },
+    {
+      "start": 379.34,
+      "end": 382.52,
+      "text": "So now you know both the points, right?"
+    },
+    {
+      "start": 382.52,
+      "end": 386.9,
+      "text": "So we have already learned how to detect a cycle using the DFS technique."
+    },
+    {
+      "start": 386.9,
+      "end": 389.0,
+      "text": "And if you do not know, please go back and watch it."
+    },
+    {
+      "start": 389.0,
+      "end": 391.98,
+      "text": "And over there, we used a couple of arrays."
+    },
+    {
+      "start": 391.98,
+      "end": 394.76,
+      "text": "One is the visited and one is the path visited."
+    },
+    {
+      "start": 394.76,
+      "end": 395.76,
+      "text": "Right?"
+    },
+    {
+      "start": 395.76,
+      "end": 396.76,
+      "text": "That is what we used."
+    },
+    {
+      "start": 396.76,
+      "end": 401.78,
+      "text": "So we're going to do the same thing and we will run the same thing on this particular"
+    },
+    {
+      "start": 401.78,
+      "end": 402.78,
+      "text": "algorithm."
+    },
+    {
+      "start": 402.78,
+      "end": 408.76,
+      "text": "And we will see how can we figure out which is a cycle and which nodes are approaching"
+    },
+    {
+      "start": 408.76,
+      "end": 409.76,
+      "text": "the cycle."
+    },
+    {
+      "start": 409.76,
+      "end": 411.76,
+      "text": "So we've learned cycle detection in the previous videos."
+    },
+    {
+      "start": 411.76,
+      "end": 412.36,
+      "text": "Right?"
+    },
+    {
+      "start": 412.52,
+      "end": 417.3,
+      "text": "there we used couple of concepts one is the visited and the other one is the path visited"
+    },
+    {
+      "start": 417.3,
+      "end": 422.9,
+      "text": "now over here we are going to apply the same concept and we are going to determine which are"
+    },
+    {
+      "start": 422.9,
+      "end": 427.62,
+      "text": "the saved nodes so as of now for this particular graph what you can do is you can draw the"
+    },
+    {
+      "start": 427.62,
+      "end": 432.3,
+      "text": "corresponding adjacency list so this is how the corresponding adjacency list will look for this"
+    },
+    {
+      "start": 432.3,
+      "end": 438.5,
+      "text": "particular graph so what we will do is if you remember we had couple of visited arrays so we"
+    },
+    {
+      "start": 438.5,
+      "end": 443.28,
+      "text": "will create both the visited arrays and assign them with zeros so let's create both of them"
+    },
+    {
+      "start": 443.28,
+      "end": 449.18,
+      "text": "okay so as of now what i've done is i've created the adjacency list as well as i've made the visited"
+    },
+    {
+      "start": 449.18,
+      "end": 453.94,
+      "text": "array and the path visited array as well so remember all of these are assigned with zeros"
+    },
+    {
+      "start": 453.94,
+      "end": 460.72,
+      "text": "so let's start the dfs calls again since this can have multiple components we will start the dfs in"
+    },
+    {
+      "start": 460.72,
+      "end": 466.66,
+      "text": "the standard way where we write i equal to zero and then go for v and then we say not visited"
+    },
+    {
+      "start": 466.66,
+      "end": 468.48,
+      "text": "then we call the dfs"
+    },
+    {
+      "start": 468.48,
+      "end": 473.52,
+      "text": "remember this so that's what we will do the very basic standard way if there are multiple"
+    },
+    {
+      "start": 473.52,
+      "end": 479.86,
+      "text": "components so which is the first one it will go from zero so let's start from zero so starting"
+    },
+    {
+      "start": 479.86,
+      "end": 485.06,
+      "text": "from zero this is where we are so we will start the dfs call from zero so let's start the call"
+    },
+    {
+      "start": 485.06,
+      "end": 491.48,
+      "text": "from zero the moment you add zero what you will see is okay hey listen i'll say until this call"
+    },
+    {
+      "start": 491.48,
+      "end": 497.22,
+      "text": "gets completed i'll say until this call gets completed then only i'll call it as a saved"
+    },
+    {
+      "start": 497.22,
+      "end": 498.46,
+      "text": "node and if this call"
+    },
+    {
+      "start": 498.48,
+      "end": 506.46,
+      "text": "gets a cycle anywhere anywhere in the path i will not call this as a safe node got it so let's start"
+    },
+    {
+      "start": 506.46,
+      "end": 512.94,
+      "text": "so dfs of co says hey listen i am visited and i'm path visited as well i am visited and i'm path"
+    },
+    {
+      "start": 512.94,
+      "end": 520.5,
+      "text": "visited as well done next it goes to the adjacent which is dfs of one right this is the adjacent"
+    },
+    {
+      "start": 520.5,
+      "end": 527.9,
+      "text": "node this is the adjacent node goes to it and as of now says visited and path visited one will now"
+    },
+    {
+      "start": 528.48,
+      "end": 536.46,
+      "text": "go to two and when it goes to two it says visited and path visited two will now go to three so when"
+    },
+    {
+      "start": 536.46,
+      "end": 542.64,
+      "text": "it goes to three it again says it has visited and path visited remember this starts from here goes"
+    },
+    {
+      "start": 542.64,
+      "end": 548.88,
+      "text": "here goes here now it has two options either it can from three it has two options either it can"
+    },
+    {
+      "start": 548.88,
+      "end": 554.28,
+      "text": "go to five either it can go to four so three goes and checks who's the first in the adjacency list"
+    },
+    {
+      "start": 554.28,
+      "end": 558.32,
+      "text": "so the first it finds is four so it will go to four"
+    },
+    {
+      "start": 558.48,
+      "end": 563.7,
+      "text": "remember this it will go to four and then it will come back and probably go to five but that will be"
+    },
+    {
+      "start": 563.7,
+      "end": 569.58,
+      "text": "done in the later stage when the recursion is complete the caution classes guys so December"
+    },
+    {
+      "start": 569.58,
+      "end": 578.04,
+      "text": "sorry dfs3 to dfs4 so we will go for four four is visited path visited as well next"
+    },
+    {
+      "start": 578.94,
+      "end": 585.6,
+      "text": "four will go to home four will go to six let's go to six dfs of six again it will mark six as visited"
+    },
+    {
+      "start": 585.6,
+      "end": 588.3,
+      "text": "and path visited as well"
+    },
+    {
+      "start": 588.48,
+      "end": 596.1,
+      "text": "now six it's a very important point six is pointing to seven six is pointing to seven so it"
+    },
+    {
+      "start": 596.1,
+      "end": 603.96,
+      "text": "will call for seven it will call for seven and it will mark it as visited and path visited visited"
+    },
+    {
+      "start": 603.96,
+      "end": 611.4,
+      "text": "and path visited now when you go to seven it states hey I do not have anyone I do not have"
+    },
+    {
+      "start": 611.4,
+      "end": 618.42,
+      "text": "anyone to further call dfs so I'm like did I get a cycle no we actually reached an end we started our"
+    },
+    {
+      "start": 618.48,
+      "end": 626.58,
+      "text": "journey from here and we reached an end can I say every node in this is a safe mode because you"
+    },
+    {
+      "start": 626.58,
+      "end": 632.46,
+      "text": "started a journey but wait there's one more part to be checked fine we'll check it afterwards but"
+    },
+    {
+      "start": 632.46,
+      "end": 638.4,
+      "text": "as of now can I see from six there's one outgoing Edge which ends at seven and seven is a terminal"
+    },
+    {
+      "start": 638.4,
+      "end": 644.4,
+      "text": "node where I'm standing at so from seven there cannot be any further dfs call so can I say seven"
+    },
+    {
+      "start": 644.4,
+      "end": 648.36,
+      "text": "is definitely seven is definitely"
+    },
+    {
+      "start": 648.48,
+      "end": 655.2,
+      "text": "a safe note I can say it's a terminal so what I'll do is I'll just mark seven you can use any"
+    },
+    {
+      "start": 655.2,
+      "end": 662.7,
+      "text": "map or a third array you just keep a mark which is a check so I say everything for seven is done no"
+    },
+    {
+      "start": 662.7,
+      "end": 668.52,
+      "text": "further dfs calls so this is a safe note marked it as true right what's the next thing that we will"
+    },
+    {
+      "start": 668.52,
+      "end": 675.9,
+      "text": "do what we will do is okay if Margaret has to next we come back so let's come back now six is I had"
+    },
+    {
+      "start": 675.9,
+      "end": 678.06,
+      "text": "a call for seven and I ended it"
+    },
+    {
+      "start": 678.48,
+      "end": 681.6,
+      "text": "I do not have any further calls why six only had seven to go"
+    },
+    {
+      "start": 682.74,
+      "end": 690.12,
+      "text": "fine dfs is over for six no further calls this guy is also a safe note this guy is also a safe"
+    },
+    {
+      "start": 690.12,
+      "end": 695.4,
+      "text": "note mark it and remember when you are returning the path visit will go as zero the path visit will"
+    },
+    {
+      "start": 695.4,
+      "end": 701.4,
+      "text": "go as zero so now return to four the four says I do not have any further calls I just had four"
+    },
+    {
+      "start": 701.4,
+      "end": 707.82,
+      "text": "six and I did it I'm back or doesn't have any dfs calls over is also a safe note so mark it as true"
+    },
+    {
+      "start": 708.48,
+      "end": 715.62,
+      "text": "why am I going up mark it as true and at the same time make sure course part visit is done because"
+    },
+    {
+      "start": 715.62,
+      "end": 722.82,
+      "text": "four will not go back so now three which went cannot call it as a self node cannot call it as"
+    },
+    {
+      "start": 722.82,
+      "end": 728.88,
+      "text": "a safe node as of now why because there's one more path which he has to explore what does set"
+    },
+    {
+      "start": 728.88,
+      "end": 734.7,
+      "text": "uh what the seat node means all the parts should end up at terminal node over here three states"
+    },
+    {
+      "start": 734.7,
+      "end": 736.78,
+      "text": "one path ends at a terminal node I have one more part to fix"
+    },
+    {
+      "start": 736.78,
+      "end": 738.72,
+      "text": "I have one more part to figure out."
+    },
+    {
+      "start": 738.78,
+      "end": 740.28,
+      "text": "Does it end at a terminal node?"
+    },
+    {
+      "start": 740.36,
+      "end": 741.3,
+      "text": "I have to figure that out."
+    },
+    {
+      "start": 741.6,
+      "end": 741.78,
+      "text": "Right?"
+    },
+    {
+      "start": 742.12,
+      "end": 743.12,
+      "text": "So that is what we're going to do."
+    },
+    {
+      "start": 743.42,
+      "end": 744.5,
+      "text": "Let's start from 6 now."
+    },
+    {
+      "start": 744.88,
+      "end": 745.62,
+      "text": "Sorry, 5 now."
+    },
+    {
+      "start": 745.94,
+      "end": 749.18,
+      "text": "So we'll go to 5 and we'll say path visited, path visited."
+    },
+    {
+      "start": 749.6,
+      "end": 752.04,
+      "text": "Now 5 goes to 6."
+    },
+    {
+      "start": 752.5,
+      "end": 756.38,
+      "text": "5 goes to 6 because 5's next node is 6."
+    },
+    {
+      "start": 756.78,
+      "end": 761.98,
+      "text": "But the moment you go to 6, you actually say, hey, wait, wait."
+    },
+    {
+      "start": 762.74,
+      "end": 763.8,
+      "text": "6 is already visited."
+    },
+    {
+      "start": 764.26,
+      "end": 765.3,
+      "text": "6 is already visited."
+    },
+    {
+      "start": 765.3,
+      "end": 767.3,
+      "text": "It got visited in this direction."
+    },
+    {
+      "start": 768.36,
+      "end": 771.42,
+      "text": "And if 6 is already visited and I did not get any cycle."
+    },
+    {
+      "start": 771.82,
+      "end": 772.88,
+      "text": "I did not get any cycle."
+    },
+    {
+      "start": 773.48,
+      "end": 776.18,
+      "text": "6 is visited, but 6 is not path visited."
+    },
+    {
+      "start": 776.6,
+      "end": 777.86,
+      "text": "It's not in the same path."
+    },
+    {
+      "start": 778.24,
+      "end": 779.04,
+      "text": "It went in this path."
+    },
+    {
+      "start": 779.1,
+      "end": 780.38,
+      "text": "Now it's this other path."
+    },
+    {
+      "start": 780.58,
+      "end": 781.66,
+      "text": "It's not in the same path."
+    },
+    {
+      "start": 781.96,
+      "end": 783.08,
+      "text": "It's definitely not a cycle."
+    },
+    {
+      "start": 783.86,
+      "end": 790.42,
+      "text": "And if 6 has been checked and we did not get a cycle, I will no more go and check for 6."
+    },
+    {
+      "start": 790.52,
+      "end": 791.92,
+      "text": "I'll no more go and check for 6."
+    },
+    {
+      "start": 792.24,
+      "end": 794.5,
+      "text": "And I'll be like, fine, I don't need to check for 6."
+    },
+    {
+      "start": 795.3,
+      "end": 799.42,
+      "text": "So I don't need to do a call because 6 has already been checked."
+    },
+    {
+      "start": 799.86,
+      "end": 803.66,
+      "text": "If you carefully see, 6 has already been checked and it did not get a cycle."
+    },
+    {
+      "start": 804.04,
+      "end": 806.78,
+      "text": "So I will not go because 6 is definitely not a cycle."
+    },
+    {
+      "start": 806.94,
+      "end": 807.08,
+      "text": "Why?"
+    },
+    {
+      "start": 807.58,
+      "end": 810.86,
+      "text": "Because it was in a different path and this is in a different path."
+    },
+    {
+      "start": 811.22,
+      "end": 812.42,
+      "text": "6 is definitely not a cycle."
+    },
+    {
+      "start": 812.74,
+      "end": 814.8,
+      "text": "Because if it was a cycle, it would have gone like this."
+    },
+    {
+      "start": 815.3,
+      "end": 816.16,
+      "text": "So it is not a cycle."
+    },
+    {
+      "start": 816.58,
+      "end": 817.4,
+      "text": "It is not a cycle."
+    },
+    {
+      "start": 818.0,
+      "end": 820.84,
+      "text": "Can 5 do any further DFS calls apart from 6?"
+    },
+    {
+      "start": 821.2,
+      "end": 821.52,
+      "text": "No."
+    },
+    {
+      "start": 821.52,
+      "end": 823.78,
+      "text": "So I'll say 5 is a safe node."
+    },
+    {
+      "start": 824.18,
+      "end": 825.02,
+      "text": "And I'll mark 5 as."
+    },
+    {
+      "start": 825.3,
+      "end": 826.26,
+      "text": "Unvisited."
+    },
+    {
+      "start": 826.5,
+      "end": 827.24,
+      "text": "And I'll go back."
+    },
+    {
+      "start": 827.58,
+      "end": 830.88,
+      "text": "Now 3, explode this path, explode this path."
+    },
+    {
+      "start": 831.46,
+      "end": 834.1,
+      "text": "Can I say for 3, it exploded both the paths."
+    },
+    {
+      "start": 834.56,
+      "end": 837.52,
+      "text": "Which eventually means it is a safe node."
+    },
+    {
+      "start": 838.1,
+      "end": 840.7,
+      "text": "So I'll mark 3 also as a safe node."
+    },
+    {
+      "start": 840.84,
+      "end": 841.68,
+      "text": "And I'll now go back."
+    },
+    {
+      "start": 842.02,
+      "end": 843.84,
+      "text": "Going back, make sure this is 0."
+    },
+    {
+      "start": 844.66,
+      "end": 846.72,
+      "text": "2 says, I'm also a safe node."
+    },
+    {
+      "start": 847.16,
+      "end": 849.46,
+      "text": "So 2 marks itself and goes back."
+    },
+    {
+      "start": 850.4,
+      "end": 852.16,
+      "text": "1 says, I'm also a safe node."
+    },
+    {
+      "start": 852.56,
+      "end": 853.86,
+      "text": "Marks itself and goes back."
+    },
+    {
+      "start": 854.32,
+      "end": 854.94,
+      "text": "0 says."
+    },
+    {
+      "start": 855.3,
+      "end": 856.8,
+      "text": "I explode all my paths."
+    },
+    {
+      "start": 857.26,
+      "end": 858.22,
+      "text": "I'm also a safe node."
+    },
+    {
+      "start": 858.52,
+      "end": 860.06,
+      "text": "Marks it as 0 and goes back."
+    },
+    {
+      "start": 860.42,
+      "end": 862.76,
+      "text": "Everyone, the path has been traversed."
+    },
+    {
+      "start": 863.06,
+      "end": 864.2,
+      "text": "We did not get a cycle."
+    },
+    {
+      "start": 864.54,
+      "end": 866.2,
+      "text": "Because this path does not have a cycle."
+    },
+    {
+      "start": 866.3,
+      "end": 868.5,
+      "text": "And everyone ends at 7."
+    },
+    {
+      "start": 868.5,
+      "end": 871.5,
+      "text": "If you see, everyone ends at 7."
+    },
+    {
+      "start": 871.78,
+      "end": 875.7,
+      "text": "So thereby, all of these nodes can be called as a safe node."
+    },
+    {
+      "start": 875.98,
+      "end": 876.36,
+      "text": "Right?"
+    },
+    {
+      "start": 876.58,
+      "end": 877.72,
+      "text": "So everyone done."
+    },
+    {
+      "start": 878.18,
+      "end": 882.86,
+      "text": "Now this will change to 1, to 2, to 3, to 4."
+    },
+    {
+      "start": 883.02,
+      "end": 884.62,
+      "text": "And it finds everyone is visited."
+    },
+    {
+      "start": 884.98,
+      "end": 885.18,
+      "text": "Which means."
+    },
+    {
+      "start": 885.18,
+      "end": 886.8,
+      "text": "They have been checked."
+    },
+    {
+      "start": 887.04,
+      "end": 888.26,
+      "text": "There's no need to check any."
+    },
+    {
+      "start": 888.48,
+      "end": 889.56,
+      "text": "If they have been checked."
+    },
+    {
+      "start": 889.82,
+      "end": 891.18,
+      "text": "So what I will do is."
+    },
+    {
+      "start": 891.48,
+      "end": 893.28,
+      "text": "I'll now go to 8."
+    },
+    {
+      "start": 893.56,
+      "end": 896.04,
+      "text": "And that's when we find it as unvisited."
+    },
+    {
+      "start": 896.24,
+      "end": 897.3,
+      "text": "We will go to 8."
+    },
+    {
+      "start": 897.6,
+      "end": 900.48,
+      "text": "And that is when we find it as unvisited."
+    },
+    {
+      "start": 900.72,
+      "end": 903.34,
+      "text": "So what I'll do is I'll call a DFS for 8 now."
+    },
+    {
+      "start": 903.62,
+      "end": 905.06,
+      "text": "So I'll just quickly raise this up."
+    },
+    {
+      "start": 906.0,
+      "end": 908.48,
+      "text": "Because the next call will go for 8."
+    },
+    {
+      "start": 908.76,
+      "end": 909.24,
+      "text": "Right?"
+    },
+    {
+      "start": 909.5,
+      "end": 912.36,
+      "text": "So as of now, we have a DFS call for 8."
+    },
+    {
+      "start": 913.08,
+      "end": 914.94,
+      "text": "So let's start the DFS for 8 now."
+    },
+    {
+      "start": 915.18,
+      "end": 917.04,
+      "text": "So I start the DFS for 8."
+    },
+    {
+      "start": 917.24,
+      "end": 918.68,
+      "text": "When you started for 8."
+    },
+    {
+      "start": 918.88,
+      "end": 922.18,
+      "text": "You marked them as visited and path visited."
+    },
+    {
+      "start": 922.38,
+      "end": 922.88,
+      "text": "Right?"
+    },
+    {
+      "start": 923.08,
+      "end": 924.28,
+      "text": "8 has couple of them."
+    },
+    {
+      "start": 924.48,
+      "end": 925.08,
+      "text": "1 and 9."
+    },
+    {
+      "start": 925.28,
+      "end": 928.68,
+      "text": "So 1 and 9."
+    },
+    {
+      "start": 928.88,
+      "end": 931.48,
+      "text": "So as of now, can I see this?"
+    },
+    {
+      "start": 931.68,
+      "end": 933.68,
+      "text": "8 goes to 1."
+    },
+    {
+      "start": 933.88,
+      "end": 934.48,
+      "text": "Right?"
+    },
+    {
+      "start": 934.68,
+      "end": 936.28,
+      "text": "But will you go to 1?"
+    },
+    {
+      "start": 936.48,
+      "end": 937.28,
+      "text": "That's my question."
+    },
+    {
+      "start": 937.48,
+      "end": 939.48,
+      "text": "Will the 8 call a DFS for 1?"
+    },
+    {
+      "start": 939.68,
+      "end": 940.88,
+      "text": "No."
+    },
+    {
+      "start": 941.08,
+      "end": 941.48,
+      "text": "Why?"
+    },
+    {
+      "start": 941.68,
+      "end": 944.14,
+      "text": "So when 8 tries to go to 1."
+    },
+    {
+      "start": 944.34,
+      "end": 945.64,
+      "text": "It says, hey Nisam."
+    },
+    {
+      "start": 945.84,
+      "end": 946.44,
+      "text": "I."
+    },
+    {
+      "start": 946.68,
+      "end": 947.04,
+      "text": "Am."
+    },
+    {
+      "start": 947.24,
+      "end": 948.64,
+      "text": "Already visited."
+    },
+    {
+      "start": 948.84,
+      "end": 951.28,
+      "text": "I am already visited and I'm not path visited."
+    },
+    {
+      "start": 951.48,
+      "end": 955.96,
+      "text": "Which means I'm not a part of a cycle or I'm not someone who gets into a cycle."
+    },
+    {
+      "start": 956.16,
+      "end": 958.36,
+      "text": "Because if this guy was a part of a cycle,"
+    },
+    {
+      "start": 958.56,
+      "end": 961.36,
+      "text": "it would have been visited and path visited as well."
+    },
+    {
+      "start": 961.56,
+      "end": 961.96,
+      "text": "Got it?"
+    },
+    {
+      "start": 962.16,
+      "end": 967.68,
+      "text": "It's not a part of a cycle because if you would have encountered a cycle like this,"
+    },
+    {
+      "start": 967.88,
+      "end": 971.36,
+      "text": "the moment you encountered a cycle, I would have returned."
+    },
+    {
+      "start": 971.56,
+      "end": 975.84,
+      "text": "So the path visited for this guy would have also been 1 because"
+    },
+    {
+      "start": 976.04,
+      "end": 976.64,
+      "text": "anytime you get a cycle,"
+    },
+    {
+      "start": 976.88,
+      "end": 977.92,
+      "text": "you break and return."
+    },
+    {
+      "start": 978.12,
+      "end": 980.12,
+      "text": "You do not reset the path visit."
+    },
+    {
+      "start": 980.32,
+      "end": 984.6,
+      "text": "You only reset the path visit if and only if you did not get a cycle."
+    },
+    {
+      "start": 984.8,
+      "end": 985.16,
+      "text": "Got it?"
+    },
+    {
+      "start": 985.36,
+      "end": 986.4,
+      "text": "Cycle detection video."
+    },
+    {
+      "start": 986.6,
+      "end": 988.72,
+      "text": "So 8 states."
+    },
+    {
+      "start": 988.92,
+      "end": 990.6,
+      "text": "1."
+    },
+    {
+      "start": 990.8,
+      "end": 991.72,
+      "text": "It just visited."
+    },
+    {
+      "start": 991.92,
+      "end": 993.2,
+      "text": "You did not get a cycle."
+    },
+    {
+      "start": 993.4,
+      "end": 994.2,
+      "text": "So fine."
+    },
+    {
+      "start": 994.4,
+      "end": 995.68,
+      "text": "This path is safe."
+    },
+    {
+      "start": 995.88,
+      "end": 997.52,
+      "text": "I'll not call it, but this path is safe."
+    },
+    {
+      "start": 997.72,
+      "end": 1000.44,
+      "text": "I still have a path to explore, which is DFS of 9."
+    },
+    {
+      "start": 1000.64,
+      "end": 1001.32,
+      "text": "Let's explore."
+    },
+    {
+      "start": 1001.52,
+      "end": 1003.84,
+      "text": "So I go to 9 and I say, fine."
+    },
+    {
+      "start": 1004.04,
+      "end": 1005.84,
+      "text": "Visited path visited."
+    },
+    {
+      "start": 1006.04,
+      "end": 1008.96,
+      "text": "9 says, I go to DFS of 10."
+    },
+    {
+      "start": 1009.16,
+      "end": 1010.6,
+      "text": "10 says, okay."
+    },
+    {
+      "start": 1010.8,
+      "end": 1012.08,
+      "text": "Visited path visited."
+    },
+    {
+      "start": 1012.28,
+      "end": 1016.8,
+      "text": "10 says, the next guy that I have is 8."
+    },
+    {
+      "start": 1017.0,
+      "end": 1021.04,
+      "text": "And that guy is saying, visited."
+    },
+    {
+      "start": 1021.24,
+      "end": 1024.36,
+      "text": "Path visited, which means false."
+    },
+    {
+      "start": 1024.56,
+      "end": 1025.56,
+      "text": "Which means false."
+    },
+    {
+      "start": 1025.76,
+      "end": 1034.0,
+      "text": "So this guy cannot be a safe node because 10 encountered an 8."
+    },
+    {
+      "start": 1034.2,
+      "end": 1035.04,
+      "text": "Cycle."
+    },
+    {
+      "start": 1035.04,
+      "end": 1036.68,
+      "text": "Cycle cannot be safe."
+    },
+    {
+      "start": 1036.88,
+      "end": 1041.24,
+      "text": "Thereby, it doesn't, doesn't re-mark itself as 0."
+    },
+    {
+      "start": 1041.44,
+      "end": 1042.92,
+      "text": "Doesn't. It just goes back."
+    },
+    {
+      "start": 1043.12,
+      "end": 1043.72,
+      "text": "You just return."
+    },
+    {
+      "start": 1043.92,
+      "end": 1045.32,
+      "text": "The moment you get a cycle, you return."
+    },
+    {
+      "start": 1045.52,
+      "end": 1046.32,
+      "text": "Do not reset."
+    },
+    {
+      "start": 1046.52,
+      "end": 1048.2,
+      "text": "9 says, you got a cycle."
+    },
+    {
+      "start": 1048.4,
+      "end": 1050.08,
+      "text": "10 got a cycle. Return."
+    },
+    {
+      "start": 1050.28,
+      "end": 1051.96,
+      "text": "8 says, you guys got a cycle."
+    },
+    {
+      "start": 1052.16,
+      "end": 1052.96,
+      "text": "I'll return."
+    },
+    {
+      "start": 1053.16,
+      "end": 1054.92,
+      "text": "No one unmarked themselves."
+    },
+    {
+      "start": 1055.12,
+      "end": 1058.44,
+      "text": "So all of them are marked as visited and path visited."
+    },
+    {
+      "start": 1058.64,
+      "end": 1059.76,
+      "text": "Nothing that I was explaining."
+    },
+    {
+      "start": 1059.96,
+      "end": 1064.16,
+      "text": "Everyone returned and none of them were safe nodes."
+    },
+    {
+      "start": 1064.16,
+      "end": 1065.16,
+      "text": "Perfect."
+    },
+    {
+      "start": 1065.36,
+      "end": 1068.04,
+      "text": "So we have, we're done with this."
+    },
+    {
+      "start": 1068.24,
+      "end": 1071.68,
+      "text": "Next, this will go to like 8, 9, 10."
+    },
+    {
+      "start": 1071.88,
+      "end": 1072.88,
+      "text": "That's 10 for 11."
+    },
+    {
+      "start": 1073.08,
+      "end": 1075.64,
+      "text": "At the moment you try for 11, see what will happen."
+    },
+    {
+      "start": 1075.84,
+      "end": 1077.24,
+      "text": "11 says I have a 9."
+    },
+    {
+      "start": 1077.44,
+      "end": 1082.36,
+      "text": "The next one you try to go to 11's neighbor, which is 9."
+    },
+    {
+      "start": 1082.56,
+      "end": 1086.6,
+      "text": "It says I'm visited and I'm path visited, which means I got a cycle."
+    },
+    {
+      "start": 1086.8,
+      "end": 1088.76,
+      "text": "That's why I'm still path visited."
+    },
+    {
+      "start": 1088.96,
+      "end": 1089.92,
+      "text": "Someone returned."
+    },
+    {
+      "start": 1090.12,
+      "end": 1091.8,
+      "text": "Someone did not unmark me."
+    },
+    {
+      "start": 1092.0,
+      "end": 1092.8,
+      "text": "Thereby."
+    },
+    {
+      "start": 1093.0,
+      "end": 1093.8,
+      "text": "This is also not safe."
+    },
+    {
+      "start": 1094.16,
+      "end": 1094.76,
+      "text": "This is a safe node."
+    },
+    {
+      "start": 1094.96,
+      "end": 1100.12,
+      "text": "Eventually you'd have marked all the safe nodes and you can just store them."
+    },
+    {
+      "start": 1100.32,
+      "end": 1102.36,
+      "text": "Very simple, very straightforward."
+    },
+    {
+      "start": 1102.56,
+      "end": 1104.96,
+      "text": "OK, so guys, I hope you understood the explanation."
+    },
+    {
+      "start": 1105.16,
+      "end": 1106.84,
+      "text": "At the moment I'll start holding this."
+    },
+    {
+      "start": 1107.04,
+      "end": 1110.64,
+      "text": "You'll see that this sticks into your head in a much better way."
+    },
+    {
+      "start": 1110.84,
+      "end": 1114.32,
+      "text": "So I'll go to the cycle in a directed graph."
+    },
+    {
+      "start": 1114.52,
+      "end": 1118.12,
+      "text": "I'll go to the submissions and I'll pick the DFS code from there."
+    },
+    {
+      "start": 1118.32,
+      "end": 1119.48,
+      "text": "So this was the code."
+    },
+    {
+      "start": 1119.68,
+      "end": 1121.96,
+      "text": "If you remember, this was the DFS that I wrote."
+    },
+    {
+      "start": 1122.16,
+      "end": 1124.08,
+      "text": "So I just pick up that."
+    },
+    {
+      "start": 1124.36,
+      "end": 1125.12,
+      "text": "I'll paste it here."
+    },
+    {
+      "start": 1125.32,
+      "end": 1126.76,
+      "text": "That's the first thing that I'll do."
+    },
+    {
+      "start": 1126.96,
+      "end": 1133.08,
+      "text": "Next thing I'll do is I just pick up the internal thing for a second check."
+    },
+    {
+      "start": 1133.28,
+      "end": 1136.36,
+      "text": "So once you've pasted it, it's very important to analyze that."
+    },
+    {
+      "start": 1136.56,
+      "end": 1139.64,
+      "text": "You need to return and vector or a list as an answer."
+    },
+    {
+      "start": 1139.84,
+      "end": 1143.12,
+      "text": "So probably you can just store it as safe nodes."
+    },
+    {
+      "start": 1143.32,
+      "end": 1146.24,
+      "text": "And we need to keep a mark, which are the safe nodes."
+    },
+    {
+      "start": 1146.44,
+      "end": 1148.24,
+      "text": "So just make sure they are marked."
+    },
+    {
+      "start": 1148.44,
+      "end": 1150.0,
+      "text": "Just make sure they are marked."
+    },
+    {
+      "start": 1150.2,
+      "end": 1151.96,
+      "text": "Now, something very important over here."
+    },
+    {
+      "start": 1152.16,
+      "end": 1153.36,
+      "text": "We do not break."
+    },
+    {
+      "start": 1154.36,
+      "end": 1159.2,
+      "text": "We don't check a cycle because we need to continue all the DFS calls."
+    },
+    {
+      "start": 1159.4,
+      "end": 1163.8,
+      "text": "So this we need to do all the DFS because we need to check for all the nodes."
+    },
+    {
+      "start": 1164.0,
+      "end": 1166.16,
+      "text": "So it's not like you get the cycle and you break out."
+    },
+    {
+      "start": 1166.36,
+      "end": 1167.0,
+      "text": "Do not do that."
+    },
+    {
+      "start": 1167.2,
+      "end": 1170.68,
+      "text": "We need to check for all the possible nodes."
+    },
+    {
+      "start": 1170.88,
+      "end": 1173.28,
+      "text": "OK, all the possible unvisited nodes."
+    },
+    {
+      "start": 1173.48,
+      "end": 1175.84,
+      "text": "That's a small thing that you'll do at the end of the day."
+    },
+    {
+      "start": 1176.04,
+      "end": 1181.56,
+      "text": "You'll see, OK, let's quickly have a check for all the nodes and something like if"
+    },
+    {
+      "start": 1181.76,
+      "end": 1183.76,
+      "text": "the check comes out to be one."
+    },
+    {
+      "start": 1184.16,
+      "end": 1186.2,
+      "text": "Then I'll put them into the safe nodes."
+    },
+    {
+      "start": 1186.4,
+      "end": 1193.64,
+      "text": "We will see how we mark safe nodes and then I'll return the very simple, very simple and easy."
+    },
+    {
+      "start": 1193.84,
+      "end": 1196.6,
+      "text": "Now, the question is, how does check work?"
+    },
+    {
+      "start": 1196.8,
+      "end": 1204.36,
+      "text": "So in order to do that, it's got to check as well over here and over here as well."
+    },
+    {
+      "start": 1204.56,
+      "end": 1206.32,
+      "text": "And pass it over here."
+    },
+    {
+      "start": 1206.52,
+      "end": 1214.16,
+      "text": "So what did I tell you that if the defense is successfully completed for a node, you always see it."
+    },
+    {
+      "start": 1214.36,
+      "end": 1215.36,
+      "text": "As."
+    },
+    {
+      "start": 1215.56,
+      "end": 1221.04,
+      "text": "Seek not, because if there is a cycle, it will always break out either here or either here."
+    },
+    {
+      "start": 1221.24,
+      "end": 1225.56,
+      "text": "If there is a cycle, it will always break out either here or either on this portion."
+    },
+    {
+      "start": 1225.76,
+      "end": 1226.56,
+      "text": "That is for sure."
+    },
+    {
+      "start": 1226.76,
+      "end": 1234.36,
+      "text": "And if there is no cycle, then it will explore all the adjacent parts over on this for loop."
+    },
+    {
+      "start": 1234.56,
+      "end": 1237.0,
+      "text": "It'll explore all that just in parts over the for loop."
+    },
+    {
+      "start": 1237.2,
+      "end": 1241.2,
+      "text": "And if it reaches the line number thirty one, it means it did not find the cycle."
+    },
+    {
+      "start": 1241.4,
+      "end": 1242.2,
+      "text": "So you can say that it is true."
+    },
+    {
+      "start": 1242.4,
+      "end": 1244.12,
+      "text": "So whenever you just."
+    },
+    {
+      "start": 1244.36,
+      "end": 1249.92,
+      "text": "And just make sure whenever you enter this guy, just make sure you see it as zero."
+    },
+    {
+      "start": 1250.12,
+      "end": 1258.0,
+      "text": "Perfect. Now, whenever I get a cycle, whenever I get a cycle, it means for this particular node, for this particular node on this I.T."
+    },
+    {
+      "start": 1258.2,
+      "end": 1259.08,
+      "text": "I got a second."
+    },
+    {
+      "start": 1259.28,
+      "end": 1263.2,
+      "text": "So there's no definitely cannot be a part of it."
+    },
+    {
+      "start": 1263.4,
+      "end": 1265.2,
+      "text": "There's no definitely cannot be part of it."
+    },
+    {
+      "start": 1265.4,
+      "end": 1266.68,
+      "text": "So"
+    },
+    {
+      "start": 1266.88,
+      "end": 1274.08,
+      "text": "safe notes, so you just take the return note inside it and right before this, you will say this though cannot be a."
+    },
+    {
+      "start": 1274.32,
+      "end": 1277.16,
+      "text": "No, no, no way."
+    },
+    {
+      "start": 1277.36,
+      "end": 1280.56,
+      "text": "This is not required because initializing it, but still, I won't explain it."
+    },
+    {
+      "start": 1280.76,
+      "end": 1282.76,
+      "text": "If there's a cycle, it cannot be."
+    },
+    {
+      "start": 1282.96,
+      "end": 1286.44,
+      "text": "Similarly, if it is a cycle, this guy cannot be."
+    },
+    {
+      "start": 1286.64,
+      "end": 1291.84,
+      "text": "If it's a cycle, this guy cannot be because it tried to explore a part of I.T."
+    },
+    {
+      "start": 1292.04,
+      "end": 1293.76,
+      "text": "It found the cycles. It cannot be."
+    },
+    {
+      "start": 1293.96,
+      "end": 1299.4,
+      "text": "And if it explored all the parts, then you say, yes, this is the minor change that you"
+    },
+    {
+      "start": 1299.6,
+      "end": 1303.68,
+      "text": "needed to do on the cycle detection and it does work fine."
+    },
+    {
+      "start": 1303.88,
+      "end": 1308.8,
+      "text": "So that is the reason I see you that having concepts so strong that you can"
+    },
+    {
+      "start": 1309.0,
+      "end": 1313.8,
+      "text": "modify it whatever way you like and you can always submit your codes."
+    },
+    {
+      "start": 1314.0,
+      "end": 1317.96,
+      "text": "So let's discuss the space complexity."
+    },
+    {
+      "start": 1318.16,
+      "end": 1322.44,
+      "text": "We're using three areas and it might take like three."
+    },
+    {
+      "start": 1322.64,
+      "end": 1325.8,
+      "text": "But we can do this in a single area as well."
+    },
+    {
+      "start": 1326.0,
+      "end": 1330.16,
+      "text": "If you try to maintain counters, but then I'll not do that."
+    },
+    {
+      "start": 1330.36,
+      "end": 1333.32,
+      "text": "I'll keep it very simple because this is what"
+    },
+    {
+      "start": 1333.68,
+      "end": 1337.52,
+      "text": "industry requires. Industry doesn't requires like doing it in a one area."
+    },
+    {
+      "start": 1337.72,
+      "end": 1339.96,
+      "text": "They require something which is understandable."
+    },
+    {
+      "start": 1340.16,
+      "end": 1342.88,
+      "text": "So this is code quality in interviews."
+    },
+    {
+      "start": 1343.08,
+      "end": 1346.84,
+      "text": "Do not go for a single area where you do zero one, two, three, four and certain"
+    },
+    {
+      "start": 1347.04,
+      "end": 1350.36,
+      "text": "stuff because that is not good quality that is where the interview might give you"
+    },
+    {
+      "start": 1350.56,
+      "end": 1354.36,
+      "text": "less a number of points. Yes, you can state that."
+    },
+    {
+      "start": 1354.56,
+      "end": 1358.6,
+      "text": "In interview, always take this approach and then you can tell the interview that maybe"
+    },
+    {
+      "start": 1358.8,
+      "end": 1363.12,
+      "text": "I can optimize this to a single area in the space complexity by keeping like a counter"
+    },
+    {
+      "start": 1363.68,
+      "end": 1365.12,
+      "text": "and two, three, four certain steps."
+    },
+    {
+      "start": 1365.12,
+      "end": 1367.12,
+      "text": "You can try that out definitely by yourself."
+    },
+    {
+      "start": 1367.32,
+      "end": 1371.24,
+      "text": "But that is something which you should not propose at the first stage because"
+    },
+    {
+      "start": 1371.44,
+      "end": 1374.84,
+      "text": "the code quality goes down, the readability goes very, very down."
+    },
+    {
+      "start": 1375.04,
+      "end": 1378.52,
+      "text": "But with the space complexity, it's the same what DFS takes."
+    },
+    {
+      "start": 1378.72,
+      "end": 1380.96,
+      "text": "I'm not going to discuss this any further."
+    },
+    {
+      "start": 1381.16,
+      "end": 1383.8,
+      "text": "So that should be it for this problem."
+    },
+    {
+      "start": 1384.0,
+      "end": 1387.92,
+      "text": "So in the next video, I'll be solving this using the toposoft method."
+    },
+    {
+      "start": 1388.12,
+      "end": 1390.72,
+      "text": "So I hope you understood this problem and the entire code."
+    },
+    {
+      "start": 1390.72,
+      "end": 1393.4,
+      "text": "So just in case you did, please, please, please make sure you like this"
+    },
+    {
+      "start": 1393.68,
+      "end": 1397.48,
+      "text": "video and if you haven't checked out our DPC and the HDC, what are you doing?"
+    },
+    {
+      "start": 1397.68,
+      "end": 1398.84,
+      "text": "The links are in the description."
+    },
+    {
+      "start": 1398.84,
+      "end": 1400.04,
+      "text": "Please make sure you check them out."
+    },
+    {
+      "start": 1400.24,
+      "end": 1401.44,
+      "text": "And if you haven't subscribed to our"
+    },
+    {
+      "start": 1401.64,
+      "end": 1406.36,
+      "text": "channel, it is very, very honest request that please do consider subscribing to us"
+    },
+    {
+      "start": 1406.56,
+      "end": 1409.76,
+      "text": "because that is the only thing that keeps you motivated to make these kind of content."
+    },
+    {
+      "start": 1409.96,
+      "end": 1411.64,
+      "text": "I know this will be the topic of this video."
+    },
+    {
+      "start": 1411.64,
+      "end": 1412.68,
+      "text": "Let's put in some other video."
+    },
+    {
+      "start": 1412.88,
+      "end": 1413.84,
+      "text": "Then I take care."
+    }
+  ]
+}

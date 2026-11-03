@@ -1,0 +1,2699 @@
+{
+  "video_id": "0vVofAhAYjc",
+  "title": "G-41. Bellman Ford Algorithm",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1662.11,
+  "segments": [
+    {
+      "start": 2.8,
+      "end": 5.86,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.24,
+      "end": 9.92,
+      "text": "So in this video, we are going to learn about the Bellman-Ford algorithm."
+    },
+    {
+      "start": 10.28,
+      "end": 15.0,
+      "text": "Now this is again an algorithm which will help you to find the shortest path."
+    },
+    {
+      "start": 15.42,
+      "end": 21.0,
+      "text": "Yes, you might be thinking, but Srebo, we already know an algorithm like Dijkstra,"
+    },
+    {
+      "start": 21.44,
+      "end": 24.84,
+      "text": "which helps us to find the shortest path. How is this different?"
+    },
+    {
+      "start": 25.2,
+      "end": 30.82,
+      "text": "It is the exact similar algorithm which will help you to find the shortest path from a source"
+    },
+    {
+      "start": 30.82,
+      "end": 34.62,
+      "text": "to all the other nodes. Yes, to all the other nodes."
+    },
+    {
+      "start": 35.1,
+      "end": 39.6,
+      "text": "But the only difference is, if you remember the video of the Dijkstra,"
+    },
+    {
+      "start": 40.14,
+      "end": 46.12,
+      "text": "the Dijkstra algorithm fails when the graph has negative edges."
+    },
+    {
+      "start": 47.02,
+      "end": 51.98,
+      "text": "Please remember, if the graph has negative edges, the Dijkstra algorithm will fail."
+    },
+    {
+      "start": 51.98,
+      "end": 56.82,
+      "text": "And there was another point, if the graph has negative cycle,"
+    },
+    {
+      "start": 57.32,
+      "end": 60.68,
+      "text": "the Dijkstra algorithm goes for a TLE."
+    },
+    {
+      "start": 60.82,
+      "end": 64.54,
+      "text": "Like it will keep on running, it will keep on running, keep on minimizing the resistance,"
+    },
+    {
+      "start": 64.82,
+      "end": 69.76,
+      "text": "it keeps on running forever. So Dijkstra does not help you to detect negative cycle."
+    },
+    {
+      "start": 70.16,
+      "end": 75.7,
+      "text": "So Bellman-Ford is an algorithm that helps you to detect, remember this,"
+    },
+    {
+      "start": 76.02,
+      "end": 80.88,
+      "text": "that helps you to detect negative cycles as well."
+    },
+    {
+      "start": 82.1,
+      "end": 88.94,
+      "text": "That's the specialty about Bellman-Ford and it is applicable and it is applicable only in DG."
+    },
+    {
+      "start": 88.94,
+      "end": 89.98,
+      "text": "What is DG?"
+    },
+    {
+      "start": 90.82,
+      "end": 92.82,
+      "text": "DG is the un-directed graph."
+    },
+    {
+      "start": 92.82,
+      "end": 94.82,
+      "text": "Now you might be thinking, what if it's an undirected graph?"
+    },
+    {
+      "start": 94.82,
+      "end": 96.82,
+      "text": "And how do you apply Bellman-Ford algorithm to it?"
+    },
+    {
+      "start": 96.82,
+      "end": 98.82,
+      "text": "Very simple."
+    },
+    {
+      "start": 98.82,
+      "end": 102.82,
+      "text": "Remember, this is how a directed edge looks like."
+    },
+    {
+      "start": 102.82,
+      "end": 104.82,
+      "text": "So the edge weight will be 5."
+    },
+    {
+      "start": 104.82,
+      "end": 108.82,
+      "text": "So there is an edge from 1 to 2 and the edge weight will cost you 5."
+    },
+    {
+      "start": 108.82,
+      "end": 114.82,
+      "text": "But imagine if I give you an undirected graph and I say 1 to 2 and the edge weight is 5."
+    },
+    {
+      "start": 114.82,
+      "end": 118.82,
+      "text": "So in order to implement Bellman-Ford, you need to convert this into something like 1."
+    },
+    {
+      "start": 118.82,
+      "end": 120.82,
+      "text": "There is a graph like this."
+    },
+    {
+      "start": 120.82,
+      "end": 123.82,
+      "text": "There is a directed edge from 1 to 2 which will cost you 5."
+    },
+    {
+      "start": 123.82,
+      "end": 126.82,
+      "text": "And there is a directed edge from 2 to 1 which will cost you 5."
+    },
+    {
+      "start": 126.82,
+      "end": 132.82,
+      "text": "So you just need to represent the undirected graph in form of a directed graph"
+    },
+    {
+      "start": 132.82,
+      "end": 135.82,
+      "text": "in order to implement the Bellman-Ford algorithm."
+    },
+    {
+      "start": 135.82,
+      "end": 141.82,
+      "text": "The Bellman-Ford algorithm will only work if you are given a directed graph."
+    },
+    {
+      "start": 141.82,
+      "end": 142.82,
+      "text": "Remember this."
+    },
+    {
+      "start": 142.82,
+      "end": 150.82,
+      "text": "So if you are given an undirected graph, just change it to a directed graph by having two side edges."
+    },
+    {
+      "start": 150.82,
+      "end": 152.82,
+      "text": "And the two side edges will be the same."
+    },
+    {
+      "start": 152.82,
+      "end": 157.82,
+      "text": "So you can always implement Bellman-Ford for any of the questions."
+    },
+    {
+      "start": 157.82,
+      "end": 163.82,
+      "text": "The only difference from Dijkstra is that it helps you to detect negative cycles."
+    },
+    {
+      "start": 163.82,
+      "end": 165.82,
+      "text": "What do you mean by negative cycles?"
+    },
+    {
+      "start": 165.82,
+      "end": 171.82,
+      "text": "Imagine I draw you a graph which goes from 1 to 2, 2 to 3 and 3 to 1."
+    },
+    {
+      "start": 171.82,
+      "end": 175.82,
+      "text": "And the edge weight is minus 2, minus 1 and something like 2."
+    },
+    {
+      "start": 175.82,
+      "end": 179.82,
+      "text": "So if I ask you the path weight, what will be the path weight?"
+    },
+    {
+      "start": 179.82,
+      "end": 181.82,
+      "text": "The path weight will be very simple."
+    },
+    {
+      "start": 181.82,
+      "end": 184.82,
+      "text": "It will be minus 2, minus 1, plus 2."
+    },
+    {
+      "start": 184.82,
+      "end": 186.82,
+      "text": "So minus 2 plus 2 will go."
+    },
+    {
+      "start": 186.82,
+      "end": 189.82,
+      "text": "And the path weight is basically minus 1."
+    },
+    {
+      "start": 189.82,
+      "end": 195.82,
+      "text": "So if you apply Dijkstra, it will keep on rotating, like sorry, keep on encircling in the path"
+    },
+    {
+      "start": 195.82,
+      "end": 198.82,
+      "text": "because the path reduces at every stage."
+    },
+    {
+      "start": 198.82,
+      "end": 203.82,
+      "text": "So thereby Dijkstra will fall under the TLE loop for such an example."
+    },
+    {
+      "start": 203.82,
+      "end": 208.82,
+      "text": "But when you talk about Bellman-Ford, Bellman-Ford is an algorithm specifically designed"
+    },
+    {
+      "start": 208.82,
+      "end": 214.82,
+      "text": "to tell you that, hey listen, this particular graph has a negative cycle."
+    },
+    {
+      "start": 214.82,
+      "end": 219.82,
+      "text": "This is what you call as a negative cycle if a path weight is less than 0."
+    },
+    {
+      "start": 219.82,
+      "end": 226.82,
+      "text": "If a graph has any path weight which is less than 0, then I can say that the graph has a negative cycle."
+    },
+    {
+      "start": 226.82,
+      "end": 230.82,
+      "text": "Now let's try to implement the Bellman-Ford algorithm."
+    },
+    {
+      "start": 230.82,
+      "end": 236.82,
+      "text": "So I will be taking this particular DG, which is the directed graph, in order to implement the Bellman-Ford algorithm."
+    },
+    {
+      "start": 236.82,
+      "end": 238.82,
+      "text": "And we know that it is the same."
+    },
+    {
+      "start": 238.82,
+      "end": 241.82,
+      "text": "So we are going to take a single source shortest path algorithm."
+    },
+    {
+      "start": 241.82,
+      "end": 244.82,
+      "text": "So the starting point is 0."
+    },
+    {
+      "start": 244.82,
+      "end": 246.82,
+      "text": "And these are the edges given to you."
+    },
+    {
+      "start": 246.82,
+      "end": 254.82,
+      "text": "So the edges will be given like U and V, which means there is an edge from 3 to 2 with an edge weight of 6."
+    },
+    {
+      "start": 254.82,
+      "end": 259.82,
+      "text": "There is an edge from 5 to 3 with an edge weight of 1, which is very obvious if you see."
+    },
+    {
+      "start": 259.82,
+      "end": 261.82,
+      "text": "This is this particular edge."
+    },
+    {
+      "start": 261.82,
+      "end": 266.82,
+      "text": "And if you look at 3 to 2, this is nothing but this particular edge."
+    },
+    {
+      "start": 266.82,
+      "end": 268.82,
+      "text": "So all the edges are given to you."
+    },
+    {
+      "start": 268.82,
+      "end": 270.82,
+      "text": "So this is very very important to note down."
+    },
+    {
+      "start": 270.82,
+      "end": 273.82,
+      "text": "Edges can be given in any particular order."
+    },
+    {
+      "start": 273.82,
+      "end": 278.82,
+      "text": "Yes, edges can be given in any order."
+    },
+    {
+      "start": 278.82,
+      "end": 282.82,
+      "text": "It is not necessary that you have to follow any particular order."
+    },
+    {
+      "start": 282.82,
+      "end": 285.82,
+      "text": "If you carefully see, you can have 3 to 6 at the top."
+    },
+    {
+      "start": 285.82,
+      "end": 286.82,
+      "text": "You can have it here."
+    },
+    {
+      "start": 286.82,
+      "end": 287.82,
+      "text": "You can have it here."
+    },
+    {
+      "start": 287.82,
+      "end": 289.82,
+      "text": "You can have it at the bottom."
+    },
+    {
+      "start": 289.82,
+      "end": 291.82,
+      "text": "The edges can be jumbled."
+    },
+    {
+      "start": 291.82,
+      "end": 292.82,
+      "text": "It can follow any order."
+    },
+    {
+      "start": 292.82,
+      "end": 296.82,
+      "text": "What matters is you have to have all the edges of the directed graph."
+    },
+    {
+      "start": 296.82,
+      "end": 297.82,
+      "text": "The order can be given."
+    },
+    {
+      "start": 297.82,
+      "end": 299.82,
+      "text": "The order can be anything."
+    },
+    {
+      "start": 299.82,
+      "end": 300.82,
+      "text": "Very very important."
+    },
+    {
+      "start": 300.82,
+      "end": 302.82,
+      "text": "Edges can be in any order."
+    },
+    {
+      "start": 302.82,
+      "end": 305.82,
+      "text": "Now what does Bellman-Ford state?"
+    },
+    {
+      "start": 305.82,
+      "end": 308.82,
+      "text": "The Bellman-Ford will state you have to relax all the edges."
+    },
+    {
+      "start": 308.82,
+      "end": 309.82,
+      "text": "Remember this."
+    },
+    {
+      "start": 309.82,
+      "end": 310.82,
+      "text": "Relax all."
+    },
+    {
+      "start": 310.82,
+      "end": 312.82,
+      "text": "Very very important."
+    },
+    {
+      "start": 312.82,
+      "end": 314.82,
+      "text": "Relax all the edges."
+    },
+    {
+      "start": 314.82,
+      "end": 318.82,
+      "text": "n minus 1 times sequentially."
+    },
+    {
+      "start": 318.82,
+      "end": 320.82,
+      "text": "Very very important point."
+    },
+    {
+      "start": 320.82,
+      "end": 323.82,
+      "text": "Now what do you mean by relax?"
+    },
+    {
+      "start": 323.82,
+      "end": 324.82,
+      "text": "Why n minus 1?"
+    },
+    {
+      "start": 324.82,
+      "end": 326.82,
+      "text": "Everything you will understand if you watch the video."
+    },
+    {
+      "start": 326.82,
+      "end": 333.82,
+      "text": "So what they are saying is relax all the edges n minus 1 times sequentially."
+    },
+    {
+      "start": 333.82,
+      "end": 335.82,
+      "text": "Now what is the definition of relax?"
+    },
+    {
+      "start": 335.82,
+      "end": 336.82,
+      "text": "Let me write that as well."
+    },
+    {
+      "start": 336.82,
+      "end": 348.82,
+      "text": "So the definition of relax states if you have a distance array and if the distance taken to reach you plus the edge weight that you require."
+    },
+    {
+      "start": 348.82,
+      "end": 352.82,
+      "text": "For an example, you are standing at 5 and you want to go to 3."
+    },
+    {
+      "start": 352.82,
+      "end": 353.82,
+      "text": "The edge weight is 1."
+    },
+    {
+      "start": 353.82,
+      "end": 355.82,
+      "text": "So this is the edge weight that I am talking about."
+    },
+    {
+      "start": 355.82,
+      "end": 361.82,
+      "text": "So if the distance of u plus wt is lesser than."
+    },
+    {
+      "start": 361.82,
+      "end": 362.82,
+      "text": "Very very important."
+    },
+    {
+      "start": 362.82,
+      "end": 365.82,
+      "text": "Is lesser than the distance of v."
+    },
+    {
+      "start": 365.82,
+      "end": 370.82,
+      "text": "Which means as of now you are at 5 and you are trying to go to 3 with a 1."
+    },
+    {
+      "start": 370.82,
+      "end": 374.82,
+      "text": "So whatever distance you took to reach this u which is 5."
+    },
+    {
+      "start": 374.82,
+      "end": 378.82,
+      "text": "So basically distance of 5 plus this 1."
+    },
+    {
+      "start": 378.82,
+      "end": 383.82,
+      "text": "If that is smaller than this whatever you took to reach 3."
+    },
+    {
+      "start": 383.82,
+      "end": 384.82,
+      "text": "Then."
+    },
+    {
+      "start": 384.82,
+      "end": 386.82,
+      "text": "You got a better guy."
+    },
+    {
+      "start": 386.82,
+      "end": 387.82,
+      "text": "Similar to Dijkstra."
+    },
+    {
+      "start": 387.82,
+      "end": 388.82,
+      "text": "So what you will do is."
+    },
+    {
+      "start": 388.82,
+      "end": 391.82,
+      "text": "You will simply go ahead and say okay I got a better guy."
+    },
+    {
+      "start": 391.82,
+      "end": 398.82,
+      "text": "So I will be like distance v is equal to the new distance which is distance u plus w."
+    },
+    {
+      "start": 398.82,
+      "end": 402.82,
+      "text": "This is what I call as relaxation of edges."
+    },
+    {
+      "start": 402.82,
+      "end": 405.82,
+      "text": "This will be done for n minus 1 times."
+    },
+    {
+      "start": 405.82,
+      "end": 407.82,
+      "text": "What do you mean by n minus 1 times?"
+    },
+    {
+      "start": 407.82,
+      "end": 409.82,
+      "text": "If you go over here and look at the n."
+    },
+    {
+      "start": 409.82,
+      "end": 411.82,
+      "text": "n over here is 6."
+    },
+    {
+      "start": 411.82,
+      "end": 412.82,
+      "text": "Because there are 0, 1, 2, 3, 4, 5."
+    },
+    {
+      "start": 412.82,
+      "end": 413.82,
+      "text": "And this is the distance u plus w."
+    },
+    {
+      "start": 413.82,
+      "end": 416.82,
+      "text": "There are 0, 1, 2, 3, 4, 5."
+    },
+    {
+      "start": 416.82,
+      "end": 419.82,
+      "text": "Like 0 base indexing nodes."
+    },
+    {
+      "start": 419.82,
+      "end": 420.82,
+      "text": "So thereby n is 6."
+    },
+    {
+      "start": 420.82,
+      "end": 423.82,
+      "text": "So you have to relax it for 5 times."
+    },
+    {
+      "start": 423.82,
+      "end": 426.82,
+      "text": "5 iteration of relaxation has to be done."
+    },
+    {
+      "start": 426.82,
+      "end": 427.82,
+      "text": "Now how to do it?"
+    },
+    {
+      "start": 427.82,
+      "end": 428.82,
+      "text": "Let's understand that."
+    },
+    {
+      "start": 428.82,
+      "end": 429.82,
+      "text": "But before that."
+    },
+    {
+      "start": 429.82,
+      "end": 431.82,
+      "text": "Since you are calculating shortest path."
+    },
+    {
+      "start": 431.82,
+      "end": 432.82,
+      "text": "What do you require?"
+    },
+    {
+      "start": 432.82,
+      "end": 435.82,
+      "text": "You require a distance array with everything initialized to infinity."
+    },
+    {
+      "start": 435.82,
+      "end": 436.82,
+      "text": "So let's do that."
+    },
+    {
+      "start": 436.82,
+      "end": 439.82,
+      "text": "So initially when you initialize the distance array."
+    },
+    {
+      "start": 439.82,
+      "end": 441.82,
+      "text": "The source will be marked as 0."
+    },
+    {
+      "start": 441.82,
+      "end": 442.82,
+      "text": "And everything else will be marked as infinity."
+    },
+    {
+      "start": 442.82,
+      "end": 447.96,
+      "text": "marked as infinity because you haven't reached anywhere so as of now you know you're starting"
+    },
+    {
+      "start": 447.96,
+      "end": 452.88,
+      "text": "from here and that is always going to be taking a distance of zero but you haven't reached something"
+    },
+    {
+      "start": 452.88,
+      "end": 458.1,
+      "text": "like one two three four five so what you do is you just initialize them with infinity now how"
+    },
+    {
+      "start": 458.1,
+      "end": 464.76,
+      "text": "many iterations or how many relaxations have you need to do n minus one what is n six so remember"
+    },
+    {
+      "start": 464.76,
+      "end": 471.6,
+      "text": "you have to do five relaxation is what you need to do now on the first relaxation let me explain"
+    },
+    {
+      "start": 471.6,
+      "end": 477.18,
+      "text": "you if i say first relaxation what you need to do is now on the first iteration what you'll do is"
+    },
+    {
+      "start": 477.18,
+      "end": 483.24,
+      "text": "you'll go across the first edge second edge third edge and so on till the last edge you have to go"
+    },
+    {
+      "start": 483.24,
+      "end": 488.4,
+      "text": "across all the edges and that is when you say first iteration is done on the second iteration"
+    },
+    {
+      "start": 488.4,
+      "end": 494.54,
+      "text": "you have to go across again third iteration again fourth iteration again fifth iteration again you"
+    },
+    {
+      "start": 494.54,
+      "end": 500.1,
+      "text": "have to keep on going keep on going keep on going for five times okay so when i say first iteration"
+    },
+    {
+      "start": 500.1,
+      "end": 501.44,
+      "text": "what does that mean?"
+    },
+    {
+      "start": 501.6,
+      "end": 502.62,
+      "text": "That's very, very simple."
+    },
+    {
+      "start": 503.04,
+      "end": 507.12,
+      "text": "You have to perform this thing on every edge one by one."
+    },
+    {
+      "start": 507.36,
+      "end": 510.66,
+      "text": "That is what you call as one complete iteration."
+    },
+    {
+      "start": 511.12,
+      "end": 511.24,
+      "text": "Okay."
+    },
+    {
+      "start": 511.54,
+      "end": 513.12,
+      "text": "So the first iteration, what will happen?"
+    },
+    {
+      "start": 513.58,
+      "end": 516.24,
+      "text": "The relaxation of this edge will happen."
+    },
+    {
+      "start": 516.34,
+      "end": 516.78,
+      "text": "Then this."
+    },
+    {
+      "start": 517.04,
+      "end": 518.92,
+      "text": "So let's do the relaxation of the first edge."
+    },
+    {
+      "start": 519.3,
+      "end": 519.86,
+      "text": "Very simple."
+    },
+    {
+      "start": 520.38,
+      "end": 523.16,
+      "text": "I know I'm starting like distance of three."
+    },
+    {
+      "start": 523.16,
+      "end": 528.16,
+      "text": "I will take six in order to reach the distance of two."
+    },
+    {
+      "start": 528.5,
+      "end": 531.02,
+      "text": "Because from three to two is where I need to go."
+    },
+    {
+      "start": 531.02,
+      "end": 532.3,
+      "text": "And I'll take a six."
+    },
+    {
+      "start": 532.76,
+      "end": 533.6,
+      "text": "So what is three?"
+    },
+    {
+      "start": 533.98,
+      "end": 536.98,
+      "text": "If I look at three, the value of three is nothing but infinity."
+    },
+    {
+      "start": 537.62,
+      "end": 542.32,
+      "text": "So if I haven't reached, if I haven't reached three, is there a point in going ahead with"
+    },
+    {
+      "start": 542.32,
+      "end": 542.5,
+      "text": "three?"
+    },
+    {
+      "start": 542.8,
+      "end": 543.62,
+      "text": "I haven't reached three."
+    },
+    {
+      "start": 543.74,
+      "end": 544.7,
+      "text": "So there's no point, right?"
+    },
+    {
+      "start": 545.06,
+      "end": 547.36,
+      "text": "So the relaxation of this edge is done."
+    },
+    {
+      "start": 547.66,
+      "end": 548.84,
+      "text": "Next, you go to this edge."
+    },
+    {
+      "start": 549.06,
+      "end": 550.46,
+      "text": "It's like from five to three."
+    },
+    {
+      "start": 550.82,
+      "end": 550.96,
+      "text": "Cool."
+    },
+    {
+      "start": 551.08,
+      "end": 552.28,
+      "text": "Let's again do the relaxation."
+    },
+    {
+      "start": 552.88,
+      "end": 557.5,
+      "text": "From five, you take one and you reach three, right?"
+    },
+    {
+      "start": 557.74,
+      "end": 559.96,
+      "text": "So can I say five is still infinity?"
+    },
+    {
+      "start": 559.96,
+      "end": 560.96,
+      "text": "So you haven't reached."
+    },
+    {
+      "start": 561.02,
+      "end": 562.52,
+      "text": "You haven't reached five."
+    },
+    {
+      "start": 562.7,
+      "end": 564.98,
+      "text": "So if you haven't reached five, there's no point."
+    },
+    {
+      "start": 565.3,
+      "end": 567.38,
+      "text": "Next is this one, which is zero to one."
+    },
+    {
+      "start": 568.5,
+      "end": 570.82,
+      "text": "So you're like, you can start from zero."
+    },
+    {
+      "start": 571.2,
+      "end": 573.8,
+      "text": "You will take five and you will reach one."
+    },
+    {
+      "start": 574.14,
+      "end": 580.2,
+      "text": "So when you see distance of zero, it says, yes, I have reached myself."
+    },
+    {
+      "start": 580.7,
+      "end": 582.44,
+      "text": "It's a zero distance because I'm the source."
+    },
+    {
+      "start": 582.9,
+      "end": 589.58,
+      "text": "Plus I'll take another five and I'll reach the one which was previously reached with infinity means not reached."
+    },
+    {
+      "start": 589.7,
+      "end": 590.46,
+      "text": "So I've got five."
+    },
+    {
+      "start": 590.46,
+      "end": 590.72,
+      "text": "Okay."
+    },
+    {
+      "start": 590.72,
+      "end": 592.82,
+      "text": "So I can go and update this to five."
+    },
+    {
+      "start": 592.82,
+      "end": 597.26,
+      "text": "So on relaxation, I update one of the nodes to five."
+    },
+    {
+      "start": 597.48,
+      "end": 597.8,
+      "text": "Perfect."
+    },
+    {
+      "start": 597.98,
+      "end": 608.18,
+      "text": "Next is this guy, which has to be relaxed, which is distance of one minus three, lesser than distance of five."
+    },
+    {
+      "start": 608.6,
+      "end": 616.22,
+      "text": "Very, very important distance of one minus three, lesser than distance of five."
+    },
+    {
+      "start": 616.4,
+      "end": 619.4,
+      "text": "So if you carefully see, we have a one here, right?"
+    },
+    {
+      "start": 619.4,
+      "end": 619.9,
+      "text": "Do you see?"
+    },
+    {
+      "start": 620.04,
+      "end": 620.6,
+      "text": "We have a one."
+    },
+    {
+      "start": 620.6,
+      "end": 621.68,
+      "text": "We have a one here."
+    },
+    {
+      "start": 622.14,
+      "end": 623.82,
+      "text": "So how much has one taken as of now?"
+    },
+    {
+      "start": 624.12,
+      "end": 625.1,
+      "text": "One has taken a five."
+    },
+    {
+      "start": 625.58,
+      "end": 630.76,
+      "text": "So it's like five minus three, lesser than distance of five, which is infinity."
+    },
+    {
+      "start": 631.18,
+      "end": 632.52,
+      "text": "So two lesser than infinity."
+    },
+    {
+      "start": 632.9,
+      "end": 635.3,
+      "text": "So I can reach five in distance of two."
+    },
+    {
+      "start": 635.66,
+      "end": 638.02,
+      "text": "So go and update this with a distance of two."
+    },
+    {
+      "start": 638.12,
+      "end": 641.22,
+      "text": "And I can say the relaxation of this particular edge has been done."
+    },
+    {
+      "start": 641.64,
+      "end": 642.7,
+      "text": "Next is this guy."
+    },
+    {
+      "start": 643.02,
+      "end": 645.08,
+      "text": "So let's quickly relax this as well."
+    },
+    {
+      "start": 645.08,
+      "end": 650.12,
+      "text": "This is nothing but you can write distance of one minus two."
+    },
+    {
+      "start": 650.6,
+      "end": 652.34,
+      "text": "Lesser than distance of two."
+    },
+    {
+      "start": 652.56,
+      "end": 654.3,
+      "text": "Again, what is distance of one?"
+    },
+    {
+      "start": 654.62,
+      "end": 656.58,
+      "text": "If you carefully see, it's nothing but five."
+    },
+    {
+      "start": 656.92,
+      "end": 659.56,
+      "text": "Five minus two is three, which is lesser than infinity."
+    },
+    {
+      "start": 659.56,
+      "end": 661.06,
+      "text": "So you get three."
+    },
+    {
+      "start": 661.42,
+      "end": 663.62,
+      "text": "So go and update this to three."
+    },
+    {
+      "start": 663.92,
+      "end": 664.28,
+      "text": "Perfect."
+    },
+    {
+      "start": 664.28,
+      "end": 664.58,
+      "text": "Done."
+    },
+    {
+      "start": 664.76,
+      "end": 668.78,
+      "text": "Next, you will go across and do this particular iteration."
+    },
+    {
+      "start": 669.02,
+      "end": 671.22,
+      "text": "So this is nothing but three."
+    },
+    {
+      "start": 671.48,
+      "end": 679.64,
+      "text": "So you can again write distance of three minus two again, lesser than distance of four."
+    },
+    {
+      "start": 679.64,
+      "end": 681.26,
+      "text": "That's what you can easily write."
+    },
+    {
+      "start": 681.5,
+      "end": 685.14,
+      "text": "And can I say if you, why is this coming up again and again?"
+    },
+    {
+      "start": 685.46,
+      "end": 685.96,
+      "text": "Wait."
+    },
+    {
+      "start": 686.08,
+      "end": 688.64,
+      "text": "So what I can say is what is distance of three?"
+    },
+    {
+      "start": 688.96,
+      "end": 689.76,
+      "text": "Can I see this?"
+    },
+    {
+      "start": 689.76,
+      "end": 692.02,
+      "text": "The distance of three is still infinity."
+    },
+    {
+      "start": 692.02,
+      "end": 693.08,
+      "text": "So this will not be done."
+    },
+    {
+      "start": 693.5,
+      "end": 695.94,
+      "text": "Next is the last edge, which has to be relaxed."
+    },
+    {
+      "start": 696.18,
+      "end": 703.92,
+      "text": "Let's quickly relax the last edge, which is nothing but distance of two plus three, lesser than distance of four."
+    },
+    {
+      "start": 704.16,
+      "end": 705.6,
+      "text": "What is distance of two?"
+    },
+    {
+      "start": 705.72,
+      "end": 707.16,
+      "text": "Let's see is three."
+    },
+    {
+      "start": 707.4,
+      "end": 709.34,
+      "text": "So three plus three is."
+    },
+    {
+      "start": 709.64,
+      "end": 710.14,
+      "text": "Six."
+    },
+    {
+      "start": 710.36,
+      "end": 711.14,
+      "text": "What is four?"
+    },
+    {
+      "start": 711.52,
+      "end": 712.24,
+      "text": "Infinity."
+    },
+    {
+      "start": 712.44,
+      "end": 714.32,
+      "text": "So can I say this will be updated to six?"
+    },
+    {
+      "start": 714.64,
+      "end": 719.14,
+      "text": "So what I can say is the first iteration has been completed."
+    },
+    {
+      "start": 719.32,
+      "end": 725.64,
+      "text": "And on the first iteration, we have got the updated distance values."
+    },
+    {
+      "start": 725.84,
+      "end": 726.2,
+      "text": "Okay."
+    },
+    {
+      "start": 726.26,
+      "end": 731.5,
+      "text": "Now you have to again do it, which is the second iteration."
+    },
+    {
+      "start": 731.84,
+      "end": 735.26,
+      "text": "And the second iteration, what you'll do, you'll again start."
+    },
+    {
+      "start": 735.28,
+      "end": 735.74,
+      "text": "Yes."
+    },
+    {
+      "start": 735.92,
+      "end": 737.54,
+      "text": "You'll again start from the first."
+    },
+    {
+      "start": 737.96,
+      "end": 739.14,
+      "text": "Now what is distance of three?"
+    },
+    {
+      "start": 739.14,
+      "end": 739.86,
+      "text": "Infinity."
+    },
+    {
+      "start": 740.22,
+      "end": 740.9,
+      "text": "Not reached."
+    },
+    {
+      "start": 741.18,
+      "end": 742.24,
+      "text": "What is distance of five?"
+    },
+    {
+      "start": 742.9,
+      "end": 747.3,
+      "text": "This time you'll find five has been reached with a distance of two."
+    },
+    {
+      "start": 747.76,
+      "end": 748.58,
+      "text": "Why did you find?"
+    },
+    {
+      "start": 748.78,
+      "end": 753.08,
+      "text": "Because in the first iteration, when you went five was updated somewhere here."
+    },
+    {
+      "start": 753.46,
+      "end": 761.64,
+      "text": "And now again, when you come back and restart that five value, which you updated here will be in use here."
+    },
+    {
+      "start": 761.88,
+      "end": 763.08,
+      "text": "So what is the five value?"
+    },
+    {
+      "start": 763.62,
+      "end": 767.7,
+      "text": "Two plus one, which is three lesser than infinity."
+    },
+    {
+      "start": 767.86,
+      "end": 769.1,
+      "text": "So this will go as."
+    },
+    {
+      "start": 769.3,
+      "end": 769.76,
+      "text": "Three."
+    },
+    {
+      "start": 769.9,
+      "end": 772.86,
+      "text": "Go across and update three as three."
+    },
+    {
+      "start": 773.06,
+      "end": 773.46,
+      "text": "Perfect."
+    },
+    {
+      "start": 773.66,
+      "end": 774.26,
+      "text": "Next one."
+    },
+    {
+      "start": 774.46,
+      "end": 775.06,
+      "text": "This one."
+    },
+    {
+      "start": 775.26,
+      "end": 776.26,
+      "text": "What's the value of zero?"
+    },
+    {
+      "start": 776.46,
+      "end": 777.06,
+      "text": "Zero."
+    },
+    {
+      "start": 777.26,
+      "end": 779.78,
+      "text": "So zero plus five lesser than one."
+    },
+    {
+      "start": 779.98,
+      "end": 780.9,
+      "text": "It's still five."
+    },
+    {
+      "start": 781.1,
+      "end": 782.02,
+      "text": "Not to be done."
+    },
+    {
+      "start": 782.22,
+      "end": 783.14,
+      "text": "What is one?"
+    },
+    {
+      "start": 783.34,
+      "end": 784.26,
+      "text": "Five."
+    },
+    {
+      "start": 784.46,
+      "end": 788.82,
+      "text": "Five minus three is still two, which is lesser than not lesser."
+    },
+    {
+      "start": 789.02,
+      "end": 790.3,
+      "text": "So not to be done again."
+    },
+    {
+      "start": 790.5,
+      "end": 791.38,
+      "text": "Let's check out this."
+    },
+    {
+      "start": 791.58,
+      "end": 792.42,
+      "text": "What is one?"
+    },
+    {
+      "start": 792.62,
+      "end": 796.7,
+      "text": "Five minus two, which is three, which is still not lesser."
+    },
+    {
+      "start": 796.9,
+      "end": 798.58,
+      "text": "What is distance of three this time?"
+    },
+    {
+      "start": 798.58,
+      "end": 801.18,
+      "text": "This time distance of three has been computed."
+    },
+    {
+      "start": 801.38,
+      "end": 803.06,
+      "text": "What is distance of three this time?"
+    },
+    {
+      "start": 803.26,
+      "end": 804.82,
+      "text": "Three minus two, which is one."
+    },
+    {
+      "start": 805.02,
+      "end": 806.14,
+      "text": "Say is four."
+    },
+    {
+      "start": 806.34,
+      "end": 807.74,
+      "text": "Is it lesser than four?"
+    },
+    {
+      "start": 807.94,
+      "end": 809.54,
+      "text": "Yes, because four is six."
+    },
+    {
+      "start": 809.74,
+      "end": 812.26,
+      "text": "So if four is if you see four is six."
+    },
+    {
+      "start": 812.46,
+      "end": 819.58,
+      "text": "What I'll do is I'll say distance of three was three minus two is one, which is better than the current distance."
+    },
+    {
+      "start": 819.78,
+      "end": 822.18,
+      "text": "So I'll go and update this to one."
+    },
+    {
+      "start": 822.38,
+      "end": 827.94,
+      "text": "Very simple because I started with three and I'll take a minus two distance in order to reach this guy."
+    },
+    {
+      "start": 828.14,
+      "end": 828.34,
+      "text": "Again."
+    },
+    {
+      "start": 828.34,
+      "end": 833.7,
+      "text": "The last guy is this, which is nothing but three plus three again six, which is not better than this."
+    },
+    {
+      "start": 833.9,
+      "end": 836.94,
+      "text": "So I can say the second iteration is also done."
+    },
+    {
+      "start": 837.14,
+      "end": 844.1,
+      "text": "Similarly, you will do the third, fourth and fifth basically again ramp again ramp again ramp."
+    },
+    {
+      "start": 844.3,
+      "end": 852.78,
+      "text": "And once you have done this, this particular distance array will be storing all your shortest distance."
+    },
+    {
+      "start": 852.98,
+      "end": 856.02,
+      "text": "Yes, it will be storing all your shortest distance."
+    },
+    {
+      "start": 856.22,
+      "end": 857.74,
+      "text": "And if you carefully look at this,"
+    },
+    {
+      "start": 857.74,
+      "end": 859.74,
+      "text": "it does not have a negative cycle."
+    },
+    {
+      "start": 859.94,
+      "end": 864.22,
+      "text": "It does have negative edges, which is allowed, but it does not have a negative cycle."
+    },
+    {
+      "start": 864.42,
+      "end": 870.22,
+      "text": "So ultimately, after all the five iterations or n minus one iterations,"
+    },
+    {
+      "start": 870.42,
+      "end": 878.78,
+      "text": "your distance array will be giving you the shortest path from the source zero to all other nodes."
+    },
+    {
+      "start": 878.98,
+      "end": 882.82,
+      "text": "Remember this, which will be stored in this distance array."
+    },
+    {
+      "start": 883.02,
+      "end": 884.62,
+      "text": "Now a couple of questions."
+    },
+    {
+      "start": 884.82,
+      "end": 887.3,
+      "text": "Why n minus one iterations?"
+    },
+    {
+      "start": 887.74,
+      "end": 888.98,
+      "text": "That's the first question."
+    },
+    {
+      "start": 889.18,
+      "end": 893.98,
+      "text": "And the second question will be definitely how to detect negative cycles."
+    },
+    {
+      "start": 894.18,
+      "end": 895.78,
+      "text": "What if the graph has negative cycles?"
+    },
+    {
+      "start": 895.98,
+      "end": 897.06,
+      "text": "How will I know about that?"
+    },
+    {
+      "start": 897.26,
+      "end": 905.38,
+      "text": "So because the entire algorithm is pretty much similar to Dextra because this portion is similar to Dextra."
+    },
+    {
+      "start": 905.58,
+      "end": 910.78,
+      "text": "The only thing that we are doing is we are just doing n minus one iteration."
+    },
+    {
+      "start": 910.98,
+      "end": 917.54,
+      "text": "So obviously I want to know n minus one iteration because the thought process is kind of clear."
+    },
+    {
+      "start": 917.74,
+      "end": 919.46,
+      "text": "Why n minus one is my question."
+    },
+    {
+      "start": 919.66,
+      "end": 921.22,
+      "text": "The thought process must be clear."
+    },
+    {
+      "start": 921.42,
+      "end": 925.5,
+      "text": "Why? Because we just move ahead and this guy was updated."
+    },
+    {
+      "start": 925.7,
+      "end": 927.94,
+      "text": "This updated one."
+    },
+    {
+      "start": 928.14,
+      "end": 931.02,
+      "text": "Then with the help of the one, I got updated five."
+    },
+    {
+      "start": 931.22,
+      "end": 935.34,
+      "text": "Then again, when I came back with the help of five, I updated three."
+    },
+    {
+      "start": 935.54,
+      "end": 939.74,
+      "text": "Then again, when I went with the help of three, I updated four and it went on moving."
+    },
+    {
+      "start": 939.94,
+      "end": 946.98,
+      "text": "So eventually everyone was getting updated, updated, updated, updated on all the iterations."
+    },
+    {
+      "start": 947.74,
+      "end": 953.62,
+      "text": "So ultimately, but how did I know that on n minus one iterations, I will get my answer."
+    },
+    {
+      "start": 953.82,
+      "end": 954.66,
+      "text": "That's my question."
+    },
+    {
+      "start": 954.86,
+      "end": 957.26,
+      "text": "Because what if I would have done two iterations?"
+    },
+    {
+      "start": 957.46,
+      "end": 958.98,
+      "text": "What if I would have done three iterations?"
+    },
+    {
+      "start": 959.18,
+      "end": 960.58,
+      "text": "The question still lies."
+    },
+    {
+      "start": 960.78,
+      "end": 965.5,
+      "text": "Why exactly n minus one iteration has been done?"
+    },
+    {
+      "start": 965.7,
+      "end": 967.62,
+      "text": "So let's understand that as of now."
+    },
+    {
+      "start": 967.82,
+      "end": 976.66,
+      "text": "So in order to understand the intuition or why n minus one, because that is the critical question here, because we have understood the thought process."
+    },
+    {
+      "start": 976.86,
+      "end": 977.54,
+      "text": "We knew."
+    },
+    {
+      "start": 977.74,
+      "end": 984.54,
+      "text": "One helped me to compute because we knew zero was the source which helped me to compute one."
+    },
+    {
+      "start": 984.74,
+      "end": 987.94,
+      "text": "One helped me to compute five and two."
+    },
+    {
+      "start": 988.14,
+      "end": 990.34,
+      "text": "And similarly, two helped me to compute four."
+    },
+    {
+      "start": 990.54,
+      "end": 990.9,
+      "text": "Right."
+    },
+    {
+      "start": 991.1,
+      "end": 998.34,
+      "text": "And when I came back, when I came back, since I had computed five, five helped me to compute three."
+    },
+    {
+      "start": 998.54,
+      "end": 1001.42,
+      "text": "And eventually this three helped me to compute four and so on."
+    },
+    {
+      "start": 1001.62,
+      "end": 1003.58,
+      "text": "It'll just go on on this loop."
+    },
+    {
+      "start": 1003.78,
+      "end": 1004.9,
+      "text": "Thought process is clear."
+    },
+    {
+      "start": 1005.1,
+      "end": 1007.66,
+      "text": "But y n minus one is still"
+    },
+    {
+      "start": 1007.86,
+      "end": 1008.18,
+      "text": "a question."
+    },
+    {
+      "start": 1008.38,
+      "end": 1011.46,
+      "text": "Let's understand this with this particular directed graph."
+    },
+    {
+      "start": 1011.66,
+      "end": 1019.94,
+      "text": "So in this directed graph, if you remember while explaining, I did tell you edges can be in any order."
+    },
+    {
+      "start": 1020.14,
+      "end": 1026.66,
+      "text": "Edges can be in any particular order is what I always stated."
+    },
+    {
+      "start": 1026.86,
+      "end": 1027.06,
+      "text": "Right."
+    },
+    {
+      "start": 1027.26,
+      "end": 1031.38,
+      "text": "So imagine I give you the edges in this particular order."
+    },
+    {
+      "start": 1031.58,
+      "end": 1033.98,
+      "text": "So how many nodes are there?"
+    },
+    {
+      "start": 1034.18,
+      "end": 1035.7,
+      "text": "The number of nodes are five."
+    },
+    {
+      "start": 1035.9,
+      "end": 1037.7,
+      "text": "So how many iterations will we have?"
+    },
+    {
+      "start": 1037.9,
+      "end": 1045.26,
+      "text": "We will have one, two, three and four iterations because edges are five."
+    },
+    {
+      "start": 1045.46,
+      "end": 1048.98,
+      "text": "So I have to do n minus one, which is four iterations."
+    },
+    {
+      "start": 1049.18,
+      "end": 1049.58,
+      "text": "Correct."
+    },
+    {
+      "start": 1049.78,
+      "end": 1053.7,
+      "text": "So now what I'll do is I will start off at the distance array."
+    },
+    {
+      "start": 1053.9,
+      "end": 1055.7,
+      "text": "So let's quickly have the distance array."
+    },
+    {
+      "start": 1055.9,
+      "end": 1061.1,
+      "text": "So again, to ease out understanding, I have kept zero as the source and made it a distance of zero."
+    },
+    {
+      "start": 1061.3,
+      "end": 1063.1,
+      "text": "OK, now let's do the iterations."
+    },
+    {
+      "start": 1063.3,
+      "end": 1066.66,
+      "text": "So the first iteration states this is the first edge."
+    },
+    {
+      "start": 1066.86,
+      "end": 1067.66,
+      "text": "So it states."
+    },
+    {
+      "start": 1067.78,
+      "end": 1071.26,
+      "text": "OK, distance of three plus one."
+    },
+    {
+      "start": 1071.46,
+      "end": 1073.62,
+      "text": "Are you lesser than distance of four?"
+    },
+    {
+      "start": 1073.82,
+      "end": 1076.46,
+      "text": "And it's like distance of three is still infinite."
+    },
+    {
+      "start": 1076.66,
+      "end": 1077.3,
+      "text": "No."
+    },
+    {
+      "start": 1077.5,
+      "end": 1081.94,
+      "text": "Goes to the next one and says distance of two plus one."
+    },
+    {
+      "start": 1082.14,
+      "end": 1083.78,
+      "text": "Are you lesser than three?"
+    },
+    {
+      "start": 1083.98,
+      "end": 1086.34,
+      "text": "And I see distance of two is still infinity."
+    },
+    {
+      "start": 1086.54,
+      "end": 1087.02,
+      "text": "No."
+    },
+    {
+      "start": 1087.22,
+      "end": 1095.06,
+      "text": "Next one will be distance of one plus one is lesser than distance of two."
+    },
+    {
+      "start": 1095.26,
+      "end": 1097.62,
+      "text": "I'm like one is still infinity."
+    },
+    {
+      "start": 1097.82,
+      "end": 1098.34,
+      "text": "No."
+    },
+    {
+      "start": 1098.54,
+      "end": 1104.62,
+      "text": "Next I will like distance of zero plus one is lesser than distance of one."
+    },
+    {
+      "start": 1104.82,
+      "end": 1106.22,
+      "text": "I'm like wait."
+    },
+    {
+      "start": 1106.42,
+      "end": 1110.5,
+      "text": "Zero is zero plus one is lesser than infinity."
+    },
+    {
+      "start": 1110.7,
+      "end": 1115.46,
+      "text": "So one goes as one to go and update one as one."
+    },
+    {
+      "start": 1115.66,
+      "end": 1120.18,
+      "text": "So in one iteration at the end of the day."
+    },
+    {
+      "start": 1120.38,
+      "end": 1124.38,
+      "text": "This one was updated, so first iteration done."
+    },
+    {
+      "start": 1124.58,
+      "end": 1126.78,
+      "text": "Now let's talk about the next iteration."
+    },
+    {
+      "start": 1126.94,
+      "end": 1128.1,
+      "text": "Next iteration."
+    },
+    {
+      "start": 1128.3,
+      "end": 1129.1,
+      "text": "What is three?"
+    },
+    {
+      "start": 1129.3,
+      "end": 1130.3,
+      "text": "Infinity."
+    },
+    {
+      "start": 1130.5,
+      "end": 1131.42,
+      "text": "Next iteration."
+    },
+    {
+      "start": 1131.62,
+      "end": 1132.38,
+      "text": "What is two?"
+    },
+    {
+      "start": 1132.58,
+      "end": 1133.38,
+      "text": "Infinity."
+    },
+    {
+      "start": 1133.58,
+      "end": 1134.54,
+      "text": "Next iteration."
+    },
+    {
+      "start": 1134.74,
+      "end": 1136.1,
+      "text": "What is one?"
+    },
+    {
+      "start": 1136.3,
+      "end": 1137.22,
+      "text": "One."
+    },
+    {
+      "start": 1137.42,
+      "end": 1140.02,
+      "text": "So one plus one, two."
+    },
+    {
+      "start": 1140.22,
+      "end": 1142.38,
+      "text": "So this will be updated to two."
+    },
+    {
+      "start": 1142.58,
+      "end": 1144.46,
+      "text": "So let's update it to two."
+    },
+    {
+      "start": 1144.66,
+      "end": 1148.3,
+      "text": "Next zero plus one not to be done."
+    },
+    {
+      "start": 1148.5,
+      "end": 1151.1,
+      "text": "So second iteration done."
+    },
+    {
+      "start": 1151.3,
+      "end": 1153.98,
+      "text": "So did you see what happened in the first iteration?"
+    },
+    {
+      "start": 1154.18,
+      "end": 1155.7,
+      "text": "The zero."
+    },
+    {
+      "start": 1155.9,
+      "end": 1156.7,
+      "text": "Got the value of."
+    },
+    {
+      "start": 1156.9,
+      "end": 1158.86,
+      "text": "One in the next iteration."
+    },
+    {
+      "start": 1159.06,
+      "end": 1160.54,
+      "text": "Since you had the value of one."
+    },
+    {
+      "start": 1160.74,
+      "end": 1164.78,
+      "text": "Since you had the value of one, that one held you to get two."
+    },
+    {
+      "start": 1164.98,
+      "end": 1167.26,
+      "text": "So the third iteration, what will happen?"
+    },
+    {
+      "start": 1167.46,
+      "end": 1168.7,
+      "text": "Come on, what will happen?"
+    },
+    {
+      "start": 1168.9,
+      "end": 1171.3,
+      "text": "Think. Yes, you're correct."
+    },
+    {
+      "start": 1171.5,
+      "end": 1172.38,
+      "text": "Yes, you're correct."
+    },
+    {
+      "start": 1172.58,
+      "end": 1174.42,
+      "text": "In the third iteration."
+    },
+    {
+      "start": 1174.62,
+      "end": 1178.94,
+      "text": "We don't have three, but the second iteration gave me two."
+    },
+    {
+      "start": 1179.14,
+      "end": 1184.34,
+      "text": "When I go to relax the next edge, this two was a value of two plus one."
+    },
+    {
+      "start": 1184.54,
+      "end": 1186.74,
+      "text": "We'll go ahead and update three."
+    },
+    {
+      "start": 1186.98,
+      "end": 1188.7,
+      "text": "So three will be updated to three."
+    },
+    {
+      "start": 1188.9,
+      "end": 1190.9,
+      "text": "Perfect. Amazing."
+    },
+    {
+      "start": 1191.1,
+      "end": 1193.18,
+      "text": "So I see this is done next."
+    },
+    {
+      "start": 1193.38,
+      "end": 1195.26,
+      "text": "No more updates, no more relaxation."
+    },
+    {
+      "start": 1195.46,
+      "end": 1197.1,
+      "text": "Third iteration done."
+    },
+    {
+      "start": 1197.3,
+      "end": 1198.26,
+      "text": "Third iteration."
+    },
+    {
+      "start": 1198.46,
+      "end": 1201.3,
+      "text": "Now, what happened in the first?"
+    },
+    {
+      "start": 1201.5,
+      "end": 1202.74,
+      "text": "Zero updated one."
+    },
+    {
+      "start": 1202.94,
+      "end": 1204.1,
+      "text": "What happened in the second?"
+    },
+    {
+      "start": 1204.3,
+      "end": 1205.38,
+      "text": "One updated two."
+    },
+    {
+      "start": 1205.58,
+      "end": 1206.9,
+      "text": "What happened in the third?"
+    },
+    {
+      "start": 1207.1,
+      "end": 1208.18,
+      "text": "Two updated three."
+    },
+    {
+      "start": 1208.38,
+      "end": 1209.7,
+      "text": "What will happen in the fourth?"
+    },
+    {
+      "start": 1209.9,
+      "end": 1211.42,
+      "text": "What will happen in the fourth?"
+    },
+    {
+      "start": 1211.62,
+      "end": 1213.22,
+      "text": "Yes, yes, yes."
+    },
+    {
+      "start": 1213.42,
+      "end": 1215.9,
+      "text": "The three that you got will help you to update four."
+    },
+    {
+      "start": 1216.1,
+      "end": 1216.82,
+      "text": "So what did you get?"
+    },
+    {
+      "start": 1217.02,
+      "end": 1219.1,
+      "text": "Three says three plus one, four."
+    },
+    {
+      "start": 1219.3,
+      "end": 1220.26,
+      "text": "So this will go as four."
+    },
+    {
+      "start": 1220.46,
+      "end": 1224.38,
+      "text": "So ultimately on four iterations, can I say ultimately on four iterations?"
+    },
+    {
+      "start": 1224.58,
+      "end": 1226.22,
+      "text": "The distance array is ready."
+    },
+    {
+      "start": 1226.42,
+      "end": 1229.46,
+      "text": "And this is your shortest path."
+    },
+    {
+      "start": 1229.66,
+      "end": 1233.14,
+      "text": "Yes, this is your shortest path."
+    },
+    {
+      "start": 1233.34,
+      "end": 1234.9,
+      "text": "Can I see this? I can."
+    },
+    {
+      "start": 1235.1,
+      "end": 1238.22,
+      "text": "So did you understand why and minus one?"
+    },
+    {
+      "start": 1238.42,
+      "end": 1242.98,
+      "text": "Because of the worst case, you can have the guy at the bottom who will give you this."
+    },
+    {
+      "start": 1243.18,
+      "end": 1245.82,
+      "text": "Then this will give you this."
+    },
+    {
+      "start": 1246.02,
+      "end": 1247.54,
+      "text": "And then this will give you this."
+    },
+    {
+      "start": 1247.74,
+      "end": 1249.18,
+      "text": "And then this will give you this."
+    },
+    {
+      "start": 1249.38,
+      "end": 1251.22,
+      "text": "That is why and minus one."
+    },
+    {
+      "start": 1251.42,
+      "end": 1252.66,
+      "text": "That is why and minus one."
+    },
+    {
+      "start": 1252.86,
+      "end": 1254.94,
+      "text": "Yes, I hope that's clear."
+    },
+    {
+      "start": 1255.14,
+      "end": 1259.3,
+      "text": "I find a lot of content over YouTube, but no one will say you why and minus one."
+    },
+    {
+      "start": 1259.5,
+      "end": 1260.98,
+      "text": "They'll be like and minus one."
+    },
+    {
+      "start": 1260.98,
+      "end": 1261.9,
+      "text": "Let's do it. Let's do it."
+    },
+    {
+      "start": 1261.9,
+      "end": 1263.66,
+      "text": "We got the answer coded and that's done."
+    },
+    {
+      "start": 1263.86,
+      "end": 1265.06,
+      "text": "This is very important."
+    },
+    {
+      "start": 1265.26,
+      "end": 1269.62,
+      "text": "The thought process, the intuition and the clarity about an algorithm is very,"
+    },
+    {
+      "start": 1269.82,
+      "end": 1271.02,
+      "text": "very, very important."
+    },
+    {
+      "start": 1271.22,
+      "end": 1273.22,
+      "text": "Now, the question is."
+    },
+    {
+      "start": 1273.42,
+      "end": 1275.1,
+      "text": "How to detect negative?"
+    },
+    {
+      "start": 1275.3,
+      "end": 1277.22,
+      "text": "Again, thought process."
+    },
+    {
+      "start": 1277.42,
+      "end": 1283.62,
+      "text": "Since I knew negative cycle means if I keep on because this will give you minus one."
+    },
+    {
+      "start": 1283.82,
+      "end": 1286.14,
+      "text": "Again, if I rotate, it will give you another minus one."
+    },
+    {
+      "start": 1286.34,
+      "end": 1288.46,
+      "text": "If I rotate another minus one on every"
+    },
+    {
+      "start": 1288.66,
+      "end": 1291.86,
+      "text": "rotation, you are decreasing the path value by minus one."
+    },
+    {
+      "start": 1292.06,
+      "end": 1295.42,
+      "text": "So what will happen if there is a negative cycle?"
+    },
+    {
+      "start": 1295.62,
+      "end": 1301.26,
+      "text": "So what will happen is if there was five iterations, if there was five iterations,"
+    },
+    {
+      "start": 1301.46,
+      "end": 1304.54,
+      "text": "if you do the sixth iteration,"
+    },
+    {
+      "start": 1304.54,
+      "end": 1313.66,
+      "text": "the values will still reduce, the values will still reduce on nth iteration."
+    },
+    {
+      "start": 1313.86,
+      "end": 1315.46,
+      "text": "The."
+    },
+    {
+      "start": 1315.98,
+      "end": 1327.73,
+      "text": "Relaxation will be done and if the distance array."
+    },
+    {
+      "start": 1327.93,
+      "end": 1336.57,
+      "text": "Gets updated because we have proved that at max we will be requiring n minus one iterations approved."
+    },
+    {
+      "start": 1336.77,
+      "end": 1338.17,
+      "text": "But even after that,"
+    },
+    {
+      "start": 1338.37,
+      "end": 1346.85,
+      "text": "if I require on the nth iteration, if I do a relaxation and even if I see distance gets reduced,"
+    },
+    {
+      "start": 1347.05,
+      "end": 1351.09,
+      "text": "sorry, distance gets reduced, I will be right."
+    },
+    {
+      "start": 1351.29,
+      "end": 1357.65,
+      "text": "Negative cycle exists because I know at n minus one iterations, I should have gotten my answer."
+    },
+    {
+      "start": 1357.85,
+      "end": 1361.81,
+      "text": "But if at the nth iteration, if there is still a reduction,"
+    },
+    {
+      "start": 1362.01,
+      "end": 1365.09,
+      "text": "it means we are running in the loop, we're running in the loop."
+    },
+    {
+      "start": 1365.29,
+      "end": 1368.17,
+      "text": "That's why the distances are reducing, are reducing."
+    },
+    {
+      "start": 1368.37,
+      "end": 1371.01,
+      "text": "So both the questions answered."
+    },
+    {
+      "start": 1371.21,
+      "end": 1372.93,
+      "text": "So it's now time to put it up."
+    },
+    {
+      "start": 1373.13,
+      "end": 1374.93,
+      "text": "So I hope you've understood the entire algorithm."
+    },
+    {
+      "start": 1375.13,
+      "end": 1375.97,
+      "text": "It's time to code it up."
+    },
+    {
+      "start": 1376.17,
+      "end": 1381.29,
+      "text": "So as usual, I'll be coding the C++ on the right and you can figure out the exact"
+    },
+    {
+      "start": 1381.49,
+      "end": 1383.29,
+      "text": "similar Java solution on the left."
+    },
+    {
+      "start": 1383.49,
+      "end": 1388.25,
+      "text": "So given a weighted, directed and a connected graph of V vertices and edges,"
+    },
+    {
+      "start": 1388.45,
+      "end": 1391.29,
+      "text": "find the shortest distance of all the vertex from the source."
+    },
+    {
+      "start": 1391.29,
+      "end": 1392.57,
+      "text": "So they'll be giving you a source."
+    },
+    {
+      "start": 1392.77,
+      "end": 1397.89,
+      "text": "If the graph contains a negative cycle, then return an array consisting of only"
+    },
+    {
+      "start": 1398.37,
+      "end": 1403.05,
+      "text": "minus one. And I think they've also stated if you cannot reach anyone,"
+    },
+    {
+      "start": 1403.25,
+      "end": 1405.89,
+      "text": "you have to assign it with one E8."
+    },
+    {
+      "start": 1406.09,
+      "end": 1410.33,
+      "text": "So what I will do is I have all the edges, so I need the distance array."
+    },
+    {
+      "start": 1410.53,
+      "end": 1415.65,
+      "text": "So let's quickly have the distance array of V comma one E8 because I'm assuming I"
+    },
+    {
+      "start": 1415.85,
+      "end": 1417.97,
+      "text": "cannot reach them, but that's what I'll give."
+    },
+    {
+      "start": 1418.17,
+      "end": 1423.09,
+      "text": "And now what I'll do is I will do the iteration or the relaxation for V minus one"
+    },
+    {
+      "start": 1423.09,
+      "end": 1427.17,
+      "text": "time, because that is what I have clearly stated that I'm going to do the relaxation"
+    },
+    {
+      "start": 1427.37,
+      "end": 1428.17,
+      "text": "for V minus one times."
+    },
+    {
+      "start": 1428.37,
+      "end": 1432.09,
+      "text": "On all the edges, remember this, I'm going to do it on all the edges."
+    },
+    {
+      "start": 1432.29,
+      "end": 1434.45,
+      "text": "So this is zero."
+    },
+    {
+      "start": 1434.65,
+      "end": 1438.73,
+      "text": "This will be V and the WT will be IT of two."
+    },
+    {
+      "start": 1438.93,
+      "end": 1440.45,
+      "text": "Very, very simple. OK."
+    },
+    {
+      "start": 1440.65,
+      "end": 1441.81,
+      "text": "Now, what's the next thing that I'll do?"
+    },
+    {
+      "start": 1442.01,
+      "end": 1443.69,
+      "text": "I'll have to do the relaxation of edges."
+    },
+    {
+      "start": 1443.89,
+      "end": 1446.41,
+      "text": "So it's something like distance."
+    },
+    {
+      "start": 1446.61,
+      "end": 1450.05,
+      "text": "Remember, you have to give the distance of source as zero."
+    },
+    {
+      "start": 1450.25,
+      "end": 1451.65,
+      "text": "Otherwise you'll have an issue."
+    },
+    {
+      "start": 1451.85,
+      "end": 1457.37,
+      "text": "So remember, distance of zero should be reachable, which means it should not be."
+    },
+    {
+      "start": 1457.57,
+      "end": 1458.17,
+      "text": "It should not be."
+    },
+    {
+      "start": 1458.37,
+      "end": 1464.93,
+      "text": "And and distance of you plus WT less than distance of V."
+    },
+    {
+      "start": 1465.13,
+      "end": 1469.73,
+      "text": "If that's the case, if it's reachable and if"
+    },
+    {
+      "start": 1469.93,
+      "end": 1471.37,
+      "text": "it's the case, I see."
+    },
+    {
+      "start": 1471.57,
+      "end": 1472.17,
+      "text": "OK, cool."
+    },
+    {
+      "start": 1472.37,
+      "end": 1475.69,
+      "text": "Distance of you plus WT is what I'll do."
+    },
+    {
+      "start": 1475.89,
+      "end": 1480.05,
+      "text": "So this is how the Billman Ford will make sure the distance has the answer."
+    },
+    {
+      "start": 1480.25,
+      "end": 1482.09,
+      "text": "Ideally, you should have written this."
+    },
+    {
+      "start": 1482.29,
+      "end": 1485.53,
+      "text": "But in the question, they have stated what would have finished here."
+    },
+    {
+      "start": 1485.73,
+      "end": 1488.17,
+      "text": "But they have stated if it contains a negative cycle."
+    },
+    {
+      "start": 1488.29,
+      "end": 1490.85,
+      "text": "Then return an array consisting of only one."
+    },
+    {
+      "start": 1491.05,
+      "end": 1492.81,
+      "text": "So you have to do one more relaxation."
+    },
+    {
+      "start": 1493.01,
+      "end": 1495.81,
+      "text": "This is the last or you can see the end"
+    },
+    {
+      "start": 1496.01,
+      "end": 1502.17,
+      "text": "relaxation to check negative cycle is what you have to do."
+    },
+    {
+      "start": 1502.37,
+      "end": 1505.05,
+      "text": "Return an array consisting of only one."
+    },
+    {
+      "start": 1505.25,
+      "end": 1510.73,
+      "text": "Remember this. So basically do one more relaxation, which is nothing but this."
+    },
+    {
+      "start": 1510.93,
+      "end": 1514.69,
+      "text": "So you can say I and you equal to IT of zero."
+    },
+    {
+      "start": 1514.89,
+      "end": 1517.17,
+      "text": "You can say I and V equal to IT of one."
+    },
+    {
+      "start": 1517.29,
+      "end": 1519.53,
+      "text": "You can again the same thing, IT of two."
+    },
+    {
+      "start": 1519.73,
+      "end": 1524.25,
+      "text": "And you can go ahead and write the same if conditions of parallel copy piece."
+    },
+    {
+      "start": 1524.45,
+      "end": 1525.53,
+      "text": "I don't want to write it again."
+    },
+    {
+      "start": 1525.73,
+      "end": 1526.89,
+      "text": "And that's the case."
+    },
+    {
+      "start": 1527.09,
+      "end": 1529.89,
+      "text": "You have to return an array which consists of only one."
+    },
+    {
+      "start": 1530.09,
+      "end": 1534.85,
+      "text": "That's it. And if that's not the case, because you cannot reduce at the end"
+    },
+    {
+      "start": 1535.05,
+      "end": 1540.01,
+      "text": "iteration, all you should have computed all the shortest path in n minus one"
+    },
+    {
+      "start": 1540.21,
+      "end": 1544.25,
+      "text": "iterations at the worst case, so what I'll do is I'll go and compile this and see if"
+    },
+    {
+      "start": 1544.45,
+      "end": 1546.05,
+      "text": "it is running fine. It is."
+    },
+    {
+      "start": 1546.05,
+      "end": 1547.05,
+      "text": "Now, let's quickly sum it."
+    },
+    {
+      "start": 1547.37,
+      "end": 1549.93,
+      "text": "It looks like all the test cases do pass."
+    },
+    {
+      "start": 1550.13,
+      "end": 1553.69,
+      "text": "So, guys, that is about the Bellman-Ford algorithm."
+    },
+    {
+      "start": 1553.89,
+      "end": 1555.01,
+      "text": "What about the time complexity?"
+    },
+    {
+      "start": 1555.21,
+      "end": 1557.37,
+      "text": "V into E. Very simple."
+    },
+    {
+      "start": 1557.57,
+      "end": 1561.73,
+      "text": "V cross E is the time complexity."
+    },
+    {
+      "start": 1561.93,
+      "end": 1565.77,
+      "text": "The space is you're using an external V space and the edges are stored."
+    },
+    {
+      "start": 1565.97,
+      "end": 1567.13,
+      "text": "So pretty simple."
+    },
+    {
+      "start": 1567.33,
+      "end": 1575.97,
+      "text": "Now, this is this this is kind of a quadratic time, whereas the dextrose was E log V."
+    },
+    {
+      "start": 1576.17,
+      "end": 1577.09,
+      "text": "So this is taking a bit more time."
+    },
+    {
+      "start": 1577.21,
+      "end": 1578.13,
+      "text": "More time than extra."
+    },
+    {
+      "start": 1578.33,
+      "end": 1583.41,
+      "text": "But it is very useful if your graph does has does have negative edge weights"
+    },
+    {
+      "start": 1583.61,
+      "end": 1584.97,
+      "text": "because extra does not work."
+    },
+    {
+      "start": 1585.17,
+      "end": 1590.69,
+      "text": "So make sure if your graph has negative edge weights or if the graph has negative"
+    },
+    {
+      "start": 1590.89,
+      "end": 1595.13,
+      "text": "cycles, that's when you should implement the Bellman-Ford algorithm."
+    },
+    {
+      "start": 1595.33,
+      "end": 1596.93,
+      "text": "Do you get follow up problems on this?"
+    },
+    {
+      "start": 1597.13,
+      "end": 1598.69,
+      "text": "Usually not in interviews."
+    },
+    {
+      "start": 1598.89,
+      "end": 1602.25,
+      "text": "They will generally ask you to tell about the Bellman-Ford or maybe they will ask"
+    },
+    {
+      "start": 1602.45,
+      "end": 1606.33,
+      "text": "you about extra and at the end of the day, they will ask what if the graph has"
+    },
+    {
+      "start": 1606.37,
+      "end": 1608.41,
+      "text": "negative edges or the cycles?"
+    },
+    {
+      "start": 1608.61,
+      "end": 1609.29,
+      "text": "What will you do?"
+    },
+    {
+      "start": 1609.49,
+      "end": 1611.69,
+      "text": "So it might be a follow up question on extra."
+    },
+    {
+      "start": 1611.89,
+      "end": 1612.89,
+      "text": "So very, very important."
+    },
+    {
+      "start": 1613.09,
+      "end": 1617.25,
+      "text": "But I do not think the questions like you will find questions"
+    },
+    {
+      "start": 1617.45,
+      "end": 1621.29,
+      "text": "straight related to Bellman-Ford because most of the questions are solved using"
+    },
+    {
+      "start": 1621.49,
+      "end": 1623.73,
+      "text": "dextrose algorithm in Shorter's path."
+    },
+    {
+      "start": 1623.93,
+      "end": 1625.69,
+      "text": "So, guys, I hope you've understood everything."
+    },
+    {
+      "start": 1625.69,
+      "end": 1628.65,
+      "text": "So just in case you did, please, please, please make sure you like this video."
+    },
+    {
+      "start": 1628.85,
+      "end": 1631.13,
+      "text": "And I was checking our statistics."
+    },
+    {
+      "start": 1631.33,
+      "end": 1634.09,
+      "text": "Half of our audience does not subscribes us."
+    },
+    {
+      "start": 1634.29,
+      "end": 1635.77,
+      "text": "They just watch our playlist and go."
+    },
+    {
+      "start": 1636.33,
+      "end": 1640.69,
+      "text": "If you are watching this playlist, please, please, please make sure you subscribe to us"
+    },
+    {
+      "start": 1640.89,
+      "end": 1643.05,
+      "text": "because that does matter to me a lot."
+    },
+    {
+      "start": 1643.05,
+      "end": 1645.09,
+      "text": "So please make sure you hit the subscribe button."
+    },
+    {
+      "start": 1645.29,
+      "end": 1647.01,
+      "text": "And yeah, if you haven't checked out our"
+    },
+    {
+      "start": 1647.01,
+      "end": 1650.21,
+      "text": "DPCS and the HD sheet, the links will be in the description with this."
+    },
+    {
+      "start": 1650.21,
+      "end": 1651.25,
+      "text": "I'll be wrapping up this video."
+    },
+    {
+      "start": 1651.45,
+      "end": 1652.65,
+      "text": "Let's meet in some other video."
+    },
+    {
+      "start": 1652.65,
+      "end": 1653.25,
+      "text": "Till then bye bye."
+    },
+    {
+      "start": 1653.25,
+      "end": 1653.69,
+      "text": "Take care."
+    }
+  ]
+}

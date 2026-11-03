@@ -1,0 +1,2224 @@
+{
+  "video_id": "3oI-34aPMWM",
+  "title": "G-2. Graph Representation in C++ ｜ Two Ways to Represent",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 963.33,
+  "segments": [
+    {
+      "start": 2.99,
+      "end": 5.97,
+      "text": "So in the previous video, you did learn about graph and its types."
+    },
+    {
+      "start": 6.31,
+      "end": 12.47,
+      "text": "You must be thinking, which is the complex data structure that we will be using to store graph in our programs."
+    },
+    {
+      "start": 12.89,
+      "end": 16.95,
+      "text": "Now, in this video, we will be learning about how to represent a graph in C++."
+    },
+    {
+      "start": 17.43,
+      "end": 18.73,
+      "text": "The next, it's going to be Java."
+    },
+    {
+      "start": 19.25,
+      "end": 22.23,
+      "text": "So imagine this is the particular graph that is given to you."
+    },
+    {
+      "start": 22.69,
+      "end": 24.29,
+      "text": "Now, there will be two portions."
+    },
+    {
+      "start": 24.61,
+      "end": 26.57,
+      "text": "Obviously, someone will give you the input."
+    },
+    {
+      "start": 27.27,
+      "end": 30.21,
+      "text": "So, first portion is the input."
+    },
+    {
+      "start": 30.21,
+      "end": 33.41,
+      "text": "And next will be how do you store it."
+    },
+    {
+      "start": 33.83,
+      "end": 36.89,
+      "text": "So first, let's understand the input of a graph."
+    },
+    {
+      "start": 37.13,
+      "end": 39.83,
+      "text": "And then we can think about how to store in a data structure."
+    },
+    {
+      "start": 40.29,
+      "end": 44.37,
+      "text": "So in all the questions, what they will tell you is, given N and M."
+    },
+    {
+      "start": 45.03,
+      "end": 46.95,
+      "text": "They'll always tell you given N and M."
+    },
+    {
+      "start": 47.33,
+      "end": 52.67,
+      "text": "And the starting of the question, they'll tell you if the graph is a directed one or if the graph is an undirected one."
+    },
+    {
+      "start": 52.67,
+      "end": 59.95,
+      "text": "If the line states, given an undirected graph which contains N nodes and M edges."
+    },
+    {
+      "start": 60.21,
+      "end": 61.91,
+      "text": "So, N will be given to you."
+    },
+    {
+      "start": 61.91,
+      "end": 64.13,
+      "text": "So, N nodes and M edges."
+    },
+    {
+      "start": 65.59,
+      "end": 69.21,
+      "text": "So, the first thing that you will definitely do is, you'll take the input of N and M."
+    },
+    {
+      "start": 69.33,
+      "end": 69.83,
+      "text": "Right?"
+    },
+    {
+      "start": 69.97,
+      "end": 71.87,
+      "text": "So, over here, what is the number of nodes?"
+    },
+    {
+      "start": 72.13,
+      "end": 73.77,
+      "text": "The number of nodes over here is five."
+    },
+    {
+      "start": 74.07,
+      "end": 75.67,
+      "text": "The number of edges is six."
+    },
+    {
+      "start": 75.87,
+      "end": 79.01,
+      "text": "One edge, two edge, three edge, four edge, five edge, six edge."
+    },
+    {
+      "start": 79.21,
+      "end": 80.59,
+      "text": "The number of edges is six."
+    },
+    {
+      "start": 80.85,
+      "end": 82.29,
+      "text": "The number of edges is five."
+    },
+    {
+      "start": 82.57,
+      "end": 86.49,
+      "text": "So, in the input, five and six will be given to you."
+    },
+    {
+      "start": 86.53,
+      "end": 87.59,
+      "text": "Just five and six."
+    },
+    {
+      "start": 87.83,
+      "end": 89.83,
+      "text": "You have to assume the first one is node."
+    },
+    {
+      "start": 89.83,
+      "end": 91.49,
+      "text": "And the next one is the number of edges."
+    },
+    {
+      "start": 92.03,
+      "end": 99.13,
+      "text": "Now, if they're saying you edges, in order to represent a graph, you have to understand the edges are between which nodes."
+    },
+    {
+      "start": 99.63,
+      "end": 103.13,
+      "text": "Now, in the next line, they will be giving you M lines."
+    },
+    {
+      "start": 103.33,
+      "end": 103.69,
+      "text": "Remember this."
+    },
+    {
+      "start": 104.43,
+      "end": 107.55,
+      "text": "M lines that will represent edges."
+    },
+    {
+      "start": 108.21,
+      "end": 111.53,
+      "text": "M lines that is going to represent edges."
+    },
+    {
+      "start": 112.05,
+      "end": 115.73,
+      "text": "So, for an example, if there is an edge between one and two."
+    },
+    {
+      "start": 115.73,
+      "end": 119.33,
+      "text": "The input might tell you one, two."
+    },
+    {
+      "start": 119.83,
+      "end": 121.83,
+      "text": "Or the input might tell you two, one."
+    },
+    {
+      "start": 121.83,
+      "end": 122.83,
+      "text": "It can be either way."
+    },
+    {
+      "start": 122.83,
+      "end": 127.83,
+      "text": "If they tell you one, two, we assume that there is an edge between one and two."
+    },
+    {
+      "start": 127.83,
+      "end": 130.83,
+      "text": "And there is also an edge between two and one."
+    },
+    {
+      "start": 130.83,
+      "end": 131.83,
+      "text": "Right?"
+    },
+    {
+      "start": 131.83,
+      "end": 133.83,
+      "text": "So, obviously, two, one means one, two."
+    },
+    {
+      "start": 133.83,
+      "end": 134.83,
+      "text": "And one, two means two, one."
+    },
+    {
+      "start": 134.83,
+      "end": 135.83,
+      "text": "Vice versa."
+    },
+    {
+      "start": 135.83,
+      "end": 137.83,
+      "text": "I can say that there is an edge between one and three."
+    },
+    {
+      "start": 137.83,
+      "end": 139.83,
+      "text": "I can say there is an edge between two and four."
+    },
+    {
+      "start": 139.83,
+      "end": 141.83,
+      "text": "I can say there is an edge between three and four."
+    },
+    {
+      "start": 141.83,
+      "end": 142.83,
+      "text": "Two and five."
+    },
+    {
+      "start": 142.83,
+      "end": 143.83,
+      "text": "And four and five."
+    },
+    {
+      "start": 143.83,
+      "end": 147.83,
+      "text": "So, I have written all the six edges."
+    },
+    {
+      "start": 147.83,
+      "end": 148.83,
+      "text": "Do they follow a specific order?"
+    },
+    {
+      "start": 148.83,
+      "end": 149.83,
+      "text": "Yes."
+    },
+    {
+      "start": 149.83,
+      "end": 150.83,
+      "text": "Do they follow a specific order?"
+    },
+    {
+      "start": 150.83,
+      "end": 151.83,
+      "text": "No."
+    },
+    {
+      "start": 151.83,
+      "end": 152.83,
+      "text": "They can be given in any order."
+    },
+    {
+      "start": 152.83,
+      "end": 154.83,
+      "text": "So, this is the next set of input."
+    },
+    {
+      "start": 154.83,
+      "end": 156.83,
+      "text": "So, the input will be containing like this."
+    },
+    {
+      "start": 156.83,
+      "end": 157.83,
+      "text": "Two, one."
+    },
+    {
+      "start": 157.83,
+      "end": 158.83,
+      "text": "One, three."
+    },
+    {
+      "start": 158.83,
+      "end": 159.83,
+      "text": "Two, four."
+    },
+    {
+      "start": 159.83,
+      "end": 160.83,
+      "text": "Three, four."
+    },
+    {
+      "start": 160.83,
+      "end": 161.83,
+      "text": "Two, five."
+    },
+    {
+      "start": 161.83,
+      "end": 162.83,
+      "text": "Four, five."
+    },
+    {
+      "start": 162.83,
+      "end": 163.83,
+      "text": "Right?"
+    },
+    {
+      "start": 163.83,
+      "end": 166.83,
+      "text": "So, this is how the input will be."
+    },
+    {
+      "start": 166.83,
+      "end": 168.83,
+      "text": "So, you have to assume the first line."
+    },
+    {
+      "start": 168.83,
+      "end": 169.83,
+      "text": "This is N."
+    },
+    {
+      "start": 169.83,
+      "end": 170.83,
+      "text": "This is M."
+    },
+    {
+      "start": 170.83,
+      "end": 175.83,
+      "text": "The next set of lines, M lines, are the number of edges."
+    },
+    {
+      "start": 175.83,
+      "end": 178.83,
+      "text": "Is there any specific boundary on the number of edges?"
+    },
+    {
+      "start": 178.83,
+      "end": 182.83,
+      "text": "Is it somewhere related to the number of nodes?"
+    },
+    {
+      "start": 182.83,
+      "end": 183.83,
+      "text": "No."
+    },
+    {
+      "start": 183.83,
+      "end": 185.83,
+      "text": "If I draw one more edge, it becomes seven."
+    },
+    {
+      "start": 185.83,
+      "end": 188.83,
+      "text": "If I draw one more edge, it becomes more."
+    },
+    {
+      "start": 188.83,
+      "end": 190.83,
+      "text": "If I draw one more edge, it becomes more."
+    },
+    {
+      "start": 190.83,
+      "end": 192.83,
+      "text": "If I draw one more edge, it becomes more."
+    },
+    {
+      "start": 192.83,
+      "end": 195.83,
+      "text": "They can be, like M can be anything."
+    },
+    {
+      "start": 195.83,
+      "end": 198.83,
+      "text": "N will be constant but M can be anything."
+    },
+    {
+      "start": 198.83,
+      "end": 199.83,
+      "text": "Okay?"
+    },
+    {
+      "start": 199.83,
+      "end": 200.83,
+      "text": "So, this is how we take input."
+    },
+    {
+      "start": 200.83,
+      "end": 202.83,
+      "text": "Like, this is how the input will be given."
+    },
+    {
+      "start": 202.83,
+      "end": 205.83,
+      "text": "Now, the question comes, how do we store?"
+    },
+    {
+      "start": 205.83,
+      "end": 206.83,
+      "text": "So, there are two ways to store."
+    },
+    {
+      "start": 206.83,
+      "end": 207.83,
+      "text": "One is the maximum value."
+    },
+    {
+      "start": 207.83,
+      "end": 209.83,
+      "text": "One is the matrix way."
+    },
+    {
+      "start": 209.83,
+      "end": 212.83,
+      "text": "And the second one is the list way."
+    },
+    {
+      "start": 212.83,
+      "end": 213.83,
+      "text": "Okay?"
+    },
+    {
+      "start": 213.83,
+      "end": 215.83,
+      "text": "So, first, let's learn about the matrix way."
+    },
+    {
+      "start": 215.83,
+      "end": 218.83,
+      "text": "So, the first way is to use a matrix."
+    },
+    {
+      "start": 218.83,
+      "end": 223.83,
+      "text": "And we generally call that as an adjacency matrix."
+    },
+    {
+      "start": 223.83,
+      "end": 225.83,
+      "text": "The way that we use."
+    },
+    {
+      "start": 225.83,
+      "end": 227.83,
+      "text": "So, assume that this is the graph."
+    },
+    {
+      "start": 227.83,
+      "end": 228.83,
+      "text": "Okay?"
+    },
+    {
+      "start": 228.83,
+      "end": 230.83,
+      "text": "And these are the edges that I've given to you."
+    },
+    {
+      "start": 230.83,
+      "end": 232.83,
+      "text": "Now, you need to store these edges somewhere."
+    },
+    {
+      "start": 232.83,
+      "end": 234.83,
+      "text": "Either you can store these edges."
+    },
+    {
+      "start": 234.83,
+      "end": 236.83,
+      "text": "But these edges have to be stored somewhere."
+    },
+    {
+      "start": 236.83,
+      "end": 239.83,
+      "text": "So that the future algorithms can be performed."
+    },
+    {
+      "start": 239.83,
+      "end": 241.83,
+      "text": "So, where will you store these edges?"
+    },
+    {
+      "start": 241.83,
+      "end": 244.83,
+      "text": "This is where something like a matrix comes in."
+    },
+    {
+      "start": 244.83,
+      "end": 245.83,
+      "text": "Okay?"
+    },
+    {
+      "start": 245.83,
+      "end": 248.83,
+      "text": "First thing that you'll observe is the number of nodes where 5."
+    },
+    {
+      "start": 248.83,
+      "end": 251.83,
+      "text": "Are the nodes 0 based or 1 based?"
+    },
+    {
+      "start": 251.83,
+      "end": 253.83,
+      "text": "And we see the nodes are 1 based."
+    },
+    {
+      "start": 253.83,
+      "end": 258.83,
+      "text": "If the number of nodes are 5, the last node is n equal to 5."
+    },
+    {
+      "start": 258.83,
+      "end": 262.83,
+      "text": "So, it is 1 based indexing nodes."
+    },
+    {
+      "start": 262.83,
+      "end": 263.83,
+      "text": "Okay?"
+    },
+    {
+      "start": 263.83,
+      "end": 264.83,
+      "text": "So, what you will do is."
+    },
+    {
+      "start": 264.83,
+      "end": 270.83,
+      "text": "You will define an adjacency matrix of n plus 1 and n plus 1 size."
+    },
+    {
+      "start": 270.83,
+      "end": 271.83,
+      "text": "Which is this."
+    },
+    {
+      "start": 271.83,
+      "end": 274.83,
+      "text": "And it will have the indexes 0, 1, 2, 3, 4, 5."
+    },
+    {
+      "start": 274.83,
+      "end": 277.83,
+      "text": "0, 1, 2, 3, 4, 5."
+    },
+    {
+      "start": 277.83,
+      "end": 278.83,
+      "text": "Okay?"
+    },
+    {
+      "start": 278.83,
+      "end": 283.83,
+      "text": "Now, if they tell you that there is an edge between 1 and 2."
+    },
+    {
+      "start": 283.83,
+      "end": 284.83,
+      "text": "What you do is."
+    },
+    {
+      "start": 284.83,
+      "end": 286.83,
+      "text": "You go to 1 and you go to 2."
+    },
+    {
+      "start": 286.83,
+      "end": 288.83,
+      "text": "And you take the intersection."
+    },
+    {
+      "start": 288.83,
+      "end": 289.83,
+      "text": "Yes."
+    },
+    {
+      "start": 289.83,
+      "end": 292.83,
+      "text": "And you mark it as 1."
+    },
+    {
+      "start": 292.83,
+      "end": 293.83,
+      "text": "And did I tell you."
+    },
+    {
+      "start": 293.83,
+      "end": 295.83,
+      "text": "If there is an edge between 1 and 2."
+    },
+    {
+      "start": 295.83,
+      "end": 297.83,
+      "text": "It means there is an edge between 2 and 1."
+    },
+    {
+      "start": 297.83,
+      "end": 299.83,
+      "text": "So, you go to 2."
+    },
+    {
+      "start": 299.83,
+      "end": 300.83,
+      "text": "You go to 1."
+    },
+    {
+      "start": 300.83,
+      "end": 302.83,
+      "text": "And the intersection as 1."
+    },
+    {
+      "start": 302.83,
+      "end": 303.83,
+      "text": "Perfect."
+    },
+    {
+      "start": 303.83,
+      "end": 306.83,
+      "text": "Next, there is an edge between 1 and 3."
+    },
+    {
+      "start": 306.83,
+      "end": 308.83,
+      "text": "So, 1 and 3 is marked as 1."
+    },
+    {
+      "start": 308.83,
+      "end": 310.83,
+      "text": "And 3 and 1 is marked as 1."
+    },
+    {
+      "start": 310.83,
+      "end": 312.83,
+      "text": "Next, you go to 2 and 4."
+    },
+    {
+      "start": 312.83,
+      "end": 313.83,
+      "text": "2 and 4 is marked as 1."
+    },
+    {
+      "start": 313.83,
+      "end": 315.83,
+      "text": "4 and 2 is marked as 1."
+    },
+    {
+      "start": 315.83,
+      "end": 317.83,
+      "text": "Next, you go to 3 and 4."
+    },
+    {
+      "start": 317.83,
+      "end": 318.83,
+      "text": "3 and 4 is marked as 1."
+    },
+    {
+      "start": 318.83,
+      "end": 320.83,
+      "text": "4 and 3 is marked as 1."
+    },
+    {
+      "start": 320.83,
+      "end": 322.83,
+      "text": "So, in this way, you can mark all these edges like this."
+    },
+    {
+      "start": 322.83,
+      "end": 324.83,
+      "text": "All these edges like 3 and 5."
+    },
+    {
+      "start": 324.83,
+      "end": 326.83,
+      "text": "5 and 3."
+    },
+    {
+      "start": 326.83,
+      "end": 327.83,
+      "text": "Next, 4 and 5."
+    },
+    {
+      "start": 327.83,
+      "end": 329.83,
+      "text": "5 and 4."
+    },
+    {
+      "start": 329.83,
+      "end": 333.83,
+      "text": "So, all these edges are marked as in the adjacency matrix."
+    },
+    {
+      "start": 333.83,
+      "end": 337.83,
+      "text": "Now, all the remaining guys will be filled on with 0s."
+    },
+    {
+      "start": 337.83,
+      "end": 339.83,
+      "text": "You can or you can just leave them."
+    },
+    {
+      "start": 339.83,
+      "end": 341.83,
+      "text": "All the remaining guys will be filled on with 0s."
+    },
+    {
+      "start": 341.83,
+      "end": 343.83,
+      "text": "So, this matrix will tell you."
+    },
+    {
+      "start": 343.83,
+      "end": 344.83,
+      "text": "If you want to check."
+    },
+    {
+      "start": 344.83,
+      "end": 346.83,
+      "text": "If there is an edge between 3 and 4."
+    },
+    {
+      "start": 346.83,
+      "end": 347.83,
+      "text": "Yes, there is."
+    },
+    {
+      "start": 347.83,
+      "end": 349.83,
+      "text": "If there is an edge between 4 and 2."
+    },
+    {
+      "start": 349.83,
+      "end": 350.83,
+      "text": "Yes, there is."
+    },
+    {
+      "start": 350.83,
+      "end": 352.83,
+      "text": "Is there is an edge between 5 and 2."
+    },
+    {
+      "start": 352.83,
+      "end": 353.83,
+      "text": "No, there is no edge."
+    },
+    {
+      "start": 353.83,
+      "end": 355.83,
+      "text": "So, this matrix is going to tell you."
+    },
+    {
+      "start": 355.83,
+      "end": 360.83,
+      "text": "If there is an edge between a particular node to another node."
+    },
+    {
+      "start": 360.83,
+      "end": 363.83,
+      "text": "And how much space are you using?"
+    },
+    {
+      "start": 363.83,
+      "end": 364.83,
+      "text": "Remember this."
+    },
+    {
+      "start": 364.83,
+      "end": 368.83,
+      "text": "The space that you will be using will be n cross n."
+    },
+    {
+      "start": 368.83,
+      "end": 372.83,
+      "text": "Because you are using almost like n plus 1 into n plus 1."
+    },
+    {
+      "start": 372.83,
+      "end": 374.83,
+      "text": "Which is equivalent to n into n space."
+    },
+    {
+      "start": 374.83,
+      "end": 376.83,
+      "text": "Is what you will be using."
+    },
+    {
+      "start": 376.83,
+      "end": 378.83,
+      "text": "And this is a costly thing."
+    },
+    {
+      "start": 378.83,
+      "end": 380.83,
+      "text": "Yes, this is a costly thing."
+    },
+    {
+      "start": 380.83,
+      "end": 382.83,
+      "text": "But if we are moving on to the next."
+    },
+    {
+      "start": 382.83,
+      "end": 383.83,
+      "text": "Thing which is cheaper."
+    },
+    {
+      "start": 383.83,
+      "end": 385.83,
+      "text": "Let's check out the code super quick."
+    },
+    {
+      "start": 385.83,
+      "end": 388.85,
+      "text": "So, what did I say?"
+    },
+    {
+      "start": 388.85,
+      "end": 390.85,
+      "text": "The first line will contain n and m."
+    },
+    {
+      "start": 390.85,
+      "end": 391.85,
+      "text": "So, define n and m."
+    },
+    {
+      "start": 391.85,
+      "end": 393.85,
+      "text": "And take it as input."
+    },
+    {
+      "start": 393.85,
+      "end": 394.85,
+      "text": "Done."
+    },
+    {
+      "start": 394.85,
+      "end": 396.85,
+      "text": "Now, if it is something like."
+    },
+    {
+      "start": 396.85,
+      "end": 398.85,
+      "text": "One base indexing graph."
+    },
+    {
+      "start": 398.85,
+      "end": 399.85,
+      "text": "You take like this."
+    },
+    {
+      "start": 399.85,
+      "end": 400.85,
+      "text": "If it is a zero base."
+    },
+    {
+      "start": 400.85,
+      "end": 401.85,
+      "text": "Then you take a n cross m."
+    },
+    {
+      "start": 401.85,
+      "end": 402.85,
+      "text": "And that will work."
+    },
+    {
+      "start": 402.85,
+      "end": 404.85,
+      "text": "Now, what is the next lines containing?"
+    },
+    {
+      "start": 404.85,
+      "end": 405.85,
+      "text": "It was containing m lines."
+    },
+    {
+      "start": 405.85,
+      "end": 406.85,
+      "text": "So, you just run a loop for m lines."
+    },
+    {
+      "start": 406.85,
+      "end": 407.85,
+      "text": "And you know."
+    },
+    {
+      "start": 407.85,
+      "end": 408.85,
+      "text": "For every line."
+    },
+    {
+      "start": 408.85,
+      "end": 409.85,
+      "text": "They will be giving you."
+    },
+    {
+      "start": 409.85,
+      "end": 410.85,
+      "text": "A value of n."
+    },
+    {
+      "start": 410.85,
+      "end": 411.85,
+      "text": "So, you just run a loop for m lines."
+    },
+    {
+      "start": 411.85,
+      "end": 412.85,
+      "text": "And you know."
+    },
+    {
+      "start": 412.85,
+      "end": 413.85,
+      "text": "For every line."
+    },
+    {
+      "start": 413.85,
+      "end": 414.85,
+      "text": "They will be giving you."
+    },
+    {
+      "start": 414.85,
+      "end": 415.85,
+      "text": "That there is an edge between."
+    },
+    {
+      "start": 415.85,
+      "end": 416.85,
+      "text": "u and v."
+    },
+    {
+      "start": 416.85,
+      "end": 417.85,
+      "text": "So, you take them as input."
+    },
+    {
+      "start": 417.85,
+      "end": 418.85,
+      "text": "What did I say?"
+    },
+    {
+      "start": 418.85,
+      "end": 419.85,
+      "text": "Have the intersection marked as one."
+    },
+    {
+      "start": 419.85,
+      "end": 420.85,
+      "text": "And have the reverse intersection marked as one."
+    },
+    {
+      "start": 420.85,
+      "end": 421.85,
+      "text": "As well."
+    },
+    {
+      "start": 421.85,
+      "end": 422.85,
+      "text": "So, both the."
+    },
+    {
+      "start": 422.85,
+      "end": 423.85,
+      "text": "So, in this way."
+    },
+    {
+      "start": 423.85,
+      "end": 424.85,
+      "text": "I can say."
+    },
+    {
+      "start": 424.85,
+      "end": 425.85,
+      "text": "The entire graph."
+    },
+    {
+      "start": 425.85,
+      "end": 426.85,
+      "text": "Has been stored."
+    },
+    {
+      "start": 426.85,
+      "end": 427.85,
+      "text": "Here."
+    },
+    {
+      "start": 427.85,
+      "end": 428.85,
+      "text": "Right."
+    },
+    {
+      "start": 428.85,
+      "end": 429.85,
+      "text": "And what will be the time complexity?"
+    },
+    {
+      "start": 429.85,
+      "end": 430.85,
+      "text": "This is big O of n."
+    },
+    {
+      "start": 430.85,
+      "end": 431.85,
+      "text": "That you took to store the graph."
+    },
+    {
+      "start": 431.85,
+      "end": 432.85,
+      "text": "After that."
+    },
+    {
+      "start": 432.85,
+      "end": 433.85,
+      "text": "We can perform the algorithms."
+    },
+    {
+      "start": 433.85,
+      "end": 434.85,
+      "text": "But at first."
+    },
+    {
+      "start": 434.85,
+      "end": 435.85,
+      "text": "It is very important to understand."
+    },
+    {
+      "start": 435.85,
+      "end": 436.85,
+      "text": "How to store it."
+    },
+    {
+      "start": 436.85,
+      "end": 437.85,
+      "text": "So, let's see."
+    },
+    {
+      "start": 437.85,
+      "end": 438.85,
+      "text": "So, let's see."
+    },
+    {
+      "start": 438.85,
+      "end": 439.85,
+      "text": "So, let's see."
+    },
+    {
+      "start": 439.85,
+      "end": 440.85,
+      "text": "So, let's see."
+    },
+    {
+      "start": 440.85,
+      "end": 441.85,
+      "text": "So, let's see."
+    },
+    {
+      "start": 441.85,
+      "end": 442.85,
+      "text": "So, let's see."
+    },
+    {
+      "start": 442.85,
+      "end": 443.85,
+      "text": "So, let's see."
+    },
+    {
+      "start": 443.85,
+      "end": 444.85,
+      "text": "How to store a graph."
+    },
+    {
+      "start": 444.85,
+      "end": 445.85,
+      "text": "So, in the previous method."
+    },
+    {
+      "start": 445.85,
+      "end": 446.85,
+      "text": "We saw that."
+    },
+    {
+      "start": 446.85,
+      "end": 448.17,
+      "text": "It was taking n square space."
+    },
+    {
+      "start": 448.17,
+      "end": 449.97,
+      "text": "This is where something like."
+    },
+    {
+      "start": 449.97,
+      "end": 450.97,
+      "text": "Adjacency list comes in."
+    },
+    {
+      "start": 450.97,
+      "end": 451.97,
+      "text": "And it takes."
+    },
+    {
+      "start": 451.97,
+      "end": 455.01,
+      "text": "Very very less amount of space."
+    },
+    {
+      "start": 455.01,
+      "end": 456.65,
+      "text": "Now what is an adjacency list?"
+    },
+    {
+      "start": 456.65,
+      "end": 457.65,
+      "text": "We use an array."
+    },
+    {
+      "start": 457.65,
+      "end": 458.65,
+      "text": "Yes."
+    },
+    {
+      "start": 458.65,
+      "end": 459.65,
+      "text": "We use an array."
+    },
+    {
+      "start": 459.65,
+      "end": 460.65,
+      "text": "But."
+    },
+    {
+      "start": 460.65,
+      "end": 461.65,
+      "text": "The array that we will be using."
+    },
+    {
+      "start": 461.65,
+      "end": 462.65,
+      "text": "Like over here."
+    },
+    {
+      "start": 462.65,
+      "end": 463.65,
+      "text": "We see that."
+    },
+    {
+      "start": 463.65,
+      "end": 464.65,
+      "text": "The size is 5."
+    },
+    {
+      "start": 464.65,
+      "end": 465.65,
+      "text": "Right."
+    },
+    {
+      "start": 465.65,
+      "end": 466.65,
+      "text": "And."
+    },
+    {
+      "start": 466.65,
+      "end": 469.89,
+      "text": "We are using an one based graph."
+    },
+    {
+      "start": 469.89,
+      "end": 470.89,
+      "text": "One based indexing graph."
+    },
+    {
+      "start": 470.89,
+      "end": 472.45,
+      "text": "So, what we will do is."
+    },
+    {
+      "start": 472.45,
+      "end": 476.43,
+      "text": "We will create an array of n plus 1 size."
+    },
+    {
+      "start": 476.43,
+      "end": 479.13,
+      "text": "Which is 6 size."
+    },
+    {
+      "start": 479.13,
+      "end": 482.69,
+      "text": "And it will be like 0, 1, 2, 3, 4 and 5."
+    },
+    {
+      "start": 482.69,
+      "end": 486.49,
+      "text": "So, we have created an array of 6 size."
+    },
+    {
+      "start": 486.49,
+      "end": 489.37,
+      "text": "Now this array will contain list."
+    },
+    {
+      "start": 489.37,
+      "end": 493.83,
+      "text": "And in C++ the list is nothing but vector of int."
+    },
+    {
+      "start": 493.83,
+      "end": 494.83,
+      "text": "Yes."
+    },
+    {
+      "start": 494.83,
+      "end": 498.89,
+      "text": "In C++ it is nothing but vector of int."
+    },
+    {
+      "start": 498.89,
+      "end": 501.57,
+      "text": "So we can call this array as adjacency list."
+    },
+    {
+      "start": 501.57,
+      "end": 505.21,
+      "text": "So, a list of adjacency containing this."
+    },
+    {
+      "start": 505.21,
+      "end": 507.23,
+      "text": "So apparently what happens is."
+    },
+    {
+      "start": 507.23,
+      "end": 510.11,
+      "text": "Every index is containing an empty vector."
+    },
+    {
+      "start": 510.11,
+      "end": 512.59,
+      "text": "Every index is containing an empty vector."
+    },
+    {
+      "start": 512.59,
+      "end": 514.33,
+      "text": "You could have defined integer."
+    },
+    {
+      "start": 514.33,
+      "end": 516.77,
+      "text": "Then it would have contained an integer."
+    },
+    {
+      "start": 516.77,
+      "end": 518.47,
+      "text": "You could have defined double as well."
+    },
+    {
+      "start": 518.47,
+      "end": 520.15,
+      "text": "The moment you define something as vector."
+    },
+    {
+      "start": 520.15,
+      "end": 523.55,
+      "text": "It means it contains an empty list or an empty vector."
+    },
+    {
+      "start": 523.55,
+      "end": 524.55,
+      "text": "Done."
+    },
+    {
+      "start": 524.55,
+      "end": 527.19,
+      "text": "So, as of now we have."
+    },
+    {
+      "start": 527.19,
+      "end": 529.81,
+      "text": "Six indexes with empty vectors."
+    },
+    {
+      "start": 529.81,
+      "end": 531.57,
+      "text": "So you need to remember one thing."
+    },
+    {
+      "start": 531.57,
+      "end": 535.51,
+      "text": "What is the motive of the list?"
+    },
+    {
+      "start": 535.51,
+      "end": 538.15,
+      "text": "So if you see 4."
+    },
+    {
+      "start": 538.15,
+      "end": 544.03,
+      "text": "4 has 2, 5, 3 as its neighbor."
+    },
+    {
+      "start": 544.03,
+      "end": 546.53,
+      "text": "So the motive of the adjacency list is."
+    },
+    {
+      "start": 546.53,
+      "end": 547.53,
+      "text": "On 4."
+    },
+    {
+      "start": 547.53,
+      "end": 549.95,
+      "text": "I just want to store 2, 5, 3."
+    },
+    {
+      "start": 549.95,
+      "end": 551.11,
+      "text": "In any order."
+    },
+    {
+      "start": 551.11,
+      "end": 553.53,
+      "text": "So that if someone tells me."
+    },
+    {
+      "start": 553.53,
+      "end": 556.23,
+      "text": "Who are the adjacent neighbors of 4."
+    },
+    {
+      "start": 556.23,
+      "end": 558.33,
+      "text": "I can say 4 is connected to 2."
+    },
+    {
+      "start": 558.33,
+      "end": 559.33,
+      "text": "4 is connected to 5."
+    },
+    {
+      "start": 559.33,
+      "end": 560.33,
+      "text": "4 is connected to 3."
+    },
+    {
+      "start": 560.33,
+      "end": 561.33,
+      "text": "That is my motive."
+    },
+    {
+      "start": 561.33,
+      "end": 562.09,
+      "text": "Okay."
+    },
+    {
+      "start": 562.09,
+      "end": 564.01,
+      "text": "So on the first step."
+    },
+    {
+      "start": 564.01,
+      "end": 565.95,
+      "text": "We have something like 1 and 2."
+    },
+    {
+      "start": 565.95,
+      "end": 567.09,
+      "text": "So what we will do is."
+    },
+    {
+      "start": 567.09,
+      "end": 568.09,
+      "text": "We will go to 1."
+    },
+    {
+      "start": 568.09,
+      "end": 569.09,
+      "text": "And we will say."
+    },
+    {
+      "start": 569.09,
+      "end": 570.09,
+      "text": "The list."
+    },
+    {
+      "start": 570.09,
+      "end": 571.09,
+      "text": "Can you take 2?"
+    },
+    {
+      "start": 571.09,
+      "end": 574.09,
+      "text": "Because if 1 and 2 are connected."
+    },
+    {
+      "start": 574.09,
+      "end": 576.03,
+      "text": "2 is definitely a neighbor of 1."
+    },
+    {
+      "start": 576.03,
+      "end": 577.87,
+      "text": "And similarly can I say 2."
+    },
+    {
+      "start": 577.87,
+      "end": 578.87,
+      "text": "Please store 1."
+    },
+    {
+      "start": 578.87,
+      "end": 579.87,
+      "text": "Perfect."
+    },
+    {
+      "start": 579.87,
+      "end": 580.87,
+      "text": "Because for 2."
+    },
+    {
+      "start": 580.87,
+      "end": 581.87,
+      "text": "1 is also a neighbor."
+    },
+    {
+      "start": 581.87,
+      "end": 582.87,
+      "text": "For 1 and 3."
+    },
+    {
+      "start": 582.87,
+      "end": 583.87,
+      "text": "Can I say 1."
+    },
+    {
+      "start": 583.87,
+      "end": 584.87,
+      "text": "Can you store 3."
+    },
+    {
+      "start": 584.87,
+      "end": 585.87,
+      "text": "And for 3."
+    },
+    {
+      "start": 585.87,
+      "end": 586.87,
+      "text": "Can I say."
+    },
+    {
+      "start": 586.87,
+      "end": 587.87,
+      "text": "Can you store 1."
+    },
+    {
+      "start": 587.87,
+      "end": 588.87,
+      "text": "Yes."
+    },
+    {
+      "start": 588.87,
+      "end": 589.87,
+      "text": "For 3 and 4."
+    },
+    {
+      "start": 589.87,
+      "end": 590.87,
+      "text": "Can I say 3."
+    },
+    {
+      "start": 590.87,
+      "end": 591.87,
+      "text": "Can you store 4."
+    },
+    {
+      "start": 591.87,
+      "end": 592.87,
+      "text": "And can I say 4."
+    },
+    {
+      "start": 592.87,
+      "end": 593.87,
+      "text": "Can you store 3."
+    },
+    {
+      "start": 593.87,
+      "end": 594.87,
+      "text": "Yes."
+    },
+    {
+      "start": 594.87,
+      "end": 595.87,
+      "text": "For 2 and 4."
+    },
+    {
+      "start": 595.87,
+      "end": 596.87,
+      "text": "Can I say 2."
+    },
+    {
+      "start": 596.87,
+      "end": 597.87,
+      "text": "Can you store 4."
+    },
+    {
+      "start": 597.87,
+      "end": 598.87,
+      "text": "And can I say 4."
+    },
+    {
+      "start": 598.87,
+      "end": 599.87,
+      "text": "Can you store 2."
+    },
+    {
+      "start": 599.87,
+      "end": 600.87,
+      "text": "Yes."
+    },
+    {
+      "start": 600.87,
+      "end": 601.87,
+      "text": "For 2 and 5."
+    },
+    {
+      "start": 601.87,
+      "end": 602.87,
+      "text": "Can I say 2."
+    },
+    {
+      "start": 602.87,
+      "end": 603.87,
+      "text": "Can you store 5."
+    },
+    {
+      "start": 603.87,
+      "end": 604.87,
+      "text": "5 can you store 2."
+    },
+    {
+      "start": 604.87,
+      "end": 605.87,
+      "text": "For 4 and 5."
+    },
+    {
+      "start": 605.87,
+      "end": 606.87,
+      "text": "Can I say 4."
+    },
+    {
+      "start": 606.87,
+      "end": 607.87,
+      "text": "Can you store 5."
+    },
+    {
+      "start": 607.87,
+      "end": 608.87,
+      "text": "5 can you store 4."
+    },
+    {
+      "start": 608.87,
+      "end": 609.87,
+      "text": "I can."
+    },
+    {
+      "start": 609.87,
+      "end": 612.37,
+      "text": "So this will be the."
+    },
+    {
+      "start": 612.37,
+      "end": 613.87,
+      "text": "End of the day list."
+    },
+    {
+      "start": 613.87,
+      "end": 615.79,
+      "text": "And if you carefully observe."
+    },
+    {
+      "start": 615.79,
+      "end": 619.49,
+      "text": "1 has its neighbor as 2 and 3."
+    },
+    {
+      "start": 619.49,
+      "end": 620.63,
+      "text": "5 has its neighbor as 2 and 4."
+    },
+    {
+      "start": 620.87,
+      "end": 625.24,
+      "text": "3 has its neighbor as 1 and 4."
+    },
+    {
+      "start": 625.24,
+      "end": 628.0,
+      "text": "So you stored all the neighbors."
+    },
+    {
+      "start": 628.0,
+      "end": 630.28,
+      "text": "In particular indexes."
+    },
+    {
+      "start": 630.28,
+      "end": 632.24,
+      "text": "This is how the list works."
+    },
+    {
+      "start": 632.24,
+      "end": 633.24,
+      "text": "Right."
+    },
+    {
+      "start": 633.24,
+      "end": 635.12,
+      "text": "And if you carefully observe."
+    },
+    {
+      "start": 635.12,
+      "end": 636.12,
+      "text": "The number of edges were."
+    },
+    {
+      "start": 636.12,
+      "end": 639.4,
+      "text": "1, 2, 3, 4, 5, 6."
+    },
+    {
+      "start": 639.4,
+      "end": 641.24,
+      "text": "How much space did you take."
+    },
+    {
+      "start": 641.24,
+      "end": 646.24,
+      "text": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12."
+    },
+    {
+      "start": 646.24,
+      "end": 647.24,
+      "text": "Because."
+    },
+    {
+      "start": 647.24,
+      "end": 648.24,
+      "text": "Because."
+    },
+    {
+      "start": 648.24,
+      "end": 651.24,
+      "text": "The space that you take is twice of edges."
+    },
+    {
+      "start": 651.24,
+      "end": 652.24,
+      "text": "Why."
+    },
+    {
+      "start": 652.24,
+      "end": 655.24,
+      "text": "Because every edge has 2 nodes."
+    },
+    {
+      "start": 655.24,
+      "end": 657.24,
+      "text": "So for every edge you are storing twice."
+    },
+    {
+      "start": 657.24,
+      "end": 658.24,
+      "text": "So you will take."
+    },
+    {
+      "start": 658.24,
+      "end": 659.24,
+      "text": "B go of 2a."
+    },
+    {
+      "start": 659.24,
+      "end": 663.74,
+      "text": "2e is the space that you will take."
+    },
+    {
+      "start": 663.74,
+      "end": 667.24,
+      "text": "In storing this particular adjacency list."
+    },
+    {
+      "start": 667.24,
+      "end": 671.32,
+      "text": "Which is much much better than your n square."
+    },
+    {
+      "start": 671.32,
+      "end": 672.32,
+      "text": "Because in n square."
+    },
+    {
+      "start": 672.32,
+      "end": 675.0,
+      "text": "A lot of places were unused."
+    },
+    {
+      "start": 675.0,
+      "end": 676.24,
+      "text": "Over here we are storing."
+    },
+    {
+      "start": 676.24,
+      "end": 677.24,
+      "text": "Who matters."
+    },
+    {
+      "start": 677.24,
+      "end": 678.24,
+      "text": "No one else."
+    },
+    {
+      "start": 678.24,
+      "end": 679.24,
+      "text": "So the input of n and x."
+    },
+    {
+      "start": 679.24,
+      "end": 680.24,
+      "text": "Is."
+    },
+    {
+      "start": 680.24,
+      "end": 681.24,
+      "text": "So the input of n and m."
+    },
+    {
+      "start": 681.24,
+      "end": 682.24,
+      "text": "Will be same."
+    },
+    {
+      "start": 682.24,
+      "end": 683.24,
+      "text": "What we do is."
+    },
+    {
+      "start": 683.24,
+      "end": 684.24,
+      "text": "We declare an adjacency list."
+    },
+    {
+      "start": 684.24,
+      "end": 685.24,
+      "text": "And we say n plus 1."
+    },
+    {
+      "start": 685.24,
+      "end": 686.24,
+      "text": "If it is a 0 base."
+    },
+    {
+      "start": 686.24,
+      "end": 687.24,
+      "text": "You take n."
+    },
+    {
+      "start": 687.24,
+      "end": 688.24,
+      "text": "And now we take this."
+    },
+    {
+      "start": 688.24,
+      "end": 689.24,
+      "text": "And all the."
+    },
+    {
+      "start": 689.24,
+      "end": 690.24,
+      "text": "Int uv."
+    },
+    {
+      "start": 690.24,
+      "end": 691.24,
+      "text": "It's like cn of u and v."
+    },
+    {
+      "start": 691.24,
+      "end": 693.68,
+      "text": "Once you've done this."
+    },
+    {
+      "start": 693.68,
+      "end": 694.68,
+      "text": "It's like adjacency of u dot push back."
+    },
+    {
+      "start": 694.68,
+      "end": 695.68,
+      "text": "Because in that vector."
+    },
+    {
+      "start": 695.68,
+      "end": 696.68,
+      "text": "You need to store this."
+    },
+    {
+      "start": 696.68,
+      "end": 697.68,
+      "text": "And adjacency of v dot push back of u."
+    },
+    {
+      "start": 697.68,
+      "end": 698.68,
+      "text": "So what it means is."
+    },
+    {
+      "start": 698.68,
+      "end": 699.68,
+      "text": "On the uf index."
+    },
+    {
+      "start": 699.68,
+      "end": 700.68,
+      "text": "Can you please store v."
+    },
+    {
+      "start": 700.68,
+      "end": 701.68,
+      "text": "Because."
+    },
+    {
+      "start": 701.68,
+      "end": 702.68,
+      "text": "You need to store v."
+    },
+    {
+      "start": 702.68,
+      "end": 703.68,
+      "text": "Because."
+    },
+    {
+      "start": 703.68,
+      "end": 704.68,
+      "text": "You need to store v."
+    },
+    {
+      "start": 704.68,
+      "end": 705.68,
+      "text": "Because."
+    },
+    {
+      "start": 705.68,
+      "end": 706.68,
+      "text": "Because."
+    },
+    {
+      "start": 706.68,
+      "end": 707.68,
+      "text": "Because."
+    },
+    {
+      "start": 707.68,
+      "end": 708.68,
+      "text": "Because."
+    },
+    {
+      "start": 708.68,
+      "end": 709.68,
+      "text": "Because."
+    },
+    {
+      "start": 709.68,
+      "end": 710.68,
+      "text": "Because."
+    },
+    {
+      "start": 710.68,
+      "end": 711.68,
+      "text": "Because."
+    },
+    {
+      "start": 711.68,
+      "end": 712.68,
+      "text": "You need to store v."
+    },
+    {
+      "start": 712.68,
+      "end": 713.68,
+      "text": "Because accurate is."
+    },
+    {
+      "start": 713.68,
+      "end": 714.68,
+      "text": "V is a neighbor."
+    },
+    {
+      "start": 714.68,
+      "end": 715.68,
+      "text": "On the vth index."
+    },
+    {
+      "start": 715.68,
+      "end": 716.68,
+      "text": "Can you please store u."
+    },
+    {
+      "start": 716.68,
+      "end": 717.68,
+      "text": "Because u is a neighbor."
+    },
+    {
+      "start": 717.68,
+      "end": 718.96,
+      "text": "This is how we can easily store."
+    },
+    {
+      "start": 718.96,
+      "end": 720.32,
+      "text": "In a list."
+    },
+    {
+      "start": 720.32,
+      "end": 721.32,
+      "text": "And the."
+    },
+    {
+      "start": 721.32,
+      "end": 722.32,
+      "text": "Space complexity."
+    },
+    {
+      "start": 722.32,
+      "end": 723.6,
+      "text": "Will be much."
+    },
+    {
+      "start": 723.6,
+      "end": 724.6,
+      "text": "Much."
+    },
+    {
+      "start": 724.6,
+      "end": 725.6,
+      "text": "Lesser."
+    },
+    {
+      "start": 725.6,
+      "end": 726.6,
+      "text": "Now let's come back to."
+    },
+    {
+      "start": 726.6,
+      "end": 727.6,
+      "text": "What if."
+    },
+    {
+      "start": 727.6,
+      "end": 728.6,
+      "text": "It's a directed graph."
+    },
+    {
+      "start": 728.6,
+      "end": 729.6,
+      "text": "If you remember."
+    },
+    {
+      "start": 729.6,
+      "end": 730.6,
+      "text": "If it's a directed graph."
+    },
+    {
+      "start": 730.6,
+      "end": 731.6,
+      "text": "We mean."
+    },
+    {
+      "start": 731.6,
+      "end": 732.6,
+      "text": "There's an edge between."
+    },
+    {
+      "start": 732.6,
+      "end": 733.6,
+      "text": "u and v only."
+    },
+    {
+      "start": 733.6,
+      "end": 734.6,
+      "text": "So if there's."
+    },
+    {
+      "start": 734.6,
+      "end": 735.6,
+      "text": "An edge between."
+    },
+    {
+      "start": 735.6,
+      "end": 736.6,
+      "text": "u and v."
+    },
+    {
+      "start": 736.6,
+      "end": 737.6,
+      "text": "Will we require."
+    },
+    {
+      "start": 737.6,
+      "end": 738.6,
+      "text": "This line."
+    },
+    {
+      "start": 738.6,
+      "end": 739.6,
+      "text": "Obviously not."
+    },
+    {
+      "start": 739.6,
+      "end": 740.6,
+      "text": "This line will not be required."
+    },
+    {
+      "start": 740.6,
+      "end": 746.92,
+      "text": "there is an edge between u and v the edge only goes from u and v so v will only be the neighbor"
+    },
+    {
+      "start": 746.92,
+      "end": 752.44,
+      "text": "of u it won't be the neighbor of the other one right so that is what we do and in case of directed"
+    },
+    {
+      "start": 752.44,
+      "end": 760.92,
+      "text": "graphs that space complexity used will be bigger of e why because we are not consuming two edges"
+    },
+    {
+      "start": 760.92,
+      "end": 766.6,
+      "text": "we're just consuming one edge so thereby we can easily say the number of edges will be the space"
+    },
+    {
+      "start": 766.6,
+      "end": 773.24,
+      "text": "complexity used in our directed graph and going forward we will be using adjacency list in every"
+    },
+    {
+      "start": 773.24,
+      "end": 778.6,
+      "text": "problem not adjacency matrix because of the space complexity issues so as of now you've understood"
+    },
+    {
+      "start": 778.6,
+      "end": 784.2,
+      "text": "how to store an undirected graph a directed graph what if i ask you how do you store a weighted graph"
+    },
+    {
+      "start": 784.2,
+      "end": 788.92,
+      "text": "what does a weighted graph means now what if the graph comes up uh something like okay there's an"
+    },
+    {
+      "start": 788.92,
+      "end": 792.44,
+      "text": "edge between one and two and the weight is two there's an edge between one and three the weight"
+    },
+    {
+      "start": 792.44,
+      "end": 796.52,
+      "text": "is three edge between three and four the weight is four every into and for the weight is one"
+    },
+    {
+      "start": 796.6,
+      "end": 802.44,
+      "text": "one edge between this has six and then edge between this has three what if they start"
+    },
+    {
+      "start": 802.44,
+      "end": 807.64,
+      "text": "assigning something like weights to it yes what if they start assigning edge weights that's when"
+    },
+    {
+      "start": 807.64,
+      "end": 812.6,
+      "text": "you call that as weighted graph the first technique that we learned was matrix right"
+    },
+    {
+      "start": 813.16,
+      "end": 819.64,
+      "text": "and if there is an edge between one and two you basically went to one basically one went to two"
+    },
+    {
+      "start": 819.64,
+      "end": 826.04,
+      "text": "and you wrote one in it so instead of writing one you take the edge weight two and you write"
+    },
+    {
+      "start": 826.84,
+      "end": 832.44,
+      "text": "in both the places so that's a slight change that you have to do you have to go back to the code and"
+    },
+    {
+      "start": 832.44,
+      "end": 838.28,
+      "text": "instead of saying equal to one you say equal to weight so it's going to be like adjacency of u"
+    },
+    {
+      "start": 839.16,
+      "end": 846.28,
+      "text": "v equal to weight right but that was of matrix but if i ask you how do you store in a list"
+    },
+    {
+      "start": 847.48,
+      "end": 856.36,
+      "text": "so remember in the list we were doing something like 0 1 2 3 4 5 and for four the neighbors were"
+    },
+    {
+      "start": 856.6,
+      "end": 863.96,
+      "text": "2 3 5 if you carefully observe before the neighbors were 2 3 5 so how do you store the"
+    },
+    {
+      "start": 863.96,
+      "end": 871.24,
+      "text": "weights so as of now you're just storing 2 3 5. so instead of that yes instead of that what you'll do"
+    },
+    {
+      "start": 871.24,
+      "end": 879.64,
+      "text": "is you'll store pairs in it there's two pairs in it and you'll see four can be like okay i know it"
+    },
+    {
+      "start": 879.64,
+      "end": 886.36,
+      "text": "has two but it has two comma one because the edge weight is one i know it has three but it has three"
+    },
+    {
+      "start": 886.6,
+      "end": 892.28,
+      "text": "four because the edge weight is four i know it is five but the edge weight is three so instead of"
+    },
+    {
+      "start": 892.28,
+      "end": 899.64,
+      "text": "storing something like two three five as single guys you will just tweak the data structure to"
+    },
+    {
+      "start": 899.64,
+      "end": 906.92,
+      "text": "store pairs to store pairs and those pairs will be like the first guy will be the four to two"
+    },
+    {
+      "start": 906.92,
+      "end": 910.76,
+      "text": "and the second guy will be the edge weight the first guy will be four to three and the second"
+    },
+    {
+      "start": 910.76,
+      "end": 916.52,
+      "text": "guy will be the edge weight so while defining the list instead of integer"
+    },
+    {
+      "start": 916.6,
+      "end": 924.04,
+      "text": "you have to define a pair class of integer and integer and you can easily yes you can easily"
+    },
+    {
+      "start": 924.04,
+      "end": 929.72,
+      "text": "store the weights as well i'll be showing you the implementation probably in some video where we"
+    },
+    {
+      "start": 929.72,
+      "end": 936.04,
+      "text": "will be solving the problem in weighted graphs but as of now just keep this in mind so i hope you've"
+    },
+    {
+      "start": 936.04,
+      "end": 940.12,
+      "text": "understood the entire implementation of graph just in case you did please make sure you like"
+    },
+    {
+      "start": 940.12,
+      "end": 944.44,
+      "text": "this video and if you're new to our channel what are you waiting for kill that subscribe button"
+    },
+    {
+      "start": 944.44,
+      "end": 949.0,
+      "text": "right away and if you haven't checked out our dp series and the sd sheet man the link is in the"
+    },
+    {
+      "start": 949.0,
+      "end": 952.6,
+      "text": "description make sure you check it out with this i'll be wrapping up this video let's read in some"
+    },
+    {
+      "start": 952.6,
+      "end": 961.44,
+      "text": "other video till then bye bye take care"
+    }
+  ]
+}

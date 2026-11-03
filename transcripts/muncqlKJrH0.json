@@ -1,0 +1,2289 @@
+{
+  "video_id": "muncqlKJrH0",
+  "title": "G-8. Number of Islands ｜ Number of Connected Components in Matrix ｜ C++ ｜ Java",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1503.42,
+  "segments": [
+    {
+      "start": 2.99,
+      "end": 9.33,
+      "text": "So we have learnt about the BFS traversal and the DFS traversal but where will it be applied?"
+    },
+    {
+      "start": 9.67,
+      "end": 13.45,
+      "text": "So you're going to do a bunch of problems and this video is going to be about the first problem"
+    },
+    {
+      "start": 13.45,
+      "end": 19.13,
+      "text": "number of connected components. So let me explain you the problem. So what does the problem state?"
+    },
+    {
+      "start": 19.43,
+      "end": 25.91,
+      "text": "The problem states you'll be given a grid of size n cross m where n is the number of rows and m is"
+    },
+    {
+      "start": 25.91,
+      "end": 32.75,
+      "text": "the number of columns in the grid and zeros are meaning water and one is meaning the land."
+    },
+    {
+      "start": 32.75,
+      "end": 38.83,
+      "text": "So your task is to find the number of islands and an island is surrounded by water and is found by"
+    },
+    {
+      "start": 38.83,
+      "end": 45.37,
+      "text": "connecting adjacent lands horizontally or vertically or diagonally in all eight directions."
+    },
+    {
+      "start": 45.89,
+      "end": 52.29,
+      "text": "So basically what they are stating is they'll be giving you a grid of size n cross m. Over here"
+    },
+    {
+      "start": 52.29,
+      "end": 61.29,
+      "text": "zero means water, one means land. Now you have to find the islands. So this is a land, this is a land,"
+    },
+    {
+      "start": 61.29,
+      "end": 62.73,
+      "text": "this is a land, this is a land."
+    },
+    {
+      "start": 62.75,
+      "end": 70.79,
+      "text": "So I can say these all lands are connected. These all lands are connected because this can be"
+    },
+    {
+      "start": 70.79,
+      "end": 75.89,
+      "text": "connected like this, this, like this guy is connected to this, this guy is connected to this,"
+    },
+    {
+      "start": 75.95,
+      "end": 79.49,
+      "text": "this guy is connected to this, this guy is connected to this or you can take the other way."
+    },
+    {
+      "start": 80.05,
+      "end": 83.47,
+      "text": "These guys are connected, these guys are connected, these guys are connected, these guys are connected."
+    },
+    {
+      "start": 83.77,
+      "end": 88.51,
+      "text": "They are connected in somehow because all the eight direction connectivities are allowed."
+    },
+    {
+      "start": 88.51,
+      "end": 91.37,
+      "text": "All the eight direction connectivities are allowed. So I can say"
+    },
+    {
+      "start": 92.75,
+      "end": 96.89,
+      "text": "are connected and then there is water water water water water and then these"
+    },
+    {
+      "start": 96.89,
+      "end": 100.75,
+      "text": "piece of land is connected and this piece of land is correct so apparently I"
+    },
+    {
+      "start": 100.75,
+      "end": 106.51,
+      "text": "find three pieces of land or three pieces of violent first island second"
+    },
+    {
+      "start": 106.51,
+      "end": 112.73,
+      "text": "island third island so there are three islands so the question states tell me"
+    },
+    {
+      "start": 112.73,
+      "end": 118.67,
+      "text": "the number of islands tell me the number of islands if I give you a grid and you"
+    },
+    {
+      "start": 118.67,
+      "end": 122.39,
+      "text": "might be thinking about striver this is a 2d matrix how can this be a graph"
+    },
+    {
+      "start": 122.39,
+      "end": 129.53,
+      "text": "problem this is a graph problem so try to think it as a node try to think this"
+    },
+    {
+      "start": 129.53,
+      "end": 134.63,
+      "text": "as a node a node a node a node a node a node a node a node a node so all these"
+    },
+    {
+      "start": 134.63,
+      "end": 140.99,
+      "text": "guys as a node okay so if you think that all of these guys as a node or a vertex"
+    },
+    {
+      "start": 140.99,
+      "end": 146.69,
+      "text": "carefully observe this guy is connected to this guy this guy is connected to"
+    },
+    {
+      "start": 146.69,
+      "end": 151.13,
+      "text": "this this guy is connected to this this guy is connected to this so"
+    },
+    {
+      "start": 151.13,
+      "end": 152.05,
+      "text": "can I see"
+    },
+    {
+      "start": 152.39,
+      "end": 158.45,
+      "text": "If I start the traversal, it can be any traversal, BFS, DFS, doesn't matter."
+    },
+    {
+      "start": 159.13,
+      "end": 165.47,
+      "text": "If I start a traversal from one, this will make sure it traverses the nearest one."
+    },
+    {
+      "start": 167.07,
+      "end": 169.59,
+      "text": "This will make sure it traverses the nearest one."
+    },
+    {
+      "start": 170.29,
+      "end": 172.53,
+      "text": "This will make sure it traverses the nearest one."
+    },
+    {
+      "start": 173.03,
+      "end": 175.03,
+      "text": "This will make sure it traverses the nearest one."
+    },
+    {
+      "start": 175.03,
+      "end": 181.13,
+      "text": "So if I start from a particular one and I do a certain level of traversal,"
+    },
+    {
+      "start": 181.13,
+      "end": 189.13,
+      "text": "assuming assuming that the connections are in all the eight directions then this one will go and"
+    },
+    {
+      "start": 189.13,
+      "end": 195.13,
+      "text": "traverse this this one might go and traverse this this one might go and traverse this this one might"
+    },
+    {
+      "start": 195.13,
+      "end": 200.57,
+      "text": "go and traverse this they cannot go beyond this because there is zero zero zero zero zero zero"
+    },
+    {
+      "start": 200.57,
+      "end": 206.23,
+      "text": "zero zero zero all over they cannot go beyond this so if you do a traversal starting from this one"
+    },
+    {
+      "start": 206.23,
+      "end": 215.51,
+      "text": "this will go and touch all of these guys and that can be called as one entire bfs or dfs whatever"
+    },
+    {
+      "start": 215.51,
+      "end": 223.81,
+      "text": "you do so i can do one traversal and that will touch this right and then can i say from here if"
+    },
+    {
+      "start": 223.81,
+      "end": 229.13,
+      "text": "i start the next traversal this will touch these two things and the third traversal if i do from"
+    },
+    {
+      "start": 229.13,
+      "end": 236.89,
+      "text": "here it will touch so can i say in short if i do three traversals if i do three traversals"
+    },
+    {
+      "start": 236.89,
+      "end": 243.77,
+      "text": "three starting notes one can like out of these i can pick up anyone as the starting note anyone"
+    },
+    {
+      "start": 243.77,
+      "end": 250.43,
+      "text": "as the starting note and it will make sure it visits everyone again among these two i can pick"
+    },
+    {
+      "start": 250.43,
+      "end": 255.15,
+      "text": "up anyone as the starting note and it will make sure it will touch these two and from here i can"
+    },
+    {
+      "start": 255.15,
+      "end": 258.91,
+      "text": "pick up anyone and this will make sure it only touches it so can i say"
+    },
+    {
+      "start": 258.91,
+      "end": 259.11,
+      "text": "you"
+    },
+    {
+      "start": 259.13,
+      "end": 269.13,
+      "text": "If I take three starting nodes, yes, if I take three starting nodes, I will be able to touch all the pieces of land."
+    },
+    {
+      "start": 269.69,
+      "end": 279.15,
+      "text": "Thereby, can I say there are three islands because one starting node will make sure it touches all the connected lands."
+    },
+    {
+      "start": 279.15,
+      "end": 282.03,
+      "text": "So one starting node will represent one island."
+    },
+    {
+      "start": 282.41,
+      "end": 283.63,
+      "text": "So this is the intuition."
+    },
+    {
+      "start": 284.25,
+      "end": 286.17,
+      "text": "So we have understood kind of the intuition."
+    },
+    {
+      "start": 286.17,
+      "end": 293.93,
+      "text": "But how do we apply a traversal technique that we have learned in the previous videos?"
+    },
+    {
+      "start": 294.21,
+      "end": 296.41,
+      "text": "So we know a couple of traversal techniques."
+    },
+    {
+      "start": 296.91,
+      "end": 299.51,
+      "text": "One is the BFS while the other one is the DFS."
+    },
+    {
+      "start": 299.99,
+      "end": 305.25,
+      "text": "So probably we can just try the BFS traversal technique and then we can think of something."
+    },
+    {
+      "start": 305.85,
+      "end": 307.63,
+      "text": "Okay, so what does BFS state?"
+    },
+    {
+      "start": 308.19,
+      "end": 310.47,
+      "text": "BFS states give me a starting point."
+    },
+    {
+      "start": 310.91,
+      "end": 313.49,
+      "text": "So I'll say, okay, this is the initial starting point."
+    },
+    {
+      "start": 313.49,
+      "end": 315.61,
+      "text": "And you can just refer this by."
+    },
+    {
+      "start": 316.17,
+      "end": 323.33,
+      "text": "Instead of node numbers, you can refer this by this row zero and column one."
+    },
+    {
+      "start": 323.69,
+      "end": 330.09,
+      "text": "So it can be the starting node can be represented as row zero, column one."
+    },
+    {
+      "start": 330.35,
+      "end": 337.43,
+      "text": "So instead of a vertex number, we can represent it by a row and a column number now, a pair of row and column."
+    },
+    {
+      "start": 337.81,
+      "end": 339.47,
+      "text": "So I can say this is the starting node."
+    },
+    {
+      "start": 340.05,
+      "end": 342.61,
+      "text": "Now, what did we do initially in the BFS?"
+    },
+    {
+      "start": 342.61,
+      "end": 346.13,
+      "text": "If you remember, initially what we did was we took a."
+    },
+    {
+      "start": 346.17,
+      "end": 347.49,
+      "text": "Q, right?"
+    },
+    {
+      "start": 347.73,
+      "end": 350.61,
+      "text": "We took a Q and we inserted the vertex."
+    },
+    {
+      "start": 351.09,
+      "end": 352.47,
+      "text": "And what is the other thing that we did?"
+    },
+    {
+      "start": 352.95,
+      "end": 357.73,
+      "text": "We always went ahead and marked them as visited in the visited array."
+    },
+    {
+      "start": 358.05,
+      "end": 361.05,
+      "text": "But over here, the vertex numbers are in pairs."
+    },
+    {
+      "start": 361.47,
+      "end": 364.73,
+      "text": "So we need something as a 2D array to mark visited."
+    },
+    {
+      "start": 365.01,
+      "end": 368.57,
+      "text": "So what we will do is we will create a replica 2D array."
+    },
+    {
+      "start": 368.61,
+      "end": 369.09,
+      "text": "Yes."
+    },
+    {
+      "start": 369.45,
+      "end": 373.35,
+      "text": "A same size 2D array can be easily created."
+    },
+    {
+      "start": 373.55,
+      "end": 373.73,
+      "text": "Yes."
+    },
+    {
+      "start": 373.79,
+      "end": 375.87,
+      "text": "A same size 2D array can be easily created."
+    },
+    {
+      "start": 376.17,
+      "end": 380.73,
+      "text": "So please go ahead and create the same size 2D array."
+    },
+    {
+      "start": 381.41,
+      "end": 385.61,
+      "text": "Once you have done this, this is zero and one pushed into the queue."
+    },
+    {
+      "start": 385.83,
+      "end": 389.85,
+      "text": "Initial config zero and one will be marked as visited or one."
+    },
+    {
+      "start": 390.05,
+      "end": 391.49,
+      "text": "So this is the visited array."
+    },
+    {
+      "start": 391.69,
+      "end": 393.65,
+      "text": "Please mark them as visited."
+    },
+    {
+      "start": 393.85,
+      "end": 394.37,
+      "text": "Done."
+    },
+    {
+      "start": 394.57,
+      "end": 396.69,
+      "text": "What is the next thing that you will do?"
+    },
+    {
+      "start": 396.89,
+      "end": 397.77,
+      "text": "It will be like fine."
+    },
+    {
+      "start": 397.97,
+      "end": 400.25,
+      "text": "What does BFS set B?"
+    },
+    {
+      "start": 400.45,
+      "end": 404.69,
+      "text": "BFS set B while traversal pick up the element from the queue."
+    },
+    {
+      "start": 404.89,
+      "end": 405.73,
+      "text": "I pick up the element from the queue."
+    },
+    {
+      "start": 405.73,
+      "end": 405.81,
+      "text": "I pick up the element from the queue."
+    },
+    {
+      "start": 405.81,
+      "end": 406.05,
+      "text": "I pick up the element from the queue."
+    },
+    {
+      "start": 406.05,
+      "end": 406.41,
+      "text": "I pick up the element from the queue."
+    },
+    {
+      "start": 406.61,
+      "end": 407.69,
+      "text": "Perfect."
+    },
+    {
+      "start": 407.89,
+      "end": 411.45,
+      "text": "And then it said travel to all its neighbors."
+    },
+    {
+      "start": 411.65,
+      "end": 416.65,
+      "text": "And in the graph, we stored all the neighbors in something which was known as"
+    },
+    {
+      "start": 416.85,
+      "end": 419.17,
+      "text": "adjacency list."
+    },
+    {
+      "start": 419.37,
+      "end": 422.65,
+      "text": "But over here, what we will do is we don't have an adjacency list,"
+    },
+    {
+      "start": 422.85,
+      "end": 424.73,
+      "text": "but we know who are the neighbors."
+    },
+    {
+      "start": 424.93,
+      "end": 429.05,
+      "text": "If I'm standing at a node, the neighbors can be someone at the top,"
+    },
+    {
+      "start": 429.25,
+      "end": 433.17,
+      "text": "someone on this diagonal, someone on this diagonal, someone in this one,"
+    },
+    {
+      "start": 433.37,
+      "end": 435.89,
+      "text": "someone here, someone here, someone here,"
+    },
+    {
+      "start": 436.09,
+      "end": 439.09,
+      "text": "someone here, there are eight directions who can be neighbors."
+    },
+    {
+      "start": 439.29,
+      "end": 440.73,
+      "text": "We know the eight directions."
+    },
+    {
+      "start": 440.93,
+      "end": 442.85,
+      "text": "We know that there can be eight directions."
+    },
+    {
+      "start": 443.05,
+      "end": 446.21,
+      "text": "So what we will do is we will go to all directions."
+    },
+    {
+      "start": 446.41,
+      "end": 448.33,
+      "text": "So does it have a neighbor on the up?"
+    },
+    {
+      "start": 448.53,
+      "end": 450.37,
+      "text": "So that does not exist."
+    },
+    {
+      "start": 450.57,
+      "end": 451.89,
+      "text": "Does it have it here?"
+    },
+    {
+      "start": 452.09,
+      "end": 453.57,
+      "text": "No. Does it have it here?"
+    },
+    {
+      "start": 453.77,
+      "end": 455.61,
+      "text": "Yes, we have someone."
+    },
+    {
+      "start": 455.81,
+      "end": 458.29,
+      "text": "And that's on the row zero and column two."
+    },
+    {
+      "start": 458.49,
+      "end": 459.89,
+      "text": "Row zero and column two."
+    },
+    {
+      "start": 460.09,
+      "end": 461.49,
+      "text": "So go and mark it."
+    },
+    {
+      "start": 461.69,
+      "end": 463.85,
+      "text": "Perfect. Next."
+    },
+    {
+      "start": 464.05,
+      "end": 465.93,
+      "text": "Does it have it here? Yes."
+    },
+    {
+      "start": 466.13,
+      "end": 467.93,
+      "text": "That's on row one and column two."
+    },
+    {
+      "start": 468.13,
+      "end": 470.53,
+      "text": "Row one and column two. Mark it."
+    },
+    {
+      "start": 470.73,
+      "end": 473.41,
+      "text": "Next. Does it have it here? Yes."
+    },
+    {
+      "start": 473.61,
+      "end": 474.85,
+      "text": "That's on row one."
+    },
+    {
+      "start": 475.05,
+      "end": 476.77,
+      "text": "Column one. Mark it."
+    },
+    {
+      "start": 476.97,
+      "end": 479.53,
+      "text": "Next. Does it have it here? No."
+    },
+    {
+      "start": 479.73,
+      "end": 481.81,
+      "text": "It's a water. Does it have it here? No."
+    },
+    {
+      "start": 482.01,
+      "end": 484.41,
+      "text": "It's a water. Does it have it here? Invalid."
+    },
+    {
+      "start": 484.61,
+      "end": 491.81,
+      "text": "Over. So I decided all the eight boundaries and I got three guys who were lans."
+    },
+    {
+      "start": 492.01,
+      "end": 495.97,
+      "text": "Take it and we're done for the first travesty."
+    },
+    {
+      "start": 496.17,
+      "end": 498.21,
+      "text": "For the first travesty, we are done."
+    },
+    {
+      "start": 498.41,
+      "end": 502.4,
+      "text": "Let's pick up the next guy, which is zero two."
+    },
+    {
+      "start": 502.6,
+      "end": 503.68,
+      "text": "Now who is zero two?"
+    },
+    {
+      "start": 503.88,
+      "end": 510.76,
+      "text": "This guy is zero two. Checks for all its neighbors in the same way."
+    },
+    {
+      "start": 510.96,
+      "end": 512.4,
+      "text": "This guy is already visited."
+    },
+    {
+      "start": 512.6,
+      "end": 514.16,
+      "text": "Does not tick. Already visited."
+    },
+    {
+      "start": 514.16,
+      "end": 515.48,
+      "text": "Does not tick. Already visited."
+    },
+    {
+      "start": 515.68,
+      "end": 518.56,
+      "text": "Does not tick. Does not get anyone. Perfect."
+    },
+    {
+      "start": 518.76,
+      "end": 522.24,
+      "text": "One two. So we get one two now, which is this guy."
+    },
+    {
+      "start": 522.44,
+      "end": 524.72,
+      "text": "So we have one two."
+    },
+    {
+      "start": 524.92,
+      "end": 528.16,
+      "text": "So for one two, this is visited."
+    },
+    {
+      "start": 528.36,
+      "end": 529.52,
+      "text": "Water. Water."
+    },
+    {
+      "start": 529.84,
+      "end": 533.36,
+      "text": "We get a new guy who is at two comma two."
+    },
+    {
+      "start": 533.56,
+      "end": 536.44,
+      "text": "So two comma two is marked as visited. Perfect."
+    },
+    {
+      "start": 536.64,
+      "end": 540.28,
+      "text": "Then water. Marked as visited. Marked as visited."
+    },
+    {
+      "start": 540.48,
+      "end": 544.76,
+      "text": "Marked as visited. So this guy only got this neighbor in all eight directions,"
+    },
+    {
+      "start": 544.96,
+      "end": 547.76,
+      "text": "which we have taken. Perfect. Next we get one one."
+    },
+    {
+      "start": 547.96,
+      "end": 552.56,
+      "text": "And one one is this guy. Again visited."
+    },
+    {
+      "start": 552.76,
+      "end": 556.28,
+      "text": "Visited. Visited. Water. Water. Water. Water. Done."
+    },
+    {
+      "start": 556.48,
+      "end": 560.48,
+      "text": "One one is also done. Next we get two two."
+    },
+    {
+      "start": 560.56,
+      "end": 563.12,
+      "text": "At two two what happens? Which is two two?"
+    },
+    {
+      "start": 563.32,
+      "end": 564.92,
+      "text": "This is this."
+    },
+    {
+      "start": 565.72,
+      "end": 567.28,
+      "text": "Visited."
+    },
+    {
+      "start": 567.48,
+      "end": 572.32,
+      "text": "Water. Water. Water. Water. Water. Water. Visited. Visited. Visited."
+    },
+    {
+      "start": 572.52,
+      "end": 574.64,
+      "text": "So we get no more neighbors."
+    },
+    {
+      "start": 574.84,
+      "end": 576.76,
+      "text": "Thereby two two is also done."
+    },
+    {
+      "start": 576.96,
+      "end": 579.36,
+      "text": "Apparently the queue becomes empty."
+    },
+    {
+      "start": 579.56,
+      "end": 580.92,
+      "text": "Apparently the queue becomes empty."
+    },
+    {
+      "start": 581.12,
+      "end": 586.4,
+      "text": "So this is how if you do a traversal, you will touch this, this, this, this, this, this."
+    },
+    {
+      "start": 586.6,
+      "end": 590.28,
+      "text": "So you saw how in one traversal, you could have done DFSL."
+    },
+    {
+      "start": 590.48,
+      "end": 594.92,
+      "text": "How in one traversal, we were able to touch everyone."
+    },
+    {
+      "start": 595.12,
+      "end": 597.84,
+      "text": "The lands that were connected to it. Done."
+    },
+    {
+      "start": 598.04,
+      "end": 604.6,
+      "text": "Next, we have to start from this guy, which is the starting point will change."
+    },
+    {
+      "start": 604.8,
+      "end": 607.72,
+      "text": "And this time the starting point will become four comma zero."
+    },
+    {
+      "start": 607.92,
+      "end": 609.84,
+      "text": "And again, we'll follow the same process."
+    },
+    {
+      "start": 610.04,
+      "end": 613.04,
+      "text": "And if we follow the same process again, it will be marked."
+    },
+    {
+      "start": 613.24,
+      "end": 616.36,
+      "text": "Right. So the next time the starting point will be this,"
+    },
+    {
+      "start": 616.56,
+      "end": 618.96,
+      "text": "which is four comma three. Again the same process."
+    },
+    {
+      "start": 618.96,
+      "end": 620.32,
+      "text": "And this guy will be marked."
+    },
+    {
+      "start": 620.52,
+      "end": 623.88,
+      "text": "Apparently there were three starting points that we used."
+    },
+    {
+      "start": 624.08,
+      "end": 626.4,
+      "text": "There were three starting points that we used."
+    },
+    {
+      "start": 626.6,
+      "end": 629.12,
+      "text": "So how will you decide the starting points?"
+    },
+    {
+      "start": 629.32,
+      "end": 633.2,
+      "text": "Very simple. What we will do is we know it's a matrix."
+    },
+    {
+      "start": 633.4,
+      "end": 634.44,
+      "text": "We know it's a matrix."
+    },
+    {
+      "start": 634.64,
+      "end": 639.76,
+      "text": "So we start from this guy, which is zero comma zero."
+    },
+    {
+      "start": 639.96,
+      "end": 642.16,
+      "text": "And we say it's a water."
+    },
+    {
+      "start": 642.36,
+      "end": 644.48,
+      "text": "No need to do. Next, we go to here."
+    },
+    {
+      "start": 644.68,
+      "end": 646.44,
+      "text": "We find it's a land."
+    },
+    {
+      "start": 646.64,
+      "end": 648.56,
+      "text": "We start the BFS traversal from a land."
+    },
+    {
+      "start": 648.76,
+      "end": 651.32,
+      "text": "We start the BFS traversal from a land."
+    },
+    {
+      "start": 651.96,
+      "end": 653.28,
+      "text": "This is my first starting point."
+    },
+    {
+      "start": 653.48,
+      "end": 654.8,
+      "text": "This is my first starting point."
+    },
+    {
+      "start": 655.0,
+      "end": 657.68,
+      "text": "And this will make sure it visits everyone."
+    },
+    {
+      "start": 657.88,
+      "end": 659.92,
+      "text": "Next, we got this is done."
+    },
+    {
+      "start": 659.92,
+      "end": 661.48,
+      "text": "This is done. Next, we go to this."
+    },
+    {
+      "start": 661.68,
+      "end": 663.8,
+      "text": "And this is I'm already visited, man."
+    },
+    {
+      "start": 664.0,
+      "end": 665.76,
+      "text": "I'm already visited. Someone visited me."
+    },
+    {
+      "start": 665.96,
+      "end": 667.16,
+      "text": "No need to do a BFS."
+    },
+    {
+      "start": 667.36,
+      "end": 669.88,
+      "text": "I cannot be a starting point because I was already."
+    },
+    {
+      "start": 670.08,
+      "end": 672.2,
+      "text": "Next, we go here. Water, water."
+    },
+    {
+      "start": 672.4,
+      "end": 674.32,
+      "text": "He says, hey, I'm already visited."
+    },
+    {
+      "start": 674.52,
+      "end": 676.2,
+      "text": "Next, we go here. Already visited."
+    },
+    {
+      "start": 676.4,
+      "end": 678.08,
+      "text": "Water, water, water."
+    },
+    {
+      "start": 678.28,
+      "end": 680.8,
+      "text": "Again, this guy says I've already been touched."
+    },
+    {
+      "start": 681.0,
+      "end": 681.72,
+      "text": "Water. Water."
+    },
+    {
+      "start": 681.96,
+      "end": 683.08,
+      "text": "Water. Water. Water."
+    },
+    {
+      "start": 683.28,
+      "end": 686.36,
+      "text": "Next, you come over here and you say, I have not been touched."
+    },
+    {
+      "start": 686.36,
+      "end": 687.32,
+      "text": "I'm not being visited."
+    },
+    {
+      "start": 687.52,
+      "end": 689.4,
+      "text": "You need to consider me as a starting point."
+    },
+    {
+      "start": 689.6,
+      "end": 691.24,
+      "text": "And this will touch both these guys."
+    },
+    {
+      "start": 691.44,
+      "end": 693.4,
+      "text": "Next, you go here. He says I'm touched."
+    },
+    {
+      "start": 693.6,
+      "end": 694.96,
+      "text": "Water. Next, you go here."
+    },
+    {
+      "start": 695.0,
+      "end": 696.72,
+      "text": "I'm not touched. I'm not visited."
+    },
+    {
+      "start": 696.92,
+      "end": 698.72,
+      "text": "You have to do a starting point as me."
+    },
+    {
+      "start": 698.92,
+      "end": 701.24,
+      "text": "OK, so you got three times as a starting point."
+    },
+    {
+      "start": 701.36,
+      "end": 702.84,
+      "text": "You got three times as a starting point."
+    },
+    {
+      "start": 703.04,
+      "end": 705.2,
+      "text": "So if I kind of tell you the pseudo code,"
+    },
+    {
+      "start": 705.4,
+      "end": 707.52,
+      "text": "you know, the BFS traversal is kind of simple."
+    },
+    {
+      "start": 707.72,
+      "end": 711.8,
+      "text": "So if I tell you the pseudo code, it's going to be somewhere like."
+    },
+    {
+      "start": 712.0,
+      "end": 718.08,
+      "text": "For the row number, like if I say row, row is going to be from zero to n."
+    },
+    {
+      "start": 718.28,
+      "end": 724.46,
+      "text": "And then there will be column number, which will be from zero to m."
+    },
+    {
+      "start": 724.66,
+      "end": 727.98,
+      "text": "And what you say is if not visited."
+    },
+    {
+      "start": 728.18,
+      "end": 737.18,
+      "text": "Row and column. What do you do is you call the BFS with those row and column."
+    },
+    {
+      "start": 737.38,
+      "end": 741.42,
+      "text": "And at the same time, you say these are the number of starting points that I called for."
+    },
+    {
+      "start": 741.62,
+      "end": 745.46,
+      "text": "So apparently this portion will count every"
+    },
+    {
+      "start": 746.06,
+      "end": 748.58,
+      "text": "column to be the starting point."
+    },
+    {
+      "start": 748.78,
+      "end": 752.38,
+      "text": "You counted and BFS will stay kind of similar."
+    },
+    {
+      "start": 752.58,
+      "end": 756.86,
+      "text": "Only you just make sure how to traverse in the adjacency list."
+    },
+    {
+      "start": 757.06,
+      "end": 759.34,
+      "text": "So we kind of wrote the pseudo code."
+    },
+    {
+      "start": 759.54,
+      "end": 765.1,
+      "text": "So I'll get back to the editor and I will tell you how to write the code like step"
+    },
+    {
+      "start": 765.3,
+      "end": 771.46,
+      "text": "by step again, the Java code is on the left and we are writing the C++ code on the right."
+    },
+    {
+      "start": 771.66,
+      "end": 774.62,
+      "text": "So just in case you have an issue, you are following Java."
+    },
+    {
+      "start": 774.62,
+      "end": 775.94,
+      "text": "You can definitely check out the left."
+    },
+    {
+      "start": 776.06,
+      "end": 778.38,
+      "text": "But OK, so what are we given?"
+    },
+    {
+      "start": 778.58,
+      "end": 780.82,
+      "text": "We are given the character grid zero or one."
+    },
+    {
+      "start": 781.02,
+      "end": 782.06,
+      "text": "It will recommend water."
+    },
+    {
+      "start": 782.26,
+      "end": 787.14,
+      "text": "So what's the first thing I told you we need to create like we need to get the end."
+    },
+    {
+      "start": 787.34,
+      "end": 788.66,
+      "text": "So and we'll be very simple."
+    },
+    {
+      "start": 788.66,
+      "end": 790.9,
+      "text": "You can just see grid dot size that will be the end."
+    },
+    {
+      "start": 791.1,
+      "end": 792.5,
+      "text": "And I need to get the M as well."
+    },
+    {
+      "start": 792.7,
+      "end": 795.94,
+      "text": "So you can say grid of zero dot size."
+    },
+    {
+      "start": 796.14,
+      "end": 798.66,
+      "text": "That's something that you can say."
+    },
+    {
+      "start": 798.86,
+      "end": 800.94,
+      "text": "What is the next thing that you will do?"
+    },
+    {
+      "start": 801.14,
+      "end": 802.82,
+      "text": "You need to create a visited array."
+    },
+    {
+      "start": 803.02,
+      "end": 806.02,
+      "text": "So since we need to pass everything by reference."
+    },
+    {
+      "start": 806.22,
+      "end": 807.98,
+      "text": "It's better we create something like this."
+    },
+    {
+      "start": 808.18,
+      "end": 810.22,
+      "text": "OK, and we need to create visited."
+    },
+    {
+      "start": 810.42,
+      "end": 813.82,
+      "text": "So vector of int and M comma zero."
+    },
+    {
+      "start": 814.02,
+      "end": 816.1,
+      "text": "Everything is marked as zero."
+    },
+    {
+      "start": 816.3,
+      "end": 818.58,
+      "text": "Now, what is the next thing that you will do?"
+    },
+    {
+      "start": 818.78,
+      "end": 822.98,
+      "text": "You will be like, OK, the rows will be from zero and rows will go to end."
+    },
+    {
+      "start": 822.98,
+      "end": 825.9,
+      "text": "And then we will be row plus plus and then there will be columns."
+    },
+    {
+      "start": 826.1,
+      "end": 830.38,
+      "text": "So columns will be from zero columns will go to an end column plus plus."
+    },
+    {
+      "start": 830.58,
+      "end": 835.3,
+      "text": "Perfect. And now what you'll see is if not visited row column."
+    },
+    {
+      "start": 835.5,
+      "end": 835.94,
+      "text": "Right."
+    },
+    {
+      "start": 836.22,
+      "end": 839.66,
+      "text": "Then you can just keep a counter plus plus and you can call the BFS for this"
+    },
+    {
+      "start": 839.86,
+      "end": 844.02,
+      "text": "row column with this visited and with this grid."
+    },
+    {
+      "start": 844.22,
+      "end": 848.18,
+      "text": "And at the end of the day, you can just go ahead and return the"
+    },
+    {
+      "start": 848.38,
+      "end": 851.66,
+      "text": "number of components, which is the number of islands."
+    },
+    {
+      "start": 851.86,
+      "end": 854.7,
+      "text": "And over here you can just initialize count equal to zero."
+    },
+    {
+      "start": 854.9,
+      "end": 858.3,
+      "text": "Now your time now to write the BFS code."
+    },
+    {
+      "start": 858.5,
+      "end": 860.74,
+      "text": "So let's quickly try out the BFS."
+    },
+    {
+      "start": 860.94,
+      "end": 863.58,
+      "text": "So what I'll do is you can write the DFS as well."
+    },
+    {
+      "start": 863.58,
+      "end": 864.94,
+      "text": "That is completely your choice."
+    },
+    {
+      "start": 864.94,
+      "end": 865.74,
+      "text": "I'll leave it to you."
+    },
+    {
+      "start": 866.02,
+      "end": 868.7,
+      "text": "So I'm writing the BFS."
+    },
+    {
+      "start": 868.7,
+      "end": 870.14,
+      "text": "You can write DFS as well."
+    },
+    {
+      "start": 870.34,
+      "end": 871.54,
+      "text": "I'll show that to you as well."
+    },
+    {
+      "start": 871.74,
+      "end": 874.02,
+      "text": "So I and the row."
+    },
+    {
+      "start": 874.22,
+      "end": 875.86,
+      "text": "OK, I and the column."
+    },
+    {
+      "start": 876.06,
+      "end": 877.22,
+      "text": "That's the starting point."
+    },
+    {
+      "start": 877.42,
+      "end": 878.66,
+      "text": "I was the next thing that you'll do."
+    },
+    {
+      "start": 878.86,
+      "end": 879.98,
+      "text": "You'll take the visited guy."
+    },
+    {
+      "start": 880.18,
+      "end": 881.66,
+      "text": "So visited guy will be taken."
+    },
+    {
+      "start": 881.86,
+      "end": 884.26,
+      "text": "Always make sure you pass with reference"
+    },
+    {
+      "start": 884.46,
+      "end": 889.34,
+      "text": "and then you can definitely take the grid as well, which is this."
+    },
+    {
+      "start": 889.54,
+      "end": 892.18,
+      "text": "And once you've done this, you come back to here."
+    },
+    {
+      "start": 892.38,
+      "end": 894.02,
+      "text": "I was the first thing that you do always."
+    },
+    {
+      "start": 894.22,
+      "end": 895.46,
+      "text": "You said visited off."
+    },
+    {
+      "start": 895.46,
+      "end": 896.02,
+      "text": "Yes."
+    },
+    {
+      "start": 896.22,
+      "end": 898.5,
+      "text": "That's initialization equal to one."
+    },
+    {
+      "start": 898.7,
+      "end": 900.9,
+      "text": "The next thing that you do, you took a cue."
+    },
+    {
+      "start": 901.1,
+      "end": 903.82,
+      "text": "But this time, since you're getting a couple of guys,"
+    },
+    {
+      "start": 904.02,
+      "end": 906.02,
+      "text": "please make sure you carry something like this."
+    },
+    {
+      "start": 906.22,
+      "end": 908.7,
+      "text": "And you say cue the push of row comma."
+    },
+    {
+      "start": 908.9,
+      "end": 909.74,
+      "text": "Done."
+    },
+    {
+      "start": 909.94,
+      "end": 912.54,
+      "text": "The next thing that you do, I treat on the cue."
+    },
+    {
+      "start": 912.74,
+      "end": 913.7,
+      "text": "Simple BFS."
+    },
+    {
+      "start": 913.9,
+      "end": 914.98,
+      "text": "Simple BFS guys."
+    },
+    {
+      "start": 915.18,
+      "end": 916.46,
+      "text": "I did on the cue."
+    },
+    {
+      "start": 916.66,
+      "end": 917.34,
+      "text": "Right."
+    },
+    {
+      "start": 917.54,
+      "end": 922.02,
+      "text": "And you get the row as Q dot front dot first."
+    },
+    {
+      "start": 922.22,
+      "end": 925.54,
+      "text": "And you get the column as Q dot front"
+    },
+    {
+      "start": 926.22,
+      "end": 930.42,
+      "text": "second. Once you have got the row and column, you just pop up."
+    },
+    {
+      "start": 930.62,
+      "end": 931.26,
+      "text": "Simple."
+    },
+    {
+      "start": 931.46,
+      "end": 933.62,
+      "text": "And this was a part of your BFS."
+    },
+    {
+      "start": 933.82,
+      "end": 936.82,
+      "text": "If you're in the BFS algorithm, you stored that into the BFS."
+    },
+    {
+      "start": 937.02,
+      "end": 940.42,
+      "text": "And now we are more concerned about just going and marking it right now."
+    },
+    {
+      "start": 940.62,
+      "end": 943.54,
+      "text": "We need to traverse in the neighbors."
+    },
+    {
+      "start": 943.74,
+      "end": 948.78,
+      "text": "Traverse in the neighbors and mark that if it's a lot."
+    },
+    {
+      "start": 948.98,
+      "end": 950.26,
+      "text": "This is what we need to do."
+    },
+    {
+      "start": 950.46,
+      "end": 952.1,
+      "text": "Now the question comes up."
+    },
+    {
+      "start": 952.3,
+      "end": 954.5,
+      "text": "You need to traverse in its neighbors."
+    },
+    {
+      "start": 954.7,
+      "end": 955.7,
+      "text": "So which are its."
+    },
+    {
+      "start": 955.7,
+      "end": 958.34,
+      "text": "So I'm going to teach you a shortcut for this."
+    },
+    {
+      "start": 958.54,
+      "end": 963.22,
+      "text": "So apparently if you are standing at a row column, let's."
+    },
+    {
+      "start": 963.42,
+      "end": 965.02,
+      "text": "Let's come back to the iPad."
+    },
+    {
+      "start": 965.22,
+      "end": 969.78,
+      "text": "If you're standing at a row column, which is kind of a portion."
+    },
+    {
+      "start": 969.98,
+      "end": 973.26,
+      "text": "Now it will have a neighbor as the upper guy."
+    },
+    {
+      "start": 973.46,
+      "end": 975.1,
+      "text": "It will have a neighbor as this guy."
+    },
+    {
+      "start": 975.3,
+      "end": 976.9,
+      "text": "It will have a neighbor as this guy."
+    },
+    {
+      "start": 977.1,
+      "end": 978.5,
+      "text": "It will have a neighbor as this guy."
+    },
+    {
+      "start": 978.7,
+      "end": 980.34,
+      "text": "It will have a neighbor as this guy."
+    },
+    {
+      "start": 980.54,
+      "end": 982.62,
+      "text": "This, this and this."
+    },
+    {
+      "start": 982.82,
+      "end": 985.7,
+      "text": "So either you can write eight neighbors."
+    },
+    {
+      "start": 985.9,
+      "end": 989.34,
+      "text": "Separately by writing eight different names or there's a shortcut."
+    },
+    {
+      "start": 989.54,
+      "end": 991.42,
+      "text": "So this is one. This is column."
+    },
+    {
+      "start": 991.62,
+      "end": 997.34,
+      "text": "What will be the index of a row that's going to be row minus one column."
+    },
+    {
+      "start": 997.54,
+      "end": 998.18,
+      "text": "Right."
+    },
+    {
+      "start": 998.38,
+      "end": 1001.74,
+      "text": "But with this, this will be row minus one column plus one."
+    },
+    {
+      "start": 1001.94,
+      "end": 1002.62,
+      "text": "Perfect."
+    },
+    {
+      "start": 1002.82,
+      "end": 1005.18,
+      "text": "This will be row comma column plus one."
+    },
+    {
+      "start": 1005.38,
+      "end": 1006.42,
+      "text": "Perfect."
+    },
+    {
+      "start": 1006.62,
+      "end": 1007.46,
+      "text": "What will be this?"
+    },
+    {
+      "start": 1007.66,
+      "end": 1010.02,
+      "text": "This will be row plus one column plus one."
+    },
+    {
+      "start": 1010.22,
+      "end": 1010.78,
+      "text": "Perfect."
+    },
+    {
+      "start": 1010.98,
+      "end": 1013.34,
+      "text": "This will be row plus one comma column."
+    },
+    {
+      "start": 1013.54,
+      "end": 1014.3,
+      "text": "Perfect."
+    },
+    {
+      "start": 1014.5,
+      "end": 1015.34,
+      "text": "This will be."
+    },
+    {
+      "start": 1015.54,
+      "end": 1018.26,
+      "text": "row plus one column minus one."
+    },
+    {
+      "start": 1018.46,
+      "end": 1019.1,
+      "text": "Perfect."
+    },
+    {
+      "start": 1019.3,
+      "end": 1021.3,
+      "text": "This will be row comma column minus one."
+    },
+    {
+      "start": 1021.52,
+      "end": 1022.42,
+      "text": "Perfect."
+    },
+    {
+      "start": 1022.42,
+      "end": 1024.9,
+      "text": "This will be row minus one column minus, perfect."
+    },
+    {
+      "start": 1025.1,
+      "end": 1026.98,
+      "text": "So if you carefully see."
+    },
+    {
+      "start": 1027.18,
+      "end": 1031.18,
+      "text": "Everything is like minus 1, row how is row varying?"
+    },
+    {
+      "start": 1031.38,
+      "end": 1036.78,
+      "text": "Minus 1, minus 1 or it's like row row row or it's like row plus 1 row plus 1."
+    },
+    {
+      "start": 1036.98,
+      "end": 1038.18,
+      "text": "This portion is row plus one."
+    },
+    {
+      "start": 1038.38,
+      "end": 1040.58,
+      "text": "This is row and this is row minus 1 ."
+    },
+    {
+      "start": 1040.78,
+      "end": 1042.38,
+      "text": "How is column varying?"
+    },
+    {
+      "start": 1042.58,
+      "end": 1045.14,
+      "text": "Rowing this is column minus 1 and column plus one."
+    },
+    {
+      "start": 1045.34,
+      "end": 1050.66,
+      "text": "everything is varying from minus 1 to plus 1 in both row and columns, right?"
+    },
+    {
+      "start": 1050.66,
+      "end": 1058.29,
+      "text": "So what you will do is, you will run a couple of loops and you can call it as delta i or something like this."
+    },
+    {
+      "start": 1058.77,
+      "end": 1065.51,
+      "text": "Delta i or delta row goes from minus 1 to plus 1."
+    },
+    {
+      "start": 1067.05,
+      "end": 1073.65,
+      "text": "And similarly, you can call delta column from minus 1 to plus 1."
+    },
+    {
+      "start": 1073.65,
+      "end": 1083.17,
+      "text": "And this will, for the neighbors, you can say the neighbor row is row plus delta row."
+    },
+    {
+      "start": 1083.59,
+      "end": 1091.41,
+      "text": "And you can say the neighbor column is column plus delta column."
+    },
+    {
+      "start": 1091.81,
+      "end": 1095.17,
+      "text": "So this will give you the neighbor row and the neighbor column very, very easily."
+    },
+    {
+      "start": 1095.65,
+      "end": 1098.55,
+      "text": "Why? Because first time it will be minus 1, this will be minus 1."
+    },
+    {
+      "start": 1098.85,
+      "end": 1102.23,
+      "text": "So first time it will be like minus 1, minus 1, which does have."
+    },
+    {
+      "start": 1102.43,
+      "end": 1104.65,
+      "text": "Next time it will be minus 1 and this will go to 0."
+    },
+    {
+      "start": 1105.07,
+      "end": 1105.31,
+      "text": "So."
+    },
+    {
+      "start": 1105.67,
+      "end": 1106.97,
+      "text": "Minus 1 plus 0."
+    },
+    {
+      "start": 1107.33,
+      "end": 1109.07,
+      "text": "Next time it will be minus 1 and plus 1."
+    },
+    {
+      "start": 1109.27,
+      "end": 1110.37,
+      "text": "So minus 1 plus 0."
+    },
+    {
+      "start": 1110.77,
+      "end": 1114.41,
+      "text": "So you will actually come across every neighbor."
+    },
+    {
+      "start": 1114.71,
+      "end": 1117.97,
+      "text": "If you just follow this technique, you don't have to write them individually."
+    },
+    {
+      "start": 1118.41,
+      "end": 1123.37,
+      "text": "You will automatically come across all of these neighbors, right?"
+    },
+    {
+      "start": 1123.55,
+      "end": 1127.45,
+      "text": "So let's go back to the code and now try to get all these neighbors."
+    },
+    {
+      "start": 1127.95,
+      "end": 1133.65,
+      "text": "So here like delta row equal to minus 1, delta row greater than equal to this, right?"
+    },
+    {
+      "start": 1133.65,
+      "end": 1135.65,
+      "text": "And then you say delta row plus 1."
+    },
+    {
+      "start": 1135.67,
+      "end": 1136.17,
+      "text": "Plus."
+    },
+    {
+      "start": 1137.17,
+      "end": 1137.67,
+      "text": "Perfect."
+    },
+    {
+      "start": 1137.83,
+      "end": 1145.77,
+      "text": "And then what you do is delta column equal to minus 1 delta column less than equal to 1 and delta column plus plus."
+    },
+    {
+      "start": 1146.11,
+      "end": 1146.49,
+      "text": "Perfect."
+    },
+    {
+      "start": 1146.49,
+      "end": 1147.67,
+      "text": "This is something which you have done."
+    },
+    {
+      "start": 1147.91,
+      "end": 1155.79,
+      "text": "A neighbor row will be what row plus delta row neighbor column will be what column plus del column."
+    },
+    {
+      "start": 1156.13,
+      "end": 1163.87,
+      "text": "Now, these guys have to be valid because if you remember, they might nothing be on the top or they might be crossing boundaries."
+    },
+    {
+      "start": 1164.25,
+      "end": 1165.45,
+      "text": "So make sure the neighbor."
+    },
+    {
+      "start": 1165.45,
+      "end": 1175.23,
+      "text": "Row is valid, which is this again, which is you need to make sure you need an end M."
+    },
+    {
+      "start": 1175.23,
+      "end": 1178.95,
+      "text": "So you're going to gain just to recompute them or you can carry them from them."
+    },
+    {
+      "start": 1178.97,
+      "end": 1184.29,
+      "text": "So great dot size and you can say great zero dot size will be your column size."
+    },
+    {
+      "start": 1184.33,
+      "end": 1184.83,
+      "text": "Perfect."
+    },
+    {
+      "start": 1184.97,
+      "end": 1186.81,
+      "text": "So you can say this has to be valid."
+    },
+    {
+      "start": 1187.23,
+      "end": 1195.33,
+      "text": "Thereby, this has to be this and and obviously end column has to be greater than zero and an end column has to be less than."
+    },
+    {
+      "start": 1195.33,
+      "end": 1195.43,
+      "text": "M."
+    },
+    {
+      "start": 1195.75,
+      "end": 1196.77,
+      "text": "This is for valid."
+    },
+    {
+      "start": 1197.07,
+      "end": 1200.67,
+      "text": "Once they are valid, they have to be very, very important."
+    },
+    {
+      "start": 1200.67,
+      "end": 1206.95,
+      "text": "Once they are valid, they have to be water."
+    },
+    {
+      "start": 1207.25,
+      "end": 1210.17,
+      "text": "Sorry, a land, which is something like this."
+    },
+    {
+      "start": 1210.59,
+      "end": 1211.83,
+      "text": "They have to be a land."
+    },
+    {
+      "start": 1212.33,
+      "end": 1213.27,
+      "text": "And what's the next thing?"
+    },
+    {
+      "start": 1213.59,
+      "end": 1215.61,
+      "text": "They have to be non visited as well."
+    },
+    {
+      "start": 1215.85,
+      "end": 1220.13,
+      "text": "So the new row and the new column have to be non visited as well."
+    },
+    {
+      "start": 1220.41,
+      "end": 1223.77,
+      "text": "So you need to make sure you write all these conditions."
+    },
+    {
+      "start": 1223.97,
+      "end": 1227.57,
+      "text": "Yes, you need to make sure you write all these conditions together."
+    },
+    {
+      "start": 1227.69,
+      "end": 1232.57,
+      "text": "Like first you check for validity, then you check for land and then you check for visited."
+    },
+    {
+      "start": 1232.57,
+      "end": 1243.15,
+      "text": "And if all of these are satisfied, you can just go and do end row end column equal to one that's visited."
+    },
+    {
+      "start": 1243.63,
+      "end": 1250.53,
+      "text": "And you can say the queue to please go and store the new row and the new column."
+    },
+    {
+      "start": 1250.85,
+      "end": 1256.59,
+      "text": "Once this is done in this way, you can traverse all the neighbors and you can just keep on doing the same BFS traversal."
+    },
+    {
+      "start": 1257.09,
+      "end": 1257.63,
+      "text": "And once."
+    },
+    {
+      "start": 1257.63,
+      "end": 1262.45,
+      "text": "By the way, just make sure this is land as well."
+    },
+    {
+      "start": 1262.91,
+      "end": 1269.41,
+      "text": "Grid of row column has to be land as well in order to do a BFS traversal."
+    },
+    {
+      "start": 1270.25,
+      "end": 1270.75,
+      "text": "Perfect."
+    },
+    {
+      "start": 1270.89,
+      "end": 1274.09,
+      "text": "So now what you can do is you can just go across and run the code."
+    },
+    {
+      "start": 1274.49,
+      "end": 1278.77,
+      "text": "And if you see the output is correct, does run fine."
+    },
+    {
+      "start": 1279.17,
+      "end": 1284.93,
+      "text": "And your task will be to probably try BFS, sorry, DFS and the DFS traversal."
+    },
+    {
+      "start": 1285.17,
+      "end": 1287.37,
+      "text": "Just make sure these are the neighbors."
+    },
+    {
+      "start": 1287.63,
+      "end": 1291.01,
+      "text": "And everything else will stay the same."
+    },
+    {
+      "start": 1291.23,
+      "end": 1299.33,
+      "text": "So this is how you can easily use the BFS algorithm in something like a matrix in order to solve a particular problem."
+    },
+    {
+      "start": 1300.29,
+      "end": 1302.85,
+      "text": "So let's discuss the space complexity at first."
+    },
+    {
+      "start": 1303.05,
+      "end": 1304.23,
+      "text": "So what are we using?"
+    },
+    {
+      "start": 1304.25,
+      "end": 1306.95,
+      "text": "We're using a visited matrix, which is taking N square."
+    },
+    {
+      "start": 1307.23,
+      "end": 1314.15,
+      "text": "Now, a lot of you might argue that we can use the given like given matrix only to mark visited."
+    },
+    {
+      "start": 1314.17,
+      "end": 1315.29,
+      "text": "Yes, you can use that."
+    },
+    {
+      "start": 1315.51,
+      "end": 1317.39,
+      "text": "But generally, even if you're using that."
+    },
+    {
+      "start": 1317.39,
+      "end": 1317.61,
+      "text": "Yes, you can use that. But generally, even if you're using that."
+    },
+    {
+      "start": 1317.63,
+      "end": 1320.01,
+      "text": "In order to solve the problem, you're using space."
+    },
+    {
+      "start": 1320.45,
+      "end": 1321.07,
+      "text": "You're using space."
+    },
+    {
+      "start": 1321.39,
+      "end": 1329.47,
+      "text": "So you're using big of N square space in order to have your visited stuff, whether you do it on a grid or whether you separate create a separate area."
+    },
+    {
+      "start": 1329.61,
+      "end": 1330.13,
+      "text": "That doesn't matter."
+    },
+    {
+      "start": 1330.13,
+      "end": 1331.95,
+      "text": "But you're using big of N square space."
+    },
+    {
+      "start": 1332.21,
+      "end": 1333.33,
+      "text": "You can explain that to the interview."
+    },
+    {
+      "start": 1333.79,
+      "end": 1335.03,
+      "text": "And there is."
+    },
+    {
+      "start": 1335.21,
+      "end": 1336.51,
+      "text": "Is there any other space?"
+    },
+    {
+      "start": 1336.71,
+      "end": 1340.41,
+      "text": "There is a queue space at max N square queue space."
+    },
+    {
+      "start": 1340.95,
+      "end": 1345.59,
+      "text": "If all of these guys are connected, the queue might end up taking N square space."
+    },
+    {
+      "start": 1345.59,
+      "end": 1346.75,
+      "text": "But that will not happen."
+    },
+    {
+      "start": 1346.75,
+      "end": 1349.05,
+      "text": "That is a very, very rare case."
+    },
+    {
+      "start": 1349.05,
+      "end": 1350.07,
+      "text": "That's not going to happen."
+    },
+    {
+      "start": 1350.07,
+      "end": 1353.59,
+      "text": "So we can say the space complexity is near about big of N square."
+    },
+    {
+      "start": 1353.59,
+      "end": 1355.39,
+      "text": "What about the time complexity?"
+    },
+    {
+      "start": 1355.39,
+      "end": 1357.43,
+      "text": "We are running multiple loops."
+    },
+    {
+      "start": 1357.43,
+      "end": 1361.99,
+      "text": "Like if you look at the goal, like it's N square over here and then you're calling BFS."
+    },
+    {
+      "start": 1361.99,
+      "end": 1365.69,
+      "text": "But if you are, you won't be calling for every guy."
+    },
+    {
+      "start": 1365.69,
+      "end": 1372.25,
+      "text": "Like it is not possible that everyone is one and you call BFS for everyone."
+    },
+    {
+      "start": 1372.25,
+      "end": 1373.25,
+      "text": "That's not going to happen."
+    },
+    {
+      "start": 1373.25,
+      "end": 1373.99,
+      "text": "Right."
+    },
+    {
+      "start": 1373.99,
+      "end": 1376.61,
+      "text": "So in in total, you over here."
+    },
+    {
+      "start": 1376.61,
+      "end": 1380.61,
+      "text": "You have called BFS for once, twice, thrice, like four times, five times, six times, seven"
+    },
+    {
+      "start": 1380.61,
+      "end": 1381.61,
+      "text": "times, eight times."
+    },
+    {
+      "start": 1381.61,
+      "end": 1387.73,
+      "text": "So it is kind of eight plus you traversed for N square plus N square is what you traverse"
+    },
+    {
+      "start": 1387.73,
+      "end": 1390.21,
+      "text": "like you to find out this first one."
+    },
+    {
+      "start": 1390.21,
+      "end": 1395.85,
+      "text": "So it'll be like if everyone is marked as one, if everyone is marked as one, the BFS"
+    },
+    {
+      "start": 1395.85,
+      "end": 1397.59,
+      "text": "will travel like N square nodes."
+    },
+    {
+      "start": 1397.59,
+      "end": 1401.95,
+      "text": "If everyone is marked as one, the BFS will traverse N square nodes."
+    },
+    {
+      "start": 1401.95,
+      "end": 1403.27,
+      "text": "Right."
+    },
+    {
+      "start": 1403.27,
+      "end": 1404.89,
+      "text": "And then there are neighbors."
+    },
+    {
+      "start": 1404.89,
+      "end": 1406.61,
+      "text": "That is like eight neighbors for everyone."
+    },
+    {
+      "start": 1406.61,
+      "end": 1409.31,
+      "text": "So you're going to check eight neighbors for everyone."
+    },
+    {
+      "start": 1409.31,
+      "end": 1413.17,
+      "text": "So N square nodes into eight neighbors is what you're checking."
+    },
+    {
+      "start": 1413.17,
+      "end": 1417.01,
+      "text": "So you're checking eight neighbors, but you might argue, but this will be running for"
+    },
+    {
+      "start": 1417.01,
+      "end": 1418.73,
+      "text": "like three into three, nine times."
+    },
+    {
+      "start": 1418.73,
+      "end": 1421.37,
+      "text": "But out of that one time will be ignored."
+    },
+    {
+      "start": 1421.37,
+      "end": 1422.37,
+      "text": "Why?"
+    },
+    {
+      "start": 1422.37,
+      "end": 1426.37,
+      "text": "Because when del row will be zero and del column will be zero, it means the current"
+    },
+    {
+      "start": 1426.37,
+      "end": 1431.53,
+      "text": "row and column, which is like, it will be like row plus zero and column plus zero."
+    },
+    {
+      "start": 1431.53,
+      "end": 1432.99,
+      "text": "But you'll find that as visited."
+    },
+    {
+      "start": 1432.99,
+      "end": 1434.37,
+      "text": "So it will not go there."
+    },
+    {
+      "start": 1434.37,
+      "end": 1436.61,
+      "text": "So apparently you're going for N square nodes."
+    },
+    {
+      "start": 1436.61,
+      "end": 1440.15,
+      "text": "And for every time you're finding nine neighbors or eight neighbors."
+    },
+    {
+      "start": 1440.15,
+      "end": 1442.19,
+      "text": "So it's like N square into nine."
+    },
+    {
+      "start": 1442.19,
+      "end": 1444.21,
+      "text": "And then you're traveling in the matrix."
+    },
+    {
+      "start": 1444.21,
+      "end": 1449.29,
+      "text": "It's something like N square for the matrix in order to check for once."
+    },
+    {
+      "start": 1449.29,
+      "end": 1451.59,
+      "text": "And then you're doing a BFS like N square into nine."
+    },
+    {
+      "start": 1451.59,
+      "end": 1455.73,
+      "text": "So roughly N square, you can call the complexity as."
+    },
+    {
+      "start": 1455.73,
+      "end": 1459.61,
+      "text": "So the time complexity will roughly boil down to N square."
+    },
+    {
+      "start": 1459.61,
+      "end": 1464.45,
+      "text": "If you want to go into deep, you can just analyze it again and again, you will be more"
+    },
+    {
+      "start": 1464.45,
+      "end": 1466.31,
+      "text": "confident about this."
+    },
+    {
+      "start": 1466.61,
+      "end": 1472.51,
+      "text": "So guys, I hope I was able to make you understand this particular question because it has a lot"
+    },
+    {
+      "start": 1472.51,
+      "end": 1473.51,
+      "text": "of concepts."
+    },
+    {
+      "start": 1473.51,
+      "end": 1477.49,
+      "text": "But just in case you understood, please, please, please make sure you like this video."
+    },
+    {
+      "start": 1477.49,
+      "end": 1480.61,
+      "text": "And if you're new to our channel, what are you waiting for?"
+    },
+    {
+      "start": 1480.61,
+      "end": 1482.61,
+      "text": "Hit that subscribe button right away."
+    },
+    {
+      "start": 1482.61,
+      "end": 1485.77,
+      "text": "And yeah, with this, I will be wrapping up this video."
+    },
+    {
+      "start": 1485.77,
+      "end": 1487.15,
+      "text": "Let's meet in some other video till then."
+    },
+    {
+      "start": 1487.15,
+      "end": 1488.15,
+      "text": "Bye bye."
+    },
+    {
+      "start": 1488.15,
+      "end": 1489.15,
+      "text": "Take care."
+    },
+    {
+      "start": 1489.15,
+      "end": 1491.61,
+      "text": "By the way, SD sheet and the DP series, the link are in the description."
+    },
+    {
+      "start": 1491.61,
+      "end": 1493.61,
+      "text": "Please make sure you check them out."
+    },
+    {
+      "start": 1493.61,
+      "end": 1497.36,
+      "text": "Bye bye."
+    },
+    {
+      "start": 1497.36,
+      "end": 1497.86,
+      "text": "Take care."
+    }
+  ]
+}

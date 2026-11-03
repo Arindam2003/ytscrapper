@@ -1,0 +1,1914 @@
+{
+  "video_id": "OwMNX8SPavM",
+  "title": "G-53. Most Stones Removed with Same Row or Column - DSU",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1430.01,
+  "segments": [
+    {
+      "start": 2.77,
+      "end": 5.91,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.29,
+      "end": 9.25,
+      "text": "So today we will be solving the problem maximum stone removal."
+    },
+    {
+      "start": 9.83,
+      "end": 14.57,
+      "text": "So the question states there are n stones at some integer coordinate points on a 2D plane."
+    },
+    {
+      "start": 15.11,
+      "end": 18.13,
+      "text": "Each coordinate point may have at most one stone."
+    },
+    {
+      "start": 18.49,
+      "end": 22.93,
+      "text": "You need to remove some stones. A stone can be removed. Very very critical."
+    },
+    {
+      "start": 23.33,
+      "end": 30.41,
+      "text": "A stone can be removed if it shares either the same row or the same column as the other stone that has not been removed."
+    },
+    {
+      "start": 30.41,
+      "end": 39.73,
+      "text": "Now given an array of stones which represents the i-th stone, return the maximum possible stones that you can remove."
+    },
+    {
+      "start": 40.01,
+      "end": 49.51,
+      "text": "Now the critical thing was you can only remove a stone if it shares a row or a column with some other stone."
+    },
+    {
+      "start": 49.51,
+      "end": 60.39,
+      "text": "For an example, I can say if I take this stone, this can be removed because this stone doesn't share a column with any other stone."
+    },
+    {
+      "start": 60.41,
+      "end": 68.13,
+      "text": "But it shares a row. If you see this stone and this stone shares a row with each other."
+    },
+    {
+      "start": 68.45,
+      "end": 72.75,
+      "text": "So what I will do is I will go ahead and say I will remove this. So I will cross it off."
+    },
+    {
+      "start": 73.07,
+      "end": 75.41,
+      "text": "So one stone I have removed. Okay, one removed."
+    },
+    {
+      "start": 75.79,
+      "end": 81.61,
+      "text": "Next I can say, hey, can I cross this off? Let's think about this. Can I cross this off?"
+    },
+    {
+      "start": 81.87,
+      "end": 89.15,
+      "text": "I can because I know on this row, we don't have any further stones because this is removed."
+    },
+    {
+      "start": 89.81,
+      "end": 90.39,
+      "text": "Currently on this row, we don't have any further stones because this is removed."
+    },
+    {
+      "start": 90.41,
+      "end": 92.29,
+      "text": "Currently on this row, we do not have any further stones."
+    },
+    {
+      "start": 92.79,
+      "end": 103.21,
+      "text": "But can I say over here, if you see there is another stone, thereby I can remove because this column has another stone."
+    },
+    {
+      "start": 103.65,
+      "end": 110.41,
+      "text": "Perfect. Again over here, this column does not have any other stone, but this row has one more stone."
+    },
+    {
+      "start": 110.65,
+      "end": 112.49,
+      "text": "So I can remove this as well."
+    },
+    {
+      "start": 112.91,
+      "end": 115.23,
+      "text": "Now coming across, can I remove this?"
+    },
+    {
+      "start": 115.23,
+      "end": 120.39,
+      "text": "Let's have a quick check. No, no, because this is already removed."
+    },
+    {
+      "start": 120.41,
+      "end": 124.75,
+      "text": "So we cannot. Now, can I remove this? No."
+    },
+    {
+      "start": 125.21,
+      "end": 129.65,
+      "text": "Yes. Yes, because there is another stone. Go ahead and remove it."
+    },
+    {
+      "start": 130.07,
+      "end": 137.59,
+      "text": "So apparently, can I say at the end of the day, there are two stones left and you are able to remove one, two, three, four."
+    },
+    {
+      "start": 137.93,
+      "end": 144.01,
+      "text": "So the answer to this will be four. You are able to remove four stones right at the end of the day."
+    },
+    {
+      "start": 144.43,
+      "end": 149.29,
+      "text": "Let's look at one more example. Can I say over here, this cannot be removed?"
+    },
+    {
+      "start": 149.29,
+      "end": 149.91,
+      "text": "No."
+    },
+    {
+      "start": 150.41,
+      "end": 152.41,
+      "text": "Can I say this cannot be removed?"
+    },
+    {
+      "start": 152.41,
+      "end": 153.41,
+      "text": "No."
+    },
+    {
+      "start": 153.41,
+      "end": 157.41,
+      "text": "Can I say this can be removed or this can be removed?"
+    },
+    {
+      "start": 157.41,
+      "end": 159.41,
+      "text": "So let's quickly start off by removing this."
+    },
+    {
+      "start": 159.41,
+      "end": 163.41,
+      "text": "Right. So I can say this guy shares with this."
+    },
+    {
+      "start": 163.41,
+      "end": 165.41,
+      "text": "So let's remove this. Perfect."
+    },
+    {
+      "start": 165.41,
+      "end": 169.41,
+      "text": "Next, I have this. This shares with two other guys."
+    },
+    {
+      "start": 169.41,
+      "end": 174.41,
+      "text": "So let's remove one more. Again, I have one more which can be removed because shares with one more."
+    },
+    {
+      "start": 174.41,
+      "end": 177.41,
+      "text": "Can this be? No. No."
+    },
+    {
+      "start": 177.41,
+      "end": 179.41,
+      "text": "So apparently three left."
+    },
+    {
+      "start": 179.41,
+      "end": 180.21,
+      "text": "But I was able to remove one more."
+    },
+    {
+      "start": 180.21,
+      "end": 183.21,
+      "text": "I was able to remove three stones at the end of the day."
+    },
+    {
+      "start": 183.21,
+      "end": 193.21,
+      "text": "You can try out every other possible configuration, but you'll not be able to remove these stones because they do not share a row or a column with any other given stone."
+    },
+    {
+      "start": 193.21,
+      "end": 196.21,
+      "text": "So let's not think about any of the algorithm as of now."
+    },
+    {
+      "start": 196.21,
+      "end": 202.21,
+      "text": "Let's look at the thought process, maybe do some dry run and then figure out which algorithm will be used."
+    },
+    {
+      "start": 202.21,
+      "end": 204.21,
+      "text": "So we see. Okay."
+    },
+    {
+      "start": 204.21,
+      "end": 205.21,
+      "text": "Kind of."
+    },
+    {
+      "start": 205.21,
+      "end": 208.21,
+      "text": "Can I say I can connect these guys?"
+    },
+    {
+      "start": 208.21,
+      "end": 209.21,
+      "text": "I can."
+    },
+    {
+      "start": 209.21,
+      "end": 211.21,
+      "text": "Can I say I can maybe connect this?"
+    },
+    {
+      "start": 211.21,
+      "end": 212.21,
+      "text": "Yes, I can."
+    },
+    {
+      "start": 212.21,
+      "end": 213.21,
+      "text": "Can I say this and this?"
+    },
+    {
+      "start": 213.21,
+      "end": 214.21,
+      "text": "Yes."
+    },
+    {
+      "start": 214.21,
+      "end": 217.21,
+      "text": "So somewhere down the line, can I say."
+    },
+    {
+      "start": 217.21,
+      "end": 219.21,
+      "text": "Connected."
+    },
+    {
+      "start": 219.21,
+      "end": 220.21,
+      "text": "Connected."
+    },
+    {
+      "start": 220.21,
+      "end": 221.21,
+      "text": "Connected."
+    },
+    {
+      "start": 221.21,
+      "end": 222.21,
+      "text": "Can I say this?"
+    },
+    {
+      "start": 222.21,
+      "end": 223.21,
+      "text": "Yes."
+    },
+    {
+      "start": 223.21,
+      "end": 228.21,
+      "text": "So can I say there are four stones which are ideally like connected?"
+    },
+    {
+      "start": 228.21,
+      "end": 229.21,
+      "text": "Can I say this?"
+    },
+    {
+      "start": 229.21,
+      "end": 232.21,
+      "text": "There are four stones which are connected."
+    },
+    {
+      "start": 232.21,
+      "end": 233.21,
+      "text": "I can."
+    },
+    {
+      "start": 233.21,
+      "end": 237.21,
+      "text": "And if I go across removing, I can remove one, two, three."
+    },
+    {
+      "start": 237.21,
+      "end": 238.21,
+      "text": "But I cannot remove the last guy."
+    },
+    {
+      "start": 238.21,
+      "end": 240.21,
+      "text": "Out of all the connected guys."
+    },
+    {
+      "start": 240.21,
+      "end": 243.21,
+      "text": "Because he will have no other stone remaining."
+    },
+    {
+      "start": 243.21,
+      "end": 245.21,
+      "text": "This guy will get this guy."
+    },
+    {
+      "start": 245.21,
+      "end": 247.21,
+      "text": "This guy will get this guy."
+    },
+    {
+      "start": 247.21,
+      "end": 248.21,
+      "text": "This guy will get this guy."
+    },
+    {
+      "start": 248.21,
+      "end": 253.21,
+      "text": "But when you try to remove this, since all of these are removed, you will not get anyone."
+    },
+    {
+      "start": 253.21,
+      "end": 254.21,
+      "text": "Okay."
+    },
+    {
+      "start": 254.21,
+      "end": 255.21,
+      "text": "Makes sense."
+    },
+    {
+      "start": 255.21,
+      "end": 256.21,
+      "text": "Now over here."
+    },
+    {
+      "start": 256.21,
+      "end": 258.21,
+      "text": "Again, if I try to connect it, it's like a connection."
+    },
+    {
+      "start": 258.21,
+      "end": 259.21,
+      "text": "Right."
+    },
+    {
+      "start": 259.21,
+      "end": 262.21,
+      "text": "So again, if I try to remove, I cannot remove both of them."
+    },
+    {
+      "start": 262.21,
+      "end": 264.21,
+      "text": "So I can actually remove just one of them."
+    },
+    {
+      "start": 264.21,
+      "end": 265.21,
+      "text": "Correct."
+    },
+    {
+      "start": 265.21,
+      "end": 266.21,
+      "text": "Okay."
+    },
+    {
+      "start": 266.21,
+      "end": 267.21,
+      "text": "Let's look at one more example."
+    },
+    {
+      "start": 267.21,
+      "end": 271.21,
+      "text": "So over here, this guy, no connections."
+    },
+    {
+      "start": 271.21,
+      "end": 273.58,
+      "text": "Single."
+    },
+    {
+      "start": 273.58,
+      "end": 275.58,
+      "text": "This guy, no connections."
+    },
+    {
+      "start": 275.58,
+      "end": 276.58,
+      "text": "Single."
+    },
+    {
+      "start": 276.58,
+      "end": 279.58,
+      "text": "So let's look at these guys."
+    },
+    {
+      "start": 279.58,
+      "end": 283.58,
+      "text": "Can I say this guy, this guy, this guy, this guy, something like this?"
+    },
+    {
+      "start": 283.58,
+      "end": 284.58,
+      "text": "Yes."
+    },
+    {
+      "start": 284.58,
+      "end": 289.58,
+      "text": "So thereby, I'll be like, okay, okay, okay, okay."
+    },
+    {
+      "start": 289.58,
+      "end": 290.58,
+      "text": "Connected, connected, connected."
+    },
+    {
+      "start": 290.58,
+      "end": 294.58,
+      "text": "Can I say I can remove this, this, this, but I cannot remove the last guy."
+    },
+    {
+      "start": 294.58,
+      "end": 297.58,
+      "text": "Or I can remove this, this, this, I cannot remove this."
+    },
+    {
+      "start": 297.58,
+      "end": 301.58,
+      "text": "Whatever I do, I will not be able to remove one guy."
+    },
+    {
+      "start": 301.58,
+      "end": 302.58,
+      "text": "That is for sure."
+    },
+    {
+      "start": 302.58,
+      "end": 303.58,
+      "text": "Correct."
+    },
+    {
+      "start": 303.58,
+      "end": 306.58,
+      "text": "So these guys cannot be removed."
+    },
+    {
+      "start": 306.58,
+      "end": 313.58,
+      "text": "So can I say that if I can somehow connect these guys, the answer is going to be pretty"
+    },
+    {
+      "start": 313.58,
+      "end": 314.58,
+      "text": "simple."
+    },
+    {
+      "start": 314.58,
+      "end": 315.58,
+      "text": "Right."
+    },
+    {
+      "start": 315.58,
+      "end": 318.58,
+      "text": "If I can somehow connect these dots, the answer is going to be pretty simple."
+    },
+    {
+      "start": 318.58,
+      "end": 319.58,
+      "text": "What will be the answer?"
+    },
+    {
+      "start": 319.58,
+      "end": 325.58,
+      "text": "Can I say the answer will be whatever is the component size of this, whatever is the component,"
+    },
+    {
+      "start": 325.58,
+      "end": 326.58,
+      "text": "like whatever the number of stones are there."
+    },
+    {
+      "start": 326.58,
+      "end": 333.58,
+      "text": "That is four minus one because I cannot remove one for sure, but I can remove three."
+    },
+    {
+      "start": 333.58,
+      "end": 337.58,
+      "text": "And can I say over here, I cannot remove one, but I can remove one."
+    },
+    {
+      "start": 337.58,
+      "end": 338.58,
+      "text": "This total was two."
+    },
+    {
+      "start": 338.58,
+      "end": 339.58,
+      "text": "So in total, I can remove four."
+    },
+    {
+      "start": 339.58,
+      "end": 340.58,
+      "text": "Can I say this?"
+    },
+    {
+      "start": 340.58,
+      "end": 341.58,
+      "text": "I can."
+    },
+    {
+      "start": 341.58,
+      "end": 348.58,
+      "text": "Over here again, can I say, over here if you see the size of this is one."
+    },
+    {
+      "start": 348.58,
+      "end": 349.58,
+      "text": "So one minus one."
+    },
+    {
+      "start": 349.58,
+      "end": 354.58,
+      "text": "Again, the size of this is one minus one because this is the component."
+    },
+    {
+      "start": 354.58,
+      "end": 355.58,
+      "text": "You cannot remove one."
+    },
+    {
+      "start": 355.58,
+      "end": 356.58,
+      "text": "You cannot remove one guy."
+    },
+    {
+      "start": 356.58,
+      "end": 359.58,
+      "text": "Apart from that, you can remove everyone, but he's alone."
+    },
+    {
+      "start": 359.58,
+      "end": 360.58,
+      "text": "Right."
+    },
+    {
+      "start": 360.58,
+      "end": 363.58,
+      "text": "Again, there are four guys, but I can not remove one guy."
+    },
+    {
+      "start": 363.58,
+      "end": 369.58,
+      "text": "So can I say I'll be removing zero plus zero in the first two sets and then three people,"
+    },
+    {
+      "start": 369.58,
+      "end": 370.58,
+      "text": "which makes it three."
+    },
+    {
+      "start": 370.58,
+      "end": 371.58,
+      "text": "Can I say this?"
+    },
+    {
+      "start": 371.58,
+      "end": 377.58,
+      "text": "So can I say this is somewhere boiling down to a connected component."
+    },
+    {
+      "start": 377.58,
+      "end": 383.58,
+      "text": "Like I can assume this stone to be a node, this stone to be a node, this stone to be"
+    },
+    {
+      "start": 383.58,
+      "end": 384.58,
+      "text": "a node."
+    },
+    {
+      "start": 384.58,
+      "end": 385.58,
+      "text": "Can I see this?"
+    },
+    {
+      "start": 385.58,
+      "end": 386.58,
+      "text": "I can."
+    },
+    {
+      "start": 386.58,
+      "end": 387.58,
+      "text": "I'm not going to the implementation details as of now."
+    },
+    {
+      "start": 387.58,
+      "end": 388.58,
+      "text": "I'm just assuming this stones to be the node of the graph."
+    },
+    {
+      "start": 388.58,
+      "end": 389.58,
+      "text": "Can I assume this to be a component in a graph which has four nodes?"
+    },
+    {
+      "start": 389.58,
+      "end": 390.58,
+      "text": "Can I assume this to be a component in a graph which has four nodes?"
+    },
+    {
+      "start": 390.58,
+      "end": 391.58,
+      "text": "Can I assume this to be a component in a graph with single nodes?"
+    },
+    {
+      "start": 391.58,
+      "end": 392.58,
+      "text": "I can."
+    },
+    {
+      "start": 392.58,
+      "end": 411.58,
+      "text": "So thereby, what I will say is if I can assume them to be components, so can I say in short,"
+    },
+    {
+      "start": 411.58,
+      "end": 412.58,
+      "text": "if there are n stones."
+    },
+    {
+      "start": 412.58,
+      "end": 413.58,
+      "text": "I can."
+    },
+    {
+      "start": 413.58,
+      "end": 416.58,
+      "text": "So thereby, what I will say is if there are n stones, if there are n stones and there"
+    },
+    {
+      "start": 416.58,
+      "end": 422.88,
+      "text": "is component, let's say component one, component two, component three, and the component one"
+    },
+    {
+      "start": 422.88,
+      "end": 427.48,
+      "text": "has x stones in it, like something like this."
+    },
+    {
+      "start": 427.48,
+      "end": 429.18,
+      "text": "Assume this was the component."
+    },
+    {
+      "start": 429.18,
+      "end": 430.58,
+      "text": "So how many stones are there?"
+    },
+    {
+      "start": 430.58,
+      "end": 431.58,
+      "text": "Three."
+    },
+    {
+      "start": 431.58,
+      "end": 433.18,
+      "text": "So x becomes three."
+    },
+    {
+      "start": 433.18,
+      "end": 435.62,
+      "text": "Assume over here there were two."
+    },
+    {
+      "start": 435.62,
+      "end": 441.58,
+      "text": "So here I can say there are x two stones and over here x two will be two."
+    },
+    {
+      "start": 441.58,
+      "end": 443.58,
+      "text": "Over here x one will be three."
+    },
+    {
+      "start": 443.58,
+      "end": 446.78,
+      "text": "Similarly, I can say component three, which will have x three, component four, which will"
+    },
+    {
+      "start": 446.78,
+      "end": 447.78,
+      "text": "have x four."
+    },
+    {
+      "start": 447.78,
+      "end": 448.78,
+      "text": "I did take these examples."
+    },
+    {
+      "start": 448.78,
+      "end": 449.78,
+      "text": "You can remove them."
+    },
+    {
+      "start": 449.78,
+      "end": 456.9,
+      "text": "So if I write in terms of x one, x two, x three, can I say overall x one stones, x two"
+    },
+    {
+      "start": 456.9,
+      "end": 462.1,
+      "text": "stones, x three stones plus dot dot dot will be equal to n stones because these are individual"
+    },
+    {
+      "start": 462.1,
+      "end": 463.1,
+      "text": "components."
+    },
+    {
+      "start": 463.1,
+      "end": 466.62,
+      "text": "If you sum up the individual components, that will be the total number of stones."
+    },
+    {
+      "start": 466.62,
+      "end": 468.38,
+      "text": "I definitely know that."
+    },
+    {
+      "start": 468.38,
+      "end": 470.48,
+      "text": "What is the answer of stones?"
+    },
+    {
+      "start": 470.48,
+      "end": 471.58,
+      "text": "How many stones are removed?"
+    },
+    {
+      "start": 471.58,
+      "end": 472.58,
+      "text": "How many stones are removed?"
+    },
+    {
+      "start": 472.58,
+      "end": 473.58,
+      "text": "How many stones are removed?"
+    },
+    {
+      "start": 473.58,
+      "end": 479.2,
+      "text": "I know in a component, I know in a component, I can remove everyone apart from one guy."
+    },
+    {
+      "start": 479.2,
+      "end": 480.98,
+      "text": "The last guy will be alone."
+    },
+    {
+      "start": 480.98,
+      "end": 484.3,
+      "text": "He doesn't find anyone in the row or in the column."
+    },
+    {
+      "start": 484.3,
+      "end": 490.32,
+      "text": "Can I say it will be x one minus one plus x two minus one plus x three minus one plus"
+    },
+    {
+      "start": 490.32,
+      "end": 492.74,
+      "text": "x four minus one and so on?"
+    },
+    {
+      "start": 492.74,
+      "end": 493.74,
+      "text": "I can."
+    },
+    {
+      "start": 493.74,
+      "end": 500.04,
+      "text": "Now can I write them as x one plus x two plus x three plus dot dot dot dot and this minus"
+    },
+    {
+      "start": 500.04,
+      "end": 501.9,
+      "text": "one minus one minus one minus one."
+    },
+    {
+      "start": 501.9,
+      "end": 510.8,
+      "text": "So, thereby, can I do this as x one plus x two plus x three plus dot dot dot minus taken"
+    },
+    {
+      "start": 510.8,
+      "end": 514.84,
+      "text": "out common one plus one plus one plus one from all the components."
+    },
+    {
+      "start": 514.84,
+      "end": 515.84,
+      "text": "From all the components."
+    },
+    {
+      "start": 515.84,
+      "end": 520.06,
+      "text": "So, can I say this is nothing but it's taken from all the components."
+    },
+    {
+      "start": 520.06,
+      "end": 528.06,
+      "text": "We already proved this value, which is yes, yes, n, which is the number of stones minus."
+    },
+    {
+      "start": 528.06,
+      "end": 529.06,
+      "text": "What is this?"
+    },
+    {
+      "start": 529.06,
+      "end": 530.06,
+      "text": "Taken."
+    },
+    {
+      "start": 530.06,
+      "end": 531.06,
+      "text": "One is taken from every component."
+    },
+    {
+      "start": 531.06,
+      "end": 531.9,
+      "text": "Can I say this?"
+    },
+    {
+      "start": 531.9,
+      "end": 536.44,
+      "text": "Can I say it's nothing but number of components?"
+    },
+    {
+      "start": 536.44,
+      "end": 540.1,
+      "text": "Yes, this is your answer."
+    },
+    {
+      "start": 540.1,
+      "end": 541.1,
+      "text": "You need to derive it."
+    },
+    {
+      "start": 541.1,
+      "end": 542.22,
+      "text": "You need to derive it."
+    },
+    {
+      "start": 542.22,
+      "end": 543.6,
+      "text": "The answer is very simple."
+    },
+    {
+      "start": 543.6,
+      "end": 548.52,
+      "text": "N minus number of connected components is what you need as your answer."
+    },
+    {
+      "start": 548.52,
+      "end": 555.56,
+      "text": "So the question boils down in a 2D matrix, in a 2D matrix where the row and column are"
+    },
+    {
+      "start": 555.56,
+      "end": 558.54,
+      "text": "connected and the row and column are connected."
+    },
+    {
+      "start": 558.54,
+      "end": 560.8,
+      "text": "You have to figure out the number of components."
+    },
+    {
+      "start": 560.8,
+      "end": 561.8,
+      "text": "Once you figure out the number of components."
+    },
+    {
+      "start": 561.8,
+      "end": 567.62,
+      "text": "The question boils down to n minus number of components."
+    },
+    {
+      "start": 567.62,
+      "end": 571.54,
+      "text": "So if you go back to the example, this example, one stone, two stone, three stone, four stone,"
+    },
+    {
+      "start": 571.54,
+      "end": 572.54,
+      "text": "five stone, six stone."
+    },
+    {
+      "start": 572.54,
+      "end": 576.54,
+      "text": "The answer was six minus the connected components."
+    },
+    {
+      "start": 576.54,
+      "end": 578.0,
+      "text": "Three components were there."
+    },
+    {
+      "start": 578.0,
+      "end": 583.7,
+      "text": "So three over here, one, two, three, four, five, six, six stones."
+    },
+    {
+      "start": 583.7,
+      "end": 584.7,
+      "text": "How many components?"
+    },
+    {
+      "start": 584.7,
+      "end": 587.08,
+      "text": "Two, four stones can be removed."
+    },
+    {
+      "start": 587.08,
+      "end": 588.24,
+      "text": "Quite simple, isn't it?"
+    },
+    {
+      "start": 588.24,
+      "end": 591.46,
+      "text": "Whenever you hear about connected components, which algorithm comes to your brain?"
+    },
+    {
+      "start": 591.8,
+      "end": 599.66,
+      "text": "Either you say we will do something like a traversal algorithm and apply DFS, BFS, or"
+    },
+    {
+      "start": 599.66,
+      "end": 605.38,
+      "text": "you say we have a disjoint set data structure, which helps us to connect people because over"
+    },
+    {
+      "start": 605.38,
+      "end": 609.66,
+      "text": "here we are connecting, over here we are connecting, over here we are connecting."
+    },
+    {
+      "start": 609.66,
+      "end": 611.4,
+      "text": "So it's about connection."
+    },
+    {
+      "start": 611.4,
+      "end": 614.04,
+      "text": "So in connection, we do not use traversals."
+    },
+    {
+      "start": 614.04,
+      "end": 615.04,
+      "text": "It doesn't make sense."
+    },
+    {
+      "start": 615.04,
+      "end": 620.84,
+      "text": "Whenever you are connecting two stones, the proper algorithm to use is disjoint set data"
+    },
+    {
+      "start": 620.84,
+      "end": 621.64,
+      "text": "structure."
+    },
+    {
+      "start": 621.8,
+      "end": 623.12,
+      "text": "You don't know about it."
+    },
+    {
+      "start": 623.12,
+      "end": 625.58,
+      "text": "I've already taught you in this particular graph series."
+    },
+    {
+      "start": 625.58,
+      "end": 626.66,
+      "text": "Go back and watch it."
+    },
+    {
+      "start": 626.66,
+      "end": 627.66,
+      "text": "Go back and watch."
+    },
+    {
+      "start": 627.66,
+      "end": 628.66,
+      "text": "Come back."
+    },
+    {
+      "start": 628.66,
+      "end": 629.66,
+      "text": "Pause this video."
+    },
+    {
+      "start": 629.66,
+      "end": 633.04,
+      "text": "Do not watch the video afterwards because you'll not understand anything."
+    },
+    {
+      "start": 633.04,
+      "end": 635.04,
+      "text": "So what will I do?"
+    },
+    {
+      "start": 635.04,
+      "end": 636.54,
+      "text": "I know one thing."
+    },
+    {
+      "start": 636.54,
+      "end": 641.52,
+      "text": "I can say these two guys can kind of belong to the zeroth row."
+    },
+    {
+      "start": 641.52,
+      "end": 645.2,
+      "text": "Can I say this is an entire node where I have two people?"
+    },
+    {
+      "start": 645.2,
+      "end": 646.2,
+      "text": "I can."
+    },
+    {
+      "start": 646.2,
+      "end": 647.2,
+      "text": "I can."
+    },
+    {
+      "start": 647.2,
+      "end": 649.66,
+      "text": "Can I say a row is a node?"
+    },
+    {
+      "start": 649.66,
+      "end": 651.66,
+      "text": "A row is a node in the disjoint set."
+    },
+    {
+      "start": 651.8,
+      "end": 654.9,
+      "text": "Till now you know how is disjoint set."
+    },
+    {
+      "start": 654.9,
+      "end": 658.74,
+      "text": "One itself parent, two itself parent, three itself parent and so on."
+    },
+    {
+      "start": 658.74,
+      "end": 662.56,
+      "text": "Can I say that I will treat a row as a node?"
+    },
+    {
+      "start": 662.56,
+      "end": 665.9,
+      "text": "Yes, I will treat a row as a node and that is very simple."
+    },
+    {
+      "start": 665.9,
+      "end": 670.08,
+      "text": "So I'll be like, okay, I have zero, I have one, I have two, I have three, I have four."
+    },
+    {
+      "start": 670.08,
+      "end": 678.12,
+      "text": "So these are my rows which will be treated as node in disjoint set."
+    },
+    {
+      "start": 678.12,
+      "end": 679.52,
+      "text": "Very simple."
+    },
+    {
+      "start": 679.52,
+      "end": 681.12,
+      "text": "If there is a stone, I say it belongs to this set."
+    },
+    {
+      "start": 681.12,
+      "end": 681.62,
+      "text": "Okay."
+    },
+    {
+      "start": 681.62,
+      "end": 682.62,
+      "text": "If there is a stone, I'll say it belongs to node zero."
+    },
+    {
+      "start": 682.62,
+      "end": 683.62,
+      "text": "If there is a stone, I'll say it belongs to node zero."
+    },
+    {
+      "start": 683.62,
+      "end": 684.62,
+      "text": "Right?"
+    },
+    {
+      "start": 684.62,
+      "end": 685.62,
+      "text": "Very simple."
+    },
+    {
+      "start": 685.62,
+      "end": 686.62,
+      "text": "So now, then how will you treat the columns?"
+    },
+    {
+      "start": 686.62,
+      "end": 702.04,
+      "text": "We'll say, we'll treat the columns as the next set and they will be again treated as"
+    },
+    {
+      "start": 702.04,
+      "end": 704.32,
+      "text": "nodes in disjoint set."
+    },
+    {
+      "start": 704.32,
+      "end": 705.74,
+      "text": "But how do you treat column?"
+    },
+    {
+      "start": 705.74,
+      "end": 709.54,
+      "text": "Because you have zeroth column and you've already used zero."
+    },
+    {
+      "start": 709.54,
+      "end": 711.14,
+      "text": "So if we're using zero."
+    },
+    {
+      "start": 711.62,
+      "end": 714.74,
+      "text": "Zeroth column, we'll make it zero."
+    },
+    {
+      "start": 714.74,
+      "end": 719.62,
+      "text": "And you'll see that there were five rows till the fourth index."
+    },
+    {
+      "start": 719.62,
+      "end": 721.5,
+      "text": "And there were five rows."
+    },
+    {
+      "start": 721.5,
+      "end": 723.04,
+      "text": "There were five rows."
+    },
+    {
+      "start": 723.04,
+      "end": 724.04,
+      "text": "So can I say?"
+    },
+    {
+      "start": 724.04,
+      "end": 728.74,
+      "text": "Post four, the fifth guy can be treated as the zeroth column."
+    },
+    {
+      "start": 728.74,
+      "end": 730.94,
+      "text": "The sixth guy can be treated as the first column."
+    },
+    {
+      "start": 730.94,
+      "end": 734.7,
+      "text": "The seventh guy can be treated as the second column and the eighth guy can be treated as"
+    },
+    {
+      "start": 734.7,
+      "end": 735.7,
+      "text": "the third column."
+    },
+    {
+      "start": 735.7,
+      "end": 736.7,
+      "text": "Can I see this?"
+    },
+    {
+      "start": 736.7,
+      "end": 737.7,
+      "text": "I can."
+    },
+    {
+      "start": 737.7,
+      "end": 739.62,
+      "text": "I'll be like five, six, seven, eight."
+    },
+    {
+      "start": 739.62,
+      "end": 740.62,
+      "text": "These four."
+    },
+    {
+      "start": 740.62,
+      "end": 745.66,
+      "text": "the fifth node one column will be treated as the sixth node twoth will be treated as the seventh"
+    },
+    {
+      "start": 745.66,
+      "end": 752.7,
+      "text": "and the third will be treated as eight just did a coordinate shift shift how much did you shift it"
+    },
+    {
+      "start": 752.7,
+      "end": 760.14,
+      "text": "can i say you shifted it by column plus whatever is the last value over here this is the last value"
+    },
+    {
+      "start": 760.14,
+      "end": 767.5,
+      "text": "column plus 4 plus 1 because this is 5 is where you start and the column was 0 the column was 0."
+    },
+    {
+      "start": 767.5,
+      "end": 777.9,
+      "text": "so 0 plus 5 the first time it went here next 1 so 1 plus 5 went at the 6 2 2 plus 5 went here so i"
+    },
+    {
+      "start": 777.9,
+      "end": 785.02,
+      "text": "did a shift by column plus 4 plus 1 that's it and you can have the disjoint set data structure now"
+    },
+    {
+      "start": 785.02,
+      "end": 792.46,
+      "text": "let's quickly implement the disjoint set data structure now we know we have zeroth row first row"
+    },
+    {
+      "start": 793.02,
+      "end": 797.42,
+      "text": "second row third row fourth row right and we know you have the fifth"
+    },
+    {
+      "start": 797.5,
+      "end": 803.42,
+      "text": "column which is the zeroth column sixth which is the first column second column and the third"
+    },
+    {
+      "start": 803.42,
+      "end": 809.02,
+      "text": "column we know this so we have all these nodes which are individually alone as of now right"
+    },
+    {
+      "start": 809.02,
+      "end": 816.46,
+      "text": "so let's quickly start so we are saying there is a stone on the zeroth row and the zeroth column"
+    },
+    {
+      "start": 816.46,
+      "end": 823.18,
+      "text": "so anything on the zeroth row and the zeroth column will get combined zero row and zero column"
+    },
+    {
+      "start": 827.5,
+      "end": 835.58,
+      "text": "stones you take everyone with you so you say anyone here and anyone here just go and connect"
+    },
+    {
+      "start": 835.58,
+      "end": 843.66,
+      "text": "i'll be like okay fine so i'll be like okay zero that's this row can you go ahead and get combined"
+    },
+    {
+      "start": 843.66,
+      "end": 848.86,
+      "text": "with the zeroth column which is the fifth so you'll just go ahead and say okay let's take this"
+    },
+    {
+      "start": 848.86,
+      "end": 857.42,
+      "text": "and connect it with the fifth okay perfect amazing so what's the next thing next one is here so it's"
+    },
+    {
+      "start": 857.5,
+      "end": 864.38,
+      "text": "at the zeroth row and the second column what is the second column seven so you say zero and this"
+    },
+    {
+      "start": 864.38,
+      "end": 870.38,
+      "text": "one please go and get connected i'm like okay so i will just connect these guys and i'll just omit this"
+    },
+    {
+      "start": 870.94,
+      "end": 878.7,
+      "text": "nice next which is the stone here's a stone which is at the first and at the third which is eight"
+    },
+    {
+      "start": 878.7,
+      "end": 885.98,
+      "text": "the first and the eighth will get connected so go ahead and connect it perfect done what's the next"
+    },
+    {
+      "start": 887.5,
+      "end": 895.9,
+      "text": "one so three and the zero so three and what is zero for you is five is five did you realize what"
+    },
+    {
+      "start": 895.9,
+      "end": 902.54,
+      "text": "happened what is five its ultimate parent is zero so this three goes and gets connected to this"
+    },
+    {
+      "start": 903.1,
+      "end": 910.46,
+      "text": "again i'll repeat this was at three three was this this is zero zero you know is treated according to"
+    },
+    {
+      "start": 910.46,
+      "end": 916.14,
+      "text": "this formula zero plus four plus one five five's ultimate parent in disjoint set is zero zero and"
+    },
+    {
+      "start": 916.14,
+      "end": 917.26,
+      "text": "three will get connected"
+    },
+    {
+      "start": 917.5,
+      "end": 926.86,
+      "text": "so connect three to it did you see how efficiently all of these guys got connected here if you"
+    },
+    {
+      "start": 926.86,
+      "end": 933.18,
+      "text": "carefully see right next which is the next one next one is this if you carefully see where is it"
+    },
+    {
+      "start": 933.18,
+      "end": 941.42,
+      "text": "three and two so basically three which is this what is two two is nothing but seven which is"
+    },
+    {
+      "start": 942.06,
+      "end": 947.26,
+      "text": "already connected no need to do it so done so once you have done this"
+    },
+    {
+      "start": 947.5,
+      "end": 955.18,
+      "text": "you can see that the next job is the last one so it's at the fourth it's at the fourth and it's at"
+    },
+    {
+      "start": 955.18,
+      "end": 964.35,
+      "text": "the three which is the eighth okay eight is here so four goes in ganesha and this will be over so"
+    },
+    {
+      "start": 964.35,
+      "end": 970.91,
+      "text": "after the dry run if you carefully observe this is one of the disjoint set this is another and"
+    },
+    {
+      "start": 970.91,
+      "end": 978.19,
+      "text": "this is another and this is another right let's analyze this is the row zero who is the ultimate"
+    },
+    {
+      "start": 978.19,
+      "end": 978.59,
+      "text": "parent"
+    },
+    {
+      "start": 979.55,
+      "end": 988.43,
+      "text": "okay so it's connected to column two okay it's connected to row three okay it's connected to"
+    },
+    {
+      "start": 988.43,
+      "end": 997.07,
+      "text": "column zero okay everyone gets covered so understood next row one where's row one yeah"
+    },
+    {
+      "start": 997.07,
+      "end": 1004.91,
+      "text": "connected to row four let's see okay connected to column three makes sense because if anyone was here"
+    },
+    {
+      "start": 1004.91,
+      "end": 1007.71,
+      "text": "it would have got into it okay next"
+    },
+    {
+      "start": 1007.71,
+      "end": 1009.39,
+      "text": "row two let's look at row two"
+    },
+    {
+      "start": 1009.55,
+      "end": 1014.03,
+      "text": "okay okay okay okay okay okay okay okay okay okay okay oh it doesn't exist it's connected to no one"
+    },
+    {
+      "start": 1015.47,
+      "end": 1026.83,
+      "text": "column one it doesn't exist no stones so can i say i kind of can discard these guys and i can say"
+    },
+    {
+      "start": 1026.83,
+      "end": 1033.63,
+      "text": "there are actually two valid disjoint sets like two valid parents there is just two valid parents"
+    },
+    {
+      "start": 1033.63,
+      "end": 1039.23,
+      "text": "so if there are two valid parents can i say there are two connected components i can so how do you"
+    },
+    {
+      "start": 1039.23,
+      "end": 1045.47,
+      "text": "figure out the valid parents it's very simple just take the stone and look at its ultimate parent"
+    },
+    {
+      "start": 1045.47,
+      "end": 1050.91,
+      "text": "like for this stone the ultimate parent of zero or the zero will be this for this stone the ultimate"
+    },
+    {
+      "start": 1050.91,
+      "end": 1054.43,
+      "text": "parent will be this for this stone the ultimate parent will be this for this stone the ultimate"
+    },
+    {
+      "start": 1054.43,
+      "end": 1059.63,
+      "text": "parent is so for all these stones there will be one ultimate pair right so you can just keep a"
+    },
+    {
+      "start": 1059.63,
+      "end": 1064.35,
+      "text": "count we will i'll tell you how to implement then for these guys there will be one ultimate pair"
+    },
+    {
+      "start": 1064.35,
+      "end": 1069.31,
+      "text": "there'll be two unique ultimate parents for all the stones for all the stones there will be two"
+    },
+    {
+      "start": 1070.03,
+      "end": 1077.71,
+      "text": "unique ultimate parents that's it if there are two ultimate parents and they were like six stone six"
+    },
+    {
+      "start": 1077.71,
+      "end": 1082.27,
+      "text": "minus two four is the answer the implementation is going to be very very simple don't worry about"
+    },
+    {
+      "start": 1082.27,
+      "end": 1084.99,
+      "text": "so i hope you have understood the entire explanation now it's time to code it up so"
+    },
+    {
+      "start": 1084.99,
+      "end": 1088.99,
+      "text": "i'll be coding the c plus solution on the right and you can figure out the exact similar java"
+    },
+    {
+      "start": 1088.99,
+      "end": 1093.47,
+      "text": "solution on the left so given these stones we're given the end but no one is saying us the size"
+    },
+    {
+      "start": 1093.47,
+      "end": 1098.51,
+      "text": "of the grid so what we will do is we'll kind of figure out where's the last stone in the grid on"
+    },
+    {
+      "start": 1098.51,
+      "end": 1102.67,
+      "text": "the row that will that will kind of give us this length i'll figure out where's the last stone in"
+    },
+    {
+      "start": 1102.67,
+      "end": 1107.55,
+      "text": "the column so that will also kind of give us the dimension of the grid so i can probably keep it"
+    },
+    {
+      "start": 1107.55,
+      "end": 1113.23,
+      "text": "as max row equal to zero and i can probably keep it as max column equal to zero and i can iterate"
+    },
+    {
+      "start": 1113.23,
+      "end": 1121.71,
+      "text": "on the list of stones and i can say max row will be max of max row comma i click wherever whatever"
+    },
+    {
+      "start": 1121.71,
+      "end": 1123.23,
+      "text": "is whichever row this"
+    },
+    {
+      "start": 1123.47,
+      "end": 1132.11,
+      "text": "stone is at and max column max column comma id1 so in this way we can figure out the dimension"
+    },
+    {
+      "start": 1132.11,
+      "end": 1137.55,
+      "text": "so we have the last index yes that's the last index where the stone is so that's the grid"
+    },
+    {
+      "start": 1138.11,
+      "end": 1142.27,
+      "text": "so so what is the next thing that we require we require the disjoints and data structure if you"
+    },
+    {
+      "start": 1142.27,
+      "end": 1146.51,
+      "text": "remember the previous lecture i've already given you a snippet of code which can be reused in"
+    },
+    {
+      "start": 1146.51,
+      "end": 1153.31,
+      "text": "almost every problem so i'll just go ahead and maybe copy and just paste it here"
+    },
+    {
+      "start": 1153.47,
+      "end": 1160.03,
+      "text": "okay and maybe just hide it yeah all the functionalities perfect so this is the disjoint"
+    },
+    {
+      "start": 1160.03,
+      "end": 1164.91,
+      "text": "set uh code snippet that i've been reusing you can watch it out from the previous lecture now what's"
+    },
+    {
+      "start": 1164.91,
+      "end": 1169.71,
+      "text": "the next thing we need to declare the disjoint set correct so can i say disjoint set ds what will be"
+    },
+    {
+      "start": 1169.71,
+      "end": 1176.19,
+      "text": "the size that's a big question so if you remember the first where the number of rows and then where"
+    },
+    {
+      "start": 1176.19,
+      "end": 1183.23,
+      "text": "number of columns so can i say the total nodes will be rows plus columns yes so it'll be like max"
+    },
+    {
+      "start": 1183.47,
+      "end": 1190.43,
+      "text": "row plus max column let's take plus one for safety reasons uh you're not required but yeah let's still"
+    },
+    {
+      "start": 1190.43,
+      "end": 1196.19,
+      "text": "take plus one for safety reasons perfect so this is something which i have already taken now what"
+    },
+    {
+      "start": 1196.19,
+      "end": 1203.95,
+      "text": "is our next job we know for every stone we say this row and this column combine yourself so okay"
+    },
+    {
+      "start": 1203.95,
+      "end": 1211.07,
+      "text": "so auto of it i'll go across the stones again and now i'll be like i know the node for the row"
+    },
+    {
+      "start": 1211.63,
+      "end": 1213.39,
+      "text": "what will be the node number it's going to be"
+    },
+    {
+      "start": 1213.47,
+      "end": 1219.55,
+      "text": "simply whatever is the row because if you remember row was 0 1 2 3 4 but the column started after that"
+    },
+    {
+      "start": 1219.55,
+      "end": 1227.31,
+      "text": "so for the node column i will have to go like it's the normal one but it will repeat itself like it"
+    },
+    {
+      "start": 1227.31,
+      "end": 1234.11,
+      "text": "will it will overlap with the rows so i will have to go one after the max row whatever is the max row"
+    },
+    {
+      "start": 1234.75,
+      "end": 1240.35,
+      "text": "i'll just have to go one after that right so i take one after that and after that i can just"
+    },
+    {
+      "start": 1240.35,
+      "end": 1243.23,
+      "text": "keep on going and i go ahead and say hey listen"
+    },
+    {
+      "start": 1243.47,
+      "end": 1249.31,
+      "text": "can you go ahead and say ds dot union by size please go ahead and combine them that's it"
+    },
+    {
+      "start": 1249.31,
+      "end": 1254.83,
+      "text": "just make sure this joints it does it once this is done i need the unique parents for"
+    },
+    {
+      "start": 1254.83,
+      "end": 1263.31,
+      "text": "all the stones so maybe you can have a set or you can have an unordered map which will kind of"
+    },
+    {
+      "start": 1265.15,
+      "end": 1271.55,
+      "text": "have the unique rows and columns like unique nodes that's one of the ways to see it like map of income"
+    },
+    {
+      "start": 1273.47,
+      "end": 1280.27,
+      "text": "notes because all the notes will not be generated i'm just taking the notes where the stones are"
+    },
+    {
+      "start": 1280.27,
+      "end": 1286.39,
+      "text": "or you can say the stone notes like if you remember the dry run i showed you all the columns"
+    },
+    {
+      "start": 1286.39,
+      "end": 1292.73,
+      "text": "but over here only the only the notes which are present in the disjoint set will be there"
+    },
+    {
+      "start": 1292.73,
+      "end": 1300.17,
+      "text": "so you can probably say stone notes equal to the node row this is there and stone"
+    },
+    {
+      "start": 1300.17,
+      "end": 1306.95,
+      "text": "notes and you can say node column is there perfect once you've done this you need to count"
+    },
+    {
+      "start": 1306.95,
+      "end": 1312.93,
+      "text": "the connected components so you can go ahead and say count zero and for auto off you can just"
+    },
+    {
+      "start": 1312.93,
+      "end": 1321.67,
+      "text": "iterate in the map and the map is stone notes they're not stones it is stone notes and in the"
+    },
+    {
+      "start": 1321.67,
+      "end": 1329.55,
+      "text": "map you can say hey listen if ds dot you can just take the find ultimate parent find ultimate parent"
+    },
+    {
+      "start": 1329.55,
+      "end": 1329.93,
+      "text": "of"
+    },
+    {
+      "start": 1330.17,
+      "end": 1332.39,
+      "text": "of this particular guy."
+    },
+    {
+      "start": 1332.39,
+      "end": 1335.81,
+      "text": "Remember, map will just store unique rows"
+    },
+    {
+      "start": 1335.81,
+      "end": 1339.93,
+      "text": "or like if in a row there are multiple stones,"
+    },
+    {
+      "start": 1339.93,
+      "end": 1342.21,
+      "text": "then also it'll just store one node."
+    },
+    {
+      "start": 1342.21,
+      "end": 1345.47,
+      "text": "So this is basically storing which which nodes"
+    },
+    {
+      "start": 1345.47,
+      "end": 1346.99,
+      "text": "are there in the disjoint set."
+    },
+    {
+      "start": 1346.99,
+      "end": 1350.71,
+      "text": "Find parent of id.first is what the node is."
+    },
+    {
+      "start": 1350.71,
+      "end": 1354.93,
+      "text": "If this is equal to equal to the node itself,"
+    },
+    {
+      "start": 1354.93,
+      "end": 1357.21,
+      "text": "say it is the boss, then you count it."
+    },
+    {
+      "start": 1357.21,
+      "end": 1358.67,
+      "text": "Number of boss counted,"
+    },
+    {
+      "start": 1358.67,
+      "end": 1361.29,
+      "text": "the answer will be number of stones"
+    },
+    {
+      "start": 1361.29,
+      "end": 1363.23,
+      "text": "minus the number of connected components."
+    },
+    {
+      "start": 1363.23,
+      "end": 1365.85,
+      "text": "And if you do this, and if you go ahead and compile,"
+    },
+    {
+      "start": 1365.85,
+      "end": 1368.39,
+      "text": "this should be running absolutely fine."
+    },
+    {
+      "start": 1368.39,
+      "end": 1369.43,
+      "text": "Indeed it does."
+    },
+    {
+      "start": 1369.43,
+      "end": 1372.55,
+      "text": "And let's quickly submit this and see if it is running fine."
+    },
+    {
+      "start": 1372.55,
+      "end": 1373.89,
+      "text": "I am too proud of myself."
+    },
+    {
+      "start": 1373.89,
+      "end": 1376.35,
+      "text": "I'm writing codes without any compilation errors"
+    },
+    {
+      "start": 1376.35,
+      "end": 1378.43,
+      "text": "and it's submitting at once."
+    },
+    {
+      "start": 1378.43,
+      "end": 1380.19,
+      "text": "So you saw how easy was it."
+    },
+    {
+      "start": 1380.19,
+      "end": 1381.83,
+      "text": "Once you know this particular snippet,"
+    },
+    {
+      "start": 1381.83,
+      "end": 1383.43,
+      "text": "it's just reusing this."
+    },
+    {
+      "start": 1383.43,
+      "end": 1385.03,
+      "text": "It's a bit of constructive thinking."
+    },
+    {
+      "start": 1385.03,
+      "end": 1387.03,
+      "text": "And once you have this constructive thinking,"
+    },
+    {
+      "start": 1387.03,
+      "end": 1388.67,
+      "text": "you can actually implicate disjoint set"
+    },
+    {
+      "start": 1388.67,
+      "end": 1391.83,
+      "text": "data structure and can solve any problems,"
+    },
+    {
+      "start": 1391.83,
+      "end": 1392.83,
+      "text": "any problems."
+    },
+    {
+      "start": 1392.83,
+      "end": 1395.09,
+      "text": "You will not find it tough."
+    },
+    {
+      "start": 1395.09,
+      "end": 1396.35,
+      "text": "So before wrapping up this video,"
+    },
+    {
+      "start": 1396.35,
+      "end": 1400.03,
+      "text": "a small request was going through the statistics of our channel."
+    },
+    {
+      "start": 1400.03,
+      "end": 1403.61,
+      "text": "Nearly 50% of the viewers of our channel do not hit that subscribe button."
+    },
+    {
+      "start": 1403.61,
+      "end": 1405.67,
+      "text": "I know it's not an entertainment channel,"
+    },
+    {
+      "start": 1405.67,
+      "end": 1408.25,
+      "text": "but still it's a very, very honest request that please,"
+    },
+    {
+      "start": 1408.25,
+      "end": 1410.23,
+      "text": "please do consider subscribing to us."
+    },
+    {
+      "start": 1410.23,
+      "end": 1411.85,
+      "text": "And if you've seen the video till here,"
+    },
+    {
+      "start": 1411.85,
+      "end": 1413.71,
+      "text": "do consider hitting that like button."
+    },
+    {
+      "start": 1413.71,
+      "end": 1416.53,
+      "text": "And if you haven't checked out our DPCs and the HDC,"
+    },
+    {
+      "start": 1416.53,
+      "end": 1417.79,
+      "text": "the links will be in the description."
+    },
+    {
+      "start": 1417.79,
+      "end": 1418.29,
+      "text": "With this, I'll be wrapping up."
+    },
+    {
+      "start": 1418.67,
+      "end": 1420.21,
+      "text": "This video, let's meet in some other video."
+    },
+    {
+      "start": 1420.21,
+      "end": 1420.79,
+      "text": "Till then, bye bye."
+    },
+    {
+      "start": 1420.79,
+      "end": 1421.29,
+      "text": "Take care."
+    }
+  ]
+}

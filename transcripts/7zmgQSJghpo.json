@@ -1,0 +1,2479 @@
+{
+  "video_id": "7zmgQSJghpo",
+  "title": "G-16. Number of Distinct Islands ｜ Constructive Thinking + DFS ｜ C++ ｜ Java",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1081.24,
+  "segments": [
+    {
+      "start": 2.8,
+      "end": 5.98,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.36,
+      "end": 10.14,
+      "text": "So in this video, we are going to solve the problem number of distinct islands."
+    },
+    {
+      "start": 10.64,
+      "end": 15.8,
+      "text": "Let's read what the problem states. Given a Boolean 2D matrix of size n cross m,"
+    },
+    {
+      "start": 16.34,
+      "end": 21.84,
+      "text": "you have to find the number of distinct islands where a group of connected ones form an island."
+    },
+    {
+      "start": 22.1,
+      "end": 27.86,
+      "text": "Again, very important to notice horizontally or vertically, that means only these directions are allowed."
+    },
+    {
+      "start": 27.86,
+      "end": 37.86,
+      "text": "In this round, two islands are considered to be distinct if and only if one island is equal to the another not rotated or reflected."
+    },
+    {
+      "start": 38.1,
+      "end": 44.06,
+      "text": "Let me explain you. So imagine this is the n cross m matrix that is given to you. Just imagine."
+    },
+    {
+      "start": 44.58,
+      "end": 54.48,
+      "text": "So if I take this one, this is an island. And if I take this one, they might look identical, but they are somewhere rotated."
+    },
+    {
+      "start": 54.48,
+      "end": 57.36,
+      "text": "This portion is rotated twice."
+    },
+    {
+      "start": 57.86,
+      "end": 61.62,
+      "text": "So you cannot say they are identical."
+    },
+    {
+      "start": 61.86,
+      "end": 64.14,
+      "text": "You cannot say they are identical. Got it?"
+    },
+    {
+      "start": 64.38,
+      "end": 74.38,
+      "text": "But had this been something like this, had this been like 1 and 0, then I could have said this and this is identical."
+    },
+    {
+      "start": 74.78,
+      "end": 80.3,
+      "text": "Then I could have said. But as of now, I cannot because they are not. Got it?"
+    },
+    {
+      "start": 80.74,
+      "end": 86.34,
+      "text": "But I can say this guy and this guy to be an identical island."
+    },
+    {
+      "start": 86.62,
+      "end": 87.82,
+      "text": "So the definition of this is that this is an identical island."
+    },
+    {
+      "start": 88.06,
+      "end": 89.42,
+      "text": "The definition of island is they are connected."
+    },
+    {
+      "start": 89.42,
+      "end": 91.42,
+      "text": "So all of these guys are connected."
+    },
+    {
+      "start": 91.42,
+      "end": 93.42,
+      "text": "This guy is connected."
+    },
+    {
+      "start": 93.42,
+      "end": 95.42,
+      "text": "This guy is connected."
+    },
+    {
+      "start": 95.42,
+      "end": 97.42,
+      "text": "And this guy is connected."
+    },
+    {
+      "start": 97.42,
+      "end": 99.42,
+      "text": "The ones that are connected are marked with a red color."
+    },
+    {
+      "start": 99.42,
+      "end": 101.42,
+      "text": "And this and this are identical."
+    },
+    {
+      "start": 101.42,
+      "end": 103.42,
+      "text": "So I can count them as 1."
+    },
+    {
+      "start": 103.42,
+      "end": 105.42,
+      "text": "I can count them as 2."
+    },
+    {
+      "start": 105.42,
+      "end": 107.42,
+      "text": "And I can count this as 3."
+    },
+    {
+      "start": 107.42,
+      "end": 109.42,
+      "text": "So there are 3 unique distinct islands."
+    },
+    {
+      "start": 109.42,
+      "end": 111.42,
+      "text": "3 unique distinct islands."
+    },
+    {
+      "start": 111.42,
+      "end": 115.42,
+      "text": "Had the question been something like this, then there would have been a difference."
+    },
+    {
+      "start": 115.42,
+      "end": 117.42,
+      "text": "Then there would have been a difference."
+    },
+    {
+      "start": 117.86,
+      "end": 121.86,
+      "text": "There would have been 1. Both of them are equal."
+    },
+    {
+      "start": 121.86,
+      "end": 123.86,
+      "text": "2. Both of them are equal."
+    },
+    {
+      "start": 123.86,
+      "end": 125.86,
+      "text": "2 distinct islands."
+    },
+    {
+      "start": 125.86,
+      "end": 127.86,
+      "text": "So depending on the shape of the island that you are forming,"
+    },
+    {
+      "start": 127.86,
+      "end": 129.86,
+      "text": "depending on the shape of the island that you are forming,"
+    },
+    {
+      "start": 129.86,
+      "end": 133.86,
+      "text": "you count the number of distinct islands."
+    },
+    {
+      "start": 133.86,
+      "end": 135.86,
+      "text": "So how do you solve this problem?"
+    },
+    {
+      "start": 135.86,
+      "end": 137.86,
+      "text": "It's a big thing."
+    },
+    {
+      "start": 137.86,
+      "end": 139.86,
+      "text": "How do you solve this problem?"
+    },
+    {
+      "start": 139.86,
+      "end": 141.86,
+      "text": "Now one of the things you can say is,"
+    },
+    {
+      "start": 141.86,
+      "end": 143.86,
+      "text": "you can store this shape."
+    },
+    {
+      "start": 143.86,
+      "end": 145.86,
+      "text": "Yes, you can store this shape."
+    },
+    {
+      "start": 145.86,
+      "end": 147.86,
+      "text": "Yes, you can store this shape."
+    },
+    {
+      "start": 147.86,
+      "end": 149.86,
+      "text": "Shape, the shape,"
+    },
+    {
+      "start": 149.86,
+      "end": 151.86,
+      "text": "the shape, the shape,"
+    },
+    {
+      "start": 151.86,
+      "end": 153.86,
+      "text": "in some set data structure."
+    },
+    {
+      "start": 153.86,
+      "end": 155.86,
+      "text": "And then set will say"
+    },
+    {
+      "start": 155.86,
+      "end": 157.86,
+      "text": "how many unique"
+    },
+    {
+      "start": 157.86,
+      "end": 159.86,
+      "text": "are there?"
+    },
+    {
+      "start": 159.86,
+      "end": 161.86,
+      "text": "How many unique are there?"
+    },
+    {
+      "start": 161.86,
+      "end": 163.86,
+      "text": "Because set does that for you."
+    },
+    {
+      "start": 163.86,
+      "end": 165.86,
+      "text": "But how do I store"
+    },
+    {
+      "start": 165.86,
+      "end": 167.86,
+      "text": "this shape?"
+    },
+    {
+      "start": 167.86,
+      "end": 169.86,
+      "text": "Is my question."
+    },
+    {
+      "start": 169.86,
+      "end": 171.86,
+      "text": "If I can figure out a way to store this shape,"
+    },
+    {
+      "start": 171.86,
+      "end": 173.86,
+      "text": "I think I should be able to solve this problem."
+    },
+    {
+      "start": 173.86,
+      "end": 175.86,
+      "text": "So at first let me write down"
+    },
+    {
+      "start": 175.86,
+      "end": 177.86,
+      "text": "the row numbers to make"
+    },
+    {
+      "start": 177.86,
+      "end": 179.86,
+      "text": "a bit more clarity. So I have written down the row numbers."
+    },
+    {
+      "start": 179.86,
+      "end": 181.86,
+      "text": "So if I try to write"
+    },
+    {
+      "start": 181.86,
+      "end": 183.86,
+      "text": "these ones"
+    },
+    {
+      "start": 183.86,
+      "end": 185.86,
+      "text": "down, it's like 1, 1, 1."
+    },
+    {
+      "start": 185.86,
+      "end": 187.86,
+      "text": "And this is nothing but 0, 0."
+    },
+    {
+      "start": 187.86,
+      "end": 189.86,
+      "text": "This is nothing but 0, 1."
+    },
+    {
+      "start": 189.86,
+      "end": 191.86,
+      "text": "And this is nothing but"
+    },
+    {
+      "start": 191.86,
+      "end": 193.86,
+      "text": "1, 0. That is something"
+    },
+    {
+      "start": 193.86,
+      "end": 195.86,
+      "text": "I definitely know."
+    },
+    {
+      "start": 195.86,
+      "end": 197.86,
+      "text": "Now if I try to write this down,"
+    },
+    {
+      "start": 197.86,
+      "end": 199.86,
+      "text": "let's write 1, 1, 1."
+    },
+    {
+      "start": 199.86,
+      "end": 201.86,
+      "text": "And this is nothing but 2, 3."
+    },
+    {
+      "start": 201.86,
+      "end": 203.86,
+      "text": "This is nothing but 2, 4."
+    },
+    {
+      "start": 203.86,
+      "end": 205.86,
+      "text": "This is nothing but 3, 5."
+    },
+    {
+      "start": 205.86,
+      "end": 207.86,
+      "text": "This is nothing but 0, 3."
+    },
+    {
+      "start": 207.86,
+      "end": 209.86,
+      "text": "Now how do I make sure I store them?"
+    },
+    {
+      "start": 209.86,
+      "end": 211.86,
+      "text": "How do I make sure I store them in a set"
+    },
+    {
+      "start": 211.86,
+      "end": 213.86,
+      "text": "such that these two"
+    },
+    {
+      "start": 213.86,
+      "end": 215.86,
+      "text": "come out to be identical?"
+    },
+    {
+      "start": 215.86,
+      "end": 217.86,
+      "text": "Somewhere down the line I have to make sure"
+    },
+    {
+      "start": 217.86,
+      "end": 219.86,
+      "text": "that this particular thing"
+    },
+    {
+      "start": 219.86,
+      "end": 221.86,
+      "text": "and this particular thing are stored in a set"
+    },
+    {
+      "start": 221.86,
+      "end": 223.86,
+      "text": "data structure such that"
+    },
+    {
+      "start": 223.86,
+      "end": 225.86,
+      "text": "these two seem to be"
+    },
+    {
+      "start": 225.86,
+      "end": 227.86,
+      "text": "identical. So maybe"
+    },
+    {
+      "start": 227.86,
+      "end": 229.86,
+      "text": "what I can do is, I can say"
+    },
+    {
+      "start": 229.86,
+      "end": 231.86,
+      "text": "0, 0"
+    },
+    {
+      "start": 231.86,
+      "end": 233.86,
+      "text": "0, 1, 1, 0"
+    },
+    {
+      "start": 233.86,
+      "end": 235.86,
+      "text": "Something in this direction."
+    },
+    {
+      "start": 235.86,
+      "end": 237.86,
+      "text": "First this, then this."
+    },
+    {
+      "start": 237.86,
+      "end": 239.86,
+      "text": "Something in this direction I have stored"
+    },
+    {
+      "start": 239.86,
+      "end": 241.86,
+      "text": "a list."
+    },
+    {
+      "start": 241.86,
+      "end": 243.86,
+      "text": "Stored a vector"
+    },
+    {
+      "start": 243.86,
+      "end": 245.86,
+      "text": "or a list. I can."
+    },
+    {
+      "start": 245.86,
+      "end": 247.86,
+      "text": "But then, if I store"
+    },
+    {
+      "start": 247.86,
+      "end": 249.86,
+      "text": "this guy, which is like 2, 3"
+    },
+    {
+      "start": 249.86,
+      "end": 251.86,
+      "text": "2, 4 because"
+    },
+    {
+      "start": 251.86,
+      "end": 253.86,
+      "text": "in this direction and then in this direction"
+    },
+    {
+      "start": 253.86,
+      "end": 255.86,
+      "text": "3, 3. So they will"
+    },
+    {
+      "start": 255.86,
+      "end": 257.86,
+      "text": "not match. They will not match."
+    },
+    {
+      "start": 257.86,
+      "end": 259.86,
+      "text": "I have to make sure they match."
+    },
+    {
+      "start": 259.86,
+      "end": 261.86,
+      "text": "Can I say,"
+    },
+    {
+      "start": 261.86,
+      "end": 263.86,
+      "text": "I started from here then I went here."
+    },
+    {
+      "start": 263.86,
+      "end": 265.86,
+      "text": "Then I started from here then I went here."
+    },
+    {
+      "start": 265.86,
+      "end": 267.86,
+      "text": "Can I say this to be the base?"
+    },
+    {
+      "start": 267.86,
+      "end": 269.86,
+      "text": "I can. Can I say this to be the base?"
+    },
+    {
+      "start": 269.86,
+      "end": 271.86,
+      "text": "I can."
+    },
+    {
+      "start": 271.86,
+      "end": 273.86,
+      "text": "Can I say from here, I started from here"
+    },
+    {
+      "start": 273.86,
+      "end": 275.86,
+      "text": "and from here I started from here."
+    },
+    {
+      "start": 275.86,
+      "end": 277.86,
+      "text": "Can I say this to be the base? I can."
+    },
+    {
+      "start": 277.86,
+      "end": 279.86,
+      "text": "So whatever is the base"
+    },
+    {
+      "start": 279.86,
+      "end": 281.86,
+      "text": "2, 3"
+    },
+    {
+      "start": 281.86,
+      "end": 283.86,
+      "text": "minus 2, 3"
+    },
+    {
+      "start": 283.86,
+      "end": 285.86,
+      "text": "So that's 0, 0"
+    },
+    {
+      "start": 285.86,
+      "end": 287.86,
+      "text": "2, 4"
+    },
+    {
+      "start": 287.86,
+      "end": 289.86,
+      "text": "minus the base. Remember this"
+    },
+    {
+      "start": 289.86,
+      "end": 291.86,
+      "text": "is what I am calling to be the base."
+    },
+    {
+      "start": 291.86,
+      "end": 293.86,
+      "text": "This is the starting point."
+    },
+    {
+      "start": 293.86,
+      "end": 295.86,
+      "text": "So 2 minus 4."
+    },
+    {
+      "start": 295.86,
+      "end": 297.86,
+      "text": "The base."
+    },
+    {
+      "start": 297.86,
+      "end": 299.86,
+      "text": "0, 1. Then this one."
+    },
+    {
+      "start": 299.86,
+      "end": 301.86,
+      "text": "3, 3 minus the base."
+    },
+    {
+      "start": 301.86,
+      "end": 305.14,
+      "text": "1, 0."
+    },
+    {
+      "start": 305.14,
+      "end": 308.77,
+      "text": "And now"
+    },
+    {
+      "start": 308.77,
+      "end": 310.77,
+      "text": "can I say if I write them"
+    },
+    {
+      "start": 310.77,
+      "end": 312.77,
+      "text": "in a list"
+    },
+    {
+      "start": 312.77,
+      "end": 314.77,
+      "text": "will they come out to be the same"
+    },
+    {
+      "start": 314.77,
+      "end": 316.77,
+      "text": "as the previous one?"
+    },
+    {
+      "start": 316.77,
+      "end": 318.77,
+      "text": "They will. This list"
+    },
+    {
+      "start": 318.77,
+      "end": 320.77,
+      "text": "and this list are identical."
+    },
+    {
+      "start": 320.77,
+      "end": 322.77,
+      "text": "Now over here the base was 0."
+    },
+    {
+      "start": 322.77,
+      "end": 324.77,
+      "text": "So 0, 0 minus"
+    },
+    {
+      "start": 324.77,
+      "end": 326.77,
+      "text": "0, 0 was 0, 0."
+    },
+    {
+      "start": 326.77,
+      "end": 328.77,
+      "text": "0, 1 minus 0, 0."
+    },
+    {
+      "start": 328.77,
+      "end": 330.77,
+      "text": "0, 0 was 0, 1."
+    },
+    {
+      "start": 330.77,
+      "end": 332.77,
+      "text": "1, 0 minus 0, 0"
+    },
+    {
+      "start": 332.77,
+      "end": 334.77,
+      "text": "was"
+    },
+    {
+      "start": 334.77,
+      "end": 336.77,
+      "text": "1, 0. So thereby it stayed same."
+    },
+    {
+      "start": 336.77,
+      "end": 338.77,
+      "text": "But over here when you subtract the"
+    },
+    {
+      "start": 338.77,
+      "end": 340.77,
+      "text": "base you get these"
+    },
+    {
+      "start": 340.77,
+      "end": 342.77,
+      "text": "things. You get these things."
+    },
+    {
+      "start": 342.77,
+      "end": 344.77,
+      "text": "Let me give you one more example to have"
+    },
+    {
+      "start": 344.77,
+      "end": 346.77,
+      "text": "these things in clarity."
+    },
+    {
+      "start": 346.77,
+      "end": 348.77,
+      "text": "Let's say the next"
+    },
+    {
+      "start": 348.77,
+      "end": 350.77,
+      "text": "identical set."
+    },
+    {
+      "start": 350.77,
+      "end": 352.77,
+      "text": "What is the next identical set?"
+    },
+    {
+      "start": 352.77,
+      "end": 354.77,
+      "text": "This one and this one. Let's write them"
+    },
+    {
+      "start": 354.77,
+      "end": 356.77,
+      "text": "down. So it says 1,"
+    },
+    {
+      "start": 356.77,
+      "end": 358.77,
+      "text": "1 and this states"
+    },
+    {
+      "start": 358.77,
+      "end": 360.77,
+      "text": "0, 3"
+    },
+    {
+      "start": 360.77,
+      "end": 362.77,
+      "text": "and 0, 4."
+    },
+    {
+      "start": 362.77,
+      "end": 364.77,
+      "text": "Right? And the other one"
+    },
+    {
+      "start": 364.77,
+      "end": 366.77,
+      "text": "is this and this which is"
+    },
+    {
+      "start": 366.77,
+      "end": 368.77,
+      "text": "1, 1. This is"
+    },
+    {
+      "start": 368.77,
+      "end": 370.77,
+      "text": "3, 0 and"
+    },
+    {
+      "start": 370.77,
+      "end": 372.77,
+      "text": "this is 3, 1. So apparently"
+    },
+    {
+      "start": 372.77,
+      "end": 374.77,
+      "text": "this is identical and this is identical."
+    },
+    {
+      "start": 374.77,
+      "end": 376.77,
+      "text": "So how will you store it?"
+    },
+    {
+      "start": 376.77,
+      "end": 378.77,
+      "text": "Again you take 0, 3"
+    },
+    {
+      "start": 378.77,
+      "end": 380.77,
+      "text": "and you consider"
+    },
+    {
+      "start": 380.77,
+      "end": 382.77,
+      "text": "this to be the base. So 0 minus"
+    },
+    {
+      "start": 382.77,
+      "end": 384.77,
+      "text": "3 is 0, 0."
+    },
+    {
+      "start": 384.77,
+      "end": 386.77,
+      "text": "Perfect. And then"
+    },
+    {
+      "start": 386.77,
+      "end": 388.77,
+      "text": "again you take 0, 4 and you"
+    },
+    {
+      "start": 388.77,
+      "end": 390.77,
+      "text": "subtract the base which is 0, 3."
+    },
+    {
+      "start": 390.77,
+      "end": 392.77,
+      "text": "So you get 0, 1. So store it."
+    },
+    {
+      "start": 392.77,
+      "end": 394.77,
+      "text": "So again you store another"
+    },
+    {
+      "start": 394.77,
+      "end": 396.77,
+      "text": "list. For this you have stored this"
+    },
+    {
+      "start": 396.77,
+      "end": 398.77,
+      "text": "particular list. Let's do it for this."
+    },
+    {
+      "start": 398.77,
+      "end": 400.77,
+      "text": "3, 0"
+    },
+    {
+      "start": 400.77,
+      "end": 402.77,
+      "text": "minus 3, 0 is 0, 0."
+    },
+    {
+      "start": 402.77,
+      "end": 404.77,
+      "text": "3, 1"
+    },
+    {
+      "start": 404.77,
+      "end": 406.77,
+      "text": "minus 3, 1 is"
+    },
+    {
+      "start": 406.77,
+      "end": 408.77,
+      "text": "0, 1."
+    },
+    {
+      "start": 408.77,
+      "end": 410.77,
+      "text": "So 0, 0"
+    },
+    {
+      "start": 410.77,
+      "end": 412.77,
+      "text": "0, 1. Again"
+    },
+    {
+      "start": 412.77,
+      "end": 414.77,
+      "text": "the same list."
+    },
+    {
+      "start": 414.77,
+      "end": 416.77,
+      "text": "If you subtract the base."
+    },
+    {
+      "start": 416.77,
+      "end": 418.77,
+      "text": "So apparently if you store this into"
+    },
+    {
+      "start": 418.77,
+      "end": 420.77,
+      "text": "a set data structure. Only one"
+    },
+    {
+      "start": 420.77,
+      "end": 422.77,
+      "text": "of this and only one of this will be stored."
+    },
+    {
+      "start": 422.77,
+      "end": 424.77,
+      "text": "Which will give you the size to be 2."
+    },
+    {
+      "start": 424.77,
+      "end": 426.77,
+      "text": "Super easy."
+    },
+    {
+      "start": 426.77,
+      "end": 428.77,
+      "text": "But there is a catch."
+    },
+    {
+      "start": 428.77,
+      "end": 430.77,
+      "text": "What if the island"
+    },
+    {
+      "start": 430.77,
+      "end": 432.77,
+      "text": "was something like this. Something like this."
+    },
+    {
+      "start": 432.77,
+      "end": 434.77,
+      "text": "Then just to make sure"
+    },
+    {
+      "start": 434.77,
+      "end": 436.77,
+      "text": "you follow an order. If you are"
+    },
+    {
+      "start": 436.77,
+      "end": 438.77,
+      "text": "first going right"
+    },
+    {
+      "start": 438.77,
+      "end": 440.77,
+      "text": "then down, then"
+    },
+    {
+      "start": 440.77,
+      "end": 442.77,
+      "text": "left, then up. Please"
+    },
+    {
+      "start": 442.77,
+      "end": 444.77,
+      "text": "follow that order for everyone."
+    },
+    {
+      "start": 444.77,
+      "end": 446.77,
+      "text": "If you are going right and if you are following"
+    },
+    {
+      "start": 446.77,
+      "end": 448.77,
+      "text": "a particular traversal BFS."
+    },
+    {
+      "start": 448.77,
+      "end": 450.77,
+      "text": "Follow it throughout. If you are following"
+    },
+    {
+      "start": 450.77,
+      "end": 452.77,
+      "text": "a particular traversal DFS. Follow"
+    },
+    {
+      "start": 452.77,
+      "end": 454.77,
+      "text": "it throughout. So that the list"
+    },
+    {
+      "start": 454.77,
+      "end": 456.77,
+      "text": "ordering stays the same"
+    },
+    {
+      "start": 456.77,
+      "end": 458.77,
+      "text": "for everyone. Like for here"
+    },
+    {
+      "start": 458.77,
+      "end": 460.77,
+      "text": "if I do a DFS."
+    },
+    {
+      "start": 460.77,
+      "end": 462.77,
+      "text": "So from here to here I will go. From here to here"
+    },
+    {
+      "start": 462.77,
+      "end": 464.77,
+      "text": "I will go. From here to here I will go."
+    },
+    {
+      "start": 464.77,
+      "end": 466.77,
+      "text": "Then I will come back here. Since it is"
+    },
+    {
+      "start": 466.77,
+      "end": 468.77,
+      "text": "down. I will go here."
+    },
+    {
+      "start": 468.77,
+      "end": 470.77,
+      "text": "Then I will try to go here but nothing"
+    },
+    {
+      "start": 470.77,
+      "end": 472.77,
+      "text": "nothing. Then I will go right, left."
+    },
+    {
+      "start": 472.77,
+      "end": 474.77,
+      "text": "Then I will go left. Then I will go here."
+    },
+    {
+      "start": 474.77,
+      "end": 476.77,
+      "text": "Then I will go here. The DFS"
+    },
+    {
+      "start": 476.77,
+      "end": 478.77,
+      "text": "will be like this."
+    },
+    {
+      "start": 478.77,
+      "end": 480.77,
+      "text": "So you have to make sure"
+    },
+    {
+      "start": 480.77,
+      "end": 482.77,
+      "text": "you follow the same pattern and the same traversal."
+    },
+    {
+      "start": 482.77,
+      "end": 484.77,
+      "text": "If you would have done a BFS"
+    },
+    {
+      "start": 484.77,
+      "end": 486.77,
+      "text": "it would have been this."
+    },
+    {
+      "start": 486.77,
+      "end": 488.77,
+      "text": "This, this. Then this, this, this."
+    },
+    {
+      "start": 488.77,
+      "end": 490.77,
+      "text": "Then this, this, this."
+    },
+    {
+      "start": 490.77,
+      "end": 492.77,
+      "text": "First like this, then like this, then like this."
+    },
+    {
+      "start": 492.77,
+      "end": 494.77,
+      "text": "If you would have done BFS."
+    },
+    {
+      "start": 494.77,
+      "end": 496.77,
+      "text": "So you have to follow the same pattern."
+    },
+    {
+      "start": 496.77,
+      "end": 498.77,
+      "text": "If you are going first. Follow the same"
+    },
+    {
+      "start": 498.77,
+      "end": 500.77,
+      "text": "pattern of traversal so that you traverse in the"
+    },
+    {
+      "start": 500.77,
+      "end": 502.77,
+      "text": "same manner. Can be any part of"
+    },
+    {
+      "start": 502.77,
+      "end": 504.77,
+      "text": "the matrix."
+    },
+    {
+      "start": 504.77,
+      "end": 506.77,
+      "text": "You travel in the same manner"
+    },
+    {
+      "start": 506.77,
+      "end": 508.77,
+      "text": "and you subtract the base"
+    },
+    {
+      "start": 508.77,
+      "end": 510.77,
+      "text": "to store the coordinates."
+    },
+    {
+      "start": 510.77,
+      "end": 512.77,
+      "text": "You subtract the base"
+    },
+    {
+      "start": 512.77,
+      "end": 514.77,
+      "text": "to store the coordinates. Super"
+    },
+    {
+      "start": 514.77,
+      "end": 516.77,
+      "text": "simple. So you have got the intuition."
+    },
+    {
+      "start": 516.77,
+      "end": 518.77,
+      "text": "How to make sure"
+    },
+    {
+      "start": 518.77,
+      "end": 520.77,
+      "text": "that everything is stored."
+    },
+    {
+      "start": 520.77,
+      "end": 522.77,
+      "text": "So one of the things we have figured out."
+    },
+    {
+      "start": 522.77,
+      "end": 524.77,
+      "text": "How to get the"
+    },
+    {
+      "start": 524.77,
+      "end": 526.77,
+      "text": "distinct islands."
+    },
+    {
+      "start": 526.77,
+      "end": 528.77,
+      "text": "We just need to store the islands. And it is very simple."
+    },
+    {
+      "start": 528.77,
+      "end": 530.77,
+      "text": "Let's do a traversal."
+    },
+    {
+      "start": 530.77,
+      "end": 532.77,
+      "text": "And we have already done this in the number of"
+    },
+    {
+      "start": 532.77,
+      "end": 534.77,
+      "text": "islands problem."
+    },
+    {
+      "start": 534.77,
+      "end": 536.77,
+      "text": "Do you remember the number of islands problem? If you do not"
+    },
+    {
+      "start": 536.77,
+      "end": 538.77,
+      "text": "pause and go back and watch it."
+    },
+    {
+      "start": 538.77,
+      "end": 540.77,
+      "text": "So what you do is you start a traversal from here."
+    },
+    {
+      "start": 540.77,
+      "end": 542.77,
+      "text": "Once you have started from here. Visit all"
+    },
+    {
+      "start": 542.77,
+      "end": 544.77,
+      "text": "the guys connected to it."
+    },
+    {
+      "start": 544.77,
+      "end": 546.77,
+      "text": "So it will go and visit this and this."
+    },
+    {
+      "start": 546.77,
+      "end": 548.77,
+      "text": "This can be stored in a set"
+    },
+    {
+      "start": 548.77,
+      "end": 550.77,
+      "text": "in a list. Subtracting base."
+    },
+    {
+      "start": 550.77,
+      "end": 552.77,
+      "text": "Then you go across."
+    },
+    {
+      "start": 552.77,
+      "end": 554.77,
+      "text": "Visited. Not visited."
+    },
+    {
+      "start": 554.77,
+      "end": 556.77,
+      "text": "One and not visited. So again you start"
+    },
+    {
+      "start": 556.77,
+      "end": 558.77,
+      "text": "from here. And then you go over here"
+    },
+    {
+      "start": 558.77,
+      "end": 560.77,
+      "text": "and visit this. So you store this in a set."
+    },
+    {
+      "start": 560.77,
+      "end": 562.77,
+      "text": "Then you go here. Visited."
+    },
+    {
+      "start": 562.77,
+      "end": 564.77,
+      "text": "Something like this. And the first thing you get this."
+    },
+    {
+      "start": 564.77,
+      "end": 566.77,
+      "text": "Again you get this and store it in the set."
+    },
+    {
+      "start": 566.77,
+      "end": 568.77,
+      "text": "Then you go here. Then you get this."
+    },
+    {
+      "start": 568.77,
+      "end": 570.77,
+      "text": "So it's an expansion of the number of islands problem."
+    },
+    {
+      "start": 570.77,
+      "end": 572.77,
+      "text": "If you haven't seen the number of islands problem."
+    },
+    {
+      "start": 572.77,
+      "end": 574.77,
+      "text": "I will highly recommend you to pause this video."
+    },
+    {
+      "start": 574.77,
+      "end": 576.77,
+      "text": "Go back and watch the number of islands problem."
+    },
+    {
+      "start": 576.77,
+      "end": 578.77,
+      "text": "And then come back over here."
+    },
+    {
+      "start": 578.77,
+      "end": 580.77,
+      "text": "Okay."
+    },
+    {
+      "start": 580.77,
+      "end": 582.77,
+      "text": "So let's quickly do a dry run."
+    },
+    {
+      "start": 582.77,
+      "end": 584.77,
+      "text": "And then we will write the code."
+    },
+    {
+      "start": 584.77,
+      "end": 586.77,
+      "text": "So how will the code work?"
+    },
+    {
+      "start": 586.77,
+      "end": 588.77,
+      "text": "The code at first will go over here."
+    },
+    {
+      "start": 588.77,
+      "end": 590.77,
+      "text": "And see if it is unvisited."
+    },
+    {
+      "start": 590.77,
+      "end": 592.77,
+      "text": "It will definitely be unvisited."
+    },
+    {
+      "start": 592.77,
+      "end": 594.77,
+      "text": "So we will start this traversal from here."
+    },
+    {
+      "start": 594.77,
+      "end": 596.77,
+      "text": "Which is you can do a DFS or a BFS."
+    },
+    {
+      "start": 596.77,
+      "end": 598.77,
+      "text": "I will do a DFS over here."
+    },
+    {
+      "start": 598.77,
+      "end": 600.77,
+      "text": "And it will store this in a vector."
+    },
+    {
+      "start": 600.77,
+      "end": 602.77,
+      "text": "Something like 0,0 or a list."
+    },
+    {
+      "start": 602.77,
+      "end": 604.77,
+      "text": "Then it will do a DFS traversal till here."
+    },
+    {
+      "start": 604.77,
+      "end": 606.77,
+      "text": "And so like 0,1."
+    },
+    {
+      "start": 606.77,
+      "end": 608.77,
+      "text": "Which is like DFS of 0,1."
+    },
+    {
+      "start": 608.77,
+      "end": 610.77,
+      "text": "Then it will come back and go here."
+    },
+    {
+      "start": 610.77,
+      "end": 612.77,
+      "text": "Which is come back and go here."
+    },
+    {
+      "start": 612.77,
+      "end": 614.77,
+      "text": "Which is DFS of 1,0."
+    },
+    {
+      "start": 614.77,
+      "end": 616.77,
+      "text": "So now it will store 1,0."
+    },
+    {
+      "start": 616.77,
+      "end": 618.77,
+      "text": "So this is the first list that it will create."
+    },
+    {
+      "start": 618.77,
+      "end": 620.77,
+      "text": "And then the traversal will be complete."
+    },
+    {
+      "start": 620.77,
+      "end": 622.77,
+      "text": "So in the set data structure."
+    },
+    {
+      "start": 622.77,
+      "end": 624.77,
+      "text": "You will store this particular list."
+    },
+    {
+      "start": 624.77,
+      "end": 626.77,
+      "text": "And then you will start the process."
+    },
+    {
+      "start": 626.77,
+      "end": 628.77,
+      "text": "So you will start the process."
+    },
+    {
+      "start": 628.77,
+      "end": 630.77,
+      "text": "The next time you go here."
+    },
+    {
+      "start": 630.77,
+      "end": 632.77,
+      "text": "Visited, go here, go here."
+    },
+    {
+      "start": 632.77,
+      "end": 634.77,
+      "text": "Then you get this."
+    },
+    {
+      "start": 634.77,
+      "end": 636.77,
+      "text": "So you now start from here."
+    },
+    {
+      "start": 636.77,
+      "end": 638.77,
+      "text": "So what will be the DFS now starting from?"
+    },
+    {
+      "start": 638.77,
+      "end": 640.77,
+      "text": "0,3 which is this."
+    },
+    {
+      "start": 640.77,
+      "end": 642.77,
+      "text": "And it will go till DFS of 0,4."
+    },
+    {
+      "start": 642.77,
+      "end": 644.77,
+      "text": "So again this time the list will be created like 0,0."
+    },
+    {
+      "start": 644.77,
+      "end": 646.77,
+      "text": "And 0,1."
+    },
+    {
+      "start": 646.77,
+      "end": 648.77,
+      "text": "So this list will again be stored in the set."
+    },
+    {
+      "start": 648.77,
+      "end": 650.77,
+      "text": "In similar order you can do the entire DFS traversal."
+    },
+    {
+      "start": 650.77,
+      "end": 652.77,
+      "text": "In similar order you can do the entire DFS traversal."
+    },
+    {
+      "start": 652.77,
+      "end": 654.77,
+      "text": "Right?"
+    },
+    {
+      "start": 654.77,
+      "end": 656.77,
+      "text": "I hope you have understood the entire intuition and the thought process."
+    },
+    {
+      "start": 656.77,
+      "end": 658.77,
+      "text": "It is very very important."
+    },
+    {
+      "start": 658.77,
+      "end": 660.77,
+      "text": "So let's go back to the code."
+    },
+    {
+      "start": 660.77,
+      "end": 662.77,
+      "text": "As usual the C++ code is in the right."
+    },
+    {
+      "start": 662.77,
+      "end": 664.77,
+      "text": "And the Java code will be on the left."
+    },
+    {
+      "start": 664.77,
+      "end": 666.77,
+      "text": "So count distinct islands."
+    },
+    {
+      "start": 666.77,
+      "end": 668.77,
+      "text": "And we are given the grid."
+    },
+    {
+      "start": 668.77,
+      "end": 670.77,
+      "text": "And we are given the grid."
+    },
+    {
+      "start": 670.77,
+      "end": 672.77,
+      "text": "As usual just get the grid size."
+    },
+    {
+      "start": 672.77,
+      "end": 674.77,
+      "text": "And then get the M."
+    },
+    {
+      "start": 674.77,
+      "end": 679.62,
+      "text": "And then get the M."
+    },
+    {
+      "start": 679.62,
+      "end": 681.62,
+      "text": "Once this is done."
+    },
+    {
+      "start": 681.62,
+      "end": 683.62,
+      "text": "What is the next thing?"
+    },
+    {
+      "start": 683.62,
+      "end": 685.62,
+      "text": "We need to visit it to make sure that nothing is visited."
+    },
+    {
+      "start": 685.62,
+      "end": 687.62,
+      "text": "So we can just create something like this."
+    },
+    {
+      "start": 687.62,
+      "end": 689.62,
+      "text": "So visited is created."
+    },
+    {
+      "start": 689.62,
+      "end": 691.62,
+      "text": "What after this?"
+    },
+    {
+      "start": 691.62,
+      "end": 693.62,
+      "text": "Right after this."
+    },
+    {
+      "start": 693.62,
+      "end": 695.62,
+      "text": "The first thing that you will do is."
+    },
+    {
+      "start": 695.62,
+      "end": 697.62,
+      "text": "You will start going from everyone."
+    },
+    {
+      "start": 697.62,
+      "end": 699.62,
+      "text": "You will start going from everyone."
+    },
+    {
+      "start": 699.62,
+      "end": 701.62,
+      "text": "Please make sure it is."
+    },
+    {
+      "start": 701.62,
+      "end": 703.62,
+      "text": "So that the entire matrix is built."
+    },
+    {
+      "start": 703.62,
+      "end": 705.62,
+      "text": "So that the entire matrix is built."
+    },
+    {
+      "start": 705.62,
+      "end": 707.62,
+      "text": "Now you will say."
+    },
+    {
+      "start": 707.62,
+      "end": 709.62,
+      "text": "If this guy has not been visited yet."
+    },
+    {
+      "start": 709.62,
+      "end": 711.62,
+      "text": "Then."
+    },
+    {
+      "start": 711.62,
+      "end": 713.62,
+      "text": "And and."
+    },
+    {
+      "start": 713.62,
+      "end": 715.62,
+      "text": "This guy is one like an island as well."
+    },
+    {
+      "start": 715.62,
+      "end": 717.62,
+      "text": "And island."
+    },
+    {
+      "start": 717.62,
+      "end": 719.62,
+      "text": "Then please go and do the DFS for this guy."
+    },
+    {
+      "start": 719.62,
+      "end": 721.62,
+      "text": "Okay."
+    },
+    {
+      "start": 721.62,
+      "end": 723.62,
+      "text": "Now what else do you require?"
+    },
+    {
+      "start": 723.62,
+      "end": 725.62,
+      "text": "I can say I require something."
+    },
+    {
+      "start": 725.62,
+      "end": 727.62,
+      "text": "Which is a vector."
+    },
+    {
+      "start": 727.62,
+      "end": 729.62,
+      "text": "Which stores all these things."
+    },
+    {
+      "start": 729.62,
+      "end": 731.62,
+      "text": "Which stores all these things."
+    },
+    {
+      "start": 731.62,
+      "end": 733.62,
+      "text": "A list basically."
+    },
+    {
+      "start": 733.62,
+      "end": 735.62,
+      "text": "Which stores all these things."
+    },
+    {
+      "start": 735.62,
+      "end": 737.62,
+      "text": "So really I can pass this list vector."
+    },
+    {
+      "start": 737.62,
+      "end": 739.62,
+      "text": "And I will require."
+    },
+    {
+      "start": 739.62,
+      "end": 741.62,
+      "text": "And once this BFS is over."
+    },
+    {
+      "start": 741.62,
+      "end": 743.62,
+      "text": "I can say set."
+    },
+    {
+      "start": 743.62,
+      "end": 745.62,
+      "text": "Can you store this vector?"
+    },
+    {
+      "start": 745.62,
+      "end": 747.62,
+      "text": "Can you store this vector?"
+    },
+    {
+      "start": 747.62,
+      "end": 749.62,
+      "text": "And do I need to create a set?"
+    },
+    {
+      "start": 749.62,
+      "end": 751.62,
+      "text": "Yes I need to create a set."
+    },
+    {
+      "start": 751.62,
+      "end": 753.62,
+      "text": "Because it is storing."
+    },
+    {
+      "start": 753.62,
+      "end": 755.62,
+      "text": "Vectors."
+    },
+    {
+      "start": 755.62,
+      "end": 757.62,
+      "text": "At the end of the day I can say."
+    },
+    {
+      "start": 757.62,
+      "end": 759.62,
+      "text": "Return set.size."
+    },
+    {
+      "start": 759.62,
+      "end": 761.62,
+      "text": "Now I just need to write the DFS."
+    },
+    {
+      "start": 761.62,
+      "end": 763.62,
+      "text": "So in the DFS also make sure."
+    },
+    {
+      "start": 763.62,
+      "end": 765.62,
+      "text": "Okay not to make sure."
+    },
+    {
+      "start": 765.62,
+      "end": 767.62,
+      "text": "So it is like."
+    },
+    {
+      "start": 767.62,
+      "end": 769.62,
+      "text": "Private."
+    },
+    {
+      "start": 769.62,
+      "end": 771.62,
+      "text": "Let's write the void DFS."
+    },
+    {
+      "start": 771.62,
+      "end": 773.62,
+      "text": "And you have the IND node."
+    },
+    {
+      "start": 773.62,
+      "end": 775.62,
+      "text": "Sorry IND row."
+    },
+    {
+      "start": 775.62,
+      "end": 777.62,
+      "text": "IND column."
+    },
+    {
+      "start": 777.62,
+      "end": 779.62,
+      "text": "IND visitor."
+    },
+    {
+      "start": 779.62,
+      "end": 781.62,
+      "text": "By the way it is a 2D."
+    },
+    {
+      "start": 781.62,
+      "end": 783.62,
+      "text": "Create a 2D one."
+    },
+    {
+      "start": 783.62,
+      "end": 790.61,
+      "text": "That will be a better choice."
+    },
+    {
+      "start": 790.61,
+      "end": 792.61,
+      "text": "So go across."
+    },
+    {
+      "start": 792.61,
+      "end": 794.61,
+      "text": "And create a vector of int."
+    },
+    {
+      "start": 794.61,
+      "end": 796.61,
+      "text": "And an m comma zero."
+    },
+    {
+      "start": 796.61,
+      "end": 798.61,
+      "text": "Perfect done."
+    },
+    {
+      "start": 798.61,
+      "end": 800.61,
+      "text": "Let's carry this on."
+    },
+    {
+      "start": 800.61,
+      "end": 802.61,
+      "text": "A vector of."
+    },
+    {
+      "start": 802.61,
+      "end": 804.61,
+      "text": "Vector."
+    },
+    {
+      "start": 804.61,
+      "end": 806.61,
+      "text": "Int."
+    },
+    {
+      "start": 806.61,
+      "end": 808.61,
+      "text": "Visitor."
+    },
+    {
+      "start": 808.61,
+      "end": 810.61,
+      "text": "Done."
+    },
+    {
+      "start": 810.61,
+      "end": 812.61,
+      "text": "Next carry the grid."
+    },
+    {
+      "start": 812.61,
+      "end": 814.61,
+      "text": "So just go ahead and carry the grid."
+    },
+    {
+      "start": 814.61,
+      "end": 816.61,
+      "text": "Super simple."
+    },
+    {
+      "start": 816.61,
+      "end": 818.61,
+      "text": "Storing the pairs."
+    },
+    {
+      "start": 818.61,
+      "end": 822.85,
+      "text": "And also done."
+    },
+    {
+      "start": 822.85,
+      "end": 824.85,
+      "text": "What's the first thing that you will do."
+    },
+    {
+      "start": 824.85,
+      "end": 826.85,
+      "text": "Very simple."
+    },
+    {
+      "start": 826.85,
+      "end": 828.85,
+      "text": "You will go to the row."
+    },
+    {
+      "start": 828.85,
+      "end": 830.85,
+      "text": "Go to the column and mark it as one."
+    },
+    {
+      "start": 830.85,
+      "end": 832.85,
+      "text": "Perfect done."
+    },
+    {
+      "start": 832.85,
+      "end": 834.85,
+      "text": "The next thing that you will do is."
+    },
+    {
+      "start": 834.85,
+      "end": 836.85,
+      "text": "You will need the base coordinates."
+    },
+    {
+      "start": 836.85,
+      "end": 838.85,
+      "text": "You need the base coordinates."
+    },
+    {
+      "start": 838.85,
+      "end": 840.85,
+      "text": "To make sure that they are stored."
+    },
+    {
+      "start": 840.85,
+      "end": 842.85,
+      "text": "Something like row minus the base coordinates."
+    },
+    {
+      "start": 842.85,
+      "end": 844.85,
+      "text": "Column minus the base coordinates."
+    },
+    {
+      "start": 844.85,
+      "end": 846.85,
+      "text": "So you always need these base coordinates."
+    },
+    {
+      "start": 846.85,
+      "end": 848.85,
+      "text": "So please carry these base coordinates."
+    },
+    {
+      "start": 848.85,
+      "end": 850.85,
+      "text": "Always with you."
+    },
+    {
+      "start": 850.85,
+      "end": 852.85,
+      "text": "So can I say the row zero to be."
+    },
+    {
+      "start": 852.85,
+      "end": 854.85,
+      "text": "I and J."
+    },
+    {
+      "start": 854.85,
+      "end": 856.85,
+      "text": "I can because those are the base coordinates."
+    },
+    {
+      "start": 856.85,
+      "end": 858.85,
+      "text": "And you store them."
+    },
+    {
+      "start": 858.85,
+      "end": 860.85,
+      "text": "Once you have done this."
+    },
+    {
+      "start": 860.85,
+      "end": 862.85,
+      "text": "You have to travel in the upwards."
+    },
+    {
+      "start": 862.85,
+      "end": 864.85,
+      "text": "The rightwards and the leftwards."
+    },
+    {
+      "start": 864.85,
+      "end": 866.85,
+      "text": "So you need this del row kind of thing."
+    },
+    {
+      "start": 866.85,
+      "end": 868.85,
+      "text": "So you can again declare this here."
+    },
+    {
+      "start": 868.85,
+      "end": 870.85,
+      "text": "Or you can do it wherever you wish to."
+    },
+    {
+      "start": 870.85,
+      "end": 872.85,
+      "text": "I am not going to explain this from where did this come."
+    },
+    {
+      "start": 872.85,
+      "end": 874.85,
+      "text": "Because I have already done this a lot of times in the graph series."
+    },
+    {
+      "start": 874.85,
+      "end": 876.85,
+      "text": "If you are watching this graph series."
+    },
+    {
+      "start": 876.85,
+      "end": 878.85,
+      "text": "For the first time."
+    },
+    {
+      "start": 878.85,
+      "end": 880.85,
+      "text": "You should go back and watch it."
+    },
+    {
+      "start": 880.85,
+      "end": 882.85,
+      "text": "Now go to all the neighbors."
+    },
+    {
+      "start": 882.85,
+      "end": 884.85,
+      "text": "Which is something like."
+    },
+    {
+      "start": 884.85,
+      "end": 886.85,
+      "text": "I and J is zero."
+    },
+    {
+      "start": 886.85,
+      "end": 888.85,
+      "text": "I is less than four."
+    },
+    {
+      "start": 888.85,
+      "end": 890.85,
+      "text": "I plus plus."
+    },
+    {
+      "start": 890.85,
+      "end": 892.85,
+      "text": "Get the neighboring row."
+    },
+    {
+      "start": 892.85,
+      "end": 894.85,
+      "text": "Which is something like."
+    },
+    {
+      "start": 894.85,
+      "end": 896.85,
+      "text": "Row plus del row of I."
+    },
+    {
+      "start": 896.85,
+      "end": 898.85,
+      "text": "Get the neighboring column."
+    },
+    {
+      "start": 898.85,
+      "end": 900.85,
+      "text": "Which is column plus del column of I."
+    },
+    {
+      "start": 900.85,
+      "end": 902.85,
+      "text": "Now what is the first thing that you will do."
+    },
+    {
+      "start": 902.85,
+      "end": 904.85,
+      "text": "N row should be greater than zero."
+    },
+    {
+      "start": 904.85,
+      "end": 906.85,
+      "text": "N row should be less than N."
+    },
+    {
+      "start": 906.85,
+      "end": 908.85,
+      "text": "Should be greater than equal to zero."
+    },
+    {
+      "start": 908.85,
+      "end": 912.45,
+      "text": "N column should be less than N."
+    },
+    {
+      "start": 912.45,
+      "end": 914.45,
+      "text": "Perfect."
+    },
+    {
+      "start": 914.45,
+      "end": 916.45,
+      "text": "Next thing not visited is very very important."
+    },
+    {
+      "start": 916.45,
+      "end": 918.45,
+      "text": "So just go to the next line and write."
+    },
+    {
+      "start": 918.45,
+      "end": 920.45,
+      "text": "Not visited of N row."
+    },
+    {
+      "start": 920.45,
+      "end": 922.45,
+      "text": "Should not be visited."
+    },
+    {
+      "start": 922.45,
+      "end": 924.45,
+      "text": "And what is the next thing that you check."
+    },
+    {
+      "start": 924.45,
+      "end": 926.45,
+      "text": "Should be a land."
+    },
+    {
+      "start": 926.45,
+      "end": 928.45,
+      "text": "Yes should be a land."
+    },
+    {
+      "start": 928.45,
+      "end": 933.43,
+      "text": "N row and N column should be a land."
+    },
+    {
+      "start": 933.43,
+      "end": 935.43,
+      "text": "Done."
+    },
+    {
+      "start": 935.43,
+      "end": 937.43,
+      "text": "And if it is."
+    },
+    {
+      "start": 937.43,
+      "end": 939.43,
+      "text": "Then you call the DFS for N row and N column."
+    },
+    {
+      "start": 939.43,
+      "end": 941.43,
+      "text": "N column should be less than N."
+    },
+    {
+      "start": 941.43,
+      "end": 943.43,
+      "text": "Not visited."
+    },
+    {
+      "start": 943.43,
+      "end": 945.43,
+      "text": "And then you pass the visited."
+    },
+    {
+      "start": 945.43,
+      "end": 947.43,
+      "text": "Yes you pass the grid."
+    },
+    {
+      "start": 947.43,
+      "end": 949.43,
+      "text": "You pass the vector."
+    },
+    {
+      "start": 949.43,
+      "end": 951.43,
+      "text": "You pass the row zero."
+    },
+    {
+      "start": 951.43,
+      "end": 953.43,
+      "text": "You pass the column zero."
+    },
+    {
+      "start": 953.43,
+      "end": 959.56,
+      "text": "Once you have done this."
+    },
+    {
+      "start": 959.56,
+      "end": 961.56,
+      "text": "I think we are pretty much done."
+    },
+    {
+      "start": 961.56,
+      "end": 963.56,
+      "text": "Let's quickly compile and see."
+    },
+    {
+      "start": 963.56,
+      "end": 965.56,
+      "text": "Let's see if it is working fine."
+    },
+    {
+      "start": 965.56,
+      "end": 967.56,
+      "text": "It is giving some compilation error."
+    },
+    {
+      "start": 967.56,
+      "end": 969.56,
+      "text": "N looks like N was not declared."
+    },
+    {
+      "start": 969.56,
+      "end": 971.56,
+      "text": "So again do the same thing."
+    },
+    {
+      "start": 971.56,
+      "end": 973.56,
+      "text": "Just copy paste."
+    },
+    {
+      "start": 973.56,
+      "end": 975.56,
+      "text": "It does run."
+    },
+    {
+      "start": 975.56,
+      "end": 977.56,
+      "text": "So let's discuss the space complexity."
+    },
+    {
+      "start": 977.56,
+      "end": 979.56,
+      "text": "Using a vector visited and a set."
+    },
+    {
+      "start": 979.56,
+      "end": 981.56,
+      "text": "So it is going to be like."
+    },
+    {
+      "start": 981.56,
+      "end": 983.56,
+      "text": "The visited one is N cross M."
+    },
+    {
+      "start": 983.56,
+      "end": 985.56,
+      "text": "If you store all the coordinates."
+    },
+    {
+      "start": 985.56,
+      "end": 987.56,
+      "text": "It is going to be N cross M for the set as well."
+    },
+    {
+      "start": 987.56,
+      "end": 989.56,
+      "text": "So N cross M near about for the space complexity."
+    },
+    {
+      "start": 989.56,
+      "end": 991.56,
+      "text": "What about the time."
+    },
+    {
+      "start": 991.56,
+      "end": 993.56,
+      "text": "So what about the time complexity."
+    },
+    {
+      "start": 993.56,
+      "end": 995.56,
+      "text": "N cross M over here."
+    },
+    {
+      "start": 995.56,
+      "end": 997.56,
+      "text": "And overall."
+    },
+    {
+      "start": 997.56,
+      "end": 999.56,
+      "text": "This DFS overall will be."
+    },
+    {
+      "start": 999.56,
+      "end": 1001.56,
+      "text": "N cross M cross 4."
+    },
+    {
+      "start": 1001.56,
+      "end": 1003.56,
+      "text": "Because overall if you take all the cells."
+    },
+    {
+      "start": 1003.56,
+      "end": 1005.56,
+      "text": "It is going to be N cross M cross 4."
+    },
+    {
+      "start": 1005.56,
+      "end": 1007.56,
+      "text": "So this DFS is going to be like."
+    },
+    {
+      "start": 1007.56,
+      "end": 1009.56,
+      "text": "N cross M cross 4."
+    },
+    {
+      "start": 1009.56,
+      "end": 1011.56,
+      "text": "And then this is N cross M."
+    },
+    {
+      "start": 1011.56,
+      "end": 1013.56,
+      "text": "So N cross M."
+    },
+    {
+      "start": 1013.56,
+      "end": 1015.56,
+      "text": "I can say something like."
+    },
+    {
+      "start": 1015.56,
+      "end": 1017.56,
+      "text": "N cross M for the loop."
+    },
+    {
+      "start": 1017.56,
+      "end": 1019.56,
+      "text": "And then N cross M cross 4."
+    },
+    {
+      "start": 1019.56,
+      "end": 1021.56,
+      "text": "Overall for this entire DFS call."
+    },
+    {
+      "start": 1021.56,
+      "end": 1023.56,
+      "text": "And then you can attach."
+    },
+    {
+      "start": 1023.56,
+      "end": 1025.56,
+      "text": "A logarithmic term to it."
+    },
+    {
+      "start": 1025.56,
+      "end": 1027.56,
+      "text": "Into logarithmic of set length."
+    },
+    {
+      "start": 1027.56,
+      "end": 1029.56,
+      "text": "And then you can attach."
+    },
+    {
+      "start": 1029.56,
+      "end": 1031.56,
+      "text": "A logarithmic term to it."
+    },
+    {
+      "start": 1031.56,
+      "end": 1033.56,
+      "text": "Into logarithmic of set length."
+    },
+    {
+      "start": 1033.56,
+      "end": 1035.56,
+      "text": "Which is this."
+    },
+    {
+      "start": 1035.56,
+      "end": 1037.56,
+      "text": "The set at max will store."
+    },
+    {
+      "start": 1037.56,
+      "end": 1039.56,
+      "text": "All of these guys."
+    },
+    {
+      "start": 1039.56,
+      "end": 1041.56,
+      "text": "So you can say N cross M."
+    },
+    {
+      "start": 1041.56,
+      "end": 1043.56,
+      "text": "Logarithmic of set length is."
+    },
+    {
+      "start": 1043.56,
+      "end": 1045.56,
+      "text": "N cross M because at max it is going to store."
+    },
+    {
+      "start": 1045.56,
+      "end": 1047.56,
+      "text": "All these guys."
+    },
+    {
+      "start": 1047.56,
+      "end": 1049.56,
+      "text": "So overall this is the for loop."
+    },
+    {
+      "start": 1049.56,
+      "end": 1051.56,
+      "text": "And this is the DFS time complexity."
+    },
+    {
+      "start": 1051.56,
+      "end": 1053.56,
+      "text": "So guys I hope I was able."
+    },
+    {
+      "start": 1053.56,
+      "end": 1055.56,
+      "text": "So guys I hope I was able to explain you this."
+    },
+    {
+      "start": 1055.56,
+      "end": 1057.56,
+      "text": "Complex question."
+    },
+    {
+      "start": 1057.56,
+      "end": 1059.56,
+      "text": "So just in case I was."
+    },
+    {
+      "start": 1059.56,
+      "end": 1061.56,
+      "text": "Please hit that like button."
+    },
+    {
+      "start": 1061.56,
+      "end": 1063.56,
+      "text": "And if you are new to our channel. What are you waiting for. Please hit that subscribe button."
+    },
+    {
+      "start": 1063.56,
+      "end": 1065.56,
+      "text": "And if you haven't checked out our DP series."
+    },
+    {
+      "start": 1065.56,
+      "end": 1067.56,
+      "text": "SG sheet and all the other series."
+    },
+    {
+      "start": 1067.56,
+      "end": 1069.56,
+      "text": "The links are in the description."
+    },
+    {
+      "start": 1069.56,
+      "end": 1071.56,
+      "text": "With this I will be wrapping up this video."
+    },
+    {
+      "start": 1071.56,
+      "end": 1073.56,
+      "text": "Let's meet in the next video. Till then bye bye take care."
+    }
+  ]
+}

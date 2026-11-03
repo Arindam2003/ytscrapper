@@ -1,0 +1,854 @@
+{
+  "video_id": "rxKcepXQgU4",
+  "title": "G-15. Number of Enclaves ｜ Multi-source BFS ｜ C++ ｜ Java",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 933.21,
+  "segments": [
+    {
+      "start": 2.74,
+      "end": 5.96,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.26,
+      "end": 9.7,
+      "text": "So today we will be solving the problem number of enclaves."
+    },
+    {
+      "start": 10.2,
+      "end": 15.14,
+      "text": "Now what does the problem state? The problem states we are given an n cross m binary matrix grid"
+    },
+    {
+      "start": 15.14,
+      "end": 19.0,
+      "text": "where 0 represents a c cell and 1 represents a lan cell."
+    },
+    {
+      "start": 19.8,
+      "end": 24.56,
+      "text": "A move consists of walking from one lan cell to another adjacent lan cell"
+    },
+    {
+      "start": 24.56,
+      "end": 27.62,
+      "text": "or walking off the boundary of the grid."
+    },
+    {
+      "start": 28.42,
+      "end": 32.42,
+      "text": "Now the point of notice is you are allowed to move in 4 directions."
+    },
+    {
+      "start": 33.14,
+      "end": 39.86,
+      "text": "Find the number of lan cells in grid for which we cannot walk off the boundary of the grid in any number of moves."
+    },
+    {
+      "start": 40.28,
+      "end": 47.6,
+      "text": "So basically if you stand over here and since there are like 4 kind of movements"
+    },
+    {
+      "start": 47.6,
+      "end": 52.62,
+      "text": "you can try moving in. You cannot move here, you cannot move here, you can move here"
+    },
+    {
+      "start": 52.62,
+      "end": 56.96,
+      "text": "but after this you might move here. After this you cannot move here because this is not a lan."
+    },
+    {
+      "start": 56.96,
+      "end": 61.88,
+      "text": "So if you start from here you cannot move out of this particular boundary"
+    },
+    {
+      "start": 61.88,
+      "end": 65.94,
+      "text": "if you use these 4 directions you cannot move."
+    },
+    {
+      "start": 66.34,
+      "end": 69.72,
+      "text": "But whereas if you take this particular one and if you move to the right"
+    },
+    {
+      "start": 69.72,
+      "end": 72.32,
+      "text": "you will be able to move out of the boundary."
+    },
+    {
+      "start": 72.76,
+      "end": 76.98,
+      "text": "If you take this one and you move to the right you will be able to move out of the boundary."
+    },
+    {
+      "start": 77.16,
+      "end": 81.8,
+      "text": "If you take this one and you move to the bottom you will be able to move out of the boundary."
+    },
+    {
+      "start": 81.8,
+      "end": 88.56,
+      "text": "Same with this. So these 4 ones you will be able to move out of the boundary."
+    },
+    {
+      "start": 89.02,
+      "end": 91.86,
+      "text": "But from these 4 ones you will not be able to move out of the boundary."
+    },
+    {
+      "start": 91.88,
+      "end": 99.32,
+      "text": "able to move out of the boundary so the question is very straightforward count the number of ones"
+    },
+    {
+      "start": 99.32,
+      "end": 106.52,
+      "text": "yes or the number of lands this is this is what the question states so for me from here i cannot"
+    },
+    {
+      "start": 106.52,
+      "end": 112.92,
+      "text": "move out of the boundary from here i cannot move out from here i cannot from here i cannot but if i"
+    },
+    {
+      "start": 112.92,
+      "end": 118.76,
+      "text": "tweak the example a bit let's tweak the example and let's change it to one so if i change it to"
+    },
+    {
+      "start": 118.76,
+      "end": 125.56,
+      "text": "one now whatever you took like all these ones uh let's see raise yeah so if i change this to one"
+    },
+    {
+      "start": 126.28,
+      "end": 132.28,
+      "text": "you will see from here you can go up you can go up and you can move out of the boundary from here you"
+    },
+    {
+      "start": 132.28,
+      "end": 136.12,
+      "text": "can go here then you can go here then you can go here out of the boundary from here you can go here"
+    },
+    {
+      "start": 136.12,
+      "end": 141.72,
+      "text": "then here then here then out of the boundary so all of these guys can actually go out of the"
+    },
+    {
+      "start": 141.72,
+      "end": 146.68,
+      "text": "boundary this can also go out of the boundary this can also go out of the boundary this can also go"
+    },
+    {
+      "start": 146.68,
+      "end": 148.6,
+      "text": "out of the boundary so if i place one"
+    },
+    {
+      "start": 148.76,
+      "end": 154.92,
+      "text": "here then everyone can go out of the boundary so in that case the answer will be zero saying there"
+    },
+    {
+      "start": 154.92,
+      "end": 162.36,
+      "text": "are zero lands from where you cannot go out of the boundary so you need to be careful right so"
+    },
+    {
+      "start": 162.36,
+      "end": 167.84,
+      "text": "what is the first intuition that comes to your brain that's definitely something that is connected"
+    },
+    {
+      "start": 167.84,
+      "end": 175.14,
+      "text": "to the boundary something that is connected to the boundary they will never be your answer they will"
+    },
+    {
+      "start": 175.14,
+      "end": 181.26,
+      "text": "never be your answer right something that is connected to the boundary now can i elongate this"
+    },
+    {
+      "start": 181.26,
+      "end": 187.32,
+      "text": "to saying something that is connected to this this this this will also be not part of your answer"
+    },
+    {
+      "start": 187.32,
+      "end": 193.28,
+      "text": "because from there also you can move out so for an example if i put a one here let's put a one here"
+    },
+    {
+      "start": 193.28,
+      "end": 199.98,
+      "text": "and let's understand so as of now these are the boundaries which are connected right these are"
+    },
+    {
+      "start": 199.98,
+      "end": 205.12,
+      "text": "the boundaries ones which are connected boundary ones which are connected so"
+    },
+    {
+      "start": 205.12,
+      "end": 212.02,
+      "text": "can i say from these boundary ones all those ones which are connected so for this guy this is"
+    },
+    {
+      "start": 212.02,
+      "end": 217.0,
+      "text": "connected directly then for this guy this is connected directly for this guy this is connected"
+    },
+    {
+      "start": 217.0,
+      "end": 222.04,
+      "text": "directly and for this guy this is connected directly can i say this or you can be like for"
+    },
+    {
+      "start": 222.04,
+      "end": 227.24,
+      "text": "this guy this is connected directly for this guy this and this is connected directly for this this"
+    },
+    {
+      "start": 227.24,
+      "end": 234.26,
+      "text": "this is connected directly in short anything that is connected to the boundary ones from that land"
+    },
+    {
+      "start": 235.12,
+      "end": 239.92,
+      "text": "always go out so they will never be part of your answer because you need to count the"
+    },
+    {
+      "start": 239.92,
+      "end": 247.32,
+      "text": "ones from where you cannot go out from where you cannot go out so we got an intuition that"
+    },
+    {
+      "start": 247.32,
+      "end": 256.2,
+      "text": "if we figure out the boundary once we figure out the boundary once and then connect all"
+    },
+    {
+      "start": 256.2,
+      "end": 264.44,
+      "text": "the ones and then connect all the ones connected to it at the end of the day the remaining"
+    },
+    {
+      "start": 264.44,
+      "end": 271.32,
+      "text": "ones that are not connected to the boundary ones will be my answer isn't it so let's take this"
+    },
+    {
+      "start": 271.32,
+      "end": 275.98,
+      "text": "particular example and figure out how many lands will be part of your answer can i say these three"
+    },
+    {
+      "start": 275.98,
+      "end": 282.5,
+      "text": "lands will always be part of your answer obviously why because if you take these guys all of these"
+    },
+    {
+      "start": 282.5,
+      "end": 287.22,
+      "text": "guys you can actually walk out again if you take these you can walk out but from here you cannot"
+    },
+    {
+      "start": 287.22,
+      "end": 292.86,
+      "text": "so i can say these three lands will be part of your answer so the answer is three for this"
+    },
+    {
+      "start": 292.86,
+      "end": 294.24,
+      "text": "so how will you start"
+    },
+    {
+      "start": 294.24,
+      "end": 294.42,
+      "text": "you"
+    },
+    {
+      "start": 294.44,
+      "end": 300.28,
+      "text": "which which algorithm will we use so in the previous video we did use the dfs algorithm"
+    },
+    {
+      "start": 300.28,
+      "end": 305.5,
+      "text": "to traverse from the boundary things so over here we will try to implement the bfs just"
+    },
+    {
+      "start": 305.5,
+      "end": 310.12,
+      "text": "to get a clarity about these algorithms so what is bfs bfs is basically you start off"
+    },
+    {
+      "start": 310.12,
+      "end": 315.34,
+      "text": "from a node and then you move across to everyone so how many boundary nodes are there can i"
+    },
+    {
+      "start": 315.34,
+      "end": 319.48,
+      "text": "say we have a boundary node here we have a boundary node here we have a boundary node"
+    },
+    {
+      "start": 319.48,
+      "end": 324.24,
+      "text": "here and we have a boundary node here can i see this so what do you do is let's say"
+    },
+    {
+      "start": 324.24,
+      "end": 334.06,
+      "text": "let's quickly mark down the row numbers and the column numbers so can i say all of these are the"
+    },
+    {
+      "start": 334.06,
+      "end": 338.78,
+      "text": "boundary the blue ones are the boundary ones so let's take a q data structure if i take a q data"
+    },
+    {
+      "start": 338.78,
+      "end": 344.24,
+      "text": "structure and let's put down all these boundary guys the first boundary guy will be 0 3 let's put"
+    },
+    {
+      "start": 344.24,
+      "end": 352.02,
+      "text": "it next will be 0 4 let's put it next will be 4 3 next will be 4 4 so i have put down all these"
+    },
+    {
+      "start": 352.1,
+      "end": 353.92,
+      "text": "four boundary guys done"
+    },
+    {
+      "start": 354.24,
+      "end": 358.56,
+      "text": "and if you remember well enough if you remember well enough one thing you can do is you can"
+    },
+    {
+      "start": 358.56,
+      "end": 364.48,
+      "text": "convert this to zero zero that is something you can do but you know we never ever touch these"
+    },
+    {
+      "start": 364.48,
+      "end": 369.6,
+      "text": "guys because this is the data so what i will do is i'll create the corresponding visited array so"
+    },
+    {
+      "start": 369.6,
+      "end": 373.52,
+      "text": "let's quickly create the corresponding visited array so once you've created the corresponding"
+    },
+    {
+      "start": 373.52,
+      "end": 379.04,
+      "text": "visited array for zero three market has one for zero four market has one this one market has one"
+    },
+    {
+      "start": 379.04,
+      "end": 383.92,
+      "text": "this one market has one so this will be your visited array done and what is your next step"
+    },
+    {
+      "start": 383.92,
+      "end": 390.08,
+      "text": "perform the bfs traversal the bfs traversal what does it say get out the first guy so that's zero"
+    },
+    {
+      "start": 390.08,
+      "end": 394.48,
+      "text": "comma three and you know it will be in four directions check for the four directions from"
+    },
+    {
+      "start": 394.48,
+      "end": 399.04,
+      "text": "zero three so there is one direction here which is invalid there's one direction here which is"
+    },
+    {
+      "start": 399.04,
+      "end": 404.08,
+      "text": "having a zero there is one here which is already marked as visited and there is someone in the"
+    },
+    {
+      "start": 404.08,
+      "end": 408.96,
+      "text": "bottom which is unvisited so take this bottom guy and put this into your qd test"
+    },
+    {
+      "start": 409.04,
+      "end": 414.96,
+      "text": "structure and at the same time mark this as one so what i can say is okay fine for zero comma three"
+    },
+    {
+      "start": 414.96,
+      "end": 420.8,
+      "text": "i've done the bfs traversal let's take the next guy out which is zero comma four so we have zero"
+    },
+    {
+      "start": 420.8,
+      "end": 425.84,
+      "text": "comma four where does it lie here does it have someone on the top no does it have someone on the"
+    },
+    {
+      "start": 425.84,
+      "end": 430.64,
+      "text": "left yes but that is already visited does it have someone on the right no does it have someone on"
+    },
+    {
+      "start": 430.64,
+      "end": 435.92,
+      "text": "the bottom zero so apparently this zero comma four will not be connected to anyone else let's"
+    },
+    {
+      "start": 435.92,
+      "end": 438.96,
+      "text": "see the next guy which is four comma three so if i take four comma three which is one"
+    },
+    {
+      "start": 439.04,
+      "end": 446.64,
+      "text": "which is this guy not connected not connected invalid already visited so four comma three is"
+    },
+    {
+      "start": 446.64,
+      "end": 452.96,
+      "text": "also not connected to anyone let's see the next guy four comma four let's see for four comma four"
+    },
+    {
+      "start": 452.96,
+      "end": 459.6,
+      "text": "this is four comma four top not connected already visited invalid nothing the four comma four is"
+    },
+    {
+      "start": 459.6,
+      "end": 464.16,
+      "text": "also not connected to anyone let's take the next guy one comma three so if i take one comma three"
+    },
+    {
+      "start": 464.16,
+      "end": 468.32,
+      "text": "where is one comma three one comma three is here so if i carefully observe"
+    },
+    {
+      "start": 469.04,
+      "end": 474.08,
+      "text": "on the top already visited over here zero over here zero and there's a one over here which is"
+    },
+    {
+      "start": 474.08,
+      "end": 479.92,
+      "text": "un which is unvisited which is unvisited so i'll visit this particular one and that is one comma"
+    },
+    {
+      "start": 479.92,
+      "end": 485.04,
+      "text": "two and i'll mark it as visited so i can say i have connected everything that was connected to"
+    },
+    {
+      "start": 485.04,
+      "end": 490.24,
+      "text": "one comma three the next step i'll get one comma two once you have one comma two which is this"
+    },
+    {
+      "start": 490.24,
+      "end": 500.08,
+      "text": "uh zero already visited zero zero so 1 comma 2 is no more connected to any one so as of now if you"
+    },
+    {
+      "start": 500.08,
+      "end": 506.88,
+      "text": "carefully see this particular queue is empty and what i have done is these guys were connected to"
+    },
+    {
+      "start": 506.88,
+      "end": 513.04,
+      "text": "these guys so i marked these guys all also because those were directly connected so once the queue is"
+    },
+    {
+      "start": 513.04,
+      "end": 518.4,
+      "text": "empty if you carefully observe there is one here which is unvisited there is one here which is"
+    },
+    {
+      "start": 518.4,
+      "end": 520.24,
+      "text": "unvisited there was a one here which is unvisited there was a one here which was always unvisited"
+    },
+    {
+      "start": 520.24,
+      "end": 524.48,
+      "text": "is unvisited there was a one here which is visited there was a one here which is visited"
+    },
+    {
+      "start": 524.48,
+      "end": 532.24,
+      "text": "so apparently only these three ones are unvisited in the visited matrix thereby from like you can't"
+    },
+    {
+      "start": 532.24,
+      "end": 538.48,
+      "text": "go to the boundary from these ones because you always took all the boundary ones and you expanded"
+    },
+    {
+      "start": 538.48,
+      "end": 544.0,
+      "text": "your connections you expanded your connections and these ones were never reached which means that"
+    },
+    {
+      "start": 544.0,
+      "end": 550.24,
+      "text": "from these places you cannot go to the boundaries thereby what you can do is you can just count the"
+    },
+    {
+      "start": 550.24,
+      "end": 555.2,
+      "text": "answer and the answer will be three just do a traversal and for this one there's a zero for"
+    },
+    {
+      "start": 555.2,
+      "end": 559.52,
+      "text": "this one there's a zero for this one there is a zero just do a counter plus plus and you can"
+    },
+    {
+      "start": 559.52,
+      "end": 564.48,
+      "text": "always count the particular answer just take a counter and do a counter plus plus and you can"
+    },
+    {
+      "start": 564.48,
+      "end": 569.44,
+      "text": "always count your answer so as usual we will write the c plus plus code on the right and the java"
+    },
+    {
+      "start": 569.44,
+      "end": 573.92,
+      "text": "code is visible on the left so what do we have we have the number of enclaves"
+    },
+    {
+      "start": 574.0,
+      "end": 580.24,
+      "text": "and we have the grid correct so what i will do is i will at first figure out the boundary ones and"
+    },
+    {
+      "start": 580.24,
+      "end": 584.08,
+      "text": "you have to put that into the queue data structure so let's take a q data structure which will be"
+    },
+    {
+      "start": 584.08,
+      "end": 591.68,
+      "text": "storing the row and columns perfect and at the same time please please uh do this get this uh"
+    },
+    {
+      "start": 591.68,
+      "end": 601.6,
+      "text": "size of the grid and yeah perfect you've got the size of the grid next thing please create this"
+    },
+    {
+      "start": 601.6,
+      "end": 604.0,
+      "text": "visited uh matrix i'll just do it"
+    },
+    {
+      "start": 604.0,
+      "end": 610.24,
+      "text": "int visited of n m and i'll mark everything as unvisited perfect now what you will do is please"
+    },
+    {
+      "start": 610.24,
+      "end": 615.76,
+      "text": "go across to all the boundary guys so one thing you can do is you can either traverse for first"
+    },
+    {
+      "start": 615.76,
+      "end": 623.6,
+      "text": "row first column last row last column or you can traverse through the entire matrix and we know the"
+    },
+    {
+      "start": 623.6,
+      "end": 632.24,
+      "text": "first column first row will always have the i value as 0 or the column value is 0 or the row"
+    },
+    {
+      "start": 632.24,
+      "end": 633.68,
+      "text": "value will be n minus 1"
+    },
+    {
+      "start": 634.0,
+      "end": 638.8,
+      "text": "or the column value will be m minus 1. this is when you can say it's a part of"
+    },
+    {
+      "start": 638.8,
+      "end": 647.84,
+      "text": "first row first column last row and last column this is what you can say right so over here what"
+    },
+    {
+      "start": 647.84,
+      "end": 655.52,
+      "text": "you'll say is if this is the case yes if this is the case and you find out that the grid of ij is"
+    },
+    {
+      "start": 655.52,
+      "end": 661.84,
+      "text": "one which means it is a land if it is a land can you please ask the queue to store this guy and"
+    },
+    {
+      "start": 661.84,
+      "end": 663.92,
+      "text": "once you've asked the queue can you say this to me"
+    },
+    {
+      "start": 664.0,
+      "end": 668.88,
+      "text": "visited perfect once you've done everything let's do the bfs traversal which is super simple which"
+    },
+    {
+      "start": 668.88,
+      "end": 676.64,
+      "text": "is q dot mt all right and you see okay what's the row number can i see as q dot front dot first yes"
+    },
+    {
+      "start": 676.64,
+      "end": 683.04,
+      "text": "and can i see the column number as q dot front dot second i can and now what i will say is q dot pop"
+    },
+    {
+      "start": 683.84,
+      "end": 688.56,
+      "text": "and i need to visit the neighbors and you know how to visit the neighbors how many"
+    },
+    {
+      "start": 688.56,
+      "end": 694.0,
+      "text": "uh kinds of neighbors are there one at the top one at the right one at the bottom one on the left and"
+    },
+    {
+      "start": 694.0,
+      "end": 700.56,
+      "text": "if this is your row and column the upper one is row minus one column the right one is row comma"
+    },
+    {
+      "start": 700.56,
+      "end": 707.12,
+      "text": "column plus one the down one is row plus one column the this one is row comma column minus one"
+    },
+    {
+      "start": 707.12,
+      "end": 712.48,
+      "text": "so what are the changes in row and column for this the change is minus one zero for this the change"
+    },
+    {
+      "start": 712.48,
+      "end": 719.28,
+      "text": "is plus zero plus one for this the change is plus one plus zero for this the change is plus zero"
+    },
+    {
+      "start": 719.28,
+      "end": 723.52,
+      "text": "minus one so these are the delta changes that you have to do so really you can just store them"
+    },
+    {
+      "start": 724.0,
+      "end": 730.0,
+      "text": "in some delta row and delta column and this can be the zeroth index first index second index and"
+    },
+    {
+      "start": 730.0,
+      "end": 734.32,
+      "text": "third index in this way you can easily pick them up so i'll just store them in delta row"
+    },
+    {
+      "start": 735.28,
+      "end": 739.68,
+      "text": "i just went through very fast because i've explained this a lot of times so i don't want"
+    },
+    {
+      "start": 739.68,
+      "end": 745.04,
+      "text": "to waste any further time i've explained this in the graph series a lot of times so del column"
+    },
+    {
+      "start": 745.04,
+      "end": 752.56,
+      "text": "equal to 0 plus 1 plus 0 minus 1. this is something which you will do done and now what you'll do is"
+    },
+    {
+      "start": 752.56,
+      "end": 758.24,
+      "text": "you have to traverse all the four directions because for this guy for this cell the land will"
+    },
+    {
+      "start": 758.24,
+      "end": 763.52,
+      "text": "get connected to everyone on the four directions so just make sure it traverses all the four"
+    },
+    {
+      "start": 763.52,
+      "end": 769.28,
+      "text": "directions just traverses all four directions that should be your first priority that it traverses"
+    },
+    {
+      "start": 769.84,
+      "end": 776.48,
+      "text": "all four directions so just go as like indi equal to zero i lesser than four i plus plus and i can"
+    },
+    {
+      "start": 776.48,
+      "end": 782.16,
+      "text": "say the neighboring row is very simple it's the current row plus the del the change that we"
+    },
+    {
+      "start": 782.56,
+      "end": 787.92,
+      "text": "figured out that the neighboring column is column plus the del column of i and i'll just have a check"
+    },
+    {
+      "start": 787.92,
+      "end": 793.76,
+      "text": "if this is greater than equal to zero and if this is lesser than n and and n column is greater than"
+    },
+    {
+      "start": 793.76,
+      "end": 800.16,
+      "text": "equal to zero and and n column is lesser than m once this is checked have the next check as visited"
+    },
+    {
+      "start": 800.16,
+      "end": 806.64,
+      "text": "row and visited column are they not previously visited once this is checked it has to be a land"
+    },
+    {
+      "start": 806.64,
+      "end": 812.4,
+      "text": "as well so have a check if this is a land if all of these satisfy what do you need to do is you need"
+    },
+    {
+      "start": 812.56,
+      "end": 817.84,
+      "text": "to say q can you please store these new guys which is n row and n column at the same time can you"
+    },
+    {
+      "start": 817.84,
+      "end": 823.36,
+      "text": "please go and mark these n row and n column to be true once you have done all of these things"
+    },
+    {
+      "start": 823.36,
+      "end": 828.56,
+      "text": "at the end of the day you need a counter to count so take a counter as 0 and just go across this"
+    },
+    {
+      "start": 828.56,
+      "end": 837.68,
+      "text": "int i equal to 0 and i less than n i plus plus and you can just do for j equal to 0 j lesser than m"
+    },
+    {
+      "start": 837.68,
+      "end": 841.44,
+      "text": "j plus plus at the same time you can say if the grid is containing this one you can say you that's"
+    },
+    {
+      "start": 841.44,
+      "end": 841.7,
+      "text": "to be true so the last step is to check whether or not you have completed it you can list it that's"
+    },
+    {
+      "start": 841.7,
+      "end": 842.4,
+      "text": "if the grid is containing this one you can do it twice and you can do it twice and you will get it"
+    },
+    {
+      "start": 842.4,
+      "end": 842.54,
+      "text": "just like that so when you complete it you will get the result out of the column and you're left with one"
+    },
+    {
+      "start": 842.56,
+      "end": 849.68,
+      "text": "and it is unvisited okay then i can say counter plus plus at the end of the day i can go and"
+    },
+    {
+      "start": 849.68,
+      "end": 855.04,
+      "text": "return that counter which will be my answer so this is how the entire code will look like"
+    },
+    {
+      "start": 855.04,
+      "end": 860.16,
+      "text": "so let's talk about the space complexity that we are using we're definitely using a visited matrix"
+    },
+    {
+      "start": 860.16,
+      "end": 867.2,
+      "text": "and a q so at max the space complexity will be n cross m plus the q space that we're using so we"
+    },
+    {
+      "start": 867.2,
+      "end": 874.4,
+      "text": "can say it as n cross m to be the space complexity what about the time complexity q dot mt assuming"
+    },
+    {
+      "start": 874.4,
+      "end": 881.28,
+      "text": "all the pieces to be land assume you have a matrix like one one one one one and one one one one"
+    },
+    {
+      "start": 881.28,
+      "end": 887.12,
+      "text": "so you're gonna visit all the matrix so the q is going to run over all the matrix so n cross"
+    },
+    {
+      "start": 887.12,
+      "end": 892.24,
+      "text": "m is what the number of matrix you'll run across and for every time you have four directions to"
+    },
+    {
+      "start": 892.24,
+      "end": 897.2,
+      "text": "travel so so this will be the time complexity and yeah this is n cross m and this is n"
+    },
+    {
+      "start": 897.2,
+      "end": 904.24,
+      "text": "cross m so overall if you nearby it it will be somewhere near to n cross m so guys i hope i was"
+    },
+    {
+      "start": 904.24,
+      "end": 908.4,
+      "text": "able to explain you this particular question so just in case i was please make sure you like this"
+    },
+    {
+      "start": 908.4,
+      "end": 913.52,
+      "text": "video and if you're new to our channel what are you waiting for like what are you waiting for hit"
+    },
+    {
+      "start": 913.52,
+      "end": 917.6,
+      "text": "that subscribe button right away and if you haven't checked out our dp series 3 series and the"
+    },
+    {
+      "start": 917.6,
+      "end": 922.24,
+      "text": "hd sheet the links are in the description with this i'll be wrapping up this video let's meet"
+    },
+    {
+      "start": 922.24,
+      "end": 931.13,
+      "text": "in some other video till then bye take care"
+    }
+  ]
+}

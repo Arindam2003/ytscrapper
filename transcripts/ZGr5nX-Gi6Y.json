@@ -1,0 +1,549 @@
+{
+  "video_id": "ZGr5nX-Gi6Y",
+  "title": "G-48. Number of Provinces - Disjoint Set",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 482.44,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.06,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 3.52,
+      "end": 8.76,
+      "text": "So we will be solving the problem number of provinces. So what does the question state?"
+    },
+    {
+      "start": 8.94,
+      "end": 14.66,
+      "text": "Given an undirected graph with v vertices, we say two vertices u and v belong to a single province."
+    },
+    {
+      "start": 14.66,
+      "end": 21.16,
+      "text": "If there is a path from u to v or v to u by any means, your task is to find the number of provinces."
+    },
+    {
+      "start": 21.76,
+      "end": 25.7,
+      "text": "So in short, the question is about finding the number of connected components."
+    },
+    {
+      "start": 25.7,
+      "end": 30.26,
+      "text": "So we have already solved this problem using the traversal techniques."
+    },
+    {
+      "start": 30.74,
+      "end": 35.66,
+      "text": "But over here, we will be solving this using the disjoint set data structure."
+    },
+    {
+      "start": 36.08,
+      "end": 37.94,
+      "text": "Why? Because we are learning this data structure."
+    },
+    {
+      "start": 38.28,
+      "end": 42.98,
+      "text": "We have to understand this data structure in depth so that we can always solve the harder problems."
+    },
+    {
+      "start": 43.12,
+      "end": 47.9,
+      "text": "Because if you don't understand the data structure in depth and you are not conceptually clear,"
+    },
+    {
+      "start": 48.38,
+      "end": 51.42,
+      "text": "then it will be very very tough to solve harder problems."
+    },
+    {
+      "start": 51.42,
+      "end": 54.66,
+      "text": "So basically what this state is, they will be giving you a graph like this."
+    },
+    {
+      "start": 54.96,
+      "end": 55.42,
+      "text": "And the graph will be..."
+    },
+    {
+      "start": 55.7,
+      "end": 58.82,
+      "text": "represented by an adjacency matrix."
+    },
+    {
+      "start": 58.82,
+      "end": 59.32,
+      "text": "Okay."
+    },
+    {
+      "start": 59.32,
+      "end": 64.16,
+      "text": "Now if you see that between 1 and 2 there is 1, which means there is an edge between 1 and 2."
+    },
+    {
+      "start": 64.16,
+      "end": 66.42,
+      "text": "Or there is an edge between 2 and 1."
+    },
+    {
+      "start": 66.42,
+      "end": 71.54,
+      "text": "If you see there is an edge between 2 and 3, you will see at 2, 3 there is a 1 and at 3, 2 there is a 1."
+    },
+    {
+      "start": 71.54,
+      "end": 73.24,
+      "text": "So basically,"
+    },
+    {
+      "start": 73.24,
+      "end": 79.46,
+      "text": "everywhere there is a 1 marked, it means there is an edge between those two i and j."
+    },
+    {
+      "start": 79.46,
+      "end": 85.62,
+      "text": "Because this... if you say this is i and this is j and if this is 1, it means there's an edge between"
+    },
+    {
+      "start": 85.7,
+      "end": 88.74,
+      "text": "7 and 6 or 6 or 7, right?"
+    },
+    {
+      "start": 88.76,
+      "end": 91.54,
+      "text": "This is the meaning of the adjacency matrix."
+    },
+    {
+      "start": 91.54,
+      "end": 95.34,
+      "text": "So you'll be given the adjacency matrix, which will be representing a graph."
+    },
+    {
+      "start": 95.34,
+      "end": 98.3,
+      "text": "And you have to tell me the number of connected components."
+    },
+    {
+      "start": 98.3,
+      "end": 104.48,
+      "text": "So if I ask you the number of connected components, this is 1, this is 2, this is 3."
+    },
+    {
+      "start": 104.48,
+      "end": 110.38,
+      "text": "So the prerequisite is definitely the disjoint set data structure."
+    },
+    {
+      "start": 110.38,
+      "end": 113.38,
+      "text": "I've already taught you this in the previous video of this graph series."
+    },
+    {
+      "start": 113.38,
+      "end": 114.92,
+      "text": "So go back, watch it."
+    },
+    {
+      "start": 114.92,
+      "end": 118.82,
+      "text": "because if you do not watch it, it will be very very tough for you to understand it."
+    },
+    {
+      "start": 119.08,
+      "end": 121.58,
+      "text": "So if you remember the disjoint set data structure,"
+    },
+    {
+      "start": 122.2,
+      "end": 125.1,
+      "text": "this component when you attach everyone,"
+    },
+    {
+      "start": 125.6,
+      "end": 128.44,
+      "text": "it will be something like 2 will be pointing to 1,"
+    },
+    {
+      "start": 128.82,
+      "end": 132.22,
+      "text": "3 will also be pointing to 1 and 1 will be pointing to itself."
+    },
+    {
+      "start": 132.22,
+      "end": 134.74,
+      "text": "Basically 2's parent will be 1, 3's parent will be 1"
+    },
+    {
+      "start": 134.74,
+      "end": 138.56,
+      "text": "and 1 will be his parent himself."
+    },
+    {
+      "start": 139.02,
+      "end": 140.64,
+      "text": "And similarly 4 will be something like this"
+    },
+    {
+      "start": 140.64,
+      "end": 144.26,
+      "text": "and 5 will be pointing to him and 4 will be the ultimate parent."
+    },
+    {
+      "start": 144.26,
+      "end": 148.58,
+      "text": "And similarly can I say if I write 6 in the disjoint set data structure,"
+    },
+    {
+      "start": 148.94,
+      "end": 150.4,
+      "text": "we will be having something like this."
+    },
+    {
+      "start": 151.12,
+      "end": 153.0,
+      "text": "If I talk about the disjoint set data structure,"
+    },
+    {
+      "start": 153.08,
+      "end": 157.18,
+      "text": "if you try to attach 1, 2, then 2, 3, then 4, 5, then 6, 7,"
+    },
+    {
+      "start": 157.3,
+      "end": 159.96,
+      "text": "you will end up with these kind of structures"
+    },
+    {
+      "start": 160.78,
+      "end": 163.28,
+      "text": "and what do you need to do is very simple."
+    },
+    {
+      "start": 163.8,
+      "end": 167.94,
+      "text": "Can I say that there will be 3 bosses"
+    },
+    {
+      "start": 167.94,
+      "end": 173.02,
+      "text": "or 3 ultimate parents if there are 3 components"
+    },
+    {
+      "start": 173.02,
+      "end": 173.96,
+      "text": "because ultimately..."
+    },
+    {
+      "start": 174.26,
+      "end": 177.94,
+      "text": "Every component will have a boss."
+    },
+    {
+      "start": 178.34,
+      "end": 184.38,
+      "text": "So if I say find ultimate parent of 1,"
+    },
+    {
+      "start": 184.52,
+      "end": 185.58,
+      "text": "that will be 1 itself."
+    },
+    {
+      "start": 185.98,
+      "end": 188.18,
+      "text": "If I say find ultimate parent of 2,"
+    },
+    {
+      "start": 188.26,
+      "end": 189.14,
+      "text": "that will be 1 itself."
+    },
+    {
+      "start": 189.14,
+      "end": 191.36,
+      "text": "If I say find ultimate parent of 3,"
+    },
+    {
+      "start": 191.46,
+      "end": 192.38,
+      "text": "that will be 1 itself."
+    },
+    {
+      "start": 192.92,
+      "end": 197.46,
+      "text": "So I get 1, which means that's one of the bosses"
+    },
+    {
+      "start": 197.46,
+      "end": 199.02,
+      "text": "of one of the components."
+    },
+    {
+      "start": 199.72,
+      "end": 202.16,
+      "text": "And then if I say find ultimate parent of 4,"
+    },
+    {
+      "start": 202.26,
+      "end": 202.88,
+      "text": "it will be 4."
+    },
+    {
+      "start": 203.2,
+      "end": 204.14,
+      "text": "Then if I say find ultimate parent of 5,"
+    },
+    {
+      "start": 204.14,
+      "end": 204.24,
+      "text": "it will be 4."
+    },
+    {
+      "start": 204.24,
+      "end": 204.26,
+      "text": "Then if I say find ultimate parent of 5, it will be 4."
+    },
+    {
+      "start": 204.26,
+      "end": 211.54,
+      "text": "parent of 5 it will be 4 itself again 4 is a boss correct then if i say find ultimate parent of 6"
+    },
+    {
+      "start": 211.54,
+      "end": 217.78,
+      "text": "it will be 6 then if i say find ultimate parent of 7 it will be 7 sorry uh 6 rather so can i say"
+    },
+    {
+      "start": 217.78,
+      "end": 226.88,
+      "text": "if i count the number of unique ultimate parents count the number of unique ultimate parents"
+    },
+    {
+      "start": 226.88,
+      "end": 237.96,
+      "text": "or can i simply say if a node if a node is the parent of himself if a node is the ultimate"
+    },
+    {
+      "start": 237.96,
+      "end": 244.3,
+      "text": "parent of himself that is the boss so for 1 the ultimate parent is 1 for 6 the ultimate parent"
+    },
+    {
+      "start": 244.3,
+      "end": 251.68,
+      "text": "is 6 for 4 the ultimate parent is 4 so can i say for the guys whose ultimate parent is they"
+    },
+    {
+      "start": 251.68,
+      "end": 256.86,
+      "text": "themselves they are the bosses and the number of bosses if i can count that that is what the"
+    },
+    {
+      "start": 256.86,
+      "end": 261.76,
+      "text": "number of provinces will be so can i say the disjoints and data structure if i can simply"
+    },
+    {
+      "start": 261.76,
+      "end": 268.66,
+      "text": "write if find ultimate parent of u is equal to equal to u i can do a counter plus plus"
+    },
+    {
+      "start": 268.66,
+      "end": 277.64,
+      "text": "and whereas you can go from 1 to n if it's a if it's a one based indexing graph can i say this"
+    },
+    {
+      "start": 277.64,
+      "end": 283.32,
+      "text": "i definitely can and at the end of the day count will be my answer because the bosses is what i"
+    },
+    {
+      "start": 283.32,
+      "end": 286.8,
+      "text": "need because the number of bosses will always be equal to the number of"
+    },
+    {
+      "start": 286.86,
+      "end": 291.74,
+      "text": "connected components got it so i hope you understood how to use the disjoints and data"
+    },
+    {
+      "start": 291.74,
+      "end": 295.18,
+      "text": "structure in order to solve this problem so what i'll do is i'll go to the c plus plus solution on"
+    },
+    {
+      "start": 295.18,
+      "end": 300.26,
+      "text": "the right and you can figure out the exact similar java solution on the left for the java people so"
+    },
+    {
+      "start": 300.26,
+      "end": 304.16,
+      "text": "before starting the solution let's take our template this is our code snippet just in case"
+    },
+    {
+      "start": 304.16,
+      "end": 310.62,
+      "text": "you haven't seen our previous videos we have a union by size union by rank and uh find your"
+    },
+    {
+      "start": 310.62,
+      "end": 315.44,
+      "text": "parent and everything initialized on the constructor so it is a"
+    },
+    {
+      "start": 316.86,
+      "end": 323.58,
+      "text": "one based indexing graph so what i'll do is i'll go ahead and at first definitely take this class"
+    },
+    {
+      "start": 324.54,
+      "end": 330.78,
+      "text": "and create a constructor for same size so that everything is created now i'll iterate for the"
+    },
+    {
+      "start": 331.66,
+      "end": 338.86,
+      "text": "adjacency matrix which is quite simple and then i'll say hey listen if the adjacency of ij is"
+    },
+    {
+      "start": 338.86,
+      "end": 348.19,
+      "text": "equal to equal to one which means that there is a edge between i and j so i'm going to write a"
+    },
+    {
+      "start": 348.27,
+      "end": 353.67,
+      "text": "so i'll go and say ds dot i can definitely take union by size or union by rank with whichever you"
+    },
+    {
+      "start": 353.67,
+      "end": 360.19,
+      "text": "wish to i comma j no need to do j comma i because that will be discarded in the future run because"
+    },
+    {
+      "start": 360.19,
+      "end": 364.85,
+      "text": "once they are connected if in the future they're connected it will just return so once you've done"
+    },
+    {
+      "start": 364.85,
+      "end": 370.29,
+      "text": "this you'll have int count equal to zero and you can go ahead and say okay int i equal to zero i"
+    },
+    {
+      "start": 370.29,
+      "end": 378.07,
+      "text": "lesser than v i plus plus and you can say if yes if ds dot you can use the parent function"
+    },
+    {
+      "start": 378.27,
+      "end": 384.23,
+      "text": "ds dot find ultimate parent of i is equal to equal to y i can do a counter plus plus then i can just"
+    },
+    {
+      "start": 384.23,
+      "end": 389.35,
+      "text": "return account a lot of people might think no need to go to recursion to find the ultimate parent we"
+    },
+    {
+      "start": 389.35,
+      "end": 396.07,
+      "text": "can use the parent array directly as well yes you can use it you have to just declare these guys"
+    },
+    {
+      "start": 396.71,
+      "end": 403.91,
+      "text": "under this and once you've done this i think like you just need to make sure that ds dot parent"
+    },
+    {
+      "start": 404.55,
+      "end": 407.83,
+      "text": "uh that's this is this also makes sense because if in the parent"
+    },
+    {
+      "start": 408.27,
+      "end": 413.07,
+      "text": "the ultimate parents is a parent is himself that will be stored so you can just go ahead"
+    },
+    {
+      "start": 413.07,
+      "end": 418.51,
+      "text": "and compile this you need to make sure that this is under public otherwise it will not run okay it's"
+    },
+    {
+      "start": 418.51,
+      "end": 424.19,
+      "text": "running fine let's quickly submit this and see find ultimate parent works uh using the parent"
+    },
+    {
+      "start": 424.19,
+      "end": 430.35,
+      "text": "also works anything works because both of them are kind of constant time find parent is 4 alpha"
+    },
+    {
+      "start": 430.35,
+      "end": 436.03,
+      "text": "this is while we go of 1. so i hope you've understood this portion of code it does submit"
+    },
+    {
+      "start": 436.03,
+      "end": 438.07,
+      "text": "correctly this is n squared and"
+    },
+    {
+      "start": 438.27,
+      "end": 446.27,
+      "text": "is kind of bico of v and extra space is bico of n is 2n is what you're using we can omit the union"
+    },
+    {
+      "start": 446.27,
+      "end": 451.31,
+      "text": "by rank so guys i hope you've understood how to implement disjoint set data structure in order"
+    },
+    {
+      "start": 451.31,
+      "end": 456.43,
+      "text": "to solve this problem so before wrapping up this video there's a quick uh request that i want to"
+    },
+    {
+      "start": 456.43,
+      "end": 461.55,
+      "text": "make that's checking our statistics nearly 50 percent of our viewers do not subscribe to our"
+    },
+    {
+      "start": 461.55,
+      "end": 466.59,
+      "text": "channel so please please do consider subscribing to us because that does matter to me a lot and it"
+    },
+    {
+      "start": 466.59,
+      "end": 471.71,
+      "text": "helps me like it keeps you motivated to make such kind of content so yeah if you have understood"
+    },
+    {
+      "start": 471.71,
+      "end": 475.87,
+      "text": "everything about this problem make sure you hit that like button if you have not checked out our"
+    },
+    {
+      "start": 475.87,
+      "end": 479.71,
+      "text": "dpc's and the hdc the links will be in the description with this i'll be wrapping up"
+    },
+    {
+      "start": 479.71,
+      "end": 482.43,
+      "text": "this video let's put in some other video till then bye bye take care"
+    }
+  ]
+}

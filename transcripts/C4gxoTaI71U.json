@@ -1,0 +1,1639 @@
+{
+  "video_id": "C4gxoTaI71U",
+  "title": "G-28. Shortest Path in Undirected Graph with Unit Weights",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 991.32,
+  "segments": [
+    {
+      "start": 2.83,
+      "end": 6.01,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.43,
+      "end": 11.71,
+      "text": "So today we will be solving the problem shortest path in undirected graph having a unit distance."
+    },
+    {
+      "start": 12.15,
+      "end": 17.61,
+      "text": "So you will be given an undirected graph having unit weight means the edge weights will be 1."
+    },
+    {
+      "start": 18.09,
+      "end": 21.67,
+      "text": "Now you need to find the shortest distance from a given source."
+    },
+    {
+      "start": 22.03,
+      "end": 24.79,
+      "text": "They'll also be giving you a source to all the points."
+    },
+    {
+      "start": 25.01,
+      "end": 30.57,
+      "text": "You have to find the shortest distance and if the path is not possible,"
+    },
+    {
+      "start": 30.57,
+      "end": 33.15,
+      "text": "then you need to put something like a minus 1."
+    },
+    {
+      "start": 33.43,
+      "end": 34.51,
+      "text": "So that is what you need to do."
+    },
+    {
+      "start": 35.65,
+      "end": 40.71,
+      "text": "So assume that this is the particular given graph and this is the adjacency list of this given graph."
+    },
+    {
+      "start": 41.31,
+      "end": 46.07,
+      "text": "And I am telling you that, hey, listen, the source is 0 in this case."
+    },
+    {
+      "start": 46.43,
+      "end": 50.93,
+      "text": "So from 0, if I ask you what is the distance to 1, you will say the distance is 1."
+    },
+    {
+      "start": 51.25,
+      "end": 55.97,
+      "text": "If I ask you from 0, what is the distance to 2, you will say that this is the distance 2."
+    },
+    {
+      "start": 55.97,
+      "end": 60.45,
+      "text": "So from 0, if I ask you what is the distance to 6, you will like this is the shortest,"
+    },
+    {
+      "start": 60.57,
+      "end": 61.95,
+      "text": "distance 3."
+    },
+    {
+      "start": 62.13,
+      "end": 65.73,
+      "text": "So this is what you have to find from 0 to all the given nodes."
+    },
+    {
+      "start": 65.85,
+      "end": 67.89,
+      "text": "You have to find me the shortest distance."
+    },
+    {
+      "start": 68.29,
+      "end": 70.29,
+      "text": "So how will we find the shortest path?"
+    },
+    {
+      "start": 70.59,
+      "end": 73.85,
+      "text": "Now we will be applying a plain BFS algorithm."
+    },
+    {
+      "start": 74.17,
+      "end": 75.21,
+      "text": "How? I'll tell you that."
+    },
+    {
+      "start": 75.45,
+      "end": 83.69,
+      "text": "So in the BFS algorithm, we'll start off with a Q data structure and we will store the node in the first place and the distance."
+    },
+    {
+      "start": 83.69,
+      "end": 88.35,
+      "text": "So we'll be storing pairs in the Q data structure, a plain Q data structure."
+    },
+    {
+      "start": 88.65,
+      "end": 90.53,
+      "text": "So since the source is given as 0."
+    },
+    {
+      "start": 90.77,
+      "end": 94.03,
+      "text": "What we do is we insert 0, 0."
+    },
+    {
+      "start": 94.03,
+      "end": 95.21,
+      "text": "Why 0, 0?"
+    },
+    {
+      "start": 95.45,
+      "end": 99.59,
+      "text": "Because, you know, the distance taken to reach 0 from 0 will be 0."
+    },
+    {
+      "start": 99.69,
+      "end": 100.19,
+      "text": "Right."
+    },
+    {
+      "start": 100.29,
+      "end": 103.09,
+      "text": "That is what we will store in the Q initially."
+    },
+    {
+      "start": 103.23,
+      "end": 103.73,
+      "text": "Right."
+    },
+    {
+      "start": 103.73,
+      "end": 107.63,
+      "text": "Next, we will be declaring a distance array of what size?"
+    },
+    {
+      "start": 107.93,
+      "end": 109.55,
+      "text": "You see the number of nodes is 8."
+    },
+    {
+      "start": 109.77,
+      "end": 114.75,
+      "text": "So make sure you declare such a size that you can fit in the index 8 as well."
+    },
+    {
+      "start": 114.93,
+      "end": 119.91,
+      "text": "So we'll be declaring a distance array of size 9 over here so that we can fit in the index 8."
+    },
+    {
+      "start": 120.15,
+      "end": 120.29,
+      "text": "Now."
+    },
+    {
+      "start": 120.29,
+      "end": 124.43,
+      "text": "All the places should be filled up with infinity."
+    },
+    {
+      "start": 124.61,
+      "end": 127.37,
+      "text": "You can take a very big number, which cannot be your answer."
+    },
+    {
+      "start": 127.37,
+      "end": 128.27,
+      "text": "Very, very big number."
+    },
+    {
+      "start": 128.51,
+      "end": 131.45,
+      "text": "What I've done is I'll be taking it as infinity."
+    },
+    {
+      "start": 131.53,
+      "end": 138.11,
+      "text": "And remember, whatever source you are starting off with, just make sure you assign it with distance 0."
+    },
+    {
+      "start": 138.11,
+      "end": 141.23,
+      "text": "Just make sure you rewrite infinity to distance 0."
+    },
+    {
+      "start": 141.35,
+      "end": 142.91,
+      "text": "Now let's quickly start the algorithm."
+    },
+    {
+      "start": 143.51,
+      "end": 149.69,
+      "text": "So initially, whatever is in the queue, just take it out and you say, OK, initially I have a node 0."
+    },
+    {
+      "start": 149.69,
+      "end": 152.69,
+      "text": "And I have a distance 0 as well."
+    },
+    {
+      "start": 152.87,
+      "end": 161.81,
+      "text": "Now what I will do is for the node 0, I'll try to figure out what the adjacent nodes and I see one is one of the adjacent nodes and three is one of the adjacent nodes."
+    },
+    {
+      "start": 162.05,
+      "end": 169.17,
+      "text": "So node 0 can go to a node which is 1 and it can also go to a node which is 3."
+    },
+    {
+      "start": 169.35,
+      "end": 173.45,
+      "text": "That can be easily you can easily get one in three from the adjacency list."
+    },
+    {
+      "start": 173.69,
+      "end": 174.63,
+      "text": "Now tell me one thing."
+    },
+    {
+      "start": 175.07,
+      "end": 178.93,
+      "text": "If you are at node 0 and the distance taken is 0."
+    },
+    {
+      "start": 178.93,
+      "end": 187.63,
+      "text": "And if you're trying to go to node 1 and you know that all these edges are having unit widths, all these edges are having unit widths."
+    },
+    {
+      "start": 187.93,
+      "end": 194.87,
+      "text": "So can I say if this is taking a distance 1 and previously it was just in 0, this will be nothing but distance 1."
+    },
+    {
+      "start": 194.87,
+      "end": 197.51,
+      "text": "Can I see this in order to reach node 1?"
+    },
+    {
+      "start": 197.71,
+      "end": 200.71,
+      "text": "You will be ending up to take distance 1."
+    },
+    {
+      "start": 200.95,
+      "end": 206.29,
+      "text": "So what you'll do is you will go to node 1 and you'll say previously, what distance did I take?"
+    },
+    {
+      "start": 206.89,
+      "end": 207.43,
+      "text": "Infinity."
+    },
+    {
+      "start": 207.43,
+      "end": 208.69,
+      "text": "It means you never reached here."
+    },
+    {
+      "start": 208.93,
+      "end": 210.93,
+      "text": "So now you're reaching with a distance 1."
+    },
+    {
+      "start": 210.93,
+      "end": 214.31,
+      "text": "So what you will do is you'll say, okay, now I'm reaching with a distance 1."
+    },
+    {
+      "start": 214.31,
+      "end": 216.87,
+      "text": "So can you please replace this with a distance 1?"
+    },
+    {
+      "start": 216.87,
+      "end": 221.69,
+      "text": "And can you take this node 1 with a distance 1 and put that into the Q data structure?"
+    },
+    {
+      "start": 221.69,
+      "end": 230.95,
+      "text": "Similarly, this will also be distance 1 because if you have taken distance 0 to reach node 0 from here, a unit width will take it to distance 1."
+    },
+    {
+      "start": 230.95,
+      "end": 238.05,
+      "text": "The next you'll say 3, you are taking a distance 1 and node 3 with a distance 1 will be put into the Q."
+    },
+    {
+      "start": 238.05,
+      "end": 238.55,
+      "text": "Next."
+    },
+    {
+      "start": 238.93,
+      "end": 245.95,
+      "text": "I can see the task of this one is done and you'll move to the next node, which is the next node."
+    },
+    {
+      "start": 246.13,
+      "end": 247.03,
+      "text": "It's 1."
+    },
+    {
+      "start": 247.21,
+      "end": 250.21,
+      "text": "So I'll say node 1 has taken a distance of 1."
+    },
+    {
+      "start": 250.51,
+      "end": 251.63,
+      "text": "What does this signify?"
+    },
+    {
+      "start": 251.93,
+      "end": 258.73,
+      "text": "This signifies in order to reach from the source to the node 1, I have consumed a distance of 1."
+    },
+    {
+      "start": 258.73,
+      "end": 260.21,
+      "text": "I've consumed a distance of 1."
+    },
+    {
+      "start": 260.47,
+      "end": 265.21,
+      "text": "Now node 1 has adjacent nodes as 0, 2, 3."
+    },
+    {
+      "start": 265.39,
+      "end": 266.93,
+      "text": "That has 3 adjacent nodes."
+    },
+    {
+      "start": 267.17,
+      "end": 268.03,
+      "text": "Node 0."
+    },
+    {
+      "start": 269.41,
+      "end": 270.13,
+      "text": "It has node 2."
+    },
+    {
+      "start": 270.85,
+      "end": 272.35,
+      "text": "It has node 3."
+    },
+    {
+      "start": 272.35,
+      "end": 275.95,
+      "text": "Again, you can figure these things out from the adjacency list."
+    },
+    {
+      "start": 275.95,
+      "end": 277.81,
+      "text": "So I know this will be a plus 1."
+    },
+    {
+      "start": 277.81,
+      "end": 278.77,
+      "text": "This will be a plus 1."
+    },
+    {
+      "start": 278.77,
+      "end": 279.81,
+      "text": "This will be a plus 1."
+    },
+    {
+      "start": 279.81,
+      "end": 283.41,
+      "text": "If I consider about distances because those are unit widths."
+    },
+    {
+      "start": 283.41,
+      "end": 286.25,
+      "text": "So if I see the distance previously is 1."
+    },
+    {
+      "start": 286.25,
+      "end": 287.53,
+      "text": "Now the distance will be 2."
+    },
+    {
+      "start": 287.53,
+      "end": 291.45,
+      "text": "So in order to reach node 0, the distance is 2."
+    },
+    {
+      "start": 291.45,
+      "end": 294.49,
+      "text": "But I have already reached here at a distance 0."
+    },
+    {
+      "start": 294.49,
+      "end": 295.85,
+      "text": "Do I consider this?"
+    },
+    {
+      "start": 295.85,
+      "end": 297.67,
+      "text": "The answer to that will be no."
+    },
+    {
+      "start": 297.67,
+      "end": 300.61,
+      "text": "You don't need to take a smaller distance because we are looking for."
+    },
+    {
+      "start": 300.85,
+      "end": 301.87,
+      "text": "Shortest spots."
+    },
+    {
+      "start": 302.09,
+      "end": 305.89,
+      "text": "Next, what I'll do is I'll go to this one and I'll say how much is the distance?"
+    },
+    {
+      "start": 306.07,
+      "end": 306.47,
+      "text": "2."
+    },
+    {
+      "start": 306.47,
+      "end": 307.75,
+      "text": "So let's see for node 2."
+    },
+    {
+      "start": 307.93,
+      "end": 308.61,
+      "text": "Have I reached here?"
+    },
+    {
+      "start": 309.01,
+      "end": 309.67,
+      "text": "Infinity."
+    },
+    {
+      "start": 309.91,
+      "end": 311.83,
+      "text": "So I can reach it at a distance of 2."
+    },
+    {
+      "start": 312.09,
+      "end": 314.35,
+      "text": "So node 2 at a 2 distance."
+    },
+    {
+      "start": 314.65,
+      "end": 315.01,
+      "text": "Done."
+    },
+    {
+      "start": 315.17,
+      "end": 318.13,
+      "text": "I put it into the queue and you have replaced the distance array as well."
+    },
+    {
+      "start": 318.37,
+      "end": 319.33,
+      "text": "Now this is node 3."
+    },
+    {
+      "start": 319.45,
+      "end": 320.05,
+      "text": "What you'll do?"
+    },
+    {
+      "start": 320.23,
+      "end": 322.03,
+      "text": "You'll again update the distance to 2."
+    },
+    {
+      "start": 322.27,
+      "end": 324.01,
+      "text": "Let's quickly check for node 3."
+    },
+    {
+      "start": 324.41,
+      "end": 330.13,
+      "text": "Previously, you have reached with a distance 1, which is sensible because if you directly traverse from 0, you'll reach"
+    },
+    {
+      "start": 330.13,
+      "end": 331.37,
+      "text": "it at a distance 1."
+    },
+    {
+      "start": 331.69,
+      "end": 335.53,
+      "text": "Why do you want to go via 1 by taking 1 plus 1, 2?"
+    },
+    {
+      "start": 335.69,
+      "end": 337.09,
+      "text": "So this will discard it."
+    },
+    {
+      "start": 337.13,
+      "end": 338.71,
+      "text": "This will be discarded."
+    },
+    {
+      "start": 338.87,
+      "end": 344.83,
+      "text": "So thereby, I just get one guy, 2 comma 2, which has been put into the queue data structure as well as I've"
+    },
+    {
+      "start": 345.43,
+      "end": 346.81,
+      "text": "initialized the distance array."
+    },
+    {
+      "start": 347.05,
+      "end": 351.41,
+      "text": "So what I can say now is the task for the node 1 is done."
+    },
+    {
+      "start": 351.71,
+      "end": 353.29,
+      "text": "I'll get the next node, which is node 3."
+    },
+    {
+      "start": 353.47,
+      "end": 355.31,
+      "text": "So let's get the next node, node 3."
+    },
+    {
+      "start": 355.61,
+      "end": 356.87,
+      "text": "And I'll take a distance of 1."
+    },
+    {
+      "start": 357.11,
+      "end": 358.39,
+      "text": "Now from 3, where can I go?"
+    },
+    {
+      "start": 358.63,
+      "end": 360.11,
+      "text": "I can go to a node 0."
+    },
+    {
+      "start": 360.37,
+      "end": 363.91,
+      "text": "And I can go to a node 4 as well."
+    },
+    {
+      "start": 364.27,
+      "end": 367.03,
+      "text": "So over here, if I get a node 0, and that's a distance 1."
+    },
+    {
+      "start": 367.41,
+      "end": 370.61,
+      "text": "So from 3 to node 0, there will be another plus 1."
+    },
+    {
+      "start": 370.69,
+      "end": 372.21,
+      "text": "This will be another plus 1."
+    },
+    {
+      "start": 372.57,
+      "end": 373.85,
+      "text": "So this distance will be 2."
+    },
+    {
+      "start": 374.27,
+      "end": 375.57,
+      "text": "And this distance will be 2."
+    },
+    {
+      "start": 375.85,
+      "end": 376.83,
+      "text": "Let's quickly analyze."
+    },
+    {
+      "start": 377.29,
+      "end": 378.63,
+      "text": "Does node 0 has already been?"
+    },
+    {
+      "start": 378.73,
+      "end": 381.05,
+      "text": "Yes, it has already been reached at a distance 0."
+    },
+    {
+      "start": 381.79,
+      "end": 382.15,
+      "text": "Discarded."
+    },
+    {
+      "start": 382.71,
+      "end": 383.91,
+      "text": "Has node 4 been reached?"
+    },
+    {
+      "start": 384.17,
+      "end": 384.99,
+      "text": "No, infinity."
+    },
+    {
+      "start": 385.45,
+      "end": 387.45,
+      "text": "So what I'll do is I'll take it to the distance 2."
+    },
+    {
+      "start": 387.45,
+      "end": 390.07,
+      "text": "And I'll say 4 comma 2 to be inserted."
+    },
+    {
+      "start": 390.13,
+      "end": 391.43,
+      "text": "Into the QData structure."
+    },
+    {
+      "start": 391.89,
+      "end": 393.01,
+      "text": "Node 3 is done now."
+    },
+    {
+      "start": 393.45,
+      "end": 393.81,
+      "text": "Perfect."
+    },
+    {
+      "start": 394.13,
+      "end": 395.65,
+      "text": "I'll get the next guy, 2 comma 2."
+    },
+    {
+      "start": 396.73,
+      "end": 399.41,
+      "text": "So node 2 with a distance 2."
+    },
+    {
+      "start": 399.89,
+      "end": 400.33,
+      "text": "Perfect."
+    },
+    {
+      "start": 401.17,
+      "end": 402.97,
+      "text": "So next, where can node 2 go?"
+    },
+    {
+      "start": 403.25,
+      "end": 404.65,
+      "text": "Let's analyze 1 and 6."
+    },
+    {
+      "start": 405.09,
+      "end": 409.59,
+      "text": "So it can go to node 1 and node 6."
+    },
+    {
+      "start": 409.95,
+      "end": 412.27,
+      "text": "So if it decides to go to node 1, what will be the distance?"
+    },
+    {
+      "start": 412.65,
+      "end": 413.79,
+      "text": "Plus 1 of the previous."
+    },
+    {
+      "start": 414.19,
+      "end": 414.95,
+      "text": "Previous was 2."
+    },
+    {
+      "start": 415.25,
+      "end": 415.93,
+      "text": "So distance 3."
+    },
+    {
+      "start": 416.35,
+      "end": 417.29,
+      "text": "Plus 1 of the previous."
+    },
+    {
+      "start": 417.29,
+      "end": 417.97,
+      "text": "So distance 3."
+    },
+    {
+      "start": 418.31,
+      "end": 419.53,
+      "text": "Let's analyze node 1."
+    },
+    {
+      "start": 419.53,
+      "end": 422.53,
+      "text": "Node 1 has already been reached via distance 1."
+    },
+    {
+      "start": 422.81,
+      "end": 423.73,
+      "text": "Why do you want to take it?"
+    },
+    {
+      "start": 423.97,
+      "end": 424.99,
+      "text": "So this will be discarded."
+    },
+    {
+      "start": 425.33,
+      "end": 427.21,
+      "text": "Node 6 has never been reached."
+    },
+    {
+      "start": 427.41,
+      "end": 428.59,
+      "text": "So you take the distance 3."
+    },
+    {
+      "start": 428.59,
+      "end": 431.59,
+      "text": "Yes, you take the distance 3 and put it into your distance array."
+    },
+    {
+      "start": 431.89,
+      "end": 434.77,
+      "text": "So 6 comma 3 will be inserted into your distance."
+    },
+    {
+      "start": 435.13,
+      "end": 437.23,
+      "text": "And you'll update the distance array as well."
+    },
+    {
+      "start": 437.53,
+      "end": 437.85,
+      "text": "Done."
+    },
+    {
+      "start": 438.17,
+      "end": 439.61,
+      "text": "Let's see the next guy, 4 comma 2."
+    },
+    {
+      "start": 439.91,
+      "end": 443.65,
+      "text": "So 4 comma distance of 2."
+    },
+    {
+      "start": 443.99,
+      "end": 445.97,
+      "text": "Let's see what the nodes of 4."
+    },
+    {
+      "start": 446.13,
+      "end": 447.13,
+      "text": "It's 3 comma 5."
+    },
+    {
+      "start": 447.49,
+      "end": 448.53,
+      "text": "So let's quickly take."
+    },
+    {
+      "start": 448.53,
+      "end": 454.23,
+      "text": "Node of 3 and node of 5."
+    },
+    {
+      "start": 454.59,
+      "end": 456.53,
+      "text": "And let's figure out what is the minimal distance."
+    },
+    {
+      "start": 456.81,
+      "end": 460.69,
+      "text": "So if I figure out the distance will be plus 1 to it, which will make a distance 3."
+    },
+    {
+      "start": 460.99,
+      "end": 464.61,
+      "text": "This will be also plus 1, which will again make the distance to be 3."
+    },
+    {
+      "start": 464.83,
+      "end": 466.11,
+      "text": "Let's analyze node 3."
+    },
+    {
+      "start": 466.41,
+      "end": 468.87,
+      "text": "Node 3 has already been reached with a distance 1."
+    },
+    {
+      "start": 469.05,
+      "end": 469.99,
+      "text": "So I'll discard it."
+    },
+    {
+      "start": 470.29,
+      "end": 471.21,
+      "text": "What about node 5?"
+    },
+    {
+      "start": 471.43,
+      "end": 473.03,
+      "text": "Node 5 is infinity."
+    },
+    {
+      "start": 473.25,
+      "end": 474.65,
+      "text": "Node 5 is infinity."
+    },
+    {
+      "start": 474.81,
+      "end": 477.39,
+      "text": "So this is the first time I'm reaching at a distance of 3."
+    },
+    {
+      "start": 477.69,
+      "end": 478.49,
+      "text": "So 5 comma 3."
+    },
+    {
+      "start": 478.69,
+      "end": 481.77,
+      "text": "Node 3 will be inserted into the QData structure."
+    },
+    {
+      "start": 482.05,
+      "end": 484.45,
+      "text": "So what I can do is I'll quickly now erase this off."
+    },
+    {
+      "start": 484.79,
+      "end": 485.09,
+      "text": "Perfect."
+    },
+    {
+      "start": 485.13,
+      "end": 486.03,
+      "text": "Let's get the next guy."
+    },
+    {
+      "start": 486.25,
+      "end": 486.75,
+      "text": "6."
+    },
+    {
+      "start": 486.95,
+      "end": 490.77,
+      "text": "So node 6 at a distance of 3."
+    },
+    {
+      "start": 491.03,
+      "end": 491.43,
+      "text": "Perfect."
+    },
+    {
+      "start": 491.61,
+      "end": 493.49,
+      "text": "So at node 6, where can I reach?"
+    },
+    {
+      "start": 493.85,
+      "end": 494.97,
+      "text": "You can reach a lot of guys."
+    },
+    {
+      "start": 494.97,
+      "end": 495.73,
+      "text": "2, 5, 7, 8."
+    },
+    {
+      "start": 496.03,
+      "end": 499.65,
+      "text": "So what I'll do is I'll try to go to node 2."
+    },
+    {
+      "start": 500.59,
+      "end": 501.77,
+      "text": "Node 5."
+    },
+    {
+      "start": 502.69,
+      "end": 503.57,
+      "text": "Node 7."
+    },
+    {
+      "start": 503.71,
+      "end": 504.75,
+      "text": "A lot of guys are there."
+    },
+    {
+      "start": 505.15,
+      "end": 506.29,
+      "text": "Please try out everyone."
+    },
+    {
+      "start": 506.81,
+      "end": 507.61,
+      "text": "Node 8."
+    },
+    {
+      "start": 507.87,
+      "end": 508.37,
+      "text": "Let's see."
+    },
+    {
+      "start": 508.53,
+      "end": 511.21,
+      "text": "For node 2, if I try to take the distance, it'll be 4."
+    },
+    {
+      "start": 511.55,
+      "end": 512.43,
+      "text": "Will I consider it?"
+    },
+    {
+      "start": 512.55,
+      "end": 513.73,
+      "text": "No, we have already reached it."
+    },
+    {
+      "start": 513.79,
+      "end": 515.31,
+      "text": "So this will be discarded."
+    },
+    {
+      "start": 515.49,
+      "end": 516.37,
+      "text": "So let's discard it."
+    },
+    {
+      "start": 516.71,
+      "end": 517.45,
+      "text": "What will the distance?"
+    },
+    {
+      "start": 518.07,
+      "end": 518.61,
+      "text": "4 again."
+    },
+    {
+      "start": 518.93,
+      "end": 519.73,
+      "text": "Have I reached 5?"
+    },
+    {
+      "start": 519.95,
+      "end": 520.23,
+      "text": "Yes."
+    },
+    {
+      "start": 520.37,
+      "end": 521.13,
+      "text": "At a 3 distance."
+    },
+    {
+      "start": 521.29,
+      "end": 521.79,
+      "text": "This is 4."
+    },
+    {
+      "start": 522.19,
+      "end": 522.83,
+      "text": "So discarded."
+    },
+    {
+      "start": 523.45,
+      "end": 524.35,
+      "text": "What will be this distance?"
+    },
+    {
+      "start": 525.01,
+      "end": 525.37,
+      "text": "4."
+    },
+    {
+      "start": 525.71,
+      "end": 526.61,
+      "text": "For 7, it's infinity."
+    },
+    {
+      "start": 526.79,
+      "end": 527.59,
+      "text": "So you'll say 4."
+    },
+    {
+      "start": 527.91,
+      "end": 529.63,
+      "text": "And you'll take 7 comma 4 and you'll put it."
+    },
+    {
+      "start": 529.83,
+      "end": 530.45,
+      "text": "So this is taken."
+    },
+    {
+      "start": 530.83,
+      "end": 531.59,
+      "text": "What about 8?"
+    },
+    {
+      "start": 531.87,
+      "end": 534.19,
+      "text": "8 will have a distance 4 because I'll do a plus 1."
+    },
+    {
+      "start": 534.19,
+      "end": 537.57,
+      "text": "So 8 comma 4 will also be taken into consideration."
+    },
+    {
+      "start": 537.81,
+      "end": 538.45,
+      "text": "So what I've done?"
+    },
+    {
+      "start": 538.45,
+      "end": 542.21,
+      "text": "I've updated the distance array and I put it into the queue data structure as well."
+    },
+    {
+      "start": 543.07,
+      "end": 543.79,
+      "text": "So I'll erase it."
+    },
+    {
+      "start": 544.13,
+      "end": 544.33,
+      "text": "Perfect."
+    },
+    {
+      "start": 544.69,
+      "end": 545.43,
+      "text": "Let's get the next guy."
+    },
+    {
+      "start": 545.49,
+      "end": 546.09,
+      "text": "5 comma 3."
+    },
+    {
+      "start": 547.19,
+      "end": 548.15,
+      "text": "So node is 5."
+    },
+    {
+      "start": 548.79,
+      "end": 549.53,
+      "text": "Distance is 3."
+    },
+    {
+      "start": 550.65,
+      "end": 551.45,
+      "text": "So what will you do?"
+    },
+    {
+      "start": 551.83,
+      "end": 553.83,
+      "text": "You'll try to get the adjacent nodes of 5 again."
+    },
+    {
+      "start": 554.17,
+      "end": 554.99,
+      "text": "That's 4 and 6."
+    },
+    {
+      "start": 555.11,
+      "end": 556.01,
+      "text": "So let's write 4."
+    },
+    {
+      "start": 556.93,
+      "end": 558.09,
+      "text": "And let's write 6 as well."
+    },
+    {
+      "start": 559.43,
+      "end": 560.07,
+      "text": "What will the distance?"
+    },
+    {
+      "start": 560.19,
+      "end": 560.59,
+      "text": "It's 3."
+    },
+    {
+      "start": 560.97,
+      "end": 563.39,
+      "text": "So plus 1 plus 1 more than it."
+    },
+    {
+      "start": 563.39,
+      "end": 565.23,
+      "text": "The distance will be now 4."
+    },
+    {
+      "start": 565.67,
+      "end": 568.01,
+      "text": "Over here, the distance will be 4 again."
+    },
+    {
+      "start": 568.01,
+      "end": 571.69,
+      "text": "So what I can say is for node 4, the distance was previously 2."
+    },
+    {
+      "start": 571.69,
+      "end": 572.89,
+      "text": "So I'll discard it."
+    },
+    {
+      "start": 573.89,
+      "end": 577.61,
+      "text": "And over here for node 6, the distance was 3."
+    },
+    {
+      "start": 577.61,
+      "end": 579.15,
+      "text": "So I'll discard it as well."
+    },
+    {
+      "start": 579.53,
+      "end": 580.73,
+      "text": "Let's discard both of them."
+    },
+    {
+      "start": 580.97,
+      "end": 584.35,
+      "text": "So we did not get any new shorter distance."
+    },
+    {
+      "start": 584.35,
+      "end": 585.99,
+      "text": "So I'll just erase it."
+    },
+    {
+      "start": 586.31,
+      "end": 587.39,
+      "text": "What is the next thing that I'll do?"
+    },
+    {
+      "start": 587.61,
+      "end": 588.59,
+      "text": "I'll take 7 comma 4."
+    },
+    {
+      "start": 590.39,
+      "end": 591.75,
+      "text": "So from node 7, where can you go?"
+    },
+    {
+      "start": 591.75,
+      "end": 592.63,
+      "text": "Let's quickly have a check."
+    },
+    {
+      "start": 592.93,
+      "end": 593.91,
+      "text": "6 and 8."
+    },
+    {
+      "start": 594.23,
+      "end": 597.59,
+      "text": "So let's try to go to node 6 and node."
+    },
+    {
+      "start": 598.01,
+      "end": 598.39,
+      "text": "8."
+    },
+    {
+      "start": 598.89,
+      "end": 599.17,
+      "text": "Perfect."
+    },
+    {
+      "start": 599.47,
+      "end": 600.11,
+      "text": "What is the distance?"
+    },
+    {
+      "start": 600.67,
+      "end": 602.01,
+      "text": "Can I say it will be a plus 1?"
+    },
+    {
+      "start": 602.11,
+      "end": 603.17,
+      "text": "So distance will be 5."
+    },
+    {
+      "start": 603.55,
+      "end": 604.93,
+      "text": "Can I say it will be a plus 1 over here?"
+    },
+    {
+      "start": 604.99,
+      "end": 605.97,
+      "text": "So distance will be 5."
+    },
+    {
+      "start": 606.35,
+      "end": 608.37,
+      "text": "So as of now, node 6 at a distance 5."
+    },
+    {
+      "start": 608.89,
+      "end": 610.49,
+      "text": "We already reached it at a distance 3."
+    },
+    {
+      "start": 610.55,
+      "end": 611.33,
+      "text": "No need to take it."
+    },
+    {
+      "start": 611.75,
+      "end": 612.51,
+      "text": "So discard it."
+    },
+    {
+      "start": 613.11,
+      "end": 614.19,
+      "text": "What about this node 8?"
+    },
+    {
+      "start": 614.43,
+      "end": 615.79,
+      "text": "Has already been reached with 4."
+    },
+    {
+      "start": 615.95,
+      "end": 616.69,
+      "text": "So discard it."
+    },
+    {
+      "start": 616.99,
+      "end": 621.35,
+      "text": "So again, I have made sure that this does not give me any shorter ones."
+    },
+    {
+      "start": 621.35,
+      "end": 626.19,
+      "text": "And last one is node 8 with a distance 4."
+    },
+    {
+      "start": 626.47,
+      "end": 627.59,
+      "text": "So what is the adjacent of 8?"
+    },
+    {
+      "start": 628.01,
+      "end": 628.51,
+      "text": "6."
+    },
+    {
+      "start": 628.71,
+      "end": 630.05,
+      "text": "So let's try for 6."
+    },
+    {
+      "start": 630.21,
+      "end": 632.85,
+      "text": "You'll get the distance as 5 because you do a plus 1."
+    },
+    {
+      "start": 633.19,
+      "end": 635.81,
+      "text": "And the other node is 7."
+    },
+    {
+      "start": 636.13,
+      "end": 638.03,
+      "text": "So you'll get the distance as 5 again."
+    },
+    {
+      "start": 638.19,
+      "end": 640.53,
+      "text": "And 7, you can see it's already been reached with 4."
+    },
+    {
+      "start": 640.59,
+      "end": 643.71,
+      "text": "So no new nodes with shorter distance are found."
+    },
+    {
+      "start": 643.87,
+      "end": 646.87,
+      "text": "So ultimately, you'll see that Q becomes empty."
+    },
+    {
+      "start": 646.87,
+      "end": 648.97,
+      "text": "Ultimately, you'll see that Q becomes empty."
+    },
+    {
+      "start": 649.11,
+      "end": 656.65,
+      "text": "So all the nodes that were reachable has been updated with their shortest distance and if any node was unreachable."
+    },
+    {
+      "start": 656.89,
+      "end": 657.89,
+      "text": "It would have stored 9 nodes."
+    },
+    {
+      "start": 657.89,
+      "end": 657.97,
+      "text": "It would have stored 9 nodes."
+    },
+    {
+      "start": 658.01,
+      "end": 665.83,
+      "text": "the value infinity if any node was unreachable it would have stored the value infinity apart from"
+    },
+    {
+      "start": 665.83,
+      "end": 671.97,
+      "text": "that you can see the shorter distance being updated in the distance array that is how easily"
+    },
+    {
+      "start": 671.97,
+      "end": 677.57,
+      "text": "you can solve this particular problem by following a simple bfs algorithm and instead of a visited"
+    },
+    {
+      "start": 677.57,
+      "end": 682.69,
+      "text": "we keep a distance array which tells me what is the shortest distance that has been previously"
+    },
+    {
+      "start": 682.69,
+      "end": 688.35,
+      "text": "visited to this particular guy so i hope you've understood the entire explanation it's time to"
+    },
+    {
+      "start": 688.35,
+      "end": 693.45,
+      "text": "code it up so as usual i'll be coding the c++ code on the right and you can figure out the exact"
+    },
+    {
+      "start": 693.45,
+      "end": 701.25,
+      "text": "similar java code on the left so what are we given we are given uh the edges the nm and the source"
+    },
+    {
+      "start": 701.25,
+      "end": 706.75,
+      "text": "node so at first we need to create the graph so let's quickly uh create the graph so vector of"
+    },
+    {
+      "start": 706.75,
+      "end": 712.67,
+      "text": "adjacency list and then we can go across all the edges that's how you do it"
+    },
+    {
+      "start": 712.69,
+      "end": 720.91,
+      "text": "and if this is the vector i can say adjacency of it of zero because that's the edge and i get the"
+    },
+    {
+      "start": 720.91,
+      "end": 729.63,
+      "text": "id of one is when you push it remember it's an uh undirected graph so it will have both side edges"
+    },
+    {
+      "start": 730.23,
+      "end": 736.03,
+      "text": "so make sure you create the graph like this so once the graph is created what did i tell you"
+    },
+    {
+      "start": 736.03,
+      "end": 741.31,
+      "text": "need to create something as a distance array right so kindly go across and say distance of n"
+    },
+    {
+      "start": 741.31,
+      "end": 742.67,
+      "text": "and everything needs to be"
+    },
+    {
+      "start": 742.69,
+      "end": 747.97,
+      "text": "initialized with an infinite value so go across and initialize that with an infinite value so"
+    },
+    {
+      "start": 747.97,
+      "end": 752.55,
+      "text": "distance of i will be really i'll keep the infinite as one in nine and then i know the"
+    },
+    {
+      "start": 752.55,
+      "end": 757.71,
+      "text": "source whatever is the source given because source to source is always zero so that is what i'll give"
+    },
+    {
+      "start": 757.71,
+      "end": 763.79,
+      "text": "and right after that what i'll do is i'll say q okay and i'll start the queue with the source"
+    },
+    {
+      "start": 763.79,
+      "end": 770.01,
+      "text": "itself so q dot push and i'll keep the source now what do i need to do i need to travel in the queue"
+    },
+    {
+      "start": 770.01,
+      "end": 772.61,
+      "text": "till it is not empty because i need to perform a standard"
+    },
+    {
+      "start": 772.69,
+      "end": 779.57,
+      "text": "dfs sorry standard bfs rather this is what i'll do after this i'll say int node equal to q dot front"
+    },
+    {
+      "start": 779.57,
+      "end": 785.41,
+      "text": "once i've said that i can do q dot pop and after that i have to travel to all its adjacent nodes"
+    },
+    {
+      "start": 785.41,
+      "end": 790.93,
+      "text": "it's quite simple if you do this this in this way you can travel through all the adjacent nodes"
+    },
+    {
+      "start": 790.93,
+      "end": 797.33,
+      "text": "but now what is id it is an adjacent node uh to the node right so in order to reach from node so"
+    },
+    {
+      "start": 797.97,
+      "end": 801.57,
+      "text": "till node it's distance of node from there one more because"
+    },
+    {
+      "start": 802.69,
+      "end": 809.25,
+      "text": "has an unit distance so one more if that's lesser than to what i require previously to reach the"
+    },
+    {
+      "start": 809.25,
+      "end": 814.77,
+      "text": "node it so what i'll do is i'll go distance of id one plus distance of node that is what i'll do and"
+    },
+    {
+      "start": 814.77,
+      "end": 820.45,
+      "text": "i'll ask the queue can you please store it because it's a new node so can you please go and store it"
+    },
+    {
+      "start": 820.45,
+      "end": 824.93,
+      "text": "once i've done that i'll go back to the question and say i'll read the question and it says that"
+    },
+    {
+      "start": 824.93,
+      "end": 831.81,
+      "text": "if you find the shortest path and return minus one if it is not possible so i need to return a list"
+    },
+    {
+      "start": 832.69,
+      "end": 839.01,
+      "text": "uh uh keep something like an answer of n size and everything initially initialized to minus one"
+    },
+    {
+      "start": 839.01,
+      "end": 844.77,
+      "text": "and i can go across all the nodes which is quite simple and right after that what i'll say is hey"
+    },
+    {
+      "start": 844.77,
+      "end": 851.25,
+      "text": "listen if uh the distance of i is not equal to one e nine because initially we stored one e nine"
+    },
+    {
+      "start": 851.25,
+      "end": 856.29,
+      "text": "assuming that none of them are reachable if it is not then we know it's reachable thereby it"
+    },
+    {
+      "start": 856.29,
+      "end": 862.69,
+      "text": "has updated its distance so i'll say answer of i is equal to distance of i so for all the nodes which"
+    },
+    {
+      "start": 862.69,
+      "end": 868.69,
+      "text": "will contain one e nine it will stay as minus one otherwise we'll update the answer and right at the"
+    },
+    {
+      "start": 868.69,
+      "end": 872.37,
+      "text": "end of the day what i can say is can i please return this list once you have done this what"
+    },
+    {
+      "start": 872.37,
+      "end": 877.97,
+      "text": "you can do is compile and run this so you'll see that all the test cases are running absolutely fine"
+    },
+    {
+      "start": 877.97,
+      "end": 885.01,
+      "text": "so a quick uh thing why do we uh follow the q method and why not the standard algorithms that"
+    },
+    {
+      "start": 885.01,
+      "end": 890.21,
+      "text": "we are going to learn in the future so if you clearly see that since it is increasing by plus"
+    },
+    {
+      "start": 890.21,
+      "end": 892.69,
+      "text": "one as you saw in the explanation the q will always be equal to one so what we can do is we can"
+    },
+    {
+      "start": 892.69,
+      "end": 897.97,
+      "text": "always store like the first it will store source which will take distance zero then the next guys"
+    },
+    {
+      "start": 897.97,
+      "end": 903.07,
+      "text": "will come at that will always come at distance one because the edge weight is increasing by one"
+    },
+    {
+      "start": 903.07,
+      "end": 907.75,
+      "text": "then the distance two will come then the distance three will come so if you look at the queue it's"
+    },
+    {
+      "start": 907.75,
+      "end": 912.55,
+      "text": "already sorted first the source at zero then distance one then distance two distance three"
+    },
+    {
+      "start": 912.55,
+      "end": 917.73,
+      "text": "it's already in the sorted order so you need so you don't need something like a sorted data"
+    },
+    {
+      "start": 917.73,
+      "end": 922.97,
+      "text": "structure to sort them in distance that is why queue does work in a proper way and the time"
+    },
+    {
+      "start": 922.97,
+      "end": 929.45,
+      "text": "complexity taken will be similar to what we usually take in a bfs algorithm so you can call this as a"
+    },
+    {
+      "start": 929.45,
+      "end": 934.91,
+      "text": "bfs algorithm where we have applied a slide of greedy algorithm to make sure that we always"
+    },
+    {
+      "start": 934.91,
+      "end": 941.57,
+      "text": "compress the distance and this is how you can easily store it and if i talk about the overall"
+    },
+    {
+      "start": 941.57,
+      "end": 946.37,
+      "text": "space we are creating the graph so that's going to take some space we are using the distance"
+    },
+    {
+      "start": 946.37,
+      "end": 947.45,
+      "text": "we're using the queue"
+    },
+    {
+      "start": 947.45,
+      "end": 947.71,
+      "text": "so that's going to take some space we are using the distance"
+    },
+    {
+      "start": 947.71,
+      "end": 952.45,
+      "text": "so these three are taking some space and about the time complexity it is more uh similar to what"
+    },
+    {
+      "start": 952.45,
+      "end": 958.83,
+      "text": "the bfs generally takes which is v plus 2e so that is what the time complexity will be if you omit"
+    },
+    {
+      "start": 958.83,
+      "end": 964.65,
+      "text": "these uh things in overall you can say v plus 2e so guys i hope i was able to explain you this"
+    },
+    {
+      "start": 964.65,
+      "end": 968.55,
+      "text": "particular problem just in case i was please please please make sure you like this video"
+    },
+    {
+      "start": 968.55,
+      "end": 973.75,
+      "text": "and if you're new to our channel please do consider subscribing to us that is my only request"
+    },
+    {
+      "start": 973.75,
+      "end": 977.43,
+      "text": "and if you haven't checked out our dp series and the hdc the links are in the description"
+    },
+    {
+      "start": 977.43,
+      "end": 981.23,
+      "text": "please please do make sure you check it out with this let's wrap up this video and meet in some"
+    },
+    {
+      "start": 981.23,
+      "end": 982.49,
+      "text": "other till then bye bye take care"
+    }
+  ]
+}

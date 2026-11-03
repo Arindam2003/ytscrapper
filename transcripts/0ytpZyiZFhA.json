@@ -1,0 +1,2214 @@
+{
+  "video_id": "0ytpZyiZFhA",
+  "title": "G-37. Path With Minimum Effort",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1469.51,
+  "segments": [
+    {
+      "start": 2.67,
+      "end": 5.87,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.19,
+      "end": 9.87,
+      "text": "So in this video, we're going to solve the problem, the path with the minimum effort."
+    },
+    {
+      "start": 10.47,
+      "end": 16.43,
+      "text": "What does the question state? It states, you are a hiker preparing for an upcoming hike."
+    },
+    {
+      "start": 16.99,
+      "end": 26.15,
+      "text": "You're given heights, a 2D array of size rows, cross columns, where height row column represents"
+    },
+    {
+      "start": 26.15,
+      "end": 32.91,
+      "text": "the height of the cell. You're situated in the top left cell. So I can say that this is our source"
+    },
+    {
+      "start": 32.91,
+      "end": 38.45,
+      "text": "and you have to travel to the bottom right cell. So I can say this as our destination."
+    },
+    {
+      "start": 38.95,
+      "end": 45.17,
+      "text": "You can move in four directions and you wish to find a route that requires the minimum effort."
+    },
+    {
+      "start": 45.65,
+      "end": 52.33,
+      "text": "Now a route's effort is the maximum, I repeat, a route's effort is the maximum absolute difference"
+    },
+    {
+      "start": 52.33,
+      "end": 55.91,
+      "text": "in heights between two consecutive"
+    },
+    {
+      "start": 55.91,
+      "end": 62.89,
+      "text": "cells of that route. So let us understand what does the question state. So imagine this particular"
+    },
+    {
+      "start": 62.89,
+      "end": 70.39,
+      "text": "grid and we have clearly stated that this will always be the source and this will always be"
+    },
+    {
+      "start": 70.39,
+      "end": 76.09,
+      "text": "their destination. Something like this will be the source and something like this will always"
+    },
+    {
+      "start": 76.09,
+      "end": 81.75,
+      "text": "be the destination. That is clearly stated to us. Okay, now if I wish to reach from here to here"
+    },
+    {
+      "start": 81.75,
+      "end": 85.89,
+      "text": "and we are just allowed four directions, we are just allowed four directions,"
+    },
+    {
+      "start": 85.91,
+      "end": 90.47,
+      "text": "we can actually go something like this, like this, like this, we can actually go something like this,"
+    },
+    {
+      "start": 91.51,
+      "end": 97.51,
+      "text": "this, this, this. There can be multiple ways in which we can reach from here to here. That is"
+    },
+    {
+      "start": 97.51,
+      "end": 105.91,
+      "text": "definitely sure, correct? Now if I take this path, let's write this path, one, two, two, and two, five."
+    },
+    {
+      "start": 105.91,
+      "end": 111.19,
+      "text": "This is the path where we go here, here, here, and here. Okay, now let's find out the difference."
+    },
+    {
+      "start": 111.19,
+      "end": 115.51,
+      "text": "So the difference is one, the difference is one, the difference, rather the difference is zero."
+    },
+    {
+      "start": 116.07,
+      "end": 120.15,
+      "text": "The difference is zero and the difference is three. Now out of all the differences,"
+    },
+    {
+      "start": 120.15,
+      "end": 127.99,
+      "text": "which is the maximum difference? Can I say the max is three because I have only one, zero, and three."
+    },
+    {
+      "start": 127.99,
+      "end": 135.19,
+      "text": "So the maximum of them is three. So this is the, this is what the routes path will take as the"
+    },
+    {
+      "start": 135.19,
+      "end": 140.55,
+      "text": "effort. Three is the effort that it will take. So I can write three is the effort that you will take."
+    },
+    {
+      "start": 140.55,
+      "end": 146.55,
+      "text": "but can i have any other path let's see what if i take something like this something like this"
+    },
+    {
+      "start": 146.55,
+      "end": 152.47,
+      "text": "something like this and something like this which is one three eight two five one three eight two"
+    },
+    {
+      "start": 152.47,
+      "end": 158.47,
+      "text": "five difference is two difference is five difference is six difference is three and the max"
+    },
+    {
+      "start": 158.47,
+      "end": 165.67,
+      "text": "effort is six so six is the effort it will take if it goes something like this like this like this"
+    },
+    {
+      "start": 165.67,
+      "end": 171.59,
+      "text": "can i have something better let's give it a try one let's take one three three five five three"
+    },
+    {
+      "start": 171.59,
+      "end": 179.99,
+      "text": "three five okay so it's something like one three five three five difference two difference two"
+    },
+    {
+      "start": 179.99,
+      "end": 186.95,
+      "text": "difference two remember absolute difference two what's the max two so two is the effort taken"
+    },
+    {
+      "start": 186.95,
+      "end": 193.67,
+      "text": "now what they want you to do is you you can figure out the efforts in all the paths you can figure"
+    },
+    {
+      "start": 193.67,
+      "end": 199.51,
+      "text": "out the efforts in all the paths and you need to give me the minimum of them you need to give me"
+    },
+    {
+      "start": 199.51,
+      "end": 205.91,
+      "text": "the minimum of them so in this path the effort taken is two and that's the minimal so the answer"
+    },
+    {
+      "start": 205.91,
+      "end": 211.03,
+      "text": "to this will be two you can say that zero is the minimal no you don't need to take"
+    },
+    {
+      "start": 212.15,
+      "end": 218.07,
+      "text": "individual differences no out of everyone once you figure out the max out of the max you have"
+    },
+    {
+      "start": 218.07,
+      "end": 223.19,
+      "text": "to figure out the min out of all the max you have to figure out the min that is the question"
+    },
+    {
+      "start": 223.75,
+      "end": 230.87,
+      "text": "so if i take uh the second grid what will be the answer if i go from here zero zero zero zero zero"
+    },
+    {
+      "start": 230.87,
+      "end": 238.07,
+      "text": "zero zero zero zero zero zero zero zero zero if i can take all the one path the absolute"
+    },
+    {
+      "start": 238.07,
+      "end": 244.71,
+      "text": "difference between all the adjacent elements will be zero so i can say for this the path's effort is"
+    },
+    {
+      "start": 244.71,
+      "end": 253.19,
+      "text": "two while for this the path's effort is zero got it so which algorithm comes to your mind whenever"
+    },
+    {
+      "start": 253.67,
+      "end": 260.47,
+      "text": "you hear something related to path shortest path minimum kind of thing which algorithm does come"
+    },
+    {
+      "start": 260.47,
+      "end": 264.47,
+      "text": "to your brain the algorithm that comes to your brain is definitely dexterous algorithm because"
+    },
+    {
+      "start": 264.47,
+      "end": 270.31,
+      "text": "that is one of the algorithm which is related to shortest path and that always involves something"
+    },
+    {
+      "start": 270.31,
+      "end": 276.07,
+      "text": "like a source to destination so let's try that algorithm out and see if we can reach our answer"
+    },
+    {
+      "start": 276.07,
+      "end": 282.07,
+      "text": "or not this is how you relate a problem to an algorithm because shortest path okay what are the"
+    },
+    {
+      "start": 283.67,
+      "end": 291.51,
+      "text": "resultsed by the algorithm and then we can take that out and then we can recreate it okay dexter"
+    },
+    {
+      "start": 291.51,
+      "end": 297.43,
+      "text": "source and destination is there maybe we can try that out and see and then you give it a dry run"
+    },
+    {
+      "start": 297.43,
+      "end": 301.59,
+      "text": "and see if it is working and then you figure out yeah this is the algorithm which can fit in"
+    },
+    {
+      "start": 301.59,
+      "end": 306.87,
+      "text": "and then while giving the driver and you tend to understand okay this is the reason we are using it"
+    },
+    {
+      "start": 306.87,
+      "end": 311.91,
+      "text": "always follow the standard process of mapping algorithms to a problem that is figuring out"
+    },
+    {
+      "start": 311.91,
+      "end": 313.59,
+      "text": "keywords and then figuring out which one is applicable okay"
+    },
+    {
+      "start": 313.67,
+      "end": 316.55,
+      "text": "configuration, a priority queue and a distance array."
+    },
+    {
+      "start": 316.55,
+      "end": 318.47,
+      "text": "So let's quickly take it up."
+    },
+    {
+      "start": 318.47,
+      "end": 320.53,
+      "text": "So this is how the initial configuration looks like."
+    },
+    {
+      "start": 320.53,
+      "end": 324.59,
+      "text": "We will take a priority queue where we will be storing the difference."
+    },
+    {
+      "start": 324.59,
+      "end": 329.79,
+      "text": "Since we always require the minimal difference, we'll try to keep the difference at the first"
+    },
+    {
+      "start": 329.79,
+      "end": 336.21,
+      "text": "so that the minimum heap or the priority queue, you can use a minimum heap."
+    },
+    {
+      "start": 336.21,
+      "end": 340.45,
+      "text": "Always store the minimal at the top and then the row and columns, which are basically the"
+    },
+    {
+      "start": 340.45,
+      "end": 342.03,
+      "text": "coordinates of the node."
+    },
+    {
+      "start": 342.03,
+      "end": 349.49,
+      "text": "And we can assign a distance and make sure everything is marked as infinite apart."
+    },
+    {
+      "start": 349.49,
+      "end": 352.11,
+      "text": "Infinite is basically a very big value."
+    },
+    {
+      "start": 352.11,
+      "end": 357.99,
+      "text": "Just the source with a zero because the source is where you do not need anything."
+    },
+    {
+      "start": 357.99,
+      "end": 361.13,
+      "text": "The source is the only point where you do not need anything."
+    },
+    {
+      "start": 361.13,
+      "end": 362.71,
+      "text": "So what is the starting point?"
+    },
+    {
+      "start": 362.71,
+      "end": 367.33,
+      "text": "You always say difference is zero and the coordinates are 0,0 and you put that into"
+    },
+    {
+      "start": 367.33,
+      "end": 368.33,
+      "text": "your priority queue."
+    },
+    {
+      "start": 368.33,
+      "end": 369.33,
+      "text": "Done."
+    },
+    {
+      "start": 369.33,
+      "end": 370.83,
+      "text": "Let's quickly start the Dijkstra's algorithm."
+    },
+    {
+      "start": 370.83,
+      "end": 372.03,
+      "text": "Dijkstra's algorithm states."
+    },
+    {
+      "start": 372.03,
+      "end": 373.07,
+      "text": "Okay."
+    },
+    {
+      "start": 373.07,
+      "end": 374.83,
+      "text": "I know one thing for sure."
+    },
+    {
+      "start": 374.83,
+      "end": 381.63,
+      "text": "We are at 0,0 and till now the difference that we have taken and till now the difference"
+    },
+    {
+      "start": 381.63,
+      "end": 384.61,
+      "text": "that we have taken is zero."
+    },
+    {
+      "start": 384.61,
+      "end": 390.97,
+      "text": "And we know for a path, the effort is maximum of all difference."
+    },
+    {
+      "start": 390.97,
+      "end": 397.11,
+      "text": "Remember this max of all difference in the path."
+    },
+    {
+      "start": 397.11,
+      "end": 398.71,
+      "text": "So we know this, right?"
+    },
+    {
+      "start": 398.71,
+      "end": 401.11,
+      "text": "So what I will do is keep that in mind."
+    },
+    {
+      "start": 401.11,
+      "end": 402.01,
+      "text": "And I know."
+    },
+    {
+      "start": 402.03,
+      "end": 403.63,
+      "text": "Till now the difference has been zero."
+    },
+    {
+      "start": 403.63,
+      "end": 408.21,
+      "text": "So I will try to go in all the directions and it states we can go in the top, which"
+    },
+    {
+      "start": 408.21,
+      "end": 409.21,
+      "text": "is not possible."
+    },
+    {
+      "start": 409.21,
+      "end": 410.21,
+      "text": "We can go here."
+    },
+    {
+      "start": 410.21,
+      "end": 412.17,
+      "text": "We can go here and we can go here."
+    },
+    {
+      "start": 412.17,
+      "end": 415.99,
+      "text": "So if I go to the right, which is two, if I go to the right, which is two, that's nothing"
+    },
+    {
+      "start": 415.99,
+      "end": 418.75,
+      "text": "but the coordinate 0,0,1 cell, right?"
+    },
+    {
+      "start": 418.75,
+      "end": 419.75,
+      "text": "The coordinates as well."
+    },
+    {
+      "start": 419.75,
+      "end": 420.75,
+      "text": "0,1,2,0,1,2."
+    },
+    {
+      "start": 420.75,
+      "end": 423.35,
+      "text": "So the coordinates is 0,1."
+    },
+    {
+      "start": 423.35,
+      "end": 425.27,
+      "text": "And what would be the difference if I go here?"
+    },
+    {
+      "start": 425.27,
+      "end": 428.17,
+      "text": "The absolute difference will be one."
+    },
+    {
+      "start": 428.17,
+      "end": 430.07,
+      "text": "So can I see the new differences?"
+    },
+    {
+      "start": 430.07,
+      "end": 431.07,
+      "text": "One."
+    },
+    {
+      "start": 431.07,
+      "end": 437.07,
+      "text": "the new difference is one and we know max of all difference in the path is what the effort is the"
+    },
+    {
+      "start": 437.07,
+      "end": 442.59,
+      "text": "effort is very simple the effort is always recognized as max of all so previously i took"
+    },
+    {
+      "start": 442.59,
+      "end": 447.71,
+      "text": "a difference of zero now i am taking a difference of one so if i follow this path what will be the"
+    },
+    {
+      "start": 447.71,
+      "end": 455.39,
+      "text": "effort yes one so i know the effort is one which is lesser than infinity so i take difference of"
+    },
+    {
+      "start": 455.39,
+      "end": 461.87,
+      "text": "1 and i said this is the effort that i will take in and i will put in something like 0 comma 1"
+    },
+    {
+      "start": 461.87,
+      "end": 467.87,
+      "text": "into the priority queue done now can i go to the down yes i can go to the down which is 1 comma 0"
+    },
+    {
+      "start": 467.87,
+      "end": 473.63,
+      "text": "as the coordinate and the difference if you find the difference it's 1 3 so the difference will be"
+    },
+    {
+      "start": 473.63,
+      "end": 479.23,
+      "text": "2. now previously the difference taken was zero now i'm taking a difference of 2 and the path"
+    },
+    {
+      "start": 480.03,
+      "end": 485.31,
+      "text": "effort states maximum of all differences so 0 and 2 which is the maximum"
+    },
+    {
+      "start": 485.39,
+      "end": 492.57,
+      "text": "2 so you'll just replace 2 and as a 2 comma 1 comma 0 is what i'll put into the priority queue"
+    },
+    {
+      "start": 492.57,
+      "end": 499.77,
+      "text": "and i'll just erase this because the iteration is done now if you go and look at the priority"
+    },
+    {
+      "start": 499.77,
+      "end": 504.49,
+      "text": "queue which one will be at the top the top most element will be this one because you are looking"
+    },
+    {
+      "start": 504.49,
+      "end": 509.77,
+      "text": "for the minimum guy so this one will be at the top this one will be at the top so what i'll do"
+    },
+    {
+      "start": 509.77,
+      "end": 517.01,
+      "text": "is i'll just quickly take uh i know the difference taken as of now is 1 i'm standing at 0 comma 1"
+    },
+    {
+      "start": 517.01,
+      "end": 520.89,
+      "text": "because that is where you're standing so once you've done this you can omit this from the"
+    },
+    {
+      "start": 520.89,
+      "end": 526.41,
+      "text": "priority queue now from 0 comma 1 where can you go you cannot go on the top can you go here yes"
+    },
+    {
+      "start": 526.41,
+      "end": 531.39,
+      "text": "you can go here which is 0 comma 2 you can go to the right which is 0 comma 2 so if you go to the"
+    },
+    {
+      "start": 531.39,
+      "end": 536.91,
+      "text": "right the difference will be 0 remember this the difference will be 0 so over here the difference"
+    },
+    {
+      "start": 536.91,
+      "end": 539.75,
+      "text": "is 0 but previously you have taken a difference"
+    },
+    {
+      "start": 539.75,
+      "end": 546.57,
+      "text": "of 1 so this path that you're taking still has an effort of 1 you just cannot take 0 because"
+    },
+    {
+      "start": 546.57,
+      "end": 552.29,
+      "text": "you're required to take the maximum so you will be like i'll still take 1 which is better than"
+    },
+    {
+      "start": 552.29,
+      "end": 559.53,
+      "text": "what we have here so 1 comma 0 comma 2 is what i'll put it into the priority queue done now can"
+    },
+    {
+      "start": 559.53,
+      "end": 567.05,
+      "text": "i go down yes i can go down we have a 2 and we have 8 on the down so 1 comma 1 so if there's a"
+    },
+    {
+      "start": 567.05,
+      "end": 569.73,
+      "text": "2 and there's 8 what is the difference perfect 6"
+    },
+    {
+      "start": 569.75,
+      "end": 575.39,
+      "text": "now previously it took till here it took a difference of 1 i'm taking a difference of 6"
+    },
+    {
+      "start": 575.39,
+      "end": 583.37,
+      "text": "what will be the new effort yes 6 that'll be like till here i can take a 6 so 6 comma 1 comma 1 is"
+    },
+    {
+      "start": 583.37,
+      "end": 588.11,
+      "text": "what i'll update once i've done i can say the iteration is done i'll quickly omit this off"
+    },
+    {
+      "start": 588.11,
+      "end": 592.97,
+      "text": "done what is the next step get the minimum out of the priority queue which one will be the minimum"
+    },
+    {
+      "start": 593.53,
+      "end": 599.59,
+      "text": "definitely 1 i'll just take it out which says the difference is 1 and the coordinates are very"
+    },
+    {
+      "start": 599.75,
+      "end": 604.75,
+      "text": "easily 0 comma 2 right that's the coordinate so i'll just write the coordinate 0 comma 2"
+    },
+    {
+      "start": 604.75,
+      "end": 610.25,
+      "text": "now we are at here can we go top no can we go right no can i go here yes which is 2 so i'll"
+    },
+    {
+      "start": 610.25,
+      "end": 617.91,
+      "text": "try to go here which is 1 comma 2 very very important which is 1 comma 2 so you are at 1"
+    },
+    {
+      "start": 617.91,
+      "end": 622.49,
+      "text": "comma 2 and what will be the difference the difference will be 0 because there's a 2 there's"
+    },
+    {
+      "start": 622.49,
+      "end": 627.07,
+      "text": "a 2 so the difference is 0 but previously i've taken a difference of 1 so you'll just update it"
+    },
+    {
+      "start": 627.07,
+      "end": 634.17,
+      "text": "with 1 and it'll say 1 comma 1 comma 2 perfect can i go to the left yes and if you go to the left"
+    },
+    {
+      "start": 634.17,
+      "end": 640.39,
+      "text": "what do we have we have 2 which will be a difference of 0 and that's 0 comma 1 0 comma 1"
+    },
+    {
+      "start": 640.39,
+      "end": 645.81,
+      "text": "with the difference of 0 now the difference over here is 1 this is 0 so the effort is still 1 and"
+    },
+    {
+      "start": 645.81,
+      "end": 650.29,
+      "text": "you have already taken one effort so no need to take it so i can say the iteration for this is"
+    },
+    {
+      "start": 650.29,
+      "end": 656.29,
+      "text": "also done okay now let's get the next thing which will be the next guy in the priority queue"
+    },
+    {
+      "start": 656.29,
+      "end": 657.05,
+      "text": "obviously 1"
+    },
+    {
+      "start": 657.05,
+      "end": 665.03,
+      "text": "comma 1 comma 2 so the difference is now 1 and you are at 1 comma 2 which is this portion can i go"
+    },
+    {
+      "start": 665.03,
+      "end": 672.55,
+      "text": "top i can go top but if i try to go top which will be 0 comma 2 with a difference of 0 then also the"
+    },
+    {
+      "start": 672.55,
+      "end": 679.83,
+      "text": "maximum is 1 which we already have over here so we will not go to the top instead of that can i go"
+    },
+    {
+      "start": 679.83,
+      "end": 686.43,
+      "text": "right no there's no one can i go bottom i can go bottom which is 2 comma 2 which is apparently"
+    },
+    {
+      "start": 686.43,
+      "end": 687.03,
+      "text": "1"
+    },
+    {
+      "start": 687.05,
+      "end": 690.01,
+      "text": "so right now to do that you have to take a design expression and under this document"
+    },
+    {
+      "start": 690.01,
+      "end": 693.87,
+      "text": "your change will be more better what is your end goal that's a hard beginning"
+    },
+    {
+      "start": 693.87,
+      "end": 694.89,
+      "text": "understanding of what's your destination while taking this"
+    },
+    {
+      "start": 694.89,
+      "end": 704.05,
+      "text": "however"
+    },
+    {
+      "start": 704.05,
+      "end": 708.55,
+      "text": "your destination will you take this no you'll wait"
+    },
+    {
+      "start": 708.55,
+      "end": 711.77,
+      "text": "you might find someone better that's why you'll not conclude as of now yet you will not conclude as of non you'll be like okay 2 comma 2 what's the difference 3 because 2-5 is difference of 3 now previously 1 now 3 which is the path's effort the path's effort will be 3 and this updated to 3 and else"
+    },
+    {
+      "start": 711.77,
+      "end": 712.65,
+      "text": "thread"
+    },
+    {
+      "start": 712.65,
+      "end": 714.05,
+      "text": "your destination."
+    },
+    {
+      "start": 714.05,
+      "end": 715.05,
+      "text": "2 comma 2 comma 2"
+    },
+    {
+      "start": 715.05,
+      "end": 716.13,
+      "text": "re tässä"
+    },
+    {
+      "start": 716.13,
+      "end": 717.41,
+      "text": "Put it into the priority queue."
+    },
+    {
+      "start": 717.69,
+      "end": 719.31,
+      "text": "Do not conclude your answer now."
+    },
+    {
+      "start": 719.51,
+      "end": 719.95,
+      "text": "Do not."
+    },
+    {
+      "start": 720.09,
+      "end": 721.21,
+      "text": "Because this is not your answer."
+    },
+    {
+      "start": 721.95,
+      "end": 724.05,
+      "text": "So, I'll omit this."
+    },
+    {
+      "start": 724.79,
+      "end": 727.05,
+      "text": "You could try going to the left as well."
+    },
+    {
+      "start": 727.53,
+      "end": 729.17,
+      "text": "It'll be a 6 which is already there."
+    },
+    {
+      "start": 729.43,
+      "end": 730.91,
+      "text": "So, there's no point in going to the left."
+    },
+    {
+      "start": 731.57,
+      "end": 731.97,
+      "text": "Next."
+    },
+    {
+      "start": 732.57,
+      "end": 733.87,
+      "text": "Which one will the priority queue give?"
+    },
+    {
+      "start": 734.87,
+      "end": 735.95,
+      "text": "Obviously, this one."
+    },
+    {
+      "start": 736.07,
+      "end": 737.09,
+      "text": "2, 1, 0."
+    },
+    {
+      "start": 737.21,
+      "end": 739.23,
+      "text": "So, I'll take 2, 1, 0."
+    },
+    {
+      "start": 739.23,
+      "end": 741.23,
+      "text": "Now, I'm saying the difference is 2."
+    },
+    {
+      "start": 741.75,
+      "end": 743.49,
+      "text": "And we are at 1, 0."
+    },
+    {
+      "start": 743.77,
+      "end": 745.43,
+      "text": "Which is particularly this coordinate."
+    },
+    {
+      "start": 745.73,
+      "end": 745.91,
+      "text": "Correct?"
+    },
+    {
+      "start": 746.29,
+      "end": 747.61,
+      "text": "Now, from here, where can I go?"
+    },
+    {
+      "start": 747.67,
+      "end": 748.29,
+      "text": "Can I go to the top?"
+    },
+    {
+      "start": 748.63,
+      "end": 749.19,
+      "text": "I can."
+    },
+    {
+      "start": 749.53,
+      "end": 749.89,
+      "text": "I can."
+    },
+    {
+      "start": 750.23,
+      "end": 752.53,
+      "text": "If I try to go to the top which is 0, 0."
+    },
+    {
+      "start": 752.83,
+      "end": 754.05,
+      "text": "The difference will be 2."
+    },
+    {
+      "start": 754.33,
+      "end": 755.67,
+      "text": "And previously, it was 2 as well."
+    },
+    {
+      "start": 756.15,
+      "end": 757.37,
+      "text": "And we already have a 0."
+    },
+    {
+      "start": 757.61,
+      "end": 758.43,
+      "text": "No point in going there."
+    },
+    {
+      "start": 758.93,
+      "end": 759.71,
+      "text": "Can I go to the right?"
+    },
+    {
+      "start": 760.07,
+      "end": 761.39,
+      "text": "We can go to the right."
+    },
+    {
+      "start": 761.59,
+      "end": 762.91,
+      "text": "Yes, we can go to the right."
+    },
+    {
+      "start": 763.21,
+      "end": 765.73,
+      "text": "And if we go to the right which is 1, 1."
+    },
+    {
+      "start": 766.17,
+      "end": 767.49,
+      "text": "The difference will be 5."
+    },
+    {
+      "start": 768.05,
+      "end": 771.09,
+      "text": "Which is better than the previous difference."
+    },
+    {
+      "start": 771.23,
+      "end": 771.53,
+      "text": "6."
+    },
+    {
+      "start": 771.91,
+      "end": 772.35,
+      "text": "I'll be like."
+    },
+    {
+      "start": 772.67,
+      "end": 774.09,
+      "text": "Let's take this off."
+    },
+    {
+      "start": 774.49,
+      "end": 776.05,
+      "text": "Let's say 5, 1."
+    },
+    {
+      "start": 776.25,
+      "end": 777.13,
+      "text": "And I'll be like."
+    },
+    {
+      "start": 777.13,
+      "end": 777.53,
+      "text": "I'll be like."
+    },
+    {
+      "start": 777.53,
+      "end": 777.83,
+      "text": "I'll be like."
+    },
+    {
+      "start": 777.83,
+      "end": 777.97,
+      "text": "I'll be like."
+    },
+    {
+      "start": 777.97,
+      "end": 778.03,
+      "text": "I'll be like."
+    },
+    {
+      "start": 778.03,
+      "end": 778.33,
+      "text": "I'll be like."
+    },
+    {
+      "start": 778.33,
+      "end": 778.43,
+      "text": "I'll be like."
+    },
+    {
+      "start": 778.43,
+      "end": 779.05,
+      "text": "Can I go down?"
+    },
+    {
+      "start": 779.19,
+      "end": 779.51,
+      "text": "I can."
+    },
+    {
+      "start": 779.79,
+      "end": 780.67,
+      "text": "Which is 2, 0."
+    },
+    {
+      "start": 781.05,
+      "end": 782.05,
+      "text": "And the difference will be 2."
+    },
+    {
+      "start": 782.33,
+      "end": 784.55,
+      "text": "If you try to go down, the difference will be still 2."
+    },
+    {
+      "start": 784.93,
+      "end": 786.37,
+      "text": "So, I'll just update it to 2."
+    },
+    {
+      "start": 786.49,
+      "end": 789.53,
+      "text": "And I'll say 2, 2, 0 in the priority queue."
+    },
+    {
+      "start": 790.27,
+      "end": 791.73,
+      "text": "Once this is done, there is no left."
+    },
+    {
+      "start": 792.17,
+      "end": 793.01,
+      "text": "I'll just omit this."
+    },
+    {
+      "start": 793.47,
+      "end": 793.71,
+      "text": "Perfect."
+    },
+    {
+      "start": 794.95,
+      "end": 796.03,
+      "text": "I mean, next."
+    },
+    {
+      "start": 796.55,
+      "end": 797.35,
+      "text": "What will be your job?"
+    },
+    {
+      "start": 797.51,
+      "end": 799.33,
+      "text": "Your job will be to go into the priority queue and say."
+    },
+    {
+      "start": 799.61,
+      "end": 800.49,
+      "text": "Which is the minimal?"
+    },
+    {
+      "start": 801.25,
+      "end": 802.23,
+      "text": "And you see there is a 2."
+    },
+    {
+      "start": 802.29,
+      "end": 802.77,
+      "text": "There is a 5."
+    },
+    {
+      "start": 802.85,
+      "end": 803.31,
+      "text": "There is a 3."
+    },
+    {
+      "start": 803.43,
+      "end": 804.03,
+      "text": "And there is a 6."
+    },
+    {
+      "start": 804.03,
+      "end": 807.05,
+      "text": "So, apparently, the 2, 2, 0 is the minimal."
+    },
+    {
+      "start": 807.57,
+      "end": 809.19,
+      "text": "So, I'll just take the 2, 2, 0."
+    },
+    {
+      "start": 809.65,
+      "end": 810.13,
+      "text": "It's like."
+    },
+    {
+      "start": 810.69,
+      "end": 812.33,
+      "text": "The difference is now 2."
+    },
+    {
+      "start": 812.79,
+      "end": 815.05,
+      "text": "And we are standing at 2, 0."
+    },
+    {
+      "start": 815.43,
+      "end": 817.05,
+      "text": "Where can you go is my question."
+    },
+    {
+      "start": 817.41,
+      "end": 818.51,
+      "text": "It's very easy."
+    },
+    {
+      "start": 819.29,
+      "end": 820.97,
+      "text": "You can try to go to the top."
+    },
+    {
+      "start": 821.59,
+      "end": 822.97,
+      "text": "Which will give you a difference of 2."
+    },
+    {
+      "start": 823.01,
+      "end": 823.73,
+      "text": "Which is already there."
+    },
+    {
+      "start": 823.99,
+      "end": 824.57,
+      "text": "So, no need to go."
+    },
+    {
+      "start": 824.89,
+      "end": 825.95,
+      "text": "You can try to go to the right."
+    },
+    {
+      "start": 826.27,
+      "end": 826.91,
+      "text": "Which is infinity."
+    },
+    {
+      "start": 827.37,
+      "end": 827.67,
+      "text": "So, yeah."
+    },
+    {
+      "start": 827.79,
+      "end": 828.53,
+      "text": "You can go to the right."
+    },
+    {
+      "start": 828.83,
+      "end": 829.89,
+      "text": "Let's try to go to the right."
+    },
+    {
+      "start": 829.93,
+      "end": 830.69,
+      "text": "Which is 2, 1."
+    },
+    {
+      "start": 831.09,
+      "end": 832.99,
+      "text": "And the new difference will be 2."
+    },
+    {
+      "start": 832.99,
+      "end": 833.99,
+      "text": "Because that's the difference."
+    },
+    {
+      "start": 834.03,
+      "end": 835.61,
+      "text": "And difference is 2."
+    },
+    {
+      "start": 836.03,
+      "end": 836.91,
+      "text": "Still now it's 2."
+    },
+    {
+      "start": 837.01,
+      "end": 838.35,
+      "text": "So, the maximum will still be 2."
+    },
+    {
+      "start": 838.87,
+      "end": 839.75,
+      "text": "So, update it with 2."
+    },
+    {
+      "start": 839.91,
+      "end": 843.01,
+      "text": "And say 2, yes 2, 2, 1."
+    },
+    {
+      "start": 843.91,
+      "end": 844.79,
+      "text": "Can I go bottom?"
+    },
+    {
+      "start": 845.05,
+      "end": 845.67,
+      "text": "No, there is no bottom."
+    },
+    {
+      "start": 845.73,
+      "end": 846.21,
+      "text": "Can I go left?"
+    },
+    {
+      "start": 846.29,
+      "end": 846.41,
+      "text": "No."
+    },
+    {
+      "start": 846.67,
+      "end": 847.97,
+      "text": "So, this iteration is also done."
+    },
+    {
+      "start": 848.67,
+      "end": 848.93,
+      "text": "Perfect."
+    },
+    {
+      "start": 849.39,
+      "end": 851.23,
+      "text": "Let's get the next element out of the priority queue."
+    },
+    {
+      "start": 851.45,
+      "end": 852.15,
+      "text": "Who will be the next element?"
+    },
+    {
+      "start": 852.37,
+      "end": 853.91,
+      "text": "5, 3, 2, 6."
+    },
+    {
+      "start": 854.61,
+      "end": 855.31,
+      "text": "2, obviously."
+    },
+    {
+      "start": 855.61,
+      "end": 856.27,
+      "text": "Let's take it out."
+    },
+    {
+      "start": 857.01,
+      "end": 858.69,
+      "text": "So, I can say the difference is 2 now."
+    },
+    {
+      "start": 859.59,
+      "end": 861.49,
+      "text": "And we are at 2, 1."
+    },
+    {
+      "start": 861.77,
+      "end": 863.17,
+      "text": "We are at 2, 1."
+    },
+    {
+      "start": 863.17,
+      "end": 863.93,
+      "text": "So, if you are."
+    },
+    {
+      "start": 864.03,
+      "end": 864.53,
+      "text": "2, 1."
+    },
+    {
+      "start": 864.61,
+      "end": 865.09,
+      "text": "Where can you go?"
+    },
+    {
+      "start": 865.29,
+      "end": 866.47,
+      "text": "You can go to the top."
+    },
+    {
+      "start": 866.55,
+      "end": 867.33,
+      "text": "Which is 1, 1."
+    },
+    {
+      "start": 867.77,
+      "end": 868.43,
+      "text": "Basically this."
+    },
+    {
+      "start": 868.79,
+      "end": 869.81,
+      "text": "And the difference will be 5."
+    },
+    {
+      "start": 870.23,
+      "end": 871.37,
+      "text": "And the difference will be 5."
+    },
+    {
+      "start": 871.61,
+      "end": 873.07,
+      "text": "But we already have a 5 difference."
+    },
+    {
+      "start": 873.37,
+      "end": 874.03,
+      "text": "So, no need to tick."
+    },
+    {
+      "start": 874.49,
+      "end": 875.19,
+      "text": "Can I go to the right?"
+    },
+    {
+      "start": 875.31,
+      "end": 875.67,
+      "text": "We can."
+    },
+    {
+      "start": 876.07,
+      "end": 876.89,
+      "text": "Which is 2, 2."
+    },
+    {
+      "start": 877.69,
+      "end": 878.75,
+      "text": "Which is the destination."
+    },
+    {
+      "start": 879.15,
+      "end": 879.91,
+      "text": "Which is the destination."
+    },
+    {
+      "start": 880.71,
+      "end": 881.59,
+      "text": "And this time."
+    },
+    {
+      "start": 882.25,
+      "end": 884.31,
+      "text": "The difference is 2."
+    },
+    {
+      "start": 884.59,
+      "end": 885.31,
+      "text": "Point to notice."
+    },
+    {
+      "start": 886.01,
+      "end": 887.39,
+      "text": "Because the difference is 2."
+    },
+    {
+      "start": 887.97,
+      "end": 888.95,
+      "text": "And difference is 2."
+    },
+    {
+      "start": 889.11,
+      "end": 889.51,
+      "text": "And it's 2."
+    },
+    {
+      "start": 889.73,
+      "end": 890.51,
+      "text": "It's better than 3."
+    },
+    {
+      "start": 891.03,
+      "end": 891.83,
+      "text": "It's better than 3."
+    },
+    {
+      "start": 892.05,
+      "end": 892.85,
+      "text": "So, you say 2."
+    },
+    {
+      "start": 892.85,
+      "end": 893.79,
+      "text": "And you say 2."
+    },
+    {
+      "start": 894.03,
+      "end": 895.77,
+      "text": "2, 2."
+    },
+    {
+      "start": 895.89,
+      "end": 897.69,
+      "text": "You say 2, 2, 2."
+    },
+    {
+      "start": 898.03,
+      "end": 898.39,
+      "text": "Perfect."
+    },
+    {
+      "start": 898.73,
+      "end": 899.29,
+      "text": "What's the next thing?"
+    },
+    {
+      "start": 899.69,
+      "end": 900.27,
+      "text": "Can I go down?"
+    },
+    {
+      "start": 900.51,
+      "end": 900.63,
+      "text": "No."
+    },
+    {
+      "start": 900.79,
+      "end": 901.35,
+      "text": "Can I go left?"
+    },
+    {
+      "start": 901.51,
+      "end": 902.01,
+      "text": "I can."
+    },
+    {
+      "start": 902.41,
+      "end": 903.57,
+      "text": "But it will yield a difference of 2."
+    },
+    {
+      "start": 903.61,
+      "end": 904.33,
+      "text": "Which is already there."
+    },
+    {
+      "start": 904.71,
+      "end": 905.61,
+      "text": "So, I can say this is done."
+    },
+    {
+      "start": 906.47,
+      "end": 908.59,
+      "text": "The next point is very, very critical."
+    },
+    {
+      "start": 909.45,
+      "end": 910.45,
+      "text": "You look at the priority queue."
+    },
+    {
+      "start": 910.53,
+      "end": 911.47,
+      "text": "And say who is there?"
+    },
+    {
+      "start": 911.85,
+      "end": 912.29,
+      "text": "There's a 2."
+    },
+    {
+      "start": 912.45,
+      "end": 912.89,
+      "text": "There's a 5."
+    },
+    {
+      "start": 912.95,
+      "end": 913.31,
+      "text": "There's a 3."
+    },
+    {
+      "start": 913.79,
+      "end": 915.93,
+      "text": "And you get 2, 2."
+    },
+    {
+      "start": 916.37,
+      "end": 917.75,
+      "text": "With the difference of 2."
+    },
+    {
+      "start": 917.87,
+      "end": 918.93,
+      "text": "Which means the path effort."
+    },
+    {
+      "start": 919.57,
+      "end": 920.61,
+      "text": "You have reached your destination."
+    },
+    {
+      "start": 921.25,
+      "end": 922.29,
+      "text": "You have reached your destination."
+    },
+    {
+      "start": 922.29,
+      "end": 926.13,
+      "text": "In future, will you get someone better?"
+    },
+    {
+      "start": 926.65,
+      "end": 928.15,
+      "text": "The answer to that is no."
+    },
+    {
+      "start": 928.69,
+      "end": 930.61,
+      "text": "Because if till now it is 2."
+    },
+    {
+      "start": 931.05,
+      "end": 933.75,
+      "text": "And priority queue says you always get the minimal."
+    },
+    {
+      "start": 934.21,
+      "end": 937.01,
+      "text": "In the future, even if someone comes up."
+    },
+    {
+      "start": 937.33,
+      "end": 938.45,
+      "text": "You will be greater than 2."
+    },
+    {
+      "start": 938.79,
+      "end": 940.27,
+      "text": "Like the difference might be smaller."
+    },
+    {
+      "start": 940.77,
+      "end": 941.89,
+      "text": "But when you take the max."
+    },
+    {
+      "start": 942.63,
+      "end": 945.01,
+      "text": "It will end up being a minimum of 2."
+    },
+    {
+      "start": 945.31,
+      "end": 946.93,
+      "text": "You cannot go lesser than 2."
+    },
+    {
+      "start": 947.29,
+      "end": 948.57,
+      "text": "Because you had someone like."
+    },
+    {
+      "start": 948.91,
+      "end": 950.29,
+      "text": "If you see, you had someone like 3."
+    },
+    {
+      "start": 950.87,
+      "end": 952.27,
+      "text": "But before 3, 2."
+    },
+    {
+      "start": 952.55,
+      "end": 953.05,
+      "text": "And 2 occurred."
+    },
+    {
+      "start": 953.53,
+      "end": 956.13,
+      "text": "In the future, it will be either more than 2 or 2."
+    },
+    {
+      "start": 956.43,
+      "end": 957.15,
+      "text": "Cannot be 2."
+    },
+    {
+      "start": 957.53,
+      "end": 959.33,
+      "text": "Because you are jumping to a path."
+    },
+    {
+      "start": 959.69,
+      "end": 962.65,
+      "text": "Where already the max effort taken is 2."
+    },
+    {
+      "start": 963.05,
+      "end": 966.05,
+      "text": "Even if you cover another portion of a path."
+    },
+    {
+      "start": 966.55,
+      "end": 967.75,
+      "text": "Whatever the effort is."
+    },
+    {
+      "start": 967.99,
+      "end": 969.05,
+      "text": "Even if it's like 1, 0."
+    },
+    {
+      "start": 969.15,
+      "end": 969.85,
+      "text": "The difference."
+    },
+    {
+      "start": 970.25,
+      "end": 970.75,
+      "text": "2."
+    },
+    {
+      "start": 971.09,
+      "end": 972.75,
+      "text": "The max has already been 2."
+    },
+    {
+      "start": 973.05,
+      "end": 974.85,
+      "text": "So if you combine the max with the other guys."
+    },
+    {
+      "start": 975.13,
+      "end": 976.73,
+      "text": "It will still be a minimum of 2."
+    },
+    {
+      "start": 977.03,
+      "end": 977.63,
+      "text": "Cannot be."
+    },
+    {
+      "start": 978.15,
+      "end": 979.69,
+      "text": "Cannot be lesser than 2 for sure."
+    },
+    {
+      "start": 980.03,
+      "end": 981.23,
+      "text": "So I am definitely sure."
+    },
+    {
+      "start": 981.23,
+      "end": 982.73,
+      "text": "Once I reach the destination."
+    },
+    {
+      "start": 982.93,
+      "end": 984.39,
+      "text": "By taking out of the priority queue."
+    },
+    {
+      "start": 984.73,
+      "end": 987.23,
+      "text": "The answer is for sure."
+    },
+    {
+      "start": 987.43,
+      "end": 988.43,
+      "text": "This difference."
+    },
+    {
+      "start": 988.63,
+      "end": 990.63,
+      "text": "Which is ultimately your effort."
+    },
+    {
+      "start": 990.67,
+      "end": 992.53,
+      "text": "And you can just go across."
+    },
+    {
+      "start": 992.73,
+      "end": 995.33,
+      "text": "And return that effort as your answer."
+    },
+    {
+      "start": 995.97,
+      "end": 999.17,
+      "text": "So it's a very very simple implementation of Dijkstra."
+    },
+    {
+      "start": 999.23,
+      "end": 1001.13,
+      "text": "Because Dijkstra always keeps the track."
+    },
+    {
+      "start": 1001.49,
+      "end": 1002.49,
+      "text": "Of the short leg."
+    },
+    {
+      "start": 1002.73,
+      "end": 1003.73,
+      "text": "Of the path value."
+    },
+    {
+      "start": 1003.93,
+      "end": 1005.43,
+      "text": "And you are looking for minimum path value."
+    },
+    {
+      "start": 1005.47,
+      "end": 1007.57,
+      "text": "So you always have the minimum path value."
+    },
+    {
+      "start": 1007.87,
+      "end": 1009.47,
+      "text": "In future, it's gonna just increase."
+    },
+    {
+      "start": 1009.63,
+      "end": 1010.79,
+      "text": "So keep this in mind."
+    },
+    {
+      "start": 1010.79,
+      "end": 1011.99,
+      "text": "And we are gonna implement this now."
+    },
+    {
+      "start": 1012.05,
+      "end": 1013.95,
+      "text": "So I hope you have understood the entire approach."
+    },
+    {
+      "start": 1014.03,
+      "end": 1015.03,
+      "text": "Now it's time to code it up."
+    },
+    {
+      "start": 1015.09,
+      "end": 1017.33,
+      "text": "So I will be coding the C++ on the right."
+    },
+    {
+      "start": 1017.39,
+      "end": 1019.35,
+      "text": "And you can find out the similar Java solution."
+    },
+    {
+      "start": 1019.69,
+      "end": 1020.39,
+      "text": "On the left."
+    },
+    {
+      "start": 1020.75,
+      "end": 1022.55,
+      "text": "So we are given just the heights."
+    },
+    {
+      "start": 1022.63,
+      "end": 1025.23,
+      "text": "So we can use the set data structure as well."
+    },
+    {
+      "start": 1025.63,
+      "end": 1026.69,
+      "text": "The Python as well."
+    },
+    {
+      "start": 1026.75,
+      "end": 1027.19,
+      "text": "Whichever."
+    },
+    {
+      "start": 1027.25,
+      "end": 1028.29,
+      "text": "Sorry the priority queue as well."
+    },
+    {
+      "start": 1028.35,
+      "end": 1029.55,
+      "text": "So I will be using the priority queue."
+    },
+    {
+      "start": 1029.93,
+      "end": 1030.73,
+      "text": "So this time."
+    },
+    {
+      "start": 1030.99,
+      "end": 1032.59,
+      "text": "We have to kind of take."
+    },
+    {
+      "start": 1033.19,
+      "end": 1034.79,
+      "text": "A bit more pairs."
+    },
+    {
+      "start": 1035.13,
+      "end": 1036.85,
+      "text": "Like we need another thing."
+    },
+    {
+      "start": 1036.93,
+      "end": 1039.65,
+      "text": "So let's just quickly upgrade it to."
+    },
+    {
+      "start": 1039.65,
+      "end": 1040.49,
+      "text": "The last one."
+    },
+    {
+      "start": 1040.91,
+      "end": 1041.95,
+      "text": "So that's the thing."
+    },
+    {
+      "start": 1042.55,
+      "end": 1043.51,
+      "text": "And you over here."
+    },
+    {
+      "start": 1043.59,
+      "end": 1044.19,
+      "text": "If you just."
+    },
+    {
+      "start": 1044.75,
+      "end": 1050.35,
+      "text": "Just a minute."
+    },
+    {
+      "start": 1050.63,
+      "end": 1050.93,
+      "text": "Perfect."
+    },
+    {
+      "start": 1050.99,
+      "end": 1052.45,
+      "text": "I have declared the priority queue."
+    },
+    {
+      "start": 1053.83,
+      "end": 1056.03,
+      "text": "And this is how the priority queue looks."
+    },
+    {
+      "start": 1056.55,
+      "end": 1057.73,
+      "text": "It's it's it's a very long one."
+    },
+    {
+      "start": 1057.79,
+      "end": 1058.05,
+      "text": "But yeah."
+    },
+    {
+      "start": 1058.13,
+      "end": 1059.05,
+      "text": "That's how it looks."
+    },
+    {
+      "start": 1059.33,
+      "end": 1060.35,
+      "text": "Like we just break the line."
+    },
+    {
+      "start": 1060.39,
+      "end": 1061.53,
+      "text": "You can probably read it."
+    },
+    {
+      "start": 1061.93,
+      "end": 1065.23,
+      "text": "So this is how the entire priority queue will be defined."
+    },
+    {
+      "start": 1065.29,
+      "end": 1066.99,
+      "text": "So I'll be keeping something like."
+    },
+    {
+      "start": 1067.25,
+      "end": 1068.33,
+      "text": "If I show you the structure."
+    },
+    {
+      "start": 1068.39,
+      "end": 1070.53,
+      "text": "This is how I'll be keeping the structure as."
+    },
+    {
+      "start": 1070.73,
+      "end": 1071.69,
+      "text": "I'll keep the difference."
+    },
+    {
+      "start": 1071.89,
+      "end": 1073.09,
+      "text": "And I'll keep the root column."
+    },
+    {
+      "start": 1073.09,
+      "end": 1078.03,
+      "text": "pretty straightforward that's that's what the structure is going to be for me uh you can"
+    },
+    {
+      "start": 1078.03,
+      "end": 1081.99,
+      "text": "probably create a class as well but uh and then you have to write the comparators which i don't"
+    },
+    {
+      "start": 1081.99,
+      "end": 1086.85,
+      "text": "want to what's the next thing you require the size of the height so probably you can just take"
+    },
+    {
+      "start": 1086.85,
+      "end": 1095.59,
+      "text": "the like computer size and you can just do heights zero dot size you'll get the m as well"
+    },
+    {
+      "start": 1095.59,
+      "end": 1100.69,
+      "text": "now what do you require you require something like to store the difference so maybe you can"
+    },
+    {
+      "start": 1100.69,
+      "end": 1105.47,
+      "text": "create the distance array or the difference we can call it as the difference or the distance"
+    },
+    {
+      "start": 1105.47,
+      "end": 1111.61,
+      "text": "this to be familiarized with the name so you can go across and declare that as well vector of int"
+    },
+    {
+      "start": 1111.61,
+      "end": 1119.03,
+      "text": "and make sure everything is marked as infinite done that's the first thing you'll do what's the"
+    },
+    {
+      "start": 1119.03,
+      "end": 1123.91,
+      "text": "next thing make sure you iterate on the priority queue till it is not empty but before that do you"
+    },
+    {
+      "start": 1123.91,
+      "end": 1129.09,
+      "text": "need to do anything else yes you do need to do something like distance of zero zero will be zero"
+    },
+    {
+      "start": 1129.09,
+      "end": 1134.51,
+      "text": "because you know that's the starting point for you and what is the other thing that you have to do"
+    },
+    {
+      "start": 1134.51,
+      "end": 1135.45,
+      "text": "you have to also"
+    },
+    {
+      "start": 1135.45,
+      "end": 1141.79,
+      "text": "say the priority queue to store the first guy which is zero comma zero comma zero perfect that's"
+    },
+    {
+      "start": 1141.79,
+      "end": 1147.55,
+      "text": "the easiest thing next let's go across and take the pq.top so i'll just take the pq.top and i'll"
+    },
+    {
+      "start": 1147.55,
+      "end": 1155.47,
+      "text": "just say pq.pop and once i've done this i can take the new diff uh rents which is nothing but very"
+    },
+    {
+      "start": 1155.47,
+      "end": 1161.71,
+      "text": "simple like if you if you say id dot first you'll get it and if you need the row again it's quite"
+    },
+    {
+      "start": 1161.71,
+      "end": 1165.43,
+      "text": "eminent it's something like it dot second dot two dot three dot four dot five dot six dot seven dot"
+    },
+    {
+      "start": 1165.45,
+      "end": 1170.31,
+      "text": "first if you need the column it's going to be id dot second dot second now there are four"
+    },
+    {
+      "start": 1170.31,
+      "end": 1177.11,
+      "text": "directions one is the top port which is the row minus one comma column uh then the other one is"
+    },
+    {
+      "start": 1177.11,
+      "end": 1182.87,
+      "text": "the right one which is this and there is one at the bottom which is row minus one comma column"
+    },
+    {
+      "start": 1182.87,
+      "end": 1187.87,
+      "text": "then there's one on the left which is row comma column minus one right so what i can do is i can"
+    },
+    {
+      "start": 1187.87,
+      "end": 1195.35,
+      "text": "probably create i have already taught you this in a lot of videos till now so minus one zero one and"
+    },
+    {
+      "start": 1195.45,
+      "end": 1205.85,
+      "text": "zero and then i can have something like dc equal to zero comma one comma zero comma minus one i can"
+    },
+    {
+      "start": 1205.85,
+      "end": 1211.21,
+      "text": "definitely declare it something like this and now what i'll do is i'll just go across and say i equal"
+    },
+    {
+      "start": 1211.21,
+      "end": 1216.65,
+      "text": "to zero i less than four i plus plus and i can easily traverse to all the adjusted nodes it's"
+    },
+    {
+      "start": 1216.65,
+      "end": 1223.77,
+      "text": "very simple you can say new r will be current row plus nothing but the change in this and you can"
+    },
+    {
+      "start": 1223.77,
+      "end": 1231.21,
+      "text": "say new column equal to column plus dc of i so what will happen is first time minus one and zero"
+    },
+    {
+      "start": 1231.21,
+      "end": 1236.25,
+      "text": "will get added because this is over here next time zero and one will get added next time one and zero"
+    },
+    {
+      "start": 1236.25,
+      "end": 1240.17,
+      "text": "will get added next time zero and one will get added and you'll get it first thing that you need"
+    },
+    {
+      "start": 1240.17,
+      "end": 1246.57,
+      "text": "to do always is to check if they are valid or not so please go ahead and check if they are valid or"
+    },
+    {
+      "start": 1246.57,
+      "end": 1253.53,
+      "text": "not so very simple check you can probably put them into uh different functions if you wish to improve"
+    },
+    {
+      "start": 1253.53,
+      "end": 1253.77,
+      "text": "code you can put them into different functions if you wish to improve code you can put them into"
+    },
+    {
+      "start": 1253.77,
+      "end": 1259.13,
+      "text": "readability and what after that now you know one thing you have checked for validity right"
+    },
+    {
+      "start": 1259.85,
+      "end": 1264.97,
+      "text": "what is the next thing you need to check you need to check if the difference that you are getting"
+    },
+    {
+      "start": 1265.61,
+      "end": 1271.69,
+      "text": "is it lesser than the thing stored in the previous one right so probably we can we can first check"
+    },
+    {
+      "start": 1271.69,
+      "end": 1277.61,
+      "text": "for validity because after that we can find out so what is the new effort can i say the new effort"
+    },
+    {
+      "start": 1277.61,
+      "end": 1283.77,
+      "text": "will be nothing but max of the current which is nothing but absolute of wherever you are"
+    },
+    {
+      "start": 1283.77,
+      "end": 1288.89,
+      "text": "are yes wherever you are which is heights of row column so let's write heights of row column this"
+    },
+    {
+      "start": 1288.89,
+      "end": 1296.17,
+      "text": "is currently where you are right and can i say heights of new row and new column is where you're"
+    },
+    {
+      "start": 1296.17,
+      "end": 1305.21,
+      "text": "trying to go so this is what the new effort that i'll take and i'll just take it with this so if"
+    },
+    {
+      "start": 1305.77,
+      "end": 1311.93,
+      "text": "new effort like the max of this so once you've got the new effort what's your job you have to see"
+    },
+    {
+      "start": 1311.93,
+      "end": 1318.01,
+      "text": "if the new effort is lesser than whatever you have taken till now which is distance of new r"
+    },
+    {
+      "start": 1318.01,
+      "end": 1323.05,
+      "text": "if previously you would have reached otherwise it would be infinity if it is if it is then you"
+    },
+    {
+      "start": 1323.05,
+      "end": 1329.61,
+      "text": "go across and say hey listen distance you got someone better please go ahead and just do it"
+    },
+    {
+      "start": 1329.61,
+      "end": 1336.25,
+      "text": "right after that you'll say pq dot push this distance which is distance of or you can write"
+    },
+    {
+      "start": 1336.25,
+      "end": 1341.85,
+      "text": "new effort simple this is the new distance and you will at the same time say"
+    },
+    {
+      "start": 1341.93,
+      "end": 1347.13,
+      "text": "new row because that's the new coordinates and the new column once you've done this you can"
+    },
+    {
+      "start": 1348.25,
+      "end": 1354.65,
+      "text": "i can say we will reach here but where did we get our answer if you remember the approach we said"
+    },
+    {
+      "start": 1354.65,
+      "end": 1361.21,
+      "text": "whenever we get our answer over here which is this and this because not while here because"
+    },
+    {
+      "start": 1361.21,
+      "end": 1366.41,
+      "text": "we might find minimals afterwards you saw in the example i'm going to return over here"
+    },
+    {
+      "start": 1366.41,
+      "end": 1371.29,
+      "text": "the difference whatever difference i'm getting out from the priority queue i am going to return"
+    },
+    {
+      "start": 1371.93,
+      "end": 1377.69,
+      "text": "this i'll go and compile this and see if it is working fine it is and i'll quickly submit this"
+    },
+    {
+      "start": 1377.69,
+      "end": 1382.89,
+      "text": "to see if it is giving us correct answers so it does give us correct answers now it's time"
+    },
+    {
+      "start": 1382.89,
+      "end": 1387.53,
+      "text": "to discuss the time complexity you know the dice trust in complexity it is always"
+    },
+    {
+      "start": 1388.49,
+      "end": 1395.05,
+      "text": "e log v if you want the derivation previous video in the previous video in the same series i have"
+    },
+    {
+      "start": 1395.05,
+      "end": 1401.53,
+      "text": "derived time complexity it's e log what is e the total number of edges so how many total number of"
+    },
+    {
+      "start": 1401.93,
+      "end": 1408.93,
+      "text": "will have if it's a grid you know in grid there will be n cross m cells for sure there will be"
+    },
+    {
+      "start": 1408.93,
+      "end": 1414.81,
+      "text": "n cross m cells for sure and for every cell there is four directions so that is the total number of"
+    },
+    {
+      "start": 1414.81,
+      "end": 1422.91,
+      "text": "edges because for every cell there is n cross 4 m cross log v what is v the total number of nodes"
+    },
+    {
+      "start": 1422.91,
+      "end": 1429.51,
+      "text": "how many nodes are there number of total cells which is n cross m got it so this will be the"
+    },
+    {
+      "start": 1429.51,
+      "end": 1434.99,
+      "text": "time complexity of this particular algorithm and you're using n cross m space and the practically"
+    },
+    {
+      "start": 1434.99,
+      "end": 1441.41,
+      "text": "uses a bit of space so you can say the approximate space is near about n cross m and this is how it"
+    },
+    {
+      "start": 1441.41,
+      "end": 1447.09,
+      "text": "will be done so guys i hope i was able to explain you the entire solution and the code so just in"
+    },
+    {
+      "start": 1447.09,
+      "end": 1450.79,
+      "text": "case i was please please please make sure you like this video and if you're new to our channel"
+    },
+    {
+      "start": 1450.79,
+      "end": 1454.25,
+      "text": "what are you waiting for hit that subscribe button right away and if you haven't checked"
+    },
+    {
+      "start": 1454.25,
+      "end": 1458.71,
+      "text": "out our db series and these dc the links are in the description with this i'll be wrapping up"
+    },
+    {
+      "start": 1458.71,
+      "end": 1459.41,
+      "text": "this video let's begin"
+    },
+    {
+      "start": 1459.51,
+      "end": 1461.07,
+      "text": "some other video till then bye bye take care"
+    }
+  ]
+}

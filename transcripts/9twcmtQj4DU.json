@@ -1,0 +1,864 @@
+{
+  "video_id": "9twcmtQj4DU",
+  "title": "G-19. Detect cycle in a directed graph using DFS ｜ Java ｜ C++",
+  "language": "en",
+  "model": "large-v3",
+  "duration": 1041.58,
+  "segments": [
+    {
+      "start": 2.96,
+      "end": 6.4,
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well."
+    },
+    {
+      "start": 6.74,
+      "end": 12.38,
+      "text": "So in this video, we are going to learn about how to detect a cycle in a directed graph using this"
+    },
+    {
+      "start": 12.38,
+      "end": 17.76,
+      "text": "depth first search algorithm. Now, you know what is a directed graph when two nodes are connected"
+    },
+    {
+      "start": 17.76,
+      "end": 25.44,
+      "text": "by our directed edge. So this is a particular directed graph. Now, does this graph have a cycle"
+    },
+    {
+      "start": 25.44,
+      "end": 32.16,
+      "text": "is my question. And the answer to that is yes. You cannot call this a cycle. No, you cannot call this"
+    },
+    {
+      "start": 32.16,
+      "end": 36.38,
+      "text": "a cycle. This is not a cycle because it is something like this and something like this,"
+    },
+    {
+      "start": 36.58,
+      "end": 41.14,
+      "text": "like you're going like this and like this. This is not a cycle. But at the same time,"
+    },
+    {
+      "start": 41.42,
+      "end": 47.18,
+      "text": "this is a cycle because this is going completely. You started from here and you reached back here."
+    },
+    {
+      "start": 47.52,
+      "end": 54.32,
+      "text": "Thereby, we can say that this is a cycle. So yes, a cycle does exist. And that is what you have to"
+    },
+    {
+      "start": 54.32,
+      "end": 60.24,
+      "text": "tell me. So we have already solved how to detect a cycle in an undirected graph using the DFS"
+    },
+    {
+      "start": 60.24,
+      "end": 61.96,
+      "text": "algorithm. But this is a"
+    },
+    {
+      "start": 61.96,
+      "end": 68.4,
+      "text": "directed graph. Why will the same algorithm not work? Let's understand. So I'll take this. Imagine"
+    },
+    {
+      "start": 68.4,
+      "end": 75.4,
+      "text": "you start the DFS call from one. So you mark this as visited. Then you go to DFS call of two. You"
+    },
+    {
+      "start": 75.4,
+      "end": 81.72,
+      "text": "mark this as visited. Now for two, the adjacent neighbors is three. So you'll go the DFS to three."
+    },
+    {
+      "start": 82.14,
+      "end": 90.14,
+      "text": "So you'll go and mark it as visited from three. You can go to four or you can go to seven. Let's"
+    },
+    {
+      "start": 90.14,
+      "end": 93.32,
+      "text": "go to four. So you go to four and you mark it as visited. So you mark it as visited. So you mark it"
+    },
+    {
+      "start": 93.34,
+      "end": 101.16,
+      "text": "as visited. Next from four, you can go to five. So you go to five and you mark it as visited. From"
+    },
+    {
+      "start": 101.16,
+      "end": 107.8,
+      "text": "five, you can only go to six. So you go to six and you mark it as visited. So beyond six, can you go?"
+    },
+    {
+      "start": 108.08,
+      "end": 113.32,
+      "text": "If I show you beyond six, can you go? No. So you will come back from five. Can you go to seven? No."
+    },
+    {
+      "start": 113.44,
+      "end": 118.62,
+      "text": "So you'll go back. So apparently what will happen is you come back from six, you come back from five,"
+    },
+    {
+      "start": 118.62,
+      "end": 123.04,
+      "text": "you come back from four, and you come back to three. So the moment you come back to three,"
+    },
+    {
+      "start": 123.34,
+      "end": 128.42,
+      "text": "three went to four to one of its adjacent nodes and did the DFS. Now there is another adjacent"
+    },
+    {
+      "start": 128.42,
+      "end": 134.46,
+      "text": "node remaining seven. So it will call a DFS for seven. Yes, it will call a DFS for seven. Now"
+    },
+    {
+      "start": 134.46,
+      "end": 140.66,
+      "text": "what will happen is when it goes to seven, it tends to mark it as visited. It tends to mark it"
+    },
+    {
+      "start": 140.66,
+      "end": 147.68,
+      "text": "as visited. But the next moment when you are standing at seven, it finds a nearby adjacent"
+    },
+    {
+      "start": 147.68,
+      "end": 153.16,
+      "text": "node, which is already visited. And thereby, the same algorithm will say that,"
+    },
+    {
+      "start": 153.34,
+      "end": 160.54,
+      "text": "this is a cycle because you know the logic, if we visit an adjacent node, which is not the parent,"
+    },
+    {
+      "start": 160.54,
+      "end": 166.48,
+      "text": "if we visit the adjacent node, which is not the parent, and it is already visited, we call that as"
+    },
+    {
+      "start": 166.48,
+      "end": 171.88,
+      "text": "a cycle, we call that as a cycle. This would have been true. Yes, this would have been true. If you"
+    },
+    {
+      "start": 171.88,
+      "end": 178.0,
+      "text": "did not have directed edges, yes, you would have edges like this. This would have been true because"
+    },
+    {
+      "start": 178.0,
+      "end": 182.62,
+      "text": "you go here and then from this direction, you go here. So you meet since these are"
+    },
+    {
+      "start": 183.34,
+      "end": 189.28,
+      "text": "directed edges, you can say that this is a cycle. But since over here we are dealing with something"
+    },
+    {
+      "start": 189.28,
+      "end": 195.76,
+      "text": "as directed edges, thereby, I cannot say something that you visited in this path. And again, if you"
+    },
+    {
+      "start": 195.76,
+      "end": 201.28,
+      "text": "visit in this path, you cannot say that this is a complete cycle. This is not a complete cycle."
+    },
+    {
+      "start": 201.28,
+      "end": 208.78,
+      "text": "Thereby, this visited algorithm using the DFS technique will fail. Yes, thereby, this visited"
+    },
+    {
+      "start": 208.78,
+      "end": 213.28,
+      "text": "algorithm using the DFS technique will fail. So why did the technique fail?"
+    },
+    {
+      "start": 213.34,
+      "end": 217.24,
+      "text": "Because it is very simple. You started from here, then you went to here, then you went to here,"
+    },
+    {
+      "start": 217.24,
+      "end": 221.5,
+      "text": "then you went to here, then you went to here, then you went to here, then you came back and"
+    },
+    {
+      "start": 221.5,
+      "end": 227.92,
+      "text": "then you took this path. So it was a different path. It was a different path. In undirected,"
+    },
+    {
+      "start": 227.92,
+      "end": 232.54,
+      "text": "it works because these are undirected edges. So even if you go via this, you can see this"
+    },
+    {
+      "start": 232.54,
+      "end": 238.24,
+      "text": "is a cycle. Indirected, on that path, you have to visit that same node again. On that path,"
+    },
+    {
+      "start": 238.24,
+      "end": 243.28,
+      "text": "like if you start from eight, then you go, then you go. See, on the path you visited eight again,"
+    },
+    {
+      "start": 243.34,
+      "end": 249.52,
+      "text": "on the path you visited eight again. But over here, if you're going, here you go, but then the"
+    },
+    {
+      "start": 249.52,
+      "end": 256.3,
+      "text": "path comes back. So that's not the same path. So again, you start a new path. Got it? So on the"
+    },
+    {
+      "start": 256.3,
+      "end": 263.2,
+      "text": "same path, very important line, you'll understand when I do. On the same path, node has to be visited"
+    },
+    {
+      "start": 263.2,
+      "end": 273.1,
+      "text": "again. Then it is a cycle. Node has to be visited again. Then I can say that it is a cycle. On the"
+    },
+    {
+      "start": 273.34,
+      "end": 278.68,
+      "text": "same path, the node has to be visited again. Then only I can say that it has a cycle. In order to"
+    },
+    {
+      "start": 278.68,
+      "end": 283.66,
+      "text": "solve this problem using DFS algorithm, what I'll do is I'll draw this adjacency list for this"
+    },
+    {
+      "start": 283.66,
+      "end": 289.78,
+      "text": "particular graph. And we will take two visited arrays. One is the visited array itself. And the"
+    },
+    {
+      "start": 289.78,
+      "end": 295.66,
+      "text": "other one is the path visited array. Now we see that we have 10 nodes. Let's take it of a 10 size."
+    },
+    {
+      "start": 295.66,
+      "end": 302.08,
+      "text": "So as of now, our visited array is ready and the path visited array is ready as well. So"
+    },
+    {
+      "start": 303.34,
+      "end": 309.46,
+      "text": "remember this, we're going to do this as component wise because you know, one can visit all of these"
+    },
+    {
+      "start": 309.46,
+      "end": 315.88,
+      "text": "guys, but then this is kind of you have to again do a traversal. So what we will always do is we"
+    },
+    {
+      "start": 315.88,
+      "end": 324.82,
+      "text": "will do a component of kind of stuff where we go from I to V, one to V rather. And we say, if not"
+    },
+    {
+      "start": 324.82,
+      "end": 333.28,
+      "text": "visited of I, then call the DFS to check if there is a cycle, DFS of I, if there is a cycle,"
+    },
+    {
+      "start": 333.34,
+      "end": 341.8,
+      "text": "then you return true. So a pretty simple code, you have already learned this in component stuff."
+    },
+    {
+      "start": 341.8,
+      "end": 349.36,
+      "text": "So what is the first value of I? One is that unvisited. That is, so what you will do is you"
+    },
+    {
+      "start": 349.36,
+      "end": 356.5,
+      "text": "will start calling the DFS from one. And what you will do is you will say, Hey, one is visited. And"
+    },
+    {
+      "start": 356.5,
+      "end": 361.72,
+      "text": "at the same time, what you'll do is you'll say one is path visited as well. What is path visit means"
+    },
+    {
+      "start": 361.72,
+      "end": 363.28,
+      "text": "it's being in the same path."
+    },
+    {
+      "start": 363.34,
+      "end": 368.14,
+      "text": "It's been on the same path. Okay, so one is visited. Now, who are the adjacent nodes of one,"
+    },
+    {
+      "start": 368.14,
+      "end": 373.24,
+      "text": "let's quickly check it out. It's two. So what you'll do is you'll go to two. At the same time,"
+    },
+    {
+      "start": 373.24,
+      "end": 379.12,
+      "text": "you'll mark two as visited and path visited because it is the same path. And what the adjacent nodes"
+    },
+    {
+      "start": 379.12,
+      "end": 386.5,
+      "text": "of two, it is three, just three, it is just three. So you will go to now three, you see two over here,"
+    },
+    {
+      "start": 386.54,
+      "end": 391.96,
+      "text": "it is just having three. So we'll go to three. And you'll see that as visited and path visited. Very"
+    },
+    {
+      "start": 391.96,
+      "end": 393.1,
+      "text": "good. Next."
+    },
+    {
+      "start": 393.34,
+      "end": 400.42,
+      "text": "Now you see three has two guys. One is for one is seven, again, four and seven. So first, we will"
+    },
+    {
+      "start": 400.42,
+      "end": 407.26,
+      "text": "complete it for four. Then we'll come back and complete it for seven, or seven can wait. Let's"
+    },
+    {
+      "start": 407.26,
+      "end": 412.78,
+      "text": "complete it for four as of now. So we will go to four and market as visited and path visited. So"
+    },
+    {
+      "start": 412.78,
+      "end": 419.74,
+      "text": "visited and path visited marked right? Next, what will happen is four will say I have five. So we"
+    },
+    {
+      "start": 419.74,
+      "end": 423.16,
+      "text": "will go to now five, and he'll mark five is visited."
+    },
+    {
+      "start": 423.34,
+      "end": 430.3,
+      "text": "And path visited very important. Next five will say, Hey, listen, five, I just have six. So I'll"
+    },
+    {
+      "start": 430.3,
+      "end": 438.64,
+      "text": "say okay, go to six. And please mark it as yes, path visited and visited marked. Next, six says,"
+    },
+    {
+      "start": 438.64,
+      "end": 444.4,
+      "text": "I do not have any adjacent node. Six says I do not have any adjacent nodes. So I'm like, okay,"
+    },
+    {
+      "start": 444.4,
+      "end": 451.06,
+      "text": "I'm done. I'm done. My journey is done. So I will return. And remember, whenever you return,"
+    },
+    {
+      "start": 451.06,
+      "end": 452.68,
+      "text": "you see that there has been no cycle."
+    },
+    {
+      "start": 453.34,
+      "end": 459.4,
+      "text": "I will always return a false. Now what happens is, when you go back from DFS of six, when you go"
+    },
+    {
+      "start": 459.4,
+      "end": 464.86,
+      "text": "back from six, you keep it as visited because you don't want to call a DFS again for six, there is"
+    },
+    {
+      "start": 464.86,
+      "end": 471.04,
+      "text": "no point again calling for the DFS for six. But you omit the six from a path visited. Yes, you omit"
+    },
+    {
+      "start": 471.04,
+      "end": 475.6,
+      "text": "this six from a path visited, that means you make it zero again, that means you make it zero again."
+    },
+    {
+      "start": 475.6,
+      "end": 483.04,
+      "text": "And now you go back. Now you are at five over. We omit this from path visited and make it zero again."
+    },
+    {
+      "start": 483.34,
+      "end": 489.82,
+      "text": "Now you go back to four and you omit this from path visited. Now you go back to three. Three will"
+    },
+    {
+      "start": 489.82,
+      "end": 496.06,
+      "text": "not be omitted from path visited because, because, because, it did a call for four. But it still has"
+    },
+    {
+      "start": 496.06,
+      "end": 502.18,
+      "text": "a call for seven pending. Four is done. Seven is still remaining. What will happen is I will"
+    },
+    {
+      "start": 502.18,
+      "end": 511.06,
+      "text": "now go for seven. Now I'll say seven visit, seven path visit. Okay, so seven is done. Now seven checks"
+    },
+    {
+      "start": 513.34,
+      "end": 523.24,
+      "text": "my adjacent node is 5 and now I see hey listen 5 is already visited 5 is already visited but wait"
+    },
+    {
+      "start": 523.24,
+      "end": 530.52,
+      "text": "this is 0 it's not path visited it's not in the same path it's not in the same path it went in"
+    },
+    {
+      "start": 530.52,
+      "end": 535.88,
+      "text": "some other path but we don't care because we are not looking for something like this we're looking"
+    },
+    {
+      "start": 535.88,
+      "end": 543.6,
+      "text": "for a circle thereby it's in the new it's as of now the new path is this and 5 is not in the path"
+    },
+    {
+      "start": 543.6,
+      "end": 549.4,
+      "text": "so thereby I will not call it as a cycle I will not go beyond 5 that's why visit will help us"
+    },
+    {
+      "start": 549.4,
+      "end": 553.92,
+      "text": "I don't want to again travel 5 I don't want to again travel 6 so that is where the visit will"
+    },
+    {
+      "start": 553.92,
+      "end": 561.1,
+      "text": "stop us and say hey listen 7 do not go to dfs of 5 because we have already checked for 5 we have"
+    },
+    {
+      "start": 561.1,
+      "end": 565.84,
+      "text": "already checked for 5 by going to 6 as well we have already done that you don't need to do"
+    },
+    {
+      "start": 565.84,
+      "end": 565.86,
+      "text": "it you don't need to do it you don't need to do it you don't need to do it you don't need to do it"
+    },
+    {
+      "start": 565.86,
+      "end": 571.54,
+      "text": "it again you just check a5 is visited but wait it's not visited in the same path thereby this"
+    },
+    {
+      "start": 571.54,
+      "end": 577.62,
+      "text": "is not a cycle so it now goes back now both of the call came back so this also now will say i did not"
+    },
+    {
+      "start": 577.62,
+      "end": 583.14,
+      "text": "find a cycle two will say i did not find a cycle one will say i did not find a cycle and everyone"
+    },
+    {
+      "start": 583.14,
+      "end": 588.7,
+      "text": "will go back and while going everyone will say we are done with the path yes we are done with the"
+    },
+    {
+      "start": 588.7,
+      "end": 593.98,
+      "text": "path so everyone will turn themselves to be zero everyone will turn themselves to be zero but"
+    },
+    {
+      "start": 593.98,
+      "end": 600.28,
+      "text": "the visited guys will be marked but the visited guys will be marked but the path visited guys"
+    },
+    {
+      "start": 600.28,
+      "end": 607.96,
+      "text": "will be turned to zero right so the dfs call is over yes the dfs call is over let's see raise it"
+    },
+    {
+      "start": 607.96,
+      "end": 615.7,
+      "text": "now what is the next thing so i will now become two now comes the twist whenever you see two"
+    },
+    {
+      "start": 615.7,
+      "end": 619.62,
+      "text": "you don't need to again do it you don't need to again do it you don't need to again do it there's"
+    },
+    {
+      "start": 619.62,
+      "end": 623.62,
+      "text": "no point in doing it this is where the visited sees hey i'm already visited"
+    },
+    {
+      "start": 623.62,
+      "end": 623.96,
+      "text": "you"
+    },
+    {
+      "start": 623.98,
+      "end": 629.46,
+      "text": "don't do for me and it's not path visitors it's fine it's but i've already gone through it and i"
+    },
+    {
+      "start": 629.46,
+      "end": 635.58,
+      "text": "did not find a cycle no need to do it same it'll be three three will be also like i'm already done"
+    },
+    {
+      "start": 635.58,
+      "end": 642.78,
+      "text": "it'll go on till eight because if you see from one to seven every one of them has been visited"
+    },
+    {
+      "start": 642.78,
+      "end": 648.62,
+      "text": "but we did not find a cycle so we do not go so the next one is eight the next one is eight"
+    },
+    {
+      "start": 648.62,
+      "end": 653.62,
+      "text": "the moment we have eight we say okay let's change the"
+    },
+    {
+      "start": 653.62,
+      "end": 662.5,
+      "text": "color visited and path visited so dfs of eight says visited and path visited so visited and path"
+    },
+    {
+      "start": 662.5,
+      "end": 669.62,
+      "text": "visited now dfs of eight says who are my adjacent dfs of nine so i'm like okay nine visited and path"
+    },
+    {
+      "start": 669.62,
+      "end": 679.06,
+      "text": "visited nine visited and path visited perfect next nine can go to dfs of ten because for nine ten is"
+    },
+    {
+      "start": 679.06,
+      "end": 684.98,
+      "text": "10 is the adjacent it says visited and path visited visited and path visited that goes to 10"
+    },
+    {
+      "start": 685.54,
+      "end": 693.94,
+      "text": "here comes the original gangster so whenever you add 10 you see 8 as the adjacent node which is"
+    },
+    {
+      "start": 694.66,
+      "end": 702.74,
+      "text": "visited and path visited visited and path visited which means you started and you're on the path and"
+    },
+    {
+      "start": 702.74,
+      "end": 710.98,
+      "text": "you re-entered the same path because your path visited so thereby you say hey listen i got an 8"
+    },
+    {
+      "start": 711.54,
+      "end": 721.06,
+      "text": "which was visited and path visited so please return we have a cycle this 9 called dfs of trend"
+    },
+    {
+      "start": 721.06,
+      "end": 728.18,
+      "text": "and it got a true please return true this 8 called a 9 and got a true please return a true so"
+    },
+    {
+      "start": 728.18,
+      "end": 732.72,
+      "text": "ultimately this guy got it true thereby equal to equal to equal to equal to equal to equal to equal"
+    },
+    {
+      "start": 732.72,
+      "end": 737.34,
+      "text": "to true so please return a true no further occurrence of 9 10 we don't need to check"
+    },
+    {
+      "start": 737.34,
+      "end": 742.34,
+      "text": "because we have returned a true that's how you check visited and a path visited and we just"
+    },
+    {
+      "start": 742.34,
+      "end": 747.58,
+      "text": "simply do a backtrack so as usual the c plus plus code is going to be on the right and the java code"
+    },
+    {
+      "start": 747.58,
+      "end": 753.74,
+      "text": "you can check it out on your left so we're given the adjacency list and the vector so we need a"
+    },
+    {
+      "start": 753.74,
+      "end": 758.46,
+      "text": "visited of the size by the way it's a zero based indexing so we can keep it something like this"
+    },
+    {
+      "start": 759.02,
+      "end": 762.58,
+      "text": "at the same time we need a path visit right so"
+    },
+    {
+      "start": 762.72,
+      "end": 768.34,
+      "text": "we can keep it as zero waste perfect so we've taken visited and we have taken path visited"
+    },
+    {
+      "start": 768.34,
+      "end": 775.7,
+      "text": "now our task is to go from here to here and we say hey listen if this is not visited can you call the"
+    },
+    {
+      "start": 775.7,
+      "end": 781.7,
+      "text": "dfs check can you call the dfs check with this node probably we will need the adjacency we will need"
+    },
+    {
+      "start": 781.7,
+      "end": 786.26,
+      "text": "the visited and we will need the path visited and if this yields are true that means there is a cycle"
+    },
+    {
+      "start": 786.26,
+      "end": 790.66,
+      "text": "and you return or else you can just go on checking at the end of the day you if you did not find a"
+    },
+    {
+      "start": 790.66,
+      "end": 792.54,
+      "text": "cycle there is no cycle return a false"
+    },
+    {
+      "start": 792.72,
+      "end": 795.44,
+      "text": "now over here what you write is private"
+    },
+    {
+      "start": 797.36,
+      "end": 806.96,
+      "text": "boolean dfs check and you say okay this is my node let's take the adjacency vector of int adjacency"
+    },
+    {
+      "start": 806.96,
+      "end": 814.64,
+      "text": "let's take the visited i and visited let's take the path visited perfect and we say visited of node"
+    },
+    {
+      "start": 814.64,
+      "end": 822.48,
+      "text": "is equal to one we say path visited of node is equal to one and remember whenever we are going"
+    },
+    {
+      "start": 822.72,
+      "end": 829.28,
+      "text": "back at the time we need to make sure this guy is unmarked because the visiting has been done and we"
+    },
+    {
+      "start": 829.28,
+      "end": 834.24,
+      "text": "can return a fault saying we did not find a stuff so this is the simple thing over here we traverse"
+    },
+    {
+      "start": 834.24,
+      "end": 840.8,
+      "text": "for adjacent nodes it's over here we do a traverse for add just sent notes so how do you travel for"
+    },
+    {
+      "start": 840.8,
+      "end": 846.32,
+      "text": "actually notes very simple you say adjacency of node and you say okay listen if this guy is not"
+    },
+    {
+      "start": 846.32,
+      "end": 852.4,
+      "text": "visited just go and do a dfs for this guy with the adjacency with the visit and with the path visit"
+    },
+    {
+      "start": 852.72,
+      "end": 859.84,
+      "text": "perfect but if this dfs call that i made if this guy in the future goes across and finds a cycle"
+    },
+    {
+      "start": 861.68,
+      "end": 868.49,
+      "text": "if it finds a cycle then i am going to return a true if it doesn't then i'll just keep on doing"
+    },
+    {
+      "start": 868.49,
+      "end": 876.73,
+      "text": "for the next adjacent node this is when the node is not visited now what if the node is visited"
+    },
+    {
+      "start": 876.73,
+      "end": 888.01,
+      "text": "if then it goes to an else and it goes to else if the node if the node has been previously visited"
+    },
+    {
+      "start": 888.81,
+      "end": 894.57,
+      "text": "but it has to be visited on the same path"
+    },
+    {
+      "start": 896.65,
+      "end": 901.21,
+      "text": "right it has to be visited on the same path so what you do is you say okay listen if it has been"
+    },
+    {
+      "start": 901.21,
+      "end": 905.93,
+      "text": "visited but has it been path visited has it been visited on the same path if it has been"
+    },
+    {
+      "start": 906.73,
+      "end": 912.81,
+      "text": "free to return a true or else that's how you do it so this is how you will do it and if you"
+    },
+    {
+      "start": 912.81,
+      "end": 918.33,
+      "text": "quickly run this off this will run fine remember if any of your calls says it has a cycle there's"
+    },
+    {
+      "start": 918.33,
+      "end": 923.69,
+      "text": "no need to check for for the adjacent nodes there is absolutely no need to check for for the adjacent"
+    },
+    {
+      "start": 923.69,
+      "end": 930.25,
+      "text": "nodes okay dfs was not declared oh my bad everybody first off check so you don't need to check for"
+    },
+    {
+      "start": 930.25,
+      "end": 933.93,
+      "text": "any further adjacent nodes that is what you need to take care of"
+    },
+    {
+      "start": 935.45,
+      "end": 936.65,
+      "text": "also one more thing if"
+    },
+    {
+      "start": 936.73,
+      "end": 941.69,
+      "text": "it is path visited no need to do for any further just return false sorry return true and if after"
+    },
+    {
+      "start": 941.69,
+      "end": 946.81,
+      "text": "checking for all adjacent nodes you did not find anything then you return a false right so this is"
+    },
+    {
+      "start": 946.81,
+      "end": 952.41,
+      "text": "how you can easily write it and if i ask you the time complexity of this particular code again we"
+    },
+    {
+      "start": 952.41,
+      "end": 960.17,
+      "text": "are plainly implementing a dfs algorithm so it's a dfs like v plus 2e that we generally take for"
+    },
+    {
+      "start": 960.17,
+      "end": 966.49,
+      "text": "undirected but this is a directed graph so you can call it as v plus e because every node will have a"
+    },
+    {
+      "start": 966.73,
+      "end": 972.41,
+      "text": "single edge so you can call it as v plus e as the time complexity and if i talk so what about the"
+    },
+    {
+      "start": 972.41,
+      "end": 979.69,
+      "text": "space complexity the space complexity we can call it as 2n you might argue strive why we can't use a"
+    },
+    {
+      "start": 979.69,
+      "end": 985.61,
+      "text": "single visited array yes you can use it i'll give you that as a homework think on how can you use"
+    },
+    {
+      "start": 985.61,
+      "end": 994.73,
+      "text": "as a single visited array the hint is uh you can just mark visit as one and to mark path visit"
+    },
+    {
+      "start": 996.73,
+      "end": 1004.41,
+      "text": "as two so that's how you can use a single visited array as well i'll give you that as a homework"
+    },
+    {
+      "start": 1004.41,
+      "end": 1010.01,
+      "text": "uh if you are able to do it post the code in the comment section so that people can also figure"
+    },
+    {
+      "start": 1010.01,
+      "end": 1014.09,
+      "text": "that out i'll give you that as homework i've been teaching already a lot of things so guys i hope i"
+    },
+    {
+      "start": 1014.09,
+      "end": 1018.41,
+      "text": "was able to explain you this particular problem so just in case i was please make sure you like"
+    },
+    {
+      "start": 1018.41,
+      "end": 1023.45,
+      "text": "this video and if you're new to our channel what are you waiting for hit that subscribe"
+    },
+    {
+      "start": 1023.45,
+      "end": 1026.65,
+      "text": "button right away and if you haven't checked out our dp series and the hd"
+    },
+    {
+      "start": 1026.65,
+      "end": 1029.69,
+      "text": "sheet the links are in the description and with this i'll be wrapping up this"
+    },
+    {
+      "start": 1029.69,
+      "end": 1035.88,
+      "text": "video let's meet in some other video till then bye bye take care"
+    }
+  ]
+}
